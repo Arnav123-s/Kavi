@@ -2,7 +2,7 @@
 
 ## 2026-09-02: establish the project
 
-- Project and learner name: Kritjnah.
+- Project and learner name: Kavi.
 - Project author and repository owner: Arnav123-s.
 - Visibility: public, as requested by the owner. Public material is not treated as anonymous or private.
 - Start a dedicated repository and record future project changes through version control.

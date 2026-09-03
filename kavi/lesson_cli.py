@@ -25,7 +25,7 @@ def build_parser() -> argparse.ArgumentParser:
     """Create a deliberately small CLI with explicit finite controls."""
 
     parser = argparse.ArgumentParser(
-        prog="python -m kritjnah.lesson_cli",
+        prog="python -m kavi.lesson_cli",
         description=(
             "Run finite explanation-guided learning. "
             "Explanations are verified structured arithmetic lessons."

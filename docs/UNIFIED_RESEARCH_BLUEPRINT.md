@@ -1,4 +1,4 @@
-# Kritjnah: unified research and algorithm blueprint
+# Kavi: unified research and algorithm blueprint
 
 **Author:** Arnav123-s
 **Research snapshot:** 2026-09-03
@@ -6,7 +6,7 @@
 
 ## 1. Executive answer
 
-Kritjnah can be made into a rigorous local research system, but the physics
+Kavi can be made into a rigorous local research system, but the physics
 metaphors must become measured software variables rather than claims that
 knowledge literally is mass, heat, gravity, light, or time. The strongest
 implementable design is:
@@ -46,7 +46,7 @@ switch or letting the candidate rewrite its evaluator.
 
 ## 2. Evidence and scope
 
-This document combines two prior Kritjnah research artifacts:
+This document combines two prior Kavi research artifacts:
 
 - the physics, information, thermodynamics, quantum, gravity, and time synthesis;
 - the cross-field algorithm and software-method crosswalk.
@@ -62,14 +62,14 @@ not double-counted as independent research.
 Evidence labels used below:
 
 - **Established:** supported by the cited work in its stated domain.
-- **Implemented elsewhere:** source code exists, but not yet in Kritjnah.
-- **Proposed:** a concrete Kritjnah adaptation that still needs an experiment.
+- **Implemented elsewhere:** source code exists, but not yet in Kavi.
+- **Proposed:** a concrete Kavi adaptation that still needs an experiment.
 - **Rejected initially:** scientifically unsupported, unsafe, or unsuitable for
   this device.
 
 ## 3. Comparison of the two research lists
 
-| Physics/information idea | Engineering meaning | Existing algorithm family | Starred-repository support | Kritjnah decision |
+| Physics/information idea | Engineering meaning | Existing algorithm family | Starred-repository support | Kavi decision |
 |---|---|---|---|---|
 | Knowledge as mass | Stable, useful structure resists destructive updates | EWC, synaptic intelligence, natural gradient | Theseus can express constrained objectives | Proposed as bounded **structural inertia**, never literal mass |
 | Evidence as energy | An observation can change belief or allocate work | Bayesian/Kalman update, active learning | SustainableConcrete uses Gaussian processes and uncertainty-aware experiment selection | Use calibrated likelihood and expected information gain |
@@ -116,7 +116,7 @@ physical quantities.
 
 ### 4.1 State and notation
 
-At global event index (t), Kritjnah has:
+At global event index (t), Kavi has:
 
 - parameters or structured modules (	heta_t = \{\theta_i\}_{i=1}^{G});
 - hypotheses (mathcal H_t = \{h_k\}_{k=1}^{K}) with probabilities (q_k);
@@ -325,7 +325,7 @@ h_i=\frac1{1+n_i},
 p_i=\frac{s_i h_i}{\sum_j s_jh_j},
 $$
 
-where (n_i) is the number of compiled children. Kritjnah should replace the
+where (n_i) is the number of compiled children. Kavi should replace the
 single (alpha_i) with Pareto rank and add an explicit diversity term.
 
 ### 4.8 Resource model
@@ -908,7 +908,7 @@ fixture.
 
 ## 9. Cross-repository synthesis
 
-| Layer | Best source ideas | Kritjnah adaptation |
+| Layer | Best source ideas | Kavi adaptation |
 |---|---|---|
 | Efficient core | BitNet | Benchmark native low-bit or other compact cores; never assume rounding preserves ability |
 | Self-research | Autoresearch + HyperAgents | One editable surface, bounded rungs, lineage/Pareto archive, immutable evaluator |
@@ -923,7 +923,7 @@ fixture.
 
 The most important negative result is architectural: installing all these projects
 would not create a smarter system. It would create a large, conflicting dependency
-stack. Kritjnah should reimplement only small, license-compatible interfaces and
+stack. Kavi should reimplement only small, license-compatible interfaces and
 algorithms after each earns its place in an ablation.
 
 ## 10. Evaluation plan
@@ -1153,7 +1153,7 @@ state, or cannot be rolled back cleanly.
 
 ## 14. Final blueprint in one sentence
 
-Kritjnah should be a compact, provenance-aware, multi-timescale learner inside a
+Kavi should be a compact, provenance-aware, multi-timescale learner inside a
 bounded evolutionary research harness that allocates serial compute by uncertainty,
 grows only where measured residual error justifies the bytes, compresses only when
 every retained capability survives, adapts to the device through an independent

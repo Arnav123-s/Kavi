@@ -1,4 +1,4 @@
-"""Bounded, observable execution for the initial Kritjnah experiment."""
+"""Bounded, observable execution for the initial Kavi experiment."""
 
 from __future__ import annotations
 
@@ -176,7 +176,7 @@ class LiveRuntime:
     def run(self) -> RunSummary:
         """Run at most steps events, honoring user-controlled stop and pause."""
 
-        self.emit("Kritjnah stage-0 live pathway trace")
+        self.emit("Kavi stage-0 live pathway trace")
         self.emit(f"  profile: {self.device_profile}")
         self.emit(
             "  boundary: finite local test; no network, source rewrite, "

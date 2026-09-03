@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import unittest
 
-from kritjnah.explanation_learning import ExplanationGatedLearner
-from kritjnah.graph import PathwayFabric
-from kritjnah.learning import IndependentEvaluator
-from kritjnah.lesson_runtime import ExplanationRuntime
-from kritjnah.lessons import VerifiedLesson
-from kritjnah.runtime import RuntimeConfig
-from kritjnah.types import ArithmeticEvent, Operation
+from kavi.explanation_learning import ExplanationGatedLearner
+from kavi.graph import PathwayFabric
+from kavi.learning import IndependentEvaluator
+from kavi.lesson_runtime import ExplanationRuntime
+from kavi.lessons import VerifiedLesson
+from kavi.runtime import RuntimeConfig
+from kavi.types import ArithmeticEvent, Operation
 
 
 class VerifiedLessonTests(unittest.TestCase):

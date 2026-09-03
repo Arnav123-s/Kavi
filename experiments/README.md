@@ -1,6 +1,8 @@
 # Experiment records
 
-No learning or training experiments have been run in this repository.
+The repository contains narrow, reproducible smoke-test records for the
+implemented arithmetic prototypes. They verify code behavior under their exact
+configuration; they are not evidence of general learning or broad capability.
 
 When an experiment is explicitly authorized, create a reviewed text record containing:
 
@@ -14,3 +16,8 @@ When an experiment is explicitly authorized, create a reviewed text record conta
 - Failures, regressions, limitations, and the decision to retain or reject a change.
 
 Publish compact, non-sensitive results, not raw private inputs, credentials, copyrighted source texts, or large binary artifacts. Report hypothetical examples as hypothetical; do not invent successful measurements.
+
+Current records:
+
+- [Stage-0 hard-pathway smoke test](2026-09-03-stage-0-smoke-test.md)
+- [Explanation-learning smoke test](2026-09-03-explanation-learning-smoke-test.md)

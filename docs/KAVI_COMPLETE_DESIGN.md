@@ -1,4 +1,4 @@
-# Kritjnah: Complete Research-Derived Model Design
+# Kavi: Complete Research-Derived Model Design
 
 Author: Arnav123-s  
 Status: research specification; not yet implemented, trained, or validated  
@@ -6,7 +6,7 @@ Target: one consumer laptop with 32 GB system memory, an 8-core/16-thread CPU, a
 
 ## 1. The answer in plain language
 
-Kritjnah should not literally simulate a galaxy, a cell, or a brain. That would waste the device and would not automatically create intelligence. The useful idea is to extract the parts of those systems that can be stated as mathematics, implemented as algorithms, and disproved by experiments.
+Kavi should not literally simulate a galaxy, a cell, or a brain. That would waste the device and would not automatically create intelligence. The useful idea is to extract the parts of those systems that can be stated as mathematics, implemented as algorithms, and disproved by experiments.
 
 The proposed system has six nested loops:
 
@@ -174,7 +174,7 @@ Primary sources: Arrhenius's 1889 paper in translation, <https://webserver.lemoy
 
 ### 5.3 Reaction-diffusion as sparse relevance propagation
 
-Turing showed that diffusion coupled to local reactions can destabilize a uniform chemical state and generate spatial pattern. Kritjnah uses the equation only as a candidate router over a concept graph:
+Turing showed that diffusion coupled to local reactions can destabilize a uniform chemical state and generate spatial pattern. Kavi uses the equation only as a candidate router over a concept graph:
 
 \[
 \mathbf a_{t+1}=\Pi_{[0,1]}\!\left[
@@ -213,7 +213,7 @@ Formal source: Hordijk, Hein, and Steel, <https://doi.org/10.3390/e12071733>.
 
 ### 6.2 Growth, specialization, and compression
 
-Human cortex shows early growth of connections followed by later reduction, but biological pruning is region- and stage-dependent, not a universal percentage schedule. Kritjnah therefore does not copy a human age curve. It uses measured need:
+Human cortex shows early growth of connections followed by later reduction, but biological pruning is region- and stage-dependent, not a universal percentage schedule. Kavi therefore does not copy a human age curve. It uses measured need:
 
 - grow when a stable cluster of residual errors cannot be reduced by existing modules;
 - specialize a new low-rank branch or expert on that cluster;
@@ -272,7 +272,7 @@ Replicator dynamics state that a type grows in proportion to how its fitness dif
 \dot x_j=x_j(f_j-\bar f).
 \]
 
-For software experiments, unrestricted replication would converge prematurely and consume the laptop. Kritjnah instead uses a fixed-size quality-diversity archive. Candidate behavior descriptors might be memory use, latency, retention, calibration, and domain. Each bin retains its best verified candidate. This preserves alternative tradeoffs and gives failed-looking lineages a bounded route to later usefulness.
+For software experiments, unrestricted replication would converge prematurely and consume the laptop. Kavi instead uses a fixed-size quality-diversity archive. Candidate behavior descriptors might be memory use, latency, retention, calibration, and domain. Each bin retains its best verified candidate. This preserves alternative tradeoffs and gives failed-looking lineages a bounded route to later usefulness.
 
 Primary sources: Taylor and Jonker's replicator dynamics, <https://doi.org/10.1016/0025-5564(78)90077-9>; MAP-Elites, <https://arxiv.org/abs/1504.04909>.
 
@@ -621,7 +621,7 @@ The most important compatibility decisions are:
 
 ## 10. Component lineage: inspiration, similarity, difference, and reason
 
-| Kritjnah component | Natural inspiration | Closest existing algorithms | What is the same | What is different here | Why include it | Falsifying test |
+| Kavi component | Natural inspiration | Closest existing algorithms | What is the same | What is different here | Why include it | Falsifying test |
 |---|---|---|---|---|---|---|
 | recurrent core | sequential neural and dynamical processing | state-space models, gated recurrent networks | compact recurrent state | sparse concept-routed low-rank specialists | avoid a large live key/value cache | compare quality/latency/memory with a small attention baseline |
 | predictive state correction | hierarchical prediction errors | predictive coding, equilibrium inference, adaptive computation | revise latent state using residuals | bounded by measured gain per millisecond | spend extra thought only on hard inputs | disable inner steps; require significant quality gain at matched time |
@@ -796,4 +796,4 @@ If those do not occur, the responsible result is to remove the failed mechanism.
 
 ## 17. Final specification in one sentence
 
-Kritjnah is a compact, serial-first recurrent learner with sparse graph-routed specialization, hybrid global-and-local plasticity, evidence-weighted memory, retention-tested grow-compress development, a resource-aware quality-diversity research loop, and an independent proof and audit boundary—all inspired by testable patterns in open physical systems, chemical gating and repair, biological development, and established machine-learning algorithms, but treating none of those inspirations as literal equivalence or proof of intelligence.
+Kavi is a compact, serial-first recurrent learner with sparse graph-routed specialization, hybrid global-and-local plasticity, evidence-weighted memory, retention-tested grow-compress development, a resource-aware quality-diversity research loop, and an independent proof and audit boundary—all inspired by testable patterns in open physical systems, chemical gating and repair, biological development, and established machine-learning algorithms, but treating none of those inspirations as literal equivalence or proof of intelligence.

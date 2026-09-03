@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 import unittest
 
-from kritjnah.source_manifest import SourceLesson, SourceManifest
+from kavi.source_manifest import SourceLesson, SourceManifest
 
 
 ROOT = Path(__file__).resolve().parents[1]

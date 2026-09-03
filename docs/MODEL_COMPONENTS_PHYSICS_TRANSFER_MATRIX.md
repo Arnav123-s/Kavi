@@ -203,7 +203,7 @@ An agent loop adds state, plans, retrieval, code execution, browsers, files, too
 
 Many apparently new transfers have already been explored. This does not make them useless; it tells us which baseline to compare against.
 
-| Physics or mathematics | Existing computational use | Lesson for Kritjnah |
+| Physics or mathematics | Existing computational use | Lesson for Kavi |
 |---|---|---|
 | energy landscapes and spin systems | Boltzmann machines, Hopfield memories, energy-based models, attention interpretations | “energy” is already a mature ML language; novelty must come from the exact state and update |
 | statistical mechanics | softmax/Gibbs distributions, sampling, annealing, energy-based learning | temperature can control probability sharpness, but arbitrary semantic heat needs evidence |
@@ -529,7 +529,7 @@ Compression is accepted only when task behavior and evidence survive. A smaller 
 
 ## 6. The resulting trainable model
 
-The resulting candidate substrate is the **Kritjnah Multiscale Causal Dynamics Core**, shortened to **K-MCD**.
+The resulting candidate substrate is the **Kavi Multiscale Causal Dynamics Core**, shortened to **K-MCD**.
 
 Its proposed type is:
 
@@ -711,7 +711,7 @@ Reject or simplify the design if:
 
 Current models mostly learn by reading huge amounts of data, predicting the next piece, measuring the error, and sending that error backward through many layers. Attention lets every visible piece compare itself with other pieces. Dense feature layers transform what was retrieved. Post-training teaches the model how people want it to behave, and agent software gives it tools and memory.
 
-To make something different, Kritjnah should not merely replace attention with a gravity equation. Attention already behaves like a kind of associative energy lookup. The bigger change is to reorganize intelligence around machine abilities:
+To make something different, Kavi should not merely replace attention with a gravity equation. Attention already behaves like a kind of associative energy lookup. The bigger change is to reorganize intelligence around machine abilities:
 
 - build information at several scales instead of choosing fixed chunks forever;
 - let messages move through a sparse causal state rather than one flat token history;

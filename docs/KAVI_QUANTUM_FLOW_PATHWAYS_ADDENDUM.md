@@ -1,14 +1,14 @@
-# Kritjnah Quantum-Flow Pathways Addendum
+# Kavi Quantum-Flow Pathways Addendum
 
 Author: Arnav123-s
 Status: proposed core dynamics and test plan; not implemented, trained, or validated
-Amends: [Kritjnah Hard-Pathway Core Plan](KRITJNAH_HARD_PATHWAY_CORE_PLAN.md)
+Amends: [Kavi Hard-Pathway Core Plan](KAVI_HARD_PATHWAY_CORE_PLAN.md)
 
 ## 1. Decision
 
 The quantum behaviour belongs inside the pipes themselves.
 
-Kritjnah should classically emulate a small, selected set of quantum-style behaviours through how information moves, meets, and changes the pathway structure:
+Kavi should classically emulate a small, selected set of quantum-style behaviours through how information moves, meets, and changes the pathway structure:
 
 1. several compatible route states can remain active before a decision;
 2. each active flow has a magnitude and a phase-like relation;
@@ -95,7 +95,7 @@ B_tz_t
 \right].
 \]
 
-| Term | Role in Kritjnah |
+| Term | Role in Kavi |
 |---|---|
 | \(i\) | ordinary imaginary unit; rotates phase-like state |
 | \(H_t\) | sparse coupling pattern between compatible pipes |
@@ -119,7 +119,7 @@ For a temporarily closed compatible subgraph, the initial experiment may constra
 H_t\approx H_t^\dagger.
 \]
 
-That copies a norm-preserving part of simple quantum evolution. Kritjnah is an open learning system, however: inputs, damping, output decisions, and candidate learning make the whole process non-unitary by design.
+That copies a norm-preserving part of simple quantum evolution. Kavi is an open learning system, however: inputs, damping, output decisions, and candidate learning make the whole process non-unitary by design.
 
 ## 6. Ports, mid-pipeline jumps, and simultaneous flow
 

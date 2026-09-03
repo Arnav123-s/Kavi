@@ -1,12 +1,12 @@
-# Kritjnah Component Catalog
+# Kavi Component Catalog
 
 Author: Arnav123-s
 
 Status: naming and architecture specification; not yet implemented or trained
 
-## 1. What kind of model is Kritjnah?
+## 1. What kind of model is Kavi?
 
-The complete system is named **Kritjnah**.
+The complete system is named **Kavi**.
 
 Its precise type is:
 
@@ -20,7 +20,7 @@ That sentence has five parts:
 - **Sparse modular** means only the core and a small number of relevant specialists run for a task.
 - **Recurrent sequence model** means it processes ordered information step by step while carrying a compact internal state.
 
-The neural model itself is called **Kritjnah Core**. Its type is:
+The neural model itself is called **Kavi Core**. Its type is:
 
 > **A causal, serial-first, sparse modular recurrent state-space model with limited local attention, adaptive internal steps, and external retrieval.**
 
@@ -30,20 +30,20 @@ The outer system is not part of the neural weights. It contains the evaluator, m
 
 | Name | Meaning | Intended size or role |
 |---|---|---|
-| **Kritjnah Seed** | Small plumbing and learning prototype | about 8-15 million parameters |
-| **Kritjnah Core** | Stable reference neural model | experimentally chosen within about 30-60 million parameters |
-| **Kritjnah Branch** | Temporary specialist added around a cluster of errors | small low-rank module |
-| **Kritjnah Candidate** | One experimental child system | one live candidate at a time |
-| **Kritjnah Consolidate** | Candidate produced after growth and compression | must pass every retention gate |
-| **Kritjnah Archive** | Disk-backed family of verified and rejected lineages | stores artifacts, measurements, and reasons |
-| **Kritjnah** | Entire agent, including the core and surrounding systems | one bounded local research system |
+| **Kavi Seed** | Small plumbing and learning prototype | about 8-15 million parameters |
+| **Kavi Core** | Stable reference neural model | experimentally chosen within about 30-60 million parameters |
+| **Kavi Branch** | Temporary specialist added around a cluster of errors | small low-rank module |
+| **Kavi Candidate** | One experimental child system | one live candidate at a time |
+| **Kavi Consolidate** | Candidate produced after growth and compression | must pass every retention gate |
+| **Kavi Archive** | Disk-backed family of verified and rejected lineages | stores artifacts, measurements, and reasons |
+| **Kavi** | Entire agent, including the core and surrounding systems | one bounded local research system |
 
 These are roles, not claims of quality. A model becomes the reference only after measurement.
 
 ## 3. Architecture tree
 
 ```text
-KritjnahSystem
+KaviSystem
 |
 +-- BoundaryPlane
 |   +-- K-Guard        BoundarySupervisor
@@ -200,7 +200,7 @@ The complete update system is called **K-Learn** (`HybridLearningEngine`). It co
 | **K-Stability** | `NumericalStabilityGuard` | optimizer safety layer | Clips invalid updates and catches non-finite values. |
 | **K-Optimizer** | `ParameterOptimizer` | numerical optimizer | Applies the accepted combined parameter update. |
 
-Backpropagation is a component of K-Learn, not the identity of Kritjnah. It remains the reference credit-assignment method until experiments justify reducing it.
+Backpropagation is a component of K-Learn, not the identity of Kavi. It remains the reference credit-assignment method until experiments justify reducing it.
 
 ## 9. Development components
 
@@ -307,7 +307,7 @@ For one task:
 
 ## 15. The shortest correct description
 
-Kritjnah is not just a language model and not just an evolutionary algorithm.
+Kavi is not just a language model and not just an evolutionary algorithm.
 
 It is:
 
@@ -315,4 +315,4 @@ It is:
 
 In child-sized words:
 
-> **Kritjnah is a small student with a library, a few helpers, a strict teacher, a careful scientist, and a guardian that the student cannot rewrite.**
+> **Kavi is a small student with a library, a few helpers, a strict teacher, a careful scientist, and a guardian that the student cannot rewrite.**

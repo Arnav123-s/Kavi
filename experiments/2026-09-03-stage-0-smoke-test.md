@@ -33,7 +33,7 @@ separate from the current generated event.
 
 Command:
 
-    python -u -m kritjnah live --steps 18 --seed 7 --workers 1 --max-active-routes 2 --conflict-every 5 --interval-ms 700 --ask 7 5 add
+    python -u -m kavi live --steps 18 --seed 7 --workers 1 --max-active-routes 2 --conflict-every 5 --interval-ms 700 --ask 7 5 add
 
 Runtime controls:
 

@@ -1,4 +1,4 @@
-# Kritjnah Physics-Native Core
+# Kavi Physics-Native Core
 
 Author: Arnav123-s
 
@@ -8,7 +8,7 @@ This document corrects the earlier core proposal. Physics, chemistry, developmen
 
 ## 1. Exact model type
 
-The revised neural model is named **Kritjnah Physical Dynamics Core**, shortened to **Kritjnah Core** or **K-PDC**.
+The revised neural model is named **Kavi Physical Dynamics Core**, shortened to **Kavi Core** or **K-PDC**.
 
 Its model type is:
 
@@ -456,11 +456,11 @@ The fixed evaluator, source ledger, proof checker, resource controller, and stop
 
 ## 18. How this differs from existing methods
 
-| Existing family | Shared idea | Kritjnah difference |
+| Existing family | Shared idea | Kavi difference |
 |---|---|---|
 | energy-based models | configurations receive scalar energy | energy includes explicit mass, momentum, binding, repulsion, reaction fields, and open-system input/dissipation |
 | equilibrium propagation | free and nudged phases train an energy model | applied to a sparse delayed particle-field graph with structural mass and local time |
-| Hamiltonian neural networks | dynamics arise from an energy function | Kritjnah is deliberately open and dissipative rather than purely conservative |
+| Hamiltonian neural networks | dynamics arise from an energy function | Kavi is deliberately open and dissipative rather than purely conservative |
 | port-Hamiltonian models | conservative flow, dissipation, and external ports coexist | ports carry token input and targets; state represents cognition rather than a measured physical plant |
 | graph reaction-diffusion networks | activator/diffusion dynamics operate on graphs | the field controls which latent cells physically evolve and learn |
 | neural cellular automata | repeated local updates can self-organize and regenerate | cells have inertial dynamics, delayed edges, semantic mass, and autoregressive sequence readout |
@@ -490,7 +490,7 @@ Build three cores with the same approximate parameter, training-token, time, and
 
 Run each on exact copying, arithmetic, sequence prediction, continual correction, retrieval use, calibration, algorithm execution, and small formal proofs. Then ablate every K-PDC mechanism one at a time.
 
-K-PDC becomes the actual Kritjnah core only if the complete or simplified physics-native design produces a reproducible useful tradeoff. If a physical mechanism does not help, remove it while retaining the mechanisms that survive.
+K-PDC becomes the actual Kavi core only if the complete or simplified physics-native design produces a reproducible useful tradeoff. If a physical mechanism does not help, remove it while retaining the mechanisms that survive.
 
 ## 21. Research basis
 
@@ -504,4 +504,4 @@ K-PDC becomes the actual Kritjnah core only if the complete or simplified physic
 
 ## 22. Shortest explanation
 
-Kritjnah Core is a small learned artificial world. Each piece of knowledge has a position, momentum, evidence-based mass, uncertainty temperature, activation chemicals, and its own update clock. Inputs disturb the world; related supported structures attract; incompatible structures remain separated; information travels through sparse delayed connections; motion spirals toward a useful prediction; and learning compares the world before and after the correct answer gently pulls it. The model grows by splitting overloaded cells and compresses by merging redundant cells only after proving that protected abilities survived.
+Kavi Core is a small learned artificial world. Each piece of knowledge has a position, momentum, evidence-based mass, uncertainty temperature, activation chemicals, and its own update clock. Inputs disturb the world; related supported structures attract; incompatible structures remain separated; information travels through sparse delayed connections; motion spirals toward a useful prediction; and learning compares the world before and after the correct answer gently pulls it. The model grows by splitting overloaded cells and compresses by merging redundant cells only after proving that protected abilities survived.

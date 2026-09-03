@@ -1,14 +1,14 @@
-# Kritjnah: Revised Build Plan Explained Simply
+# Kavi: Revised Build Plan Explained Simply
 
 Author: Arnav123-s
 
 Status: proposed plan; the learner is not yet implemented or trained
 
-This is the child-friendly companion to `KRITJNAH_COMPLETE_DESIGN.md`. It changes the build order so that we first create a small measurable learner, then add one new idea at a time. That lets us discover which ideas really help and which only sound interesting.
+This is the child-friendly companion to `KAVI_COMPLETE_DESIGN.md`. It changes the build order so that we first create a small measurable learner, then add one new idea at a time. That lets us discover which ideas really help and which only sound interesting.
 
 ## The whole idea
 
-Imagine that we are building a small student named Kritjnah.
+Imagine that we are building a small student named Kavi.
 
 The student lives inside one laptop. It has a small desk, a notebook, a library, a teacher, and a guardian. Because the desk is small, it cannot open every book or ask every helper to work at once. It must choose carefully.
 
@@ -102,7 +102,7 @@ The guardian can pause, save, recover, lower the workload, or stop everything. T
 
 ### Knowledge has weight
 
-Suppose Kritjnah solves two plus three correctly in many different exercises. We attach a number saying that this lesson is well supported. The parameters holding that lesson then change more slowly.
+Suppose Kavi solves two plus three correctly in many different exercises. We attach a number saying that this lesson is well supported. The parameters holding that lesson then change more slowly.
 
 It is like writing a checked fact in darker pencil. It can still be erased when strong contrary evidence appears, but one strange page cannot wipe it away. This is parameter importance and evidence support—not real physical mass.
 
@@ -116,7 +116,7 @@ This is a Bayesian evidence update and an adjusted learning rate. The informatio
 
 Gravity pulls matter together, but we will not invent fake inverse-square forces between model weights. We borrow only a useful pattern: many related pieces can form a stable center.
 
-For Kritjnah, repeated related errors may form a cluster. The model can build a small helper around that cluster and later combine repeated structure into a simpler representation.
+For Kavi, repeated related errors may form a cluster. The model can build a small helper around that cluster and later combine repeated structure into a simpler representation.
 
 ### There are two kinds of heat
 
@@ -133,7 +133,7 @@ There is still one master diary listing what happened first, second, and third. 
 
 ### Chemistry supplies gates and proofreading
 
-Some chemical reactions start only after receiving enough of a push. Kritjnah treats an expensive operation similarly: another reasoning step, retrieval, or tool call happens only when its expected benefit is worth its cost.
+Some chemical reactions start only after receiving enough of a push. Kavi treats an expensive operation similarly: another reasoning step, retrieval, or tool call happens only when its expected benefit is worth its cost.
 
 A remembered method behaves like a catalyst. It makes the path cheaper but cannot make a wrong answer true.
 
@@ -141,7 +141,7 @@ Important claims pass two gates. A cheap test rejects obvious mistakes, then a d
 
 ### Growth and compression are like organizing toys
 
-When Kritjnah keeps making one kind of mistake, it may receive a small new helper. The helper practices that problem. Later we look for repeated parts that can be combined.
+When Kavi keeps making one kind of mistake, it may receive a small new helper. The helper practices that problem. Later we look for repeated parts that can be combined.
 
 The old version stays safe while the new smaller version is tested. We keep the compressed version only if every protected ability remains. This is like reorganizing a toy box while keeping the old box nearby until every important toy is found.
 
@@ -160,7 +160,7 @@ This laptop cannot test hundreds of large models at once. It runs one child expe
 
 The recipe cannot edit the judges or safety rules.
 
-## How Kritjnah learns
+## How Kavi learns
 
 The first version uses ordinary backpropagation. Backpropagation is a strong teacher that tells early parts of the model how they contributed to a final error. Removing it before measuring alternatives would leave us without a trustworthy reference.
 
@@ -264,7 +264,7 @@ Pass rule: the adaptive system produces more independently checked proofs or use
 
 ## A tiny example
 
-Suppose Kritjnah is learning that `2 + 3 = 5`.
+Suppose Kavi is learning that `2 + 3 = 5`.
 
 1. It reads the symbols.
 2. It predicts an answer.
@@ -292,7 +292,7 @@ Code modification comes much later. It is allowed only inside a small fenced are
 
 ## What a proof means
 
-For a mathematics claim, Kritjnah must store:
+For a mathematics claim, Kavi must store:
 
 - the exact statement;
 - every definition and assumption;
@@ -300,10 +300,10 @@ For a mathematics claim, Kritjnah must store:
 - a formal proof object;
 - the outside checker's result.
 
-A long explanation, high confidence, many numerical examples, or Kritjnah agreeing with itself is not a proof.
+A long explanation, high confidence, many numerical examples, or Kavi agreeing with itself is not a proof.
 
 ## What exists today
 
-The research, equations, architecture, comparisons, and revised build order exist as documents. Kritjnah itself has not yet been implemented, trained, or shown to improve.
+The research, equations, architecture, comparisons, and revised build order exist as documents. Kavi itself has not yet been implemented, trained, or shown to improve.
 
 The next honest engineering step is Phase 0: build the guardian, fixed measuring ruler, provenance ledger, and recovery tests. After that comes the tiny seed—not an endless run and not the full experimental architecture all at once.

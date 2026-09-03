@@ -1,24 +1,40 @@
-# Kritjnah
+# Kavi
 
 **Author:** [Arnav123-s](https://github.com/Arnav123-s)
 
-Kritjnah is an experimental proposal for a fixed-budget developmental learner: learn basic skills, consolidate them into reusable foundations, and build more advanced skills without continually enlarging the learner.
+Kavi is an experimental proposal for a developmental learner with bounded growth: expand while learning, compress useful knowledge into a smaller foundation, and repeat within a hard device resource limit.
 
 ## Current status
 
-Design and research only. No learner has been implemented, trained, or evaluated in this repository. Autonomous self-modification is out of scope for this phase. Creating this repository does not start training or resume any previously paused process.
+Kavi contains a narrow, implemented Stage-0 prototype: an inspectable,
+generated addition/subtraction pathway experiment with finite runs, exact
+verification, candidate-only updates, protected and held-out checks, and a
+visible terminal trace. It is not a general learner, a textbook-trained model,
+or evidence of broad intelligence. See the
+[implementation reference](docs/IMPLEMENTATION_REFERENCE.md) for its exact
+boundary and [operations guide](docs/OPERATIONS_AND_REPRODUCIBILITY.md) to run
+it.
 
-The desired learning method avoids end-to-end backpropagation. The replacement update rule, architecture, and consolidation mechanism remain open research questions; this repository does not claim they have been solved.
+The broader developmental architecture remains research. It does not start
+training merely because this repository exists, and it does not include
+autonomous source-code modification, background persistence, web learning, or
+hardware-limit changes. The proposed replacement for end-to-end
+backpropagation and the proposed consolidation mechanism remain open questions.
 
 ## Central idea
 
-Learn a skill, test it on unfamiliar examples, consolidate it, and use it as the starting point for the next skill. A stage's progress score can return to zero after promotion, but the learned knowledge must remain. Zero means a new baseline, not empty memory or infinite storage.
+Learn and grow, test on unfamiliar examples, compress into a smaller representation, verify retained abilities, and use that compact learner as the starting point for the next stage. A stage's progress score can return to zero after promotion, but the learned knowledge must remain. Zero means a new baseline, not empty memory or infinite storage.
 
-The first question is whether a learner can acquire useful abstractions under a fixed resource budget while retaining earlier abilities.
+The allocated learner size may change. The hard device resource limit does not increase merely because the learner starts another stage. Compression is a research objective, not a guarantee that arbitrary knowledge can fit into one weight.
 
 ## Project map
 
 - [Design](docs/DESIGN.md): interpretation, constraints, and unresolved mechanisms.
+- [Growth and compression cycles](docs/GROWTH_CYCLES.md): changing learner size under a fixed device ceiling.
+- [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md): the code’s actual modules, data flow, and explicit non-features.
+- [Operations and reproducibility](docs/OPERATIONS_AND_REPRODUCIBILITY.md): finite CLI runs, controls, and resource interpretation.
+- [Evaluation protocol](docs/EVALUATION_PROTOCOL.md): fixed test partitions and promotion criteria.
+- [Documentation index](docs/DOCUMENTATION_INDEX.md): all design, research, code, and evidence documents by status.
 - [Primary research](docs/RESEARCH.md): related work and its limitations.
 - [Decisions](docs/DECISIONS.md): dated scope and design decisions.
 - [Experiment records](experiments/README.md): requirements for future measurements.

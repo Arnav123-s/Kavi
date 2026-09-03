@@ -17,7 +17,7 @@ def build_parser() -> argparse.ArgumentParser:
     """Create the CLI without optional libraries or model runtimes."""
 
     parser = argparse.ArgumentParser(
-        prog="kritjnah",
+        prog="kavi",
         description=(
             "Run the bounded, inspectable stage-0 hard-pathway experiment. "
             "All output is an observable route/update trace, not hidden reasoning."
@@ -83,7 +83,7 @@ def _operation(value: str) -> Operation:
 
 def _print_paths(runtime: LiveRuntime, quiet: bool = False) -> None:
     if not quiet:
-        print("Kritjnah stage-0 path contracts")
+        print("Kavi stage-0 path contracts")
     for pipe in runtime.fabric.inspect_paths():
         scope = ",".join(
             operation.value for operation in sorted(pipe.scope, key=lambda item: item.value)

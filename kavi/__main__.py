@@ -1,4 +1,4 @@
-"""Run the Kritjnah command-line interface."""
+"""Run the Kavi command-line interface."""
 
 from .cli import main
 

@@ -1,11 +1,11 @@
-# Kritjnah implementation stage 0: observable hard-pathway testbed
+# Kavi implementation stage 0: observable hard-pathway testbed
 
 Author: Arnav123-s
 Status: implemented prototype; no broad intelligence claim
 
 ## What is implemented
 
-This is the first executable slice of the Kritjnah design. It is intentionally
+This is the first executable slice of the Kavi design. It is intentionally
 small enough to inspect and falsify:
 
 1. A pathway fabric is the learner. Four typed pipes plus one readout path are
@@ -45,11 +45,11 @@ not provide a quantum-speed claim.
 
 ## Run it
 
-From C:\Kritjnah:
+From C:\Kavi:
 
     python -m unittest discover -s tests -v
-    python -u -m kritjnah paths
-    python -u -m kritjnah live --steps 24 --seed 7 --ask 7 5 add
+    python -u -m kavi paths
+    python -u -m kavi live --steps 24 --seed 7 --ask 7 5 add
 
 The live command is finite by default. It does not create a background process,
 write a training log, access the network, install anything, or alter thermal
@@ -57,11 +57,11 @@ limits.
 
 ### User controls
 
-    python -u -m kritjnah live --steps 100 --pause-file C:\Kritjnah\PAUSE --stop-file C:\Kritjnah\STOP
+    python -u -m kavi live --steps 100 --pause-file C:\Kavi\PAUSE --stop-file C:\Kavi\STOP
 
-- Create C:\Kritjnah\PAUSE to pause safely. Remove it to continue.
-- Create C:\Kritjnah\STOP to stop before the next event.
-- Kritjnah never creates, deletes, or ignores either control file.
+- Create C:\Kavi\PAUSE to pause safely. Remove it to continue.
+- Create C:\Kavi\STOP to stop before the next event.
+- Kavi never creates, deletes, or ignores either control file.
 
 ## Ordered next gates
 

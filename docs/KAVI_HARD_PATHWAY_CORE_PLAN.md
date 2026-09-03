@@ -1,12 +1,12 @@
-# Kritjnah Hard-Pathway Core Plan
+# Kavi Hard-Pathway Core Plan
 
 Author: Arnav123-s
 Status: research specification and falsifiable test plan; not implemented, trained, or validated
-Relationship: a candidate hard-routing and structural-plasticity refinement for the sparse graph inside the [Kritjnah Physics-Native Core](KRITJNAH_PHYSICS_NATIVE_CORE.md). It does not replace the separate verification and task-workspace ideas in the [Machine-Native Intelligence Blueprint](MACHINE_NATIVE_INTELLIGENCE_BLUEPRINT.md).
+Relationship: a candidate hard-routing and structural-plasticity refinement for the sparse graph inside the [Kavi Physics-Native Core](KAVI_PHYSICS_NATIVE_CORE.md). It does not replace the separate verification and task-workspace ideas in the [Machine-Native Intelligence Blueprint](MACHINE_NATIVE_INTELLIGENCE_BLUEPRINT.md).
 
 ## 1. The idea in plain language
 
-Imagine Kritjnah as a small city of **pipes**, not as one giant room where every signal mixes with every other signal.
+Imagine Kavi as a small city of **pipes**, not as one giant room where every signal mixes with every other signal.
 
 - A question enters through only a few pipes whose shapes fit that question.
 - A well-practised base pipe handles common cases quickly.
@@ -26,7 +26,7 @@ The candidate core is:
 
 > **A hard-routed, capacity-limited, structurally plastic recurrent graph with typed pathways, local eligibility traces, calibrated uncertainty, and verifier-gated promotion.**
 
-Short name: **Kritjnah Hard-Pathway Core (K-HPC)**.
+Short name: **Kavi Hard-Pathway Core (K-HPC)**.
 
 Its research question is whether this combination improves the trade-off among learning, transfer, retention, confidence, and resource use:
 
@@ -562,11 +562,11 @@ No model training is authorised by this document. If the owner later unlocks imp
 
 Any failed gate is useful evidence. The proper result is to retain the simpler system or archive the negative result, not to redefine the score until it passes.
 
-## 16. How this fits the existing Kritjnah designs
+## 16. How this fits the existing Kavi designs
 
 | Existing component | Role after this plan |
 |---|---|
-| Kritjnah Physical Dynamics Core | supplies sparse recurrent dynamics, local clocks, damping, bounded propagation, and resource-aware graph state |
+| Kavi Physical Dynamics Core | supplies sparse recurrent dynamics, local clocks, damping, bounded propagation, and resource-aware graph state |
 | K-HPC | specifies strict typed route admission, base/adapter/refactor/branch choices, and the no-silent-damage promotion contract |
 | Verified Search and Compilation Core | supplies the task contract, external tools, proof/checking boundary, versioning, and audit process for agentic work |
 | Evaluation harness | stays independent; it is the source of success/failure evidence, not part of the learner's mutable “thought” |
@@ -581,7 +581,7 @@ This separation is what allows a model to keep trying at difficult work without 
 
 ## 17. Final child-level summary
 
-Kritjnah should be built like a careful growing map of useful roads:
+Kavi should be built like a careful growing map of useful roads:
 
 - A road only opens for vehicles it fits.
 - A small side road handles a nearby new kind of vehicle.

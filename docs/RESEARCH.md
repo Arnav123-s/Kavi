@@ -1,6 +1,6 @@
 # Related primary research
 
-These are related mechanisms, not a claim that their combination has already produced Kritjnah. This note summarizes inspected paper sections or abstracts, not an exhaustive literature review. No third-party implementation or dataset is vendored here.
+These are related mechanisms, not a claim that their combination has already produced Kavi. This note summarizes inspected paper sections or abstracts, not an exhaustive literature review. No third-party implementation or dataset is vendored here.
 
 ## Learn, then consolidate
 
@@ -20,7 +20,7 @@ An active component learns new tasks; learned behavior is then distilled into a 
 
 Relevant material inspected: memory benchmark, synaptic model construction, discretization, and scaling discussion.
 
-The model uses interacting internal variables with different timescales. Its connection to Kritjnah is the possibility of richer internal memory dynamics within a connection. Additional variables remain real storage costs. The paper studies memory properties under specified assumptions, not complete language or educational mastery.
+The model uses interacting internal variables with different timescales. Its connection to Kavi is the possibility of richer internal memory dynamics within a connection. Additional variables remain real storage costs. The paper studies memory properties under specified assumptions, not complete language or educational mastery.
 
 ## Local learning without an end-to-end backward pass
 

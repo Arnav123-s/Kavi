@@ -1,4 +1,4 @@
-# Kritjnah Machine-Native Intelligence Blueprint
+# Kavi Machine-Native Intelligence Blueprint
 
 Author: Arnav123-s
 
@@ -6,7 +6,7 @@ Status: research direction and falsifiable architecture proposal; not implemente
 
 ## 1. Decision
 
-Kritjnah will not use the human brain as its master blueprint.
+Kavi will not use the human brain as its master blueprint.
 
 Biology remains useful evidence about learning, stability, and efficient physical computation, but it is not the ceiling or the goal. A machine can use abilities unavailable to a biological brain:
 
@@ -32,7 +32,7 @@ A new architecture does not automatically create frontier-level general intellig
 There are two separate goals:
 
 1. **Immediate useful intelligence:** begin with one capable pretrained local model as the language-and-proposal prior, then make the complete system much stronger through search, tools, exact memory, verification, and compilation.
-2. **Original core research:** train small Kritjnah cores from scratch on controlled tasks to discover whether the proposed architecture learns and generalizes better per unit of compute.
+2. **Original core research:** train small Kavi cores from scratch on controlled tasks to discover whether the proposed architecture learns and generalizes better per unit of compute.
 
 The first can produce a strong personal agent. The second is the scientific experiment that may eventually replace more of the inherited model. Neither is presently a claim of frontier performance.
 
@@ -88,7 +88,7 @@ Letting the running system edit itself in place destroys the clean comparison be
 
 ## 5. The different core: verified search and compilation
 
-The proposed model is named the **Kritjnah Verified Search and Compilation Core**, shortened to **Kritjnah Core** or **K-VSCC**.
+The proposed model is named the **Kavi Verified Search and Compilation Core**, shortened to **Kavi Core** or **K-VSCC**.
 
 Its exact proposed type is:
 
@@ -292,7 +292,7 @@ The candidate stores:
 - provenance and licensing;
 - the tasks on which it was validated.
 
-It enters the permanent library only if it reproduces the result and passes protected tests. This gives Kritjnah a new skill without immediately changing millions of model parameters.
+It enters the permanent library only if it reproduces the result and passes protected tests. This gives Kavi a new skill without immediately changing millions of model parameters.
 
 This is a machine advantage: the system can turn one hard-won solution into exact, fast, repeatable machinery.
 
@@ -382,7 +382,7 @@ Relentlessness comes from durable goals, checkpoints, queues, and resumable boun
 
 ## 15. Personal intelligence for one user
 
-Kritjnah's personal layer is local, inspectable, and separate from universal knowledge.
+Kavi's personal layer is local, inspectable, and separate from universal knowledge.
 
 It stores:
 
@@ -518,7 +518,7 @@ K-VSCC succeeds only if compiled operators make later related tasks more accurat
 
 Most current models are like a person who has read an enormous library and learned to continue sentences extremely well. Training changes billions of tiny internal numbers until useful patterns appear. Newer systems also practice against rewards, use tools, retrieve documents, and spend longer thinking.
 
-Kritjnah's new direction is more like a machine laboratory:
+Kavi's new direction is more like a machine laboratory:
 
 1. turn your request into a checklist that a machine can inspect;
 2. create several possible plans instead of trusting the first one;
@@ -536,7 +536,7 @@ The model supplies imagination and generalization. Search supplies persistence. 
 ### Dominant training methods
 
 - The attention-based sequence architecture that became the dominant language-model foundation: <https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html>
-- Empirical scaling relationships between model size, data, and compute: <https://openai.com/index/scaling-laws-for-neural-language-models/>
+- Empirical scaling relationships between model size, data, and compute: <https://arxiv.org/abs/2001.08361>
 - Compute-optimal allocation between model size and training data: <https://proceedings.neurips.cc/paper_files/paper/2022/hash/c1e2faff6f588870935f114ebe04a3e5-Abstract.html>
 - Direct preference optimization as a simpler alternative to a reward-model-plus-reinforcement-learning pipeline: <https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract-Conference.html>
 - Selective state-space sequence modeling as an efficient alternative substrate: <https://openreview.net/pdf?id=tEYskw1VY2>

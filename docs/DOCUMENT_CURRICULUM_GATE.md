@@ -1,10 +1,10 @@
-# Kritjnah document curriculum gate
+# Kavi document curriculum gate
 
 Author: Arnav123-s
 
 ## Decision
 
-Kritjnah should learn from real educational and research sources only through a
+Kavi should learn from real educational and research sources only through a
 reviewed curriculum pipeline. A book, paper, web page, or PDF is not admitted
 merely because it is readable online.
 

@@ -52,7 +52,7 @@ This distinction is essential.
 
 - **Observed biology:** membrane voltages, ion currents, chemical transmission, stochastic release, local dendritic nonlinearities, excitation and inhibition, conduction delays, synaptic and structural plasticity, glial regulation, blood-flow coupling, metabolic cost, oscillations, and homeostasis.
 - **Scientific models of observations:** cable equations, conductance models, reaction kinetics, recurrent population equations, attractors, coupled oscillators, metastable dynamics, and non-equilibrium thermodynamics.
-- **Kritjnah proposals:** knowledge mass, semantic position, cognitive momentum, semantic gravity, computational temperature, local clocks, equilibrium learning, and artificial cell fission/fusion.
+- **Kavi proposals:** knowledge mass, semantic position, cognitive momentum, semantic gravity, computational temperature, local clocks, equilibrium learning, and artificial cell fission/fusion.
 
 The proposals may be useful even when they are not literal biology. They must not be described as discoveries about the brain until experiments support that claim.
 
@@ -134,7 +134,7 @@ Information has a finite propagation speed, so remote events cannot affect one a
 
 ### What the light analogy gets wrong
 
-Neural spikes do not move at light speed, and their delay is not relativistic time dilation. Biological delays arise mainly from electrochemical propagation, geometry, myelination, and synapses. Kritjnah can keep finite-speed messages and local delays without claiming literal relativity.
+Neural spikes do not move at light speed, and their delay is not relativistic time dilation. Biological delays arise mainly from electrochemical propagation, geometry, myelination, and synapses. Kavi can keep finite-speed messages and local delays without claiming literal relativity.
 
 ## 6. Scale four: a synapse is a stochastic adaptive chemical junction
 
@@ -175,7 +175,7 @@ Here \(e_{ij}\) is a temporary eligibility trace formed by local pre/post activi
 
 ### Design consequence
 
-Biological learning is closer to many interacting local update rules than to one universal update applied uniformly to every connection. A Kritjnah experiment should permit different synapse classes and should test a local three-factor rule against its equilibrium-learning rule and an ordinary gradient baseline.
+Biological learning is closer to many interacting local update rules than to one universal update applied uniformly to every connection. A Kavi experiment should permit different synapse classes and should test a local three-factor rule against its equilibrium-learning rule and an ordinary gradient baseline.
 
 ## 7. Scale five: a local circuit is an excitation-inhibition dynamical system
 
@@ -232,7 +232,7 @@ where the nonlinear flow \(F\), dissipation \(\Gamma\), input \(u\), and noise \
 
 ### Important caution about criticality
 
-Some experiments and models suggest neural activity can show signatures associated with systems near a critical point. Whether brains are generally tuned to exact criticality remains debated. Kritjnah should measure stability, dynamic range, branching statistics, and susceptibility rather than assume that “critical” is always best.
+Some experiments and models suggest neural activity can show signatures associated with systems near a critical point. Whether brains are generally tuned to exact criticality remains debated. Kavi should measure stability, dynamic range, branching statistics, and susceptibility rather than assume that “critical” is always best.
 
 ## 9. Scale seven: the brain is a neuron-glia-vascular system
 
@@ -287,7 +287,7 @@ This is not equivalent to ordinary artificial weight pruning. Nor is ordinary ad
 
 ### Design consequence
 
-If Kritjnah aims for biological fidelity, its normal growth unit should be a dendritic compartment, synapse, branch, or conduction adaptation—not cell fission. Artificial cell split/merge can remain a separate architecture-search experiment, but it should not be presented as how a mature brain normally learns.
+If Kavi aims for biological fidelity, its normal growth unit should be a dendritic compartment, synapse, branch, or conduction adaptation—not cell fission. Artificial cell split/merge can remain a separate architecture-search experiment, but it should not be presented as how a mature brain normally learns.
 
 ## 11. Ranking the physical analogies
 
@@ -329,7 +329,7 @@ can still be tested as an artificial inductive bias. But biologically closer alt
 
 The honest label is therefore **engineered binding potential inspired by gravity**, not **biological gravity**.
 
-## 13. Audit of the current Kritjnah Physical Dynamics Core
+## 13. Audit of the current Kavi Physical Dynamics Core
 
 | Current mechanism | Biological match | Judgment | Recommended interpretation or change |
 |---|---|---|---|
@@ -473,7 +473,7 @@ Imagine a city that is alive.
 
 That city is not at rest. It constantly consumes fuel and repairs itself. It is not governed by one central sun pulling every thought inward. Its intelligence comes from local electrochemical rules, carefully timed communication, feedback, support, and many levels of adaptation.
 
-## 19. Conclusion for Kritjnah
+## 19. Conclusion for Kavi
 
 The strongest parts of the current physics-native core are sparse delayed communication, reaction-diffusion-style activation, dissipation, homeostasis, controlled stochasticity, and different update timescales. They agree with useful abstractions of biology.
 
@@ -512,4 +512,4 @@ The central design should shift from **a miniature gravitational universe that t
 - Beggs, J. M. and Plenz, D. (2003), neuronal avalanches as evidence relevant to critical branching hypotheses: <https://pubmed.ncbi.nlm.nih.gov/14657176/>
 - Wilting, J. and Priesemann, V. (2019), evidence and argument for a reverberating regime rather than exact criticality: <https://pubmed.ncbi.nlm.nih.gov/31008508/>
 
-These sources support particular measured mechanisms. They do not prove that the proposed Kritjnah architecture will learn language, reason reliably, or outperform established methods. That question requires controlled implementation and evaluation.
+These sources support particular measured mechanisms. They do not prove that the proposed Kavi architecture will learn language, reason reliably, or outperform established methods. That question requires controlled implementation and evaluation.

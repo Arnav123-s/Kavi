@@ -12,7 +12,7 @@ def main(argv: list[str] | None = None) -> int:
     """Print current source-review decisions."""
 
     parser = argparse.ArgumentParser(
-        description="Validate Kritjnah's document curriculum source manifest."
+        description="Validate Kavi's document curriculum source manifest."
     )
     parser.add_argument(
         "--manifest",

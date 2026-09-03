@@ -20,7 +20,7 @@ class ExplanationRuntime(LiveRuntime):
     def run(self) -> RunSummary:
         """Run a finite, user-stoppable lesson stream."""
 
-        self.emit("Kritjnah explanation-learning live pathway trace")
+        self.emit("Kavi explanation-learning live pathway trace")
         self.emit(f"  profile: {self.device_profile}")
         self.emit(
             "  boundary: lessons are locally verified arithmetic rules; no "

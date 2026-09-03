@@ -1,8 +1,8 @@
-# Kritjnah project instructions
+# Kavi project instructions
 
 ## Identity and publication
 
-- Use Kritjnah as the learner and project name.
+- Use Kavi as the learner and project name.
 - Attribute project authorship and commits to Arnav123-s unless the owner explicitly changes that instruction.
 - Use the repository-local Git identity and its privacy-preserving no-reply email. Do not change global Git configuration.
 - Do not add assistant co-author trailers or third-party model branding to project files, metadata, or commit messages.
@@ -23,6 +23,9 @@
 - Prefer original papers, author repositories, and original educational sources. Record what was actually inspected.
 - Distinguish proposals, implementations, measurements, and established findings.
 - Count all persistent state, transient memory, external storage, and processing time when comparing resource use.
+- The learner's allocated size may grow and shrink within a hard device ceiling. Do not confuse a stage's zero progress score with zero memory or renewed physical capacity.
+- Growth and compression are planned learning mechanisms, not permission for autonomous source-code changes. Neither mechanism is implemented yet.
+- Accept a compact learner only after retention and generalization checks. Do not report parameter deletion or lower precision alone as preserved knowledge.
 - Test new skills on withheld examples and retest earlier skills after consolidation.
 - Keep evaluation criteria separate from the learning procedure; do not silently change them to improve reported scores.
 - Record failures and regressions as well as improvements.

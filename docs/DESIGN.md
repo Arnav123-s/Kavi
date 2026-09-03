@@ -1,12 +1,12 @@
-# Kritjnah: developmental learning proposal
+# Kavi: developmental learning proposal
 
 ## Purpose
 
-Investigate whether a fixed-budget learner can develop increasingly useful representations through education, consolidation, and reuse. The current phase defines and tests learning mechanisms; it does not enable autonomous code changes or claim a general-purpose intelligent system.
+Investigate whether a learner can develop increasingly useful representations through education, bounded growth, compression, and reuse. Its allocated size can change within a hard device resource ceiling. The current phase specifies learning mechanisms and future tests; it does not enable autonomous code changes or claim a general-purpose intelligent system.
 
 ## The stage metaphor
 
-A stage starts at a relative progress score of zero. The learner receives structured examples and questions. After demonstrating mastery, it consolidates the skill and advances. Its new stage again starts at zero, with its earlier abilities intact.
+A stage starts at a relative progress score of zero. The learner receives structured examples and questions and may expand within a declared limit. After demonstrating mastery, it attempts compression into a smaller representation and advances only after checking retention. Its new stage again starts at zero, with its earlier abilities intact within the declared evaluation tolerances.
 
 The score is a progress indicator, not a storage mechanism or a universal measure of intelligence. Separate skill measurements are needed because a single score can conceal regressions.
 
@@ -18,21 +18,24 @@ Consolidation should turn experiences into reusable representations while preser
 
 Promotion must not erase memory, initialize all weights to zero, or merely rename the score. A consolidation method is successful only if measurements demonstrate retention, transfer, and acceptable resource use.
 
-## Fixed size and deeper understanding
+## Variable learner size, fixed device ceiling
 
-The proposed resource budget must include more than parameter count:
+The owner's clarification replaces permanently fixed learner size with repeated growth and compression. The compact size is the next stage's baseline; the learner can then grow toward the same upper target and attempt compression again. [Growth and compression cycles](GROWTH_CYCLES.md) defines the proposed interpretation and its unresolved mechanisms.
+
+The hard resource ceiling must account for more than parameter count:
 
 - Persistent parameter values and their numerical precision.
 - Internal memory states and any learning or optimization state.
 - Replay examples, learned rules, and other retained information.
 - Working memory and processing time during learning and answering.
 - Any external reference library, measured separately from the learner itself.
+- Temporary expanded and compact versions, transfer targets, and other workspace used during compression.
 
 Three mechanisms could fit different interpretations of deeper understanding:
 
 1. Better representations in the same finite state: reusable patterns replace inefficient memorization.
 2. Repeated computation using the same network: parameter count stays fixed, but more thinking steps consume time and potentially working memory.
-3. Multiple internal states per connection: fast-changing and slower-changing components support different memory timescales. These states consume memory and must be included in the initial budget if total size is fixed.
+3. Multiple internal states per connection: fast-changing and slower-changing components support different memory timescales. These states consume memory and must be counted at every stage.
 
 None of these mechanisms implies unlimited lossless storage of unrelated facts. The human-development analogy motivates questions but does not establish biological equivalence.
 

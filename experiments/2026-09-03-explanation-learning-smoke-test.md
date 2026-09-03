@@ -32,7 +32,7 @@ generated and checked in a deliberately tiny white-box arithmetic domain.
 
 ## Configuration
 
-    python -u -m kritjnah.lesson_cli --steps 12 --seed 7 --workers 1 --max-active-routes 2 --conflict-every 0 --interval-ms 100 --ask 7 5 add
+    python -u -m kavi.lesson_cli --steps 12 --seed 7 --workers 1 --max-active-routes 2 --conflict-every 0 --interval-ms 100 --ask 7 5 add
 
 - finite lessons: 12;
 - active facet-route cap: 2;

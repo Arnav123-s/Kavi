@@ -6,10 +6,10 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
-from kritjnah.graph import PathwayFabric
-from kritjnah.learning import IndependentEvaluator, VerifierGatedLearner
-from kritjnah.runtime import LiveRuntime, RuntimeConfig
-from kritjnah.types import ArithmeticEvent, Information, Operation, SignalType
+from kavi.graph import PathwayFabric
+from kavi.learning import IndependentEvaluator, VerifierGatedLearner
+from kavi.runtime import LiveRuntime, RuntimeConfig
+from kavi.types import ArithmeticEvent, Information, Operation, SignalType
 
 
 class HardPathTests(unittest.TestCase):

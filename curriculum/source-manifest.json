@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "source_id": "nasa-ntrs-19830024400",
+      "title": "NASA Publications Guide",
+      "creator": "National Aeronautics and Space Administration",
+      "original_url": "https://ntrs.nasa.gov/citations/19830024400",
+      "license_class": "us-government-public-use-permitted",
+      "license_url": "https://ntrs.nasa.gov/citations/19830024400",
+      "status": "approved",
+      "review_note": "The NTRS record states Work of the US Government and Public Use Permitted. Review each selected extract and its metadata again before use.",
+      "subjects": [
+        "technical communication",
+        "scientific publishing"
+      ],
+      "levels": [
+        "advanced"
+      ]
+    },
+    {
+      "source_id": "openstax-physics",
+      "title": "Physics",
+      "creator": "OpenStax",
+      "original_url": "https://openstax.org/books/physics/pages/preface",
+      "license_class": "cc-by-4.0",
+      "license_url": "https://openstax.org/books/physics/pages/preface",
+      "status": "quarantined",
+      "review_note": "Do not ingest by default. Recheck title-specific terms and obtain any necessary AI-training permission before creating lessons.",
+      "subjects": [
+        "physics"
+      ],
+      "levels": [
+        "introductory",
+        "undergraduate"
+      ]
+    },
+    {
+      "source_id": "arxiv-per-item",
+      "title": "Author-provided arXiv research paper",
+      "creator": "Individual authors",
+      "original_url": "https://info.arxiv.org/help/license.html",
+      "license_class": "requires-per-item-review",
+      "license_url": "https://info.arxiv.org/help/license.html",
+      "status": "quarantined",
+      "review_note": "An arXiv listing is not one blanket training license. Review the exact paper, version, authorship, and license before admission.",
+      "subjects": [
+        "research"
+      ],
+      "levels": [
+        "advanced"
+      ]
+    }
+  ]
+}

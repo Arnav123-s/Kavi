@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "stages": [
+    {
+      "stage_id": "symbols-and-quantities",
+      "prerequisites": [],
+      "concepts": [
+        "numeral",
+        "quantity",
+        "equality",
+        "order"
+      ],
+      "required_verifier": "exact-symbolic"
+    },
+    {
+      "stage_id": "arithmetic-relations",
+      "prerequisites": [
+        "symbols-and-quantities"
+      ],
+      "concepts": [
+        "addition",
+        "subtraction",
+        "place-value",
+        "inverse-operation"
+      ],
+      "required_verifier": "exact-arithmetic"
+    },
+    {
+      "stage_id": "language-and-logic",
+      "prerequisites": [
+        "symbols-and-quantities"
+      ],
+      "concepts": [
+        "letter",
+        "word",
+        "definition",
+        "sentence",
+        "argument"
+      ],
+      "required_verifier": "curated-human-and-formal"
+    },
+    {
+      "stage_id": "science-foundations",
+      "prerequisites": [
+        "arithmetic-relations",
+        "language-and-logic"
+      ],
+      "concepts": [
+        "measurement",
+        "unit",
+        "model",
+        "evidence",
+        "uncertainty"
+      ],
+      "required_verifier": "domain-specific"
+    },
+    {
+      "stage_id": "primary-research",
+      "prerequisites": [
+        "science-foundations"
+      ],
+      "concepts": [
+        "claim",
+        "method",
+        "result",
+        "limitation",
+        "replication"
+      ],
+      "required_verifier": "source-linked-expert-or-formal"
+    }
+  ]
+}

@@ -11,6 +11,7 @@ Author: Arnav123-s
 | [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) | Implemented protocol | How candidates are measured and accepted or rejected. |
 | [DESIGN.md](DESIGN.md) | Research proposal | What developmental growth and consolidation are intended to investigate. |
 | [GROWTH_CYCLES.md](GROWTH_CYCLES.md) | Research specification | How changing allocation can remain inside a fixed device ceiling. |
+| [MODEL_FIRST_CURRICULUM.md](MODEL_FIRST_CURRICULUM.md) | Implemented early cores and review plan | Why the model is primary, how it is taught, and where automation must stop. |
 
 ## Architecture and model blueprints
 
@@ -46,6 +47,9 @@ Author: Arnav123-s
 | [2026-09-03-explanation-learning-smoke-test.md](../experiments/2026-09-03-explanation-learning-smoke-test.md) | Recorded smoke test | Narrow explanation-learning verification. |
 | [curriculum/sequence.json](../curriculum/sequence.json) | Machine-readable plan | Curriculum stage order and prerequisites. |
 | [curriculum/source-manifest.json](../curriculum/source-manifest.json) | Machine-readable policy | Source-review decisions without source bodies. |
+| [curriculum/model-curriculum.json](../curriculum/model-curriculum.json) | Machine-readable curriculum | Ordered runnable stages and explicit waiting gates. |
+| [curriculum/people-and-works.json](../curriculum/people-and-works.json) | Review catalog | People, original works, and textbook candidates in prerequisite order. |
+| [curriculum/methods-from-starred-repositories.json](../curriculum/methods-from-starred-repositories.json) | Research catalog | Public starred repositories treated as methods references, not training text. |
 
 ## Reading rule
 

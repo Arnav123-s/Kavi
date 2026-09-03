@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "catalog_id": "people-and-works-v1",
+  "title": "Kavi model curriculum: people, original works, and textbook candidates",
+  "selection_basis": "The order follows conceptual prerequisites, testability, and breadth of durable contribution. It is not a claim that one culture or person has objectively greater human worth or intelligence.",
+  "admission_rule": "Every entry is catalog metadata only. No work may become training text until its exact edition, jurisdiction, rights, provenance, local extract fingerprint, lesson verifier, and held-out evaluation have passed review.",
+  "tracks": [
+    {
+      "track_id": "00-generated-foundations",
+      "title": "Generated foundations before authored works",
+      "purpose": "Teach symbols, quantities, exact relations, and checks using generated lessons so early learning does not depend on a copied book.",
+      "training_disposition": "runnable-now",
+      "entries": [
+        {
+          "person": null,
+          "work": "Generated lowercase glyph, digit, quantity, and arithmetic curriculum",
+          "field": "symbol systems and elementary mathematics",
+          "why_here": "It gives Kavi exact labels and verifiers before it encounters ambiguous natural language.",
+          "source_status": "generated-no-external-text"
+        }
+      ]
+    },
+    {
+      "track_id": "01-mathematical-language-and-proof",
+      "title": "Mathematical language, construction, and proof",
+      "purpose": "Move from symbols and relations to definitions, constructions, proof structure, and counterexamples.",
+      "training_disposition": "cataloged-not-admitted",
+      "entries": [
+        {
+          "person": "Euclid",
+          "work": "Elements",
+          "field": "geometry and deductive proof",
+          "why_here": "A canonical progression from definitions and postulates to explicit propositions and proofs.",
+          "candidate_access_url": "https://www.gutenberg.org/ebooks/21076",
+          "source_status": "candidate-us-public-domain-review-required"
+        },
+        {
+          "person": "Archimedes",
+          "work": "On the Sphere and Cylinder; Method of Mechanical Theorems",
+          "field": "geometry and mathematical method",
+          "why_here": "Connects construction, approximation, and argument about limits.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Muhammad ibn Musa al-Khwarizmi",
+          "work": "The Compendious Book on Calculation by Completion and Balancing",
+          "field": "algebra",
+          "why_here": "Introduces equation solving as a repeatable symbolic procedure.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "René Descartes",
+          "work": "La Géométrie",
+          "field": "analytic geometry",
+          "why_here": "Links geometric structure to algebraic representation.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Leonhard Euler",
+          "work": "Elements of Algebra; Introductio in analysin infinitorum",
+          "field": "algebra and analysis",
+          "why_here": "Builds flexible symbolic manipulation and functional thinking.",
+          "candidate_access_url": "https://eulerarchive.maa.org/",
+          "source_status": "exact-edition-and-translation-review-required"
+        }
+      ]
+    },
+    {
+      "track_id": "02-logic-and-formal-systems",
+      "title": "Logic, formal systems, and limits of proof",
+      "purpose": "Teach claims, inference rules, models, counterexamples, and the boundaries of formal reasoning.",
+      "training_disposition": "cataloged-not-admitted",
+      "entries": [
+        {
+          "person": "Aristotle",
+          "work": "Organon",
+          "field": "logic",
+          "why_here": "Early explicit analysis of categories, propositions, and valid inference.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "George Boole",
+          "work": "An Investigation of the Laws of Thought",
+          "field": "algebraic logic and probability",
+          "why_here": "Turns logical structure into operations that can be tested mechanically.",
+          "candidate_access_url": "https://www.gutenberg.org/ebooks/15114",
+          "source_status": "candidate-us-public-domain-review-required"
+        },
+        {
+          "person": "Gottlob Frege",
+          "work": "Begriffsschrift",
+          "field": "predicate logic",
+          "why_here": "Adds quantification and explicit logical form beyond simple propositions.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Giuseppe Peano",
+          "work": "The Principles of Arithmetic, Presented by a New Method",
+          "field": "axiomatic arithmetic",
+          "why_here": "Separates assumptions, notation, and derivation for exact numerical reasoning.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "David Hilbert",
+          "work": "Foundations of Geometry",
+          "field": "axiomatic method",
+          "why_here": "Makes consistency, independence, and formal structure explicit learning targets.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Kurt Gödel",
+          "work": "On Formally Undecidable Propositions of Principia Mathematica and Related Systems",
+          "field": "mathematical logic",
+          "why_here": "Prevents the curriculum from treating every well-formed question as mechanically decidable.",
+          "candidate_access_url": null,
+          "source_status": "exact-paper-rights-review-required"
+        }
+      ]
+    },
+    {
+      "track_id": "03-measurement-and-experimental-science",
+      "title": "Measurement, experiment, and physical explanation",
+      "purpose": "Teach the difference between observation, model, prediction, uncertainty, and a replicated result.",
+      "training_disposition": "cataloged-not-admitted",
+      "entries": [
+        {
+          "person": "Ibn al-Haytham",
+          "work": "Book of Optics",
+          "field": "optics and experimental method",
+          "why_here": "A foundational example of controlled observation, explanatory models, and error correction.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Galileo Galilei",
+          "work": "Two New Sciences",
+          "field": "mechanics and measurement",
+          "why_here": "Connects idealization, experiment, and mathematical description of motion.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Isaac Newton",
+          "work": "Philosophiæ Naturalis Principia Mathematica",
+          "field": "classical mechanics",
+          "why_here": "Shows how a small set of laws can organize diverse measurable phenomena.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Michael Faraday",
+          "work": "Experimental Researches in Electricity",
+          "field": "electromagnetism and experiment",
+          "why_here": "Pairs carefully described experiments with conceptual field-like reasoning.",
+          "candidate_access_url": "https://www.gutenberg.org/ebooks/search/?query=Experimental+Researches+in+Electricity",
+          "source_status": "candidate-us-public-domain-review-required"
+        },
+        {
+          "person": "James Clerk Maxwell",
+          "work": "A Treatise on Electricity and Magnetism",
+          "field": "field theory",
+          "why_here": "Connects local relations, equations, and global physical behavior.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Charles Darwin",
+          "work": "On the Origin of Species",
+          "field": "biology and historical explanation",
+          "why_here": "Teaches evidence aggregation, competing explanations, and slow cumulative change.",
+          "candidate_access_url": "https://www.gutenberg.org/ebooks/1228",
+          "source_status": "candidate-us-public-domain-review-required"
+        },
+        {
+          "person": "Marie Curie",
+          "work": "Research on Radioactive Substances",
+          "field": "physics and chemistry",
+          "why_here": "Adds careful measurement and theory building at the boundary of physics and chemistry.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        }
+      ]
+    },
+    {
+      "track_id": "04-deep-mathematics-and-computation",
+      "title": "Abstraction, uncertainty, computation, and control",
+      "purpose": "Build the mathematical prerequisites for algorithms, information, optimization, and formal mathematical research.",
+      "training_disposition": "cataloged-not-admitted",
+      "entries": [
+        {
+          "person": "Carl Friedrich Gauss",
+          "work": "Disquisitiones Arithmeticae",
+          "field": "number theory",
+          "why_here": "Develops structural number theory and precise proof practices.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Bernhard Riemann",
+          "work": "On the Number of Primes Less Than a Given Magnitude",
+          "field": "analytic number theory",
+          "why_here": "Connects complex analysis, prime distribution, and the later benchmark question without assuming its solution.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Georg Cantor",
+          "work": "Contributions to the Founding of the Theory of Transfinite Numbers",
+          "field": "set theory",
+          "why_here": "Introduces precise reasoning about infinity, size, and diagonal arguments.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Emmy Noether",
+          "work": "Invariant Variation Problems",
+          "field": "symmetry and conservation",
+          "why_here": "Connects symmetry constraints to conserved structure, a useful pattern for model design and physics.",
+          "candidate_access_url": null,
+          "source_status": "exact-paper-and-translation-review-required"
+        },
+        {
+          "person": "Alan Turing",
+          "work": "On Computable Numbers, with an Application to the Entscheidungsproblem",
+          "field": "computation and decidability",
+          "why_here": "Defines a rigorous limit and model of mechanical computation.",
+          "candidate_access_url": null,
+          "source_status": "exact-paper-rights-review-required"
+        },
+        {
+          "person": "Claude Shannon",
+          "work": "A Mathematical Theory of Communication",
+          "field": "information theory",
+          "why_here": "Separates information, coding, noise, and channel limits.",
+          "candidate_access_url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+          "source_status": "exact-paper-rights-review-required"
+        },
+        {
+          "person": "John von Neumann",
+          "work": "First Draft of a Report on the EDVAC",
+          "field": "computer architecture",
+          "why_here": "Clarifies stored-program computation and the separation of data, procedure, and memory.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-rights-review-required"
+        },
+        {
+          "person": "Andrey Kolmogorov",
+          "work": "Foundations of the Theory of Probability",
+          "field": "probability",
+          "why_here": "Provides the axioms needed to distinguish uncertain beliefs from exact logical claims.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-and-translation-review-required"
+        },
+        {
+          "person": "Richard Bellman",
+          "work": "Dynamic Programming",
+          "field": "optimization and control",
+          "why_here": "Teaches decomposition of long tasks into value-bearing subproblems.",
+          "candidate_access_url": null,
+          "source_status": "exact-edition-rights-review-required"
+        }
+      ]
+    },
+    {
+      "track_id": "05-modern-learning-and-causal-reasoning",
+      "title": "Learning, representation, causality, and efficient computation",
+      "purpose": "Compare modern methods only after Kavi can represent language, evidence, and formal evaluation.",
+      "training_disposition": "reference-only-pending-rights-review",
+      "entries": [
+        {
+          "person": "Judea Pearl",
+          "work": "Causality",
+          "field": "causal inference",
+          "why_here": "Distinguishes correlation, intervention, and counterfactual explanation.",
+          "candidate_access_url": null,
+          "source_status": "copyrighted-reference-only"
+        },
+        {
+          "person": "Yoshua Bengio",
+          "work": "Curriculum Learning and representation-learning research",
+          "field": "machine learning",
+          "why_here": "Offers comparison baselines for staged learning and representation formation.",
+          "candidate_access_url": null,
+          "source_status": "per-paper-license-review-required"
+        },
+        {
+          "person": "Geoffrey Hinton",
+          "work": "Distributed representations and learning research",
+          "field": "machine learning",
+          "why_here": "Provides comparison baselines for learned internal representations.",
+          "candidate_access_url": null,
+          "source_status": "per-paper-license-review-required"
+        },
+        {
+          "person": "Yann LeCun",
+          "work": "Energy-based and representation-learning research",
+          "field": "machine learning",
+          "why_here": "Provides comparison baselines for constrained dynamics and perception.",
+          "candidate_access_url": null,
+          "source_status": "per-paper-license-review-required"
+        },
+        {
+          "person": "Andrej Karpathy",
+          "work": "Educational model-training repositories and notes",
+          "field": "model training practice",
+          "why_here": "Useful for implementation discipline and transparent small-model controls, not as a substitute for Kavi's original core tests.",
+          "candidate_access_url": "https://github.com/karpathy",
+          "source_status": "repository-license-and-file-level-review-required"
+        }
+      ]
+    },
+    {
+      "track_id": "06-textbook-reference-shelf",
+      "title": "Textbook reference shelf",
+      "purpose": "Provide modern explanatory coverage after the original-work sequence; titles are references until their exact editions and terms are reviewed.",
+      "training_disposition": "reference-only-pending-rights-review",
+      "entries": [
+        {
+          "person": "Richard Hammack",
+          "work": "Book of Proof",
+          "field": "proof writing",
+          "why_here": "A modern bridge from informal argument to proof practice.",
+          "candidate_access_url": "https://www.people.vcu.edu/~rhammack/BookOfProof/",
+          "source_status": "exact-edition-license-review-required"
+        },
+        {
+          "person": "Gilbert Strang",
+          "work": "Introduction to Linear Algebra",
+          "field": "linear algebra",
+          "why_here": "Builds vectors, transformations, and numerical intuition needed for many model mechanisms.",
+          "candidate_access_url": null,
+          "source_status": "copyrighted-reference-only"
+        },
+        {
+          "person": "Michael Spivak",
+          "work": "Calculus",
+          "field": "calculus and proof",
+          "why_here": "Connects computation to rigorous definitions and proof.",
+          "candidate_access_url": null,
+          "source_status": "copyrighted-reference-only"
+        },
+        {
+          "person": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein",
+          "work": "Introduction to Algorithms",
+          "field": "algorithms",
+          "why_here": "Supplies standard algorithms and complexity baselines for Kavi's own search and routing experiments.",
+          "candidate_access_url": null,
+          "source_status": "copyrighted-reference-only"
+        },
+        {
+          "person": "OpenStax",
+          "work": "Physics",
+          "field": "introductory physics",
+          "why_here": "A broad explanatory resource that remains quarantined because current title-specific terms require review before any training use.",
+          "candidate_access_url": "https://openstax.org/books/physics/pages/preface",
+          "source_status": "quarantined-pending-explicit-training-permission"
+        }
+      ]
+    }
+  ]
+}

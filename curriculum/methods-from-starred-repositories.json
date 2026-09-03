@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "title": "Kavi methods references from Arnav123-s public starred repositories",
+  "purpose": "These repositories are design and evaluation references. They are not a training corpus, and no source code or documentation is ingested automatically.",
+  "repositories": [
+    {
+      "repository": "microsoft/BitNet",
+      "study_role": "low-bit and resource-aware model design comparator",
+      "kavi_question": "Can compact persistent state preserve useful behavior under a measured resource ceiling?"
+    },
+    {
+      "repository": "facebookresearch/HyperAgents",
+      "study_role": "agent architecture and bounded orchestration reference",
+      "kavi_question": "Which parts should remain external evaluators rather than model-controlled behavior?"
+    },
+    {
+      "repository": "facebookresearch/matrix",
+      "study_role": "message contracts and distributed-system organization reference",
+      "kavi_question": "How can Kavi make pathway messages and state transitions inspectable?"
+    },
+    {
+      "repository": "facebookresearch/SustainableConcrete",
+      "study_role": "experiment selection and measurement reference",
+      "kavi_question": "How should Kavi choose the next falsifiable architecture experiment?"
+    },
+    {
+      "repository": "facebookresearch/moodist",
+      "study_role": "representation-learning comparison reference",
+      "kavi_question": "Which parts are unsuitable for a small local core and should remain excluded?"
+    },
+    {
+      "repository": "facebookresearch/neuroai",
+      "study_role": "modular research-discipline reference",
+      "kavi_question": "How should data, training, caching, and evaluation remain separate?"
+    },
+    {
+      "repository": "facebookresearch/three_bricks",
+      "study_role": "statistical evaluation reference",
+      "kavi_question": "How can claims be rejected when evidence is weak or unstable?"
+    },
+    {
+      "repository": "ilyasu123/rlntm",
+      "study_role": "physics-inspired modification example",
+      "kavi_question": "When does a physical analogy produce a testable algorithm instead of only a metaphor?"
+    },
+    {
+      "repository": "facebookresearch/theseus",
+      "study_role": "differentiable optimization and constraints reference",
+      "kavi_question": "Which constraint mechanisms are fair baselines for Kavi's local update rules?"
+    },
+    {
+      "repository": "ahojnnes/theseus",
+      "study_role": "fork provenance record",
+      "kavi_question": "What changes, if any, distinguish this fork from its upstream method?"
+    },
+    {
+      "repository": "ahojnnes/faiss",
+      "study_role": "retrieval and similarity-search reference",
+      "kavi_question": "Can retrieval remain external and measured rather than be misreported as internal model memory?"
+    },
+    {
+      "repository": "bcherny/bst-next",
+      "study_role": "small compositional curriculum reference",
+      "kavi_question": "How can parsing and executable meaning be tested before broad language claims?"
+    },
+    {
+      "repository": "bcherny/js-math",
+      "study_role": "exact mathematics exercise reference",
+      "kavi_question": "Which generated, checkable tasks provide a fair early core benchmark?"
+    }
+  ],
+  "review_rule": "Inspect an exact commit, license, and relevant files before copying, running, or deriving training material from any repository."
+}

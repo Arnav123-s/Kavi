@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "title": "Kavi model-first developmental curriculum",
+  "stages": [
+    {
+      "stage_id": "glyph-kinds",
+      "title": "Generated lowercase letters and decimal digits",
+      "status": "runnable",
+      "engine": "symbol-prototypes",
+      "prerequisites": [],
+      "source_ids": [],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "quantity-and-exact-relations",
+      "title": "Generated quantities, addition, and subtraction",
+      "status": "runnable",
+      "engine": "arithmetic-explanations",
+      "prerequisites": [
+        "glyph-kinds"
+      ],
+      "source_ids": [],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "word-forms-and-definitions",
+      "title": "Words, definitions, and compositional language",
+      "status": "awaiting-model-capability",
+      "engine": null,
+      "prerequisites": [
+        "glyph-kinds",
+        "quantity-and-exact-relations"
+      ],
+      "source_ids": [],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "waiting_reason": "The current core has no text representation, word-composition path, or language evaluation suite. Build and validate that model core before this stage can run."
+    },
+    {
+      "stage_id": "formal-logic-and-proof",
+      "title": "Definitions, formal logic, counterexamples, and checked proofs",
+      "status": "awaiting-model-capability",
+      "engine": null,
+      "prerequisites": [
+        "word-forms-and-definitions"
+      ],
+      "source_ids": [
+        "euclid-elements",
+        "boole-laws-of-thought"
+      ],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "waiting_reason": "Kavi needs a typed symbolic-language core and an external formal verifier before it may learn or claim a proof skill."
+    },
+    {
+      "stage_id": "reviewed-primary-works",
+      "title": "Primary works and carefully licensed textbooks",
+      "status": "awaiting-source-review",
+      "engine": null,
+      "prerequisites": [
+        "formal-logic-and-proof"
+      ],
+      "source_ids": [
+        "people-and-works-v1"
+      ],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "waiting_reason": "The catalog is a reading order, not a training license. Admit each exact edition, extract, and lesson only after rights, provenance, a verifier, and held-out tests are recorded."
+    }
+  ]
+}

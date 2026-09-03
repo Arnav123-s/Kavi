@@ -7,6 +7,8 @@ authors = [{ name = "Arnav123-s" }]
 
 [project.scripts]
 kavi = "kavi.cli:main"
+kavi-school = "kavi.school_cli:main"
+kavi-catalog = "kavi.catalog_cli:main"
 
 [tool.unittest]
 start-directory = "tests"

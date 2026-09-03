@@ -5,10 +5,12 @@ Status: describes the code currently present in this repository
 
 ## Scope
 
-Kavi currently contains a deliberately narrow, executable testbed. It learns
-and evaluates generated addition and subtraction events. Its purpose is to
-make routing, verification, candidate promotion, explanation checking, and
-resource reporting observable before attempting a broader curriculum.
+Kavi currently contains deliberately narrow, executable model cores. One learns
+from generated lowercase glyphs and decimal digits by compressing evidence into
+class prototypes; another learns generated addition and subtraction through a
+typed arithmetic pathway. Their supporting runner makes routing, verification,
+candidate promotion, explanation checking, and resource reporting observable
+before a broader curriculum is attempted.
 
 It is not a general-purpose language system, a trained textbook reader, a web
 agent, a background service, or a self-modifying program.
@@ -28,6 +30,11 @@ agent, a background service, or a self-modifying program.
 | kavi.lesson_cli | Command-line entry point for the explanation-learning experiment. |
 | kavi.source_manifest | Source metadata, rights-status, and lesson-admission validation. |
 | kavi.source_cli | Read-only inspection of the curriculum source manifest. |
+| kavi.symbol_core | Compact glyph-to-prototype learning core with protected and held-out gates. |
+| kavi.symbol_runtime | Finite generated glyph curriculum and visible candidate traces. |
+| kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
+| kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
+| kavi.catalog_cli | Read-only review of the people-and-works catalog. |
 
 ## Inference path
 

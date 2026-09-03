@@ -1,0 +1,12 @@
+[project]
+name = "kritjnah"
+version = "0.1.0"
+description = "A bounded experimental hard-pathway learning harness."
+requires-python = ">=3.11"
+authors = [{ name = "Arnav123-s" }]
+
+[project.scripts]
+kritjnah = "kritjnah.cli:main"
+
+[tool.unittest]
+start-directory = "tests"

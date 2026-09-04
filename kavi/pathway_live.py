@@ -392,13 +392,15 @@ class PathwayCurriculumRuntime:
         stage_id: str,
         delta: StateDelta,
         accepted: bool,
+        candidate_state: CircuitState,
         *,
         parent_protected: ClassificationMetrics,
         candidate_protected: ClassificationMetrics,
         parent_held_out: ClassificationMetrics,
         candidate_held_out: ClassificationMetrics,
     ) -> None:
-        ledger = self.core.resource_ledger()
+        displayed_state = candidate_state if accepted else self.core.state
+        ledger = PathwayCircuitCore(displayed_state).resource_ledger()
         self.bus.emit(
             "learning",
             "candidate-change",
@@ -503,6 +505,7 @@ class PathwayCurriculumRuntime:
                 stage_id,
                 delta,
                 assessment.accepted,
+                assessment.candidate_state,
                 parent_protected=assessment.parent_protected,
                 candidate_protected=assessment.candidate_protected,
                 parent_held_out=assessment.parent_held_out,
@@ -571,6 +574,7 @@ class PathwayCurriculumRuntime:
                 stage_id,
                 delta,
                 accepted,
+                candidate,
                 parent_protected=parent_protected,
                 candidate_protected=candidate_protected,
                 parent_held_out=parent_held_out,

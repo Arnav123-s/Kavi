@@ -207,6 +207,10 @@ class PathwayLiveRuntimeTests(unittest.TestCase):
             summary = runtime.run()
             active_state_text = (run_dir / "model-state.json").read_text(encoding="utf-8")
             grading_text = (run_dir / "grading.jsonl").read_text(encoding="utf-8")
+            learning_events = [
+                json.loads(line)
+                for line in (run_dir / "learning.jsonl").read_text(encoding="utf-8").splitlines()
+            ]
             pathway_text = (run_dir / "pathways.jsonl").read_text(encoding="utf-8")
             archives = sorted((run_dir / "archive").glob("parent-*.json"))
             first_archive = json.loads(archives[0].read_text(encoding="utf-8"))
@@ -219,6 +223,13 @@ class PathwayLiveRuntimeTests(unittest.TestCase):
         self.assertIn('"result": "PASS"', grading_text)
         self.assertIn("curriculum-boundary", grading_text)
         self.assertIn("path/glyph-kind/digit", pathway_text)
+        last_promotion = [
+            event
+            for event in learning_events
+            if event.get("kind") == "candidate-change" and event.get("decision") == "PROMOTED"
+        ][-1]
+        self.assertEqual(last_promotion["model_routes"], summary.routes)
+        self.assertEqual(last_promotion["model_jump_adapters"], summary.jump_adapters)
         self.assertGreater(len(archives), 0)
         self.assertFalse(first_archive["active_during_inference"])
 

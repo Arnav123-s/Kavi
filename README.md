@@ -4,7 +4,29 @@
 
 Kavi is a model-first research project for a developmental learner with bounded growth. The model core is the project; the curriculum, evaluator, source gate, and CLI are supporting infrastructure used to teach and measure it with explicit execution budgets. A complete device-wide memory ceiling is still a research requirement.
 
-## Current status
+## Latest: internally learned text configurations
+
+A new CPU-only wave text core learns from original source paragraphs and
+supplied corrections by updating its own fixed-size sparse recurrent
+configuration. It starts untrained; the earlier symbolic model is preserved
+and audited separately, not presented as transferred English understanding.
+The original-book teacher has nine prerequisite-ordered arithmetic units,
+fresh English exams, corrective rounds, checkpoint resume and live chat.
+Current English scores are low; this is not a mastered textbook or a
+master's-level learner. Wave-inspired mixing does not imply quantum speedup
+or unlimited memory.
+
+```powershell
+.\scripts\start-live-learning.ps1
+```
+
+The optional `wave` dependency supplies the numerical training runtime.
+The exact admitted book must already be present at the private path with the
+fingerprint in `curriculum/arithmetic-original.json`; no book is redistributed
+here. See [internal learning, mathematics, memory and operation](docs/INTERNAL_LEARNING_AND_MEMORY.md)
+for source scope, limitations, controls and resume instructions.
+
+## Earlier symbolic circuit
 
 Kavi contains one unified experimental path-centric circuit plus earlier narrow
 regression cores. The unified circuit keeps one active state across six

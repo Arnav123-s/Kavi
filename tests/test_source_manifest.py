@@ -20,7 +20,7 @@ class SourceManifestTests(unittest.TestCase):
         identifiers = {source.source_id for source in self.manifest.admissible_sources}
         self.assertEqual(
             identifiers,
-            {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400", "unicode-17-script-property"},
+            {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400", "unicode-17-script-property", "demorgan-arithmetic-1858"},
         )
 
     def test_original_source_needs_an_explicit_educational_purpose(self) -> None:

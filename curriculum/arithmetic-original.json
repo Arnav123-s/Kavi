@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "source_id": "demorgan-arithmetic-1858",
+  "title": "Elements of arithmetic, fifth edition / seventeenth thousand",
+  "author": "Augustus De Morgan",
+  "language": "en",
+  "translation": false,
+  "catalog_url": "https://www.gutenberg.org/ebooks/68662",
+  "access_url": "https://www.gutenberg.org/cache/epub/68662/pg68662.txt",
+  "local_path": "private/sources/demorgan-elements-arithmetic-68662.txt",
+  "sha256": "c7dc1494dc3172531d79f11108c231377a4c17be0dbf9eb1ccce1a163e9ffd2f",
+  "scope": "Book I, Sections I-IX, in printed order. Excludes transcriber notes, title matter, preface, contents, Book II, appendices and license footer from lessons.",
+  "rights": "Public domain in the USA according to the exact ebook catalog; retain digitization credits and the complete download privately.",
+  "digital_witness": "Digitized from Internet Archive images by Richard Tonsing and the Online Distributed Proofreading Team. The transcription preserves old spelling, silently corrects typography, and encodes print formatting. This is not an autograph manuscript.",
+  "reviewed": "Catalog, download header, table of contents, section boundaries, numeration paragraphs 5-9, addition paragraph 29, multiplication 47-49, division 69-70, and fractions 104. The rest is not represented as close-read by the developer.",
+  "limitations": "Historical framing and claims are not automatically true. Quantitative graders cover named mathematical subskills only, not historical assertions or complete subject mastery. Diagrams represented as text do not constitute visual understanding."
+}

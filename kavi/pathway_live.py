@@ -7,6 +7,8 @@ run artifacts stay under the ignored local ``runs`` directory.
 
 from __future__ import annotations
 
+from .file_io import atomic_replace
+
 from dataclasses import dataclass, replace
 import json
 from pathlib import Path
@@ -68,7 +70,7 @@ def _safe_write_json(path: Path, payload: dict[str, object]) -> None:
         json.dumps(payload, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
-    temporary.replace(path)
+    atomic_replace(temporary, path)
 
 
 class LiveEventBus:

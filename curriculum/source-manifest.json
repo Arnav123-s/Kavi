@@ -2,6 +2,20 @@
   "schema_version": 1,
   "sources": [
     {
+      "source_id": "demorgan-arithmetic-1858",
+      "source_type": "original-authored-work",
+      "educational_purpose": "Learn original English arithmetic prose and assess numeration, arithmetic, fractions and later Book I topics independently.",
+      "title": "Elements of arithmetic (1858 digital witness)",
+      "creator": "Augustus De Morgan",
+      "original_url": "https://www.gutenberg.org/ebooks/68662",
+      "license_class": "public-domain-us",
+      "license_url": "https://www.gutenberg.org/ebooks/68662",
+      "status": "approved",
+      "review_note": "Owner authorized original-source continued teaching on 2026-09-04. Catalog identifies English, original 1858 publication, public domain USA. Exact private download and reviewed scope are fingerprinted in curriculum/arithmetic-original.json. No translation; raw book remains private. Historical claims are not automatically true.",
+      "subjects": ["arithmetic", "number words", "mathematical reading"],
+      "levels": ["foundation", "elementary arithmetic"]
+    },
+    {
       "source_id": "unicode-17-script-property",
       "source_type": "original-technical-reference",
       "educational_purpose": "Correct character script identity using original maintainer data, with exact checks. This does not teach a spoken language.",

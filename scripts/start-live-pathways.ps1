@@ -7,7 +7,9 @@ param(
     [int]$StartDelaySeconds = 8,
 
     [ValidateRange(1, 8)]
-    [int]$MaxParallelPaths = 4
+    [int]$MaxParallelPaths = 4,
+
+    [switch]$AutoTeach
 )
 
 $ErrorActionPreference = 'Stop'
@@ -20,6 +22,8 @@ $kaviControlScript = Join-Path $PSScriptRoot 'show-live-controls.ps1'
 New-Item -ItemType Directory -Path $kaviRunDir | Out-Null
 
 $kaviRunner = "python -u -m kavi.pathway_cli run --run-dir '$kaviRunDir' --interval-ms $IntervalMs --start-delay-seconds $StartDelaySeconds --max-parallel-paths $MaxParallelPaths --pause-file '$kaviPauseFile' --stop-file '$kaviStopFile'"
+if ($AutoTeach) { $kaviRunner += ' --auto-teach' }
+$kaviTeaching = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel lessons"
 $kaviAnswers = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel answers"
 $kaviPathways = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel pathways"
 $kaviLearning = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel learning"
@@ -47,10 +51,11 @@ function Start-KaviTerminalTab {
     Start-Sleep -Milliseconds 250
 }
 
-Write-Host "Opening one Windows Terminal window with six Kavi tabs."
+Write-Host "Opening one Windows Terminal window with seven Kavi tabs."
 Write-Host "Local run directory: $kaviRunDir"
 $kaviWindowName = "KaviPathways-$kaviStamp"
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Controller' -CommandArguments @('-Command', $kaviRunner)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Teaching' -CommandArguments @('-Command', $kaviTeaching)
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Answers' -CommandArguments @('-Command', $kaviAnswers)
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Pathways' -CommandArguments @('-Command', $kaviPathways)
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Learning' -CommandArguments @('-Command', $kaviLearning)

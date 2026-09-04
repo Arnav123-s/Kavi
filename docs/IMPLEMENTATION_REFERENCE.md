@@ -5,16 +5,14 @@ Status: describes the code currently present in this repository
 
 ## Scope
 
-Kavi currently contains deliberately narrow, executable model cores. One learns
-from generated lowercase glyphs and decimal digits by compressing evidence into
-class prototypes; another learns generated addition and subtraction through a
-typed arithmetic pathway; and a third learns eleven bounded Unicode
-script-oriented scalar prototypes. A fourth core learns a compact
-expression-versus-relation distinction from one locally fingerprinted,
-reviewed algebra lesson. An exact one-scalar Unicode contract sits in front of
-the third core. The supporting runner makes routing, verification, candidate
-promotion, explanation checking, and resource reporting observable before a
-broader curriculum is attempted.
+Kavi currently contains one unified path-centric model plus deliberately narrow
+regression cores. Its first five stages form glyph, arithmetic, exact Unicode,
+script-oriented, and expression/relation routes. Phase 2A adds six learned
+typed composition routes that connect those paths into bounded nested
+programs. An exact one-scalar Unicode contract sits before script routing. The
+supporting runner makes routing, nested execution, verification, candidate
+promotion, earlier-skill retention, archiving, and resource reporting
+observable before a broader curriculum is attempted.
 
 It is not a general-purpose language system, a trained textbook reader, a web
 agent, a background service, or a self-modifying program.
@@ -42,8 +40,9 @@ agent, a background service, or a self-modifying program.
 | kavi.textbook_runtime | Local-only lesson loader, PDF/extract fingerprint verification, finite source-event trace, pause/stop controls, and protected/held-out readouts. |
 | kavi.adaptive_syllabus | Finite seeded syllabus runner, compact-state checkpoint, 90% gates, visible per-question grades, and declared repair queues. |
 | kavi.adaptive_cli | Command-line entry point for local adaptive syllabus runs and review. |
-| kavi.pathway_circuit | Unified path-centric circuit state, local component roles, route amplitudes, jump adapters, arithmetic transforms, and candidate evaluation. |
-| kavi.pathway_live | Finite five-stage persistent-circuit runtime, separate local event feeds, active checkpoints, and inactive parent archives. |
+| kavi.pathway_circuit | Unified path-centric circuit state, local component roles, route amplitudes, jump adapters, arithmetic transforms, typed composition, and candidate evaluation. |
+| kavi.composition_curriculum | Source-free typed route contracts plus disjoint current, protected, and held-out nested programs. |
+| kavi.pathway_live | Finite six-stage persistent-circuit runtime, nested call traces, separate local event feeds, active checkpoints, and inactive parent archives. |
 | kavi.pathway_cli | Run, watch, inspect-state, and pause/resume/stop commands for the unified circuit experiment. |
 | kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
 | kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
@@ -53,8 +52,9 @@ agent, a background service, or a self-modifying program.
 
 The newest unified experiment is specified in
 [PATH_CENTRIC_CIRCUIT.md](PATH_CENTRIC_CIRCUIT.md). Unlike the earlier school,
-it retains one active circuit across the five implemented stages. Later
-notation routes use jump adapters from earlier glyph and arithmetic routes.
+it retains one active circuit across the six implemented stages. Later
+notation and composition routes use jump adapters from earlier glyph, script,
+and arithmetic routes.
 Only the active state is available to inference; replaced parents are frozen
 under the ignored run archive and are never loaded by the runtime.
 
@@ -120,6 +120,22 @@ and a promotion count; it does not retain PDF text or a growing notation
 archive. See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for the
 mathematics, source boundary, and visible run command.
 
+## Typed composition inference
+
+A `CompositionCall` is a temporary typed tree. The persistent state keeps the
+operator signature and target-path connection, not the tree, literal values,
+display text, or expected answer. Exact type contracts choose one compatible
+route; unknown signatures abstain. Child routes execute first, and their
+selected path IDs become sources for the parent call. The source set is divided
+into waves of at most four paths. Default limits also cap a program at eight
+levels and 64 nodes.
+
+The source-free Phase 2A curriculum teaches six structural contracts and tests
+unseen combinations. Its deepest held-out programs combine script or glyph
+classification, label equality, nested arithmetic, and conditional selection.
+Every candidate must retain all prior glyph, arithmetic, Unicode, script, and
+notation checks. See [TYPED_COMPOSITION_STAGE.md](TYPED_COMPOSITION_STAGE.md).
+
 ## Learning path
 
 For a target-only event, the exact arithmetic verifier produces positive,
@@ -170,8 +186,7 @@ other source classes quarantined pending document-specific review. See
 
 Every runtime invocation has a finite step count. It uses one serial inference
 path per event. One or two evaluator workers may score independent evaluation
-cases, but they do not parallelize the causal inference path. The runtime
-neither contacts the network nor writes its learned state to disk.
+cases, but they do not parallelize the causal inference path. The original simple runtimes neither contact the network nor persist learned state. The unified pathway runtime writes an active checkpoint, inactive parent archives, and event feeds under its run directory.
 
 A caller may supply pause and stop file paths. While the pause file exists,
 the process waits. When the stop file exists, the next control check ends the

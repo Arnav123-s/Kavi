@@ -22,11 +22,12 @@ The active state contains:
 - categorical routes, each with a task context, output, learned shape, source
   paths, support, resistance, coupling, phase, and revision;
 - arithmetic transform routes with a verified local transformation;
+- typed composition connections to supplied operators;
 - jump adapters connecting reusable source paths to later routes;
 - identifiers for externally verified foundation paths; and
 - a promotion count.
 
-It contains no textbook pages, lesson strings, questions, answers, runtime
+It contains no textbook pages, lesson strings, whole questions, expected-answer records, runtime
 logs, or archived parents. Those boundaries are checked by tests.
 
 The same spelling or symbol can participate in different contexts without
@@ -38,7 +39,7 @@ Changing the algebra route does not rewrite the glyph route.
 ## Flow and sparse activation
 
 Each event produces a small set of source-path activations. The runtime divides
-them into bounded waves, with at most four simultaneous paths by default.
+them into bounded trace groups of at most four paths by default. Execution is serial; these groups do not implement hardware parallelism.
 Inactive paths are not evaluated as active sources. Later stages can activate
 earlier learned paths:
 
@@ -133,27 +134,35 @@ The unified runtime executes, in prerequisite order:
 1. generated lowercase ASCII letter and digit routes;
 2. exact generated addition and subtraction transform routes;
 3. exact Unicode scalar preservation;
-4. eleven generated script-oriented scalar routes; and
+4. eleven generated script-oriented scalar routes;
 5. one fingerprinted local textbook lesson distinguishing expressions from
-   relations.
+   relations; and
+6. six typed composition routes that reuse earlier paths inside unseen nested
+   programs while retaining every earlier fixed check.
 
-It then stops at `word-forms-and-definitions`, because word composition,
-sentence meaning, qualified multilingual review, and the necessary source
-lessons do not yet exist. Algebraic manipulation, calculus, literature,
-general conversation, autonomous browsing, and source-code self-modification
-are not implemented.
+The sixth stage is domain-independent routing infrastructure; its arithmetic,
+glyph, and script programs are test instruments, not its intended subject
+limit. See [TYPED_COMPOSITION_STAGE.md](TYPED_COMPOSITION_STAGE.md).
+
+The runtime then stops at `word-forms-and-definitions`. Typed composition now
+exists, but sequence-aware text, language-specific morphology and boundaries,
+qualified multilingual review, and approved source lessons do not. Algebraic
+manipulation beyond the fixed paths, calculus, literature, general
+conversation, autonomous browsing, and source-code self-modification are not
+implemented.
 
 ## Live views
 
 Run the visible multi-tab launcher from PowerShell:
 
 ```powershell
-.\scripts\start-live-pathways.ps1
+.\scripts\start-live-pathways.ps1 -AutoTeach
 ```
 
 It opens one Windows Terminal window with separate tabs for:
 
 - the finite curriculum controller;
+- teacher explanations, diagnosis, and different corrective examples;
 - model answers;
 - active waves, candidate routes, intensities, and jump components;
 - proposed route changes, regression checks, promotions, and archives;

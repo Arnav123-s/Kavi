@@ -41,6 +41,9 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--interval-ms", type=int, default=250)
     run.add_argument("--start-delay-seconds", type=int, default=6)
     run.add_argument("--seed", type=int, default=31)
+    run.add_argument("--auto-teach", action="store_true")
+    run.add_argument("--teaching-policy", type=Path, default=Path("curriculum/teaching-policy.json"))
+    run.add_argument("--script-source", type=Path, default=Path("private/sources/unicode-17.0.0-Scripts.txt"))
     run.add_argument("--pause-file")
     run.add_argument("--stop-file")
 
@@ -48,6 +51,7 @@ def build_parser() -> argparse.ArgumentParser:
     watch.add_argument("--run-dir", type=Path, required=True)
     watch.add_argument("--channel", choices=CHANNELS, required=True)
     watch.add_argument("--poll-ms", type=int, default=100)
+    watch.add_argument("--technical", action="store_true", help="show route identifiers and numeric detail")
 
     inspect = subcommands.add_parser(
         "inspect-state",
@@ -84,6 +88,13 @@ def _inspect_state(path: Path) -> None:
             f"    {route.route_id}: operation={route.operation}; support={route.support}; "
             f"revision={route.revision}; resistance={route.resistance:.3f}"
         )
+    print("  composition routes:")
+    for route in state.composition_routes:
+        print(
+            f"    {route.route_id}: {route.input_types} -> {route.output_type}; "
+            f"target={route.target_path_id}; support={route.support}; "
+            f"revision={route.revision}; resistance={route.resistance:.3f}"
+        )
     print("  verified foundations: " + ", ".join(state.verified_foundations))
     print("  archived parents are not loaded or consulted by this command.")
 
@@ -116,7 +127,9 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     if args.command == "watch":
-        return watch_channel(args.run_dir, args.channel, poll_ms=args.poll_ms)
+        return watch_channel(
+            args.run_dir, args.channel, poll_ms=args.poll_ms, technical=args.technical
+        )
     if args.command == "inspect-state":
         _inspect_state(args.state_file)
         return 0
@@ -135,14 +148,21 @@ def main(argv: list[str] | None = None) -> int:
         pause_file=_optional_path(args.pause_file),
         stop_file=_optional_path(args.stop_file),
     )
-    runtime = PathwayCurriculumRuntime(config)
+    if args.auto_teach:
+        from .developmental import DevelopmentalRuntime
+
+        runtime = DevelopmentalRuntime(
+            config, policy_path=args.teaching_policy, script_source=args.script_source
+        )
+    else:
+        runtime = PathwayCurriculumRuntime(config)
     summary = runtime.run()
     print("\nsummary:")
     print("  completed: " + ", ".join(summary.completed_stage_ids))
     print(f"  active routes={summary.routes}; jump adapters={summary.jump_adapters}")
-    print(f"  stopped={summary.stopped}")
+    print(f"  stopped={summary.stopped}; failed={summary.failed}")
     print(f"  next gate: {summary.next_gate}")
-    return 1 if summary.stopped else 0
+    return 1 if summary.stopped or summary.failed else 0
 
 
 if __name__ == "__main__":

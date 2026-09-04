@@ -2,6 +2,18 @@
   "schema_version": 1,
   "sources": [
     {
+      "source_id": "unicode-17-script-property",
+      "title": "Unicode 17.0.0 Character Database: Scripts.txt",
+      "creator": "Unicode Consortium",
+      "original_url": "https://www.unicode.org/Public/17.0.0/ucd/Scripts.txt",
+      "license_class": "unicode-license-v3",
+      "license_url": "https://www.unicode.org/license.txt",
+      "status": "approved",
+      "review_note": "Owner requested original-source automatic corrective teaching on 2026-09-04. Reviewed original version header, script ranges, and Unicode License V3. Teacher-only local reference, SHA-256 9f5e50d3abaee7d6ce09480f325c706f485ae3240912527e651954d2d6b035bf. Source and license remain under ignored private/sources; the learner does not consult the reference during inference.",
+      "subjects": ["character identity", "script property"],
+      "levels": ["foundation", "corrective-teaching"]
+    },
+    {
       "source_id": "nasa-ntrs-19830024400",
       "title": "NASA Publications Guide",
       "creator": "National Aeronautics and Space Administration",

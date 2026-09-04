@@ -14,12 +14,19 @@ import random
 import time
 from typing import Callable, Sequence
 
+from .composition_curriculum import (
+    composition_units,
+    held_out_manifest as composition_held_out_manifest,
+    protected_manifest as composition_protected_manifest,
+)
 from .pathway_circuit import (
     CandidateAssessment,
     CategoryInference,
     CircuitSample,
     CircuitState,
     ClassificationMetrics,
+    CompositionExample,
+    CompositionInference,
     PathwayCircuitCore,
     StateDelta,
     arithmetic_target_weights,
@@ -50,7 +57,7 @@ from .unicode_runtime import (
 )
 
 
-CHANNELS = ("answers", "pathways", "learning", "grading")
+CHANNELS = ("lessons", "answers", "pathways", "learning", "grading")
 TERMINAL_STATES = frozenset({"complete", "stopped", "failed"})
 
 
@@ -138,6 +145,7 @@ class PathwayRunSummary:
     next_gate: str
     routes: int
     jump_adapters: int
+    failed: bool = False
 
 
 def _symbol_sample(event: SymbolEvent) -> CircuitSample:
@@ -225,11 +233,25 @@ class PathwayCurriculumRuntime:
         *,
         emit: Callable[[str], None] | None = None,
     ) -> None:
+        config = replace(
+            config,
+            pause_file=config.pause_file or config.run_dir / "pause",
+            stop_file=config.stop_file or config.run_dir / "stop",
+        )
         self.config = config
         self.emit = emit or (lambda line: print(line, flush=True))
         self.bus = LiveEventBus(config.run_dir)
-        source_manifest = SourceManifest.load(config.source_manifest_path)
-        self.textbook_lesson = LocalTextbookLesson.load(config.lesson_path, source_manifest)
+        try:
+            source_manifest = SourceManifest.load(config.source_manifest_path)
+            self.textbook_lesson = LocalTextbookLesson.load(
+                config.lesson_path, source_manifest
+            )
+        except Exception as error:
+            self.bus.update_status(
+                "failed", next_gate="source initialization",
+                error=f"{type(error).__name__}: {error}",
+            )
+            raise
         self.core = PathwayCircuitCore()
         self.completed: list[str] = []
         self.random = random.Random(config.seed)
@@ -384,6 +406,62 @@ class PathwayCurriculumRuntime:
             input=f"{event.text} = ?",
             answer="abstain" if inference.answer is None else str(inference.answer),
             expected=str(event.target),
+            confidence=round(inference.confidence, 6),
+        )
+
+    def _trace_composition(
+        self,
+        stage_id: str,
+        phase: str,
+        example: CompositionExample,
+        inference: CompositionInference,
+    ) -> None:
+        if not inference.steps:
+            self.bus.emit(
+                "pathways",
+                "route-trace",
+                stage=stage_id,
+                phase=phase,
+                event_id=example.event_id,
+                input=example.display_text,
+                waves=[],
+                candidates=[],
+                selected_route=None,
+                jumps=[],
+                abstain_reason=inference.abstain_reason,
+            )
+        for step in inference.steps:
+            candidates = [
+                route_id
+                for route_id in (step.selected_route_id, step.target_path_id)
+                if route_id is not None
+            ]
+            self.bus.emit(
+                "pathways",
+                "route-trace",
+                stage=stage_id,
+                phase=f"{phase}:{step.node_id}",
+                event_id=example.event_id,
+                input=f"{example.display_text} :: {step.operator_id}{step.input_types}",
+                waves=[list(wave) for wave in step.activation_waves],
+                candidates=candidates,
+                selected_route=step.selected_route_id,
+                jumps=list(step.active_adapter_ids),
+                intensity=round(step.intensity, 6),
+                output_type=step.output_type,
+                output=step.answer,
+                abstain_reason=step.abstain_reason,
+            )
+        answer = "abstain" if inference.answer is None else repr(inference.answer)
+        self.bus.emit(
+            "answers",
+            "model-answer",
+            stage=stage_id,
+            phase=phase,
+            event_id=example.event_id,
+            input=example.display_text,
+            answer=f"{answer} : {inference.output_type or 'unknown'}",
+            expected=f"{example.expected_value!r} : {example.expected_type}",
             confidence=round(inference.confidence, 6),
         )
 
@@ -743,8 +821,187 @@ class PathwayCurriculumRuntime:
             self._checkpoint()
         return passed
 
+    def _earlier_skills_retained(
+        self,
+        state: CircuitState,
+    ) -> tuple[bool, dict[str, float]]:
+        glyphs = tuple(
+            _symbol_sample(event)
+            for event in (*symbol_protected_manifest(), *symbol_held_out_manifest())
+        )
+        arithmetic = (*arithmetic_protected_manifest(), *arithmetic_held_out_manifest())
+        scripts = tuple(
+            _script_sample(event)
+            for event in (*script_protected_manifest(), *script_held_out_manifest())
+        )
+        notation = tuple(
+            _notation_sample(event, self.core)
+            for event in (*self.textbook_lesson.protected, *self.textbook_lesson.held_out)
+        )
+        values = {
+            "glyph-kind": self.core.evaluate_categories(
+                glyphs,
+                state=state,
+                max_parallel_paths=self.config.max_parallel_paths,
+            ).exact_accuracy,
+            "arithmetic": self.core.evaluate_arithmetic(
+                arithmetic,
+                state=state,
+                max_parallel_paths=self.config.max_parallel_paths,
+            ).exact_accuracy,
+            "unicode-contract": float("path/unicode-scalar" in state.verified_foundations),
+            "unicode-script": self.core.evaluate_categories(
+                scripts,
+                state=state,
+                max_parallel_paths=self.config.max_parallel_paths,
+            ).exact_accuracy,
+            "notation-kind": self.core.evaluate_categories(
+                notation,
+                state=state,
+                max_parallel_paths=self.config.max_parallel_paths,
+            ).exact_accuracy,
+        }
+        return all(value == 1.0 for value in values.values()), values
+
+    def _grade_composition_stage(self, stage_id: str) -> bool:
+        # Final cases are created only after all candidate decisions are over.
+        from .composition_evaluation import AUDIT_SEED, final_audit_manifest
+
+        protected = list(composition_protected_manifest())
+        validation = list(composition_held_out_manifest())
+        self.random.shuffle(protected)
+        self.random.shuffle(validation)
+        final_cases = final_audit_manifest()
+        before_audit = self.core.state
+        metrics: dict[str, ClassificationMetrics] = {}
+        partitions = (
+            ("protected", protected),
+            ("held-out", validation),
+            ("final-audit", final_cases),
+        )
+        for partition, examples in partitions:
+            answered = correct_count = 0
+            for question_index, example in enumerate(examples, 1):
+                if self._stop_requested() or not self._wait_if_paused():
+                    return False
+                inference = self.core.infer_composition(
+                    example,
+                    max_parallel_paths=self.config.max_parallel_paths,
+                )
+                self._trace_composition(stage_id, partition, example, inference)
+                correct = (
+                    inference.output_type == example.expected_type
+                    and inference.answer == example.expected_value
+                )
+                answered += int(inference.answer is not None)
+                correct_count += int(correct)
+                self.bus.emit(
+                    "grading", "test-case", stage=stage_id,
+                    partition=partition, event_id=example.event_id,
+                    question_index=question_index, question_total=len(examples),
+                    running_accuracy=correct_count / question_index,
+                    input=example.display_text,
+                    expected=f"{example.expected_value!r} : {example.expected_type}",
+                    answer=(
+                        "abstain" if inference.answer is None
+                        else f"{inference.answer!r} : {inference.output_type}"
+                    ),
+                    result="PASS" if correct else "FAIL",
+                )
+                if not self._step_wait():
+                    return False
+            metrics[partition] = ClassificationMetrics(
+                len(examples), answered, correct_count
+            )
+        retained, details = self._earlier_skills_retained(self.core.state)
+        state_unchanged = self.core.state == before_audit
+        passed = (
+            all(result.exact_accuracy == 1.0 for result in metrics.values())
+            and retained and state_unchanged
+        )
+        self.bus.emit(
+            "grading", "stage-grade", stage=stage_id,
+            protected_accuracy=metrics["protected"].exact_accuracy,
+            held_out_accuracy=metrics["held-out"].exact_accuracy,
+            protected_threshold=1.0, held_out_threshold=1.0,
+            final_audit_accuracy=metrics["final-audit"].exact_accuracy,
+            final_audit_cases=len(final_cases), final_audit_seed=AUDIT_SEED,
+            final_audit_threshold=1.0, audit_state_unchanged=state_unchanged,
+            earlier_retention_accuracy=min(details.values()),
+            earlier_retention_threshold=1.0,
+            result="PASS" if passed else "FAIL",
+        )
+        return passed
+
+
+    def _run_composition_stage(self) -> bool:
+        stage_id = "typed-compositional-paths"
+        self.emit(
+            f"[stage] {stage_id}: learning typed connections and executing nested path programs"
+        )
+        protected_so_far: list[CompositionExample] = []
+        held_out_so_far: list[CompositionExample] = []
+        for unit in composition_units():
+            for example in unit.train:
+                before = self.core.infer_composition(
+                    example,
+                    max_parallel_paths=self.config.max_parallel_paths,
+                )
+                self._trace_composition(stage_id, "teach-before", example, before)
+            candidate, delta = self.core.propose_composition_update(unit.rule)
+            protected = (*protected_so_far, *unit.protected)
+            held_out = (*held_out_so_far, *unit.held_out)
+            assessment = self.core.assess_composition_candidate(
+                unit.train,
+                protected,
+                held_out,
+                candidate,
+                delta,
+                max_parallel_paths=self.config.max_parallel_paths,
+            )
+            retained, details = self._earlier_skills_retained(candidate)
+            accepted = assessment.accepted and retained
+            self._emit_learning(
+                stage_id,
+                delta,
+                accepted,
+                candidate,
+                parent_protected=assessment.parent_protected,
+                candidate_protected=assessment.candidate_protected,
+                parent_held_out=assessment.parent_held_out,
+                candidate_held_out=assessment.candidate_held_out,
+            )
+            self.bus.emit(
+                "grading",
+                "retention-check",
+                stage=stage_id,
+                rule=unit.rule.rule_id,
+                retained=retained,
+                details=details,
+                result="PASS" if retained else "FAIL",
+            )
+            if not accepted:
+                return False
+            self._promote(candidate, stage_id, delta)
+            self._checkpoint()
+            for example in unit.train:
+                after = self.core.infer_composition(
+                    example,
+                    max_parallel_paths=self.config.max_parallel_paths,
+                )
+                self._trace_composition(stage_id, "teach-after", example, after)
+            protected_so_far.extend(unit.protected)
+            held_out_so_far.extend(unit.held_out)
+            if not self._step_wait():
+                return False
+        passed = self._grade_composition_stage(stage_id)
+        if passed:
+            self.completed.append(stage_id)
+            self._checkpoint()
+        return passed
+
     def run(self) -> PathwayRunSummary:
-        """Run all five implemented stages and stop at the declared next gate."""
+        """Run all six implemented stages and stop at the declared next gate."""
 
         self.emit("Kavi unified path-centric curriculum")
         self.emit(f"  run directory: {self.bus.run_dir}")
@@ -756,7 +1013,7 @@ class PathwayCurriculumRuntime:
             "or claim of language/calculus capability"
         )
         self.emit(
-            f"  start delay: {self.config.start_delay_seconds}s so all four viewers can attach"
+            f"  start delay: {self.config.start_delay_seconds}s so the live viewers can attach"
         )
         self.bus.update_status("running", completed_stage_ids=[])
         if self.config.start_delay_seconds:
@@ -767,9 +1024,27 @@ class PathwayCurriculumRuntime:
             self._run_unicode_contract_stage,
             self._run_script_stage,
             self._run_textbook_stage,
+            self._run_composition_stage,
         )
         try:
-            for stage in stages:
+            descriptions = (
+                ("Letters and digits", "Learn small letter/digit patterns from generated characters."),
+                ("Addition and subtraction", "Use teacher-supplied arithmetic rules and check different numbers."),
+                ("Preserve characters", "Check that each Unicode character remains exactly itself."),
+                ("Writing systems", "Learn small character-position patterns for eleven writing systems."),
+                ("A textbook lesson", "Use the reviewed algebra lesson to distinguish expressions from comparisons."),
+                ("Connect existing skills", "Install typed connections, then try nested questions and retain older skills."),
+            )
+            for index, stage in enumerate(stages, 1):
+                title, detail = descriptions[index - 1]
+                self.bus.emit(
+                    "lessons", "teaching-step", title=f"Lesson {index}/{len(stages)}: {title}",
+                    detail=detail,
+                )
+                self.bus.update_status(
+                    "running", current_stage_index=index, total_stages=len(stages),
+                    current_lesson=title, completed_stage_ids=self.completed,
+                )
                 if self._stop_requested():
                     self.bus.update_status(
                         "stopped",
@@ -786,7 +1061,7 @@ class PathwayCurriculumRuntime:
                         completed_stage_ids=self.completed,
                         next_gate=gate,
                     )
-                    return self._summary(state == "stopped", gate)
+                    return self._summary(state == "stopped", gate, failed=state == "failed")
             gate = "word-forms-and-definitions (not implemented or source-approved yet)"
             self.bus.emit(
                 "grading",
@@ -799,7 +1074,7 @@ class PathwayCurriculumRuntime:
                 completed_stage_ids=self.completed,
                 next_gate=gate,
             )
-            self.emit(f"[complete] five implemented stages passed; next gate: {gate}")
+            self.emit(f"[complete] six implemented stages passed; next gate: {gate}")
             return self._summary(False, gate)
         except Exception as error:
             self.bus.update_status(
@@ -810,7 +1085,9 @@ class PathwayCurriculumRuntime:
             )
             raise
 
-    def _summary(self, stopped: bool, next_gate: str) -> PathwayRunSummary:
+    def _summary(
+        self, stopped: bool, next_gate: str, *, failed: bool = False
+    ) -> PathwayRunSummary:
         ledger = self.core.resource_ledger()
         return PathwayRunSummary(
             completed_stage_ids=tuple(self.completed),
@@ -818,6 +1095,7 @@ class PathwayCurriculumRuntime:
             next_gate=next_gate,
             routes=ledger["routes"],
             jump_adapters=ledger["jump_adapters"],
+            failed=failed,
         )
 
 
@@ -838,7 +1116,7 @@ def format_live_event(event: dict[str, object]) -> str:
         return (
             f"[{stage} | {event.get('phase')}] {event.get('input')}\n"
             f"  Kavi: {event.get('answer')} | expected: {event.get('expected')} | "
-            f"confidence={float(event.get('confidence', 0.0)):.3f}"
+            f"route score={float(event.get('confidence', 0.0)):.3f}"
         )
     if channel == "pathways":
         waves = event.get("waves", [])
@@ -858,13 +1136,19 @@ def format_live_event(event: dict[str, object]) -> str:
                 candidate_lines.append(f"    {candidate}")
         route_text = "\n".join(candidate_lines) or "    none"
         jumps = ", ".join(str(item) for item in event.get("jumps", [])) or "none"
+        output_line = ""
+        if "output_type" in event:
+            output_line = (
+                f"\n  output: {event.get('output')!r} : "
+                f"{event.get('output_type') or 'unknown'}"
+            )
         reason = event.get("abstain_reason")
         reason_line = f"\n  abstain: {reason}" if reason else ""
         return (
             f"[{stage} | {event.get('phase')}] {event.get('input')}\n"
             f"{wave_lines}\n  candidate routes:\n{route_text}\n"
             f"  selected: {event.get('selected_route') or 'none'}\n"
-            f"  jump components: {jumps}{reason_line}"
+            f"  jump components: {jumps}{output_line}{reason_line}"
         )
     if channel == "learning":
         if kind == "parent-archived":
@@ -888,18 +1172,39 @@ def format_live_event(event: dict[str, object]) -> str:
             f"  total routes={event.get('model_routes')}; jumps={event.get('model_jump_adapters')}; "
             f"numeric payload≈{event.get('numeric_payload_bytes')} bytes"
         )
+    if channel == "grading" and kind == "retention-check":
+        details = ", ".join(
+            f"{name}={float(value):.2%}"
+            for name, value in dict(event.get("details", {})).items()
+        )
+        return f"[{stage}] earlier-skill retention {event.get('result')}\n  {details}"
     if channel == "grading" and kind == "test-case":
         return (
             f"[{stage} | {event.get('partition')}] {event.get('result')} {event.get('input')}\n"
             f"  expected: {event.get('expected')} | Kavi: {event.get('answer')}"
         )
     if channel == "grading" and kind == "stage-grade":
+        audit_line = ""
+        if "final_audit_accuracy" in event:
+            audit_line = (
+                f"\n  final audit={float(event['final_audit_accuracy']):.2%}"
+                f" ({event['final_audit_cases']} cases; state unchanged="
+                f"{event['audit_state_unchanged']})"
+            )
+        retention_line = ""
+        if "earlier_retention_accuracy" in event:
+            retention_line = (
+                f"\n  earlier-skill retention="
+                f"{float(event.get('earlier_retention_accuracy', 0.0)):.2%} "
+                f"(need {float(event.get('earlier_retention_threshold', 0.0)):.2%})"
+            )
         return (
             f"[{stage}] {event.get('result')}\n"
             f"  protected={float(event.get('protected_accuracy', 0.0)):.2%} "
             f"(need {float(event.get('protected_threshold', 0.0)):.2%})\n"
             f"  held-out={float(event.get('held_out_accuracy', 0.0)):.2%} "
             f"(need {float(event.get('held_out_threshold', 0.0)):.2%})"
+            f"{retention_line}{audit_line}"
         )
     return (
         f"[curriculum boundary] completed: "
@@ -914,11 +1219,15 @@ def watch_channel(
     *,
     emit: Callable[[str], None] | None = None,
     poll_ms: int = 100,
+    technical: bool = False,
 ) -> int:
     """Follow one finite local channel and exit after its writer finishes."""
 
     if channel not in CHANNELS:
         raise ValueError(f"channel must be one of: {', '.join(CHANNELS)}")
+    from .friendly_live import format_event
+
+    formatter = format_live_event if technical else format_event
     output = emit or (lambda line: print(line, flush=True))
     root = run_dir.resolve()
     event_path = root / f"{channel}.jsonl"
@@ -935,7 +1244,7 @@ def watch_channel(
                 for line in stream:
                     if not line.strip():
                         continue
-                    output("\n" + format_live_event(json.loads(line)))
+                    output("\n" + formatter(json.loads(line)))
                     emitted = True
                 position = stream.tell()
         except FileNotFoundError:

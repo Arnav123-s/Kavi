@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "Kavi unified path-centric circuit curriculum",
+  "runtime": "kavi.pathway_cli",
+  "ordering_policy": "The runtime executes these stages serially in the listed prerequisite order. A candidate is promoted only after its declared current, protected, held-out, and earlier-skill checks pass.",
+  "stages": [
+    {
+      "stage_id": "glyph-kinds",
+      "status": "runnable",
+      "source_kind": "generated",
+      "prerequisites": [],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "quantity-and-exact-relations",
+      "status": "runnable",
+      "source_kind": "generated",
+      "prerequisites": ["glyph-kinds"],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "unicode-signal-contract",
+      "status": "runnable",
+      "source_kind": "generated-exact-contract",
+      "prerequisites": ["glyph-kinds"],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "multiscript-glyph-foundations",
+      "status": "runnable",
+      "source_kind": "generated",
+      "prerequisites": ["glyph-kinds", "unicode-signal-contract"],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
+      "stage_id": "textbook-concepts-expressions-relations",
+      "status": "runnable-with-approved-local-lesson",
+      "source_kind": "reviewed-fingerprinted-local-lesson",
+      "prerequisites": [
+        "quantity-and-exact-relations",
+        "multiscript-glyph-foundations"
+      ],
+      "minimum_protected_accuracy": 0.9,
+      "minimum_held_out_accuracy": 0.9
+    },
+    {
+      "stage_id": "typed-compositional-paths",
+      "status": "runnable",
+      "source_kind": "generated-structural-contracts",
+      "prerequisites": [
+        "glyph-kinds",
+        "quantity-and-exact-relations",
+        "unicode-signal-contract",
+        "multiscript-glyph-foundations",
+        "textbook-concepts-expressions-relations"
+      ],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "minimum_earlier_skill_retention": 1.0,
+      "scope": "Learns six typed operator-to-path contracts and tests unseen nested programs. This is a domain-independent composition mechanism, not natural-language understanding."
+    }
+  ],
+  "next_gate": {
+    "stage_id": "word-forms-and-definitions",
+    "status": "awaiting-model-capability-and-source-review",
+    "missing": [
+      "sequence-aware text representation",
+      "language-specific morphology and boundary paths",
+      "qualified language review",
+      "approved exact source lessons",
+      "protected and held-out composition tests"
+    ]
+  }
+}

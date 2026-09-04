@@ -216,13 +216,30 @@ class PathwayLiveRuntimeTests(unittest.TestCase):
             first_archive = json.loads(archives[0].read_text(encoding="utf-8"))
 
         self.assertFalse(summary.stopped)
+        self.assertTrue(summary.failed)
         self.assertEqual(len(summary.completed_stage_ids), 5)
-        self.assertEqual(summary.routes, 17)
+        self.assertEqual(summary.routes, 23)
         self.assertGreater(summary.jump_adapters, 0)
         self.assertNotIn("2 = 2", active_state_text)
         self.assertIn('"result": "PASS"', grading_text)
-        self.assertIn("curriculum-boundary", grading_text)
+        self.assertIn('"result": "FAIL"', grading_text)
         self.assertIn("path/glyph-kind/digit", pathway_text)
+        self.assertIn("path/composition/", pathway_text)
+        grades = [json.loads(line) for line in grading_text.splitlines()]
+        final_grade = next(
+            event for event in grades
+            if event["kind"] == "stage-grade"
+            and event["stage"] == "typed-compositional-paths"
+        )
+        self.assertEqual(final_grade["final_audit_cases"], 64)
+        self.assertEqual(final_grade["final_audit_accuracy"], 62 / 64)
+        self.assertTrue(final_grade["audit_state_unchanged"])
+        final_events = [
+            event for event in grades if event.get("partition") == "final-audit"
+        ]
+        self.assertEqual(len(final_events), 64)
+        last_change = max(event["sequence"] for event in learning_events)
+        self.assertGreater(min(event["sequence"] for event in final_events), last_change)
         last_promotion = [
             event
             for event in learning_events
@@ -252,6 +269,19 @@ class PathwayLiveRuntimeTests(unittest.TestCase):
             ).run()
         self.assertTrue(summary.stopped)
         self.assertEqual(summary.completed_stage_ids, ())
+
+    def test_missing_source_sets_terminal_failure_for_viewers(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            run_dir = root / "run"
+            with self.assertRaises(FileNotFoundError):
+                PathwayCurriculumRuntime(PathwayLiveConfig(
+                    run_dir=run_dir, lesson_path=root / "missing.json",
+                    source_manifest_path=MANIFEST_PATH,
+                ))
+            status = json.loads((run_dir / "status.json").read_text(encoding="utf-8"))
+            self.assertEqual(status["state"], "failed")
+            self.assertEqual(status["next_gate"], "source initialization")
 
     def test_archive_event_is_explicitly_outside_inference(self) -> None:
         text = format_live_event(

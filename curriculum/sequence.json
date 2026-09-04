@@ -62,11 +62,30 @@
       "required_verifier": "exact-numeral-and-arithmetic"
     },
     {
+      "stage_id": "typed-path-composition",
+      "level": "L3.5",
+      "prerequisites": [
+        "generated-ascii-bootstrap",
+        "multiscript-glyph-identity",
+        "quantity-and-numeral-systems"
+      ],
+      "concepts": [
+        "typed values",
+        "operator-to-path contracts",
+        "nested path execution",
+        "bounded parallel activation waves",
+        "contextual jumps without rewriting source paths",
+        "earlier-skill retention"
+      ],
+      "required_verifier": "exact-typed-program-and-prior-skill-retention"
+    },
+    {
       "stage_id": "language-specific-word-formation",
       "level": "L4",
       "prerequisites": [
         "multiscript-glyph-identity",
-        "quantity-and-numeral-systems"
+        "quantity-and-numeral-systems",
+        "typed-path-composition"
       ],
       "concepts": [
         "grapheme or character composition",

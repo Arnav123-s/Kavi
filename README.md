@@ -2,23 +2,23 @@
 
 **Author:** [Arnav123-s](https://github.com/Arnav123-s)
 
-Kavi is a model-first research project for a developmental learner with bounded growth. The model core is the project; the curriculum, evaluator, source gate, and CLI are supporting infrastructure used to teach and measure it under a hard device resource limit.
+Kavi is a model-first research project for a developmental learner with bounded growth. The model core is the project; the curriculum, evaluator, source gate, and CLI are supporting infrastructure used to teach and measure it with explicit execution budgets. A complete device-wide memory ceiling is still a research requirement.
 
 ## Current status
 
-Kavi contains a unified experimental path-centric circuit plus four earlier
-narrow model cores. The unified circuit keeps one active state across the
-currently runnable curriculum, treats routes and jump adapters as the learned
-objects, reuses earlier glyph and arithmetic routes in its later algebra
-concept routes, and archives each replaced parent outside the active model.
-The earlier cores comprise an arithmetic pathway, generated ASCII glyph and
-Unicode script prototypes, and a reviewed expression-versus-relation lesson.
-All runs are finite and evaluator-gated. This is not a general learner, a
-broadly textbook-trained model, or evidence of broad intelligence. See the
-[model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md), [Unicode scalar and
-script stage](docs/UNICODE_SCRIPT_STAGE.md), [reviewed textbook concept
-stage](docs/TEXTBOOK_CONCEPT_STAGE.md), [path-centric adaptive
-circuit](docs/PATH_CENTRIC_CIRCUIT.md), and [implementation
+Kavi contains one unified experimental path-centric circuit plus earlier narrow
+regression cores. The unified circuit keeps one active state across six
+implemented stages, treats routes and jump adapters as the learned objects,
+reuses earlier glyph and arithmetic routes in later contexts, and archives each
+replaced parent outside the active model. Phase 2A adds learned typed
+composition routes that execute unseen nested combinations of glyph, script,
+arithmetic, comparison, and selection paths. Algebra is one integration
+example, not the model's architectural boundary. All runs are finite and
+evaluator-gated. This is not a general learner, a broadly textbook-trained
+model, or evidence of broad intelligence. See the [model-first
+curriculum](docs/MODEL_FIRST_CURRICULUM.md), [path-centric adaptive
+circuit](docs/PATH_CENTRIC_CIRCUIT.md), [typed compositional
+pathways](docs/TYPED_COMPOSITION_STAGE.md), and [implementation
 reference](docs/IMPLEMENTATION_REFERENCE.md) for the exact boundary.
 
 The broader developmental architecture remains research. Any new finite stage
@@ -28,6 +28,24 @@ Kavi does
 not include autonomous source-code modification, background persistence, web
 learning, or hardware-limit changes. The proposed replacement for end-to-end
 backpropagation and the proposed consolidation mechanism remain open questions.
+
+## Automated teaching and live views
+
+The external teacher can diagnose a supported mistake, check an original
+reference, try several candidate updates, preserve older skills, and give a
+harder fresh test. The CLI shows teacher explanations separately from model
+answers. The latest development check improved from 62/64 to 64/64 on its
+bounded composition tests after correcting one existing script path.
+
+```powershell
+.\scripts\start-live-pathways.ps1 -AutoTeach -IntervalMs 350
+```
+
+This requires the reviewed local algebra lesson and fingerprinted Unicode
+source. See [Developmental teaching](docs/DEVELOPMENTAL_TEACHING.md) for the
+run command, exact mechanisms, 90% mastery policy, resource accounting, and
+unfinished language stages. Words, sentences, multiplication/division, and
+all-language textbook learning are not implemented by this automation.
 
 ## Central idea
 
@@ -44,6 +62,7 @@ The allocated learner size may change. The hard device resource limit does not i
 - [Reviewed textbook concept stage](docs/TEXTBOOK_CONCEPT_STAGE.md): first fingerprinted local-only source lesson, its compact model, exact evaluator, and live trace.
 - [Adaptive syllabus loop](docs/ADAPTIVE_SYLLABUS.md): finite seeded teaching/test loop, 90% gates, visible diagnostics, and approved repair queues.
 - [Path-centric adaptive circuit](docs/PATH_CENTRIC_CIRCUIT.md): one active cross-stage circuit, local element roles, complex route scoring, jump adapters, frozen external parent archives, and multi-tab live feeds.
+- [Typed compositional pathways](docs/TYPED_COMPOSITION_STAGE.md): learned typed operator connections, nested cross-domain path execution, strict budgets, and earlier-skill retention.
 - [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
 - [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
 - [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.

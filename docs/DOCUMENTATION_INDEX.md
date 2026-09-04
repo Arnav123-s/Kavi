@@ -11,6 +11,8 @@ Author: Arnav123-s
 | [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) | Implemented bounded source lesson | Private-source admission, compact expression/relation model, exact verifier, and live trace. |
 | [ADAPTIVE_SYLLABUS.md](ADAPTIVE_SYLLABUS.md) | Implemented bounded automation | Seeded random test order, 90% gates, visible diagnostics, local checkpointing, and approved repair queues. |
 | [PATH_CENTRIC_CIRCUIT.md](PATH_CENTRIC_CIRCUIT.md) | Implemented bounded model core | One active cross-stage circuit, reusable routes, jump adapters, complex route scoring, frozen external parents, and separate live feeds. |
+| [TYPED_COMPOSITION_STAGE.md](TYPED_COMPOSITION_STAGE.md) | Implemented bounded Phase 2A | Typed operator routes, nested cross-domain path execution, exact budgets, retention gates, and limitations. |
+| [DEVELOPMENTAL_TEACHING.md](DEVELOPMENTAL_TEACHING.md) | Implemented bounded teaching loop | External teacher, candidate search, source-backed correction, fresh harder tests, live explanations, and missing language capabilities. |
 | [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPRODUCIBILITY.md) | Implemented | How to run, stop, inspect, and reproduce the finite prototype. |
 | [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) | Implemented protocol | How candidates are measured and accepted or rejected. |
 | [DESIGN.md](DESIGN.md) | Research proposal | What developmental growth and consolidation are intended to investigate. |
@@ -53,6 +55,8 @@ Author: Arnav123-s
 | [curriculum/sequence.json](../curriculum/sequence.json) | Machine-readable plan | Curriculum stage order and prerequisites. |
 | [curriculum/source-manifest.json](../curriculum/source-manifest.json) | Machine-readable policy | Source-review decisions without source bodies. |
 | [curriculum/model-curriculum.json](../curriculum/model-curriculum.json) | Machine-readable curriculum | Ordered generated and narrowly reviewed runnable stages, plus explicit broader language/source waiting gates. |
+| [curriculum/pathway-curriculum.json](../curriculum/pathway-curriculum.json) | Machine-readable unified runtime | Six implemented persistent-circuit stages and the explicit next gate. |
+| [curriculum/teaching-policy.json](../curriculum/teaching-policy.json) | Runtime thresholds and developmental plan | 90% harder-test gate, fixed retention, finite trial budgets, and future lesson order. |
 | [curriculum/people-and-works.json](../curriculum/people-and-works.json) | Review catalog | Multilingual original works, traditions, and textbook candidates organized by prerequisite level. |
 | [curriculum/multilingual-foundations.json](../curriculum/multilingual-foundations.json) | Machine-readable proposal | Fixed prerequisite graph and script/language lanes; no multilingual training has begun. |
 | [curriculum/access-records.json](../curriculum/access-records.json) | Review catalog | Direct archive or catalog links with non-admission status and no-scrape boundary. |

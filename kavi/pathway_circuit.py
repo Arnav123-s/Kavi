@@ -22,6 +22,9 @@ from typing import Iterable, Mapping, Sequence
 from .types import ArithmeticEvent, Operation
 
 
+PathValue = int | str | bool
+
+
 def _clamp(value: float, low: float, high: float) -> float:
     return max(low, min(high, value))
 
@@ -79,6 +82,86 @@ class CircuitSample:
         if any(not 0.0 <= value <= 1.0 for _, value in self.source_activations):
             raise ValueError("Source activations must be normalized to [0, 1].")
 
+
+def _value_matches_type(type_id: str, value: PathValue) -> bool:
+    if type_id == "integer":
+        return isinstance(value, int) and not isinstance(value, bool)
+    if type_id == "boolean":
+        return isinstance(value, bool)
+    if type_id == "scalar":
+        return (
+            isinstance(value, str)
+            and len(value) == 1
+            and not 0xD800 <= ord(value) <= 0xDFFF
+        )
+    if type_id == "concept-label":
+        return isinstance(value, str) and bool(value)
+    return False
+
+
+@dataclass(frozen=True, slots=True)
+class CompositionLiteral:
+    """One temporary typed value entering a compositional pathway."""
+
+    node_id: str
+    type_id: str
+    value: PathValue
+
+    def __post_init__(self) -> None:
+        if not self.node_id or not _value_matches_type(self.type_id, self.value):
+            raise ValueError("A composition literal needs a valid identifier, type, and value.")
+
+
+@dataclass(frozen=True, slots=True)
+class CompositionCall:
+    """A temporary tree node whose meaning is supplied by a learned route."""
+
+    node_id: str
+    operator_id: str
+    arguments: tuple[CompositionLiteral | "CompositionCall", ...]
+
+    def __post_init__(self) -> None:
+        if not self.node_id or not self.operator_id or not self.arguments:
+            raise ValueError("A composition call needs an identifier, operator, and arguments.")
+        if not isinstance(self.arguments, tuple) or any(
+            not isinstance(child, (CompositionLiteral, CompositionCall))
+            for child in self.arguments
+        ):
+            raise ValueError("Composition arguments must be an immutable tuple of typed nodes.")
+
+
+@dataclass(frozen=True, slots=True)
+class CompositionExample:
+    """One evaluator case; its tree and display text never enter model state."""
+
+    event_id: str
+    expression: CompositionCall
+    expected_type: str
+    expected_value: PathValue
+    display_text: str
+
+    def __post_init__(self) -> None:
+        if not self.event_id or not _value_matches_type(self.expected_type, self.expected_value):
+            raise ValueError("A composition example needs a typed expected result.")
+        if not isinstance(self.expression, CompositionCall):
+            raise ValueError("A composition example needs a call expression.")
+
+
+@dataclass(frozen=True, slots=True)
+class CompositionRule:
+    """A verified operator contract used to form one reusable pathway."""
+
+    rule_id: str
+    operator_id: str
+    input_types: tuple[str, ...]
+    output_type: str
+    target_path_id: str
+
+    def __post_init__(self) -> None:
+        if not all((self.rule_id, self.operator_id, self.output_type, self.target_path_id)):
+            raise ValueError("A composition rule needs complete identifiers.")
+        if not self.input_types:
+            raise ValueError("A composition rule needs at least one input type.")
 
 @dataclass(frozen=True, slots=True)
 class PathRoute:
@@ -157,6 +240,39 @@ class TransformRoute:
 
 
 @dataclass(frozen=True, slots=True)
+class CompositionRoute:
+    """A learned typed connection from an operator to an existing pathway."""
+
+    route_id: str
+    operator_id: str
+    input_types: tuple[str, ...]
+    output_type: str
+    target_path_id: str
+    source_path_ids: tuple[str, ...]
+    support: int = 0
+    resistance: float = 1.0
+    coupling: float = 0.5
+    phase: float = 0.0
+    revision: int = 0
+
+    def updated(self, rule: CompositionRule, source_path_ids: Sequence[str]) -> "CompositionRoute":
+        if (
+            rule.operator_id != self.operator_id
+            or rule.input_types != self.input_types
+            or rule.output_type != self.output_type
+            or rule.target_path_id != self.target_path_id
+        ):
+            raise ValueError("A composition route cannot silently change its typed contract.")
+        return replace(
+            self,
+            source_path_ids=tuple(sorted(set((*self.source_path_ids, *source_path_ids)))),
+            support=self.support + 1,
+            resistance=max(0.08, self.resistance * 0.90),
+            coupling=min(1.50, self.coupling + 0.06),
+            revision=self.revision + 1,
+        )
+
+@dataclass(frozen=True, slots=True)
 class JumpAdapter:
     """A small local connection that changes flow without replacing a route."""
 
@@ -183,6 +299,7 @@ class CircuitState:
 
     routes: tuple[PathRoute, ...] = ()
     transforms: tuple[TransformRoute, ...] = ()
+    composition_routes: tuple[CompositionRoute, ...] = ()
     adapters: tuple[JumpAdapter, ...] = ()
     verified_foundations: tuple[str, ...] = ()
     promotions: int = 0
@@ -193,18 +310,23 @@ class CircuitState:
     def transform_map(self) -> dict[str, TransformRoute]:
         return {route.route_id: route for route in self.transforms}
 
+    def composition_map(self) -> dict[str, CompositionRoute]:
+        return {route.route_id: route for route in self.composition_routes}
+
     def adapter_map(self) -> dict[str, JumpAdapter]:
         return {adapter.adapter_id: adapter for adapter in self.adapters}
 
     @property
     def total_support(self) -> int:
-        return sum(route.support for route in self.routes) + sum(
-            route.support for route in self.transforms
+        return (
+            sum(route.support for route in self.routes)
+            + sum(route.support for route in self.transforms)
+            + sum(route.support for route in self.composition_routes)
         )
 
     def as_mapping(self) -> dict[str, object]:
         return {
-            "schema_version": 1,
+            "schema_version": 2,
             "promotions": self.promotions,
             "verified_foundations": list(self.verified_foundations),
             "routes": [
@@ -237,6 +359,22 @@ class CircuitState:
                 }
                 for route in self.transforms
             ],
+            "composition_routes": [
+                {
+                    "route_id": route.route_id,
+                    "operator_id": route.operator_id,
+                    "input_types": list(route.input_types),
+                    "output_type": route.output_type,
+                    "target_path_id": route.target_path_id,
+                    "source_path_ids": list(route.source_path_ids),
+                    "support": route.support,
+                    "resistance": route.resistance,
+                    "coupling": route.coupling,
+                    "phase": route.phase,
+                    "revision": route.revision,
+                }
+                for route in self.composition_routes
+            ],
             "adapters": [
                 {
                     "adapter_id": adapter.adapter_id,
@@ -252,7 +390,7 @@ class CircuitState:
 
     @classmethod
     def from_mapping(cls, value: Mapping[str, object]) -> "CircuitState":
-        if int(value.get("schema_version", 0)) != 1:
+        if int(value.get("schema_version", 0)) not in (1, 2):
             raise ValueError("Unsupported path-centric state schema.")
         routes = tuple(
             PathRoute(
@@ -284,6 +422,22 @@ class CircuitState:
             )
             for item in value.get("transforms", [])
         )
+        composition_routes = tuple(
+            CompositionRoute(
+                route_id=str(item["route_id"]),
+                operator_id=str(item["operator_id"]),
+                input_types=tuple(str(type_id) for type_id in item["input_types"]),
+                output_type=str(item["output_type"]),
+                target_path_id=str(item["target_path_id"]),
+                source_path_ids=tuple(str(path_id) for path_id in item["source_path_ids"]),
+                support=int(item["support"]),
+                resistance=float(item["resistance"]),
+                coupling=float(item["coupling"]),
+                phase=float(item["phase"]),
+                revision=int(item["revision"]),
+            )
+            for item in value.get("composition_routes", [])
+        )
         adapters = tuple(
             JumpAdapter(
                 adapter_id=str(item["adapter_id"]),
@@ -298,6 +452,9 @@ class CircuitState:
         return cls(
             routes=tuple(sorted(routes, key=lambda item: item.route_id)),
             transforms=tuple(sorted(transforms, key=lambda item: item.route_id)),
+            composition_routes=tuple(
+                sorted(composition_routes, key=lambda item: item.route_id)
+            ),
             adapters=tuple(sorted(adapters, key=lambda item: item.adapter_id)),
             verified_foundations=tuple(
                 sorted(str(path_id) for path_id in value.get("verified_foundations", []))
@@ -350,6 +507,48 @@ class ArithmeticInference:
     active_adapter_ids: tuple[str, ...]
     abstain_reason: str | None = None
 
+
+@dataclass(frozen=True, slots=True)
+class CompositionStep:
+    """One observable call in a nested path execution."""
+
+    node_id: str
+    operator_id: str
+    input_types: tuple[str, ...]
+    output_type: str | None
+    answer: PathValue | None
+    selected_route_id: str | None
+    target_path_id: str | None
+    active_source_path_ids: tuple[str, ...]
+    activation_waves: tuple[tuple[str, ...], ...]
+    active_adapter_ids: tuple[str, ...]
+    intensity: float
+    abstain_reason: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class CompositionInference:
+    """Observable result of executing one finite typed path tree."""
+
+    event_id: str
+    answer: PathValue | None
+    output_type: str | None
+    confidence: float
+    steps: tuple[CompositionStep, ...]
+    selected_route_ids: tuple[str, ...]
+    active_adapter_ids: tuple[str, ...]
+    abstain_reason: str | None = None
+
+
+@dataclass(frozen=True, slots=True)
+class _NodeResult:
+    value: PathValue | None
+    type_id: str | None
+    confidence: float
+    steps: tuple[CompositionStep, ...]
+    selected_route_ids: tuple[str, ...]
+    active_adapter_ids: tuple[str, ...]
+    abstain_reason: str | None = None
 
 @dataclass(frozen=True, slots=True)
 class ClassificationMetrics:
@@ -450,6 +649,11 @@ class PathwayCircuitCore:
     @staticmethod
     def _transform_route_id(operation: Operation) -> str:
         return f"path/arithmetic/{operation.value}"
+
+    @staticmethod
+    def _composition_route_id(rule: CompositionRule) -> str:
+        signature = "-".join((*rule.input_types, "to", rule.output_type))
+        return f"path/composition/{_route_slug(rule.operator_id)}/{_route_slug(signature)}"
 
     def infer_category(
         self,
@@ -705,6 +909,430 @@ class PathwayCircuitCore:
         return candidate, delta
 
     @staticmethod
+    def _composition_sources(rule: CompositionRule) -> tuple[str, ...]:
+        values = [f"component/operator-{_route_slug(rule.operator_id)}"]
+        values.extend(f"component/type-{_route_slug(type_id)}" for type_id in rule.input_types)
+        values.append(rule.target_path_id)
+        return tuple(dict.fromkeys(values))
+
+    @staticmethod
+    def _composition_shape(
+        node: CompositionLiteral | CompositionCall,
+        max_depth: int,
+        max_nodes: int,
+    ) -> tuple[int, int]:
+        """Inspect only up to the budget, without recursive input traversal."""
+
+        pending = [(iter((node,)), 1)]
+        depth = count = 0
+        while pending:
+            siblings, level = pending[-1]
+            child = next(siblings, None)
+            if child is None:
+                pending.pop()
+                continue
+            count += 1
+            depth = max(depth, level)
+            if depth > max_depth or count > max_nodes:
+                return depth, count
+            if isinstance(child, CompositionCall):
+                pending.append((iter(child.arguments), level + 1))
+        return depth, count
+
+    @staticmethod
+    def _composition_target_contract(
+        target_path_id: str,
+    ) -> tuple[tuple[str, ...], str] | None:
+        return {
+            "path/arithmetic/add": (("integer", "integer"), "integer"),
+            "path/arithmetic/subtract": (("integer", "integer"), "integer"),
+            "task/glyph-kind": (("scalar",), "concept-label"),
+            "task/unicode-script": (("scalar",), "concept-label"),
+            "component/equality-transformer": (
+                ("concept-label", "concept-label"),
+                "boolean",
+            ),
+            "component/select-integer-transformer": (
+                ("boolean", "integer", "integer"),
+                "integer",
+            ),
+        }.get(target_path_id)
+
+    @staticmethod
+    def _composition_target_available(state: CircuitState, target_path_id: str) -> bool:
+        if target_path_id.startswith("path/arithmetic/"):
+            return target_path_id in state.transform_map()
+        if target_path_id == "task/glyph-kind":
+            return len([route for route in state.routes if route.task_id == "glyph-kind"]) >= 2
+        if target_path_id == "task/unicode-script":
+            return len([route for route in state.routes if route.task_id == "unicode-script"]) >= 2
+        return target_path_id in {
+            "component/equality-transformer",
+            "component/select-integer-transformer",
+        }
+
+    def _execute_composition_target(
+        self,
+        node_id: str,
+        route: CompositionRoute,
+        arguments: tuple[tuple[str, PathValue], ...],
+        *,
+        state: CircuitState,
+        max_parallel_paths: int,
+    ) -> tuple[
+        PathValue | None,
+        str | None,
+        float,
+        tuple[str, ...],
+        tuple[str, ...],
+        str | None,
+    ]:
+        target = route.target_path_id
+        if self._composition_target_contract(target) != (
+            route.input_types, route.output_type
+        ):
+            return None, None, 0.0, (), (), "Stored target contract is invalid."
+        if target in {"path/arithmetic/add", "path/arithmetic/subtract"}:
+            operation = Operation.ADD if target.endswith("/add") else Operation.SUBTRACT
+            left = int(arguments[0][1])
+            right = int(arguments[1][1])
+            if abs(left) > 2**52 or abs(right) > 2**52:
+                return None, None, 0.0, (), (), (
+                    "Arithmetic operands exceed the exact float-transform input range."
+                )
+            inference = self.infer_arithmetic(
+                ArithmeticEvent(node_id, left, right, operation, node_id),
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+            if inference.answer is None or inference.selected_route_id != target:
+                return None, None, 0.0, (), inference.active_adapter_ids, (
+                    inference.abstain_reason or "The target arithmetic path did not execute."
+                )
+            return (
+                inference.answer,
+                "integer",
+                inference.confidence,
+                (inference.selected_route_id,),
+                inference.active_adapter_ids,
+                None,
+            )
+        if target == "task/glyph-kind":
+            glyph = str(arguments[0][1])
+            if ord(glyph) > 127:
+                return None, None, 0.0, (), (), "The glyph-kind path accepts ASCII scalars only."
+            inference = self.infer_category(
+                CircuitSample(
+                    event_id=f"{node_id}-glyph-query",
+                    task_id="glyph-kind",
+                    target="query-only",
+                    feature_names=("bias", "ascii-coordinate"),
+                    features=(1.0, ord(glyph) / 127.0),
+                    source_activations=(
+                        ("component/context-loop", 1.0),
+                        ("component/ascii-scalar-detector", 1.0),
+                    ),
+                ),
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+            if inference.prediction is None:
+                return None, None, 0.0, (), inference.active_adapter_ids, inference.abstain_reason
+            return (
+                inference.prediction,
+                "concept-label",
+                inference.confidence,
+                (inference.selected_route_id,) if inference.selected_route_id else (),
+                inference.active_adapter_ids,
+                None,
+            )
+        if target == "task/unicode-script":
+            glyph = str(arguments[0][1])
+            inference = self.infer_category(
+                CircuitSample(
+                    event_id=f"{node_id}-script-query",
+                    task_id="unicode-script",
+                    target="query-only",
+                    feature_names=("bias", "unicode-coordinate"),
+                    features=(1.0, ord(glyph) / 0x10FFFF),
+                    source_activations=(
+                        ("component/context-loop", 1.0),
+                        ("path/unicode-scalar", 1.0),
+                    ),
+                ),
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+            if inference.prediction is None:
+                return None, None, 0.0, (), inference.active_adapter_ids, inference.abstain_reason
+            return (
+                inference.prediction,
+                "concept-label",
+                inference.confidence,
+                (inference.selected_route_id,) if inference.selected_route_id else (),
+                inference.active_adapter_ids,
+                None,
+            )
+        if target == "component/equality-transformer":
+            return (
+                arguments[0][1] == arguments[1][1],
+                "boolean",
+                1.0,
+                (target,),
+                (),
+                None,
+            )
+        if target == "component/select-integer-transformer":
+            selected = arguments[1][1] if bool(arguments[0][1]) else arguments[2][1]
+            return int(selected), "integer", 1.0, (target,), (), None
+        return None, None, 0.0, (), (), f"Unsupported target path: {target}"
+
+    def _infer_composition_node(
+        self,
+        node: CompositionLiteral | CompositionCall,
+        *,
+        state: CircuitState,
+        max_parallel_paths: int,
+    ) -> _NodeResult:
+        if isinstance(node, CompositionLiteral):
+            return _NodeResult(node.value, node.type_id, 1.0, (), (), ())
+
+        child_results = tuple(
+            self._infer_composition_node(
+                child,
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+            for child in node.arguments
+        )
+        child_steps = tuple(step for child in child_results for step in child.steps)
+        child_routes = tuple(
+            dict.fromkeys(route_id for child in child_results for route_id in child.selected_route_ids)
+        )
+        child_adapters = tuple(
+            dict.fromkeys(adapter_id for child in child_results for adapter_id in child.active_adapter_ids)
+        )
+        failed_child = next((child for child in child_results if child.value is None), None)
+        if failed_child is not None:
+            reason = f"A required child path abstained: {failed_child.abstain_reason}"
+            step = CompositionStep(
+                node.node_id,
+                node.operator_id,
+                tuple(child.type_id or "unknown" for child in child_results),
+                None,
+                None,
+                None,
+                None,
+                child_routes,
+                self._waves(child_routes, max_parallel_paths) if child_routes else (),
+                child_adapters,
+                0.0,
+                reason,
+            )
+            return _NodeResult(None, None, 0.0, (*child_steps, step), child_routes, child_adapters, reason)
+
+        input_types = tuple(str(child.type_id) for child in child_results)
+        routes = tuple(
+            route
+            for route in state.composition_routes
+            if route.operator_id == node.operator_id and route.input_types == input_types
+        )
+        if not routes:
+            reason = "No learned composition route accepts this operator and type signature."
+            active_sources = tuple(
+                dict.fromkeys(
+                    (
+                        f"component/operator-{_route_slug(node.operator_id)}",
+                        *(f"component/type-{_route_slug(type_id)}" for type_id in input_types),
+                        *child_routes,
+                    )
+                )
+            )
+            step = CompositionStep(
+                node.node_id,
+                node.operator_id,
+                input_types,
+                None,
+                None,
+                None,
+                None,
+                active_sources,
+                self._waves(active_sources, max_parallel_paths),
+                child_adapters,
+                0.0,
+                reason,
+            )
+            return _NodeResult(None, None, 0.0, (*child_steps, step), child_routes, child_adapters, reason)
+
+        route = sorted(routes, key=lambda item: (-item.support, item.route_id))[0]
+        active_sources = tuple(
+            dict.fromkeys(
+                (
+                    f"component/operator-{_route_slug(node.operator_id)}",
+                    *(f"component/type-{_route_slug(type_id)}" for type_id in input_types),
+                    route.target_path_id,
+                    *child_routes,
+                )
+            )
+        )
+        adapter_ids: list[str] = []
+        amplitude = complex(0.0, 0.0)
+        for adapter in state.adapters:
+            if adapter.target_route_id != route.route_id or adapter.source_path_id not in active_sources:
+                continue
+            phase = route.phase + adapter.phase
+            amplitude += adapter.conductance * complex(cos(phase), sin(phase))
+            adapter_ids.append(adapter.adapter_id)
+        if adapter_ids:
+            amplitude *= route.coupling / (
+                (1.0 + route.resistance) * sqrt(len(adapter_ids))
+            )
+        intensity = abs(amplitude) ** 2
+        if not adapter_ids or intensity <= 0.0:
+            reason = "The typed route exists, but no learned jump conducts this call."
+            step = CompositionStep(
+                node.node_id,
+                node.operator_id,
+                input_types,
+                None,
+                None,
+                route.route_id,
+                route.target_path_id,
+                active_sources,
+                self._waves(active_sources, max_parallel_paths),
+                tuple(adapter_ids),
+                intensity,
+                reason,
+            )
+            selected = tuple(dict.fromkeys((*child_routes, route.route_id)))
+            active = tuple(dict.fromkeys((*child_adapters, *adapter_ids)))
+            return _NodeResult(None, None, 0.0, (*child_steps, step), selected, active, reason)
+
+        arguments = tuple((str(child.type_id), child.value) for child in child_results)
+        value, output_type, target_confidence, target_routes, target_adapters, reason = (
+            self._execute_composition_target(
+                node.node_id,
+                route,
+                arguments,
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+        )
+        route_confidence = route.coupling / (route.coupling + route.resistance)
+        confidence = min(
+            route_confidence,
+            target_confidence,
+            *(child.confidence for child in child_results),
+        )
+        step = CompositionStep(
+            node.node_id,
+            node.operator_id,
+            input_types,
+            output_type,
+            value,
+            route.route_id,
+            route.target_path_id,
+            active_sources,
+            self._waves(active_sources, max_parallel_paths),
+            tuple(dict.fromkeys((*adapter_ids, *target_adapters))),
+            intensity,
+            reason,
+        )
+        selected = tuple(dict.fromkeys((*child_routes, route.route_id, *target_routes)))
+        active = tuple(
+            dict.fromkeys((*child_adapters, *adapter_ids, *target_adapters))
+        )
+        return _NodeResult(
+            value,
+            output_type,
+            confidence if value is not None else 0.0,
+            (*child_steps, step),
+            selected,
+            active,
+            reason,
+        )
+
+    def infer_composition(
+        self,
+        example: CompositionExample,
+        *,
+        state: CircuitState | None = None,
+        max_parallel_paths: int = 4,
+        max_depth: int = 8,
+        max_nodes: int = 64,
+    ) -> CompositionInference:
+        """Execute one bounded tree by recursively triggering learned routes."""
+
+        if not 1 <= max_depth <= 64 or not 1 <= max_nodes <= 4096:
+            raise ValueError("Composition budgets must be depth 1..64 and nodes 1..4096.")
+        if not 1 <= max_parallel_paths <= 8:
+            raise ValueError("max_parallel_paths must be between one and eight.")
+        depth, nodes = self._composition_shape(example.expression, max_depth, max_nodes)
+        if depth > max_depth or nodes > max_nodes:
+            reason = f"Composition budget exceeded: depth={depth}/{max_depth}, nodes={nodes}/{max_nodes}."
+            return CompositionInference(example.event_id, None, None, 0.0, (), (), (), reason)
+        selected = self.state if state is None else state
+        result = self._infer_composition_node(
+            example.expression,
+            state=selected,
+            max_parallel_paths=max_parallel_paths,
+        )
+        return CompositionInference(
+            example.event_id,
+            result.value,
+            result.type_id,
+            result.confidence,
+            result.steps,
+            result.selected_route_ids,
+            result.active_adapter_ids,
+            result.abstain_reason,
+        )
+
+    def propose_composition_update(
+        self,
+        rule: CompositionRule,
+    ) -> tuple[CircuitState, StateDelta]:
+        """Build an isolated typed route from a verified structural contract."""
+
+        if not self._composition_target_available(self.state, rule.target_path_id):
+            raise ValueError(f"Composition target is not verified: {rule.target_path_id}")
+        expected_contract = self._composition_target_contract(rule.target_path_id)
+        if expected_contract != (rule.input_types, rule.output_type):
+            raise ValueError("Composition rule does not match the target path's typed contract.")
+        routes = self.state.composition_map()
+        adapters = self.state.adapter_map()
+        original_routes = dict(routes)
+        original_adapters = dict(adapters)
+        route_id = self._composition_route_id(rule)
+        sources = self._composition_sources(rule)
+        route = routes.get(
+            route_id,
+            CompositionRoute(
+                route_id=route_id,
+                operator_id=rule.operator_id,
+                input_types=rule.input_types,
+                output_type=rule.output_type,
+                target_path_id=rule.target_path_id,
+                source_path_ids=(),
+            ),
+        ).updated(rule, sources)
+        routes[route_id] = route
+        for source_path_id in sources:
+            adapter_id = self._adapter_id(source_path_id, route_id)
+            adapter = adapters.get(
+                adapter_id,
+                JumpAdapter(adapter_id, source_path_id, route_id),
+            )
+            adapters[adapter_id] = adapter.updated(1.0)
+        candidate = replace(
+            self.state,
+            composition_routes=tuple(sorted(routes.values(), key=lambda item: item.route_id)),
+            adapters=tuple(sorted(adapters.values(), key=lambda item: item.adapter_id)),
+        )
+        delta = self._delta(original_routes, original_adapters, routes, adapters)
+        return candidate, delta
+
+    @staticmethod
     def _delta(
         old_routes: Mapping[str, object],
         old_adapters: Mapping[str, JumpAdapter],
@@ -813,6 +1441,75 @@ class PathwayCircuitCore:
             accepted,
         )
 
+    def evaluate_compositions(
+        self,
+        examples: Iterable[CompositionExample],
+        *,
+        state: CircuitState | None = None,
+        max_parallel_paths: int = 4,
+    ) -> ClassificationMetrics:
+        cases = answered = correct = 0
+        for example in examples:
+            inference = self.infer_composition(
+                example,
+                state=state,
+                max_parallel_paths=max_parallel_paths,
+            )
+            cases += 1
+            answered += int(inference.answer is not None)
+            correct += int(
+                inference.output_type == example.expected_type
+                and inference.answer == example.expected_value
+            )
+        return ClassificationMetrics(cases, answered, correct)
+
+    def assess_composition_candidate(
+        self,
+        current: Sequence[CompositionExample],
+        protected: Sequence[CompositionExample],
+        held_out: Sequence[CompositionExample],
+        candidate: CircuitState,
+        delta: StateDelta,
+        *,
+        max_parallel_paths: int = 4,
+    ) -> CandidateAssessment:
+        parent_current = self.evaluate_compositions(
+            current, max_parallel_paths=max_parallel_paths
+        )
+        candidate_current = self.evaluate_compositions(
+            current, state=candidate, max_parallel_paths=max_parallel_paths
+        )
+        parent_protected = self.evaluate_compositions(
+            protected, max_parallel_paths=max_parallel_paths
+        )
+        candidate_protected = self.evaluate_compositions(
+            protected, state=candidate, max_parallel_paths=max_parallel_paths
+        )
+        parent_held_out = self.evaluate_compositions(
+            held_out, max_parallel_paths=max_parallel_paths
+        )
+        candidate_held_out = self.evaluate_compositions(
+            held_out, state=candidate, max_parallel_paths=max_parallel_paths
+        )
+        accepted = (
+            candidate.total_support > self.state.total_support
+            and candidate_current.errors < parent_current.errors
+            and candidate_protected.errors <= parent_protected.errors
+            and candidate_held_out.errors <= parent_held_out.errors
+            and delta.changed_objects > 0
+        )
+        return CandidateAssessment(
+            candidate,
+            delta,
+            parent_current,
+            candidate_current,
+            parent_protected,
+            candidate_protected,
+            parent_held_out,
+            candidate_held_out,
+            accepted,
+        )
+
     def evaluate_arithmetic(
         self,
         events: Iterable[ArithmeticEvent],
@@ -884,10 +1581,18 @@ class PathwayCircuitCore:
 
         route_scalars = sum(len(route.center) + 6 for route in self.state.routes)
         transform_scalars = sum(len(route.weights) + 6 for route in self.state.transforms)
+        composition_scalars = len(self.state.composition_routes) * 5
         adapter_scalars = len(self.state.adapters) * 3
-        persistent_scalars = route_scalars + transform_scalars + adapter_scalars + 1
+        persistent_scalars = (
+            route_scalars + transform_scalars + composition_scalars + adapter_scalars + 1
+        )
         return {
-            "routes": len(self.state.routes) + len(self.state.transforms),
+            "routes": (
+                len(self.state.routes)
+                + len(self.state.transforms)
+                + len(self.state.composition_routes)
+            ),
+            "composition_routes": len(self.state.composition_routes),
             "jump_adapters": len(self.state.adapters),
             "persistent_scalars": persistent_scalars,
             "estimated_numeric_payload_bytes": persistent_scalars * 8,

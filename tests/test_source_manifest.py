@@ -20,7 +20,7 @@ class SourceManifestTests(unittest.TestCase):
         identifiers = {source.source_id for source in self.manifest.admissible_sources}
         self.assertEqual(
             identifiers,
-            {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400"},
+            {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400", "unicode-17-script-property"},
         )
 
     def test_quarantined_source_cannot_supply_a_lesson(self) -> None:

@@ -2,7 +2,7 @@
 
 Author: Arnav123-s
 
-Status: four bounded implemented cores plus review-gated curriculum plan
+Status: six-stage unified circuit plus bounded regression cores and review-gated curriculum
 
 ## The project hierarchy
 
@@ -12,7 +12,7 @@ small persistent state forward. The curriculum runner, evaluator, source gate,
 and terminal trace are supporting equipment. They exist to teach and measure the
 model honestly; they are not the intended final product.
 
-The current model has four real but tiny cores:
+The current project has one six-stage unified model and four earlier bounded regression cores:
 
 1. The arithmetic pathway core receives quantity and relation signals, joins
    them through typed routes, and learns a three-scalar arithmetic readout.
@@ -25,6 +25,9 @@ The current model has four real but tiny cores:
 4. The reviewed textbook concept core receives a small algebra notation,
    stores two five-facet prototype centers and support counts, and distinguishes
    `expression` from `relation` only after fixed candidate gates pass.
+5. The unified path-centric circuit carries the earlier routes forward, then
+   learns six typed composition paths that execute unseen nested combinations
+   while retesting every earlier stage.
 
 A separate Unicode scalar contract is the ingress rule for the Unicode script core: it
 preserves the original scalar and records normalization only as metadata. It
@@ -71,6 +74,7 @@ its declared earlier skills have passed their protected and held-out tests.
 | L0 | Exact one-scalar Unicode preservation and local metadata | Implemented source-free contract; no sequence or language claim. |
 | L2 | Generated multiscript glyph pathways and confusable-character checks | Implemented bounded prototype core and fixed single-glyph evaluator; not script or language recognition. |
 | L3 | One CC BY-SA local-only algebra lesson: expressions, relations, and exact variable-free checks | Implemented, finite, source fingerprinted, and bounded; not a text reader. |
+| L3.5 | Typed path composition across existing glyph, script, arithmetic, comparison, and selection routes | Implemented source-free structural contracts with unseen nested programs and full earlier-skill retention; not natural language. |
 | L3 | Numeral systems and exact quantities across more reviewed notation forms | Waiting for a separate reviewed lesson and evaluator. |
 | L4-L5 | Language-specific word formation, definitions, and original/translation separation | Waiting for text-capable paths and qualified language review. |
 | L5-L6 | Formal logic, counterexamples, and checked proofs | Waiting for typed symbolic language and an external verifier. |
@@ -115,6 +119,16 @@ source can enter Kavi's local lesson workspace, record all of the following:
 The source-safety policy is enforced by
 [DOCUMENT_CURRICULUM_GATE.md](DOCUMENT_CURRICULUM_GATE.md).
 
+## External developmental teacher
+
+The unified circuit now has an external corrective teacher and bounded
+candidate search. It can repair supported script mistakes using the original
+Unicode reference, retest older skills, and run fresh harder composition
+questions against a 90% mastery gate. This leaves the inference model separate
+from the teacher and its source table. See
+[DEVELOPMENTAL_TEACHING.md](DEVELOPMENTAL_TEACHING.md). Words, sentence meaning,
+multiplication/division, and broad source learning still lack model handlers.
+
 ## Automation behavior
 
 Kavi now has a finite curriculum runner. It can automatically advance through
@@ -138,6 +152,10 @@ textbook-concept stage and then stops at the word-learning gate:
 If that local lesson is missing or its fingerprint does not match, the source
 stage reports a visible gate failure and does not run.
 
+The unified six-stage run, including typed composition, is available through
+`python -m kavi.pathway_cli run` or the multi-tab
+`scripts/start-live-pathways.ps1` launcher. Its machine-readable order is in
+[curriculum/pathway-curriculum.json](../curriculum/pathway-curriculum.json).
 The state file is opt-in and local-only. It contains completed stage IDs, not
 source text or model weights. A pause or stop file can be added to the command
 exactly as documented in [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPRODUCIBILITY.md).

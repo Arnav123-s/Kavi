@@ -28,6 +28,7 @@ class LicenseClass(str, Enum):
     US_GOVERNMENT_PUBLIC_USE = "us-government-public-use-permitted"
     CC_BY_4 = "cc-by-4.0"
     CC_BY_SA_4 = "cc-by-sa-4.0"
+    UNICODE_V3 = "unicode-license-v3"
     REQUIRES_REVIEW = "requires-per-item-review"
     UNKNOWN = "unknown"
 
@@ -37,6 +38,7 @@ ADMISSIBLE_LICENSES = frozenset(
         LicenseClass.US_GOVERNMENT_PUBLIC_USE,
         LicenseClass.CC_BY_4,
         LicenseClass.CC_BY_SA_4,
+        LicenseClass.UNICODE_V3,
     }
 )
 

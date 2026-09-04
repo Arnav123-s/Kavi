@@ -94,7 +94,7 @@
       ],
       "minimum_protected_accuracy": 1.0,
       "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "The current core has no text representation, word-composition path, language-specific evaluator, or qualified-language review process. Build and validate those before this stage can run."
+      "waiting_reason": "The unified circuit now has bounded typed path composition, but it still has no sequence-aware text representation, language-specific morphology or boundary paths, qualified-language review process, or approved language lesson. Build and validate those before this stage can run."
     },
     {
       "stage_id": "formal-logic-and-proof",

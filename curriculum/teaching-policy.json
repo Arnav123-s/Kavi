@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "title": "Kavi developmental teaching order and mastery policy",
+  "mastery_threshold": 0.9,
+  "retention_threshold": 1.0,
+  "max_repair_rounds": 6,
+  "harder_test_cases": 64,
+  "harder_test_seed": 20260905,
+  "max_model_json_bytes": 1048576,
+  "language_catalog": "curriculum/multilingual-foundations.json",
+  "author_catalog": "curriculum/people-and-works.json",
+  "source_policy": "Prefer original works and expert-authored educational sources, appropriate to the prerequisite level. Reputation is not a measured intelligence score or a substitute for checking a lesson. Exact original-language editions and local source fingerprints are required.",
+  "order": [
+    {"id": "symbols-and-numbers", "prerequisites": [], "capability": "bounded-generated-foundations", "teaching": "Keep characters distinct; recognize the tested letters, numerals and writing systems; connect small numbers to exact arithmetic."},
+    {"id": "words-and-add-subtract", "prerequisites": ["symbols-and-numbers"], "capability": "arithmetic-implemented-language-missing", "teaching": "Language-specific word formation and meanings alongside addition and subtraction. Shared scripts never imply a shared language."},
+    {"id": "sentences-and-multiply-divide", "prerequisites": ["words-and-add-subtract"], "capability": "not-implemented", "teaching": "Sentence order and meaning; multiplication as repeated groups; division and its relation to multiplication."},
+    {"id": "fractions-grammar-and-reading", "prerequisites": ["sentences-and-multiply-divide"], "capability": "not-implemented", "teaching": "Fractions, decimals, grammar, short passages and questions whose answers follow from the passage."},
+    {"id": "algebra-and-introductory-science", "prerequisites": ["fractions-grammar-and-reading"], "capability": "notation-distinction-only", "teaching": "Algebra, measurements, elementary science, evidence and explanations."},
+    {"id": "logic-literature-and-history", "prerequisites": ["algebra-and-introductory-science"], "capability": "not-implemented", "teaching": "Logic, original literature, history, philosophy, claims, counterexamples and source comparison."},
+    {"id": "advanced-mathematics-and-science", "prerequisites": ["logic-literature-and-history"], "capability": "not-implemented", "teaching": "Discrete mathematics, calculus, further sciences, algorithms and rigorous proofs."},
+    {"id": "original-research", "prerequisites": ["advanced-mathematics-and-science"], "capability": "not-implemented", "teaching": "Original papers, reproduction, new questions and independent verification."}
+  ],
+  "loop": ["teach", "practice-test", "explain-mistakes", "teach-different-examples", "retest-earlier-skills", "harder-fresh-test", "advance-only-if-ready"],
+  "current_automation": "The unified circuit can execute six narrow foundation stages. Corrective teaching currently supports script-recognition mistakes using Unicode's original reference. Words, sentence meaning, multiplication and division are recorded as missing model capabilities; they cannot be completed by repeatedly running the existing core."
+}

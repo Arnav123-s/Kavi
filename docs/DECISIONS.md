@@ -81,3 +81,38 @@ The existing design discussion is summarized in this initial record. Its earlier
 - Provide separate finite terminal feeds for answers, route activation,
   structural learning, and grading, plus explicit pause, resume, and stop
   controls. Stop at the next unavailable curriculum capability.
+
+## 2026-09-04: add typed compositional pathways as Phase 2A
+
+- Treat Phase 1 as a successful bounded mechanism test, not evidence of general
+  intelligence.
+- Make the next model change a source-free typed-composition layer before
+  attempting natural-language training.
+- Learn operator-to-path contracts rather than storing evaluator programs or
+  their literal values in model state.
+- Require exact input/output contracts, finite depth and node budgets, and at
+  most four active source paths per wave.
+- Test unseen nested combinations across glyph, script, arithmetic, equality,
+  and selection paths; algebra remains an example rather than a model limit.
+- Promote only after cumulative protected and held-out composition tests plus
+  all earlier-stage retention checks pass.
+- Keep language-specific word formation locked until text representation,
+  source admission, qualified review, and language-specific tests exist.
+
+## 2026-09-04: external developmental teacher and candidate search
+
+- The owner requested automatic prerequisite-ordered teaching, correction with
+  different examples, a 90% advancement gate, harder new tests, and a readable CLI.
+- Keep the teacher, original-source checker, examiner, and experiment manager
+  outside Kavi's inference model. They can select parameter updates without
+  becoming additional inference models.
+- Preserve the original 62/64 audit failure. Its feedback can inform repairs,
+  but a new seed and harder unseen whole questions must then be evaluated.
+- Admit the fingerprinted Unicode 17 script reference for teacher-only
+  corrective examples; keep source and license files in ignored private storage.
+- Compare bounded candidates from the same parent; require improvement,
+  complete earlier-skill retention, and no newly wrong previously correct case.
+- Keep autonomous source-code editing and unimplemented language abilities
+  distinct from the currently working parameter-update automation.
+- Expose lessons, answers, pathway traces, changes, grades, and pause/stop
+  controls in separate tabs. Actual computation remains serial CPU work.

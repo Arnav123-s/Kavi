@@ -1,7 +1,7 @@
 # Experiment records
 
 The repository contains narrow, reproducible smoke-test records for the
-implemented arithmetic prototypes. They verify code behavior under their exact
+implemented pathway prototypes. They verify code behavior under their exact
 configuration; they are not evidence of general learning or broad capability.
 
 When an experiment is explicitly authorized, create a reviewed text record containing:
@@ -22,3 +22,4 @@ Current records:
 - [Stage-0 hard-pathway smoke test](2026-09-03-stage-0-smoke-test.md)
 - [Explanation-learning smoke test](2026-09-03-explanation-learning-smoke-test.md)
 - [Reviewed textbook-concept live run](2026-09-04-textbook-concept-live-run.md)
+- [Unified pathway-circuit live run](2026-09-04-unified-pathway-live-run.md)

@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "purpose": "A small owner-requested extension: short written sequences and word copying, with early writing-system foundations. This is not full language understanding.",
+  "source_id": "unicode-17-character-data",
+  "source_url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+  "source_sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c",
+  "source_note": "Selected original Unicode letter records inspected on 2026-09-04. Character identities, not pronunciations or meanings. Preserve exact code points; no transliteration or silent normalization.",
+  "english_word_packet": "demorgan-number-words",
+  "english_copy_words": ["one", "two", "six", "ten"],
+  "lanes": [
+    {
+      "id": "hi-devanagari-foundation",
+      "language_goal": "Hindi",
+      "script": "Devanagari",
+      "characters": ["अ", "आ", "इ", "ई", "उ", "ऊ", "ए", "ऐ"],
+      "direction": "ltr",
+      "scope": "Eight independent vowel characters, then combinations. Not the complete script, Hindi vocabulary, pronunciation, or comprehension."
+    },
+    {
+      "id": "ar-arabic-foundation",
+      "language_goal": "Arabic",
+      "script": "Arabic",
+      "characters": ["ا", "ب", "ت", "ث", "ج", "ح", "خ", "د"],
+      "direction": "rtl",
+      "scope": "Eight base letter code points, then combinations in logical order. Rendering/joining is separate; not the complete script, Arabic vocabulary, or comprehension."
+    },
+    {
+      "id": "es-latin-foundation",
+      "language_goal": "Spanish",
+      "script": "Latin",
+      "characters": ["á", "é", "í", "ñ", "ó", "ú", "ü"],
+      "direction": "ltr",
+      "scope": "Seven additional written forms, including accented vowels, n with tilde, and u with diaeresis. Not seven new alphabet letters or Spanish comprehension."
+    }
+  ],
+  "prerequisites": "Full familiar Latin-letter reproduction is measured before the bridge. Start each new lane with four characters; expand after 90% familiar reproduction, retaining earlier correct characters. Native word meanings and grammar remain locked pending reviewed original-language primers and their own tests.",
+  "mixed_quizzes": "Each visible main quiz has unused prompts, balanced across exact copying, joining separated symbols, and selecting first/last symbols. Length starts at three and rises to at most six only after every task reaches 90%. Taught script subsets may mix with Latin. Mistakes become labeled familiar feedback, never fresh again. Fixed reserved sequences are excluded across all operation families; retention is a brief separate summary.",
+  "assessment": "Reserve fixed three-/four-letter banks never selected for automatic teaching; report repeated held-out scores honestly. The old exhausted two-letter pool is not reset or relabeled unseen. Require 90% on both reserved banks and separate fresh checks before certifying the English sequence stage.",
+  "resource_policy": "One learner, unchanged parameters and graph; serial language lanes, batches at most four, existing CPU-thread/time/disk budgets and owner stop controls."
+}

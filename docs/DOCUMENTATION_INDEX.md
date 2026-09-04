@@ -23,6 +23,8 @@ Author: Arnav123-s
 
 ## Latest text-core teaching
 
+- [Multilingual bridge and mixed quizzes](MULTILINGUAL_MIXED_QUIZZES.md): small reviewed writing subsets, fresh mixed tasks, reserved assessments, retention rehearsal and rollout limitations.
+
 - [Language-first teaching](LANGUAGE_FIRST_TEACHING.md): implemented controlled English prerequisites, balanced answer objective, source retrieval and exact limits.
 - [Language-first repair measurements](../experiments/2026-09-04-language-first-repair.md): repetitive-answer diagnosis, isolated training-fit probe, actual early letter answers and engineering checks.
 

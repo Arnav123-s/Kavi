@@ -3,7 +3,8 @@ param(
     [string]$Foundation = 'runs\pathway-live-20260904-123010\model-state.json',
     [string]$Resume = '',
     [ValidateRange(1, 48)] [int]$MaxRounds = 12,
-    [ValidateRange(10, 86400)] [int]$MaxSeconds = 86400
+    [ValidateRange(10, 86400)] [int]$MaxSeconds = 86400,
+    [switch]$MultilingualBridge
 )
 $ErrorActionPreference = 'Stop'
 $kaviRepo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
@@ -13,6 +14,11 @@ $kaviRun = Join-Path $kaviRepo "runs\learning-live-$kaviStamp"
 New-Item -ItemType Directory -Path $kaviRun | Out-Null
 $kaviWindow = "KaviLearning-$kaviStamp"
 $kaviRunner = "python -u -m kavi.wave_cli run --run-dir '$kaviRun' --foundation '$kaviFoundation' --max-rounds $MaxRounds --max-seconds $MaxSeconds --keep-available"
+$kaviLabel = 'Kavi SCHOOL'
+if ($MultilingualBridge) {
+    $kaviRunner += ' --multilingual-bridge'
+    $kaviLabel = 'Kavi MULTILINGUAL'
+}
 if ($Resume) {
     $kaviResume = (Resolve-Path (Join-Path $kaviRepo $Resume)).Path
     $kaviRunner += " --resume '$kaviResume'"
@@ -28,11 +34,11 @@ function Open-KaviLearningTab {
     [void][Diagnostics.Process]::Start($kaviInfo)
     Start-Sleep -Milliseconds 200
 }
-Open-KaviLearningTab 'Kavi SCHOOL Teacher' $kaviRunner
+Open-KaviLearningTab "$kaviLabel Teacher" $kaviRunner
 foreach ($kaviChannel in @('lessons', 'answers', 'pathways', 'learning', 'grading')) {
-    Open-KaviLearningTab "Kavi SCHOOL $kaviChannel" "python -u -m kavi.wave_cli watch --run-dir '$kaviRun' --channel $kaviChannel"
+    Open-KaviLearningTab "$kaviLabel $kaviChannel" "python -u -m kavi.wave_cli watch --run-dir '$kaviRun' --channel $kaviChannel"
 }
-Open-KaviLearningTab 'Kavi SCHOOL Chat + Controls' "python -u -m kavi.wave_cli console --run-dir '$kaviRun'"
+Open-KaviLearningTab "$kaviLabel Chat + Controls" "python -u -m kavi.wave_cli console --run-dir '$kaviRun'"
 & wt.exe -w $kaviWindow focus-tab -t 1
 Write-Output "Live run: $kaviRun"
 Write-Output 'The teacher runs locally without this chat. Pause/stop remain available. No other applications were closed.'

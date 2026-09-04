@@ -144,6 +144,7 @@ def main(argv: list[str] | None = None) -> int:
     run.add_argument("--practice-cases", type=int, default=32)
     run.add_argument("--max-seconds", type=int, default=86400)
     run.add_argument("--keep-available", action="store_true")
+    run.add_argument("--multilingual-bridge", action="store_true")
     for name in ("watch", "console"):
         command = sub.add_parser(name)
         command.add_argument("--run-dir", type=Path, required=True)
@@ -172,7 +173,11 @@ def main(argv: list[str] | None = None) -> int:
                                     max_rounds=args.max_rounds, exam_cases=args.exam_cases,
                                     practice_cases=args.practice_cases,
                                     max_seconds=args.max_seconds, keep_available=args.keep_available)
-            runtime = LanguageFirstTeacher(repo, config, bus)
+            if args.multilingual_bridge:
+                from .multilingual_bridge import MultilingualBridgeTeacher
+                runtime = MultilingualBridgeTeacher(repo, config, bus)
+            else:
+                runtime = LanguageFirstTeacher(repo, config, bus)
             print(f"Kavi teacher running.\nRun: {root}\nFollow the Teaching/Answers/Pathways/Learning/Grading tabs.", flush=True)
             print(json.dumps(runtime.run(), indent=2))
             return 0

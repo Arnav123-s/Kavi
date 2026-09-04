@@ -11,7 +11,7 @@
       "license_class": "unicode-license-v3",
       "license_url": "https://www.unicode.org/license.txt",
       "status": "approved",
-      "review_note": "Original ASCII letter records and exact private source fingerprint reviewed for owner-authorized language foundations on 2026-09-04.",
+      "review_note": "Original ASCII records, seven additional Latin forms, eight independent Devanagari vowels and eight Arabic base letters inspected with the exact private source fingerprint for owner-authorized writing foundations on 2026-09-04. Script records do not certify language understanding.",
       "subjects": ["character identity", "case forms"],
       "levels": ["foundation"]
     },

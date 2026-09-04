@@ -29,6 +29,21 @@ fingerprint in `curriculum/arithmetic-original.json`; no book is redistributed
 here. See [internal learning, mathematics, memory and operation](docs/INTERNAL_LEARNING_AND_MEMORY.md)
 for source scope, limitations, controls and resume instructions.
 
+## Latest teacher extension: fresh mixed quizzes
+
+The opt-in [multilingual bridge](docs/MULTILINGUAL_MIXED_QUIZZES.md) adds harder
+copy/join/first/last quizzes, short written-word practice, and small Hindi,
+Arabic and Spanish writing-system subsets. Quizzes use new prompts; repeated
+retention and reserved assessments are labeled separately. These are not
+complete language courses, and no mastery gate is bypassed. The learned model
+architecture is unchanged. See the [measured rollout](experiments/2026-09-04-multilingual-bridge.md).
+
+```powershell
+.\scripts\start-live-learning.ps1 -Resume 'runs\previous-run' -MultilingualBridge
+```
+
+Switching a live teacher requires an owner-approved checkpointed restart.
+
 ## Earlier symbolic circuit
 
 Kavi contains one unified experimental path-centric circuit plus earlier narrow

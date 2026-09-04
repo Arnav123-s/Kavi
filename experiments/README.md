@@ -19,6 +19,7 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Paired-contrast teaching comparison and measured regressions](2026-09-04-contrast-teaching.md)
 - [Multilingual bridge and mixed-quiz rollout](2026-09-04-multilingual-bridge.md)
 
 - [Language-first repair and repeated-answer diagnosis](2026-09-04-language-first-repair.md)

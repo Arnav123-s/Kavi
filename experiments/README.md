@@ -21,3 +21,4 @@ Current records:
 
 - [Stage-0 hard-pathway smoke test](2026-09-03-stage-0-smoke-test.md)
 - [Explanation-learning smoke test](2026-09-03-explanation-learning-smoke-test.md)
+- [Reviewed textbook-concept live run](2026-09-04-textbook-concept-live-run.md)

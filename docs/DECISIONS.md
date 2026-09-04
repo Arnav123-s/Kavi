@@ -15,3 +15,18 @@
 - Leave license selection open.
 
 The existing design discussion is summarized in this initial record. Its earlier dates and revisions are not reconstructed as commits.
+
+## 2026-09-03: add a bounded Unicode scalar and script-pathway prototype
+
+- Add an exact one-scalar ingress contract that preserves the original input and
+  makes normalization an observation rather than a silent rewrite.
+- Add a source-free prototype core with eleven declared script-oriented scalar
+  pathways, compact centroid/support state, fixed protected and held-out checks,
+  candidate-only promotion, and visible finite traces.
+- Use Unicode standards as design references, not as an implied full Unicode
+  implementation or a license to download a source corpus.
+- Keep word formation, language claims, document ingestion, and source review
+  locked behind later capabilities and explicit owner authorization.
+- Keep the existing local checkpoint schema because it stores only completed
+  stage identifiers; do not create a Unicode-run checkpoint without a separate
+  owner-authorized finite continuation.

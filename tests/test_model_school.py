@@ -59,7 +59,8 @@ class ModelSchoolTests(unittest.TestCase):
         self.assertEqual(plan.stages[0].stage_id, "glyph-kinds")
         self.assertEqual(plan.stages[1].stage_id, "quantity-and-exact-relations")
         self.assertEqual(plan.stages[2].stage_id, "unicode-signal-contract")
-        self.assertEqual(plan.stages[2].status, "awaiting-model-capability")
+        self.assertEqual(plan.stages[2].status, "runnable")
+        self.assertEqual(plan.stages[4].status, "awaiting-model-capability")
         for index, stage in enumerate(plan.stages):
             earlier = {candidate.stage_id for candidate in plan.stages[:index]}
             self.assertTrue(set(stage.prerequisites).issubset(earlier))
@@ -86,9 +87,9 @@ class ModelSchoolTests(unittest.TestCase):
         self.assertFalse(summary.stopped)
         self.assertEqual(
             summary.completed_stage_ids,
-            ("glyph-kinds", "quantity-and-exact-relations"),
+            ("glyph-kinds", "quantity-and-exact-relations", "unicode-signal-contract"),
         )
-        self.assertEqual(summary.results[-1].outcome, "waiting")
+        self.assertEqual(summary.results[-1].outcome, "passed")
         self.assertEqual(restored.state.completed_stage_ids, summary.completed_stage_ids)
 
 

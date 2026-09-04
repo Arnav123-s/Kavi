@@ -12,16 +12,23 @@ small persistent state forward. The curriculum runner, evaluator, source gate,
 and terminal trace are supporting equipment. They exist to teach and measure the
 model honestly; they are not the intended final product.
 
-The current model has two real but tiny cores:
+The current model has three real but tiny cores:
 
 1. The arithmetic pathway core receives quantity and relation signals, joins
    them through typed routes, and learns a three-scalar arithmetic readout.
-2. The new generated-symbol core receives one ASCII glyph, routes it through a
+2. The generated-symbol core receives one ASCII glyph, routes it through a
    normalized coordinate, and learns one centroid for letters and one centroid
    for digits. It does not retain a glyph-to-label table or source text.
+3. The generated Unicode script-pathway core receives one preserved Unicode
+   scalar, routes its exact code point through a bounded coordinate, and learns
+   one centroid and support count for each of eleven declared pathways.
 
-Neither core is a language model or a general intelligence. They are the first
-small, falsifiable pieces of the proposed Kavi model architecture.
+A separate Unicode scalar contract is the ingress rule for the third core: it
+preserves the original scalar and records normalization only as metadata. It
+never rewrites the input. Neither core is a language model or a general
+intelligence. They are small, falsifiable pieces of the proposed Kavi model
+architecture. See [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) for the
+formula, test manifest, and strict scope boundary.
 
 ## The new symbol learning rule
 
@@ -56,10 +63,10 @@ its declared earlier skills have passed their protected and held-out tests.
 
 | Level | What Kavi learns | Current state |
 | --- | --- | --- |
-| Bootstrap | Generated lowercase ASCII letter/digit kinds | Implemented, review-gated before a real run; fixed canonical lesson order. |
-| Bootstrap | Generated quantities, addition before subtraction, and exact checks | Implemented, review-gated before a real run; fixed canonical lesson ladder. |
-| L0 | Reversible Unicode signal handling and explicit script/language metadata | Waiting for a Unicode-capable model core. |
-| L2 | Generated multiscript glyph identity and confusable-character checks | Waiting for a script-aware core and evaluator. |
+| Bootstrap | Generated lowercase ASCII letter/digit kinds | Implemented; fixed canonical lesson order. |
+| Bootstrap | Generated quantities, addition before subtraction, and exact checks | Implemented; fixed canonical lesson ladder. |
+| L0 | Exact one-scalar Unicode preservation and local metadata | Implemented source-free contract; no sequence or language claim. |
+| L2 | Generated multiscript glyph pathways and confusable-character checks | Implemented bounded prototype core and fixed single-glyph evaluator; not script or language recognition. |
 | L3 | Numeral systems and exact quantities across reviewed notation forms | Waiting for the multiscript core. |
 | L4-L5 | Language-specific word formation, definitions, and original/translation separation | Waiting for text-capable paths and qualified language review. |
 | L5-L6 | Formal logic, counterexamples, and checked proofs | Waiting for typed symbolic language and an external verifier. |
@@ -117,10 +124,12 @@ Review commands that do not start training:
     python -m kavi.catalog_cli
     python -m kavi.school_cli --list
 
-After the owner approves the catalog and explicitly authorizes a finite first
-run, the command will be:
+The owner-authorized source-free bootstrap pass completed the first two stages.
+After a separate explicit authorization to continue from that local checkpoint,
+the following command will run at most the two Unicode stages and then stop at
+the word-learning gate:
 
-    python -u -m kavi.school_cli --max-stages 2 --lessons-per-stage 24 --state-file runs\kavi-school-state.json
+    python -u -m kavi.school_cli --max-stages 2 --lessons-per-stage 24 --symbol-batch-size 11 --state-file runs\kavi-school-state.json
 
 The state file is opt-in and local-only. It contains completed stage IDs, not
 source text or model weights. A pause or stop file can be added to the command
@@ -128,8 +137,10 @@ exactly as documented in [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPR
 
 ## Review boundary
 
-The code has passed isolated generated unit tests only. No real Kavi curriculum
-run, source ingestion, or persistent training process has been started from
-this plan. Review the catalog first; then choose whether to authorize only the
-generated foundations, change the people/works order, or admit a reviewed
-source for a later stage.
+The Unicode extension has passed isolated generated unit tests. One owner-authorized
+source-free bootstrap run completed the ASCII-glyph and arithmetic stages in a
+local checkpoint; it did not ingest a source or create persistent model weights.
+No Unicode continuation run, source ingestion, or persistent training process
+has been started from this extension. Review the catalog and authorize each
+finite continuation separately; changing the people/works order or admitting a
+reviewed source remains a later decision.

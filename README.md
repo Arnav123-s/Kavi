@@ -6,21 +6,24 @@ Kavi is a model-first research project for a developmental learner with bounded 
 
 ## Current status
 
-Kavi contains two narrow, implemented model cores: a generated glyph pathway
-that compresses letter/digit evidence into prototypes, and an arithmetic
-pathway that learns a verified local readout. Both use finite runs,
-candidate-only updates, protected and held-out checks, and visible terminal
-traces. They are not a general learner, a textbook-trained model, or evidence
-of broad intelligence. See the [model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md)
-for the exact teaching order and the [implementation reference](docs/IMPLEMENTATION_REFERENCE.md)
-for the current code boundary.
+Kavi contains three narrow, implemented model cores: an arithmetic pathway with
+a verified local readout; a generated ASCII glyph pathway that compresses
+letter/digit evidence into prototypes; and a generated Unicode script-pathway
+prototype that learns eleven bounded scalar lanes. A separate scalar contract
+preserves one Unicode input exactly before that third core runs. All use finite
+runs, candidate-only updates, protected and held-out checks, and visible
+terminal traces. They are not a general learner, a textbook-trained model, or
+evidence of broad intelligence. See the [model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md),
+[Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md), and
+[implementation reference](docs/IMPLEMENTATION_REFERENCE.md) for the exact
+code boundary.
 
-The broader developmental architecture remains research. A real curriculum run
-starts only after the owner reviews and explicitly authorizes its declared
-stages. Kavi does not include autonomous source-code modification, background
-persistence, web learning, or hardware-limit changes. The proposed replacement
-for end-to-end backpropagation and the proposed consolidation mechanism remain
-open questions.
+The broader developmental architecture remains research. Any new finite stage
+must be reviewed and explicitly authorized by the owner before a real run; text
+and source stages remain locked behind their separate review gates. Kavi does
+not include autonomous source-code modification, background persistence, web
+learning, or hardware-limit changes. The proposed replacement for end-to-end
+backpropagation and the proposed consolidation mechanism remain open questions.
 
 ## Central idea
 
@@ -33,6 +36,7 @@ The allocated learner size may change. The hard device resource limit does not i
 - [Design](docs/DESIGN.md): interpretation, constraints, and unresolved mechanisms.
 - [Growth and compression cycles](docs/GROWTH_CYCLES.md): changing learner size under a fixed device ceiling.
 - [Model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md): implemented early cores, teaching order, and automation boundaries.
+- [Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md): implemented bounded Unicode signal and glyph-pathway core, with exact limits.
 - [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
 - [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
 - [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.

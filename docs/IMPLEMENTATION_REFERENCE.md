@@ -8,7 +8,9 @@ Status: describes the code currently present in this repository
 Kavi currently contains deliberately narrow, executable model cores. One learns
 from generated lowercase glyphs and decimal digits by compressing evidence into
 class prototypes; another learns generated addition and subtraction through a
-typed arithmetic pathway. Their supporting runner makes routing, verification,
+typed arithmetic pathway; and a third learns eleven bounded Unicode
+script-oriented scalar prototypes. An exact one-scalar Unicode contract sits in
+front of that third core. The supporting runner makes routing, verification,
 candidate promotion, explanation checking, and resource reporting observable
 before a broader curriculum is attempted.
 
@@ -32,6 +34,8 @@ agent, a background service, or a self-modifying program.
 | kavi.source_cli | Read-only inspection of the curriculum source manifest. |
 | kavi.symbol_core | Compact glyph-to-prototype learning core with protected and held-out gates. |
 | kavi.symbol_runtime | Finite generated glyph curriculum and visible candidate traces. |
+| kavi.unicode_core | Exact one-scalar Unicode contract and compact generated script-pathway prototype core. |
+| kavi.unicode_runtime | Finite Unicode contract and script-pathway curricula, fixed manifests, and visible traces. |
 | kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
 | kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
 | kavi.catalog_cli | Read-only review of the people-and-works catalog. |
@@ -55,6 +59,26 @@ for the displayed exact answer, and reports confidence and uncertainty. The
 trace prints the actual selected pipe identifiers, join state, answer or
 abstention, verification result, candidate decision, and a small explicit
 state estimate.
+
+## Unicode scalar and script-pathway inference
+
+`UnicodeSignalContract.inspect` accepts exactly one Unicode scalar. It preserves
+the original character and code point, reports local Unicode metadata, and only
+records whether an NFC view equals the input; it does not rewrite the scalar.
+An empty string, multi-scalar string, or surrogate is rejected.
+
+The generated script core turns that exact code point into `x = code_point /
+0x10FFFF`, then compares it against one learned centroid for each of eleven
+declared pathways. It abstains until every pathway has verified support or when
+the closest two centroid distances are too similar. A candidate batch may be
+promoted only when current, protected, and held-out error do not worsen. The
+core keeps compact centroids and support counts, not presented glyphs or a
+source corpus.
+
+Its declared examples are single generated scalars; the core is neither a full
+Unicode Script-property implementation nor a script/language detector. See
+[UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) for its exact manifest and
+limits.
 
 ## Learning path
 
@@ -120,7 +144,7 @@ never creates, removes, or ignores either file.
 | --- | --- |
 | curriculum/sequence.json | Prerequisite ordering for future curriculum stages. |
 | curriculum/source-manifest.json | Reviewed source metadata and admission status. |
-| tests | Unit tests for stage 0, explanation learning, and source validation. |
+| tests | Unit tests for stage 0, explanation learning, source validation, and generated Unicode pathways. |
 | experiments | Compact, reproducible records of authorized smoke tests. |
 | docs | Design proposals, research notes, implementation guides, and operating policy. |
 

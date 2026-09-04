@@ -2,7 +2,7 @@
 
 Author: Arnav123-s
 
-Status: curriculum proposal for owner review; no multilingual training has begun
+Status: implemented source-free Unicode foundations; no language or document training has begun
 
 ## The simple idea
 
@@ -26,15 +26,16 @@ The companion catalog of people, traditions, and original works is
 
 ## What Kavi can really do today
 
-The current generated symbol core can only distinguish lowercase ASCII letters
-from decimal digits. Its arithmetic core can learn a small generated addition
-and subtraction rule. Neither one reads a word, understands a language, or
-handles Unicode scripts. This is a hard boundary, not a temporary label.
+Kavi now has a source-free Unicode scalar contract and a tiny generated
+script-pathway core alongside its ASCII glyph and arithmetic cores. The contract
+preserves exactly one scalar and reports metadata without replacing the input.
+The pathway core learns only eleven declared prototype lanes from individual
+glyphs, then measures protected and held-out single-glyph cases.
 
-So the first actual code is only a source-free bootstrap. It must not be called
-Arabic, Bengali, Chinese, Devanagari, Hangul, Tamil, or multilingual learning.
-Those capabilities require a new tested model core before any training run is
-authorized.
+That still does not mean Kavi reads Arabic, Bengali, Chinese, Devanagari,
+Hangul, Tamil, or any other language. It does not process words, grammar,
+grapheme sequences, documents, or source works. The exact implementation and
+limits are in [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md).
 
 ## Teaching order
 
@@ -157,8 +158,12 @@ verifier exist.
 
 ## Next boundary
 
-This revision is ready for the owner to review as a curriculum and source list.
-It does not start a run, download a work, create a checkpoint, or extend the
-model with a Unicode/text core. After review, the next safe engineering task
-would be a small generated multiscript glyph core with a fixed script-balanced
-evaluation manifest—not source-text training.
+The curriculum and source list remain owner-review material. The source-free
+Unicode scalar and generated script-pathway cores now exist, but their success
+on fixed individual-glyph checks is not language learning. No document has been
+downloaded, no source is admitted, and word learning remains locked.
+
+The next safe engineering task is not bulk collection. It is a proposed
+sequence-aware text representation plus a language-specific evaluator and
+qualified review process, designed and tested before any source-based lesson
+can be considered.

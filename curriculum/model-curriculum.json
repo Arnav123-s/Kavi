@@ -2,7 +2,7 @@
   "schema_version": 1,
   "title": "Kavi model-first developmental curriculum",
   "ordering_policy": "Stages are listed in a valid prerequisite order. A runnable stage can begin only when every listed earlier stage is complete; a waiting stage is a hard stop, never a license to skip ahead. Independent future language lanes are serialized on this device unless a separate measured budget authorizes another schedule.",
-  "bootstrap_note": "The existing ASCII glyph stage is a deliberately narrow source-free bootstrap. It does not satisfy the future Unicode signal contract or prove multilingual capability.",
+  "bootstrap_note": "The ASCII glyph stage remains a deliberately narrow source-free bootstrap. The next two generated stages preserve single Unicode scalars and test eleven bounded script-oriented prototype lanes; neither proves multilingual or language capability.",
   "stages": [
     {
       "stage_id": "glyph-kinds",
@@ -32,34 +32,32 @@
     },
     {
       "stage_id": "unicode-signal-contract",
-      "title": "Reversible Unicode signal handling and explicit metadata",
+      "title": "Exact one-scalar Unicode preservation and explicit metadata",
       "level": "L0",
       "lane": "shared-multilingual-foundation",
-      "status": "awaiting-model-capability",
-      "engine": null,
+      "status": "runnable",
+      "engine": "unicode-scalar-contract",
       "prerequisites": [
         "glyph-kinds"
       ],
       "source_ids": [],
       "minimum_protected_accuracy": 1.0,
-      "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "The current core only accepts lowercase ASCII and decimal digits. Build and test a reversible Unicode signal contract before it can represent another script honestly."
+      "minimum_held_out_accuracy": 1.0
     },
     {
       "stage_id": "multiscript-glyph-foundations",
-      "title": "Generated script-balanced glyph identity and confusable-character checks",
+      "title": "Generated script-balanced glyph pathways and confusable-character checks",
       "level": "L2",
       "lane": "shared-multilingual-foundation",
-      "status": "awaiting-model-capability",
-      "engine": null,
+      "status": "runnable",
+      "engine": "unicode-script-prototypes",
       "prerequisites": [
         "glyph-kinds",
         "unicode-signal-contract"
       ],
       "source_ids": [],
       "minimum_protected_accuracy": 1.0,
-      "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "Kavi needs a Unicode-aware script core, generated balanced manifests, and an evaluator that tests each supported script before it may claim to read a language."
+      "minimum_held_out_accuracy": 1.0
     },
     {
       "stage_id": "word-forms-and-definitions",

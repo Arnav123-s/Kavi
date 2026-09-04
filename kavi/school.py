@@ -17,6 +17,14 @@ from typing import Callable
 from .lesson_runtime import ExplanationRuntime
 from .runtime import RuntimeConfig
 from .symbol_runtime import SymbolRunSummary, SymbolRuntime, SymbolRuntimeConfig
+from .unicode_runtime import (
+    SCRIPT_SPECS,
+    UnicodeContractRuntime,
+    UnicodeContractRuntimeConfig,
+    UnicodeScriptRunSummary,
+    UnicodeScriptRuntime,
+    UnicodeScriptRuntimeConfig,
+)
 
 
 RUNNABLE = "runnable"
@@ -25,7 +33,14 @@ WAITING_SOURCE_REVIEW = "awaiting-source-review"
 VALID_STAGE_STATUSES = frozenset(
     {RUNNABLE, WAITING_CAPABILITY, WAITING_SOURCE_REVIEW}
 )
-VALID_ENGINES = frozenset({"symbol-prototypes", "arithmetic-explanations"})
+VALID_ENGINES = frozenset(
+    {
+        "symbol-prototypes",
+        "arithmetic-explanations",
+        "unicode-scalar-contract",
+        "unicode-script-prototypes",
+    }
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -289,11 +304,66 @@ class ModelSchool:
         )
         return StageResult(stage.stage_id, "passed" if passed else "not-promoted", detail)
 
+    def _run_unicode_contract_stage(self, stage: CurriculumStage) -> StageResult:
+        runtime = UnicodeContractRuntime(
+            UnicodeContractRuntimeConfig(
+                interval_ms=self.config.interval_ms,
+                pause_file=self.config.pause_file,
+                stop_file=self.config.stop_file,
+            ),
+            emit=self.emit,
+        )
+        summary = runtime.run()
+        if summary.stopped:
+            return StageResult(stage.stage_id, "stopped", "Stop control ended the finite stage.")
+        passed = self._meets_thresholds(
+            summary.protected.exact_accuracy,
+            summary.held_out.exact_accuracy,
+            stage,
+        )
+        detail = (
+            f"protected={summary.protected.exact_accuracy:.2f}; "
+            f"held-out={summary.held_out.exact_accuracy:.2f}; "
+            f"checked scalars={summary.completed_cases}"
+        )
+        return StageResult(stage.stage_id, "passed" if passed else "not-promoted", detail)
+
+    def _run_unicode_script_stage(self, stage: CurriculumStage) -> StageResult:
+        runtime = UnicodeScriptRuntime(
+            UnicodeScriptRuntimeConfig(
+                steps=max(self.config.lessons_per_stage, len(SCRIPT_SPECS)),
+                seed=self.config.seed,
+                batch_size=max(self.config.symbol_batch_size, len(SCRIPT_SPECS)),
+                interval_ms=self.config.interval_ms,
+                pause_file=self.config.pause_file,
+                stop_file=self.config.stop_file,
+            ),
+            emit=self.emit,
+        )
+        summary: UnicodeScriptRunSummary = runtime.run()
+        if summary.stopped:
+            return StageResult(stage.stage_id, "stopped", "Stop control ended the finite stage.")
+        passed = self._meets_thresholds(
+            summary.protected.exact_accuracy,
+            summary.held_out.exact_accuracy,
+            stage,
+        )
+        detail = (
+            f"protected={summary.protected.exact_accuracy:.2f}; "
+            f"held-out={summary.held_out.exact_accuracy:.2f}; "
+            f"promoted candidates={summary.promoted_candidates}"
+        )
+        return StageResult(stage.stage_id, "passed" if passed else "not-promoted", detail)
+
     def _run_stage(self, stage: CurriculumStage) -> StageResult:
         if stage.engine == "symbol-prototypes":
             return self._run_symbol_stage(stage)
         if stage.engine == "arithmetic-explanations":
             return self._run_arithmetic_stage(stage)
+        if stage.engine == "unicode-scalar-contract":
+            return self._run_unicode_contract_stage(stage)
+        if stage.engine == "unicode-script-prototypes":
+            return self._run_unicode_script_stage(stage)
         raise ValueError(f"No implementation for stage engine {stage.engine}.")
 
     def run(self) -> SchoolSummary:

@@ -5,10 +5,11 @@ Status: operating guide for the finite local prototypes
 
 ## What this guide runs
 
-These commands run small, generated arithmetic experiments. They do not
-download a model, use a network, install dependencies, begin a background job,
-or start a general training program. Their main purpose is to show the complete
-route and update decision in a low-overhead terminal trace.
+These commands run small, generated arithmetic, ASCII-glyph, and Unicode-scalar
+experiments. They do not download a model, use a network, install dependencies,
+begin a background job, or start a general training program. Their main purpose
+is to show the complete route and update decision in a low-overhead terminal
+trace.
 
 ## Requirements
 
@@ -28,9 +29,9 @@ From the repository root, normally C:\Kavi:
     python -m unittest discover -s tests -v
     python -m kavi.source_cli
 
-The test command should discover the stage-0, explanation-learning, and source
-manifest tests. The source command only validates and prints metadata; it does
-not fetch the linked documents.
+The test command should discover the stage-0, explanation-learning, generated
+Unicode, and source-manifest tests. The source command only validates and prints
+metadata; it does not fetch the linked documents.
 
 ## Inspect the model-shaped pathways
 
@@ -67,6 +68,27 @@ as evidence of broad generalization.
 Each lesson is a locally verified arithmetic rule. The output includes the
 verified explanation after the normal pathway and candidate trace. It is still
 a finite local run.
+
+## Inspect or continue the source-free curriculum
+
+This does not start a run:
+
+    python -m kavi.school_cli --list
+
+The list shows which stages are runnable and which remain blocked. The Unicode
+contract and generated script-pathway stages contain only declared individual
+scalars; they do not access the catalog or source URLs.
+
+Only after the owner explicitly authorizes a finite continuation from an
+existing local checkpoint containing the bootstrap stages, run at most the two
+Unicode stages with:
+
+    python -u -m kavi.school_cli --max-stages 2 --lessons-per-stage 24 --symbol-batch-size 11 --interval-ms 80 --state-file runs\kavi-school-state.json
+
+The trace prints the scalar, code point, hard path, candidate gate, protected
+and held-out metrics, and compact model ledger. It then stops at the still
+locked word-learning stage. See [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md)
+for the scope of that small experiment.
 
 ## Pause and stop controls
 

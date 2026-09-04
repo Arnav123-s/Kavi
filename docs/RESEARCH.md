@@ -42,6 +42,26 @@ Material inspected: abstract.
 
 The authors demonstrate gradient-free population-based search over network weights in selected control tasks. This supports the existence of a genuinely gradient-free route, but does not establish efficiency for a developmental language learner. Candidate evaluation and population state must be counted in resource comparisons.
 
+## Unicode signal standards for the generated scalar stage
+
+**Unicode Consortium, Unicode Standard Annex #15: Unicode Normalization Forms;
+Unicode Standard Annex #24: Unicode Script Property; and Unicode Technical
+Standard #39: Unicode Security Mechanisms.**
+
+[UAX #15](https://unicode.org/reports/tr15/) · [UAX #24](https://unicode.org/reports/tr24/) · [UTS #39](https://unicode.org/reports/tr39/)
+
+Relevant material inspected: the normalization distinction, Script and
+Script_Extensions property scope, and the explanation of visually confusable
+characters. These standards motivate preserving original scalar code points,
+keeping normalization as an explicit choice, and testing look-alike scalars as
+distinct inputs.
+
+Kavi intentionally does not implement a full Unicode-property database,
+normalization engine, confusable-security checker, grapheme-sequence processor,
+or language detector. Its implemented stage is a small source-free prototype
+with eleven declared scalar pathways. The detailed boundary is in
+[UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md).
+
 ## What these sources do not establish
 
 - That removing backpropagation is sufficient to produce more capable reasoning.

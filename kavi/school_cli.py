@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .terminal import configure_utf8_output
+
 from .school import ModelSchool, SchoolConfig
 
 
@@ -45,6 +47,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     """List or execute a bounded curriculum pass."""
+
+    configure_utf8_output()
 
     parser = build_parser()
     args = parser.parse_args(argv)

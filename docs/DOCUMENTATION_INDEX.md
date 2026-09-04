@@ -12,6 +12,7 @@ Author: Arnav123-s
 | [DESIGN.md](DESIGN.md) | Research proposal | What developmental growth and consolidation are intended to investigate. |
 | [GROWTH_CYCLES.md](GROWTH_CYCLES.md) | Research specification | How changing allocation can remain inside a fixed device ceiling. |
 | [MODEL_FIRST_CURRICULUM.md](MODEL_FIRST_CURRICULUM.md) | Implemented early cores and review plan | Why the model is primary, how it is taught, and where automation must stop. |
+| [MULTILINGUAL_FOUNDATIONS.md](MULTILINGUAL_FOUNDATIONS.md) | Curriculum proposal for review | Prerequisite-first multilingual signal, script, language, and original-source plan. |
 
 ## Architecture and model blueprints
 
@@ -48,7 +49,9 @@ Author: Arnav123-s
 | [curriculum/sequence.json](../curriculum/sequence.json) | Machine-readable plan | Curriculum stage order and prerequisites. |
 | [curriculum/source-manifest.json](../curriculum/source-manifest.json) | Machine-readable policy | Source-review decisions without source bodies. |
 | [curriculum/model-curriculum.json](../curriculum/model-curriculum.json) | Machine-readable curriculum | Ordered runnable stages and explicit waiting gates. |
-| [curriculum/people-and-works.json](../curriculum/people-and-works.json) | Review catalog | People, original works, and textbook candidates in prerequisite order. |
+| [curriculum/people-and-works.json](../curriculum/people-and-works.json) | Review catalog | Multilingual original works, traditions, and textbook candidates organized by prerequisite level. |
+| [curriculum/multilingual-foundations.json](../curriculum/multilingual-foundations.json) | Machine-readable proposal | Fixed prerequisite graph and script/language lanes; no multilingual training has begun. |
+| [curriculum/access-records.json](../curriculum/access-records.json) | Review catalog | Direct archive or catalog links with non-admission status and no-scrape boundary. |
 | [curriculum/methods-from-starred-repositories.json](../curriculum/methods-from-starred-repositories.json) | Research catalog | Public starred repositories treated as methods references, not training text. |
 
 ## Reading rule

@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "catalog_id": "multilingual-foundations-v1",
+  "title": "Kavi multilingual foundations: a prerequisite graph, not a randomized reading list",
+  "status": "proposal-for-owner-review",
+  "purpose": "Define the order in which Kavi could acquire script, number, language, and original-source skills without treating one region, language, or translation as the default.",
+  "ordering_rule": "A node may begin only after every listed prerequisite has passed its own protected and held-out checks. Nodes at the same level are independent lanes, not a cultural ranking. On this device they are scheduled serially in the declared lane order unless a future measured resource budget permits otherwise.",
+  "non_randomization_rule": "Stage eligibility, prerequisite checks, source admission, lesson identifiers, and evaluation manifests are fixed. Generated practice may vary only through a declared reproducible enumerator; it must never choose a later concept before its prerequisites pass.",
+  "source_rule": "Original-language works are catalog references, not downloaded training data. Preserve the source language, script, edition, and textual-history metadata. Do not normalize away meaningful distinctions, scrape hosts, or admit an extract until rights, provenance, cultural protocol, a verifier, and held-out tests have been reviewed.",
+  "current_implementation_boundary": {
+    "implemented_now": [
+      "generated lowercase ASCII letter-versus-digit classification",
+      "generated quantities, addition, and subtraction with exact verifiers"
+    ],
+    "not_implemented_now": [
+      "Unicode script identity",
+      "grapheme segmentation",
+      "language understanding",
+      "original-language text ingestion",
+      "translation alignment",
+      "source-based training"
+    ],
+    "honesty_rule": "The ASCII prototype is a small bootstrap experiment. It is not evidence that Kavi reads Arabic, Bengali, Chinese, Devanagari, Hangul, Tamil, or any other writing system."
+  },
+  "levels": [
+    {
+      "level_id": "L0-signal-contract",
+      "title": "Keep a symbol exactly itself",
+      "status": "awaiting-model-capability",
+      "prerequisites": [],
+      "skills": [
+        "reversible byte and Unicode scalar handling",
+        "explicit encoding and normalization metadata",
+        "direction, script, language, and edition as separate fields",
+        "abstention on unsupported or ambiguous input"
+      ],
+      "mastery_gate": "Round-trip every supported test token exactly; preserve the original code points and record, rather than silently replace, any normalization choice.",
+      "why_first": "If the model cannot preserve a written signal faithfully, it cannot honestly learn from an original-language source."
+    },
+    {
+      "level_id": "L1-generated-symbol-bootstrap",
+      "title": "Recognize simple generated symbols",
+      "status": "implemented-review-gated",
+      "prerequisites": [],
+      "skills": [
+        "lowercase ASCII letter kind",
+        "decimal digit kind",
+        "nearest verified prototype with abstention"
+      ],
+      "mastery_gate": "Fixed protected and held-out generated glyph manifests reach the declared exact-accuracy floor without a regression.",
+      "why_here": "This is a tiny source-free test of verified pattern compression; it is deliberately not a language lesson."
+    },
+    {
+      "level_id": "L2-multiscript-glyph-identity",
+      "title": "Tell writing systems apart before claiming to read them",
+      "status": "awaiting-model-capability",
+      "prerequisites": [
+        "L0-signal-contract",
+        "L1-generated-symbol-bootstrap"
+      ],
+      "skills": [
+        "script identity",
+        "character class and direction metadata",
+        "script-specific glyph discrimination",
+        "explicit unsupported-script abstention"
+      ],
+      "mastery_gate": "A generated, script-balanced manifest verifies identity and discrimination for every admitted script, including held-out glyphs and confusable characters.",
+      "why_here": "A script is not a language, but correct script handling is a prerequisite for all later language-specific pathways."
+    },
+    {
+      "level_id": "L3-numeral-and-quantity-systems",
+      "title": "Connect notation to exact quantity",
+      "status": "awaiting-model-capability",
+      "prerequisites": [
+        "L2-multiscript-glyph-identity"
+      ],
+      "skills": [
+        "decimal place value",
+        "Arabic-Indic, Eastern Arabic-Indic, Devanagari, Bengali, Tamil, and Han numeral forms",
+        "Roman numerals as a non-positional comparison",
+        "equivalence between a verified notation and an exact quantity"
+      ],
+      "mastery_gate": "Exact conversion and arithmetic checks on withheld forms; the model must report which notation rule it used and abstain when a notation is ambiguous or outside scope.",
+      "why_here": "Quantity is shared across languages, while its written forms are not. This keeps the concept separate from any one alphabet."
+    },
+    {
+      "level_id": "L4-script-specific-word-formation",
+      "title": "Learn how each supported language forms meaningful units",
+      "status": "awaiting-model-capability",
+      "prerequisites": [
+        "L2-multiscript-glyph-identity",
+        "L3-numeral-and-quantity-systems"
+      ],
+      "skills": [
+        "grapheme and word-boundary handling where the language uses them",
+        "joining and direction rules where relevant",
+        "morphology and inflection only within a reviewed language lane",
+        "clear separation between a written form, pronunciation aid, gloss, and meaning claim"
+      ],
+      "mastery_gate": "Language-specific minimal-pair and held-out composition tests reviewed by qualified readers; no test may silently use an English-only proxy for the target language.",
+      "why_here": "The model should not force all languages into one English-shaped word model."
+    },
+    {
+      "level_id": "L5-definitions-arguments-and-cross-script-alignment",
+      "title": "Build checked meaning without replacing originals",
+      "status": "awaiting-model-capability-and-source-review",
+      "prerequisites": [
+        "L4-script-specific-word-formation"
+      ],
+      "skills": [
+        "definitions, claims, examples, counterexamples, and uncertainty",
+        "approved gloss or translation alignment kept separate from original text",
+        "source-location citation and textual-variant awareness",
+        "formal or qualified-human verification of lesson claims"
+      ],
+      "mastery_gate": "A source lesson passes provenance, rights, cultural review, concept prerequisite, external verifier, protected retention, and held-out transfer gates.",
+      "why_here": "Original works become evidence in their own languages, not decorative quotes or an unreviewed corpus."
+    },
+    {
+      "level_id": "L6-domain-works-and-research",
+      "title": "Study mathematics, science, logic, and research in dependency order",
+      "status": "awaiting-model-capability-and-source-review",
+      "prerequisites": [
+        "L5-definitions-arguments-and-cross-script-alignment"
+      ],
+      "skills": [
+        "formal proof and counterexample",
+        "measurement, units, uncertainty, and replication",
+        "source comparison across traditions and editions",
+        "rigorous research claims with an external checker"
+      ],
+      "mastery_gate": "Domain-specific held-out evaluation and retained earlier-language abilities; an unverified answer never counts as a solved result.",
+      "why_here": "Advanced works depend on all earlier signal, language, quantity, and verification abilities."
+    }
+  ],
+  "script_and_language_lanes": [
+    {
+      "lane_id": "latin-and-ipa",
+      "scripts": ["Latin", "International Phonetic Alphabet"],
+      "language_examples": ["English", "French", "Spanish", "Portuguese", "Swahili", "Indonesian", "Vietnamese"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Do not infer that a shared Latin script means shared grammar, pronunciation, or meaning."
+    },
+    {
+      "lane_id": "greek-and-cyrillic",
+      "scripts": ["Greek", "Cyrillic"],
+      "language_examples": ["Ancient Greek", "Modern Greek", "Russian", "Ukrainian", "Bulgarian", "Serbian"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Treat historical and modern varieties as separate lesson scopes."
+    },
+    {
+      "lane_id": "arabic-family",
+      "scripts": ["Arabic", "Arabic-derived Ajami", "Perso-Arabic", "N'Ko"],
+      "language_examples": ["Classical Arabic", "Arabic varieties", "Persian", "Urdu", "Ottoman Turkish", "Hausa Ajami", "Mandinka N'Ko"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Require direction, joining, diacritic, and language metadata; Arabic script does not identify a single language."
+    },
+    {
+      "lane_id": "south-asian-scripts",
+      "scripts": ["Devanagari", "Bengali", "Tamil", "Telugu", "Kannada", "Malayalam", "Gurmukhi", "Sinhala"],
+      "language_examples": ["Sanskrit", "Hindi", "Marathi", "Bengali", "Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi", "Sinhala"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Do not collapse an Indic script, a liturgical language, and a modern spoken language into one category."
+    },
+    {
+      "lane_id": "east-asian-scripts",
+      "scripts": ["Han characters", "Hangul", "Hiragana", "Katakana"],
+      "language_examples": ["Classical Chinese", "Mandarin and other Chinese varieties", "Korean", "Japanese"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Character identity, reading, and language are distinct tasks; do not use a modern pronunciation as if it were an original-text meaning."
+    },
+    {
+      "lane_id": "african-scripts-and-languages",
+      "scripts": ["Ge'ez/Ethiopic", "N'Ko", "Tifinagh", "Arabic-derived Ajami", "Latin"],
+      "language_examples": ["Ge'ez", "Amharic", "Tigrinya", "Mandinka", "Tamazight", "Hausa", "Yoruba", "Swahili"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Several knowledge traditions are oral, sacred, or community-governed. They require consent and a community protocol, not automated collection."
+    },
+    {
+      "lane_id": "indigenous-americas-and-oceania",
+      "scripts": ["Maya glyphs", "Cherokee syllabary", "Canadian Aboriginal syllabics", "Latin"],
+      "language_examples": ["Yucatec Maya", "K'iche'", "Classical Nahuatl", "Quechua", "Cherokee", "Inuktitut", "Māori"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Indigenous data sovereignty and community authority are prerequisites for any source work. Oral knowledge, ceremonial material, and restricted material remain out of scope unless explicitly approved by the relevant community."
+    },
+    {
+      "lane_id": "other-historic-and-regional-scripts",
+      "scripts": ["Hebrew", "Armenian", "Georgian", "Thaana", "Khmer", "Thai"],
+      "language_examples": ["Hebrew", "Armenian", "Georgian", "Dhivehi", "Khmer", "Thai"],
+      "entry_level": "L2-multiscript-glyph-identity",
+      "lane_prerequisites": ["L0-signal-contract"],
+      "special_handling": "Add a lane only with a script-aware evaluator and qualified language review; coverage is intentionally expandable rather than pretending this first catalog covers every language."
+    }
+  ],
+  "admission_checklist": [
+    "Exact source, creator or tradition, edition or manuscript witness, language, script, source URL, and applicable rights are recorded.",
+    "Any community, repository, or host-specific protocol is recorded and satisfied; a public web page is not blanket permission.",
+    "The local extract remains outside the public repository and has a fingerprint.",
+    "The lesson names one concept, its prerequisite nodes, an explanation scope, and an independent verifier.",
+    "Protected retention and held-out transfer tests are fixed before the candidate update is measured.",
+    "A failed or uncertain result remains a failure or abstention; it is not relabeled as mastery."
+  ]
+}

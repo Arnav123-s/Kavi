@@ -4,7 +4,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-import random
 import time
 from typing import Callable
 
@@ -80,25 +79,25 @@ class SymbolRuntimeConfig:
 
 
 class SymbolCurriculum:
-    """A deterministic, generated alphabet-and-digit lesson generator.
+    """A fixed, generated alphabet-and-digit bootstrap sequence.
 
-    The generator constructs its symbols from ASCII ranges.  It neither reads
-    nor embeds a textbook, word list, web page, or private corpus.
+    The generator constructs symbols from ASCII ranges in canonical code-point
+    order. It neither reads nor embeds a textbook, word list, web page, or
+    private corpus. The ``seed`` remains in the public configuration for
+    compatibility, but intentionally does not alter this prerequisite order.
     """
 
     _EXCLUDED = frozenset({"a", "e", "t", "z", "0", "3", "7", "9"})
 
     def __init__(self, seed: int) -> None:
-        randomizer = random.Random(seed)
+        del seed
         letters = [chr(code) for code in range(ord("a"), ord("z") + 1)]
         digits = [chr(code) for code in range(ord("0"), ord("9") + 1)]
         self._letters = [glyph for glyph in letters if glyph not in self._EXCLUDED]
         self._digits = [glyph for glyph in digits if glyph not in self._EXCLUDED]
-        randomizer.shuffle(self._letters)
-        randomizer.shuffle(self._digits)
 
     def event_at(self, step: int) -> SymbolEvent:
-        """Interleave classes so every small candidate batch has both labels."""
+        """Interleave fixed independent classes in a reproducible order."""
 
         if step < 1:
             raise ValueError("step must be at least one")

@@ -5,7 +5,6 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 import os
-import random
 import time
 from typing import Callable
 
@@ -41,18 +40,44 @@ class RuntimeConfig:
 
 
 class ArithmeticCurriculum:
-    """A reproducible generator with no external corpus or network access."""
+    """A fixed, generated prerequisite ladder with no external corpus.
+
+    The first facts establish addition. Subtraction begins only after those
+    simple addition facts, then both relations recur in a declared progression.
+    The public ``seed`` remains for configuration compatibility but intentionally
+    does not change the foundational order.
+    """
+
+    _LESSON_LADDER = (
+        # Addition begins with small quantities, then expands magnitude before
+        # subtraction begins. The larger generated facts are calibration cases;
+        # none appears in the protected or held-out evaluator manifests.
+        (Operation.ADD, 1, 1),
+        (Operation.ADD, 2, 2),
+        (Operation.ADD, 4, 3),
+        (Operation.ADD, 8, 5),
+        (Operation.ADD, 12, 8),
+        (Operation.SUBTRACT, 4, 1),
+        (Operation.SUBTRACT, 8, 3),
+        (Operation.SUBTRACT, 12, 5),
+        (Operation.SUBTRACT, 16, 7),
+        (Operation.SUBTRACT, 19, 10),
+        (Operation.ADD, 14, 9),
+        (Operation.ADD, 18, 11),
+        (Operation.SUBTRACT, 21, 9),
+        (Operation.SUBTRACT, 24, 12),
+        (Operation.ADD, 25, 15),
+        (Operation.SUBTRACT, 30, 14),
+    )
 
     def __init__(self, seed: int, conflict_every: int) -> None:
-        self._random = random.Random(seed)
+        del seed
         self._conflict_every = conflict_every
 
     def event_at(self, step: int) -> ArithmeticEvent:
-        operation = Operation.ADD if step % 2 else Operation.SUBTRACT
-        left = self._random.randint(1, 12)
-        right = self._random.randint(1, 12)
-        if operation is Operation.SUBTRACT and right > left:
-            left, right = right, left
+        if step < 1:
+            raise ValueError("step must be at least one")
+        operation, left, right = self._LESSON_LADDER[(step - 1) % len(self._LESSON_LADDER)]
         conflicted = self._conflict_every > 0 and step % self._conflict_every == 0
         return ArithmeticEvent(
             event_id=f"event-{step:04d}",

@@ -1,72 +1,168 @@
 {
   "schema_version": 1,
+  "title": "Kavi conceptual curriculum sequence",
+  "ordering_rule": "The graph is prerequisite-first. A stage is eligible only when all of its listed stages have passed their fixed checks. A stage can never be selected because a source is famous, because it is easy to find online, or because it happens to appear earlier in a random sample.",
+  "scheduling_rule": "Parallel means conceptually independent, not uncontrolled simultaneous work. The current device runs one bounded lane at a time; the declared sequence within a lane is fixed and reproducible.",
   "stages": [
     {
-      "stage_id": "symbols-and-quantities",
+      "stage_id": "signal-contract",
+      "level": "L0",
       "prerequisites": [],
       "concepts": [
-        "numeral",
+        "byte preservation",
+        "Unicode scalar",
+        "normalization metadata",
+        "script and language metadata",
+        "unsupported-input abstention"
+      ],
+      "required_verifier": "reversible-signal-and-confusable-character"
+    },
+    {
+      "stage_id": "generated-ascii-bootstrap",
+      "level": "bootstrap",
+      "prerequisites": [],
+      "concepts": [
+        "lowercase ASCII letter kind",
+        "decimal digit kind",
+        "verified prototype",
+        "abstention"
+      ],
+      "required_verifier": "fixed-generated-symbol"
+    },
+    {
+      "stage_id": "multiscript-glyph-identity",
+      "level": "L2",
+      "prerequisites": [
+        "signal-contract",
+        "generated-ascii-bootstrap"
+      ],
+      "concepts": [
+        "script identity",
+        "direction",
+        "glyph discrimination",
+        "confusable characters"
+      ],
+      "required_verifier": "script-balanced-generated-held-out"
+    },
+    {
+      "stage_id": "quantity-and-numeral-systems",
+      "level": "L3",
+      "prerequisites": [
+        "multiscript-glyph-identity"
+      ],
+      "concepts": [
         "quantity",
         "equality",
-        "order"
-      ],
-      "required_verifier": "exact-symbolic"
-    },
-    {
-      "stage_id": "arithmetic-relations",
-      "prerequisites": [
-        "symbols-and-quantities"
-      ],
-      "concepts": [
+        "order",
+        "place value",
         "addition",
         "subtraction",
-        "place-value",
-        "inverse-operation"
+        "notation conversion"
       ],
-      "required_verifier": "exact-arithmetic"
+      "required_verifier": "exact-numeral-and-arithmetic"
     },
     {
-      "stage_id": "language-and-logic",
+      "stage_id": "language-specific-word-formation",
+      "level": "L4",
       "prerequisites": [
-        "symbols-and-quantities"
+        "multiscript-glyph-identity",
+        "quantity-and-numeral-systems"
       ],
       "concepts": [
-        "letter",
-        "word",
+        "grapheme or character composition",
+        "word or morpheme boundary",
+        "language-specific morphology",
+        "meaning-scope",
+        "translation-separation"
+      ],
+      "required_verifier": "qualified-language-review-and-held-out-composition"
+    },
+    {
+      "stage_id": "definitions-and-arguments",
+      "level": "L5",
+      "prerequisites": [
+        "language-specific-word-formation"
+      ],
+      "concepts": [
         "definition",
-        "sentence",
-        "argument"
+        "claim",
+        "example",
+        "counterexample",
+        "argument",
+        "uncertainty",
+        "source-location"
       ],
       "required_verifier": "curated-human-and-formal"
     },
     {
-      "stage_id": "science-foundations",
+      "stage_id": "formal-logic-and-proof",
+      "level": "L5-L6",
       "prerequisites": [
-        "arithmetic-relations",
-        "language-and-logic"
+        "definitions-and-arguments"
+      ],
+      "concepts": [
+        "symbol",
+        "axiom",
+        "inference rule",
+        "model",
+        "proof",
+        "counterexample",
+        "decidability boundary"
+      ],
+      "required_verifier": "external-formal-verifier"
+    },
+    {
+      "stage_id": "measurement-and-experiment",
+      "level": "L6",
+      "prerequisites": [
+        "quantity-and-numeral-systems",
+        "definitions-and-arguments"
       ],
       "concepts": [
         "measurement",
         "unit",
         "model",
+        "prediction",
         "evidence",
-        "uncertainty"
+        "uncertainty",
+        "replication"
       ],
       "required_verifier": "domain-specific"
     },
     {
-      "stage_id": "primary-research",
+      "stage_id": "reviewed-primary-source-lessons",
+      "level": "L5-L6",
       "prerequisites": [
-        "science-foundations"
+        "definitions-and-arguments",
+        "formal-logic-and-proof"
       ],
       "concepts": [
-        "claim",
+        "original-language source",
+        "edition or witness",
+        "provenance",
+        "source claim",
+        "translation aid",
+        "retention"
+      ],
+      "required_verifier": "source-linked-expert-or-formal"
+    },
+    {
+      "stage_id": "advanced-domain-research",
+      "level": "L6+",
+      "prerequisites": [
+        "formal-logic-and-proof",
+        "measurement-and-experiment",
+        "reviewed-primary-source-lessons"
+      ],
+      "concepts": [
+        "research question",
         "method",
         "result",
         "limitation",
-        "replication"
+        "reproduction",
+        "rigorous external review"
       ],
-      "required_verifier": "source-linked-expert-or-formal"
+      "required_verifier": "domain-expert-and-formal-where-possible"
     }
   ]
 }

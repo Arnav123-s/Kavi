@@ -5,11 +5,15 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .terminal import configure_utf8_output
+
 from .source_manifest import SourceManifest
 
 
 def main(argv: list[str] | None = None) -> int:
     """Print current source-review decisions."""
+
+    configure_utf8_output()
 
     parser = argparse.ArgumentParser(
         description="Validate Kavi's document curriculum source manifest."

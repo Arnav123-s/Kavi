@@ -85,6 +85,7 @@ class CurriculumPlan:
         if not identifiers or len(identifiers) != len(set(identifiers)):
             raise ValueError("Curriculum stages need unique, non-empty identifiers.")
         known = set(identifiers)
+        positions = {stage.stage_id: index for index, stage in enumerate(self.stages)}
         for stage in self.stages:
             if stage.status not in VALID_STAGE_STATUSES:
                 raise ValueError(f"Unknown curriculum status: {stage.status}")
@@ -96,6 +97,16 @@ class CurriculumPlan:
                 raise ValueError(f"Stage {stage.stage_id} cannot require itself.")
             if not set(stage.prerequisites).issubset(known):
                 raise ValueError(f"Stage {stage.stage_id} refers to an unknown prerequisite.")
+            later_prerequisites = [
+                prerequisite
+                for prerequisite in stage.prerequisites
+                if positions[prerequisite] >= positions[stage.stage_id]
+            ]
+            if later_prerequisites:
+                raise ValueError(
+                    f"Stage {stage.stage_id} must list only earlier prerequisites: "
+                    f"{', '.join(later_prerequisites)}"
+                )
             for threshold in (
                 stage.minimum_protected_accuracy,
                 stage.minimum_held_out_accuracy,

@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .terminal import configure_utf8_output
+
 from .runtime import LiveRuntime, RuntimeConfig
 from .types import Operation
 
@@ -101,6 +103,8 @@ def _print_paths(runtime: LiveRuntime, quiet: bool = False) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     """Run the selected bounded command."""
+
+    configure_utf8_output()
 
     parser = build_parser()
     args = parser.parse_args(argv)

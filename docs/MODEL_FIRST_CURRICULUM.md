@@ -49,21 +49,37 @@ research mathematics.
 
 ## Teaching order
 
-The order is based on prerequisites and the availability of exact verifiers,
-not a claim that people can be ranked by innate intelligence.
+The order is based on prerequisites and fixed evaluation gates, not a claim that
+people can be ranked by innate intelligence. The model cannot choose a later
+stage because a work is famous or easy to obtain. A stage remains locked until
+its declared earlier skills have passed their protected and held-out tests.
 
-| Order | What Kavi learns | Current state |
+| Level | What Kavi learns | Current state |
 | --- | --- | --- |
-| 0 | Generated glyph kinds: lowercase letters and decimal digits | Implemented, review-gated before a real run. |
-| 1 | Generated quantities, addition, and subtraction | Implemented, review-gated before a real run. |
-| 2 | Words, definitions, and compositional language | Waiting for a text-capable Kavi core and evaluation suite. |
-| 3 | Formal logic, counterexamples, and checked proofs | Waiting for typed symbolic language and an external verifier. |
-| 4 | Primary works and carefully licensed textbooks | Waiting for rights, provenance, extract, lesson, and test review. |
+| Bootstrap | Generated lowercase ASCII letter/digit kinds | Implemented, review-gated before a real run; fixed canonical lesson order. |
+| Bootstrap | Generated quantities, addition before subtraction, and exact checks | Implemented, review-gated before a real run; fixed canonical lesson ladder. |
+| L0 | Reversible Unicode signal handling and explicit script/language metadata | Waiting for a Unicode-capable model core. |
+| L2 | Generated multiscript glyph identity and confusable-character checks | Waiting for a script-aware core and evaluator. |
+| L3 | Numeral systems and exact quantities across reviewed notation forms | Waiting for the multiscript core. |
+| L4-L5 | Language-specific word formation, definitions, and original/translation separation | Waiting for text-capable paths and qualified language review. |
+| L5-L6 | Formal logic, counterexamples, and checked proofs | Waiting for typed symbolic language and an external verifier. |
+| L5-L6 | Original-language works and carefully licensed textbooks | Waiting for language skill, rights, provenance, cultural protocol, extract, lesson, and test review. |
 
 The full author-and-work hierarchy is in
-[people-and-works.json](../curriculum/people-and-works.json). The public starred
-repository list is recorded separately as a methods-reference catalog in
+[people-and-works.json](../curriculum/people-and-works.json). Its access URLs
+and their current non-admission status are in
+[access-records.json](../curriculum/access-records.json). The detailed
+multilingual prerequisite graph is in
+[multilingual-foundations.json](../curriculum/multilingual-foundations.json) and
+explained in [MULTILINGUAL_FOUNDATIONS.md](MULTILINGUAL_FOUNDATIONS.md). The
+public starred repository list is recorded separately as a methods-reference
+catalog in
 [methods-from-starred-repositories.json](../curriculum/methods-from-starred-repositories.json).
+
+The curriculum graph and generated lesson schedules are deliberately not
+randomized: eligibility is prerequisite-gated, generated early lessons follow a
+canonical sequence, and any future varied practice must declare its reproducing
+enumerator and held-out evaluation before it runs.
 
 ## Why source works are not automatically ingested
 
@@ -75,7 +91,8 @@ checked, and notes that other countries have their own rules. See its
 [license guidance](https://www.gutenberg.org/policy/license.html).
 
 Accordingly, the catalog labels works as candidates, references, or quarantined
-items. It never copies a book, paper, or PDF into this repository. Before a
+items. It never copies a book, paper, or PDF into this repository. An access
+link is a review locator, not permission to crawl or ingest a host. Before a
 source can enter Kavi's local lesson workspace, record all of the following:
 
 1. Exact work, edition, language, creator, source URL, and applicable rights.

@@ -58,7 +58,11 @@ class ModelSchoolTests(unittest.TestCase):
         plan = CurriculumPlan.load(PLAN_PATH)
         self.assertEqual(plan.stages[0].stage_id, "glyph-kinds")
         self.assertEqual(plan.stages[1].stage_id, "quantity-and-exact-relations")
+        self.assertEqual(plan.stages[2].stage_id, "unicode-signal-contract")
         self.assertEqual(plan.stages[2].status, "awaiting-model-capability")
+        for index, stage in enumerate(plan.stages):
+            earlier = {candidate.stage_id for candidate in plan.stages[:index]}
+            self.assertTrue(set(stage.prerequisites).issubset(earlier))
 
     def test_school_checkpoints_only_after_passing_finite_stages(self) -> None:
         with TemporaryDirectory() as directory:

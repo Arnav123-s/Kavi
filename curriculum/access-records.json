@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "catalog_id": "access-records-v1",
+  "title": "Kavi source access records",
+  "purpose": "Record human-locatable access pages for catalog review without copying, bulk crawling, or admitting source text.",
+  "discovery_method": "Links were located through targeted public catalog and institutional-page searches on 2026-09-03. No source body was downloaded, scraped, cached, or used as training data.",
+  "access_rule": "An access link is not a reuse license or an admission decision. Before any local extract exists, the exact edition, current terms, rights, provenance, cultural protocol, lesson verifier, and held-out evaluation must pass the document curriculum gate.",
+  "records": [
+    {
+      "access_id": "sanskrit-library-ashtadhyayi",
+      "work": "Aṣṭādhyāyī",
+      "host": "The Sanskrit Library",
+      "url": "https://sanskritlibrary.org/catalogsText/azwADyAyI.html",
+      "access_type": "digital-edition record",
+      "status": "catalog-only-exact-license-review-required",
+      "note": "The host identifies an edited digital edition and its own license; the historical work and the modern edition must not be conflated."
+    },
+    {
+      "access_id": "tn-goml-tolkappiyam",
+      "work": "Tolkāppiyam / தொல்காப்பியம்",
+      "host": "Government Oriental Manuscripts Library, Chennai",
+      "url": "https://www.tnarch.gov.in/goml/manuscripts/view/4451",
+      "access_type": "manuscript catalog record",
+      "status": "catalog-only-provenance-and-access-review-required",
+      "note": "Catalog record for a Tamil manuscript witness; it is not an automatic permission to copy a scan or transcription."
+    },
+    {
+      "access_id": "cict-tolkappiyam",
+      "work": "Tolkāppiyam / தொல்காப்பியம்",
+      "host": "Central Institute of Classical Tamil",
+      "url": "https://cictdl.github.io/Tolkappiyam/",
+      "access_type": "digital-edition landing page",
+      "status": "catalog-only-exact-terms-review-required",
+      "note": "Useful as an institutional access locator; check the edition, terms, and any commentary separately."
+    },
+    {
+      "access_id": "unesco-hunminjeongeum",
+      "work": "Hunminjeongeum manuscript / 훈민정음",
+      "host": "UNESCO Memory of the World",
+      "url": "https://www.unesco.org/en/memory-world/hunminjeongeum-manuscript?hub=1081",
+      "access_type": "heritage catalog record",
+      "status": "catalog-only-rights-and-repository-review-required",
+      "note": "A heritage description and collection record, not a source-text training license."
+    },
+    {
+      "access_id": "ctext-nine-chapters",
+      "work": "The Nine Chapters / 九章算術",
+      "host": "Chinese Text Project",
+      "url": "https://ctext.org/nine-chapters/ens",
+      "access_type": "digital text and scan locator",
+      "status": "catalog-only-host-terms-prohibit-automated-large-download",
+      "note": "The host FAQ says its content is protected and forbids automated large downloads; do not crawl or scrape it."
+    },
+    {
+      "access_id": "ctext-mozi",
+      "work": "Mozi / 墨子",
+      "host": "Chinese Text Project",
+      "url": "https://ctext.org/mozi/ens",
+      "access_type": "digital text locator",
+      "status": "catalog-only-host-terms-prohibit-automated-large-download",
+      "note": "Use only as a locator pending exact edition, host terms, and source-gate review."
+    },
+    {
+      "access_id": "british-museum-rhind",
+      "work": "Rhind Mathematical Papyrus, EA10058",
+      "host": "The British Museum",
+      "url": "https://www.britishmuseum.org/collection/object/Y_EA10058",
+      "access_type": "collection-object record",
+      "status": "catalog-only-object-and-image-rights-review-required",
+      "note": "Museum object metadata and images have separate use conditions."
+    },
+    {
+      "access_id": "al-khwarizmi-columbia-record",
+      "work": "al-Jabr wa al-muqābalah",
+      "host": "Columbia University Rare Book and Manuscript Library via Digital Scriptorium",
+      "url": "https://search.digital-scriptorium.org/?f%5Bauthor_facet%5D%5B%5D=Al-Khwarizmi&f%5Btitle_facet%5D%5B%5D=al-Jabr+wa+al-muq%C4%81balah&per_page=100",
+      "access_type": "manuscript catalog record",
+      "status": "catalog-only-exact-witness-and-rights-review-required",
+      "note": "This identifies a later manuscript witness, not an original authorial manuscript."
+    },
+    {
+      "access_id": "ismi-ibn-al-haytham-manazir",
+      "work": "Kitāb al-manāẓir / كتاب المناظر",
+      "host": "Islamic Scientific Manuscripts Initiative",
+      "url": "https://ismi.mpiwg-berlin.mpg.de/index.php/witness/182063",
+      "access_type": "manuscript witness record",
+      "status": "catalog-only-exact-witness-and-rights-review-required",
+      "note": "The record identifies a Süleymaniye Library witness; it does not itself grant text reuse."
+    },
+    {
+      "access_id": "bnf-tusi-tahrir-uqlidis",
+      "work": "Taḥrīr Uṣūl Uqlīdis / تحرير أصول إقليدس",
+      "host": "Bibliothèque nationale de France",
+      "url": "https://gallica.bnf.fr/ark:/12148/btv1b52513032t",
+      "access_type": "digitized manuscript witness",
+      "status": "catalog-only-exact-witness-and-rights-review-required",
+      "note": "Record the manuscript witness and the host's current terms before any approved extract is considered."
+    },
+    {
+      "access_id": "unesco-timbuktu-manuscripts",
+      "work": "Timbuktu manuscript collections",
+      "host": "UNESCO",
+      "url": "https://www.unesco.org/en/articles/mali-timbuktu-manuscripts",
+      "access_type": "heritage and preservation overview",
+      "status": "catalog-only-provenance-and-community-review-required",
+      "note": "The collection includes public and private holdings; no automated collection is permitted by this catalog."
+    },
+    {
+      "access_id": "slub-dresden-maya-codex",
+      "work": "Dresden Maya Codex / Codex Dresdensis",
+      "host": "Saxon State and University Library Dresden",
+      "url": "https://www.slub-dresden.de/en/explore/manuscripts/the-dresden-maya-codex",
+      "access_type": "institutional manuscript page",
+      "status": "catalog-only-provenance-and-community-review-required",
+      "note": "The holding institution explicitly identifies colonial-context provenance research; that context is a prerequisite, not a footnote."
+    },
+    {
+      "access_id": "gutenberg-euclid-elements",
+      "work": "Elements",
+      "host": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/21076",
+      "access_type": "edition landing page",
+      "status": "candidate-us-public-domain-review-required",
+      "note": "Review the individual eBook's status and all applicable jurisdictions at admission time."
+    },
+    {
+      "access_id": "gutenberg-boole-laws-of-thought",
+      "work": "An Investigation of the Laws of Thought",
+      "host": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/15114",
+      "access_type": "edition landing page",
+      "status": "candidate-us-public-domain-review-required",
+      "note": "A host page is not a blanket source-admission decision."
+    },
+    {
+      "access_id": "euler-archive",
+      "work": "Euler papers and editions",
+      "host": "The Euler Archive",
+      "url": "https://eulerarchive.maa.org/",
+      "access_type": "scholarly archive landing page",
+      "status": "catalog-only-exact-edition-review-required",
+      "note": "Choose an exact work and edition before any later source-gate review."
+    },
+    {
+      "access_id": "gutenberg-darwin-origin",
+      "work": "On the Origin of Species",
+      "host": "Project Gutenberg",
+      "url": "https://www.gutenberg.org/ebooks/1228",
+      "access_type": "edition landing page",
+      "status": "candidate-us-public-domain-review-required",
+      "note": "Review the individual eBook and local legal status before any local lesson use."
+    },
+    {
+      "access_id": "shannon-doi",
+      "work": "A Mathematical Theory of Communication",
+      "host": "Bell System Technical Journal record",
+      "url": "https://doi.org/10.1002/j.1538-7305.1948.tb01338.x",
+      "access_type": "publication record",
+      "status": "catalog-only-exact-rights-review-required",
+      "note": "A DOI identifies a publication; it is not a training-use license."
+    }
+  ]
+}

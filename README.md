@@ -33,7 +33,9 @@ The allocated learner size may change. The hard device resource limit does not i
 - [Design](docs/DESIGN.md): interpretation, constraints, and unresolved mechanisms.
 - [Growth and compression cycles](docs/GROWTH_CYCLES.md): changing learner size under a fixed device ceiling.
 - [Model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md): implemented early cores, teaching order, and automation boundaries.
-- [People and works catalog](curriculum/people-and-works.json): reviewable hierarchy of original works and textbook candidates.
+- [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
+- [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
+- [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.
 - [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md): the code’s actual modules, data flow, and explicit non-features.
 - [Operations and reproducibility](docs/OPERATIONS_AND_REPRODUCIBILITY.md): finite CLI runs, controls, and resource interpretation.
 - [Evaluation protocol](docs/EVALUATION_PROTOCOL.md): fixed test partitions and promotion criteria.

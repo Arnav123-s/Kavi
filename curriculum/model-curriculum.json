@@ -1,10 +1,14 @@
 {
   "schema_version": 1,
   "title": "Kavi model-first developmental curriculum",
+  "ordering_policy": "Stages are listed in a valid prerequisite order. A runnable stage can begin only when every listed earlier stage is complete; a waiting stage is a hard stop, never a license to skip ahead. Independent future language lanes are serialized on this device unless a separate measured budget authorizes another schedule.",
+  "bootstrap_note": "The existing ASCII glyph stage is a deliberately narrow source-free bootstrap. It does not satisfy the future Unicode signal contract or prove multilingual capability.",
   "stages": [
     {
       "stage_id": "glyph-kinds",
-      "title": "Generated lowercase letters and decimal digits",
+      "title": "Generated lowercase ASCII letters and decimal digits",
+      "level": "bootstrap",
+      "lane": "generated-symbols",
       "status": "runnable",
       "engine": "symbol-prototypes",
       "prerequisites": [],
@@ -14,7 +18,9 @@
     },
     {
       "stage_id": "quantity-and-exact-relations",
-      "title": "Generated quantities, addition, and subtraction",
+      "title": "Generated quantities, addition before subtraction, and exact checks",
+      "level": "bootstrap",
+      "lane": "generated-quantity",
       "status": "runnable",
       "engine": "arithmetic-explanations",
       "prerequisites": [
@@ -25,49 +31,88 @@
       "minimum_held_out_accuracy": 1.0
     },
     {
-      "stage_id": "word-forms-and-definitions",
-      "title": "Words, definitions, and compositional language",
+      "stage_id": "unicode-signal-contract",
+      "title": "Reversible Unicode signal handling and explicit metadata",
+      "level": "L0",
+      "lane": "shared-multilingual-foundation",
       "status": "awaiting-model-capability",
       "engine": null,
       "prerequisites": [
-        "glyph-kinds",
-        "quantity-and-exact-relations"
+        "glyph-kinds"
       ],
       "source_ids": [],
       "minimum_protected_accuracy": 1.0,
       "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "The current core has no text representation, word-composition path, or language evaluation suite. Build and validate that model core before this stage can run."
+      "waiting_reason": "The current core only accepts lowercase ASCII and decimal digits. Build and test a reversible Unicode signal contract before it can represent another script honestly."
+    },
+    {
+      "stage_id": "multiscript-glyph-foundations",
+      "title": "Generated script-balanced glyph identity and confusable-character checks",
+      "level": "L2",
+      "lane": "shared-multilingual-foundation",
+      "status": "awaiting-model-capability",
+      "engine": null,
+      "prerequisites": [
+        "glyph-kinds",
+        "unicode-signal-contract"
+      ],
+      "source_ids": [],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "waiting_reason": "Kavi needs a Unicode-aware script core, generated balanced manifests, and an evaluator that tests each supported script before it may claim to read a language."
+    },
+    {
+      "stage_id": "word-forms-and-definitions",
+      "title": "Language-specific words, definitions, and compositional structure",
+      "level": "L4-L5",
+      "lane": "reviewed-language-lane",
+      "status": "awaiting-model-capability",
+      "engine": null,
+      "prerequisites": [
+        "quantity-and-exact-relations",
+        "multiscript-glyph-foundations"
+      ],
+      "source_ids": [
+        "multilingual-foundations-v1"
+      ],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0,
+      "waiting_reason": "The current core has no text representation, word-composition path, language-specific evaluator, or qualified-language review process. Build and validate those before this stage can run."
     },
     {
       "stage_id": "formal-logic-and-proof",
       "title": "Definitions, formal logic, counterexamples, and checked proofs",
+      "level": "L5-L6",
+      "lane": "formal-reasoning",
       "status": "awaiting-model-capability",
       "engine": null,
       "prerequisites": [
         "word-forms-and-definitions"
       ],
       "source_ids": [
-        "euclid-elements",
-        "boole-laws-of-thought"
+        "people-and-works-v2"
       ],
       "minimum_protected_accuracy": 1.0,
       "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "Kavi needs a typed symbolic-language core and an external formal verifier before it may learn or claim a proof skill."
+      "waiting_reason": "Kavi needs typed symbolic language and an external formal verifier before it may learn or claim a proof skill."
     },
     {
       "stage_id": "reviewed-primary-works",
-      "title": "Primary works and carefully licensed textbooks",
+      "title": "Original-language works and carefully licensed textbooks",
+      "level": "L5-L6",
+      "lane": "source-review",
       "status": "awaiting-source-review",
       "engine": null,
       "prerequisites": [
         "formal-logic-and-proof"
       ],
       "source_ids": [
-        "people-and-works-v1"
+        "people-and-works-v2",
+        "access-records-v1"
       ],
       "minimum_protected_accuracy": 1.0,
       "minimum_held_out_accuracy": 1.0,
-      "waiting_reason": "The catalog is a reading order, not a training license. Admit each exact edition, extract, and lesson only after rights, provenance, a verifier, and held-out tests are recorded."
+      "waiting_reason": "The catalog is a prerequisite-aware access list, not a training license. Admit each exact edition or witness, extract, language lane, lesson, verifier, and held-out test only after review."
     }
   ]
 }

@@ -21,6 +21,11 @@ Author: Arnav123-s
 | [MODEL_FIRST_CURRICULUM.md](MODEL_FIRST_CURRICULUM.md) | Implemented early cores and review plan | Why the model is primary, how it is taught, and where automation must stop. |
 | [MULTILINGUAL_FOUNDATIONS.md](MULTILINGUAL_FOUNDATIONS.md) | Implemented signal foundations plus curriculum proposal | Prerequisite-first signal, script, language, and original-source plan. |
 
+## Latest text-core teaching
+
+- [Language-first teaching](LANGUAGE_FIRST_TEACHING.md): implemented controlled English prerequisites, balanced answer objective, source retrieval and exact limits.
+- [Language-first repair measurements](../experiments/2026-09-04-language-first-repair.md): repetitive-answer diagnosis, isolated training-fit probe, actual early letter answers and engineering checks.
+
 ## Architecture and model blueprints
 
 | Document | Status | Focus |

@@ -10,8 +10,11 @@ A new CPU-only wave text core learns from original source paragraphs and
 supplied corrections by updating its own fixed-size sparse recurrent
 configuration. It starts untrained; the earlier symbolic model is preserved
 and audited separately, not presented as transferred English understanding.
-The original-book teacher has nine prerequisite-ordered arithmetic units,
-fresh English exams, corrective rounds, checkpoint resume and live chat.
+The corrected teacher starts with explicit letter, word-form, quantity-meaning,
+sentence and short-passage gates before nine arithmetic units. It uses balanced
+answer-focused updates, familiar/new/harder tests, corrective rounds and live
+chat. See [language-first teaching and measured limits](docs/LANGUAGE_FIRST_TEACHING.md)
+and the [repeated-answer diagnosis](experiments/2026-09-04-language-first-repair.md).
 Current English scores are low; this is not a mastered textbook or a
 master's-level learner. Wave-inspired mixing does not imply quantum speedup
 or unlimited memory.

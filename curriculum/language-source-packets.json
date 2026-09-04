@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "selection": "Original-language references and authored educational definitions. No translations, poems or stories as filler. Exercise wording is separately labeled teacher-generated, not an author quotation.",
+  "sources": [
+    {
+      "source_id": "unicode-17-character-data",
+      "local_path": "private/sources/unicode-17.0.0-UnicodeData.txt",
+      "access_url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c",
+      "translation": false,
+      "language": "Unicode metadata; not a spoken language"
+    },
+    {
+      "source_id": "baskervill-sewell-english-grammar",
+      "local_path": "private/sources/baskervill-sewell-grammar-14006.txt",
+      "access_url": "https://www.gutenberg.org/cache/epub/14006/pg14006.txt",
+      "sha256": "21595f1f94403d10a6a0f4ec910f27ccc8aba95da89a730bc64029a70161a614",
+      "translation": false,
+      "language": "en"
+    },
+    {
+      "source_id": "demorgan-arithmetic-1858",
+      "local_path": "private/sources/demorgan-elements-arithmetic-68662.txt",
+      "access_url": "https://www.gutenberg.org/cache/epub/68662/pg68662.txt",
+      "sha256": "c7dc1494dc3172531d79f11108c231377a4c17be0dbf9eb1ccce1a163e9ffd2f",
+      "translation": false,
+      "language": "en"
+    }
+  ],
+  "packets": [
+    {"packet_id": "unicode-latin-letters", "source_id": "unicode-17-character-data", "lines": [66, 91], "locator": "ASCII capital Latin letters, original Unicode character names and lowercase mappings"},
+    {"packet_id": "grammar-name-words", "source_id": "baskervill-sewell-english-grammar", "lines": [420, 421], "locator": "Part I, section 2: definition of noun"},
+    {"packet_id": "demorgan-number-words", "source_id": "demorgan-arithmetic-1858", "lines": [236, 246], "locator": "Book I, section I, paragraph 5: number-word table"},
+    {"packet_id": "demorgan-counting", "source_id": "demorgan-arithmetic-1858", "lines": [278, 283], "locator": "Book I, section I, paragraph 6: written numerals and number names"},
+    {"packet_id": "grammar-sentence", "source_id": "baskervill-sewell-english-grammar", "lines": [10542, 10542], "locator": "Part II, section 336: sentence definition"},
+    {"packet_id": "grammar-predicate", "source_id": "baskervill-sewell-english-grammar", "lines": [10594, 10600], "locator": "Part II, section 340: subject and predicate"}
+  ],
+  "inspection": "Exact source catalogs, authorship, original language, rights statements, private file hashes and the selected definition/table lines were checked. Full books are not represented as exhaustively reviewed. Historic grammar generalizations are not universal laws for all languages.",
+  "fetch_policy": "The teacher may fetch only these exact HTTPS URLs anonymously, maximum 3 MB per source, with the recorded fingerprint. Missing or changed sources are reported; no paywall, authentication, unreviewed crawl or invented source is allowed. Later-language sources require their own reviewed entries."
+}

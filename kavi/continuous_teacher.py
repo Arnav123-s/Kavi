@@ -161,6 +161,10 @@ class ContinuousTeacher:
             time.sleep(self.config.rest_ms / 1000)
         return True
 
+    @staticmethod
+    def prompt_prefix(question: str) -> str:
+        return f"Question: {question}\nAnswer: "
+
     def teach_question(self, q: Question, *, mistake: str | None = None) -> None:
         self.seen.add(q.key)
         self.emit("lessons", "correction" if mistake is not None else "practice",
@@ -225,7 +229,7 @@ class ContinuousTeacher:
                 def token(piece: bytes) -> None:
                     self.bus.emit("answers", "stream-token", text=decoder.decode(piece), request_id=path.stem)
 
-                output = self.core.generate(f"Question: {question}\nAnswer: ", max_bytes=128, on_token=token)
+                output = self.core.generate(self.prompt_prefix(question), max_bytes=128, on_token=token)
                 tail = decoder.decode(b"", final=True)
                 self.bus.emit("answers", "stream-token", text=tail + "\n", request_id=path.stem)
                 self.core.save(self.root / "before-conversation.pt")

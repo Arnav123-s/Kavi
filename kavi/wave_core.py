@@ -163,6 +163,48 @@ class WaveLearner:
         return {"loss": losses / count if count else None, "tokens": count,
                 "interrupted": False}
 
+    def learn_answers(self, examples: list[tuple[str, str]], callback=None) -> dict:
+        """Train 1..4 independent answer-focused examples as a balanced batch.
+
+        Prefixes condition the network and receive gradients through the full
+        bounded example. Only supplied answer bytes are scored. No generated
+        model output is used as a target. Batch rows never share hidden state.
+        """
+        if not 1 <= len(examples) <= 4:
+            raise ValueError("Answer-learning batch must contain 1..4 examples.")
+        encoded = []
+        for prefix, answer in examples:
+            p, a = prefix.encode("utf-8"), (answer + "\n").encode("utf-8")
+            if not p or not answer or len(p + a) > 256:
+                raise ValueError("An answer example needs a prefix and answer within 256 UTF-8 bytes.")
+            encoded.append((p, a))
+        length = max(len(p) + len(a) - 1 for p, a in encoded)
+        x = torch.zeros(len(encoded), length, dtype=torch.long)
+        target = torch.full_like(x, -100)
+        for row, (p, a) in enumerate(encoded):
+            values = torch.tensor(list(p + a), dtype=torch.long)
+            x[row, :len(values)-1] = values[:-1]
+            target[row, len(p)-1:len(values)-1] = values[len(p):]
+        self.network.train()
+        self.optimizer.zero_grad(set_to_none=True)
+        logits, _ = self.network(x)
+        per_token = F.cross_entropy(logits.transpose(1, 2), target, ignore_index=-100, reduction="none")
+        mask = target != -100
+        loss = (per_token.sum(1) / mask.sum(1)).mean()
+        if not torch.isfinite(loss):
+            raise ArithmeticError("Non-finite answer loss; update not applied.")
+        loss.backward()
+        norm = nn.utils.clip_grad_norm_(self.network.parameters(), 1.0, error_if_nonfinite=True)
+        self.optimizer.step()
+        self.updates += 1
+        used = int(mask.sum())
+        self.bytes_seen += used
+        event = {"loss": float(loss.detach()), "tokens": used, "update": self.updates,
+                 "gradient_norm": float(norm), "objective": "balanced-answer-only",
+                 "batch_size": len(examples)}
+        interrupted = callback(event) is False if callback else False
+        return {**event, "interrupted": interrupted}
+
     @torch.no_grad()
     def measure(self, text: str) -> dict:
         """Read-only next-byte evaluation; NOT a comprehension or exam score."""

@@ -165,13 +165,14 @@ def main(argv: list[str] | None = None) -> int:
     try:
         with TrainingLock(repo / "runs/.wave-training.lock"):
             bus = LiveEventBus(root)
-            from .continuous_teacher import ContinuousTeacher, TeachingConfig
+            from .continuous_teacher import TeachingConfig
+            from .language_teacher import LanguageFirstTeacher
             config = TeachingConfig(root, args.foundation.resolve(),
                                     args.resume.resolve() if args.resume else None,
                                     max_rounds=args.max_rounds, exam_cases=args.exam_cases,
                                     practice_cases=args.practice_cases,
                                     max_seconds=args.max_seconds, keep_available=args.keep_available)
-            runtime = ContinuousTeacher(repo, config, bus)
+            runtime = LanguageFirstTeacher(repo, config, bus)
             print(f"Kavi teacher running.\nRun: {root}\nFollow the Teaching/Answers/Pathways/Learning/Grading tabs.", flush=True)
             print(json.dumps(runtime.run(), indent=2))
             return 0

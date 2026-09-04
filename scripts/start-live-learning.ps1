@@ -28,11 +28,11 @@ function Open-KaviLearningTab {
     [void][Diagnostics.Process]::Start($kaviInfo)
     Start-Sleep -Milliseconds 200
 }
-Open-KaviLearningTab 'Kavi LIVE Teacher' $kaviRunner
+Open-KaviLearningTab 'Kavi SCHOOL Teacher' $kaviRunner
 foreach ($kaviChannel in @('lessons', 'answers', 'pathways', 'learning', 'grading')) {
-    Open-KaviLearningTab "Kavi LIVE $kaviChannel" "python -u -m kavi.wave_cli watch --run-dir '$kaviRun' --channel $kaviChannel"
+    Open-KaviLearningTab "Kavi SCHOOL $kaviChannel" "python -u -m kavi.wave_cli watch --run-dir '$kaviRun' --channel $kaviChannel"
 }
-Open-KaviLearningTab 'Kavi LIVE Chat + Controls' "python -u -m kavi.wave_cli console --run-dir '$kaviRun'"
+Open-KaviLearningTab 'Kavi SCHOOL Chat + Controls' "python -u -m kavi.wave_cli console --run-dir '$kaviRun'"
 & wt.exe -w $kaviWindow focus-tab -t 1
 Write-Output "Live run: $kaviRun"
 Write-Output 'The teacher runs locally without this chat. Pause/stop remain available. No other applications were closed.'

@@ -2,6 +2,34 @@
   "schema_version": 1,
   "sources": [
     {
+      "source_id": "unicode-17-character-data",
+      "source_type": "original-technical-reference",
+      "educational_purpose": "Ground letter identities and case forms in official character metadata, without claiming this teaches a spoken language.",
+      "title": "Unicode 17.0.0 Character Database: UnicodeData.txt",
+      "creator": "Unicode Consortium",
+      "original_url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "license_class": "unicode-license-v3",
+      "license_url": "https://www.unicode.org/license.txt",
+      "status": "approved",
+      "review_note": "Original ASCII letter records and exact private source fingerprint reviewed for owner-authorized language foundations on 2026-09-04.",
+      "subjects": ["character identity", "case forms"],
+      "levels": ["foundation"]
+    },
+    {
+      "source_id": "baskervill-sewell-english-grammar",
+      "source_type": "original-authored-work",
+      "educational_purpose": "Provide original English definitions of naming words, sentences, subjects and predicates to support controlled language lessons and independent exercises.",
+      "title": "An English Grammar",
+      "creator": "William Malone Baskervill and James Witt Sewell",
+      "original_url": "https://www.gutenberg.org/ebooks/14006",
+      "license_class": "public-domain-us",
+      "license_url": "https://www.gutenberg.org/ebooks/14006",
+      "status": "approved",
+      "review_note": "Catalog identifies authors, original English, public domain USA. Reviewed signed 1896 preface and selected definitions in sections 2, 336 and 340; the teacher uses short selected packets, not the full high-school text as a beginner lesson. Full original book and digitization credits remain private. Historical definitions are not universal linguistic facts.",
+      "subjects": ["English grammar", "word classes", "sentence structure"],
+      "levels": ["selected-foundation-definitions", "introductory grammar"]
+    },
+    {
       "source_id": "demorgan-arithmetic-1858",
       "source_type": "original-authored-work",
       "educational_purpose": "Learn original English arithmetic prose and assess numeration, arithmetic, fractions and later Book I topics independently.",

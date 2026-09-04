@@ -49,7 +49,10 @@ z_j\leftarrow u_j/\sqrt{1+|u_j|^2}.
 
 A learned linear readout of real and imaginary coordinates predicts the next
 UTF-8 byte. Training minimizes next-byte cross-entropy. For supplied corrections,
-only the answer/explanation positions receive supervised loss; question tokens
+the corrected default teacher scores supplied answer bytes separately from
+explanation prose, with full-prefix gradients for bounded examples. See
+[language-first teaching](LANGUAGE_FIRST_TEACHING.md) for the balanced answer
+objective, revised prerequisite gates and its limitations. Question tokens
 provide conditioning. A normal conversation input can be learned as an
 unverified observation. The model's own generated answer is never automatically
 treated as ground truth.
@@ -146,9 +149,11 @@ thought process. Private conversation logs never go to the public repository.
 
 The CPU-only default uses two numerical worker threads; GPU and temperature
 limits are unchanged. One OS-held training lock prevents duplicate wave
-trainers. Pause/stop act between bounded updates. A run has finite teaching and
-24-hour wall-clock budgets. After exhausting automatic rounds, an optional live
-service waits for questions/corrections; waiting is explicitly not training.
+trainers. Pause/stop act between bounded updates. A run has an explicit wall-clock
+budget of at most 24 hours. The corrected language-first start script continues
+remediation rounds during that session; a bounded smoke run without
+`--keep-available` still stops at its round budget. Missing implemented advanced
+curricula cannot be replaced by an unearned completion claim.
 The teacher cannot invent a missing curriculum, verifier or architecture merely
 by repeating a chapter. More original works and capable mechanisms still need
 development when the measured boundary is reached.

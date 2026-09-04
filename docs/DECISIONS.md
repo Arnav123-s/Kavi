@@ -59,3 +59,25 @@ The existing design discussion is summarized in this initial record. Its earlier
 - Permit an opt-in local checkpoint containing compact numeric model state and
   attempt counts, never textbook body, question strings, source extracts, or a
   background schedule.
+
+## 2026-09-04: make routes and circuit modifications the learned unit
+
+- Add one persistent path-centric circuit across all five currently runnable
+  stages instead of treating each narrow stage core as the final architecture.
+- Treat detector, resistor, switch, capacitor, junction, loop, jump, and
+  transformer elements as local flow operations. Intelligence is assigned to
+  route selection, composition, and tested structural adaptation, not to an
+  individual neuron-like component.
+- Give every route a hard task context so algebra can reuse letter, digit, and
+  arithmetic routes without overwriting their earlier meanings. Algebra is an
+  initial integration example, not the intended limit of the mechanism.
+- Use classical complex amplitudes and route interference as an inspectable
+  routing heuristic only; make no quantum-computing or resource-advantage claim.
+- Permit a candidate to reshape only its target route and jump adapters. Promote
+  it only after current, protected, and held-out error do not regress.
+- Before promotion, freeze the complete parent under the ignored local run
+  archive. Only the child remains in the active brain; inference never reads an
+  archive. Recovery remains a deliberate external action, not model memory.
+- Provide separate finite terminal feeds for answers, route activation,
+  structural learning, and grading, plus explicit pause, resume, and stop
+  controls. Stop at the next unavailable curriculum capability.

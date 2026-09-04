@@ -1,7 +1,7 @@
 [project]
 name = "kavi"
 version = "0.1.0"
-description = "A bounded experimental hard-pathway learning harness."
+description = "A bounded experimental path-centric adaptive circuit model."
 requires-python = ">=3.11"
 authors = [{ name = "Arnav123-s" }]
 
@@ -9,6 +9,7 @@ authors = [{ name = "Arnav123-s" }]
 kavi = "kavi.cli:main"
 kavi-school = "kavi.school_cli:main"
 kavi-catalog = "kavi.catalog_cli:main"
+kavi-pathways = "kavi.pathway_cli:main"
 
 [tool.unittest]
 start-directory = "tests"

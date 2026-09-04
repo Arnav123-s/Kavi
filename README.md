@@ -6,20 +6,20 @@ Kavi is a model-first research project for a developmental learner with bounded 
 
 ## Current status
 
-Kavi contains four narrow, implemented model cores: an arithmetic pathway with
-a verified local readout; a generated ASCII glyph pathway that compresses
-letter/digit evidence into prototypes; a generated Unicode script-pathway
-prototype that learns eleven bounded scalar lanes; and a reviewed local
-textbook concept pathway that distinguishes expressions from relations in one
-small algebra lesson. A separate scalar contract preserves one Unicode input
-exactly before the script core runs. All use finite runs, candidate-only
-updates, protected and held-out checks, and visible terminal traces. They are
-not a general learner, a broadly textbook-trained model, or evidence of broad
-intelligence. See the [model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md),
-[Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md),
-[reviewed textbook concept stage](docs/TEXTBOOK_CONCEPT_STAGE.md), and
-[implementation reference](docs/IMPLEMENTATION_REFERENCE.md) for the exact
-code boundary.
+Kavi contains a unified experimental path-centric circuit plus four earlier
+narrow model cores. The unified circuit keeps one active state across the
+currently runnable curriculum, treats routes and jump adapters as the learned
+objects, reuses earlier glyph and arithmetic routes in its later algebra
+concept routes, and archives each replaced parent outside the active model.
+The earlier cores comprise an arithmetic pathway, generated ASCII glyph and
+Unicode script prototypes, and a reviewed expression-versus-relation lesson.
+All runs are finite and evaluator-gated. This is not a general learner, a
+broadly textbook-trained model, or evidence of broad intelligence. See the
+[model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md), [Unicode scalar and
+script stage](docs/UNICODE_SCRIPT_STAGE.md), [reviewed textbook concept
+stage](docs/TEXTBOOK_CONCEPT_STAGE.md), [path-centric adaptive
+circuit](docs/PATH_CENTRIC_CIRCUIT.md), and [implementation
+reference](docs/IMPLEMENTATION_REFERENCE.md) for the exact boundary.
 
 The broader developmental architecture remains research. Any new finite stage
 must be reviewed and explicitly authorized by the owner before a real run;
@@ -43,6 +43,7 @@ The allocated learner size may change. The hard device resource limit does not i
 - [Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md): implemented bounded Unicode signal and glyph-pathway core, with exact limits.
 - [Reviewed textbook concept stage](docs/TEXTBOOK_CONCEPT_STAGE.md): first fingerprinted local-only source lesson, its compact model, exact evaluator, and live trace.
 - [Adaptive syllabus loop](docs/ADAPTIVE_SYLLABUS.md): finite seeded teaching/test loop, 90% gates, visible diagnostics, and approved repair queues.
+- [Path-centric adaptive circuit](docs/PATH_CENTRIC_CIRCUIT.md): one active cross-stage circuit, local element roles, complex route scoring, jump adapters, frozen external parent archives, and multi-tab live feeds.
 - [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
 - [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
 - [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.

@@ -42,11 +42,30 @@ agent, a background service, or a self-modifying program.
 | kavi.textbook_runtime | Local-only lesson loader, PDF/extract fingerprint verification, finite source-event trace, pause/stop controls, and protected/held-out readouts. |
 | kavi.adaptive_syllabus | Finite seeded syllabus runner, compact-state checkpoint, 90% gates, visible per-question grades, and declared repair queues. |
 | kavi.adaptive_cli | Command-line entry point for local adaptive syllabus runs and review. |
+| kavi.pathway_circuit | Unified path-centric circuit state, local component roles, route amplitudes, jump adapters, arithmetic transforms, and candidate evaluation. |
+| kavi.pathway_live | Finite five-stage persistent-circuit runtime, separate local event feeds, active checkpoints, and inactive parent archives. |
+| kavi.pathway_cli | Run, watch, inspect-state, and pause/resume/stop commands for the unified circuit experiment. |
 | kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
 | kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
 | kavi.catalog_cli | Read-only review of the people-and-works catalog. |
 
 ## Inference path
+
+The newest unified experiment is specified in
+[PATH_CENTRIC_CIRCUIT.md](PATH_CENTRIC_CIRCUIT.md). Unlike the earlier school,
+it retains one active circuit across the five implemented stages. Later
+notation routes use jump adapters from earlier glyph and arithmetic routes.
+Only the active state is available to inference; replaced parents are frozen
+under the ignored run archive and are never loaded by the runtime.
+
+This architecture is intended as a domain-independent learning mechanism.
+Algebra is the first source-backed integration test, not an architectural
+restriction. Language, science, planning, vision, and calculus still require
+new representations, lessons, verifiers, and measured gates before Kavi can
+claim those capabilities.
+
+The following paragraph describes the earlier stage-0 arithmetic core, which
+remains available as an independent regression baseline.
 
 An ArithmeticEvent carries two operands, an operation, an event identifier, and
 a correlation identifier. The pathway fabric splits one event into quantity and

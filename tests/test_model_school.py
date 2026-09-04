@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import json
+
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -60,7 +62,10 @@ class ModelSchoolTests(unittest.TestCase):
         self.assertEqual(plan.stages[1].stage_id, "quantity-and-exact-relations")
         self.assertEqual(plan.stages[2].stage_id, "unicode-signal-contract")
         self.assertEqual(plan.stages[2].status, "runnable")
-        self.assertEqual(plan.stages[4].status, "awaiting-model-capability")
+        self.assertEqual(plan.stages[4].stage_id, "textbook-concepts-expressions-relations")
+        self.assertEqual(plan.stages[4].status, "runnable")
+        self.assertEqual(plan.stages[5].status, "awaiting-model-capability")
+        self.assertIn("textbook-concepts-expressions-relations", plan.stages[5].prerequisites)
         for index, stage in enumerate(plan.stages):
             earlier = {candidate.stage_id for candidate in plan.stages[:index]}
             self.assertTrue(set(stage.prerequisites).issubset(earlier))
@@ -91,6 +96,36 @@ class ModelSchoolTests(unittest.TestCase):
         )
         self.assertEqual(summary.results[-1].outcome, "passed")
         self.assertEqual(restored.state.completed_stage_ids, summary.completed_stage_ids)
+
+    def test_source_stage_refuses_to_run_without_its_private_lesson(self) -> None:
+        completed = (
+            "glyph-kinds",
+            "quantity-and-exact-relations",
+            "unicode-signal-contract",
+            "multiscript-glyph-foundations",
+        )
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            state_path = root / "school-state.json"
+            state_path.write_text(
+                json.dumps(
+                    {"schema_version": 1, "completed_stage_ids": list(completed)}
+                ),
+                encoding="utf-8",
+            )
+            school = ModelSchool(
+                SchoolConfig(
+                    plan_path=PLAN_PATH,
+                    max_stages=1,
+                    interval_ms=0,
+                    state_file=state_path,
+                    private_lesson_root=root / "missing-private-lessons",
+                ),
+                emit=lambda _: None,
+            )
+            summary = school.run()
+        self.assertEqual(summary.completed_stage_ids, completed)
+        self.assertEqual(summary.results[-1].outcome, "waiting-local-lesson")
 
 
 if __name__ == "__main__":

@@ -30,6 +30,18 @@ def build_parser() -> argparse.ArgumentParser:
         default=Path("curriculum/model-curriculum.json"),
         help="declared curriculum plan",
     )
+    parser.add_argument(
+        "--source-manifest",
+        type=Path,
+        default=Path("curriculum/source-manifest.json"),
+        help="reviewed public source metadata",
+    )
+    parser.add_argument(
+        "--lesson-root",
+        type=Path,
+        default=Path("private/lessons"),
+        help="local-only reviewed lesson files; never fetched automatically",
+    )
     parser.add_argument("--list", action="store_true", help="show stages without running")
     parser.add_argument("--max-stages", type=int, default=2)
     parser.add_argument("--lessons-per-stage", type=int, default=24)
@@ -55,6 +67,8 @@ def main(argv: list[str] | None = None) -> int:
     school = ModelSchool(
         SchoolConfig(
             plan_path=args.plan,
+            source_manifest_path=args.source_manifest,
+            private_lesson_root=args.lesson_root,
             max_stages=args.max_stages,
             lessons_per_stage=args.lessons_per_stage,
             symbol_batch_size=args.symbol_batch_size,

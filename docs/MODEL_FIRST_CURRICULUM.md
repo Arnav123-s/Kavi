@@ -2,7 +2,7 @@
 
 Author: Arnav123-s
 
-Status: implemented early-core extension plus review-gated curriculum plan
+Status: four bounded implemented cores plus review-gated curriculum plan
 
 ## The project hierarchy
 
@@ -12,7 +12,7 @@ small persistent state forward. The curriculum runner, evaluator, source gate,
 and terminal trace are supporting equipment. They exist to teach and measure the
 model honestly; they are not the intended final product.
 
-The current model has three real but tiny cores:
+The current model has four real but tiny cores:
 
 1. The arithmetic pathway core receives quantity and relation signals, joins
    them through typed routes, and learns a three-scalar arithmetic readout.
@@ -22,10 +22,13 @@ The current model has three real but tiny cores:
 3. The generated Unicode script-pathway core receives one preserved Unicode
    scalar, routes its exact code point through a bounded coordinate, and learns
    one centroid and support count for each of eleven declared pathways.
+4. The reviewed textbook concept core receives a small algebra notation,
+   stores two five-facet prototype centers and support counts, and distinguishes
+   `expression` from `relation` only after fixed candidate gates pass.
 
-A separate Unicode scalar contract is the ingress rule for the third core: it
+A separate Unicode scalar contract is the ingress rule for the Unicode script core: it
 preserves the original scalar and records normalization only as metadata. It
-never rewrites the input. Neither core is a language model or a general
+never rewrites the input. None of these cores is a language model or a general
 intelligence. They are small, falsifiable pieces of the proposed Kavi model
 architecture. See [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) for the
 formula, test manifest, and strict scope boundary.
@@ -67,7 +70,8 @@ its declared earlier skills have passed their protected and held-out tests.
 | Bootstrap | Generated quantities, addition before subtraction, and exact checks | Implemented; fixed canonical lesson ladder. |
 | L0 | Exact one-scalar Unicode preservation and local metadata | Implemented source-free contract; no sequence or language claim. |
 | L2 | Generated multiscript glyph pathways and confusable-character checks | Implemented bounded prototype core and fixed single-glyph evaluator; not script or language recognition. |
-| L3 | Numeral systems and exact quantities across reviewed notation forms | Waiting for the multiscript core. |
+| L3 | One CC BY-SA local-only algebra lesson: expressions, relations, and exact variable-free checks | Implemented, finite, source fingerprinted, and bounded; not a text reader. |
+| L3 | Numeral systems and exact quantities across more reviewed notation forms | Waiting for a separate reviewed lesson and evaluator. |
 | L4-L5 | Language-specific word formation, definitions, and original/translation separation | Waiting for text-capable paths and qualified language review. |
 | L5-L6 | Formal logic, counterexamples, and checked proofs | Waiting for typed symbolic language and an external verifier. |
 | L5-L6 | Original-language works and carefully licensed textbooks | Waiting for language skill, rights, provenance, cultural protocol, extract, lesson, and test review. |
@@ -124,12 +128,15 @@ Review commands that do not start training:
     python -m kavi.catalog_cli
     python -m kavi.school_cli --list
 
-The owner-authorized source-free bootstrap pass completed the first two stages.
-After a separate explicit authorization to continue from that local checkpoint,
-the following command will run at most the two Unicode stages and then stop at
-the word-learning gate:
+The owner-authorized local checkpoint completed the four generated foundations.
+With the separately reviewed local lesson and its matching PDF/extract in the
+ignored `private` workspace, the following command runs exactly the next
+textbook-concept stage and then stops at the word-learning gate:
 
-    python -u -m kavi.school_cli --max-stages 2 --lessons-per-stage 24 --symbol-batch-size 11 --state-file runs\kavi-school-state.json
+    python -u -m kavi.school_cli --max-stages 1 --interval-ms 750 --state-file runs\kavi-school-state.json
+
+If that local lesson is missing or its fingerprint does not match, the source
+stage reports a visible gate failure and does not run.
 
 The state file is opt-in and local-only. It contains completed stage IDs, not
 source text or model weights. A pause or stop file can be added to the command
@@ -137,10 +144,10 @@ exactly as documented in [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPR
 
 ## Review boundary
 
-The Unicode extension has passed isolated generated unit tests. One owner-authorized
-source-free bootstrap run completed the ASCII-glyph and arithmetic stages in a
-local checkpoint; it did not ingest a source or create persistent model weights.
-No Unicode continuation run, source ingestion, or persistent training process
-has been started from this extension. Review the catalog and authorize each
-finite continuation separately; changing the people/works order or admitting a
-reviewed source remains a later decision.
+The Unicode extension and the reviewed textbook-concept extension have isolated
+unit tests. One owner-authorized local checkpoint completed the four generated
+foundations. One owner-authorized local source intake admitted only the narrow
+algebra lesson described in [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md);
+it did not add a source body to Git or create a persistent training process.
+Review the catalog and authorize each new finite lesson separately. Changing the
+people/works order or admitting a broader source remains a later decision.

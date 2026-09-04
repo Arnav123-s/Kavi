@@ -30,3 +30,18 @@ The existing design discussion is summarized in this initial record. Its earlier
 - Keep the existing local checkpoint schema because it stores only completed
   stage identifiers; do not create a Unicode-run checkpoint without a separate
   owner-authorized finite continuation.
+## 2026-09-04: admit one fingerprinted algebra concept lesson
+
+- Approve *Basic Algebra with Applications*, 6th edition, by Ivan G. Zaigralin
+  only for a local, fingerprinted lesson after reviewing its CC BY-SA 4.0
+  declaration and recording its provenance in the public source manifest.
+- Keep the PDF, extract, and local lesson event manifest under ignored
+  `private/` paths. Do not commit source body, PDF files, caches, or run logs.
+- Add only the expression-versus-relation distinction with a restricted exact
+  evaluator; do not call this textbook understanding or general algebra skill.
+- Store compact prototype centers and support counts rather than a source-text
+  archive, and promote only after current, protected, and held-out checks do
+  not regress.
+- Run only an explicit finite terminal pass with visible output and pause/stop
+  controls. Do not create a daemon, network learner, self-modifying process,
+  or a broader language stage from this admission.

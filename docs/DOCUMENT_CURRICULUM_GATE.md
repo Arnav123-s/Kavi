@@ -47,6 +47,7 @@ on, or used as an implied instruction set.
 | Source class | Current status | Reason |
 |---|---|---|
 | NASA NTRS record 19830024400 | metadata admitted | The record identifies the work as a US Government work with public use permitted. Each selected extract still needs a fresh per-document review. |
+| *Basic Algebra with Applications*, 6th edition | one local lesson admitted | Its reviewed title page declares CC BY-SA 4.0. The admission is limited to a fingerprinted local extract for the expression/relation lesson; no source body is public. |
 | OpenStax Physics | quarantined | Its license and current title-specific AI-use terms must be checked before any ingestion. |
 | arXiv papers | quarantined by default | Licenses are selected per paper; an arXiv host page is not a blanket reuse authorization. |
 
@@ -69,7 +70,9 @@ arithmetic. It then adds language and logic, science foundations, and finally
 primary research. A higher stage is not allowed to substitute for its
 prerequisites.
 
-The first live explanation experiment remains a generated arithmetic verifier
-because it has exact answers. It is a harness test, not a substitute for the
-document curriculum. The document pipeline should be added only after the
-source gate and lesson verifier are both satisfied.
+The generated arithmetic verifier remains a source-free harness test. The first
+source-backed experiment is the separate, narrow expression/relation lesson,
+which passed this source gate and has an independent symbolic verifier. It is
+not a substitute for a language, textbook-reading, or broader document model.
+See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for its full
+boundary.

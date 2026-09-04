@@ -5,17 +5,18 @@ Status: operating guide for the finite local prototypes
 
 ## What this guide runs
 
-These commands run small, generated arithmetic, ASCII-glyph, and Unicode-scalar
-experiments. They do not download a model, use a network, install dependencies,
-begin a background job, or start a general training program. Their main purpose
-is to show the complete route and update decision in a low-overhead terminal
-trace.
+These commands run small generated arithmetic, ASCII-glyph, and Unicode-scalar
+experiments, plus one optional locally reviewed textbook-concept lesson. They
+do not download a model, use a network, install dependencies, begin a
+background job, or start a general training program. Their main purpose is to
+show the complete route and update decision in a low-overhead terminal trace.
 
 ## Requirements
 
 - Python 3.11 or later.
 - A checkout of this repository.
 - No third-party runtime packages are required for the current prototype.
+- The optional textbook stage additionally needs its separately reviewed local PDF, extract, and lesson manifest under ignored `private/` paths; the public checkout deliberately does not supply them.
 
 The reference smoke tests for this release were run with Python 3.13.5. Record
 the exact interpreter version for any new result because a different runtime
@@ -30,7 +31,7 @@ From the repository root, normally C:\Kavi:
     python -m kavi.source_cli
 
 The test command should discover the stage-0, explanation-learning, generated
-Unicode, and source-manifest tests. The source command only validates and prints
+Unicode, source-manifest, and bounded textbook-core tests. The source command only validates and prints
 metadata; it does not fetch the linked documents.
 
 ## Inspect the model-shaped pathways
@@ -90,6 +91,22 @@ and held-out metrics, and compact model ledger. It then stops at the still
 locked word-learning stage. See [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md)
 for the scope of that small experiment.
 
+## Run the reviewed textbook-concept stage
+
+This stage is intentionally unavailable from a bare public checkout. After the
+four generated foundations are present in the selected local checkpoint, and
+only when the ignored local lesson, source PDF, and extract fingerprints match,
+run one declared stage visibly:
+
+    python -u -m kavi.school_cli --max-stages 1 --interval-ms 750 --state-file runs\kavi-school-state.json
+
+The trace shows each local notation event, fixed pipe sequence, structural
+facets, response or abstention, candidate gate, resource estimate, and
+protected/held-out readouts. It never fetches a textbook. A missing lesson or
+mismatched hash produces a visible refusal rather than a substitute dataset or
+silent retry. See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for
+its exact scope.
+
 ## Pause and stop controls
 
 Use explicit, user-controlled files when a longer finite trace is desired:
@@ -137,6 +154,7 @@ inputs, unreviewed documents, or large binary artifacts.
 | Runtime ends early | Check whether the supplied stop-file path exists. |
 | A candidate is rejected | Read protected and held-out metrics; rejection preserves the frozen parent by design. |
 | Source is not admitted | Inspect curriculum/source-manifest.json and complete document-specific rights review outside the public repository. |
+| Textbook lesson is rejected | Check the approved source ID plus the local PDF and extract SHA-256 fingerprints; do not bypass the gate or substitute a generated corpus. |
 
 For the exact implementation boundary, see
 [IMPLEMENTATION_REFERENCE.md](IMPLEMENTATION_REFERENCE.md).

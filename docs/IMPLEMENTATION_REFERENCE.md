@@ -9,10 +9,12 @@ Kavi currently contains deliberately narrow, executable model cores. One learns
 from generated lowercase glyphs and decimal digits by compressing evidence into
 class prototypes; another learns generated addition and subtraction through a
 typed arithmetic pathway; and a third learns eleven bounded Unicode
-script-oriented scalar prototypes. An exact one-scalar Unicode contract sits in
-front of that third core. The supporting runner makes routing, verification,
-candidate promotion, explanation checking, and resource reporting observable
-before a broader curriculum is attempted.
+script-oriented scalar prototypes. A fourth core learns a compact
+expression-versus-relation distinction from one locally fingerprinted,
+reviewed algebra lesson. An exact one-scalar Unicode contract sits in front of
+the third core. The supporting runner makes routing, verification, candidate
+promotion, explanation checking, and resource reporting observable before a
+broader curriculum is attempted.
 
 It is not a general-purpose language system, a trained textbook reader, a web
 agent, a background service, or a self-modifying program.
@@ -36,6 +38,8 @@ agent, a background service, or a self-modifying program.
 | kavi.symbol_runtime | Finite generated glyph curriculum and visible candidate traces. |
 | kavi.unicode_core | Exact one-scalar Unicode contract and compact generated script-pathway prototype core. |
 | kavi.unicode_runtime | Finite Unicode contract and script-pathway curricula, fixed manifests, and visible traces. |
+| kavi.textbook_core | Compact expression/relation prototypes, a restricted exact symbolic evaluator, and candidate-only promotion. |
+| kavi.textbook_runtime | Local-only lesson loader, PDF/extract fingerprint verification, finite source-event trace, pause/stop controls, and protected/held-out readouts. |
 | kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
 | kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
 | kavi.catalog_cli | Read-only review of the people-and-works catalog. |
@@ -80,6 +84,21 @@ Unicode Script-property implementation nor a script/language detector. See
 [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) for its exact manifest and
 limits.
 
+## Reviewed textbook concept inference
+
+The first source-backed core accepts only a compact algebra notation subset.
+It converts an input into five structural facets, compares it with two learned
+prototype centers, and reports a label only after both have verified support.
+A restricted integer-and-fraction evaluator separately checks variable-free
+values or relation truth. Unknown variables remain unknown.
+
+Its private lesson loader verifies the approved source record plus exact PDF
+and extract SHA-256 fingerprints before exposing a fixed local event manifest.
+The core's persistent state holds two five-facet centers, two support counts,
+and a promotion count; it does not retain PDF text or a growing notation
+archive. See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for the
+mathematics, source boundary, and visible run command.
+
 ## Learning path
 
 For a target-only event, the exact arithmetic verifier produces positive,
@@ -122,7 +141,7 @@ No textbook body, paper body, PDF cache, or private source collection belongs
 in the repository. A SourceLesson needs an approved source, a locator, a
 concept, prerequisites, verifier identity, and an extract fingerprint.
 
-The initial manifest intentionally approves only one metadata record and keeps
+The manifest approves the NASA metadata record and one narrowly reviewed CC BY-SA algebra lesson, and keeps
 other source classes quarantined pending document-specific review. See
 [DOCUMENT_CURRICULUM_GATE.md](DOCUMENT_CURRICULUM_GATE.md) for the policy.
 
@@ -144,14 +163,14 @@ never creates, removes, or ignores either file.
 | --- | --- |
 | curriculum/sequence.json | Prerequisite ordering for future curriculum stages. |
 | curriculum/source-manifest.json | Reviewed source metadata and admission status. |
-| tests | Unit tests for stage 0, explanation learning, source validation, and generated Unicode pathways. |
+| tests | Unit tests for stage 0, explanation learning, source validation, Unicode pathways, and the bounded local textbook core. |
 | experiments | Compact, reproducible records of authorized smoke tests. |
 | docs | Design proposals, research notes, implementation guides, and operating policy. |
 
 ## Explicit non-features
 
 - No downloaded model weights or external model runtime.
-- No raw textbook or paper ingestion.
+- No unreviewed or public-repository raw textbook or paper ingestion.
 - No web access from the learner.
 - No continuous daemon, scheduled work, or automatic restart.
 - No source-code changes by the learner.

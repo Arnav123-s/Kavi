@@ -19,6 +19,24 @@
       ]
     },
     {
+      "source_id": "basic-algebra-with-applications-6e",
+      "title": "Basic Algebra with Applications, 6th edition",
+      "creator": "Ivan G. Zaigralin",
+      "original_url": "https://open.umn.edu/opentextbooks/textbooks/basic-algebra-with-applications",
+      "license_class": "cc-by-sa-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "status": "approved",
+      "review_note": "Owner-authorized local-only first lesson. The reviewed 6th-edition PDF title page states CC BY-SA 4.0 and permits sharing and adaptation for any purpose, including commercial use. Only a fingerprinted private extract of pages 15-16 is admitted; no source body belongs in Git.",
+      "subjects": [
+        "algebra",
+        "mathematical notation"
+      ],
+      "levels": [
+        "introductory",
+        "textbook-concepts"
+      ]
+    },
+    {
       "source_id": "openstax-physics",
       "title": "Physics",
       "creator": "OpenStax",

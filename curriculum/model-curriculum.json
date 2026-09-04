@@ -60,6 +60,24 @@
       "minimum_held_out_accuracy": 1.0
     },
     {
+      "stage_id": "textbook-concepts-expressions-relations",
+      "title": "Licensed textbook lesson: expressions, relations, and exact checks",
+      "level": "L3",
+      "lane": "reviewed-textbook-concepts",
+      "status": "runnable",
+      "engine": "textbook-concept-prototypes",
+      "lesson_id": "basic-algebra-6e-expressions-relations-1-1",
+      "prerequisites": [
+        "quantity-and-exact-relations",
+        "multiscript-glyph-foundations"
+      ],
+      "source_ids": [
+        "basic-algebra-with-applications-6e"
+      ],
+      "minimum_protected_accuracy": 1.0,
+      "minimum_held_out_accuracy": 1.0
+    },
+    {
       "stage_id": "word-forms-and-definitions",
       "title": "Language-specific words, definitions, and compositional structure",
       "level": "L4-L5",
@@ -68,7 +86,8 @@
       "engine": null,
       "prerequisites": [
         "quantity-and-exact-relations",
-        "multiscript-glyph-foundations"
+        "multiscript-glyph-foundations",
+        "textbook-concepts-expressions-relations"
       ],
       "source_ids": [
         "multilingual-foundations-v1"

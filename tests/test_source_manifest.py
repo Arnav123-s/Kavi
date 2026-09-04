@@ -18,7 +18,10 @@ class SourceManifestTests(unittest.TestCase):
 
     def test_only_explicitly_approved_sources_are_admissible(self) -> None:
         identifiers = {source.source_id for source in self.manifest.admissible_sources}
-        self.assertEqual(identifiers, {"nasa-ntrs-19830024400"})
+        self.assertEqual(
+            identifiers,
+            {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400"},
+        )
 
     def test_quarantined_source_cannot_supply_a_lesson(self) -> None:
         lesson = SourceLesson(

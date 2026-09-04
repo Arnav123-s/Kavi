@@ -2,7 +2,7 @@
 
 The school is not the product.  It is the bounded teaching and measurement
 layer around the Kavi model cores.  It can advance only through a declared
-finite plan, uses only locally generated lessons for runnable early stages, and
+finite plan, uses locally generated early lessons or a locally supplied, approved source lesson, and
 stops rather than silently downloading or ingesting a source that has not
 passed review.
 """
@@ -17,6 +17,11 @@ from typing import Callable
 from .lesson_runtime import ExplanationRuntime
 from .runtime import RuntimeConfig
 from .symbol_runtime import SymbolRunSummary, SymbolRuntime, SymbolRuntimeConfig
+from .textbook_runtime import (
+    TextbookConceptRuntime,
+    TextbookRunSummary,
+    TextbookRuntimeConfig,
+)
 from .unicode_runtime import (
     SCRIPT_SPECS,
     UnicodeContractRuntime,
@@ -39,6 +44,7 @@ VALID_ENGINES = frozenset(
         "arithmetic-explanations",
         "unicode-scalar-contract",
         "unicode-script-prototypes",
+        "textbook-concept-prototypes",
     }
 )
 
@@ -51,6 +57,7 @@ class CurriculumStage:
     title: str
     status: str
     engine: str | None
+    lesson_id: str | None
     prerequisites: tuple[str, ...]
     source_ids: tuple[str, ...]
     minimum_protected_accuracy: float
@@ -64,6 +71,7 @@ class CurriculumStage:
             title=str(value["title"]),
             status=str(value["status"]),
             engine=str(value["engine"]) if value.get("engine") else None,
+            lesson_id=str(value["lesson_id"]) if value.get("lesson_id") else None,
             prerequisites=tuple(str(item) for item in value.get("prerequisites", [])),
             source_ids=tuple(str(item) for item in value.get("source_ids", [])),
             minimum_protected_accuracy=float(
@@ -108,6 +116,15 @@ class CurriculumPlan:
                 raise ValueError(f"Runnable stage {stage.stage_id} lacks a supported engine.")
             if stage.status != RUNNABLE and stage.engine is not None:
                 raise ValueError(f"Waiting stage {stage.stage_id} must not select an engine.")
+            if stage.engine == "textbook-concept-prototypes":
+                if not stage.lesson_id or not stage.source_ids:
+                    raise ValueError(
+                        f"Textbook stage {stage.stage_id} needs a local lesson and source ID."
+                    )
+            elif stage.lesson_id is not None:
+                raise ValueError(
+                    f"Only a textbook-concept stage may select lesson {stage.lesson_id}."
+                )
             if stage.stage_id in stage.prerequisites:
                 raise ValueError(f"Stage {stage.stage_id} cannot require itself.")
             if not set(stage.prerequisites).issubset(known):
@@ -157,6 +174,8 @@ class SchoolConfig:
     """Finite, owner-controlled bounds for an automated curriculum pass."""
 
     plan_path: Path
+    source_manifest_path: Path = Path("curriculum/source-manifest.json")
+    private_lesson_root: Path = Path("private/lessons")
     max_stages: int = 2
     lessons_per_stage: int = 24
     symbol_batch_size: int = 8
@@ -355,6 +374,48 @@ class ModelSchool:
         )
         return StageResult(stage.stage_id, "passed" if passed else "not-promoted", detail)
 
+    def _run_textbook_concept_stage(self, stage: CurriculumStage) -> StageResult:
+        if stage.lesson_id is None:
+            raise ValueError(f"Textbook stage {stage.stage_id} has no private lesson ID.")
+        lesson_path = self.config.private_lesson_root / f"{stage.lesson_id}.json"
+        if not lesson_path.is_file():
+            return StageResult(
+                stage.stage_id,
+                "waiting-local-lesson",
+                "Approved source metadata exists, but its private reviewed lesson file is absent.",
+            )
+        try:
+            runtime = TextbookConceptRuntime(
+                TextbookRuntimeConfig(
+                    lesson_path=lesson_path,
+                    source_manifest_path=self.config.source_manifest_path,
+                    interval_ms=self.config.interval_ms,
+                    pause_file=self.config.pause_file,
+                    stop_file=self.config.stop_file,
+                ),
+                emit=self.emit,
+            )
+        except (KeyError, OSError, ValueError) as error:
+            return StageResult(
+                stage.stage_id,
+                "not-admitted",
+                f"Private lesson rejected by the source gate: {error}",
+            )
+        summary: TextbookRunSummary = runtime.run()
+        if summary.stopped:
+            return StageResult(stage.stage_id, "stopped", "Stop control ended the finite stage.")
+        passed = self._meets_thresholds(
+            summary.protected.exact_accuracy,
+            summary.held_out.exact_accuracy,
+            stage,
+        )
+        detail = (
+            f"protected={summary.protected.exact_accuracy:.2f}; "
+            f"held-out={summary.held_out.exact_accuracy:.2f}; "
+            f"promoted candidates={summary.promoted_candidates}"
+        )
+        return StageResult(stage.stage_id, "passed" if passed else "not-promoted", detail)
+
     def _run_stage(self, stage: CurriculumStage) -> StageResult:
         if stage.engine == "symbol-prototypes":
             return self._run_symbol_stage(stage)
@@ -364,6 +425,8 @@ class ModelSchool:
             return self._run_unicode_contract_stage(stage)
         if stage.engine == "unicode-script-prototypes":
             return self._run_unicode_script_stage(stage)
+        if stage.engine == "textbook-concept-prototypes":
+            return self._run_textbook_concept_stage(stage)
         raise ValueError(f"No implementation for stage engine {stage.engine}.")
 
     def run(self) -> SchoolSummary:

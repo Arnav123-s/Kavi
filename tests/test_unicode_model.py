@@ -144,8 +144,8 @@ class UnicodeSchoolIntegrationTests(unittest.TestCase):
                 "multiscript-glyph-foundations",
             ),
         )
-        self.assertEqual(summary.results[-2].outcome, "passed")
-        self.assertEqual(summary.results[-1].outcome, "waiting")
+        self.assertEqual(len(summary.results), 4)
+        self.assertTrue(all(result.outcome == "passed" for result in summary.results))
 
 
 if __name__ == "__main__":

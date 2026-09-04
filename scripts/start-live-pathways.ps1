@@ -25,27 +25,34 @@ $kaviPathways = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --c
 $kaviLearning = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel learning"
 $kaviGrading = "python -u -m kavi.pathway_cli watch --run-dir '$kaviRunDir' --channel grading"
 
-$kaviTerminalArguments = @(
-    '-w', 'new',
-    'new-tab', '--title', 'Kavi Controller', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-Command', $kaviRunner,
-    ';',
-    'new-tab', '--title', 'Kavi Answers', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-Command', $kaviAnswers,
-    ';',
-    'new-tab', '--title', 'Kavi Pathways', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-Command', $kaviPathways,
-    ';',
-    'new-tab', '--title', 'Kavi Learning', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-Command', $kaviLearning,
-    ';',
-    'new-tab', '--title', 'Kavi Grading', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-Command', $kaviGrading,
-    ';',
-    'new-tab', '--title', 'Kavi Controls', '-d', $kaviRepo,
-    'powershell.exe', '-NoExit', '-File', $kaviControlScript, '-RunDir', $kaviRunDir
-)
+function Start-KaviTerminalTab {
+    param(
+        [Parameter(Mandatory = $true)] [string]$WindowName,
+        [Parameter(Mandatory = $true)] [string]$Title,
+        [Parameter(Mandatory = $true)] [string[]]$CommandArguments
+    )
+
+    $kaviStartInfo = [System.Diagnostics.ProcessStartInfo]::new()
+    $kaviStartInfo.FileName = (Get-Command 'wt.exe').Source
+    $kaviStartInfo.UseShellExecute = $false
+    $kaviAllArguments = @(
+        '-w', $WindowName, 'new-tab', '--title', $Title, '-d', $kaviRepo,
+        'powershell.exe', '-NoExit'
+    )
+    $kaviAllArguments += $CommandArguments
+    $kaviStartInfo.Arguments = ($kaviAllArguments | ForEach-Object {
+        '"' + ([string]$_).Replace('"', '\"') + '"'
+    }) -join ' '
+    [void][System.Diagnostics.Process]::Start($kaviStartInfo)
+    Start-Sleep -Milliseconds 250
+}
 
 Write-Host "Opening one Windows Terminal window with six Kavi tabs."
 Write-Host "Local run directory: $kaviRunDir"
-Start-Process -FilePath 'wt.exe' -ArgumentList $kaviTerminalArguments -WorkingDirectory $kaviRepo
+$kaviWindowName = "KaviPathways-$kaviStamp"
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Controller' -CommandArguments @('-Command', $kaviRunner)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Answers' -CommandArguments @('-Command', $kaviAnswers)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Pathways' -CommandArguments @('-Command', $kaviPathways)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Learning' -CommandArguments @('-Command', $kaviLearning)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Grading' -CommandArguments @('-Command', $kaviGrading)
+Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Controls' -CommandArguments @('-File', $kaviControlScript, '-RunDir', $kaviRunDir)

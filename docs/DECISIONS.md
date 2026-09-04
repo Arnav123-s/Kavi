@@ -45,3 +45,17 @@ The existing design discussion is summarized in this initial record. Its earlier
 - Run only an explicit finite terminal pass with visible output and pause/stop
   controls. Do not create a daemon, network learner, self-modifying process,
   or a broader language stage from this admission.
+## 2026-09-04: add finite adaptive syllabus automation
+
+- Add a visible local adaptive loop for the current reviewed textbook-concept
+  core, not a continuous background trainer.
+- Randomize only the order and finite sampling of declared local question banks
+  with a reproducible seed; do not generate a replacement corpus or train on a
+  failed held-out answer.
+- Require protected and held-out exact accuracy of at least 0.90 before a unit
+  is marked mastered and the declared next unit may begin.
+- On a failed gate, use only a separately declared, source-reviewed local repair
+  lesson with the same verified concept. Stop visibly when none is available.
+- Permit an opt-in local checkpoint containing compact numeric model state and
+  attempt counts, never textbook body, question strings, source extracts, or a
+  background schedule.

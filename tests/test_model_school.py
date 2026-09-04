@@ -64,6 +64,8 @@ class ModelSchoolTests(unittest.TestCase):
         self.assertEqual(plan.stages[2].status, "runnable")
         self.assertEqual(plan.stages[4].stage_id, "textbook-concepts-expressions-relations")
         self.assertEqual(plan.stages[4].status, "runnable")
+        self.assertEqual(plan.stages[4].minimum_protected_accuracy, 0.9)
+        self.assertEqual(plan.stages[4].minimum_held_out_accuracy, 0.9)
         self.assertEqual(plan.stages[5].status, "awaiting-model-capability")
         self.assertIn("textbook-concepts-expressions-relations", plan.stages[5].prerequisites)
         for index, stage in enumerate(plan.stages):

@@ -74,8 +74,8 @@
       "source_ids": [
         "basic-algebra-with-applications-6e"
       ],
-      "minimum_protected_accuracy": 1.0,
-      "minimum_held_out_accuracy": 1.0
+      "minimum_protected_accuracy": 0.9,
+      "minimum_held_out_accuracy": 0.9
     },
     {
       "stage_id": "word-forms-and-definitions",

@@ -40,6 +40,8 @@ agent, a background service, or a self-modifying program.
 | kavi.unicode_runtime | Finite Unicode contract and script-pathway curricula, fixed manifests, and visible traces. |
 | kavi.textbook_core | Compact expression/relation prototypes, a restricted exact symbolic evaluator, and candidate-only promotion. |
 | kavi.textbook_runtime | Local-only lesson loader, PDF/extract fingerprint verification, finite source-event trace, pause/stop controls, and protected/held-out readouts. |
+| kavi.adaptive_syllabus | Finite seeded syllabus runner, compact-state checkpoint, 90% gates, visible per-question grades, and declared repair queues. |
+| kavi.adaptive_cli | Command-line entry point for local adaptive syllabus runs and review. |
 | kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
 | kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
 | kavi.catalog_cli | Read-only review of the people-and-works catalog. |

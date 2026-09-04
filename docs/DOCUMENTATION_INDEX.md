@@ -9,6 +9,7 @@ Author: Arnav123-s
 | [IMPLEMENTATION_REFERENCE.md](IMPLEMENTATION_REFERENCE.md) | Implemented | What the current code actually does. |
 | [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) | Implemented bounded prototype | Exact scalar contract, generated script-pathway model, math, evaluation manifest, and limits. |
 | [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) | Implemented bounded source lesson | Private-source admission, compact expression/relation model, exact verifier, and live trace. |
+| [ADAPTIVE_SYLLABUS.md](ADAPTIVE_SYLLABUS.md) | Implemented bounded automation | Seeded random test order, 90% gates, visible diagnostics, local checkpointing, and approved repair queues. |
 | [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPRODUCIBILITY.md) | Implemented | How to run, stop, inspect, and reproduce the finite prototype. |
 | [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) | Implemented protocol | How candidates are measured and accepted or rejected. |
 | [DESIGN.md](DESIGN.md) | Research proposal | What developmental growth and consolidation are intended to investigate. |

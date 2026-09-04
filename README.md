@@ -42,6 +42,7 @@ The allocated learner size may change. The hard device resource limit does not i
 - [Model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md): implemented early cores, teaching order, and automation boundaries.
 - [Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md): implemented bounded Unicode signal and glyph-pathway core, with exact limits.
 - [Reviewed textbook concept stage](docs/TEXTBOOK_CONCEPT_STAGE.md): first fingerprinted local-only source lesson, its compact model, exact evaluator, and live trace.
+- [Adaptive syllabus loop](docs/ADAPTIVE_SYLLABUS.md): finite seeded teaching/test loop, 90% gates, visible diagnostics, and approved repair queues.
 - [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
 - [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
 - [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.

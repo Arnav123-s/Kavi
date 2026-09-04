@@ -37,7 +37,7 @@ def search_candidates(
 ) -> tuple[TeachingTrial | None, tuple[TeachingTrial, ...]]:
     """Evaluate a finite proposal stream without promoting any candidate.
 
-    Rank improved, retaining candidates by mistakes, serialized state size,
+    Prefer configuration-only changes, then rank by mistakes and state size,
     and changed-object count. Timing is reported, not used as a noisy reward.
     """
 
@@ -62,6 +62,7 @@ def search_candidates(
     selected = min(
         eligible,
         key=lambda trial: (
+            len(trial.delta.created_route_ids) + len(trial.delta.created_adapter_ids),
             trial.mistakes, trial.serialized_bytes,
             trial.delta.changed_objects, trial.proposal_id,
         ),

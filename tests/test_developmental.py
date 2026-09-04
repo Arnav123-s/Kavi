@@ -63,6 +63,24 @@ class DevelopmentalTeachingTests(unittest.TestCase):
             self.assertEqual(runtime.core.evaluate_compositions(final_audit_manifest()).errors, 0)
             self.assertEqual(runtime.core.state, state)
 
+    def test_search_prefers_a_passing_configuration_without_growth(self):
+        from kavi.pathway_circuit import CircuitState, StateDelta
+        from kavi.teaching_search import search_candidates
+
+        configuration = CircuitState(promotions=1)
+        expansion = CircuitState(promotions=2)
+        selected, trials = search_candidates(
+            (
+                ("expand", expansion, StateDelta(("new-route",), (), (), ())),
+                ("reconfigure", configuration, StateDelta((), ("existing",), (), ())),
+            ),
+            parent_mistakes=1, assess=lambda _: (0, True, True),
+            max_serialized_bytes=10000,
+        )
+        self.assertEqual(len(trials), 2)
+        self.assertEqual(selected.proposal_id, "reconfigure")
+        self.assertIs(selected.candidate, configuration)
+
     def test_harder_exam_has_no_repeated_whole_questions(self):
         original = {item.display_text for item in final_audit_manifest()}
         fresh = final_audit_manifest(seed=20260905, harder=True)

@@ -1,6 +1,8 @@
 {
   "schema_version": 1,
   "catalog_id": "people-and-works-v2",
+  "educational_selection_policy": "curriculum/source-selection-policy.json",
+  "literature_selection_rule": "Include respected original literature only for a named, assessed learning goal. Do not add poetry, fiction, or other material merely as corpus filler.",
   "title": "Kavi model curriculum: multilingual original works, traditions, and textbook candidates",
   "selection_basis": "This is a prerequisite graph, not a ranking of nations, cultures, or people. Shared signal, script, quantity, language, and verification skills come first. Source lanes at the same level are parallel; each may unlock only after its own language lane, source review, and domain prerequisites pass.",
   "admission_rule": "Every entry is catalog metadata only. No work may become training text until its exact edition or witness, jurisdiction, rights, provenance, applicable cultural protocol, local extract fingerprint, lesson verifier, protected retention test, and held-out evaluation have passed review.",

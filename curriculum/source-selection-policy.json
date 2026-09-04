@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "Original sources with a specific educational purpose",
+  "scope": "Future source-based teaching and reading selection; historical generated mechanism tests remain labeled as such.",
+  "preferred_material": [
+    "Original works of recognized scientists, mathematicians, philosophers, and educational writers",
+    "Author-written textbooks with clear explanations and assessable prerequisites",
+    "Original technical references maintained by the responsible scholarly or standards body",
+    "Respected literature only when the chosen passage teaches an explicit, assessable skill or idea"
+  ],
+  "exclude": [
+    "Poetry or stories selected merely to fill a corpus",
+    "Unrelated entertainment, social media, marketing, or generic web text",
+    "Anonymous summaries substituted for an available original source",
+    "Material without an identified author or responsible scholarly body",
+    "Material whose educational role and prerequisite level are unspecified"
+  ],
+  "required_lesson_record": [
+    "author or responsible creator",
+    "original work, exact edition, source URL, language, and locator",
+    "educational purpose and skills taught",
+    "prerequisites and teaching order",
+    "independent assessment method",
+    "source fingerprint and applicable source terms"
+  ],
+  "literature_rule": "Genre alone neither qualifies nor disqualifies a work. A respected literary passage is eligible only for a stated learning goal such as language structure, argument, ethics, or historical interpretation, with appropriate assessment. No filler poetry or fiction.",
+  "questions_rule": "Practice and test questions may be varied or generated from the admitted syllabus. This does not make generated prose a teaching source. Whole final questions must not have been used for teaching.",
+  "selection_rule": "Use expertise, scholarly standing, educational value, and primary provenance. Do not claim to rank people by intelligence.",
+  "current_limit": "The present experiment includes generated foundation checks and supplied operator contracts. It is not yet an original-works-only language curriculum. Word, sentence, and broader source-learning model capabilities must still be implemented."
+}

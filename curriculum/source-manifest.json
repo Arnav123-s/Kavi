@@ -3,6 +3,8 @@
   "sources": [
     {
       "source_id": "unicode-17-script-property",
+      "source_type": "original-technical-reference",
+      "educational_purpose": "Correct character script identity using original maintainer data, with exact checks. This does not teach a spoken language.",
       "title": "Unicode 17.0.0 Character Database: Scripts.txt",
       "creator": "Unicode Consortium",
       "original_url": "https://www.unicode.org/Public/17.0.0/ucd/Scripts.txt",
@@ -15,6 +17,8 @@
     },
     {
       "source_id": "nasa-ntrs-19830024400",
+      "source_type": "original-technical-reference",
+      "educational_purpose": "Teach technical publication structure and source attribution in a future writing stage; not a current foundation lesson.",
       "title": "NASA Publications Guide",
       "creator": "National Aeronautics and Space Administration",
       "original_url": "https://ntrs.nasa.gov/citations/19830024400",
@@ -32,6 +36,8 @@
     },
     {
       "source_id": "basic-algebra-with-applications-6e",
+      "source_type": "original-authored-work",
+      "educational_purpose": "Distinguish expressions from relations in the reviewed introductory section and verify exact symbolic examples.",
       "title": "Basic Algebra with Applications, 6th edition",
       "creator": "Ivan G. Zaigralin",
       "original_url": "https://open.umn.edu/opentextbooks/textbooks/basic-algebra-with-applications",

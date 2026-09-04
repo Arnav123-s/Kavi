@@ -120,7 +120,7 @@ starts from the same active parent. The experiment manager ranks eligible
 candidates by:
 
 ```text
-(remaining diagnosed mistakes, serialized state bytes, changed object count)
+(newly allocated routes/adapters, remaining mistakes, state bytes, changed objects)
 ```
 
 Eligibility requires fewer diagnosed errors, complete earlier-skill retention,
@@ -134,7 +134,7 @@ The current categorical update remains:
 mu_new = mu_old + (example_features - mu_old) / (support + 1)
 ```
 
-The search is outside the model and could accept proposals from other learning
+The search first prefers passing reconfigurations that allocate no new routes or adapters. See [CONFIGURATION_FIRST_MODEL.md](CONFIGURATION_FIRST_MODEL.md) for the clarified stable-network objective. The search is outside the model and could accept proposals from other learning
 methods later. Current code uses bounded candidate search; it does not invent
 source code, discover new architectures, or install dependencies by itself.
 Correction is currently implemented for script mistakes only. Other failures
@@ -172,6 +172,15 @@ Those external costs must be counted in any future efficiency comparison.
 The active checkpoint, every parent archive, JSONL feeds, status, and
 `teaching-report.json` stay in the ignored run directory. Earlier failed
 scores remain in the record even if later correction succeeds.
+
+## Educational source selection
+
+The source lesson gate now requires both admitted provenance and an explicit
+educational purpose from an original authored work or original technical
+reference. See [source-selection-policy.json](../curriculum/source-selection-policy.json).
+Poetry and stories are excluded as filler; respected literature may be used
+for a specific assessed skill or idea. The already recorded generated
+foundation experiment is not relabeled as an original-text curriculum.
 
 ## Original reference used for correction
 

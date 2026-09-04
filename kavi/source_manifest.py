@@ -57,6 +57,18 @@ class SourceRecord:
     review_note: str
     subjects: tuple[str, ...]
     levels: tuple[str, ...]
+    educational_purpose: str = ""
+    source_type: str = ""
+
+    @property
+    def is_teaching_admissible(self) -> bool:
+        return (
+            self.is_admissible and bool(self.creator.strip())
+            and bool(self.educational_purpose.strip())
+            and self.source_type in {
+                "original-authored-work", "original-technical-reference"
+            }
+        )
 
     @property
     def is_admissible(self) -> bool:
@@ -78,6 +90,8 @@ class SourceRecord:
             review_note=str(value["review_note"]),
             subjects=tuple(str(item) for item in value["subjects"]),
             levels=tuple(str(item) for item in value["levels"]),
+            educational_purpose=str(value.get("educational_purpose", "")),
+            source_type=str(value.get("source_type", "")),
         )
 
 
@@ -142,7 +156,7 @@ class SourceLesson:
 
     def validate_against(self, manifest: SourceManifest) -> None:
         source = manifest.by_id(self.source_id)
-        if not source.is_admissible:
+        if not source.is_teaching_admissible:
             raise ValueError(
                 f"Source {self.source_id} is not admitted to the curriculum."
             )

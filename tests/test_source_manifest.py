@@ -23,6 +23,14 @@ class SourceManifestTests(unittest.TestCase):
             {"basic-algebra-with-applications-6e", "nasa-ntrs-19830024400", "unicode-17-script-property"},
         )
 
+    def test_original_source_needs_an_explicit_educational_purpose(self) -> None:
+        from dataclasses import replace
+
+        source = self.manifest.by_id("basic-algebra-with-applications-6e")
+        self.assertTrue(source.is_teaching_admissible)
+        self.assertFalse(replace(source, educational_purpose="").is_teaching_admissible)
+        self.assertFalse(replace(source, source_type="unrelated-fiction").is_teaching_admissible)
+
     def test_quarantined_source_cannot_supply_a_lesson(self) -> None:
         lesson = SourceLesson(
             source_id="openstax-physics",

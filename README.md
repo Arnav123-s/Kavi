@@ -35,7 +35,7 @@ The external teacher can diagnose a supported mistake, check an original
 reference, try several candidate updates, preserve older skills, and give a
 harder fresh test. The CLI shows teacher explanations separately from model
 answers. The latest development check improved from 62/64 to 64/64 on its
-bounded composition tests after correcting one existing script path.
+bounded composition tests after correcting one existing script path. The [live experiment record](experiments/2026-09-04-developmental-teaching-live-run.md) includes the original failure, corrections, unchanged route counts, and resource observations.
 
 ```powershell
 .\scripts\start-live-pathways.ps1 -AutoTeach -IntervalMs 350
@@ -49,7 +49,7 @@ all-language textbook learning are not implemented by this automation.
 
 ## Central idea
 
-Learn and grow, test on unfamiliar examples, compress into a smaller representation, verify retained abilities, and use that compact learner as the starting point for the next stage. A stage's progress score can return to zero after promotion, but the learned knowledge must remain. Zero means a new baseline, not empty memory or infinite storage.
+Keep the component budget mostly stable while learning changes configurations and information flow. Reuse, rearrange, or simplify shared paths; try small adapters before adding capacity. Keep a change only when the new task improves and protected earlier abilities remain correct. General learned merging, splitting, and cross-path jumps remain development goals. See [the configuration-first design](docs/CONFIGURATION_FIRST_MODEL.md).
 
 The allocated learner size may change. The hard device resource limit does not increase merely because the learner starts another stage. Compression is a research objective, not a guarantee that arbitrary knowledge can fit into one weight.
 

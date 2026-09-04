@@ -9,6 +9,7 @@
   "max_model_json_bytes": 1048576,
   "language_catalog": "curriculum/multilingual-foundations.json",
   "author_catalog": "curriculum/people-and-works.json",
+  "source_selection_policy": "curriculum/source-selection-policy.json",
   "source_policy": "Prefer original works and expert-authored educational sources, appropriate to the prerequisite level. Reputation is not a measured intelligence score or a substitute for checking a lesson. Exact original-language editions and local source fingerprints are required.",
   "order": [
     {"id": "symbols-and-numbers", "prerequisites": [], "capability": "bounded-generated-foundations", "teaching": "Keep characters distinct; recognize the tested letters, numerals and writing systems; connect small numbers to exact arithmetic."},

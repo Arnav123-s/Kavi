@@ -42,7 +42,7 @@ class DevelopmentalRuntime(PathwayCurriculumRuntime):
             if not 1 <= self.policy["harder_test_cases"] <= 256:
                 raise ValueError("The harder test must have between 1 and 256 cases.")
             manifest = SourceManifest.load(config.source_manifest_path)
-            if not manifest.by_id(SCRIPT_SOURCE_ID).is_admissible:
+            if not manifest.by_id(SCRIPT_SOURCE_ID).is_teaching_admissible:
                 raise ValueError("The script teaching source is not admitted.")
             self.reference = ScriptReference.load(script_source)
         except Exception as error:

@@ -12,6 +12,7 @@ Author: Arnav123-s
 | [ADAPTIVE_SYLLABUS.md](ADAPTIVE_SYLLABUS.md) | Implemented bounded automation | Seeded random test order, 90% gates, visible diagnostics, local checkpointing, and approved repair queues. |
 | [PATH_CENTRIC_CIRCUIT.md](PATH_CENTRIC_CIRCUIT.md) | Implemented bounded model core | One active cross-stage circuit, reusable routes, jump adapters, complex route scoring, frozen external parents, and separate live feeds. |
 | [TYPED_COMPOSITION_STAGE.md](TYPED_COMPOSITION_STAGE.md) | Implemented bounded Phase 2A | Typed operator routes, nested cross-domain path execution, exact budgets, retention gates, and limitations. |
+| [CONFIGURATION_FIRST_MODEL.md](CONFIGURATION_FIRST_MODEL.md) | Clarified design and partial implementation | Mostly stable capacity, changing flow configurations, and minimal growth. |
 | [DEVELOPMENTAL_TEACHING.md](DEVELOPMENTAL_TEACHING.md) | Implemented bounded teaching loop | External teacher, candidate search, source-backed correction, fresh harder tests, live explanations, and missing language capabilities. |
 | [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPRODUCIBILITY.md) | Implemented | How to run, stop, inspect, and reproduce the finite prototype. |
 | [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) | Implemented protocol | How candidates are measured and accepted or rejected. |
@@ -52,6 +53,7 @@ Author: Arnav123-s
 | [experiments/README.md](../experiments/README.md) | Active policy | Required contents of experiment records. |
 | [2026-09-03-stage-0-smoke-test.md](../experiments/2026-09-03-stage-0-smoke-test.md) | Recorded smoke test | Narrow stage-0 verification. |
 | [2026-09-03-explanation-learning-smoke-test.md](../experiments/2026-09-03-explanation-learning-smoke-test.md) | Recorded smoke test | Narrow explanation-learning verification. |
+| [2026-09-04-developmental-teaching-live-run.md](../experiments/2026-09-04-developmental-teaching-live-run.md) | Measured live experiment | 62/64 baseline failure, source-backed correction, 64/64 fresh harder test, unchanged route/adapter counts, and resource observations. |
 | [curriculum/sequence.json](../curriculum/sequence.json) | Machine-readable plan | Curriculum stage order and prerequisites. |
 | [curriculum/source-manifest.json](../curriculum/source-manifest.json) | Machine-readable policy | Source-review decisions without source bodies. |
 | [curriculum/model-curriculum.json](../curriculum/model-curriculum.json) | Machine-readable curriculum | Ordered generated and narrowly reviewed runnable stages, plus explicit broader language/source waiting gates. |

@@ -61,3 +61,5 @@ Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Pathways' -Comman
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Learning' -CommandArguments @('-Command', $kaviLearning)
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Grading' -CommandArguments @('-Command', $kaviGrading)
 Start-KaviTerminalTab -WindowName $kaviWindowName -Title 'Kavi Controls' -CommandArguments @('-File', $kaviControlScript, '-RunDir', $kaviRunDir)
+
+& wt.exe -w $kaviWindowName focus-tab -t 1

@@ -2,13 +2,15 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Kavi is an experimental learner for acquiring reusable computations under a fixed resource budget. The intended model learns typed executable procedures, repairs them from counterexamples and consolidates shared structure while retaining earlier behavior.
+Kavi is an experimental learner for acquiring reusable computations under a fixed resource budget. The intended model is an adaptive circuit: information activates computational paths, experience changes their connections and operations, and useful structure becomes reusable. Temporary signals can disappear while the learned configuration persists. Preserving earlier behavior as that configuration changes is a central research requirement.
 
 The repository currently contains a symbolic pathway circuit and a separate 66,880-parameter recurrent text model. The symbolic curriculum supplies operation contracts. The text model learns numerical parameters through backpropagation. General program acquisition and library consolidation remain proposed.
 
 ## Technical documentation
 
 Start with the [engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md). It covers the current implementation, mathematics, measured results, closest research relatives, component inventory, experiment design and development milestones. A [printable edition](docs/Kavi_Engineering_and_Research.pdf) contains the same specification.
+
+The subsequent [adaptive dataflow circuit note](docs/ADAPTIVE_DATAFLOW_CIRCUIT.md) clarifies the intended architecture, structural learning, correction and doubt, and its relationship to self-modifying computational graphs. This separate addition extends the design discussion in the specification and is not included in its PDF edition.
 
 - [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md)
 - [Current text model equations](docs/WAVE_MODEL_MATH.md)

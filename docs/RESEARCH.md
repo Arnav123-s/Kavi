@@ -2,14 +2,16 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The closest whole-system relative is typed program induction with library learning. The current text implementation belongs to complex recurrent neural models.
+The intended adaptive circuit has close relatives in self-modifying computational graphs, structural learning and program induction. The current text implementation belongs to complex recurrent neural models. The [adaptive dataflow circuit note](ADAPTIVE_DATAFLOW_CIRCUIT.md) gives the revised architectural comparison and additional primary sources.
 
 
 ### 5.1 Overall classification
 
-The intended Kavi is best described as an incremental inductive program learner operating on typed term graphs. A term graph represents computation with shared subexpressions. Its operational semantics define what an instruction does, how state moves, and what counts as completion. Learned libraries allow a useful subgraph to become a reusable operation in subsequent searches.
+The mathematical description of the clarified proposal is a dynamical system on computational graphs with feedback-dependent graph rewriting. Temporary execution changes and lasting structural learning must be distinguished. Self-modifying Cartesian genetic programming is a close operational precedent; the adaptive circuit note examines its evidence and limitations.
 
-[DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) is the closest complete research architecture: it searches for programs, develops reusable abstractions, and learns to guide later search. Its initial language and representations are engineered, and its demonstrated domains and computational budgets differ from Kavi's. The relationship is a research lineage, not an implementation equivalence.
+Incremental program induction over typed term graphs provides one concrete acquisition mechanism within this design. A term graph represents computation with shared subexpressions. Its operational semantics define what an instruction does, how state moves, and what counts as completion. Learned libraries allow a useful subgraph to become a reusable operation in subsequent searches.
+
+[DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) is a close architecture for this acquisition mechanism: it searches for programs, develops reusable abstractions, and learns to guide later search. Its initial language and representations are engineered, and its demonstrated domains and computational budgets differ from Kavi's. The relationship is a research lineage, not an implementation equivalence; it does not cover every aspect of a continuously reshaping circuit.
 
 ### 5.2 Structural compression
 
@@ -39,6 +41,7 @@ The physical proposal has a different nearest relative: [port-Hamiltonian system
 
 | Kavi component | Closest mathematical family | Main distinction |
 | --- | --- | --- |
+| Adaptive circuit | Feedback-dependent rewriting of computational graphs | The update rule and transfer to new tasks must be established |
 | Intended learned procedures | Typed program induction and library learning | Procedures must be acquired, rather than supplied |
 | Structural consolidation | MDL and library learning modulo equations | Compression requires a defined encoding and valid identities |
 | Behavioral repair | Counterexample-guided synthesis and program repair | Repair changes meaning and needs fresh correctness evidence |

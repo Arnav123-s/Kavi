@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) is intended for reading and printing.
 
+The later [adaptive dataflow circuit note](ADAPTIVE_DATAFLOW_CIRCUIT.md) clarifies the intended representation and learning mechanism. It extends the specification's program-library formulation to graphs that change during execution and retain structural changes from feedback. This note is a separate addition to the PDF edition.
+
 ## Implementation and operation
 
 | Document | Scope |
@@ -36,6 +38,7 @@ The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) 
 | Document | Scope |
 | --- | --- |
 | [Architecture](DESIGN.md) | Main design decisions |
+| [Adaptive dataflow circuit](ADAPTIVE_DATAFLOW_CIRCUIT.md) | Structural memory, temporary flow, feedback and graph rewriting |
 | [Learned configuration](CONFIGURATION_FIRST_MODEL.md) | Structure, storage and reuse |
 | [Program acquisition](PATH_PROGRAM_LEARNING.md) | Typed search, counterexamples and libraries |
 | [Executable pathway core](KAVI_HARD_PATHWAY_CORE_PLAN.md) | Proposed learning boundary |

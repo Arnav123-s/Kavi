@@ -1,9 +1,10 @@
-"""Initial experiment command-line interface."""
+"""Commands for the structural learner and earlier stage-0 experiments."""
 
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
+import sys
 
 from .terminal import configure_utf8_output
 
@@ -21,11 +22,14 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="kavi",
         description=(
-            "Run the bounded, inspectable stage-0 hard-pathway experiment. "
-            "All output is an observable route/update trace, not hidden reasoning."
+            "Use 'circuit' for live procedure acquisition and repair. "
+            "The earlier stage-0 experiments remain available as 'live' and 'paths'."
         ),
     )
     subcommands = parser.add_subparsers(dest="command", required=True)
+
+    circuit = subcommands.add_parser("circuit", help="learn, inspect and query discrete circuits", add_help=False)
+    circuit.add_argument("arguments", nargs=argparse.REMAINDER)
 
     live = subcommands.add_parser("live", help="train for a fixed number of exact examples")
     live.add_argument("--steps", type=int, default=24, help="finite events; default: 24")
@@ -106,8 +110,13 @@ def main(argv: list[str] | None = None) -> int:
 
     configure_utf8_output()
 
+    arguments = sys.argv[1:] if argv is None else argv
+    if arguments[:1] == ["circuit"]:
+        from .circuit_cli import main as circuit_main
+        return circuit_main(arguments[1:])
+
     parser = build_parser()
-    args = parser.parse_args(argv)
+    args = parser.parse_args(arguments)
     if args.command == "paths":
         _print_paths(LiveRuntime(RuntimeConfig()), quiet=args.quiet)
         return 0

@@ -1,0 +1,14 @@
+{
+  "seeds": [7, 19, 31],
+  "teaching_bits": 4,
+  "repair_examples": 48,
+  "audit_bits": 8,
+  "transfer_bits": [16, 32, 64, 256, 1024],
+  "transfer_random_cases": 32,
+  "max_nodes": 12,
+  "max_candidates": 65536,
+  "max_candidate_evaluations": 1000000,
+  "max_seconds": 180,
+  "max_memory_mb": 512,
+  "max_disk_mb": 96
+}

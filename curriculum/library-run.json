@@ -1,0 +1,12 @@
+{
+  "seeds": [7, 19, 31],
+  "foundation_model": "experiments/circuit-20260905-model.json",
+  "subtraction_teaching_cases": 48,
+  "max_program_nodes": 3,
+  "max_program_candidates": 20000,
+  "max_candidate_cases": 1000000,
+  "max_program_seconds": 10,
+  "max_seconds": 900,
+  "max_memory_mb": 512,
+  "max_disk_mb": 128
+}

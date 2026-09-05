@@ -30,6 +30,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     circuit = subcommands.add_parser("circuit", help="learn, inspect and query discrete circuits", add_help=False)
     circuit.add_argument("arguments", nargs=argparse.REMAINDER)
+    library = subcommands.add_parser("library", help="acquire and query reusable procedure libraries", add_help=False)
+    library.add_argument("arguments", nargs=argparse.REMAINDER)
 
     live = subcommands.add_parser("live", help="train for a fixed number of exact examples")
     live.add_argument("--steps", type=int, default=24, help="finite events; default: 24")
@@ -114,6 +116,9 @@ def main(argv: list[str] | None = None) -> int:
     if arguments[:1] == ["circuit"]:
         from .circuit_cli import main as circuit_main
         return circuit_main(arguments[1:])
+    if arguments[:1] == ["library"]:
+        from .library_cli import main as library_main
+        return library_main(arguments[1:])
 
     parser = build_parser()
     args = parser.parse_args(arguments)

@@ -15,6 +15,7 @@ kavi-catalog = "kavi.catalog_cli:main"
 kavi-pathways = "kavi.pathway_cli:main"
 kavi-live = "kavi.wave_cli:main"
 kavi-circuit = "kavi.circuit_cli:main"
+kavi-library = "kavi.library_cli:main"
 
 [tool.unittest]
 start-directory = "tests"

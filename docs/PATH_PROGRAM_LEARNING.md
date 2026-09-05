@@ -10,6 +10,8 @@ The learned object is a typed executable program and a library of acquired subpr
 
 Start with a small grammar of list, scalar, Boolean and integer operations. Supply examples and independently verified answers, while withholding the target program. Search using type-directed enumeration and bounded local edits. A failure produces a counterexample that narrows the candidate set.
 
+The learned artifact is the operation, including the control structure needed to apply it to new inputs. Teaching pairs constrain candidate procedures during acquisition; the deployed learner must answer without retrieving those pairs. A repair that only returns the target answer for a named teaching input does not demonstrate procedure acquisition. Diagnose and repair the shared computation, then evaluate new inputs exercising the same mechanism. For arithmetic, distinguish primitives that expose units or successor from primitives that already perform addition.
+
 Use bounded execution and explicit timeout results. Search failure within a budget does not prove that no program exists. A learned proposal policy may later order candidates, but the verifier remains responsible for checking them.
 
 ## Reuse and consolidation

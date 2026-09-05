@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Kavi is an experimental learner for acquiring reusable computations under a fixed resource budget. The intended model is an adaptive circuit: information activates computational paths, experience changes their connections and operations, and useful structure becomes reusable. Temporary signals can disappear while the learned configuration persists. Preserving earlier behavior as that configuration changes is a central research requirement.
 
+The learning target is the operation itself: an addition pathway should combine new quantities without retrieving remembered teaching equations. A wrong answer diagnoses a failure of the current computation or its application. Corrections should repair the shared procedure and preserve its required earlier behavior.
+
 The repository currently contains a symbolic pathway circuit and a separate 66,880-parameter recurrent text model. The symbolic curriculum supplies operation contracts. The text model learns numerical parameters through backpropagation. General program acquisition and library consolidation remain proposed.
 
 ## Technical documentation

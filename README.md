@@ -2,43 +2,54 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Kavi is an experimental learner for acquiring reusable computations under a fixed resource budget. The intended model is an adaptive circuit: information activates computational paths, experience changes their connections and operations, and useful structure becomes reusable. Temporary signals can disappear while the learned configuration persists. Preserving earlier behavior as that configuration changes is a central research requirement.
+Kavi learns reusable computations as circuit structure. Gates and connections determine the operation; temporary signals disappear after execution. A wrong answer supplies evidence that the current procedure needs repair. The objective is to improve that shared computation while preserving earlier correct behavior.
 
-The learning target is the operation itself: an addition pathway should combine new quantities without retrieving remembered teaching equations. A wrong answer diagnoses a failure of the current computation or its application. Corrections should repair the shared procedure and preserve its required earlier behavior.
+The current structural learner acquires a binary-addition transition from examples using AND, XOR and NOT gates. Its saved model contains no teaching equations or learned numerical edge weights. The bit-processing loop, one state register, encoding and search controller are supplied. Broader language learning and autonomous invention of those components remain research goals.
 
-The repository currently contains a symbolic pathway circuit and a separate 66,880-parameter recurrent text model. The symbolic curriculum supplies operation contracts. The text model learns numerical parameters through backpropagation. General program acquisition and library consolidation remain proposed.
+## Run and inspect
 
-## Technical documentation
+The structural learner uses the Python standard library. From this directory:
 
-Start with the [engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md). It covers the current implementation, mathematics, measured results, closest research relatives, component inventory, experiment design and development milestones. A [printable edition](docs/Kavi_Engineering_and_Research.pdf) contains the same specification.
+```powershell
+python -u -m kavi circuit run --config curriculum/circuit-run.json --run-dir runs/circuit-trial --interactive
+```
 
-The subsequent [adaptive dataflow circuit note](docs/ADAPTIVE_DATAFLOW_CIRCUIT.md) clarifies the intended architecture, structural learning, correction and doubt, and its relationship to self-modifying computational graphs. This separate addition extends the design discussion in the specification and is not included in its PDF edition.
+Use a new run directory. The automatic trial has a 180-second limit and displays candidate graphs, counterexamples, accepted repairs, retention and final results. The console then accepts `12345 + 67890`, `/trace 7 5`, `/circuit`, `/status` and `/quit`. The launcher `scripts/start-circuit.ps1` provides the same workflow with a fresh timestamped directory.
 
-- [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md)
-- [Current text model equations](docs/WAVE_MODEL_MATH.md)
-- [Typed program acquisition](docs/PATH_PROGRAM_LEARNING.md)
+To query the small published model directly:
+
+```powershell
+python -m kavi circuit ask --model experiments/circuit-20260905-model.json 255 1 --trace
+```
+
+The [runtime reference](docs/CIRCUIT_RUNTIME.md) documents pause, resume, stop, file formats and the complete interface.
+
+## Measured result
+
+The first declared trial used three seeds. Every seed acquired the same five-gate, 321-byte circuit. Each passed 127 unseen four-bit pairs, the full 65,536-pair eight-bit audit, and 190 longer-input cases up to 1,024 bits. The audit preserved all 6,561 answers the foundation circuit previously got right. The complete run took 5.281 seconds on one CPU process.
+
+The eight-bit audit includes selection examples; the separate 127-case and length-transfer banks were withheld. The 321-byte figure is the model artifact, excluding the executor and learning workspace. These results establish a narrow operation-learning mechanism under strong, declared representation assumptions. See the [experiment record](experiments/2026-09-05-circuit-learning.md) and [machine-readable results](experiments/2026-09-05-circuit-learning.json).
+
+## Documentation
+
+- [Architecture](docs/DESIGN.md)
+- [Engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md)
+- [Printable specification](docs/Kavi_Engineering_and_Research.pdf)
+- [Adaptive circuit formulation](docs/ADAPTIVE_DATAFLOW_CIRCUIT.md)
+- [Discrete circuit runtime](docs/CIRCUIT_RUNTIME.md)
 - [Evaluation protocol](docs/EVALUATION_PROTOCOL.md)
-- [Operations and reproducibility](docs/OPERATIONS_AND_REPRODUCIBILITY.md)
-- [Research references](docs/RESEARCH.md)
 - [Complete documentation index](docs/DOCUMENTATION_INDEX.md)
 
-## Evidence
+## Earlier experiments and development
 
-Recorded text experiments show strong single-symbol copying, weak transfer to longer sequences and continuing loss of earlier correct answers. One selected consolidation preserved 196 guard answers but broke two previously correct answers on independent final confirmation. An additional forward-repair connector produced no final correctness advantage in the paired three-seed comparison.
+The repository also retains a symbolic pathway circuit with supplied operation contracts and a separate 66,880-parameter recurrent text model. Their measured language limitations and regressions remain documented. They are separate implementations; their capabilities are not part of the new circuit model.
 
-See the [experiment records](experiments/README.md) for configurations, counts and regressions. These measurements support a narrow experimental learner; broad language competence has not been demonstrated.
-
-## Development
-
-Python 3.11 or later is declared. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. PyTorch is required for the optional text core and its tests. The symbolic core uses the standard library.
+Python 3.11 or later is declared. The circuit trial used Python 3.12.14. All 153 tests passed using Python 3.13.5 with PyTorch 2.6.0+cu124; PyTorch is needed only for the optional text core and its tests.
 
 ```powershell
 python -B -m unittest discover -s tests -q
 python -m kavi --help
-python -m kavi.pathway_cli --help
-python -m kavi.wave_cli --help
+python -m kavi circuit --help
 ```
 
-All 138 tests passed after the project relocation on 5 September 2026. Live launch scripts start teaching processes; review the [operating guide](docs/OPERATIONS_AND_REPRODUCIBILITY.md) before using them.
-
-Private sources, conversations, checkpoints and run logs remain in ignored local folders. Public source manifests contain metadata and fingerprints. A software license has not yet been selected.
+Private sources, conversations, large checkpoints and complete run logs remain in ignored local folders. The public circuit and compact trial results contain generated arithmetic data only. A software license has not yet been selected.

@@ -1,7 +1,7 @@
 # Experiment records
 
-The repository contains narrow, reproducible smoke-test records for the
-implemented pathway prototypes. They verify code behavior under their exact
+The repository contains records of bounded structural learning and earlier
+pathway prototypes. They verify code behavior under their exact
 configuration; they are not evidence of general learning or broad capability.
 
 When an experiment is explicitly authorized, create a reviewed text record containing:
@@ -18,6 +18,8 @@ When an experiment is explicitly authorized, create a reviewed text record conta
 Publish compact, non-sensitive results, not raw private inputs, credentials, copyrighted source texts, or large binary artifacts. Report hypothetical examples as hypothetical; do not invent successful measurements.
 
 Current records:
+
+- [Structural acquisition and repair of addition](2026-09-05-circuit-learning.md)
 
 - [Repair forward without rolling back the latest configuration](2026-09-04-forward-repair.md)
 - [Verifier-gated configuration consolidation](2026-09-04-verified-consolidation.md)

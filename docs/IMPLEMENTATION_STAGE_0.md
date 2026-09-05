@@ -1,6 +1,9 @@
 # Kavi implementation stage 0: observable hard-pathway testbed
 
 Author: Arnav123-s
+
+This is the preserved stage-0 implementation reference. The newer [structural learner](CIRCUIT_RUNTIME.md) acquires gate operations and wiring from examples; its results and supervision should not be attributed to the coefficient-learning prototype described here.
+
 Status: implemented prototype; no broad intelligence claim
 
 ## What is implemented

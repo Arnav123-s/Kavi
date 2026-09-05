@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+A first [machine-executable learned operation](CIRCUIT_RUNTIME.md) is now implemented and evaluated. Its five-gate graph executes without teaching examples; the interpreter, bit framing and structural search remain supplied infrastructure.
+
 Kavi's architecture should exploit the strengths of ordinary computers: exact execution, explicit storage, reusable programs and independent verification. Biological similarity is optional and must be justified by measured benefits.
 
 A typed program library can express discrete operations precisely. A learned numerical model can interpret uncertain signals or rank candidate computations. Their interface must preserve types, provenance, failure states and resource costs.

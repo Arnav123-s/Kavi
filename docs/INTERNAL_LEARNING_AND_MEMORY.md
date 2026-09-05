@@ -1,5 +1,9 @@
 # Kavi: internally learned configurations and finite memory
 
+Author: [Arnav123-s](https://github.com/Arnav123-s)
+
+This document concerns the separate recurrent text implementation. The [structural learner](CIRCUIT_RUNTIME.md) retains a gate procedure and executes it without teaching records; its operation-learning result does not establish the text abilities discussed below.
+
 ## What this implementation is
 
 The wave text core is a small sparse recurrent neural network trained from

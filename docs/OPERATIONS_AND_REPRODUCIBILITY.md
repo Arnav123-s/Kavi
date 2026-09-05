@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Run commands from the repository root. The project declares Python 3.11 or later. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. The symbolic modules use the standard library; the text model and its tests require PyTorch.
+Run commands from the repository root. The project declares Python 3.11 or later. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. The discrete circuit and symbolic modules use the standard library; the text model and its tests require PyTorch. The structural trial used Python 3.12.14, while the full 153-test regression suite used Python 3.13.5 with the listed PyTorch version.
 
 ## Environment and inspection
 
@@ -26,7 +26,19 @@ python -m kavi.pathway_cli --help
 python -m kavi.wave_cli --help
 ```
 
-The source command reads admission metadata; it does not fetch books. Tests include small bounded learning checks. All 138 tests passed after relocation on 5 September 2026.
+The source command reads admission metadata; it does not fetch books. Tests include small bounded learning checks. The original 138 tests passed after relocation; all 153 tests passed after the structural learner was added.
+
+## Structural circuit learning
+
+The current operation-learning entry point is:
+
+```powershell
+python -u -m kavi circuit run --config curriculum/circuit-run.json --run-dir runs/circuit-trial --interactive
+```
+
+Use a new directory. The default automatic trial is limited to 180 seconds, three seeds and the declared candidate, memory and disk budgets. Its post-run console waits for queries without continuing training. `scripts/start-circuit.ps1` chooses a fresh timestamped directory. The [runtime reference](CIRCUIT_RUNTIME.md) documents every command and artifact.
+
+The completed first run is `runs/circuit-20260905-01`. Its console can be opened with `python -m kavi circuit console --run-dir runs/circuit-20260905-01`. A portable five-gate model is published at `experiments/circuit-20260905-model.json`. Earlier accepted graphs and all final evidence remain in the original run directory. The prior recurrent curriculum was not restarted by this experiment.
 
 ## Text learning
 

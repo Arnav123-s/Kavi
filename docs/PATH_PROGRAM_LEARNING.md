@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Status: proposed implementation of one acquisition mechanism within the [adaptive dataflow circuit design](ADAPTIVE_DATAFLOW_CIRCUIT.md).
+Status: counterexample-guided gate-circuit acquisition is implemented in the [discrete runtime](CIRCUIT_RUNTIME.md). The broader typed language and learned-library mechanisms described here remain proposed within the [adaptive dataflow design](ADAPTIVE_DATAFLOW_CIRCUIT.md).
 
 The learned object is a typed executable program and a library of acquired subprocedures. A primitive defines its input types, result type, behavior, failure cases and execution cost. Candidate paths must type-check before execution.
 

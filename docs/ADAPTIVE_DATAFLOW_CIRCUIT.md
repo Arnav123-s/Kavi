@@ -4,7 +4,7 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Revision: 5 September 2026
 
-Status: proposed architecture. This note clarifies the intended learned representation beyond the program-library design in the [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md). It introduces no implementation or experimental result.
+Status: architectural objective with a bounded implemented instance. The [discrete runtime](CIRCUIT_RUNTIME.md) learns and repairs Boolean transition circuits; its [first trial](../experiments/2026-09-05-circuit-learning.md) records acquisition and retention results. General self-reconfiguration, learned control structure and uncertain-feedback handling remain proposed.
 
 ## 1. The learned object
 
@@ -46,7 +46,7 @@ $$
 
 These equations define interfaces, not a solved learning algorithm. `U` must determine which changes to propose, how to evaluate them and which to retain. The execution trace identifies what participated in a response; it does not by itself identify the cause of an error or the correct repair. Several different failures can produce the same wrong answer.
 
-The first implementation can use an engineered update rule. A later experiment could represent parts of that rule as editable graphs and test whether experience improves the learning process itself. The two claims must be evaluated separately: learning a task circuit and learning how to modify task circuits. Graph instructions remain a bounded executable representation, rather than permission to alter arbitrary host source code.
+The implemented circuit search uses an engineered update rule. Its graph remains fixed during a query, so temporary rewiring is the identity operation in this first instance. A later experiment could represent parts of that rule as editable graphs and test whether experience improves the learning process itself. The two claims must be evaluated separately: learning a task circuit and learning how to modify task circuits. Graph instructions remain a bounded executable representation, rather than permission to alter arbitrary host source code.
 
 A useful structural search criterion balances error, total encoded size, execution cost and edit size. Restrict it with previously verified behavioral obligations. Size includes node choices, connection addresses, constants, shared libraries, retained evidence and any learned search policy. Candidate evaluations, unsuccessful proposals and verification work belong in the learning-cost report.
 
@@ -135,7 +135,7 @@ The 2009 self-modifying graph experiment is particularly instructive. Of 111 evo
 
 These are distinct precedents. Combining their desirable properties is a research objective, not an already validated architecture or an established novelty claim.
 
-## 9. A decisive first experiment
+## 9. Experiment sequence
 
 Build a bounded interpreter whose learned circuit contains discrete gate choices and connections. Use Boolean inputs, basic gates, branch operations and temporary registers. Specify every primitive, the input encoding, the permitted graph edits, the initialization and the search budget before training. The strict structural condition excludes trainable edge multipliers and target-specific answer tables; integer addresses and operation identifiers still count as stored configuration.
 
@@ -148,4 +148,4 @@ Build a bounded interpreter whose learned circuit contains discrete gate choices
 
 A successful result would establish that the circuit acquires a transferable computation through structural changes and retains specified earlier behavior within the declared budget. It would not yet establish general language learning. Broader success would require successive demonstrations of useful abstraction, efficient adaptation, perception, language grounding and reliable behavior as tasks become less structured.
 
-The existing symbolic circuit and recurrent text core do not implement this complete mechanism. Their actual behavior remains documented in the [implementation reference](IMPLEMENTATION_REFERENCE.md) and [experiment records](../experiments/README.md).
+The discrete circuit trial now establishes a narrow operation-acquisition and repair result under a supplied streaming executor. The complete adaptive architecture, shared learning of several operations and calibrated feedback interpretation remain open. The earlier symbolic circuit and recurrent text core are separate implementations. Their actual behavior remains documented in the [implementation reference](IMPLEMENTATION_REFERENCE.md) and [experiment records](../experiments/README.md).

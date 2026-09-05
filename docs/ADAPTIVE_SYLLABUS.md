@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+This syllabus describes the earlier staged symbolic and text curricula. The new structural circuit has its own finite generated curriculum and selection rules, documented in the [runtime reference](CIRCUIT_RUNTIME.md). Its measured addition result does not imply completion of these language stages.
+
 ## What it automates
 
 `python -m kavi.adaptive_cli` is the visible, finite teaching loop for the

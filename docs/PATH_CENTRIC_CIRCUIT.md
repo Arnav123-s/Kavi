@@ -1,5 +1,9 @@
 # Path-centric adaptive circuit
 
+Author: [Arnav123-s](https://github.com/Arnav123-s)
+
+This reference describes the earlier unified symbolic circuit with supplied operation contracts. The [discrete runtime](CIRCUIT_RUNTIME.md) is a separate implementation that searches for gate-level computations from examples.
+
 ## Implemented status
 
 Kavi now has one experimental circuit state that persists across every

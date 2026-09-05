@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+This record describes a source-based concept stage in the earlier symbolic system. The [structural addition learner](CIRCUIT_RUNTIME.md) acquires its gate transition from generated examples and does not use this textbook mechanism.
+
 ## What now runs
 
 `textbook-concepts-expressions-relations` is Kavi's first deliberately narrow

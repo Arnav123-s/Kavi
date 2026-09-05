@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+These are language-learning requirements for a later extension. The [current discrete circuit](CIRCUIT_RUNTIME.md) has a measured arithmetic procedure but no multilingual input interpretation; the earlier text model remains a separate experiment.
+
 Status: implemented source-free Unicode foundations; no language or document training has begun
 
 ## The simple idea

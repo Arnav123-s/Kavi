@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [first structural trial](../experiments/2026-09-05-circuit-learning.md) expands a one-gate foundation into a five-gate transition and measures retention. The state-enabled search stage is scheduled by the curriculum; autonomous growth and repeated cross-task consolidation remain untested.
+
 The learner may grow within a fixed device budget and later consolidate acquired structure. The budget includes persistent state, temporary learning memory, external storage and computation. Beginning another curriculum stage does not renew physical capacity.
 
 ## Acceptance criteria

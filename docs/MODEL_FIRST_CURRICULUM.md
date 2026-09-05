@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+The stages below describe earlier symbolic prototypes. The [structural circuit curriculum](CIRCUIT_RUNTIME.md) now supplies an independent arithmetic experiment in which the operation is acquired through gate selection and wiring changes.
+
 Status: six-stage unified circuit plus bounded regression cores and review-gated curriculum
 
 ## The project hierarchy

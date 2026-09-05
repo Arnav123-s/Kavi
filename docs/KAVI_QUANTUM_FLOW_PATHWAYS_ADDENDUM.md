@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [implemented circuit](CIRCUIT_RUNTIME.md) is classical and uses no amplitude or quantum simulation. Multiple candidates are ordinary explicitly counted search alternatives. The complex-flow mechanisms below remain a separate proposal.
+
 Status: proposed classical numerical experiment.
 
 Complex amplitudes can represent magnitude and relative phase. Interference then follows the chosen algebra. A learned or verified rule must connect that algebra to task correctness; cancellation alone is not a truth test.

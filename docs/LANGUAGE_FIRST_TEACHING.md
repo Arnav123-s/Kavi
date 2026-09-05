@@ -1,5 +1,9 @@
 # Language-first teaching and repeated-answer diagnosis
 
+Author: [Arnav123-s](https://github.com/Arnav123-s)
+
+This teaching recipe applies to the recurrent text model. The [discrete circuit learner](CIRCUIT_RUNTIME.md) currently accepts structured integer inputs and a supplied command syntax. Learning language interpretation remains a separate prerequisite.
+
 ## What changed
 
 The live text learner previously encountered substantial arithmetic prose and

@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+The developmental teacher below belongs to the earlier symbolic pathway system. The [discrete circuit experiment](CIRCUIT_RUNTIME.md) now acquires a transition from counterexamples under a separate teacher, with independently sealed final tests.
+
 Status: implemented for the bounded foundation circuit; language development remains unfinished.
 
 ## Overview

@@ -1,5 +1,9 @@
 # Small multilingual curriculum bridge and harder mixed quizzes
 
+Author: [Arnav123-s](https://github.com/Arnav123-s)
+
+These quizzes evaluate the recurrent text learner. The [new circuit trial](CIRCUIT_RUNTIME.md) evaluates operation acquisition on integers, so its exact arithmetic results do not change the multilingual evidence below.
+
 ## Scope
 
 This is a change to the external teacher, **not** a replacement or enlargement

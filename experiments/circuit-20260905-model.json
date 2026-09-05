@@ -1,0 +1,1 @@
+{"emit":6,"framing":"lsb-first-one-zero-padding-frame","gates":[{"inputs":[0,1],"op":"XOR"},{"inputs":[5,2],"op":"XOR"},{"inputs":[0,2],"op":"XOR"},{"inputs":[5,7],"op":"AND"},{"inputs":[8,0],"op":"XOR"}],"initial_state":0,"next_state":9,"ports":["left","right","state","zero","one"],"schema":"kavi.discrete-circuit.v1"}

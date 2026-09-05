@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+This composition stage supplies structural contracts to the earlier symbolic circuit. The [new operation learner](CIRCUIT_RUNTIME.md) discovers a Boolean transition; acquisition of general cross-task composition remains future work.
+
 Status: implemented bounded Phase 2A experiment
 
 ## Scope

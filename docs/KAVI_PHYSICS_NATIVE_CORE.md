@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The working [discrete circuit learner](CIRCUIT_RUNTIME.md) performs Boolean operations and structural search. It has no physical energy dynamics. The framework below is a separate research hypothesis, not an account of the measured addition result.
+
 Status: unimplemented hypothesis. Mathematical revision dated 5 September 2026.
 
 The proposed core uses coupled state variables, sparse transport, dissipation and a learning signal. A useful physical interpretation requires a defined energy and a consistent relationship between the state dynamics and parameter updates.

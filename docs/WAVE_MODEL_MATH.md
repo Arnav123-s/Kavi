@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+These equations specify the earlier recurrent text core and its numerical weights. The [current structural learner](CIRCUIT_RUNTIME.md) uses a separate discrete gate representation and counterexample-guided search.
+
 Implementation reference for `kavi/wave_core.py`.
 
 ### 3.1 Representation and parameter accounting

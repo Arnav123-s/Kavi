@@ -1,0 +1,353 @@
+{
+  "author": "Arnav123-s",
+  "source_revision": "7908156e0241a9df4293e56231660fb234ca44de",
+  "experiment": "circuit-20260905-01",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_sha256": {
+    "kavi/circuit_core.py": "73579e7d0dd177dfa1e1ea5831667adb4436f961fecef2e62282834d55e4a005",
+    "kavi/circuit_search.py": "cf4b13d3283112e21d5b0f355845ea5d08a35950d9352a7e4742e114795567e6",
+    "kavi/circuit_runtime.py": "b100af4c31e1de97ecfce51b23fed9600827951054cd324940feedb3b8a6cb84",
+    "kavi/circuit_cli.py": "bbb9bb974d9e72fe91fec7ddd747318a3567185d111ec68cb53d35d47d74ff18"
+  },
+  "state": "completed",
+  "config": {
+    "seeds": [
+      7,
+      19,
+      31
+    ],
+    "teaching_bits": 4,
+    "repair_examples": 48,
+    "audit_bits": 8,
+    "transfer_bits": [
+      16,
+      32,
+      64,
+      256,
+      1024
+    ],
+    "transfer_random_cases": 32,
+    "max_nodes": 12,
+    "max_candidates": 65536,
+    "max_candidate_evaluations": 1000000,
+    "max_seconds": 180,
+    "max_memory_mb": 512,
+    "max_disk_mb": 96
+  },
+  "results": [
+    {
+      "seed": 7,
+      "partitions": {
+        "foundation": 81,
+        "repair": 48,
+        "held_out": 127,
+        "held_out_sha256": "4764687ed5a1e72687661ec2a3a5806db0db80219b77a157ffc08c20a96b2cce"
+      },
+      "foundation": {
+        "sha256": "2fe41d67d03b5efaa604989d8bf8914983d450bdfd560fdb84a09cebbf7cb4ef",
+        "gates": 1,
+        "bytes": 209,
+        "seconds": 0.030999999999039574,
+        "search": {
+          "candidates": 256,
+          "proposals": 3,
+          "counterexamples": 2,
+          "candidate_evaluations": 320,
+          "candidate_frames": 1024,
+          "verifier_executions": 87,
+          "verifier_gate_evaluations": 366,
+          "surviving_candidates": 32
+        }
+      },
+      "learned": {
+        "sha256": "73f10ae9b5bd8fd01fc66fad37dbd1f9b661ef8d56dfc46857b56fbb21740b17",
+        "gates": 5,
+        "bytes": 321,
+        "seconds": 0.2970000000022992,
+        "search": {
+          "candidates": 65438,
+          "proposals": 7,
+          "counterexamples": 6,
+          "candidate_evaluations": 83033,
+          "candidate_frames": 256672,
+          "verifier_executions": 390,
+          "verifier_gate_evaluations": 6416,
+          "surviving_candidates": 2
+        },
+        "pathway": [
+          "g0 = XOR(left, right)",
+          "g1 = XOR(g0, state)",
+          "g2 = XOR(left, state)",
+          "g3 = AND(g0, g2)",
+          "g4 = XOR(g3, left)",
+          "emit = g1",
+          "next_state = g4"
+        ]
+      },
+      "lookup_payload_bytes": 1193,
+      "evaluations": {
+        "protected": {
+          "cases": 81,
+          "correct": 81,
+          "previous_correct": 81,
+          "gains": 0,
+          "regressions": 0,
+          "lookup_answered": 81,
+          "lookup_correct": 81,
+          "gate_evaluations": 1830,
+          "frames": 366,
+          "seconds": 0.0
+        },
+        "held_out": {
+          "cases": 127,
+          "correct": 127,
+          "previous_correct": 0,
+          "gains": 127,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 3020,
+          "frames": 604,
+          "seconds": 0.0
+        },
+        "exhaustive": {
+          "cases": 65536,
+          "correct": 65536,
+          "previous_correct": 6561,
+          "gains": 58975,
+          "regressions": 0,
+          "lookup_answered": 129,
+          "lookup_correct": 129,
+          "gate_evaluations": 2839900,
+          "frames": 567980,
+          "seconds": 1.281
+        },
+        "transfer": {
+          "cases": 190,
+          "correct": 190,
+          "previous_correct": 10,
+          "gains": 180,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 265430,
+          "frames": 53086,
+          "seconds": 0.078
+        }
+      },
+      "invariant_valid_rows": 8
+    },
+    {
+      "seed": 19,
+      "partitions": {
+        "foundation": 81,
+        "repair": 48,
+        "held_out": 127,
+        "held_out_sha256": "40304d7a845069062f8272fa354277f354a14675dc108b014ab5a601b1eb6419"
+      },
+      "foundation": {
+        "sha256": "2fe41d67d03b5efaa604989d8bf8914983d450bdfd560fdb84a09cebbf7cb4ef",
+        "gates": 1,
+        "bytes": 209,
+        "seconds": 0.030999999999039574,
+        "search": {
+          "candidates": 256,
+          "proposals": 2,
+          "counterexamples": 1,
+          "candidate_evaluations": 256,
+          "candidate_frames": 1280,
+          "verifier_executions": 82,
+          "verifier_gate_evaluations": 366,
+          "surviving_candidates": 32
+        }
+      },
+      "learned": {
+        "sha256": "73f10ae9b5bd8fd01fc66fad37dbd1f9b661ef8d56dfc46857b56fbb21740b17",
+        "gates": 5,
+        "bytes": 321,
+        "seconds": 0.2970000000022992,
+        "search": {
+          "candidates": 65438,
+          "proposals": 7,
+          "counterexamples": 6,
+          "candidate_evaluations": 70895,
+          "candidate_frames": 339054,
+          "verifier_executions": 466,
+          "verifier_gate_evaluations": 7500,
+          "surviving_candidates": 2
+        },
+        "pathway": [
+          "g0 = XOR(left, right)",
+          "g1 = XOR(g0, state)",
+          "g2 = XOR(left, state)",
+          "g3 = AND(g0, g2)",
+          "g4 = XOR(g3, left)",
+          "emit = g1",
+          "next_state = g4"
+        ]
+      },
+      "lookup_payload_bytes": 1191,
+      "evaluations": {
+        "protected": {
+          "cases": 81,
+          "correct": 81,
+          "previous_correct": 81,
+          "gains": 0,
+          "regressions": 0,
+          "lookup_answered": 81,
+          "lookup_correct": 81,
+          "gate_evaluations": 1830,
+          "frames": 366,
+          "seconds": 0.0
+        },
+        "held_out": {
+          "cases": 127,
+          "correct": 127,
+          "previous_correct": 0,
+          "gains": 127,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 3035,
+          "frames": 607,
+          "seconds": 0.0
+        },
+        "exhaustive": {
+          "cases": 65536,
+          "correct": 65536,
+          "previous_correct": 6561,
+          "gains": 58975,
+          "regressions": 0,
+          "lookup_answered": 129,
+          "lookup_correct": 129,
+          "gate_evaluations": 2839900,
+          "frames": 567980,
+          "seconds": 1.282
+        },
+        "transfer": {
+          "cases": 190,
+          "correct": 190,
+          "previous_correct": 10,
+          "gains": 180,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 265430,
+          "frames": 53086,
+          "seconds": 0.062
+        }
+      },
+      "invariant_valid_rows": 8
+    },
+    {
+      "seed": 31,
+      "partitions": {
+        "foundation": 81,
+        "repair": 48,
+        "held_out": 127,
+        "held_out_sha256": "083cda3b0c8f59b55027b0f3d7de33f63d1b561b7410cee83ce8b66ccf9d741c"
+      },
+      "foundation": {
+        "sha256": "2fe41d67d03b5efaa604989d8bf8914983d450bdfd560fdb84a09cebbf7cb4ef",
+        "gates": 1,
+        "bytes": 209,
+        "seconds": 0.0319999999992433,
+        "search": {
+          "candidates": 256,
+          "proposals": 2,
+          "counterexamples": 1,
+          "candidate_evaluations": 256,
+          "candidate_frames": 1024,
+          "verifier_executions": 82,
+          "verifier_gate_evaluations": 366,
+          "surviving_candidates": 32
+        }
+      },
+      "learned": {
+        "sha256": "73f10ae9b5bd8fd01fc66fad37dbd1f9b661ef8d56dfc46857b56fbb21740b17",
+        "gates": 5,
+        "bytes": 321,
+        "seconds": 0.2959999999984575,
+        "search": {
+          "candidates": 65438,
+          "proposals": 7,
+          "counterexamples": 6,
+          "candidate_evaluations": 72927,
+          "candidate_frames": 280032,
+          "verifier_executions": 387,
+          "verifier_gate_evaluations": 6426,
+          "surviving_candidates": 5
+        },
+        "pathway": [
+          "g0 = XOR(left, right)",
+          "g1 = XOR(g0, state)",
+          "g2 = XOR(left, state)",
+          "g3 = AND(g0, g2)",
+          "g4 = XOR(g3, left)",
+          "emit = g1",
+          "next_state = g4"
+        ]
+      },
+      "lookup_payload_bytes": 1188,
+      "evaluations": {
+        "protected": {
+          "cases": 81,
+          "correct": 81,
+          "previous_correct": 81,
+          "gains": 0,
+          "regressions": 0,
+          "lookup_answered": 81,
+          "lookup_correct": 81,
+          "gate_evaluations": 1830,
+          "frames": 366,
+          "seconds": 0.016
+        },
+        "held_out": {
+          "cases": 127,
+          "correct": 127,
+          "previous_correct": 0,
+          "gains": 127,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 3035,
+          "frames": 607,
+          "seconds": 0.0
+        },
+        "exhaustive": {
+          "cases": 65536,
+          "correct": 65536,
+          "previous_correct": 6561,
+          "gains": 58975,
+          "regressions": 0,
+          "lookup_answered": 129,
+          "lookup_correct": 129,
+          "gate_evaluations": 2839900,
+          "frames": 567980,
+          "seconds": 1.234
+        },
+        "transfer": {
+          "cases": 190,
+          "correct": 190,
+          "previous_correct": 10,
+          "gains": 180,
+          "regressions": 0,
+          "lookup_answered": 0,
+          "lookup_correct": 0,
+          "gate_evaluations": 265430,
+          "frames": 53086,
+          "seconds": 0.094
+        }
+      },
+      "invariant_valid_rows": 8
+    }
+  ],
+  "catalog_functions": 256,
+  "catalog_seconds": 0.046999999998661224,
+  "wall_seconds": 5.28099999999904,
+  "cpu_seconds": 5.21875,
+  "peak_process_bytes": 35139584,
+  "case_bytes": 8371250,
+  "disk_bytes_before_final_report": 8720458
+}

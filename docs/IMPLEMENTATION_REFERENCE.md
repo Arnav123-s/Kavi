@@ -4,7 +4,18 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The package contains separate symbolic and recurrent experiments. A supplied operation contract, an acquired coefficient and a learned program are distinct forms of supervision.
 
-The following inventory covers all 52 Python modules under `kavi` at the inspected baseline. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+The following inventory covers 56 Python modules under `kavi`: the 52 earlier modules and four modules added for structural learning. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+
+### Current structural learner
+
+| Module | Responsibility |
+| --- | --- |
+| `circuit_core.py` | Validated gate graphs, streaming execution, model serialization and traces |
+| `circuit_search.py` | Boolean expression catalog, graph sharing, ranking and counterexample-guided acquisition |
+| `circuit_runtime.py` | Teacher partitions, finite run controls, protected behavior, sealed evaluation and evidence |
+| `circuit_cli.py` | Live runs, watching, inspection, direct queries and the interactive console |
+
+The runtime uses a supplied processing loop and one state register. Its learner acquires their transition circuit. [Implementation contract](CIRCUIT_RUNTIME.md).
 
 ### A.1 Initial pathway and explanation experiments
 
@@ -14,7 +25,7 @@ The following inventory covers all 52 Python modules under `kavi` at the inspect
 | `graph.py` | Initial routed graph, path selection and numeric execution |
 | `learning.py` | Verification and candidate pathway updates for generated arithmetic |
 | `runtime.py` | Finite event loop, controls, measurements and persistence |
-| `cli.py` | Initial experiment command-line interface |
+| `cli.py` | Root command dispatch and earlier stage-0 interface |
 | `lessons.py` | Structured teaching explanations and lesson examples |
 | `explanation_learning.py` | Translation of supplied explanations into checked updates |
 | `lesson_runtime.py` | Finite explanation-learning experiment loop |

@@ -116,3 +116,15 @@ The existing design discussion is summarized in this initial record. Its earlier
   distinct from the currently working parameter-update automation.
 - Expose lessons, answers, pathway traces, changes, grades, and pause/stop
   controls in separate tabs. Actual computation remains serial CPU work.
+
+## 2026-09-05: acquire and repair the operation as a circuit
+
+- Make the learned object a reusable computation. Teaching equations remain external evidence, not the deployed answer representation.
+- Implement counterexample-guided acquisition of Boolean gate graphs with strict serialization and actual execution traces.
+- Supply the binary framing, repeated executor, one-bit state capacity and search algorithm; identify these as architectural assumptions.
+- Use a declared stateless foundation followed by state-enabled repair, with protection of the earlier domain.
+- Seal accepted model hashes before independent final evaluation. Keep an exhaustive audit distinct from wholly unseen data.
+- Expose the complete experiment through the CLI with finite limits, pause/stop, saved graphs and a post-run query console.
+- Record the three-seed result: five gates, 321 bytes, complete declared accuracy and zero exhaustive-audit regressions. Keep general control-structure discovery and library learning as subsequent work.
+
+See [runtime](CIRCUIT_RUNTIME.md) and [evidence](../experiments/2026-09-05-circuit-learning.md).

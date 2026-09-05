@@ -2,12 +2,10 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Status: proposed program-learning core.
+Status: a bounded discrete circuit learner is implemented. The [runtime reference](CIRCUIT_RUNTIME.md) specifies its graph schema, interpreter, structural search, learning boundary and live commands.
 
-A pathway is a computation with typed inputs, operations and outputs. Intermediate values may enter an existing procedure when they satisfy its port contract. Shared subprocedures provide reuse; branches distinguish contexts that need different behavior.
+The acquired pathway is a Boolean transition computation shared across input positions. AND, XOR and NOT nodes connect typed bit ports. The learned artifact stores the operations and wiring; it does not store teaching equations. A wrong result drives search for a repair of the shared operation.
 
-The first core should use pure list, scalar, Boolean and integer operations with bounded execution. Acquire target programs from examples, then extract shared abstractions across solved tasks. Keep parsing, search, verification and execution independently measurable.
+The initial trial starts with a stateless foundation and enables a supplied one-bit register for the repair stage. The learner acquires its use but does not invent the state capacity, binary representation or processing loop. Final models are sealed before independent evaluation. The [first record](../experiments/2026-09-05-circuit-learning.md) reports the observed five-gate solution, retention and complete run cost.
 
-Finite parallel paths are candidate computations, each with a cost. A compact procedure can apply to larger inputs while consuming additional time and workspace. Connection patterns and constants still count as stored information.
-
-See [typed program acquisition](PATH_PROGRAM_LEARNING.md) for the implementation outline and sections 6, 7, 11 and 13 of the [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md) for semantics, capacity, interfaces and experiments.
+Future work should expand the instruction language and acquire control structure, then learn abstractions across distinct operations. Keep parsing, search, verification and execution independently measurable. Broad adaptive behavior remains defined in the [circuit formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md).

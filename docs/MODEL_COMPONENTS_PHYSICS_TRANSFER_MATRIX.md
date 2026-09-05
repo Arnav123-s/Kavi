@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [discrete runtime](CIRCUIT_RUNTIME.md) provides a concrete structural baseline: learned Boolean gates under an engineered streaming executor. Proposed physical replacements should compare against its measured operation, cost and retention before claiming an advantage.
+
 Each proposed replacement needs a computational role and a simple control. Similarity to a physical process does not establish a learning advantage.
 
 | Component | Proposed alternative | Necessary comparison |

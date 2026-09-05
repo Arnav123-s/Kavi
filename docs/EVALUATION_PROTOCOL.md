@@ -1,7 +1,7 @@
 # Kavi evaluation protocol
 
 Author: Arnav123-s
-Status: binding protocol for the current prototype; extend by explicit revision for later stages
+Status: structural-circuit protocol and preserved earlier prototype acceptance rules
 
 ## Purpose
 
@@ -9,9 +9,17 @@ Predeclare tests, resource budgets, baselines and candidate-selection rules.
 Record per-case outputs and all attempted candidates. The full experimental
 design is in section 13 of the [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md).
 
-## Test partitions
+## Structural circuit protocol
 
-The current arithmetic harness has three distinct partitions.
+The implemented [runtime](CIRCUIT_RUNTIME.md) uses 81 foundation cases, 48 repair cases and 127 independent final cases for each declared seed. Both foundation and repair banks affect selection. The accepted graph is sealed before the reserved bank, exhaustive eight-bit audit, longer-input tests and local invariant check. The complete exhaustive audit overlaps training and is labeled accordingly.
+
+Every candidate must preserve the foundation bank and satisfy the repair bank. Final evaluation cannot alter the graph. Teaching examples and search catalogs are unavailable to deployed inference. A first result is recorded in [structural acquisition and repair](../experiments/2026-09-05-circuit-learning.md).
+
+The principal measurements are exact correctness, per-case gains and regressions, gate and frame evaluations, complete candidate simulation counts, verifier calls, encoded model bytes, search time, process memory and external evidence storage. A local eight-row identity check is evaluated only after selection; its induction argument depends on the documented executor. No broad retention or calibrated-confidence claim follows from the finite trial.
+
+## Earlier arithmetic prototype partitions
+
+The earlier stage-0 arithmetic harness has three distinct partitions.
 
 | Partition | Role | Current location |
 | --- | --- | --- |

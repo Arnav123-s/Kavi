@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+Shared structural repair is now implemented for a bounded addition transition in the [discrete runtime](CIRCUIT_RUNTIME.md). Its accepted graph preserves the measured earlier domain. The broader adaptive mechanisms below retain their stated evidence requirements.
+
 A connection can carry a state-dependent response rather than a single constant gain. Candidate mechanisms include a decaying state, a gated residual, a frequency-selective recurrence or a typed executable operation. Each introduces different state and learning costs.
 
 The implemented repair connection is a small context-dependent residual with a learned amplitude and phase. Eight connectors add 56 parameters. Its zero-amplitude initialization preserves the initial function; subsequent learning can change old answers.

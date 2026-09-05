@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+The [current circuit trial](CIRCUIT_RUNTIME.md) uses generated arithmetic and requires no source documents. These admission rules continue to govern source-based teaching in the earlier cores and future language experiments.
+
 ## Decision
 
 Kavi should learn from real educational and research sources only through a

@@ -139,3 +139,7 @@ All candidate filters are reproducible from the catalog, ranking rule and record
 ## Remaining architecture work
 
 General language learning, autonomous invention of iteration or state capacity, learning the update rule, cross-task abstraction, noisy evidence, calibrated doubt and broad continual retention remain open. This implementation establishes a testable acquisition and repair mechanism for a deliberately small hypothesis class. Further stages should change one limitation at a time and retain independent final evaluation.
+
+## First measured run
+
+The [5 September 2026 trial](../experiments/2026-09-05-circuit-learning.md) completed all three seeds in 5.281 seconds. Each selected the same five-gate, 321-byte graph and passed every declared final case, with zero exhaustive-audit regressions. Source revision, exposed cases, complete search costs, controls, local invariant evidence and remaining limitations are recorded with the result.

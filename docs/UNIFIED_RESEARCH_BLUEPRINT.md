@@ -2,18 +2,16 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The research program is organized around acquisition, transfer, retention and consolidation under measured budgets. The [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md) is the current technical reference.
+The first structural-learning milestone is implemented and measured: acquisition and repair of a reusable addition transition under a supplied executor. See the [experiment record](../experiments/2026-09-05-circuit-learning.md). The broader objective remains efficient adaptation and preservation through learned computation.
 
 ## Order of work
 
-1. Reproduce an existing text comparison and establish independent final tests.
-2. Implement a typed interpreter and bounded program search.
-3. Acquire small procedures from examples without exposing target paths.
-4. Learn reusable abstractions and measure adaptation on new compositions.
-5. Compare continual repair against replay and simple local search.
-6. Verify consolidation and count the complete artifact and execution cost.
-7. Introduce controlled language interpretation and source-based concepts.
+1. Preserve the current finite experiment, its exact partitions, costs and source fingerprints.
+2. Expand the hypothesis class beyond a supplied one-bit recurrence and measure the cost of discovering control structure.
+3. Acquire several different operations and test whether learned components reduce search on new compositions.
+4. Separate learned abstraction from the compiler's existing identical-subexpression sharing.
+5. Compare continual structural repair with ordinary program search and matched numerical baselines.
+6. Introduce noisy feedback, disagreement and calibrated abstention under explicit contracts.
+7. Add controlled language interpretation before admitting broader source-based learning.
 
-Physical dynamics, population search and implementation revision remain separate hypotheses. They should enter the core only after an isolated experiment establishes a useful contribution. A repository's popularity or inclusion in a reading list is not performance evidence for Kavi.
-
-See [evaluation](EVALUATION_PROTOCOL.md), [primary research](RESEARCH.md) and [experiment records](../experiments/README.md) for methods and evidence.
+Every extension needs independent final evaluation, per-case retention transitions and complete resource accounting. Physical dynamics, learned update rules and host implementation revision are separate later hypotheses. The [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md) gives the mathematical basis and study sequence.

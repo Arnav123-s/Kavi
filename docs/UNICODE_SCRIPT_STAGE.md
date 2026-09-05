@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+This Unicode stage remains part of the earlier symbolic implementation. The [structural circuit](CIRCUIT_RUNTIME.md) currently processes bits with a supplied integer encoding; Unicode interpretation has not been transferred into that model.
+
 Status: implemented source-free model extension; no document or language training
 
 ## What this adds

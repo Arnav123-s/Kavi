@@ -25,7 +25,7 @@
 - Distinguish proposals, implementations, measurements, and established findings.
 - Count all persistent state, transient memory, external storage, and processing time when comparing resource use.
 - The learner's allocated size may grow and shrink within a hard device ceiling. Do not confuse a stage's zero progress score with zero memory or renewed physical capacity.
-- Growth and compression are planned learning mechanisms, not permission for autonomous source-code changes. Neither mechanism is implemented yet.
+- Growth and compression are learning mechanisms, not permission for autonomous source-code changes. Isolated experiments may test bounded route splitting and small additions; general learned compression and autonomous growth remain unimplemented.
 - Accept a compact learner only after retention and generalization checks. Do not report parameter deletion or lower precision alone as preserved knowledge.
 - Test new skills on withheld examples and retest earlier skills after consolidation.
 - Keep evaluation criteria separate from the learning procedure; do not silently change them to improve reported scores.

@@ -23,6 +23,12 @@ Author: Arnav123-s
 
 ## Latest text-core teaching
 
+- [Verified consolidation](../experiments/2026-09-04-verified-consolidation.md): search smaller learned configurations with exact finite old-answer preservation and a separate final test.
+- [Adaptive circuit response plan](ADAPTIVE_CIRCUIT_RESPONSE_PLAN.md): stateful pathways, signal-driven response, resonance, and the exact implemented/proposed boundary.
+- [Small repair connections](../experiments/2026-09-04-small-repair-connections.md): residual pathways, function preservation, and retaining earlier abilities without freezing original parameters.
+- [Current wave-model mathematics](WAVE_MODEL_MATH.md): exact forward and learning equations, pathway splitting proof, finite memory, error hypotheses, and tested versus proposed changes.
+- [Teaching and pathway comparison](../experiments/2026-09-04-teaching-and-pathways.md): six teaching recipes, four route variants, separate confirmation questions, and conservative execution budgets.
+
 - [Multilingual bridge and mixed quizzes](MULTILINGUAL_MIXED_QUIZZES.md): small reviewed writing subsets, fresh mixed tasks, reserved assessments, retention rehearsal and rollout limitations.
 
 - [Language-first teaching](LANGUAGE_FIRST_TEACHING.md): implemented controlled English prerequisites, balanced answer objective, source retrieval and exact limits.

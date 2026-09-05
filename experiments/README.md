@@ -19,6 +19,9 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Verifier-gated configuration consolidation](2026-09-04-verified-consolidation.md)
+- [Small repair connections and non-frozen retention constraints](2026-09-04-small-repair-connections.md)
+- [Teaching order and pathway plasticity comparison](2026-09-04-teaching-and-pathways.md)
 - [Paired-contrast teaching comparison and measured regressions](2026-09-04-contrast-teaching.md)
 - [Multilingual bridge and mixed-quiz rollout](2026-09-04-multilingual-bridge.md)
 

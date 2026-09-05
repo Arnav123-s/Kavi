@@ -31,6 +31,19 @@ for source scope, limitations, controls and resume instructions.
 
 ## Latest teacher extension: fresh mixed quizzes
 
+The [current model's mathematical specification](docs/WAVE_MODEL_MATH.md)
+connects its implemented equations to its learning and forgetting limitations.
+An isolated [teaching and pathway comparison](experiments/2026-09-04-teaching-and-pathways.md)
+tests six teaching recipes and four route variants on copies, with independent
+confirmation questions. It does not replace the paused live learner.
+
+The [small-repair comparison](experiments/2026-09-04-small-repair-connections.md)
+and [verified consolidation search](experiments/2026-09-04-verified-consolidation.md)
+keep original parameters adaptable. A smaller change preserved all 196 guard
+answers but still broke two previously correct answers on a fresh final set;
+no-forgetting is not solved. The clarified [adaptive-circuit plan](docs/ADAPTIVE_CIRCUIT_RESPONSE_PLAN.md)
+separates these measurements from future stateful components and route search.
+
 The opt-in [multilingual bridge](docs/MULTILINGUAL_MIXED_QUIZZES.md) adds harder
 copy/join/first/last quizzes, short written-word practice, and small Hindi,
 Arabic and Spanish writing-system subsets. Quizzes use new prompts; repeated

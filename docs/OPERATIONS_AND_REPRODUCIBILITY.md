@@ -40,6 +40,8 @@ Use a new directory. The default automatic trial is limited to 180 seconds, thre
 
 The completed first run is `runs/circuit-20260905-01`. Its console can be opened with `python -m kavi circuit console --run-dir runs/circuit-20260905-01`. A portable five-gate model is published at `experiments/circuit-20260905-model.json`. Earlier accepted graphs and all final evidence remain in the original run directory. The prior recurrent curriculum was not restarted by this experiment.
 
+For a trial intended to be watched live, establish a visible terminal before the teacher starts, display the reviewed configuration and let the operator start from that terminal. A running process or queued request to open a terminal is not evidence that the live view is visible. Preserve the transcript after completion and label later playback as a replay. See the [historical works curriculum](HISTORICAL_WORKS_CURRICULUM.md) for the next source-guided teaching sequence.
+
 ## Text learning
 
 `kavi.wave_cli run` starts a teacher and modifies learner state. It requires a run directory under `runs` and a foundation checkpoint. Source files must match the admitted private fingerprints. `--resume` selects a prior text run; `--multilingual-bridge` selects the small additional writing-system curriculum.

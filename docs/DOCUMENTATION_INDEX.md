@@ -33,6 +33,7 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 | [Mixed quizzes](MULTILINGUAL_MIXED_QUIZZES.md) | Short sequences and writing-system subsets |
 | [Multilingual foundations](MULTILINGUAL_FOUNDATIONS.md) | Broader language and source plan |
 | [Source admission](DOCUMENT_CURRICULUM_GATE.md) | Provenance and reviewed scope |
+| [Historical works curriculum](HISTORICAL_WORKS_CURRICULUM.md) | Source-guided operation learning, argument analysis and visible trial procedure |
 
 ## Research design
 

@@ -1,8 +1,4 @@
-"""Small contextual residual connections for isolated retention experiments.
-
-The base parameters can remain frozen while a few zero-effect connections
-learn. Freezing parameters does not guarantee preservation of the output map.
-"""
+"""Small context-dependent residual connectors."""
 
 from dataclasses import asdict
 import hashlib

@@ -1,11 +1,4 @@
-"""Finite, source-gated adaptive study loops for Kavi's textbook concept core.
-
-The loop is intentionally narrow. It never discovers, downloads, or reads a
-new book on its own. A human-reviewed local syllabus declares primary and
-repair lesson identifiers, while every lesson still has to pass the existing
-source, license, PDF, and extract-fingerprint gates. The saved state contains
-only compact numeric prototypes, unit IDs, and attempt counts.
-"""
+"""Adaptive checks, diagnosis and repair queues."""
 
 from __future__ import annotations
 

@@ -1,8 +1,4 @@
-"""First-order retention constraint on a changing circuit, without freezing.
-
-This projects Adam's displacement, not the raw gradient used by A-GEM. It
-protects the linearized average loss on sampled rehearsal, not every answer.
-"""
+"""Reference-gradient displacement projection."""
 
 import torch
 from torch import nn

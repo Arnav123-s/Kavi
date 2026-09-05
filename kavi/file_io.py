@@ -1,4 +1,4 @@
-"""Small atomic file operations tolerant of transient Windows reader locks."""
+"""Atomic writes with Windows reader-lock handling."""
 
 from pathlib import Path
 import time

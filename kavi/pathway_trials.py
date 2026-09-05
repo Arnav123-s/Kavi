@@ -1,10 +1,4 @@
-"""Experimental plasticity and bounded topology changes, never live rollout.
-
-The growth rule duplicates one incoming route per node before perturbing it.
-Without perturbation, subtracting log(2) from both duplicate logits preserves
-the original softmax-normalized message in exact arithmetic. Rewiring is not
-function preserving. Both changes are tested, not assumed beneficial.
-"""
+"""Damped updates, rewiring and route-splitting candidates."""
 
 from dataclasses import replace
 import math

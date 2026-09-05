@@ -1,4 +1,4 @@
-"""Bounded, observable execution for the initial Kavi experiment."""
+"""Finite event loop, controls, measurements and persistence."""
 
 from __future__ import annotations
 

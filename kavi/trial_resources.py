@@ -1,4 +1,4 @@
-"""Conservative local resource readings; no guessed CPU temperature."""
+"""Process resource observations and available sensor readings."""
 
 import os
 import sys

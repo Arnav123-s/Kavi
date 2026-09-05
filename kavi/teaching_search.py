@@ -1,8 +1,4 @@
-"""An external experiment manager for candidate model updates.
-
-This module belongs to the teacher, not to Kavi's inference model. Candidate
-generation may later use other optimizers without adding them to model state.
-"""
+"""External candidate-update comparison and selection."""
 
 from __future__ import annotations
 

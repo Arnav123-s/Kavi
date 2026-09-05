@@ -1,4 +1,4 @@
-"""CLI for Kavi's unified circuit model and separate live feeds."""
+"""Unified circuit commands and feed access."""
 
 from __future__ import annotations
 

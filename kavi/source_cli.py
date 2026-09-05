@@ -1,4 +1,4 @@
-"""Inspect the source-admission gate without downloading any document."""
+"""Source admission inspection."""
 
 from __future__ import annotations
 

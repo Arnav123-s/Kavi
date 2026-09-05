@@ -41,4 +41,4 @@ foreach ($kaviChannel in @('lessons', 'answers', 'pathways', 'learning', 'gradin
 Open-KaviLearningTab "$kaviLabel Chat + Controls" "python -u -m kavi.wave_cli console --run-dir '$kaviRun'"
 & wt.exe -w $kaviWindow focus-tab -t 1
 Write-Output "Live run: $kaviRun"
-Write-Output 'The teacher runs locally without this chat. Pause/stop remain available. No other applications were closed.'
+Write-Output 'The teacher is running locally. Use the Chat + Controls tab to pause or stop it.'

@@ -1,4 +1,4 @@
-"""Teacher recipes and sealed partitions for bounded, local comparison trials."""
+"""Teaching recipes and comparison partitions."""
 
 from collections import Counter, defaultdict
 from dataclasses import asdict

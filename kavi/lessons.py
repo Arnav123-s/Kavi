@@ -1,9 +1,4 @@
-"""Trusted, structured explanations for the first learning curriculum.
-
-The learner does not treat arbitrary prose as proof. A lesson carries a
-machine-checkable rule identifier, its verified target, and the explanatory
-parameters that the small arithmetic domain can safely use.
-"""
+"""Structured teaching explanations and lesson examples."""
 
 from __future__ import annotations
 

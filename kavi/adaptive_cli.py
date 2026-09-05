@@ -1,4 +1,4 @@
-"""Visible command-line entry point for Kavi's bounded adaptive syllabus."""
+"""Adaptive syllabus command-line interface."""
 
 from __future__ import annotations
 

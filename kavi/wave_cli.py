@@ -1,4 +1,4 @@
-"""Live teacher, read-only feeds, and queued local conversations."""
+"""Text run controller, read-only feeds and local console."""
 
 from __future__ import annotations
 

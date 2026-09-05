@@ -1,4 +1,4 @@
-"""Plain-language views of recorded computations, lessons, and measurements."""
+"""Readable presentation of recorded lessons and computations."""
 
 from __future__ import annotations
 

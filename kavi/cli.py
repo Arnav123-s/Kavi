@@ -1,4 +1,4 @@
-"""The low-overhead, streaming command-line interface."""
+"""Initial experiment command-line interface."""
 
 from __future__ import annotations
 

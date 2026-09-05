@@ -1,4 +1,4 @@
-"""A CLI entry point for the explanation-learning experiment."""
+"""Explanation experiment commands."""
 
 from __future__ import annotations
 

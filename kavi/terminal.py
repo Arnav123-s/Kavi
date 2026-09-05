@@ -1,4 +1,4 @@
-"""Small terminal-output compatibility helpers for Kavi's CLIs."""
+"""Terminal encoding and output compatibility."""
 
 from __future__ import annotations
 

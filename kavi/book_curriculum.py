@@ -1,8 +1,4 @@
-"""Original-source admission, ordered arithmetic units and independent exams.
-
-Question generation and exact rational grading are teacher functions. They do
-not run inside learner inference and are not claimed as learned skills.
-"""
+"""Source admission, arithmetic units and exam partitions."""
 
 from __future__ import annotations
 
@@ -158,7 +154,7 @@ def load_book(repo: Path, manifest_path: Path) -> tuple[dict, dict[str, list[str
 def split_paragraphs(paragraphs: list[str], seed: int) -> dict[str, list[str]]:
     unique = list(dict.fromkeys(paragraphs))
     if len(unique) < 10:
-        raise ValueError("Not enough distinct source paragraphs for an honest split.")
+        raise ValueError("Not enough distinct source paragraphs for separate training and evaluation.")
     indices = list(range(len(unique)))
     random.Random(seed).shuffle(indices)
     held = set(indices[:max(2, len(indices) // 5)])

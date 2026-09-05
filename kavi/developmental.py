@@ -1,8 +1,4 @@
-"""Visible mastery, correction, and fresh-test loop for the supported core.
-
-This automates the teaching procedure. It does not turn a script recognizer
-into a reader, or claim that cataloged languages have been learned.
-"""
+"""Supported mastery checks, correction rounds and fresh tests."""
 
 from __future__ import annotations
 

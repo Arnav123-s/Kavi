@@ -1,4 +1,4 @@
-"""Run the Kavi command-line interface."""
+"""Entry point for `python -m kavi`."""
 
 from .cli import main
 

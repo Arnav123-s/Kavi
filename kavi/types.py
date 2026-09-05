@@ -1,9 +1,4 @@
-"""Small, explicit data contracts for the pathway fabric.
-
-The runtime does not store raw lessons in the model. A current event creates
-temporary typed facets; verified learning changes pathway parameters only after
-an isolated candidate passes its declared checks.
-"""
+"""Event, pathway, trace and update data contracts."""
 
 from __future__ import annotations
 

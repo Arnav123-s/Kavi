@@ -1,10 +1,4 @@
-"""Local-only, finite runtime for Kavi's reviewed textbook concept lesson.
-
-The public repository contains only source metadata.  This runtime loads an
-owner-provided private lesson manifest, verifies the exact PDF and extract
-fingerprints, and then learns only from the listed source examples.  It never
-fetches a source itself.
-"""
+"""Source fingerprint checks and finite concept teaching."""
 
 from __future__ import annotations
 

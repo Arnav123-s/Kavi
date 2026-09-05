@@ -1,11 +1,4 @@
-"""A small, internally trained, classical complex-valued pathway circuit.
-
-No answer rules, source lookup, or transcript database live in this core.
-The teacher presents bytes and corrections. Autograd changes the fixed graph's
-input encodings, transmission strengths, phases, gates, and output encodings.
-This is a sparse recurrent neural model, not a quantum computer or a proof of
-an advantage over ordinary recurrent networks.
-"""
+"""Complex recurrent byte model, loss, optimization and generation."""
 
 from __future__ import annotations
 
@@ -96,10 +89,10 @@ class WaveNetwork(nn.Module):
 
 
 class WaveLearner:
-    """Learning belongs to the model, not a teacher that edits its parameters.
+    """Train and serialize the recurrent byte model.
 
-    Transient sequence state is reset between documents/questions and detached
-    at truncated backpropagation boundaries. It is not infinite context.
+    Sequence state resets between documents and questions. Truncated training
+    detaches the state at segment boundaries.
     """
 
     def __init__(self, config: WaveConfig = WaveConfig()) -> None:

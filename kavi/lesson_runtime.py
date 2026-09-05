@@ -1,4 +1,4 @@
-"""Live runtime for the explanation-learning follow-up experiment."""
+"""Finite explanation-learning experiment loop."""
 
 from __future__ import annotations
 

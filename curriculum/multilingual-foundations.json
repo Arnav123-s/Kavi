@@ -35,7 +35,7 @@
         "abstention on unsupported or ambiguous input"
       ],
       "mastery_gate": "Round-trip every supported test token exactly; preserve the original code points and record, rather than silently replace, any normalization choice.",
-      "why_first": "If the model cannot preserve a written signal faithfully, it cannot honestly learn from an original-language source."
+      "why_first": "Accurate preservation of written signals is a prerequisite for learning from original-language sources."
     },
     {
       "level_id": "L1-generated-symbol-bootstrap",

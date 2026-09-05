@@ -1,9 +1,4 @@
-"""Verifier-gated learning from structured explanations.
-
-This is a separate experiment from the original target-only stage. It keeps
-the independent evaluator and frozen-parent rule, but a trusted lesson can
-teach the scope-specific transformation rather than only a single answer.
-"""
+"""Translation of supplied explanations into checked updates."""
 
 from __future__ import annotations
 
@@ -97,7 +92,7 @@ class ExplanationGatedLearner:
     ) -> Feedback:
         """Learn from a valid explanation even when the model abstains.
 
-        An abstention remains an honest output. It does not block a trusted,
+        An abstention is a valid output. It does not block a trusted,
         independent teacher from proposing a candidate for the active paths.
         """
 

@@ -1,4 +1,4 @@
-"""Finite, verifier-gated configuration search; no live model mutation."""
+"""Bounded interpolation search with guard verification."""
 
 import copy
 

@@ -1,9 +1,4 @@
-"""Resumable original-book teaching with live observation and interaction.
-
-The teacher never edits learned tensors. It selects admitted material, presents
-feedback, grades frozen answers, and advances only through passed prerequisites.
-The new text circuit is not credited with the older symbolic core's results.
-"""
+"""Resumable book teaching and interaction queues."""
 
 from __future__ import annotations
 

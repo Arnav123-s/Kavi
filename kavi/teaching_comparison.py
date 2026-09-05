@@ -1,9 +1,4 @@
-"""Bounded teacher-only comparison; never attaches to a live learner.
-
-The random-mixed arm uses the current quiz style, not a replay of the entire
-live teacher. Task counts and rehearsal are controlled to compare teaching
-selection/order. All answer rules remain in the exercise generator and grader.
-"""
+"""Isolated comparisons of teacher methods."""
 
 from __future__ import annotations
 

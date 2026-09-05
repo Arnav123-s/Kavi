@@ -1,4 +1,4 @@
-"""Reviewed-source retrieval and small original-language teaching packets."""
+"""Reviewed-source lookup and bounded teaching packets."""
 
 from __future__ import annotations
 

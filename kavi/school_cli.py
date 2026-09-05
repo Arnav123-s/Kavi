@@ -1,4 +1,4 @@
-"""Command-line interface for Kavi's finite model curriculum automation."""
+"""Curriculum inspection and finite school commands."""
 
 from __future__ import annotations
 

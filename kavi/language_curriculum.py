@@ -1,9 +1,4 @@
-"""A small, explicit language prerequisite ladder, not a claim of fluency.
-
-The teacher generates classroom exercises from reviewed concepts. Answers and
-closed-world scene records remain outside model inference. Original passages
-are admitted separately; generated exercises are never labeled author quotes.
-"""
+"""Small generated language tasks and exact targets."""
 
 from __future__ import annotations
 

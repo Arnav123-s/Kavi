@@ -1,4 +1,4 @@
-"""Read-only review interface for Kavi's people-and-works curriculum catalog."""
+"""Read-only people-and-works catalog interface."""
 
 from __future__ import annotations
 

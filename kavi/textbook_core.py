@@ -1,11 +1,4 @@
-"""A small textbook-backed concept pathway core for Kavi.
-
-This is deliberately not a general language model.  It learns two compact
-concept prototypes from a reviewed local lesson: whether a mathematical
-notation is an expression or a relation.  Source examples live only in an
-ignored local lesson workspace.  The persistent model stores numeric feature
-centroids and support counts, never the source extract or its example strings.
-"""
+"""Compact numeric concept core for the reviewed algebra lesson."""
 
 from __future__ import annotations
 

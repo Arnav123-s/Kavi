@@ -1,4 +1,4 @@
-"""A teacher-only curriculum bridge; the learned network is unchanged."""
+"""Small writing-system subsets, mixed quizzes and retention."""
 
 from __future__ import annotations
 

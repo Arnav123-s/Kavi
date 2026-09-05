@@ -1,16 +1,4 @@
-"""Kavi's path-centric adaptive circuit core.
-
-The learned objects in this module are complete routes and the small jump
-adapters that connect them.  Individual elements are deliberately simple:
-they detect, gate, resist, accumulate, join, loop, or transform a signal.  A
-single element never owns a concept and is never described as doing the
-thinking.  Inference is the bounded search and composition of compatible
-routes.
-
-The complex amplitudes below are a classical, quantum-inspired routing
-calculation.  They do not claim quantum hardware, quantum speed-up, or a model
-of physical consciousness.
-"""
+"""Unified routes, prototypes, adapters and typed composition execution."""
 
 from __future__ import annotations
 

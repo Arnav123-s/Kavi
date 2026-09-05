@@ -1,9 +1,4 @@
-"""Continue from the latest circuit, optionally adding one learned jump.
-
-No predecessor participates in inference, and no update restores its parameters.
-Earlier verified responses are external teaching/evaluation data, not a lookup
-table inside the network. All measured parameters remain trainable.
-"""
+"""Continued learning from the latest configuration and jump variants."""
 
 import copy
 from dataclasses import asdict

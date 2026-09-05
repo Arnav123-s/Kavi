@@ -1,8 +1,4 @@
-"""Novel, exact-graded symbol-operation quizzes, distinct from retention checks.
-
-These are teacher-defined exercises. No answers or string-operation routines
-are inserted into the model. A task label alone is never counted as knowledge.
-"""
+"""Fresh copying, joining and sequence-position tasks."""
 
 from __future__ import annotations
 

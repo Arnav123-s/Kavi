@@ -1,10 +1,4 @@
-"""The initial hard-routed pathway fabric.
-
-This file is intentionally the core of the prototype. There is no separate
-opaque neural network hidden behind it: each pipe owns its type contract,
-coupling, phase, stability, plasticity, and eligibility state. The small
-readout path is also a path inside the same fabric.
-"""
+"""Initial routed graph, path selection and numeric execution."""
 
 from __future__ import annotations
 

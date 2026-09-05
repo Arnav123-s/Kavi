@@ -1,9 +1,4 @@
-"""Language-first, prerequisite-gated teaching of the actual local text core.
-
-Examples are classroom exercises, not original-author quotations. Familiar
-practice, new tests, and protected retention are separate measurements. This
-controller cannot promote unimplemented languages or claim degree-level skill.
-"""
+"""Language prerequisites and answer-focused corrections."""
 
 from __future__ import annotations
 

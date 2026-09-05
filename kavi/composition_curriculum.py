@@ -1,9 +1,4 @@
-"""Supplied structural contracts for Kavi's typed composition experiment.
-
-These connections are taught directly; the model does not discover the target
-operators from the check programs. The protected and held_out cases participate
-in promotion decisions, so both are validation sets, not a sealed final test.
-"""
+"""Supplied structural contracts and composition teaching cases."""
 
 from __future__ import annotations
 

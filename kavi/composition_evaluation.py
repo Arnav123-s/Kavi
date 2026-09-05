@@ -1,9 +1,4 @@
-"""Final composition audit; never imported by the candidate learner.
-
-This is a seeded engineering test of supplied operators, not a language or
-intelligence benchmark. Expected results use a separate integer interpreter
-and explicit scalar labels rather than querying learned paths.
-"""
+"""Separate composition audit generator."""
 
 from __future__ import annotations
 

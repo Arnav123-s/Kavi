@@ -1,11 +1,4 @@
-"""Model-first curriculum automation for Kavi.
-
-The school is not the product.  It is the bounded teaching and measurement
-layer around the Kavi model cores.  It can advance only through a declared
-finite plan, uses locally generated early lessons or a locally supplied, approved source lesson, and
-stops rather than silently downloading or ingesting a source that has not
-passed review.
-"""
+"""Prerequisite and promotion orchestration across early cores."""
 
 from __future__ import annotations
 

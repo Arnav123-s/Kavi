@@ -1,16 +1,4 @@
-"""A small trainable symbol pathway core for Kavi's first curriculum stage.
-
-The core deliberately learns a compressed pattern instead of retaining a table
-of presented glyphs.  A glyph travels through one fixed typed path:
-
-    glyph -> normalized codepoint coordinate -> class prototype readout
-
-The only persistent learned state is one centroid and support count for each
-class.  Candidate centroids are built from a finite batch, evaluated on fixed
-protected and held-out symbols, and promoted only when they satisfy the
-predeclared gate.  This is a narrow foundation experiment, not language
-understanding or a general text model.
-"""
+"""Trainable signal prototypes for early symbol tasks."""
 
 from __future__ import annotations
 

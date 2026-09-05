@@ -1,17 +1,4 @@
-"""Exact Unicode signals and a tiny generated script-pathway model for Kavi.
-
-This module deliberately separates two ideas that are easy to blur together:
-
-* ``UnicodeSignalContract`` preserves one Unicode scalar exactly and reports
-  metadata without replacing the input with a normalized form.
-* ``UnicodeScriptPathwayCore`` is a small trainable prototype experiment over
-  a declared, generated set of individual glyphs.  It is not a Unicode Script
-  implementation, a language detector, or a text learner.
-
-The learned state is one code-point-coordinate centroid and support count for
-each of eleven explicitly declared pathways.  It contains no source text,
-word list, glyph-to-label lookup table, or downloaded Unicode data file.
-"""
+"""Unicode scalar representation and small script-route model."""
 
 from __future__ import annotations
 

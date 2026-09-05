@@ -1,9 +1,4 @@
-"""Finite multi-feed curriculum runtime for Kavi's unified pathway circuit.
-
-One writer teaches the model.  Independent read-only viewers follow JSONL
-channels for answers, active pathways, structural learning, and grading.  All
-run artifacts stay under the ignored local ``runs`` directory.
-"""
+"""Cross-stage teaching, checkpointing and multiple event feeds."""
 
 from __future__ import annotations
 

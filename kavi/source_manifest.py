@@ -1,9 +1,4 @@
-"""Provenance and permission gates for a document-based curriculum.
-
-The public repository keeps source metadata, citations, hashes, and lesson
-claims. It does not copy books, papers, raw PDFs, or a private document cache
-into version control.
-"""
+"""Source records, fingerprints and teaching-scope validation."""
 
 from __future__ import annotations
 

@@ -1,10 +1,4 @@
-"""Finite, visible generated Unicode stages for the Kavi model core.
-
-The contract stage proves only that individual Unicode scalars are preserved.
-The script stage then trains and tests a small prototype core on a balanced,
-hand-declared set of individual code points.  Neither stage reads a document,
-downloads Unicode data, or learns a language.
-"""
+"""Generated scalar and script curriculum controls."""
 
 from __future__ import annotations
 

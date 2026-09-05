@@ -1,4 +1,4 @@
-"""Finite, observable runtime for Kavi's generated glyph-foundation stage."""
+"""Finite symbol curriculum and recorded evaluations."""
 
 from __future__ import annotations
 

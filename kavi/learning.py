@@ -1,4 +1,4 @@
-"""Independent verification and candidate-only pathway updates."""
+"""Verification and candidate pathway updates for generated arithmetic."""
 
 from __future__ import annotations
 

@@ -1,8 +1,4 @@
-"""Teacher-only access to an original, fingerprinted Unicode reference.
-
-The model never imports this module or consults this table during inference.
-Its purpose is to check corrections and choose different teaching examples.
-"""
+"""Teacher access to fingerprinted Unicode script data."""
 
 from __future__ import annotations
 

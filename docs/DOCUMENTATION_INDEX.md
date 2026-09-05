@@ -23,6 +23,8 @@ Author: Arnav123-s
 
 ## Latest text-core teaching
 
+- [Path-program learning](PATH_PROGRAM_LEARNING.md): the clarified executable-path architecture, with an explicit boundary from the current parameter-trained model.
+- [Repair forward](../experiments/2026-09-04-forward-repair.md): keep the full latest configuration and teach repairs while protecting both old and new successes.
 - [Verified consolidation](../experiments/2026-09-04-verified-consolidation.md): search smaller learned configurations with exact finite old-answer preservation and a separate final test.
 - [Adaptive circuit response plan](ADAPTIVE_CIRCUIT_RESPONSE_PLAN.md): stateful pathways, signal-driven response, resonance, and the exact implemented/proposed boundary.
 - [Small repair connections](../experiments/2026-09-04-small-repair-connections.md): residual pathways, function preservation, and retaining earlier abilities without freezing original parameters.

@@ -44,6 +44,11 @@ answers but still broke two previously correct answers on a fresh final set;
 no-forgetting is not solved. The clarified [adaptive-circuit plan](docs/ADAPTIVE_CIRCUIT_RESPONSE_PLAN.md)
 separates these measurements from future stateful components and route search.
 
+The [repair-forward experiment](experiments/2026-09-04-forward-repair.md) instead
+continues the full latest configuration and teaches repairs without rollback.
+The further [path-program learning target](docs/PATH_PROGRAM_LEARNING.md) changes
+executable procedures themselves; it is a proposal, not the current text core.
+
 The opt-in [multilingual bridge](docs/MULTILINGUAL_MIXED_QUIZZES.md) adds harder
 copy/join/first/last quizzes, short written-word practice, and small Hindi,
 Arabic and Spanish writing-system subsets. Quizzes use new prompts; repeated

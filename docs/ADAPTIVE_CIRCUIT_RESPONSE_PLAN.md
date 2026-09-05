@@ -3,6 +3,12 @@
 Author: Arnav123-s. Clarified design, 2026-09-04. **Proposal, not a measured new
 architecture.** The linked small-repair comparison tests only some ingredients.
 
+Latest clarification: the [path-program learning target](PATH_PROGRAM_LEARNING.md)
+learns executable computations and graph rewrites, not merely continuous
+connection settings. The [repair-forward comparison](../experiments/2026-09-04-forward-repair.md)
+continues the full latest numerical configuration without rollback; it tests
+only that narrower retention question, not the complete path-program model.
+
 ## Intended meaning
 
 A pathway is a stateful signal-processing circuit. Its junctions are components

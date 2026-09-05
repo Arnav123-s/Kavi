@@ -1,142 +1,40 @@
 # Kavi
 
-**Author:** [Arnav123-s](https://github.com/Arnav123-s)
+Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Kavi is a model-first research project for a developmental learner with bounded growth. The model core is the project; the curriculum, evaluator, source gate, and CLI are supporting infrastructure used to teach and measure it with explicit execution budgets. A complete device-wide memory ceiling is still a research requirement.
+Kavi is an experimental learner for acquiring reusable computations under a fixed resource budget. The intended model learns typed executable procedures, repairs them from counterexamples and consolidates shared structure while retaining earlier behavior.
 
-## Latest: internally learned text configurations
+The repository currently contains a symbolic pathway circuit and a separate 66,880-parameter recurrent text model. The symbolic curriculum supplies operation contracts. The text model learns numerical parameters through backpropagation. General program acquisition and library consolidation remain proposed.
 
-A new CPU-only wave text core learns from original source paragraphs and
-supplied corrections by updating its own fixed-size sparse recurrent
-configuration. It starts untrained; the earlier symbolic model is preserved
-and audited separately, not presented as transferred English understanding.
-The corrected teacher starts with explicit letter, word-form, quantity-meaning,
-sentence and short-passage gates before nine arithmetic units. It uses balanced
-answer-focused updates, familiar/new/harder tests, corrective rounds and live
-chat. See [language-first teaching and measured limits](docs/LANGUAGE_FIRST_TEACHING.md)
-and the [repeated-answer diagnosis](experiments/2026-09-04-language-first-repair.md).
-Current English scores are low; this is not a mastered textbook or a
-master's-level learner. Wave-inspired mixing does not imply quantum speedup
-or unlimited memory.
+## Technical documentation
 
-```powershell
-.\scripts\start-live-learning.ps1
-```
+Start with the [engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md). It covers the current implementation, mathematics, measured results, closest research relatives, component inventory, experiment design and development milestones. A [printable edition](docs/Kavi_Engineering_and_Research.pdf) contains the same specification.
 
-The optional `wave` dependency supplies the numerical training runtime.
-The exact admitted book must already be present at the private path with the
-fingerprint in `curriculum/arithmetic-original.json`; no book is redistributed
-here. See [internal learning, mathematics, memory and operation](docs/INTERNAL_LEARNING_AND_MEMORY.md)
-for source scope, limitations, controls and resume instructions.
+- [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md)
+- [Current text model equations](docs/WAVE_MODEL_MATH.md)
+- [Typed program acquisition](docs/PATH_PROGRAM_LEARNING.md)
+- [Evaluation protocol](docs/EVALUATION_PROTOCOL.md)
+- [Operations and reproducibility](docs/OPERATIONS_AND_REPRODUCIBILITY.md)
+- [Research references](docs/RESEARCH.md)
+- [Complete documentation index](docs/DOCUMENTATION_INDEX.md)
 
-## Latest teacher extension: fresh mixed quizzes
+## Evidence
 
-The [current model's mathematical specification](docs/WAVE_MODEL_MATH.md)
-connects its implemented equations to its learning and forgetting limitations.
-An isolated [teaching and pathway comparison](experiments/2026-09-04-teaching-and-pathways.md)
-tests six teaching recipes and four route variants on copies, with independent
-confirmation questions. It does not replace the paused live learner.
+Recorded text experiments show strong single-symbol copying, weak transfer to longer sequences and continuing loss of earlier correct answers. One selected consolidation preserved 196 guard answers but broke two previously correct answers on independent final confirmation. An additional forward-repair connector produced no final correctness advantage in the paired three-seed comparison.
 
-The [small-repair comparison](experiments/2026-09-04-small-repair-connections.md)
-and [verified consolidation search](experiments/2026-09-04-verified-consolidation.md)
-keep original parameters adaptable. A smaller change preserved all 196 guard
-answers but still broke two previously correct answers on a fresh final set;
-no-forgetting is not solved. The clarified [adaptive-circuit plan](docs/ADAPTIVE_CIRCUIT_RESPONSE_PLAN.md)
-separates these measurements from future stateful components and route search.
+See the [experiment records](experiments/README.md) for configurations, counts and regressions. These measurements support a narrow experimental learner; broad language competence has not been demonstrated.
 
-The [repair-forward experiment](experiments/2026-09-04-forward-repair.md) instead
-continues the full latest configuration and teaches repairs without rollback.
-The further [path-program learning target](docs/PATH_PROGRAM_LEARNING.md) changes
-executable procedures themselves; it is a proposal, not the current text core.
+## Development
 
-The opt-in [multilingual bridge](docs/MULTILINGUAL_MIXED_QUIZZES.md) adds harder
-copy/join/first/last quizzes, short written-word practice, and small Hindi,
-Arabic and Spanish writing-system subsets. Quizzes use new prompts; repeated
-retention and reserved assessments are labeled separately. These are not
-complete language courses, and no mastery gate is bypassed. The learned model
-architecture is unchanged. See the [measured rollout](experiments/2026-09-04-multilingual-bridge.md).
+Python 3.11 or later is declared. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. PyTorch is required for the optional text core and its tests. The symbolic core uses the standard library.
 
 ```powershell
-.\scripts\start-live-learning.ps1 -Resume 'runs\previous-run' -MultilingualBridge
+python -B -m unittest discover -s tests -q
+python -m kavi --help
+python -m kavi.pathway_cli --help
+python -m kavi.wave_cli --help
 ```
 
-Switching a live teacher requires an owner-approved checkpointed restart.
+All 138 tests passed after the project relocation on 5 September 2026. Live launch scripts start teaching processes; review the [operating guide](docs/OPERATIONS_AND_REPRODUCIBILITY.md) before using them.
 
-## Earlier symbolic circuit
-
-Kavi contains one unified experimental path-centric circuit plus earlier narrow
-regression cores. The unified circuit keeps one active state across six
-implemented stages, treats routes and jump adapters as the learned objects,
-reuses earlier glyph and arithmetic routes in later contexts, and archives each
-replaced parent outside the active model. Phase 2A adds learned typed
-composition routes that execute unseen nested combinations of glyph, script,
-arithmetic, comparison, and selection paths. Algebra is one integration
-example, not the model's architectural boundary. All runs are finite and
-evaluator-gated. This is not a general learner, a broadly textbook-trained
-model, or evidence of broad intelligence. See the [model-first
-curriculum](docs/MODEL_FIRST_CURRICULUM.md), [path-centric adaptive
-circuit](docs/PATH_CENTRIC_CIRCUIT.md), [typed compositional
-pathways](docs/TYPED_COMPOSITION_STAGE.md), and [implementation
-reference](docs/IMPLEMENTATION_REFERENCE.md) for the exact boundary.
-
-The broader developmental architecture remains research. Any new finite stage
-must be reviewed and explicitly authorized by the owner before a real run;
-broader text and source stages remain locked behind their separate review gates.
-Kavi does
-not include autonomous source-code modification, background persistence, web
-learning, or hardware-limit changes. The proposed replacement for end-to-end
-backpropagation and the proposed consolidation mechanism remain open questions.
-
-## Automated teaching and live views
-
-The external teacher can diagnose a supported mistake, check an original
-reference, try several candidate updates, preserve older skills, and give a
-harder fresh test. The CLI shows teacher explanations separately from model
-answers. The latest development check improved from 62/64 to 64/64 on its
-bounded composition tests after correcting one existing script path. The [live experiment record](experiments/2026-09-04-developmental-teaching-live-run.md) includes the original failure, corrections, unchanged route counts, and resource observations.
-
-```powershell
-.\scripts\start-live-pathways.ps1 -AutoTeach -IntervalMs 350
-```
-
-This requires the reviewed local algebra lesson and fingerprinted Unicode
-source. See [Developmental teaching](docs/DEVELOPMENTAL_TEACHING.md) for the
-run command, exact mechanisms, 90% mastery policy, resource accounting, and
-unfinished language stages. Words, sentences, multiplication/division, and
-all-language textbook learning are not implemented by this automation.
-
-## Central idea
-
-Keep the component budget mostly stable while learning changes configurations and information flow. Reuse, rearrange, or simplify shared paths; try small adapters before adding capacity. Keep a change only when the new task improves and protected earlier abilities remain correct. General learned merging, splitting, and cross-path jumps remain development goals. See [the configuration-first design](docs/CONFIGURATION_FIRST_MODEL.md).
-
-The allocated learner size may change. The hard device resource limit does not increase merely because the learner starts another stage. Compression is a research objective, not a guarantee that arbitrary knowledge can fit into one weight.
-
-## Project map
-
-- [Design](docs/DESIGN.md): interpretation, constraints, and unresolved mechanisms.
-- [Growth and compression cycles](docs/GROWTH_CYCLES.md): changing learner size under a fixed device ceiling.
-- [Model-first curriculum](docs/MODEL_FIRST_CURRICULUM.md): implemented early cores, teaching order, and automation boundaries.
-- [Unicode scalar and script stage](docs/UNICODE_SCRIPT_STAGE.md): implemented bounded Unicode signal and glyph-pathway core, with exact limits.
-- [Reviewed textbook concept stage](docs/TEXTBOOK_CONCEPT_STAGE.md): first fingerprinted local-only source lesson, its compact model, exact evaluator, and live trace.
-- [Adaptive syllabus loop](docs/ADAPTIVE_SYLLABUS.md): finite seeded teaching/test loop, 90% gates, visible diagnostics, and approved repair queues.
-- [Path-centric adaptive circuit](docs/PATH_CENTRIC_CIRCUIT.md): one active cross-stage circuit, local element roles, complex route scoring, jump adapters, frozen external parent archives, and multi-tab live feeds.
-- [Typed compositional pathways](docs/TYPED_COMPOSITION_STAGE.md): learned typed operator connections, nested cross-domain path execution, strict budgets, and earlier-skill retention.
-- [Multilingual foundations](docs/MULTILINGUAL_FOUNDATIONS.md): prerequisite-first script, language, original-source, and cultural-protocol plan.
-- [People and works catalog](curriculum/people-and-works.json): reviewable global catalog of original works, traditions, and textbook candidates.
-- [Source access records](curriculum/access-records.json): direct catalog or archive links; access is not source admission or permission to scrape.
-- [Implementation reference](docs/IMPLEMENTATION_REFERENCE.md): the code’s actual modules, data flow, and explicit non-features.
-- [Operations and reproducibility](docs/OPERATIONS_AND_REPRODUCIBILITY.md): finite CLI runs, controls, and resource interpretation.
-- [Evaluation protocol](docs/EVALUATION_PROTOCOL.md): fixed test partitions and promotion criteria.
-- [Documentation index](docs/DOCUMENTATION_INDEX.md): all design, research, code, and evidence documents by status.
-- [Primary research](docs/RESEARCH.md): related work and its limitations.
-- [Decisions](docs/DECISIONS.md): dated scope and design decisions.
-- [Experiment records](experiments/README.md): requirements for future measurements.
-- [Author](AUTHORS.md).
-
-## History and publication
-
-This repository records project history from its creation onward. Earlier private conversations and local runtime history are not reconstructed as historical commits.
-
-Only deliberately reviewed project materials belong here. Credentials, personal information, private transcripts, third-party books, datasets, model weights, and runtime logs are excluded. Research references retain their original attribution.
-
-No software license has been selected yet.
+Private sources, conversations, checkpoints and run logs remain in ignored local folders. Public source manifests contain metadata and fingerprints. A software license has not yet been selected.

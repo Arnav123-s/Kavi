@@ -4,7 +4,7 @@ Author: Arnav123-s
 
 Status: implemented bounded Phase 2A experiment
 
-## Why this is the next phase
+## Scope
 
 The first unified-circuit experiment showed that Kavi could form compact
 routes, reuse earlier sources through jump adapters, reject regressions, and
@@ -17,7 +17,7 @@ other verified routes, join their typed outputs, and become a larger executable
 path. Algebra is not the target. Arithmetic, glyph, and script paths are small
 available building blocks used to test a domain-independent composition rule.
 
-## Child-simple picture
+## Example
 
 Imagine labeled pipes:
 
@@ -137,7 +137,7 @@ The protected and held-out sets influence promotion and are validation sets. A s
 nested addition and subtraction, and selection. Their literal values and tree
 shapes do not occur in the route contracts.
 
-## What success means—and does not mean
+## Evaluation scope
 
 A passing Phase 2A run means that this implementation can learn six typed
 connections, execute its fixed unseen program manifest, preserve all earlier

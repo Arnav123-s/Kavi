@@ -13,12 +13,12 @@ preserved and audited separately. Its successful structured-program results do
 **not** count as the new text core's results. Transfer between those two
 representations, automatic topology discovery, and a unified general reasoner
 are not implemented. This is a measured development extension, not the finished
-architecture envisioned by the owner.
+proposed program-learning architecture.
 
 The teacher presents original text and source-grounded practice/corrections.
 `WaveLearner.learn` performs truncated backpropagation and clipped Adam updates.
 The teacher does not write particular answer weights or edit connection tensors.
-Backpropagation was permitted by the owner. Human-written code still defines
+The text core uses backpropagation. Human-written code still defines
 the learning rule and available graph; Kavi does not autonomously rewrite it.
 
 ## Signal flow and mathematics
@@ -96,7 +96,7 @@ during a run and must be counted. It is not queried by text inference. The
 learner resets transient activity between separate documents/questions; a new
 conversation is not automatically an exact continuation of all prior context.
 
-## Teaching, prerequisites and honest boundaries
+## Teaching and prerequisites
 
 The executable original-book sequence currently covers nine arithmetic units:
 numeration; addition/subtraction; multiplication; division; fractions; decimals;

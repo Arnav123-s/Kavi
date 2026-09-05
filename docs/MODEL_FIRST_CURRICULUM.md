@@ -10,7 +10,7 @@ Kavi itself is the project: the model core that receives signals, forms compact
 patterns, makes a prediction, changes only after verification, and carries a
 small persistent state forward. The curriculum runner, evaluator, source gate,
 and terminal trace are supporting equipment. They exist to teach and measure the
-model honestly; they are not the intended final product.
+model; they are not the intended final product.
 
 The current project has one six-stage unified model and four earlier bounded regression cores:
 

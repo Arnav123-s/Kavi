@@ -193,7 +193,7 @@ before its last report write. These artifacts remain private and local.
 On the starting model's 32 four-symbol `Last` questions, nine answers were
 correct. Of the 23 errors, 11 selected position three (the second-last symbol),
 two selected position two, three selected position one, and seven were not a
-single input symbol. Thus the owner's second-last observation has measurable
+single input symbol. Thus the second-last-position hypothesis has measurable
 support in this narrow test. There is no human comparison group, and the model
 receives bytes rather than glyph images; this does not establish human-like
 visual perception or a shared cognitive mechanism. The exercise generator

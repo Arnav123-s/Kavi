@@ -4,7 +4,7 @@ Author: Arnav123-s
 
 Status: implemented for the bounded foundation circuit; language development remains unfinished.
 
-## In simple words
+## Overview
 
 Kavi is a small network of reusable paths. A question enters the network,
 travels through compatible paths, and produces an answer. Learning changes
@@ -33,7 +33,7 @@ Original source -> teacher -> candidate pathway changes
                        advance or diagnose and repeat
 ```
 
-## What actually learns today
+## Learned state
 
 The first categorical paths learn running-average feature centers and
 connection strengths. Arithmetic receives verified transform weights from
@@ -157,7 +157,7 @@ python -m kavi.pathway_cli watch --run-dir runs\YOUR-RUN --channel pathways --te
 ```
 
 Pause, resume, and stop operate on the selected run only. The teacher runs as
-an ordinary local process without the assistant or an external model. This
+an ordinary local process with its own pause and stop controls. This
 command creates no scheduled background service and does not change device
 power or temperature limits. All computation is currently serial CPU work.
 The displayed groups of up to four paths are trace groupings, not a measured

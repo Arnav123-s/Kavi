@@ -4,7 +4,7 @@ Date: 2026-09-04. Baseline code: `05fbbdb`.
 
 ## Question and intervention
 
-The owner reported repetitive answers and inadequate early teaching. Inspect
+Repetitive answers and weak early-task performance motivated this diagnosis. Inspect
 the actual text core, not the separately successful symbolic circuit. Test
 whether question-dependent state and internal learning exist, whether the
 answer/explanation objective obscures answer learning, and whether explicit

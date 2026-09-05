@@ -1,218 +1,83 @@
-# Kavi implementation reference
+# Implementation reference
 
-Author: Arnav123-s
-Status: describes the code currently present in this repository
+Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-## Scope
+The package contains separate symbolic and recurrent experiments. A supplied operation contract, an acquired coefficient and a learned program are distinct forms of supervision.
 
-Kavi currently contains one unified path-centric model plus deliberately narrow
-regression cores. Its first five stages form glyph, arithmetic, exact Unicode,
-script-oriented, and expression/relation routes. Phase 2A adds six learned
-typed composition routes that connect those paths into bounded nested
-programs. An exact one-scalar Unicode contract sits before script routing. The
-supporting runner makes routing, nested execution, verification, candidate
-promotion, earlier-skill retention, archiving, and resource reporting
-observable before a broader curriculum is attempted.
+The following inventory covers all 52 Python modules under `kavi` at the inspected baseline. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
 
-It is not a general-purpose language system, a trained textbook reader, a web
-agent, a background service, or a self-modifying program.
-
-## Package map
+### A.1 Initial pathway and explanation experiments
 
 | Module | Responsibility |
 | --- | --- |
-| kavi.types | Immutable event, pathway, inference, feedback, and metric contracts. |
-| kavi.graph | The typed PathwayFabric, deterministic route selection, join, readout, eligibility, and small resource ledger. |
-| kavi.learning | Fixed protected and held-out manifests, independent scoring, and candidate-only target learning. |
-| kavi.runtime | Finite serial event runtime, visible trace, pause/stop controls, and generated arithmetic curriculum. |
-| kavi.cli | Main command-line interface for inspecting paths and running the target-only experiment. |
-| kavi.lessons | Structured arithmetic lessons whose explanation and target transformation are locally verifiable. |
-| kavi.explanation_learning | Explanation-guided candidate generation with the same independent evaluation boundary. |
-| kavi.lesson_runtime | Finite explanation-learning runtime using the standard controls. |
-| kavi.lesson_cli | Command-line entry point for the explanation-learning experiment. |
-| kavi.source_manifest | Source metadata, rights-status, and lesson-admission validation. |
-| kavi.source_cli | Read-only inspection of the curriculum source manifest. |
-| kavi.symbol_core | Compact glyph-to-prototype learning core with protected and held-out gates. |
-| kavi.symbol_runtime | Finite generated glyph curriculum and visible candidate traces. |
-| kavi.unicode_core | Exact one-scalar Unicode contract and compact generated script-pathway prototype core. |
-| kavi.unicode_runtime | Finite Unicode contract and script-pathway curricula, fixed manifests, and visible traces. |
-| kavi.textbook_core | Compact expression/relation prototypes, a restricted exact symbolic evaluator, and candidate-only promotion. |
-| kavi.textbook_runtime | Local-only lesson loader, PDF/extract fingerprint verification, finite source-event trace, pause/stop controls, and protected/held-out readouts. |
-| kavi.adaptive_syllabus | Finite seeded syllabus runner, compact-state checkpoint, 90% gates, visible per-question grades, and declared repair queues. |
-| kavi.adaptive_cli | Command-line entry point for local adaptive syllabus runs and review. |
-| kavi.pathway_circuit | Unified path-centric circuit state, local component roles, route amplitudes, jump adapters, arithmetic transforms, typed composition, and candidate evaluation. |
-| kavi.composition_curriculum | Source-free typed route contracts plus disjoint current, protected, and held-out nested programs. |
-| kavi.pathway_live | Finite six-stage persistent-circuit runtime, nested call traces, separate local event feeds, active checkpoints, and inactive parent archives. |
-| kavi.pathway_cli | Run, watch, inspect-state, and pause/resume/stop commands for the unified circuit experiment. |
-| kavi.school | Model-first finite curriculum sequencer, opt-in checkpointing, and hard waiting gates. |
-| kavi.school_cli | Command-line entry point for listing or running only declared curriculum stages. |
-| kavi.catalog_cli | Read-only review of the people-and-works catalog. |
+| `types.py` | Event, pathway, trace and update data contracts |
+| `graph.py` | Initial routed graph, path selection and numeric execution |
+| `learning.py` | Verification and candidate pathway updates for generated arithmetic |
+| `runtime.py` | Finite event loop, controls, measurements and persistence |
+| `cli.py` | Initial experiment command-line interface |
+| `lessons.py` | Structured teaching explanations and lesson examples |
+| `explanation_learning.py` | Translation of supplied explanations into checked updates |
+| `lesson_runtime.py` | Finite explanation-learning experiment loop |
+| `lesson_cli.py` | Explanation experiment commands |
+| `__init__.py` | Package metadata and import boundary |
+| `__main__.py` | Entry point for `python -m kavi` |
 
-## Inference path
+### A.2 Symbolic learning and composition
 
-The newest unified experiment is specified in
-[PATH_CENTRIC_CIRCUIT.md](PATH_CENTRIC_CIRCUIT.md). Unlike the earlier school,
-it retains one active circuit across the six implemented stages. Later
-notation and composition routes use jump adapters from earlier glyph, script,
-and arithmetic routes.
-Only the active state is available to inference; replaced parents are frozen
-under the ignored run archive and are never loaded by the runtime.
-
-This architecture is intended as a domain-independent learning mechanism.
-Algebra is the first source-backed integration test, not an architectural
-restriction. Language, science, planning, vision, and calculus still require
-new representations, lessons, verifiers, and measured gates before Kavi can
-claim those capabilities.
-
-The following paragraph describes the earlier stage-0 arithmetic core, which
-remains available as an independent regression baseline.
-
-An ArithmeticEvent carries two operands, an operation, an event identifier, and
-a correlation identifier. The pathway fabric splits one event into quantity and
-relation facets. A route is eligible only when its input type, output type,
-operation scope, capacity, and event correlation agree with the request.
-
-For each eligible facet, Dijkstra route selection chooses the lowest declared
-cost compatible path. The two facets then meet at a typed join. The join uses
-ordinary complex-number arithmetic to represent a phase-style compatibility
-signal. This is a classical calculation, not quantum hardware or a claim of a
-quantum advantage. A destructive or insufficient join produces an abstention
-instead of an invented answer.
-
-The readout maps a valid joined signal to a raw numeric value, rounds it only
-for the displayed exact answer, and reports confidence and uncertainty. The
-trace prints the actual selected pipe identifiers, join state, answer or
-abstention, verification result, candidate decision, and a small explicit
-state estimate.
-
-## Unicode scalar and script-pathway inference
-
-`UnicodeSignalContract.inspect` accepts exactly one Unicode scalar. It preserves
-the original character and code point, reports local Unicode metadata, and only
-records whether an NFC view equals the input; it does not rewrite the scalar.
-An empty string, multi-scalar string, or surrogate is rejected.
-
-The generated script core turns that exact code point into `x = code_point /
-0x10FFFF`, then compares it against one learned centroid for each of eleven
-declared pathways. It abstains until every pathway has verified support or when
-the closest two centroid distances are too similar. A candidate batch may be
-promoted only when current, protected, and held-out error do not worsen. The
-core keeps compact centroids and support counts, not presented glyphs or a
-source corpus.
-
-Its declared examples are single generated scalars; the core is neither a full
-Unicode Script-property implementation nor a script/language detector. See
-[UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md) for its exact manifest and
-limits.
-
-## Reviewed textbook concept inference
-
-The first source-backed core accepts only a compact algebra notation subset.
-It converts an input into five structural facets, compares it with two learned
-prototype centers, and reports a label only after both have verified support.
-A restricted integer-and-fraction evaluator separately checks variable-free
-values or relation truth. Unknown variables remain unknown.
-
-Its private lesson loader verifies the approved source record plus exact PDF
-and extract SHA-256 fingerprints before exposing a fixed local event manifest.
-The core's persistent state holds two five-facet centers, two support counts,
-and a promotion count; it does not retain PDF text or a growing notation
-archive. See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for the
-mathematics, source boundary, and visible run command.
-
-## Typed composition inference
-
-A `CompositionCall` is a temporary typed tree. The persistent state keeps the
-operator signature and target-path connection, not the tree, literal values,
-display text, or expected answer. Exact type contracts choose one compatible
-route; unknown signatures abstain. Child routes execute first, and their
-selected path IDs become sources for the parent call. The source set is divided
-into waves of at most four paths. Default limits also cap a program at eight
-levels and 64 nodes.
-
-The source-free Phase 2A curriculum teaches six structural contracts and tests
-unseen combinations. Its deepest held-out programs combine script or glyph
-classification, label equality, nested arithmetic, and conditional selection.
-Every candidate must retain all prior glyph, arithmetic, Unicode, script, and
-notation checks. See [TYPED_COMPOSITION_STAGE.md](TYPED_COMPOSITION_STAGE.md).
-
-## Learning path
-
-For a target-only event, the exact arithmetic verifier produces positive,
-negative, or neutral feedback.
-
-| Feedback | Action |
+| Module | Responsibility |
 | --- | --- |
-| Correct answer | Increase support on the active paths. |
-| Abstention | Preserve uncertainty; do not claim an answer. |
-| Wrong answer | Create candidate readout weights and evaluate them before any promotion. |
+| `symbol_core.py` | Trainable signal prototypes for early symbol tasks |
+| `symbol_runtime.py` | Finite symbol curriculum and recorded evaluations |
+| `unicode_core.py` | Unicode scalar representation and small script-route model |
+| `unicode_runtime.py` | Generated scalar and script curriculum controls |
+| `textbook_core.py` | Compact numeric concept core for the reviewed algebra lesson |
+| `textbook_runtime.py` | Source fingerprint checks and finite concept teaching |
+| `school.py` | Prerequisite and promotion orchestration across early cores |
+| `school_cli.py` | Curriculum inspection and finite school commands |
+| `adaptive_syllabus.py` | Adaptive checks, diagnosis and repair queues |
+| `adaptive_cli.py` | Adaptive syllabus command-line interface |
+| `pathway_circuit.py` | Unified routes, prototypes, adapters and typed composition execution |
+| `pathway_live.py` | Cross-stage teaching, checkpointing and multiple event feeds |
+| `pathway_cli.py` | Unified circuit commands and feed access |
+| `composition_curriculum.py` | Supplied structural contracts and composition teaching cases |
+| `composition_evaluation.py` | Separate composition audit generator |
+| `developmental.py` | Supported mastery checks, correction rounds and fresh tests |
+| `teaching_search.py` | External candidate-update comparison and selection |
+| `script_reference.py` | Teacher access to fingerprinted Unicode script data |
 
-Candidate updates are intentionally narrow: only the three readout weights are
-changed. The frozen parent stays intact while an IndependentEvaluator compares
-parent and candidate on the current event, a protected manifest, and a
-held-out manifest. A candidate must improve current raw error while not
-increasing protected or held-out mean absolute error. Once the protected set
-is sufficiently accurate in the explanation variant, exact protected accuracy
-may not decrease either.
+### A.3 Text learning and sources
 
-This is not end-to-end training. It is a small, auditable local update test.
-
-## Explanation-learning path
-
-The separate lesson experiment creates a VerifiedLesson for each generated
-event. A lesson has an event, a rule identifier, a human-readable explanation,
-and target readout weights. Its local verifier confirms that the claimed rule
-matches the event before it can guide a candidate.
-
-The lesson blends a local error-directed candidate with its verified
-scope-specific rule. It still cannot force a change. The same protected and
-held-out evaluation policy decides whether to promote it. This lets the code
-test the claim that a verified explanation can guide a local update without
-letting prose bypass evaluation.
-
-## Curriculum source gate
-
-The public source manifest contains metadata only. It records original URLs,
-creators, license classifications, review notes, subjects, and level labels.
-No textbook body, paper body, PDF cache, or private source collection belongs
-in the repository. A SourceLesson needs an approved source, a locator, a
-concept, prerequisites, verifier identity, and an extract fingerprint.
-
-The manifest approves the NASA metadata record and one narrowly reviewed CC BY-SA algebra lesson, and keeps
-other source classes quarantined pending document-specific review. See
-[DOCUMENT_CURRICULUM_GATE.md](DOCUMENT_CURRICULUM_GATE.md) for the policy.
-
-## Runtime controls and persistence
-
-Every runtime invocation has a finite step count. It uses one serial inference
-path per event. One or two evaluator workers may score independent evaluation
-cases, but they do not parallelize the causal inference path. The original simple runtimes neither contact the network nor persist learned state. The unified pathway runtime writes an active checkpoint, inactive parent archives, and event feeds under its run directory.
-
-A caller may supply pause and stop file paths. While the pause file exists,
-the process waits. When the stop file exists, the next control check ends the
-finite run while retaining the in-memory parent only for that process. Kavi
-never creates, removes, or ignores either file.
-
-## Files outside the package
-
-| Location | Role |
+| Module | Responsibility |
 | --- | --- |
-| curriculum/sequence.json | Prerequisite ordering for future curriculum stages. |
-| curriculum/source-manifest.json | Reviewed source metadata and admission status. |
-| tests | Unit tests for stage 0, explanation learning, source validation, Unicode pathways, and the bounded local textbook core. |
-| experiments | Compact, reproducible records of authorized smoke tests. |
-| docs | Design proposals, research notes, implementation guides, and operating policy. |
+| `wave_core.py` | Complex recurrent byte model, loss, optimization and generation |
+| `continuous_teacher.py` | Resumable book teaching and interaction queues |
+| `language_teacher.py` | Language prerequisites and answer-focused corrections |
+| `language_curriculum.py` | Small generated language tasks and exact targets |
+| `book_curriculum.py` | Source admission, arithmetic units and exam partitions |
+| `mixed_quizzes.py` | Fresh copying, joining and sequence-position tasks |
+| `multilingual_bridge.py` | Small writing-system subsets, mixed quizzes and retention |
+| `wave_cli.py` | Text run controller, read-only feeds and local console |
+| `source_manifest.py` | Source records, fingerprints and teaching-scope validation |
+| `source_cli.py` | Source admission inspection |
+| `teaching_sources.py` | Reviewed-source lookup and bounded teaching packets |
+| `catalog_cli.py` | Read-only people-and-works catalog interface |
 
-## Explicit non-features
+### A.4 Experiments and common infrastructure
 
-- No downloaded model weights or external model runtime.
-- No unreviewed or public-repository raw textbook or paper ingestion.
-- No web access from the learner.
-- No continuous daemon, scheduled work, or automatic restart.
-- No source-code changes by the learner.
-- No adjustment of system power, temperature, fan, or hardware limits.
-- No claim that this prototype solves open mathematical problems.
+| Module | Responsibility |
+| --- | --- |
+| `strategy_trials.py` | Teaching recipes and comparison partitions |
+| `teaching_comparison.py` | Isolated comparisons of teacher methods |
+| `pathway_trials.py` | Damped updates, rewiring and route-splitting candidates |
+| `repair_trials.py` | Small context-dependent residual connectors |
+| `flow_preservation.py` | Reference-gradient displacement projection |
+| `consolidation_trials.py` | Bounded interpolation search with guard verification |
+| `forward_repair.py` | Continued learning from the latest configuration and jump variants |
+| `trial_resources.py` | Process resource observations and available sensor readings |
+| `file_io.py` | Atomic writes with Windows reader-lock handling |
+| `terminal.py` | Terminal encoding and output compatibility |
+| `friendly_live.py` | Readable presentation of recorded lessons and computations |
 
-Use [OPERATIONS_AND_REPRODUCIBILITY.md](OPERATIONS_AND_REPRODUCIBILITY.md) to
-run the code and [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) to interpret
-its results.
+The `scripts` directory contains launchers, checkpoint comparisons and finite experiment drivers. `curriculum` contains source manifests, teaching policies and generated-task definitions. `tests` contains implementation regressions. `experiments` contains public measurement records. `runs` and `private` hold local evidence and material excluded from public version control.
+
+The [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md) connects these modules to their equations, experiment records and limitations.

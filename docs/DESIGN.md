@@ -1,75 +1,21 @@
-# Kavi: developmental learning proposal
+# Architecture
 
-## Purpose
+Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Investigate whether a learner can develop increasingly useful representations through education, bounded growth, compression, and reuse. Its allocated size can change within a hard device resource ceiling. The current phase specifies learning mechanisms and future tests; it does not enable autonomous code changes or claim a general-purpose intelligent system.
+Kavi investigates a learner whose acquired knowledge takes the form of reusable executable procedures. Learning changes typed program graphs; consolidation replaces redundant computation while preserving a specified behavioral contract.
 
-## The stage metaphor
+The repository currently implements a symbolic pathway circuit and a separate complex recurrent text model. The symbolic circuit receives operation contracts from its curriculum. The text model learns numerical parameters through backpropagation. General program acquisition and library consolidation are the next research stage.
 
-A stage starts at a relative progress score of zero. The learner receives structured examples and questions and may expand within a declared limit. After demonstrating mastery, it attempts compression into a smaller representation and advances only after checking retention. Its new stage again starts at zero, with its earlier abilities intact within the declared evaluation tolerances.
+The [engineering specification](KAVI_ENGINEERING_SPECIFICATION.md) defines the intended representation, current equations, evidence and development plan.
 
-The score is a progress indicator, not a storage mechanism or a universal measure of intelligence. Separate skill measurements are needed because a single score can conceal regressions.
+## Design decisions
 
-An illustrative progression is quantities and counting, addition, multiplication, and increasingly compositional problems. Language, reading, and other fields introduce additional abilities rather than a guaranteed single linear ladder. Recognizing a symbol is distinct from understanding the quantity or concept it represents.
+- Use typed operations with explicit failure and execution-cost semantics.
+- Begin with pure, exactly verifiable list, string and arithmetic tasks.
+- Search for local repairs before expanding the grammar or capacity.
+- Extract shared procedures only from acquired solutions.
+- Distinguish behavior-changing repair from equivalent consolidation.
+- Count model, optimizer, replay, search and archival storage separately.
+- Compare new mechanisms with simple synthesis and recurrent baselines.
 
-## What consolidation must accomplish
-
-Consolidation should turn experiences into reusable representations while preserving useful earlier abilities. For example, a general addition procedure is more useful than an isolated list of remembered sums.
-
-Promotion must not erase memory, initialize all weights to zero, or merely rename the score. A consolidation method is successful only if measurements demonstrate retention, transfer, and acceptable resource use.
-
-## Variable learner size, fixed device ceiling
-
-The owner's clarification replaces permanently fixed learner size with repeated growth and compression. The compact size is the next stage's baseline; the learner can then grow toward the same upper target and attempt compression again. [Growth and compression cycles](GROWTH_CYCLES.md) defines the proposed interpretation and its unresolved mechanisms.
-
-The hard resource ceiling must account for more than parameter count:
-
-- Persistent parameter values and their numerical precision.
-- Internal memory states and any learning or optimization state.
-- Replay examples, learned rules, and other retained information.
-- Working memory and processing time during learning and answering.
-- Any external reference library, measured separately from the learner itself.
-- Temporary expanded and compact versions, transfer targets, and other workspace used during compression.
-
-Three mechanisms could fit different interpretations of deeper understanding:
-
-1. Better representations in the same finite state: reusable patterns replace inefficient memorization.
-2. Repeated computation using the same network: parameter count stays fixed, but more thinking steps consume time and potentially working memory.
-3. Multiple internal states per connection: fast-changing and slower-changing components support different memory timescales. These states consume memory and must be counted at every stage.
-
-None of these mechanisms implies unlimited lossless storage of unrelated facts. The human-development analogy motivates questions but does not establish biological equivalence.
-
-## Learning without end-to-end backpropagation
-
-The owner wants to investigate a learning method without end-to-end backpropagation. The curriculum alone does not provide that method.
-
-The replacement must specify how an observation or wrong answer determines which internal values change, by how much, and how earlier learning is protected. Increasing a connection value is not inherently learning; decreasing one is not inherently forgetting. Both directions can support correct behavior.
-
-Local learning rules and gradient-free candidate search are research candidates, not selected implementations. A method that avoids end-to-end backward error propagation may still use local derivatives. Completely gradient-free learning is a stricter requirement that must be stated explicitly when choosing a mechanism.
-
-## Proposed first-phase evaluation
-
-Start with a small, bounded curriculum rather than assuming all elementary education across languages will be fast. Keep training examples separate from evaluation examples.
-
-Measure at least:
-
-- Performance on new, withheld examples of the current skill.
-- Retention of earlier skills before and after consolidation.
-- Transfer to combinations or variants not directly demonstrated.
-- Persistent memory, peak working memory, elapsed time, and available energy or thermal measurements.
-
-Define promotion thresholds before running an experiment. A failed retention check is a recorded failure, not successful promotion. Compare candidate learning mechanisms under the same measured budget when practical.
-
-## Open questions
-
-- What is the smallest useful initial curriculum?
-- What representation connects symbols to quantities and other concepts?
-- What precise update rule replaces end-to-end backpropagation?
-- What operation consolidates knowledge, and what information can it discard?
-- How will the learner distinguish abstraction from memorization?
-- How much fixed memory belongs to fast and slow internal states?
-- What evidence justifies promotion to the next stage?
-
-## Locked later phase
-
-Autonomous self-modification, architecture search controlled by the learner, and open-ended operation are not authorized by this design document. They require a later, explicit decision after the basic learner is understood and evaluated.
+Backpropagation remains available. Local learning and physical dynamics are experimental alternatives whose value must be demonstrated under matched budgets. The [program-learning design](PATH_PROGRAM_LEARNING.md) is the primary implementation direction; the [physical dynamics note](KAVI_PHYSICS_NATIVE_CORE.md) defines a separate hypothesis.

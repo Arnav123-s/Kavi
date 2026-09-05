@@ -38,6 +38,7 @@ downloads/
 *.sqlite3
 *.db
 *.pdf
+!docs/Kavi_Engineering_and_Research.pdf
 *.epub
 
 # Generated files and environments

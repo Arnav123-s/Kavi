@@ -1,71 +1,85 @@
-# Related primary research
+# Primary research
 
-These are related mechanisms, not a claim that their combination has already produced Kavi. This note summarizes inspected paper sections or abstracts, not an exhaustive literature review. No third-party implementation or dataset is vendored here.
+Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-## Learn, then consolidate
+The closest whole-system relative is typed program induction with library learning. The current text implementation belongs to complex recurrent neural models.
 
-**Jonathan Schwarz and colleagues, Progress & Compress: A scalable framework for continual learning (2018).**
 
-[Original paper](https://arxiv.org/html/1805.06370v2)
+### 5.1 Overall classification
 
-Relevant material inspected: introduction, progress and compress mechanisms, and discussion of fixed capacity and forgetting.
+The intended Kavi is best described as an incremental inductive program learner operating on typed term graphs. A term graph represents computation with shared subexpressions. Its operational semantics define what an instruction does, how state moves, and what counts as completion. Learned libraries allow a useful subgraph to become a reusable operation in subsequent searches.
 
-An active component learns new tasks; learned behavior is then distilled into a knowledge component while regularization limits damage to earlier skills. This is relevant to making mastered skills a foundation for later learning. It still uses gradient-based training and has finite-capacity tradeoffs. It does not demonstrate unlimited knowledge storage.
+[DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) is the closest complete research architecture: it searches for programs, develops reusable abstractions, and learns to guide later search. Its initial language and representations are engineered, and its demonstrated domains and computational budgets differ from Kavi's. The relationship is a research lineage, not an implementation equivalence.
 
-## Fast and slow internal states in connections
+### 5.2 Structural compression
 
-**Marcus K. Benna and Stefano Fusi, Computational principles of biological memory (2015 preprint).**
+The closest specific relative of Kavi's proposed compression is library learning modulo an equational theory. [babble](https://arxiv.org/html/2212.04596v1) combines e-graphs and anti-unification to find reusable structure across programs whose syntax differs but whose expressions are equivalent under known equations. It starts with programs; it does not independently establish their correctness.
 
-[Original paper](https://arxiv.org/html/1507.07580v1)
+[Stitch](https://arxiv.org/html/2211.16605v2) provides a related top-down search for abstractions that compress a program corpus. Its compression objective is relevant to a bounded learner, but shorter program descriptions do not automatically execute faster or improve unseen tasks. Those require separate measurements.
 
-Relevant material inspected: memory benchmark, synaptic model construction, discretization, and scaling discussion.
+The [E-Stitch workshop contribution](https://pldi26.sigplan.org/details/egraphs-2026-papers/7/E-Stitch-Top-Down-Library-Learning-for-E-Graphs), presented on 15 June 2026, directly combines top-down library learning with e-graphs. The official abstract describes preliminary results. It is a relevant recent direction; no design decision here depends on an unverified performance advantage from it.
 
-The model uses interacting internal variables with different timescales. Its connection to Kavi is the possibility of richer internal memory dynamics within a connection. Additional variables remain real storage costs. The paper studies memory properties under specified assumptions, not complete language or educational mastery.
+### 5.3 Repair and verification
 
-## Local learning without an end-to-end backward pass
+[Syntax-guided synthesis](https://www.cis.upenn.edu/~alur/SyGuS13.pdf) makes the learning problem concrete through a grammar, a background theory and a correctness specification. Counterexample-guided inductive synthesis alternates between proposing a program and obtaining a case that refutes it. This fits Kavi's correction-driven development when the verifier can supply meaningful counterexamples.
 
-**Geoffrey Hinton, The Forward-Forward Algorithm: Some Preliminary Investigations (2022).**
+An example-based verifier checks observed behavior. A solver may establish a universal property only within its supported logic and assumptions. Timeout, unsupported arithmetic or an incomplete search must remain distinct from a proof that no solution exists.
 
-[Original paper](https://arxiv.org/html/2212.13345v1)
+[Stochastic superoptimization](https://theory.stanford.edu/~aiken/publications/papers/asplos13.pdf) is a useful relative for searching small program mutations under behavioral and execution costs. Its original work concerns loop-free machine code and uses separate validation. Kavi would need its own instruction semantics and mutation operators. The published errata must be used when reproducing its cost equations.
 
-Relevant material inspected: motivation, layer-local learning mechanism, and stated experimental limitations.
+### 5.4 Compression objective
 
-The method uses positive and negative examples with local objectives. It avoids the usual end-to-end backward pass but still involves local derivatives. The original paper reports limitations on small benchmarks, including cases of slower learning and weaker generalization than its backpropagation baseline. It is a candidate for investigation, not an established speed improvement for this project.
+Minimum description length gives a precise form to the preference for small reusable structure. The objective accounts for the model description and whatever data it fails to explain. The encoding must be specified: counting nodes while ignoring large constants, hidden lookup tables or a learned proposal network is insufficient. [Grunwald's MDL introduction](https://arxiv.org/pdf/math/0406077).
 
-## Gradient-free weight search
+### 5.5 Quantum diagrams and physical dynamics
 
-**Felipe Petroski Such and colleagues, Deep Neuroevolution: Genetic Algorithms Are a Competitive Alternative for Training Deep Neural Networks for Reinforcement Learning (2017).**
+[PyZX](https://arxiv.org/pdf/1904.04735) demonstrates automated rewriting of diagrams with quantum linear-map semantics. The transferable principle is that a structural rewrite should preserve a defined meaning. Kavi needs classical operational semantics for its programs. A quantum identity, particularly one valid only up to a global scalar, is not automatically valid for an exact classical numeric output.
 
-[Original paper](https://arxiv.org/abs/1712.06567)
+The physical proposal has a different nearest relative: [port-Hamiltonian systems on graphs](https://arxiv.org/abs/1107.2006), which combine energy storage, transport, dissipation and external inputs. That framework offers useful stability structure. It does not establish that simulated gravity, chemical fields or phase interference improve learning.
 
-Material inspected: abstract.
+| Kavi component | Closest mathematical family | Main distinction |
+| --- | --- | --- |
+| Intended learned procedures | Typed program induction and library learning | Procedures must be acquired, rather than supplied |
+| Structural consolidation | MDL and library learning modulo equations | Compression requires a defined encoding and valid identities |
+| Behavioral repair | Counterexample-guided synthesis and program repair | Repair changes meaning and needs fresh correctness evidence |
+| Equivalent-path optimization | Equality saturation | Optimizes represented alternatives, not all possible programs |
+| Current text core | Complex nonlinear sparse recurrent network | Learns continuous coefficients and input/output maps |
+| Fixed-size deployed circuit | Finite-state transducer under finite precision | Unbounded input families still require time and possibly workspace |
+| Proposed physical core | Controlled dissipative graph dynamics | Stability and learning must be derived together |
 
-The authors demonstrate gradient-free population-based search over network weights in selected control tasks. This supports the existence of a genuinely gradient-free route, but does not establish efficiency for a developmental language learner. Candidate evaluation and population state must be counted in resource comparisons.
+## Bibliography
 
-## Unicode signal standards for the generated scalar stage
+Sources were inspected on 5 September 2026. The scope column distinguishes full-paper access from abstracts and official summaries. Direct mathematical derivations in this specification concern the stated Kavi equations and assumptions; they are not attributed as experimental findings of the cited papers.
 
-**Unicode Consortium, Unicode Standard Annex #15: Unicode Normalization Forms;
-Unicode Standard Annex #24: Unicode Script Property; and Unicode Technical
-Standard #39: Unicode Security Mechanisms.**
-
-[UAX #15](https://unicode.org/reports/tr15/) · [UAX #24](https://unicode.org/reports/tr24/) · [UTS #39](https://unicode.org/reports/tr39/)
-
-Relevant material inspected: the normalization distinction, Script and
-Script_Extensions property scope, and the explanation of visually confusable
-characters. These standards motivate preserving original scalar code points,
-keeping normalization as an explicit choice, and testing look-alike scalars as
-distinct inputs.
-
-Kavi intentionally does not implement a full Unicode-property database,
-normalization engine, confusable-security checker, grapheme-sequence processor,
-or language detector. Its implemented stage is a small source-free prototype
-with eleven declared scalar pathways. The detailed boundary is in
-[UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md).
-
-## What these sources do not establish
-
-- That removing backpropagation is sufficient to produce more capable reasoning.
-- That school-like ordering alone supplies a learning algorithm.
-- That a finite learner can retain unlimited independent information.
-- That consolidating a stage automatically preserves all earlier skills.
-- That a proposed combination has been implemented, trained, or validated here.
+| Reference | Relevance and inspected scope |
+| --- | --- |
+| [Ellis et al 2021 DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) | Program synthesis with learned libraries and search; full paper |
+| [Lake et al 2015 Human-level concept learning through probabilistic program induction](https://www.cs.cmu.edu/~rsalakhu/papers/LakeEtAl2015Science.pdf) | Structured priors for concept acquisition; full paper |
+| [Grunwald 2004 A Tutorial Introduction to the Minimum Description Length Principle](https://arxiv.org/pdf/math/0406077) | Description-length model selection; full tutorial |
+| [Alur et al 2013 Syntax-Guided Synthesis](https://www.cis.upenn.edu/~alur/SyGuS13.pdf) | Grammar, specification and counterexample-guided search; full paper |
+| [Willsey et al 2021 egg](https://arxiv.org/html/2004.03082v3) | Equality saturation and e-graph engineering; full paper |
+| [Bowers et al 2023 Top-Down Synthesis for Library Learning](https://arxiv.org/html/2211.16605v2) | Stitch abstraction search; full paper |
+| [Cao et al 2023 babble](https://arxiv.org/html/2212.04596v1) | Equational library learning and anti-unification; full paper |
+| [Gupta et al 2026 E-Stitch](https://pldi26.sigplan.org/details/egraphs-2026-papers/7/E-Stitch-Top-Down-Library-Learning-for-E-Graphs) | Recent combination of top-down search and e-graphs; official workshop abstract only |
+| [Schkufza et al 2013 Stochastic Superoptimization](https://theory.stanford.edu/~aiken/publications/papers/asplos13.pdf) | Search over executable mutations; full paper and [errata](https://theory.stanford.edu/~aiken/publications/papers/asplos_13_errata.txt) |
+| [Kissinger and van de Wetering 2020 PyZX](https://arxiv.org/pdf/1904.04735) | Semantics-based diagram rewriting; full paper, QPL 2019 work |
+| [van der Schaft and Maschke Port-Hamiltonian Systems on Graphs](https://arxiv.org/abs/1107.2006) | Energy balance in graph dynamics; preprint and published-work record |
+| [Scellier and Bengio 2017 Equilibrium Propagation](https://arxiv.org/html/1602.05179v5) | Equilibrium gradient relation and assumptions; full paper |
+| [Jaeger 2001 The Echo State Approach](https://publica.fraunhofer.de/entities/publication/7d4a7eec-a22c-4df0-903d-93f9cd5aca02) | Fixed recurrent reservoir and trained readout; institutional report record |
+| [Trabelsi et al 2018 Deep Complex Networks](https://arxiv.org/html/1705.09792v3) | Complex neural components; full paper, 2017 preprint |
+| [Orvieto et al 2023 Resurrecting Recurrent Neural Networks for Long Sequences](https://proceedings.mlr.press/v202/orvieto23a.html) | Linear recurrent unit baseline; proceedings and paper |
+| [Chaudhry et al 2019 Efficient Lifelong Learning with A-GEM](https://arxiv.org/html/1812.00420v2) | Average episodic gradient constraint; full paper |
+| [Chaudhry et al 2019 On Tiny Episodic Memories in Continual Learning](https://arxiv.org/abs/1902.10486) | Replay control; primary abstract and study record |
+| [Mostafa and Wang 2019 Parameter Efficient Training of Deep Convolutional Neural Networks by Dynamic Sparse Reparameterization](https://proceedings.mlr.press/v97/mostafa19a.html) | Fixed-budget structural changes; proceedings and paper |
+| [Chen et al 2016 Net2Net](https://arxiv.org/abs/1511.05641) | Function-preserving initialization; primary abstract and paper record |
+| [Bellec et al 2019 A Solution to the Learning Dilemma for Recurrent Networks of Spiking Neurons](https://arxiv.org/html/1901.09049v2) | Eligibility traces and learning signals; full preprint |
+| [Werner 1989 Quantum States with Einstein-Podolsky-Rosen Correlations](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.40.4277) | Separability distinction; abstract only |
+| [Lindblad 1976 On the Generators of Quantum Dynamical Semigroups](https://link.springer.com/article/10.1007/BF01608499) | Physical channel constraints; abstract only |
+| [Tishby et al The Information Bottleneck Method](https://arxiv.org/abs/physics/0004057) | Task-relevant compression; primary abstract, 1999 work uploaded in 2000 |
+| [Vaswani et al 2017 Attention Is All You Need](https://arxiv.org/abs/1706.03762) | Attention baseline; primary paper record |
+| [Guo et al 2017 On Calibration of Modern Neural Networks](https://proceedings.mlr.press/v70/guo17a.html) | Confidence calibration; proceedings and paper record |
+| [Liu and Zhu 2016 The Teaching Dimension of Linear Learners](https://jmlr.org/papers/v17/15-630.html) | Learner-dependent teaching requirements; journal record |
+| [Agarwal et al 2021 Deep Reinforcement Learning at the Edge of the Statistical Precipice](https://proceedings.neurips.cc/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html) | Few-run evaluation reliability; proceedings record |
+| [ARC-AGI-2 2025](https://arxiv.org/abs/2505.11831) | Independent abstraction-task design; primary paper record, revised 2026 |
+| [ARC Prize 2025 Technical Report](https://arxiv.org/abs/2601.10904) | Competition evaluation and refinement evidence; January 2026 report record |
+| [Jolicoeur-Martineau 2025 Less Is More](https://arxiv.org/abs/2510.04871) | Tiny recursive model research; primary paper record |

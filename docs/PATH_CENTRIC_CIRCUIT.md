@@ -15,7 +15,7 @@ example. The route-and-adapter mechanism is task-independent by design, but
 other domains remain unimplemented until they have their own representations,
 lessons, verifiers, and retained-skill tests.
 
-## What the active brain contains
+## Active model state
 
 The active state contains:
 

@@ -1,160 +1,96 @@
-# Kavi operations and reproducibility
+# Operations and reproducibility
 
-Author: Arnav123-s
-Status: operating guide for the finite local prototypes
+Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-## What this guide runs
+Run commands from the repository root. The project declares Python 3.11 or later. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. The symbolic modules use the standard library; the text model and its tests require PyTorch.
 
-These commands run small generated arithmetic, ASCII-glyph, and Unicode-scalar
-experiments, plus one optional locally reviewed textbook-concept lesson. They
-do not download a model, use a network, install dependencies, begin a
-background job, or start a general training program. Their main purpose is to
-show the complete route and update decision in a low-overhead terminal trace.
+## Environment and inspection
 
-## Requirements
+Use a dedicated environment when setting up another machine. The optional dependency group is declared in `pyproject.toml`.
 
-- Python 3.11 or later.
-- A checkout of this repository.
-- No third-party runtime packages are required for the current prototype.
-- The optional textbook stage additionally needs its separately reviewed local PDF, extract, and lesson manifest under ignored `private/` paths; the public checkout deliberately does not supply them.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -e '.[wave]'
+```
 
-The reference smoke tests for this release were run with Python 3.13.5. Record
-the exact interpreter version for any new result because a different runtime
-can change elapsed-time measurements.
+Installation downloads dependencies. To inspect an existing environment and run the regression suite:
 
-## Verify a clean checkout
+```powershell
+python --version
+python -B -m unittest discover -s tests -q
+python -m kavi --help
+python -m kavi.source_cli
+python -m kavi.school_cli --list
+python -m kavi.pathway_cli --help
+python -m kavi.wave_cli --help
+```
 
-From the repository root, normally C:\Kavi:
+The source command reads admission metadata; it does not fetch books. Tests include small bounded learning checks. All 138 tests passed after relocation on 5 September 2026.
 
-    python --version
-    python -m unittest discover -s tests -v
-    python -m kavi.source_cli
+## Text learning
 
-The test command should discover the stage-0, explanation-learning, generated
-Unicode, source-manifest, and bounded textbook-core tests. The source command only validates and prints
-metadata; it does not fetch the linked documents.
+`kavi.wave_cli run` starts a teacher and modifies learner state. It requires a run directory under `runs` and a foundation checkpoint. Source files must match the admitted private fingerprints. `--resume` selects a prior text run; `--multilingual-bridge` selects the small additional writing-system curriculum.
 
-## Inspect the model-shaped pathways
+Inspect the full argument list before preparing a finite run:
 
-    python -u -m kavi paths
+```powershell
+python -m kavi.wave_cli run --help
+```
 
-This prints the fixed pipe contracts for the current experiment. It is a useful
-first check because a route that violates its declared input, output, or scope
-contract should not be considered a valid reasoning path.
+The launcher `scripts/start-live-learning.ps1` creates Windows Terminal tabs for the teacher, feeds and controls. Its defaults are 12 rounds and 86,400 seconds, with a historical local foundation path. Set explicit budgets and a valid foundation for each reviewed run.
 
-## Run the target-only experiment
+The launcher includes `--keep-available`, which keeps the interactive service available after curriculum work. A teaching budget and process lifetime are separate controls. Closing a feed or console does not stop the teacher.
 
-    python -u -m kavi live --steps 24 --seed 7 --ask 7 5 add
+For an existing selected run, replace `runs\selected-run` with its actual directory:
 
-Important options:
+```powershell
+python -m kavi.wave_cli watch --run-dir 'runs\selected-run' --channel answers
+python -m kavi.wave_cli console --run-dir 'runs\selected-run'
+```
 
-| Option | Meaning |
-| --- | --- |
-| --steps N | Run exactly at most N generated events. N must be positive. |
-| --seed N | Make the generated curriculum reproducible. |
-| --max-active-routes N | Bound active path fan-out. Two facets need at least two routes. |
-| --workers 1 or 2 | Use at most two workers for independent evaluation only. |
-| --conflict-every N | Insert an incompatible phase-style case every N events; zero disables it. |
-| --interval-ms N | Delay visible event lines; zero minimizes waiting. |
-| --ask LEFT RIGHT add-or-subtract | Ask one query after the finite run. |
+`watch` reads recorded feeds. The console accepts `/status`, `/pause`, `/resume`, `/stop` and `/quit`; `/quit` closes only the console. Ordinary questions and `/teach question => answer || explanation` enqueue learner interaction. Teaching changes the selected learner when its process consumes the queue.
 
-The trace labels a number as initially correct only when it was correct before
-the event’s feedback. Candidate promotions are separate and should not be read
-as evidence of broad generalization.
+## Symbolic experiments
 
-## Run the explanation-learning experiment
+The initial arithmetic experiment exposes routes with:
 
-    python -u -m kavi.lesson_cli --steps 24 --seed 7 --ask 9 4 subtract
+```powershell
+python -m kavi paths
+```
 
-Each lesson is a locally verified arithmetic rule. The output includes the
-verified explanation after the normal pathway and candidate trace. It is still
-a finite local run.
+A finite teaching example, to use within an approved experiment, is:
 
-## Inspect or continue the source-free curriculum
+```powershell
+python -u -m kavi live --steps 24 --seed 7 --ask 7 5 add
+```
 
-This does not start a run:
+The explanation experiment uses `python -m kavi.lesson_cli`. The unified symbolic curriculum uses `python -m kavi.pathway_cli`; `scripts/start-live-pathways.ps1` opens its live views. These are different cores from the recurrent text model.
 
-    python -m kavi.school_cli --list
+The original stage-0 control files are explicit arguments:
 
-The list shows which stages are runnable and which remain blocked. The Unicode
-contract and generated script-pathway stages contain only declared individual
-scalars; they do not access the catalog or source URLs.
+```powershell
+python -u -m kavi live --steps 100 --pause-file '.\PAUSE' --stop-file '.\STOP'
+```
 
-Only after the owner explicitly authorizes a finite continuation from an
-existing local checkpoint containing the bootstrap stages, run at most the two
-Unicode stages with:
+Creating `PAUSE` pauses at a control check; removing that file resumes. Creating `STOP` ends at the next check. Stage 0 does not persist a trained checkpoint on stop. Later runtimes have their own checkpoint and control mechanisms.
 
-    python -u -m kavi.school_cli --max-stages 2 --lessons-per-stage 24 --symbol-batch-size 11 --interval-ms 80 --state-file runs\kavi-school-state.json
+## Sources and relocation
 
-The trace prints the scalar, code point, hard path, candidate gate, protected
-and held-out metrics, and compact model ledger. It then stops at the still
-locked word-learning stage. See [UNICODE_SCRIPT_STAGE.md](UNICODE_SCRIPT_STAGE.md)
-for the scope of that small experiment.
+The local checkout is now at `C:\Users\admin\Desktop\PI&E`. Launchers derive the root from their script location. Run them from the checkout so Python resolves the package and relative resources correctly.
 
-## Run the reviewed textbook-concept stage
+Private sources, run directories and checkpoints moved with the repository. Historical logs retain their original paths. A bare public clone does not include those private inputs, so a source-dependent run cannot be reproduced from public code alone.
 
-This stage is intentionally unavailable from a bare public checkout. After the
-four generated foundations are present in the selected local checkpoint, and
-only when the ignored local lesson, source PDF, and extract fingerprints match,
-run one declared stage visibly:
+The [source gate](DOCUMENT_CURRICULUM_GATE.md) specifies admission requirements. Check source identifiers, exact file hashes and reviewed scope before using a source.
 
-    python -u -m kavi.school_cli --max-stages 1 --interval-ms 750 --state-file runs\kavi-school-state.json
+## Resource accounting
 
-The trace shows each local notation event, fixed pipe sequence, structural
-facets, response or abstention, candidate gate, resource estimate, and
-protected/held-out readouts. It never fetches a textbook. A missing lesson or
-mismatched hash produces a visible refusal rather than a substitute dataset or
-silent retry. See [TEXTBOOK_CONCEPT_STAGE.md](TEXTBOOK_CONCEPT_STAGE.md) for
-its exact scope.
+Record model parameters, optimizer state, replay, checkpoints, search workspace and source storage separately. Parameter size is not process memory. Process CPU time and wall time also differ, especially with multiple threads.
 
-## Pause and stop controls
+Current text experiments execute on CPU. Installed CUDA support does not establish GPU use. Temperature readings are unavailable unless a working sensor supplies them. Maintain finite time, step, candidate and disk limits, plus pause and stop controls.
 
-Use explicit, user-controlled files when a longer finite trace is desired:
+## Experiment record
 
-    python -u -m kavi live --steps 100 --pause-file C:\Kavi\PAUSE --stop-file C:\Kavi\STOP
+Preserve code revision and diff, dependency versions, hardware, thread count, seeds, source hashes, starting model hash, task generators, budgets, selection criteria, per-case outputs, resource observations and stopping reason. Record failed candidates and regressions.
 
-- Create the PAUSE file to pause at a control check.
-- Delete only the PAUSE file to resume.
-- Create the STOP file to end at the next control check.
-- The runtime never creates, deletes, or modifies either control file.
-- A stopped run does not save training state; its parent exists only in the
-  process memory until that process exits.
-
-Use a separate terminal to create or remove a control file. Do not force-kill a
-process if the stop control can be used safely.
-
-## Resource interpretation
-
-The visible ledger reports a model-level estimate: persistent scalar count,
-active pipe count, and an estimated transient-byte figure for the small
-prototype. It is not a measurement of all memory used by Python, the operating
-system, other applications, graphics hardware, or a device’s temperature.
-
-Kavi chooses serial pathway microsteps by default. The optional second worker
-is limited to independent evaluator cases, so device load can be compared
-explicitly. The program does not alter fans, power profiles, thermal cutoffs,
-or any hardware safety setting. Keep normal operating-system protections
-enabled.
-
-## Reproducible experiment record
-
-Before considering any experiment a result, create a compact record in
-experiments using the requirements in [experiments/README.md](../experiments/README.md).
-At minimum include the source commit, interpreter version, command, seed,
-resource configuration, fixed manifests, elapsed time, observed outputs,
-failures, and decision. Never publish credentials, personal data, raw private
-inputs, unreviewed documents, or large binary artifacts.
-
-## Troubleshooting
-
-| Symptom | Check |
-| --- | --- |
-| Import error for kavi | Run commands from the repository root, or install the package in an isolated environment if deliberately needed. |
-| Runtime stays paused | Check whether the supplied pause-file path still exists. |
-| Runtime ends early | Check whether the supplied stop-file path exists. |
-| A candidate is rejected | Read protected and held-out metrics; rejection preserves the frozen parent by design. |
-| Source is not admitted | Inspect curriculum/source-manifest.json and complete document-specific rights review outside the public repository. |
-| Textbook lesson is rejected | Check the approved source ID plus the local PDF and extract SHA-256 fingerprints; do not bypass the gate or substitute a generated corpus. |
-
-For the exact implementation boundary, see
-[IMPLEMENTATION_REFERENCE.md](IMPLEMENTATION_REFERENCE.md).
+Use the [evaluation protocol](EVALUATION_PROTOCOL.md) and [experiment record format](../experiments/README.md). Real curriculum restarts and hardware-policy changes require a reviewed configuration and project authorization.

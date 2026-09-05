@@ -2,7 +2,7 @@
 
 Date: 2026-09-04. Baseline teaching code: `ffb347e`.
 
-## Owner-authorized scope
+## Run scope
 
 Add multiple-language foundations, increase teaching difficulty, and reduce
 repetitive quizzes without replacing the model. A teacher restart was initially

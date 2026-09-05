@@ -45,7 +45,7 @@ not provide a quantum-speed claim.
 
 ## Run it
 
-From C:\Kavi:
+From the repository root:
 
     python -m unittest discover -s tests -v
     python -u -m kavi paths
@@ -57,10 +57,10 @@ limits.
 
 ### User controls
 
-    python -u -m kavi live --steps 100 --pause-file C:\Kavi\PAUSE --stop-file C:\Kavi\STOP
+    python -u -m kavi live --steps 100 --pause-file .\PAUSE --stop-file .\STOP
 
-- Create C:\Kavi\PAUSE to pause safely. Remove it to continue.
-- Create C:\Kavi\STOP to stop before the next event.
+- Create .\PAUSE to pause safely. Remove it to continue.
+- Create .\STOP to stop before the next event.
 - Kavi never creates, deletes, or ignores either control file.
 
 ## Ordered next gates

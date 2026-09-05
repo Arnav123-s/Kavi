@@ -2,7 +2,7 @@
 
 Author: Arnav123-s. Protocol written before this experiment's execution.
 Date: 2026-09-04. Status: completed; isolated candidates, no live rollout.
-Pre-execution revision: the owner clarified that the base should keep changing.
+The comparison keeps the base parameters trainable.
 The measured arms below therefore do not freeze any original trainable group.
 The adapter-only implementation remains a unit-test control, not the solution
 or an arm in this experiment.

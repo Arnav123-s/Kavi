@@ -10,7 +10,7 @@ from unittest.mock import patch
 
 from kavi.circuit_core import Circuit, Gate
 from kavi.circuit_search import CircuitSearch, Example, build_catalog
-from kavi.library_curriculum import LESSONS, partition, source_witness, target, transfer_cases
+from kavi.library_curriculum import LESSONS, SCALING_LESSON, partition, source_witness, target, transfer_cases
 from kavi.library_runtime import LibraryRun, LibraryRunConfig, subtraction_partition
 from kavi.circuit_runtime import RunStopped, BudgetExceeded
 from kavi.procedure_core import ExecutionLimit, Limits, Procedure, ProcedureLibrary
@@ -112,6 +112,33 @@ class ProcedureTests(unittest.TestCase):
             search.learn(1, [ProgramExample((0,), 1), ProgramExample((3,), 27)])
         self.assertEqual(search.stats.state, "exhausted")
         self.assertEqual(search.stats.candidates, 1)
+
+    def test_large_quantity_lesson_acquires_usable_call_order(self):
+        library = base()
+        library.add(Procedure("multiply", 2, "naturals", body=("repeat", "add", ("arg", 0), ("const", 0), ("arg", 1))))
+        original = library.procedures["multiply"].to_dict()
+        teaching, final = partition(SCALING_LESSON, 43)
+        self.assertFalse({e.inputs for e in teaching} & {e.inputs for e in final})
+        body = ProgramSearch(library, max_nodes=1).learn(2, teaching)
+        library.add(Procedure("scale", 2, "naturals", body=body))
+        self.assertEqual(library.procedures["multiply"].to_dict(), original)
+        self.assertEqual(library.execute("scale", (2**256, 31)).value, 31 * 2**256)
+        for example in final:
+            self.assertEqual(library.execute("scale", example.inputs).value, example.target)
+        with self.assertRaises(ExecutionLimit): library.execute("scale", (31, 2**256))
+        power = next(lesson for lesson in LESSONS if lesson.name == "power")
+        bank, _ = partition(power, 43)
+        learned = ProgramSearch(library, max_nodes=1).learn(2, bank)
+        library.add(Procedure("power", 2, "naturals", body=learned))
+        self.assertEqual(library.execute("power", (17, 10)).value, 17**10)
+
+    def test_followup_transfer_scope_and_option_validation(self):
+        for name in ("power", "factorial"):
+            old = {e.inputs for e in transfer_cases(name, 7)}
+            new = {e.inputs for e in transfer_cases(name, 43, extended=True)}
+            self.assertTrue(new)
+            self.assertFalse(old & new)
+        with self.assertRaises(ValueError): LibraryRunConfig(scaling_lesson=1).validate()
 
     def test_subtraction_acquisition_and_local_identity(self):
         teaching, held_out = subtraction_partition(11, 48)

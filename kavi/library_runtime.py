@@ -15,7 +15,7 @@ from .circuit_core import Circuit
 from .circuit_runtime import BudgetExceeded, RunStopped, save_model, write_json
 from .circuit_search import CircuitSearch, Example, build_catalog
 from .file_io import atomic_replace
-from .library_curriculum import LESSONS, audit_cases, partition, source_witness, target, transfer_cases
+from .library_curriculum import LESSONS, SCALING_LESSON, audit_cases, partition, source_witness, target, transfer_cases
 from .procedure_core import Limits, Procedure, ProcedureLibrary, describe
 from .procedure_search import ProgramExample, ProgramSearch, SearchExhausted
 from .trial_resources import memory_reading
@@ -33,8 +33,11 @@ class LibraryRunConfig:
     max_seconds: float = 900
     max_memory_mb: int = 512
     max_disk_mb: int = 128
+    scaling_lesson: bool = False
 
     def validate(self):
+        if type(self.scaling_lesson) is not bool:
+            raise ValueError("The scaling-lesson option must be Boolean.")
         if (not self.seeds or len(self.seeds) > 5 or len(set(self.seeds)) != len(self.seeds)
                 or any(type(seed) is not int or not 0 <= seed < 2**32 for seed in self.seeds)):
             raise ValueError("Use one through five distinct unsigned integer seeds.")
@@ -207,7 +210,10 @@ class LibraryRun:
                   "subtract": [ProgramExample((e.left, e.right), e.target) for e in teaching]}
         guard_transitions = []
         teacher_record = {"subtract": [asdict(e) for e in teaching]}
-        for lesson in LESSONS:
+        lessons = list(LESSONS)
+        if self.config.scaling_lesson:
+            lessons.insert(next(i for i, lesson in enumerate(lessons) if lesson.name == "power"), SCALING_LESSON)
+        for lesson in lessons:
             self.check()
             examples, held_out = partition(lesson, seed)
             teacher_record[lesson.name] = [asdict(e) for e in examples]
@@ -243,9 +249,11 @@ class LibraryRun:
         write_json(trial_dir / "selection-lock.json", lock)
         self.emit("selection_sealed", lock)
         evaluations = {}
-        for name in ["add", "subtract", *(lesson.name for lesson in LESSONS)]:
+        for name in ["add", "subtract", *(lesson.name for lesson in lessons)]:
             self.summary = f"Final independent evaluation of {name}; the selected library is sealed."
-            groups = {"audit": audit_cases(name), "transfer": transfer_cases(name, seed)}
+            transfers = (transfer_cases(name, seed, extended=True) if self.config.scaling_lesson
+                         else transfer_cases(name, seed))
+            groups = {"audit": audit_cases(name), "transfer": transfers}
             if name in final_banks: groups = {"held_out": final_banks[name], **groups}
             evaluations[name] = {label: self.evaluate(library, name, bank, label) for label, bank in groups.items()}
             if name in controls:

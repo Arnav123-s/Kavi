@@ -38,6 +38,9 @@ LESSONS = (
     Lesson("sum_squares", 2, (7, 7), 24, "derived_exercises", "Combine separately acquired products and addition."),
 )
 
+SCALING_LESSON = Lesson("scale", 2, (0, 0), 24, "derived_exercises",
+    "Acquire multiplication of a large quantity by a small count within the existing execution budget.")
+
 
 def target(name: str, args: tuple[int, ...]) -> int:
     """Reference operations belong to the teacher and evaluator, never inference."""
@@ -48,7 +51,7 @@ def target(name: str, args: tuple[int, ...]) -> int:
     if name == "sum3": return sum(args)
     if name == "triple": return a * 3
     if name == "adjusted_difference": return a - args[1] + args[2]
-    if name == "multiply": return a * args[1]
+    if name in {"multiply", "scale"}: return a * args[1]
     if name == "square": return a * a
     if name == "power": return a ** args[1]
     if name == "triangular": return a * (a + 1) // 2
@@ -58,7 +61,9 @@ def target(name: str, args: tuple[int, ...]) -> int:
 
 
 def partition(lesson: Lesson, seed: int):
-    cases = list(product(*(range(value + 1) for value in lesson.teaching_maxima)))
+    cases = (list(product((0, 1, 16, 64, 256, 513, 1024, 2048), range(8)))
+             if lesson.name == "scale" else
+             list(product(*(range(value + 1) for value in lesson.teaching_maxima))))
     if lesson.contract == "ordered_prefix":
         cases = [args for args in cases if args[0] >= args[1]]
     rng = random.Random(seed ^ int.from_bytes(lesson.name.encode(), "little"))
@@ -67,6 +72,8 @@ def partition(lesson: Lesson, seed: int):
     anchors = [tuple(0 for _ in range(lesson.arity)), tuple(1 for _ in range(lesson.arity))]
     if lesson.name == "factorial":
         anchors = [(0,), (1,), (2,), (3,), (4,), (5,)]
+    if lesson.name == "scale":
+        anchors += [(1024, 2)]
     for value in reversed(anchors):
         cases.remove(value)
         cases.insert(0, value)
@@ -84,7 +91,7 @@ def audit_cases(name: str):
         domain = product(range(16), repeat=3)
     elif name == "adjusted_difference":
         domain = ((a, b, c) for a in range(16) for b in range(a + 1) for c in range(16))
-    elif name in {"multiply", "sum_squares"}:
+    elif name in {"multiply", "scale", "sum_squares"}:
         domain = product(range(32), repeat=2)
     elif name == "power":
         domain = product(range(13), range(9))
@@ -97,7 +104,7 @@ def audit_cases(name: str):
     return [ProgramExample(args, target(name, args)) for args in domain]
 
 
-def transfer_cases(name: str, seed: int):
+def transfer_cases(name: str, seed: int, extended: bool = False):
     rng = random.Random(seed ^ int.from_bytes(name.encode(), "big") ^ 0x13579B)
     values = []
     if name in {"add", "subtract", "double", "triple", "sum3", "adjusted_difference"}:
@@ -108,7 +115,7 @@ def transfer_cases(name: str, seed: int):
                 if name == "subtract": args = tuple(sorted(args, reverse=True))
                 if name == "adjusted_difference": args = (*sorted(args[:2], reverse=True), args[2])
                 values.append(args)
-    elif name == "multiply":
+    elif name in {"multiply", "scale"}:
         # Both orders are declared: a one-sided repeated-addition algorithm may exhaust fuel.
         for bits in (16, 64, 256):
             for _ in range(4):
@@ -116,8 +123,8 @@ def transfer_cases(name: str, seed: int):
                 small = rng.randrange(17, 41)
                 values.extend(((big, small), (small, big)))
     elif name == "power":
-        values = list(product(range(13, 17), range(6, 10)))
-    elif name == "factorial": values = [(n,) for n in range(11, 15)]
+        values = list(product(range(17, 21), range(7, 11))) if extended else list(product(range(13, 17), range(6, 10)))
+    elif name == "factorial": values = [(n,) for n in (range(15, 19) if extended else range(11, 15))]
     elif name == "triangular": values = [(n,) for n in range(256, 385, 8)]
     elif name == "square": values = [(n,) for n in range(64, 97)]
     elif name == "sum_squares": values = [(rng.randrange(32, 64), rng.randrange(32, 64)) for _ in range(32)]
@@ -152,5 +159,5 @@ def source_witness(repo: Path) -> tuple[dict, dict[str, str]]:
                "author": metadata["author"], "catalog_url": metadata["catalog_url"],
                "witness_sha256": metadata["sha256"], "scopes": scopes,
                "teaching_boundary": "A supplied teacher interprets the selected arithmetic ideas and generates formal exercises. The learner receives numerical examples, not prose.",
-               "derived_exercises": "Power, triangular sums and sum of squares are separately authored composition probes; they are not presented as quoted lessons from the selected paragraphs."}
+               "derived_exercises": "Scaling, when enabled, power, triangular sums and sum of squares are separately authored composition probes; they are not presented as quoted lessons from the selected paragraphs."}
     return witness, extracts

@@ -23,7 +23,7 @@ class LearningWindow:
         self.last_preparation = None
         self.last_status = None
         self.library_digest = None
-        root.title("Kavi Live Learning")
+        root.title(f"Kavi Live Learning | {run_dir.name}")
         root.geometry("1180x760")
         root.minsize(820, 520)
         root.configure(bg="#15191f")

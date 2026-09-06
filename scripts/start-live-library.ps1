@@ -1,7 +1,8 @@
 param(
     [string]$Python = 'python',
     [string]$RunDir = '',
-    [string]$Config = ''
+    [string]$Config = '',
+    [switch]$Start
 )
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
@@ -13,7 +14,9 @@ if (-not $Config) {
 }
 Push-Location -LiteralPath $projectRoot
 try {
-    & $Python -B -m kavi.learning_window --run-dir $RunDir --config $Config
+    $windowArgs = @('-B', '-m', 'kavi.learning_window', '--run-dir', $RunDir, '--config', $Config)
+    if ($Start) { $windowArgs += '--start' }
+    & $Python @windowArgs
     if ($LASTEXITCODE -ne 0) { throw 'The learning window failed to start.' }
 }
 finally {

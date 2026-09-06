@@ -55,7 +55,7 @@ Open the visible window with `scripts/start-live-library.ps1`, or:
 python -B -m kavi.learning_window --config curriculum/library-run.json --run-dir runs/library-trial
 ```
 
-Inspect the configuration and press **Start teaching**. The same run is available in a terminal with `python -u -m kavi library run --config curriculum/library-run.json --run-dir runs/library-trial --interactive`. Use a new run directory. The window displays actual events and preserves its transcript after the finite worker finishes. Its controls request pause, resume or stop; closing it requests stop. A query operates on the latest saved library without further training.
+Inspect the configuration and press **Start teaching**. For an already reviewed and authorized run, append `--start` to start after the window opens; the PowerShell launcher exposes the same option as `-Start`. The same run is available in a terminal with `python -u -m kavi library run --config curriculum/library-run.json --run-dir runs/library-trial --interactive`. Use a new run directory. The window displays actual events and preserves its transcript after the finite worker finishes. Its controls request pause, resume or stop; closing it requests stop. A query operates on the latest saved library without further training.
 
 ```powershell
 python -m kavi library inspect --library runs/library-trial/library.json

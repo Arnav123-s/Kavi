@@ -179,9 +179,12 @@ def main():
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--preparation", type=Path)
     parser.add_argument("--ready-file", type=Path)
+    parser.add_argument("--start", action="store_true", help="Start the configured trial once the window opens.")
     args = parser.parse_args()
     root = tk.Tk()
-    LearningWindow(root, args.run_dir, args.config, args.preparation, args.ready_file)
+    window = LearningWindow(root, args.run_dir, args.config, args.preparation, args.ready_file)
+    if args.start:
+        root.after(1000, window.start)
     root.mainloop()
 
 

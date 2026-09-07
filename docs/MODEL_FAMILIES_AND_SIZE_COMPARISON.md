@@ -8,7 +8,9 @@ This comparison covers the principal model families and the closest structural-l
 
 ## Finding
 
-Kavi's current 2,238-byte retained artifact belongs to the small executable-program end of machine learning. It is much smaller than a language-model parameter array, but it has a much narrower interface and demonstrated capability. Small statistical models, formulas and synthesized programs can be smaller still. No equal-capability storage advantage over those systems has been measured.
+Kavi's 2,238-byte acquired baseline belongs to the small executable-program end of machine learning. It is much smaller than a language-model parameter array, but it has a much narrower interface and demonstrated capability. Small statistical models, formulas and synthesized programs can be smaller still. No equal-capability storage advantage over those systems has been measured.
+
+The subsequent [connector and sentence trial](../experiments/2026-09-07-connectors-language.md) has a 2,272-byte compiled arithmetic library and 26,810 bytes of sentence rules, lexical counts and provenance: 29,082 bytes combined. Its worker peaked at 26.36 MiB during a much smaller learning task. The comparison tables below retain the earlier acquired baseline; these new artifacts do not establish comparable language-model capability or a reduction in learning cost on matched tasks.
 
 The implemented learner selects discrete gates, connections and compositions from formal examples. Its closest description is bounded typed program induction over acquired finite-state transducers. Its broader proposed architecture adds adaptive shared structure, repair and abstraction discovery; those features must not be credited to the present implementation before they work.
 
@@ -16,7 +18,7 @@ The important distinction is what gets retained. Conventional neural models pred
 
 ## What counts as model size
 
-| Quantity | What it includes | Current evidence |
+| Quantity | What it includes | Baseline evidence |
 | --- | --- | --- |
 | Saved learned artifact | Canonical program library, names, types, gates and connections | 2,238 bytes; 13 procedures |
 | Execution implementation | Code that gives the saved instructions meaning | The two core source files total 19,100 bytes; this is a partial source inventory, not a standalone executable size |
@@ -25,7 +27,7 @@ The important distinction is what gets retained. Conventional neural models pred
 | External evidence | Sources, examples, audits and detailed run files | About 20.1 and 20.7 decimal MB of run files at the prior audit; source storage is separate |
 | Capability | Tasks solved under declared inputs, accuracy and resource limits | Elementary natural-number procedures; no prose comprehension or graduate subject assessment |
 
-The core source files are `kavi/circuit_core.py` (6,679 bytes) and `kavi/procedure_core.py` (12,421 bytes), measured on this revision. Python, its standard library, packaging and command interfaces are additional dependencies. Source-file bytes are not RAM or compiled binary bytes. Neither they nor learning memory should be silently included in one competitor's model size and excluded from another's.
+The baseline core source files were `kavi/circuit_core.py` (6,679 bytes) and `kavi/procedure_core.py` (12,421 bytes). After the connector extension, the procedure core is 15,442 bytes and the additional sentence/lexical core is 11,444 bytes. Python, its standard library, packaging and command interfaces are additional dependencies. Source-file bytes are not RAM or compiled binary bytes. Neither they nor learning memory should be silently included in one competitor's model size and excluded from another's.
 
 The retained library was assembled from compatible acquired procedures from two runs; it is not the output of a single autonomous consolidation run. Exact boundaries and failures are in the [experiment record](../experiments/2026-09-05-procedure-library.md).
 

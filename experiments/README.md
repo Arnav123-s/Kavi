@@ -19,6 +19,7 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Shared multiplication and sentence learning from original sources](2026-09-07-connectors-language.md)
 - [Procedure acquisition, reuse and execution cost](2026-09-05-procedure-library.md)
 - [Structural acquisition and repair of addition](2026-09-05-circuit-learning.md)
 

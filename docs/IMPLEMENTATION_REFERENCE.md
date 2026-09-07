@@ -4,7 +4,7 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The package contains separate symbolic and recurrent experiments. A supplied operation contract, an acquired coefficient and a learned program are distinct forms of supervision.
 
-The following inventory covers 62 Python modules under `kavi`: the 52 earlier modules, four modules for structural circuit learning and six for procedure acquisition and its live interface. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+The following inventory covers 65 Python modules under `kavi`: the 52 earlier modules, four modules for structural circuit learning, six for procedure acquisition and its live interface, and three for the connector and sentence extension. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
 
 ### Current structural learner
 
@@ -29,6 +29,16 @@ The runtime uses a supplied processing loop and one state register. Its learner 
 | `learning_window.py` | Visible start, real process transcript, pause/stop and saved-procedure queries |
 
 The learner chooses program arrangements in a supplied language. Two measured trials and a retained 13-procedure artifact are described in the [study](../experiments/2026-09-05-procedure-library.md). [Runtime contract](PROCEDURE_LIBRARY_RUNTIME.md).
+
+### Shared connectors and sentence learning
+
+| Module | Responsibility |
+| --- | --- |
+| `procedure_optimizations.py` | Check local addition behavior and compile a repeated-addition body to canonical binary multiplication |
+| `grounded_language.py` | Learn typed sentence frames from annotations; retain source-linked lexical memory; interpret or decline new requests |
+| `connector_language_cli.py` | Source admission, finite live trial, sealed evaluation and saved-model text queries |
+
+The existing procedure executor implements the connector and binary fold; the existing live window supports the new runner. [Protocol](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) and [measured results](../experiments/2026-09-07-connectors-language.md).
 
 ### A.1 Initial pathway and explanation experiments
 

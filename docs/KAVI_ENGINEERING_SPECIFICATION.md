@@ -10,6 +10,8 @@ First gate-acquisition baseline: 7908156e0241a9df4293e56231660fb234ca44de
 
 Earlier implementation baseline: 40a54f9b25fe7a8685e59f635d99f3fa3805a23d
 
+Extension, 7 September 2026: [shared connectors and sentence learning](../experiments/2026-09-07-connectors-language.md), implementation `5e803ac`. This later trial compiles multiplication to one canonical binary path, passes 16,431 product cases with 516 retained answers unchanged, and acquires 18 annotated sentence frames. The compiled arithmetic library is 2,272 bytes; separate lexical and sentence memory adds 26,810 bytes. All 181 tests pass. The chapters below and the printable PDF retain the earlier acquisition baseline; the linked extension supplies the updated architecture, source selection and evidence boundaries.
+
 ## Abstract
 
 Kavi investigates learning reusable operations as executable circuit structure. Teaching examples diagnose candidate procedures; a wrong result drives repair of the shared computation. The retained model consists of gates, connections and operations, while temporary signals and teaching episodes are outside its deployed memory. The broader objective is an adaptive computational graph that acquires useful structure and preserves required earlier behavior.

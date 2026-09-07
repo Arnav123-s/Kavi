@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The second structural experiment extends the learned addition circuit with acquired subtraction and a library of executable programs. A teacher turns selected arithmetic ideas into formal examples. The learner chooses program structure; it does not read the source prose. This is an algorithmic foundation experiment. University or graduate competence requires separate subject-level assessment and is not established by these tasks.
 
+The later [connector and sentence extension](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) adds checked multiplication compilation and a small learned text interface. The acquisition experiment described below retains its original instruction vocabulary and source provenance.
+
 ## Architecture
 
 | Module | Responsibility |
@@ -20,6 +22,8 @@ The first addition graph is imported as a declared acquired prerequisite. The le
 The instruction forms are `arg`, `const`, `call`, `repeat` and `range`. Constants are zero and one. Input signatures, natural-number types, operation names, iteration semantics and curriculum order are supplied. The learner selects callees, argument expressions, nesting and iteration operands within that language. A selected iteration program is not evidence that the learner invented iteration itself.
 
 Programs refer only to earlier definitions. Calls are pure and values are bounded to 4,096 bits. Inference limits separately bound calls, gate evaluations, nested iterations and depth. Temporary values and traces disappear after a query. Runtime limits can reject a mathematically valid input that is too costly for a selected algorithm.
+
+Extended libraries use schema `kavi.procedure-library.v2` for an `unordered_pair` connector or the `binary_fold` instruction. Version-one artifacts remain byte-identical when serialized. The checked compiler uses these extensions; the original program search does not propose them. Complete-call event counts and explicit truncation flags accompany traces. `--trace-limit` controls stored call records from zero through 100,000, with a default of 128.
 
 ## Acquisition and comparisons
 
@@ -73,3 +77,5 @@ Each seed stores accepted stages, base-only libraries, search records, teaching 
 The [completed study](../experiments/2026-09-05-procedure-library.md) records the initial trial and a follow-up with `scaling_lesson` enabled. The latter inserts a large-quantity lesson before power and uses distinct, larger power and factorial transfer inputs. It keeps the language and execution limits fixed. The [scaling protocol](SCALING_LESSON_PROTOCOL.md) defines the changed data and interpretation.
 
 A retained 13-procedure artifact is published at `experiments/library-20260905-retained.json`. It combines compatible acquired procedures from the two trials after exact dependency checks; it is a supplied packaging result. Original per-seed libraries and failures remain preserved.
+
+The compiled successor is `experiments/library-20260907-compiled.json`: 13 procedures in 2,272 bytes. Only multiplication changes. Both operand orders enter the same binary computation and preserve existing callers. The [7 September study](../experiments/2026-09-07-connectors-language.md) records 16,431 correct product cases, 47 complete swapped-trace matches, 516 protected cases and the original-source sentence trial.

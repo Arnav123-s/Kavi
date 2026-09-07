@@ -1,0 +1,681 @@
+{
+  "schema": "kavi.connector-language-study.v1",
+  "author": "Arnav123-s",
+  "run_id": "connector-language-20260907-01",
+  "source_commit": "5e803ac",
+  "date": "2026-09-07",
+  "state": "completed",
+  "evidence": {
+    "rows_checked": 16975,
+    "rows_by_kind": {
+      "product": 16431,
+      "retention": 516,
+      "language": 28
+    },
+    "files": {
+      "cases.jsonl": {
+        "bytes": 650319,
+        "sha256": "5a93f821fb601472ec5e572f6da89bc9f3ff4244ae1800ec8ebb5e88b6770c8c"
+      },
+      "events.jsonl": {
+        "bytes": 35636,
+        "sha256": "94a9a6356a7efd339c1e17a334ef9e26e4117b857327c8f30664bec7842c8b10"
+      },
+      "language.json": {
+        "bytes": 26810,
+        "sha256": "e0bd207108ac94a9b676f44dd076f03a49ac9442a2d256e3bd7ed4b4cb86013a"
+      },
+      "library.json": {
+        "bytes": 2272,
+        "sha256": "a8279da0f32dba35ccfedfb82b7cd5289bf39f0eba5d958fcd85a426fb31c60d"
+      },
+      "result.json": {
+        "bytes": 20622,
+        "sha256": "56c74ccfb50f537532d13aa98d3df195093563c63c4fe9948d5aa2ba36eec10d"
+      },
+      "status.json": {
+        "bytes": 238,
+        "sha256": "9ed693ab47eaaea1f9fb5ee862b428ad52f36834c1e0de8fd36823942079879c"
+      }
+    },
+    "run_disk_bytes_at_audit": 735897,
+    "packet_bytes": 25023,
+    "teacher_disabled_reload": "47 swapped pairs and all 28 declared language cases passed",
+    "lexical_units_exposed": 314,
+    "distinct_lexical_nodes": 240,
+    "lexical_adjacency_pairs": 296,
+    "note": "Lexical accounting reuses the declared tokenizer. Arithmetic references are separate from the procedure executor."
+  },
+  "python": "3.13.5",
+  "wall_seconds": 2.653202399989823,
+  "cpu_seconds": 2.625,
+  "resources": {
+    "available_bytes": 20273487872,
+    "working_set_bytes": 27643904,
+    "peak_bytes": 27643904,
+    "logical_cpus": 16,
+    "cpu_temperature": null,
+    "temperature_note": "No reliable CPU-temperature telemetry is available here."
+  },
+  "compiler": {
+    "kind": "checked_compiler_transformation",
+    "source_sha256": "0a089a0b26fa2b453ed3f896637f47684920d1dfe9568edb6515bd6775285ec6",
+    "result_sha256": "a8279da0f32dba35ccfedfb82b7cd5289bf39f0eba5d958fcd85a426fb31c60d",
+    "procedure": "multiply",
+    "addition_rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "invariant": "accumulator + count * step = initial_left * initial_right",
+    "scope": "Exact natural-number results within declared value and execution limits; not a formal proof of Python."
+  },
+  "library": {
+    "before_bytes": 2238,
+    "shared_library_bytes": 2272,
+    "independent_closure_bytes": 9068,
+    "procedures": 13,
+    "sha256": "a8279da0f32dba35ccfedfb82b7cd5289bf39f0eba5d958fcd85a426fb31c60d"
+  },
+  "language": {
+    "bytes": 26810,
+    "sha256": "e0bd207108ac94a9b676f44dd076f03a49ac9442a2d256e3bd7ed4b4cb86013a",
+    "rules": 18,
+    "lexical_nodes": 240,
+    "passages": [
+      {
+        "source": "hume-enquiry-original-e2",
+        "sha256": "55ca0157d7369b3886cec04abf6a022517f66dc59c9ffde4d6c67114e9c748f0",
+        "tokens": 56
+      },
+      {
+        "source": "kant-original-aa3-27",
+        "sha256": "3c039817216bede74d2063529b77ec9e7892d5ebf71696fb9e908453b0851f05",
+        "tokens": 78
+      },
+      {
+        "source": "plato-apology-original-17a",
+        "sha256": "ad5f556327ad53d3153f24240beb36d7a35c26b8741b03d53be65ece49b47b88",
+        "tokens": 34
+      },
+      {
+        "source": "newton-original-leges-1713",
+        "sha256": "0d640077220a9831d483ade34909111150c33225a23ac36a78fbfcd5de284da1",
+        "tokens": 56
+      },
+      {
+        "source": "vivekananda-raja-yoga-original-intro",
+        "sha256": "12ec423279ede68f772682f9ec7a6a206c324211c4b1ac98b1eeabdebb7fe7eb",
+        "tokens": 58
+      },
+      {
+        "source": "analects-original-stanford-a",
+        "sha256": "736eb2796a2a4f92d108313a35161c25184414afaf7a059bfdd32bfbaa928aab",
+        "tokens": 32
+      }
+    ],
+    "teaching_examples": 36,
+    "training_work": {
+      "examples": 36,
+      "alignments": 36
+    }
+  },
+  "product": {
+    "cases": 16431,
+    "correct": 16431,
+    "identical_swapped_traces": 47,
+    "swap_pairs": 47
+  },
+  "retention": {
+    "protected_cases": 516,
+    "regressions": 0
+  },
+  "trace_check": {
+    "calls": 221,
+    "default_records": 128,
+    "default_truncated": true,
+    "complete_records": 221,
+    "complete_truncated": false
+  },
+  "language_evaluation": {
+    "cases": 28,
+    "correct": 28,
+    "by_group": {
+      "unseen_arguments_known_frames": {
+        "cases": 12,
+        "correct": 12
+      },
+      "new_content_known_relation_frames": {
+        "cases": 7,
+        "correct": 7
+      },
+      "taught_lexical_recall": {
+        "cases": 2,
+        "correct": 2
+      },
+      "unsupported_capability_probes": {
+        "cases": 5,
+        "correct": 5
+      },
+      "ambiguity": {
+        "cases": 1,
+        "correct": 1
+      },
+      "ordered_contract_failure": {
+        "cases": 1,
+        "correct": 1
+      }
+    }
+  },
+  "demonstrations": [
+    {
+      "inputs": [
+        3,
+        100000
+      ],
+      "value": 300000,
+      "calls": 3,
+      "frames": 37,
+      "gates": 185,
+      "iterations": 2,
+      "trace": [
+        {
+          "procedure": "add",
+          "inputs": [
+            0,
+            100000
+          ],
+          "output": 100000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            100000,
+            200000
+          ],
+          "output": 300000,
+          "depth": 3
+        },
+        {
+          "procedure": "multiply",
+          "inputs": [
+            3,
+            100000
+          ],
+          "output": 300000,
+          "depth": 0
+        }
+      ],
+      "trace_events": 3,
+      "trace_truncated": false,
+      "connector_comparisons": 1,
+      "bit_tests": 2,
+      "shifts": 3
+    },
+    {
+      "inputs": [
+        100000,
+        3
+      ],
+      "value": 300000,
+      "calls": 3,
+      "frames": 37,
+      "gates": 185,
+      "iterations": 2,
+      "trace": [
+        {
+          "procedure": "add",
+          "inputs": [
+            0,
+            100000
+          ],
+          "output": 100000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            100000,
+            200000
+          ],
+          "output": 300000,
+          "depth": 3
+        },
+        {
+          "procedure": "multiply",
+          "inputs": [
+            3,
+            100000
+          ],
+          "output": 300000,
+          "depth": 0
+        }
+      ],
+      "trace_events": 3,
+      "trace_truncated": false,
+      "connector_comparisons": 1,
+      "bit_tests": 2,
+      "shifts": 3
+    },
+    {
+      "inputs": [
+        3,
+        1000000
+      ],
+      "value": 3000000,
+      "calls": 3,
+      "frames": 43,
+      "gates": 215,
+      "iterations": 2,
+      "trace": [
+        {
+          "procedure": "add",
+          "inputs": [
+            0,
+            1000000
+          ],
+          "output": 1000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            1000000,
+            2000000
+          ],
+          "output": 3000000,
+          "depth": 3
+        },
+        {
+          "procedure": "multiply",
+          "inputs": [
+            3,
+            1000000
+          ],
+          "output": 3000000,
+          "depth": 0
+        }
+      ],
+      "trace_events": 3,
+      "trace_truncated": false,
+      "connector_comparisons": 1,
+      "bit_tests": 2,
+      "shifts": 3
+    },
+    {
+      "inputs": [
+        1000000,
+        3
+      ],
+      "value": 3000000,
+      "calls": 3,
+      "frames": 43,
+      "gates": 215,
+      "iterations": 2,
+      "trace": [
+        {
+          "procedure": "add",
+          "inputs": [
+            0,
+            1000000
+          ],
+          "output": 1000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            1000000,
+            2000000
+          ],
+          "output": 3000000,
+          "depth": 3
+        },
+        {
+          "procedure": "multiply",
+          "inputs": [
+            3,
+            1000000
+          ],
+          "output": 3000000,
+          "depth": 0
+        }
+      ],
+      "trace_events": 3,
+      "trace_truncated": false,
+      "connector_comparisons": 1,
+      "bit_tests": 2,
+      "shifts": 3
+    },
+    {
+      "inputs": [
+        1000000,
+        1000000
+      ],
+      "value": 1000000000000,
+      "calls": 8,
+      "frames": 246,
+      "gates": 1230,
+      "iterations": 20,
+      "trace": [
+        {
+          "procedure": "add",
+          "inputs": [
+            0,
+            64000000
+          ],
+          "output": 64000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            64000000,
+            512000000
+          ],
+          "output": 576000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            576000000,
+            16384000000
+          ],
+          "output": 16960000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            16960000000,
+            65536000000
+          ],
+          "output": 82496000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            82496000000,
+            131072000000
+          ],
+          "output": 213568000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            213568000000,
+            262144000000
+          ],
+          "output": 475712000000,
+          "depth": 3
+        },
+        {
+          "procedure": "add",
+          "inputs": [
+            475712000000,
+            524288000000
+          ],
+          "output": 1000000000000,
+          "depth": 3
+        },
+        {
+          "procedure": "multiply",
+          "inputs": [
+            1000000,
+            1000000
+          ],
+          "output": 1000000000000,
+          "depth": 0
+        }
+      ],
+      "trace_events": 8,
+      "trace_truncated": false,
+      "connector_comparisons": 1,
+      "bit_tests": 20,
+      "shifts": 39
+    }
+  ],
+  "source_files": {
+    "kavi/__init__.py": "b153398c254c52e3a3044416fb1b74cc9cccf6d1856238d3cb91397daeaca701",
+    "kavi/__main__.py": "aa0e0deb29d47f02ad1da0e5d9d05da91987ce398ec84e959722955b859544ac",
+    "kavi/adaptive_cli.py": "5ac1afde02a9a12ee818151afbd3d13b5a77b143bb062a50f170b49c1ebca185",
+    "kavi/adaptive_syllabus.py": "dccd51f0f703d4c50d6f8bf82fcf9d7d03a03bf337711fa132dfc7ee0203c3b0",
+    "kavi/book_curriculum.py": "daa23736ae17929cec2468081fa6b0bd9b08d3a1658e3b597832cda88cd8d60d",
+    "kavi/catalog_cli.py": "d4c60047cf1582346569d30e08d231118b86caa0116df55110b16fdecee231ac",
+    "kavi/circuit_cli.py": "bbb9bb974d9e72fe91fec7ddd747318a3567185d111ec68cb53d35d47d74ff18",
+    "kavi/circuit_core.py": "73579e7d0dd177dfa1e1ea5831667adb4436f961fecef2e62282834d55e4a005",
+    "kavi/circuit_runtime.py": "b100af4c31e1de97ecfce51b23fed9600827951054cd324940feedb3b8a6cb84",
+    "kavi/circuit_search.py": "cf4b13d3283112e21d5b0f355845ea5d08a35950d9352a7e4742e114795567e6",
+    "kavi/cli.py": "40419f46e2063bc5e9262f40c850fef5c41be813a638a5fa423ffbd4a04ebc75",
+    "kavi/composition_curriculum.py": "c95b53dd433941fc28226d7cf346563cc24fae425176e8b92af00b949238395c",
+    "kavi/composition_evaluation.py": "cc50c812ba7b4a08f8373509c3808237543ddae5f4300ce47ccfb314717f4e3f",
+    "kavi/connector_language_cli.py": "76f4d1fcbdd5980788e72c3609f0e0c59ca053f1a45e13fbf1fdcb1d21114142",
+    "kavi/consolidation_trials.py": "3198f6c0dbbfadf2ec3ee1051d97b14c1c3a1f72a07c66f7a80e2c3685069032",
+    "kavi/continuous_teacher.py": "2952b2b39b1bc06c73b73de445fb487745f58cab0820d542bf000521c226cdd2",
+    "kavi/developmental.py": "25a2a58e307aa41a71ec12e5b35e944c06ad74bc3a30f60816f179f7bf668c8c",
+    "kavi/explanation_learning.py": "a9b8273f2a4dc4ca0c7b50ac26f0bd86ad2465dd98a88dd9276a132f4715797d",
+    "kavi/file_io.py": "6a267b9ef4bcb945cab196b2a607704e1dbe4e87c074ad89f86094474b6accfb",
+    "kavi/flow_preservation.py": "3bfbc2005d14d78c47e46fbe60b979bf7043479fc19c0d657dbd23c1742af1ca",
+    "kavi/forward_repair.py": "b31ec708dab620981ab8b062789ac0527fccdbbf3f2be049b73a9e08f37d01f7",
+    "kavi/friendly_live.py": "03128f19c5924bfaea18f8fb6d6bb3bd6d6eea0607e2f3b05b982734c088ee58",
+    "kavi/graph.py": "e1f07df034a6aec73d168a6b66bf290e21a3012dba0cbb92557c8c805f10dde8",
+    "kavi/grounded_language.py": "b030fddb2bc1ba0d98de46e003624695c7edd157d4fa5c4080cf55bdeae80c30",
+    "kavi/language_curriculum.py": "c329a5c32ac531e8d32f07fb975a282c57e408abcb4234bd766cb2d6c2c6b7d8",
+    "kavi/language_teacher.py": "01727773881787f54c22cf848eb12a206637837cde591e76866025fb5217a696",
+    "kavi/learning.py": "aaba7e5acbaf106d952ceb65e22cd8c97e88f4507f5bf42b1a8e44ee4091fe4c",
+    "kavi/learning_window.py": "c487350ad2c04affd3ffdf1ee1bca3622a85efd089281442a5f419c508e7b4f4",
+    "kavi/lesson_cli.py": "8f797dc0d058ab8dcc314d523ab50fa311f8d917b4000b8d244ff2acefc6ac99",
+    "kavi/lesson_runtime.py": "b806b6a3f01ac7d59a2f052dc4cb4605ac69b5613042037c9df2347dbb7af10e",
+    "kavi/lessons.py": "fd81158387573cd9aa79169b1e69f24bd85f2ec2a21ef1078a1d89278b306104",
+    "kavi/library_cli.py": "63db3af11a27c29be982125ffe2d1dc42d67696230c70cd19f263ce46dd46c6c",
+    "kavi/library_curriculum.py": "b7ebc5d16e6fec9b1ca27022034af1ae668555f0bc223efad254c6176dba09cd",
+    "kavi/library_runtime.py": "8fc21fa9bc4dc25d2e4a532113c8dc3fae4753a693108e6897a97aca0567eea1",
+    "kavi/mixed_quizzes.py": "6a2c48618629f0fd956c5f04a452a210902d0c6a1d4cf004e1750cd7f84d062e",
+    "kavi/multilingual_bridge.py": "01e275593e999b099075e6ebc0fa9ad77b7137c3a468c1caa5b9a90ab5b438c3",
+    "kavi/pathway_circuit.py": "7d9a369d4a3fbcaacab2a9b88b835acf00e1f6634ed7fbf8de769f1a571fc99b",
+    "kavi/pathway_cli.py": "b96c0fc93c60d349c1ff9d05bd6bf50dd2327da99a8a22cc9f99cba447921772",
+    "kavi/pathway_live.py": "6613e8e1bb1b120c804dde7add924e6a2e7509d2d4c6565ee71408d4c8a797bb",
+    "kavi/pathway_trials.py": "d78926e67098579ece516a1196edb43baab588ccf09d6b4b09e5dc26cf15da87",
+    "kavi/procedure_core.py": "b62659f8b6a7f97f2111ea0a48d2a7592e7256accb52a7f945f4177c232856d2",
+    "kavi/procedure_optimizations.py": "238db2a67c790dda0d7bb0506f154f2b435f6dfcd808816c272b5c88f07b0273",
+    "kavi/procedure_search.py": "1e812ee5044c34396899cd40e941669c75f541d13444b39cb4f2b51c56f6609a",
+    "kavi/repair_trials.py": "c7c79e22f9b8124b62dada152c51000f20dfe8e70cdb89c46bc29625101e71c2",
+    "kavi/runtime.py": "5224c43ae83bbc126d8f60620d35bc9ec84a2b56d3fee90f0a50aa99254509fd",
+    "kavi/school.py": "a93cec2a89a6c75259c37746fdbf2c0dc8482c28a37df922c54d8ac27b5a59ea",
+    "kavi/school_cli.py": "0831626ab5a0b957c83a17390efefd8a4220a3b682b94a3204d8b267fef8baa6",
+    "kavi/script_reference.py": "bad90582f968db8b883e5cd28ddd73962ce94780cf6809cd7c24703d3c794f68",
+    "kavi/source_cli.py": "519cb72e172bd8c50e661ee8a8743b47f6a21a7abe383d8f72d552a1d8a7abf1",
+    "kavi/source_manifest.py": "85754844a368bdc3266a23ff7f292305d09d0cbaef9d68326e3de0b8cd02ada5",
+    "kavi/strategy_trials.py": "5902596ab7fe3727f6951bd5cac7383cd7bf7e2036aada3f78a74516f3ec01e2",
+    "kavi/symbol_core.py": "870389fdb4fe3558fa98354db25ca93ad4a64db60e22580fd556486bd18f7414",
+    "kavi/symbol_runtime.py": "0e9428fd7d1e09353bdd70c0b0cce71b76a674211f52977287f6688531e669a6",
+    "kavi/teaching_comparison.py": "1cf7d17c92763fd95c4304a1d30958c532ea3de80f4d8046b81133f0ce55de74",
+    "kavi/teaching_search.py": "ebbb57c8d2cc8eaa830f0770380ed15c0f1d8308c4c8492596a1fb23fdb6d2db",
+    "kavi/teaching_sources.py": "025f5da2cfa106e7e17b96d472c32923c44f9127052905baa27474c026fad32b",
+    "kavi/terminal.py": "b710eb9e1f44def38c6d126c05e87768f4c1256e989998e111543d0283191835",
+    "kavi/textbook_core.py": "5a7dafb9bb31d02a02ff188eb69ddb974d4a6caf9e78c1bd2a44311e7225516f",
+    "kavi/textbook_runtime.py": "3bd6d9ea2266bd03f02347df3312d40f29f09ff87afff9113feb02c5cd41d715",
+    "kavi/trial_resources.py": "c351213d4de0ab35580f996654e0b1ec342ec3f578ad6a718e30148f594f6ead",
+    "kavi/types.py": "113a861df700d18e3e721a3d3bdd33a5a0fbffa827e053a59513aecc69e6f9c3",
+    "kavi/unicode_core.py": "a212fcc3349d68089b21aa2ec18ef76cfb0571761669ee5c91927973922ad40f",
+    "kavi/unicode_runtime.py": "44daa5b42b69a3b962d216a7220b2afffc1dbda7b2657cd63b1f04e78921e2b8",
+    "kavi/wave_cli.py": "4b2dcf8e1ff6ab39679adb4f4f63bd8f1431d073f95fcf5435cd9e76bab089e7",
+    "kavi/wave_core.py": "cf0adff1d9a427ffd2b71a77ca5e77f9605ec8fece1977a7ad472eb3cf1333c3"
+  },
+  "sources": [
+    {
+      "source_id": "hume-enquiry-original-e2",
+      "title": "An Enquiry concerning Human Understanding, section II",
+      "creator": "David Hume",
+      "original_url": "https://davidhume.org/texts/e/2",
+      "language": "English",
+      "edition": "Hume Texts Online; eighteenth-century original English text; E 2.3",
+      "region": "Scotland",
+      "period": "eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "55ca0157d7369b3886cec04abf6a022517f66dc59c9ffde4d6c67114e9c748f0"
+    },
+    {
+      "source_id": "kant-original-aa3-27",
+      "title": "Kritik der reinen Vernunft, AA III 27",
+      "creator": "Immanuel Kant",
+      "original_url": "https://www.korpora.org/kant/aa03/027.html",
+      "language": "German",
+      "edition": "Akademie edition electronic transcription, second-edition introduction; lines 14–21",
+      "region": "Prussia",
+      "period": "eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "3c039817216bede74d2063529b77ec9e7892d5ebf71696fb9e908453b0851f05"
+    },
+    {
+      "source_id": "plato-apology-original-17a",
+      "title": "Apology, 17a",
+      "creator": "Plato",
+      "original_url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0059/tlg002/tlg0059.tlg002.perseus-grc2.xml",
+      "language": "Ancient Greek",
+      "edition": "John Burnet, Platonis Opera I, Clarendon Press 1905; Perseus transcription; first paragraph opening",
+      "region": "Ancient Greece",
+      "period": "classical antiquity",
+      "license_class": "public-domain-us",
+      "extract_sha256": "ad5f556327ad53d3153f24240beb36d7a35c26b8741b03d53be65ece49b47b88"
+    },
+    {
+      "source_id": "newton-original-leges-1713",
+      "title": "Principia, Axiomata Sive Leges Motus, 1713",
+      "creator": "Isaac Newton",
+      "original_url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00081",
+      "language": "Latin",
+      "edition": "1713 edition; Newton Project normalized transcription; Laws I–III statements only",
+      "region": "England",
+      "period": "early eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "0d640077220a9831d483ade34909111150c33225a23ac36a78fbfcd5de284da1"
+    },
+    {
+      "source_id": "vivekananda-raja-yoga-original-intro",
+      "title": "Raja-Yoga, Introductory",
+      "creator": "Swami Vivekananda",
+      "original_url": "https://www.ramakrishnavivekananda.info/vivekananda/volume_1/raja-yoga/introductory.htm",
+      "language": "English",
+      "edition": "Complete Works, volume 1, Raja-Yoga, chapter I, opening paragraph; digital transcription supported by Advaita Ashrama and catalogued by the University of Pennsylvania. Page does not specify its print impression.",
+      "region": "India",
+      "period": "late nineteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "12ec423279ede68f772682f9ec7a6a206c324211c4b1ac98b1eeabdebb7fe7eb"
+    },
+    {
+      "source_id": "analects-original-stanford-a",
+      "title": "Analects, opening passage (1.1)",
+      "creator": "Confucius and early followers (received collection)",
+      "original_url": "https://chinesetexts.stanford.edu/2-lun-yu-%E8%AB%96%E8%AA%9E-the-analects/",
+      "language": "Classical Chinese",
+      "edition": "Stanford Chinese Philosophical Texts, lesson 2, extract A, lines 1–3. Identified teaching transcription of the received text; no claim of a critical edition. Only the ancient Chinese passage is used, excluding modern glosses and translations.",
+      "region": "Ancient China",
+      "period": "classical antiquity",
+      "license_class": "public-domain-us",
+      "extract_sha256": "736eb2796a2a4f92d108313a35161c25184414afaf7a059bfdd32bfbaa928aab"
+    }
+  ],
+  "before_compilation": [
+    {
+      "inputs": [
+        3,
+        100000
+      ],
+      "value": 300000,
+      "iterations": 3
+    },
+    {
+      "inputs": [
+        100000,
+        3
+      ],
+      "error": "Iteration budget exhausted."
+    },
+    {
+      "inputs": [
+        3,
+        1000000
+      ],
+      "value": 3000000,
+      "iterations": 3
+    },
+    {
+      "inputs": [
+        1000000,
+        3
+      ],
+      "error": "Iteration budget exhausted."
+    },
+    {
+      "inputs": [
+        1000000,
+        1000000
+      ],
+      "error": "Iteration budget exhausted."
+    }
+  ],
+  "model_bytes_combined": 29082,
+  "scope": "Checked multiplication compilation and annotated sentence-frame induction; no general language, philosophy or creativity claim.",
+  "window_process": {
+    "peak_working_set_bytes_after_completion": 39792640,
+    "scope": "Separate process observed after the run; not a simultaneous combined memory measurement."
+  }
+}

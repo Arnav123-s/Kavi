@@ -128,3 +128,15 @@ The existing design discussion is summarized in this initial record. Its earlier
 - Record the three-seed result: five gates, 321 bytes, complete declared accuracy and zero exhaustive-audit regressions. Keep general control-structure discovery and library learning as subsequent work.
 
 See [runtime](CIRCUIT_RUNTIME.md) and [evidence](../experiments/2026-09-05-circuit-learning.md).
+
+## 2026-09-07: shared operand connectors and bounded sentence learning
+
+- Canonicalize operand order only for operations whose semantics permit it. Preserve subtraction order and directed language roles.
+- Compile the verified repeated-addition procedure to binary scanning through the acquired addition gates. Label the transformation as supplied engineering.
+- Keep earlier artifacts unchanged; publish the 2,272-byte compiled successor with its identity checks and retention evidence.
+- Report completed call events and trace truncation explicitly.
+- Learn a first set of sentence frames from annotated examples. Separate clause-role extraction and lexical recall from truth assessment, argument understanding and creativity.
+- Exclude Gutenberg from the new packet. Use identified original-language witnesses from Greece, China, India and Europe; retain historical experiment provenance.
+- Keep source bodies, lexical artifacts and full logs local. Publish authored exercises, source metadata and compact measurements.
+
+See the [protocol](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) and [completed trial](../experiments/2026-09-07-connectors-language.md).

@@ -75,6 +75,8 @@ The 28 language checks are reported by group: 12 calculations with new arguments
 
 These are developer-authored partitions for a first integration trial, not an independently designed language benchmark or evidence of graduate proficiency. No source passage, final answer, teacher function or annotation file is consulted by saved-model arithmetic inference. Source-specific lexical recall is explicitly a lookup in retained memory. All numerical work, source exposure and language-frame learning have separate result fields.
 
+The [completed 7 September trial](../experiments/2026-09-07-connectors-language.md) records the actual results, model sizes, source exposure, limitations and independent evidence audit.
+
 ## Next requirements
 
 The next substantive learning mechanism is compositional parsing with reusable typed meanings, explicit entities, scope and negation, followed by checked inference over those meanings. Literature requires speaker and narrator distinctions, metaphor, ambiguity and interpretation tied to passages. Research reading requires assumptions, methods, evidence and limitations. Creativity needs an independently assessed task with novelty and usefulness criteria. None follows automatically from adding more books or counting more words.

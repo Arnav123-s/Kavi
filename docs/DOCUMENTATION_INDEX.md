@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) is intended for reading and printing.
+The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) records the baseline through the first two procedure trials. The subsequent [connector and sentence-learning study](../experiments/2026-09-07-connectors-language.md) records the latest implementation and measurements.
 
 The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md), [discrete runtime](CIRCUIT_RUNTIME.md) and [procedure runtime](PROCEDURE_LIBRARY_RUNTIME.md) distinguish the broader design from its implemented instances. The specification and PDF include structural acquisition, bounded program learning, live interfaces, measured reuse and remaining failures. Detailed commands remain in the runtime references.
 
@@ -10,7 +10,7 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 | Document | Scope |
 | --- | --- |
-| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 62 package modules |
+| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 65 package modules |
 | [Discrete circuit runtime](CIRCUIT_RUNTIME.md) | Learned gates, structural search, execution and live controls |
 | [Procedure library runtime](PROCEDURE_LIBRARY_RUNTIME.md) | Acquired calls, supplied iteration, bounded program search and live learning window |
 | [Recurrent model equations](WAVE_MODEL_MATH.md) | Forward computation, training and costs |

@@ -4,11 +4,13 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The first structural-learning milestone is implemented and measured: acquisition and repair of a reusable addition transition under a supplied executor. See the [experiment record](../experiments/2026-09-05-circuit-learning.md). The broader objective remains efficient adaptation and preservation through learned computation.
 
+The [procedure-library study](../experiments/2026-09-05-procedure-library.md) adds acquisition of subtraction and small programs, measured library comparisons, a scaling lesson and a retained 13-procedure artifact. It demonstrates useful call reuse and exposes slower search with an enlarged vocabulary. The next bottlenecks are algorithmic efficiency, proposal ranking and safe changes to shared definitions.
+
 ## Order of work
 
 1. Preserve the current finite experiment, its exact partitions, costs and source fingerprints.
 2. Expand the hypothesis class beyond a supplied one-bit recurrence and measure the cost of discovering control structure.
-3. Acquire several different operations and test whether learned components reduce search on new compositions.
+3. Extend the measured multi-operation result to new task families and determine when reuse reduces total acquisition cost.
 4. Separate learned abstraction from the compiler's existing identical-subexpression sharing.
 5. Compare continual structural repair with ordinary program search and matched numerical baselines.
 6. Introduce noisy feedback, disagreement and calibrated abstention under explicit contracts.

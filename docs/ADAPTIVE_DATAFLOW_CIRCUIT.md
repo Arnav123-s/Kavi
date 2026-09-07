@@ -4,7 +4,7 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Revision: 5 September 2026
 
-Status: architectural objective with a bounded implemented instance. The [discrete runtime](CIRCUIT_RUNTIME.md) learns and repairs Boolean transition circuits; its [first trial](../experiments/2026-09-05-circuit-learning.md) records acquisition and retention results. General self-reconfiguration, learned control structure and uncertain-feedback handling remain proposed.
+Status: architectural objective with bounded implemented instances. The [discrete runtime](CIRCUIT_RUNTIME.md) learns and repairs Boolean transition circuits. The [procedure runtime](PROCEDURE_LIBRARY_RUNTIME.md) acquires programs that call earlier operations, with measured reuse and resource failures in the [library study](../experiments/2026-09-05-procedure-library.md). General self-reconfiguration, discovered control semantics and uncertain-feedback handling remain proposed.
 
 ## 1. The learned object
 

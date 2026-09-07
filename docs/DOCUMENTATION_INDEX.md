@@ -4,14 +4,15 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) is intended for reading and printing.
 
-The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md) and [discrete runtime](CIRCUIT_RUNTIME.md) distinguish the broader design from its implemented instance. The specification and PDF now include structural acquisition, repair, the live interface and the first measured trial. Detailed command documentation remains in the runtime reference.
+The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md), [discrete runtime](CIRCUIT_RUNTIME.md) and [procedure runtime](PROCEDURE_LIBRARY_RUNTIME.md) distinguish the broader design from its implemented instances. The specification and PDF include structural acquisition, bounded program learning, live interfaces, measured reuse and remaining failures. Detailed commands remain in the runtime references.
 
 ## Implementation and operation
 
 | Document | Scope |
 | --- | --- |
-| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 56 package modules |
+| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 62 package modules |
 | [Discrete circuit runtime](CIRCUIT_RUNTIME.md) | Learned gates, structural search, execution and live controls |
+| [Procedure library runtime](PROCEDURE_LIBRARY_RUNTIME.md) | Acquired calls, supplied iteration, bounded program search and live learning window |
 | [Recurrent model equations](WAVE_MODEL_MATH.md) | Forward computation, training and costs |
 | [Internal text learning](INTERNAL_LEARNING_AND_MEMORY.md) | Learner state and teaching |
 | [Operations](OPERATIONS_AND_REPRODUCIBILITY.md) | Environments, commands and controls |
@@ -34,6 +35,8 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 | [Multilingual foundations](MULTILINGUAL_FOUNDATIONS.md) | Broader language and source plan |
 | [Source admission](DOCUMENT_CURRICULUM_GATE.md) | Provenance and reviewed scope |
 | [Historical works curriculum](HISTORICAL_WORKS_CURRICULUM.md) | Source-guided operation learning, argument analysis and visible trial procedure |
+| [Scaling lesson](SCALING_LESSON_PROTOCOL.md) | Execution cost, acquired call order and downstream transfer |
+| [Advanced capability protocol](ADVANCED_CAPABILITY_PROTOCOL.md) | Engineering prerequisites, subject assessment and the storage hypothesis |
 
 ## Research design
 

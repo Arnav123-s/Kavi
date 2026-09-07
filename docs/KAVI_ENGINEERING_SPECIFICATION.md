@@ -2,9 +2,11 @@
 
 Author: Arnav123-s
 
-Revision: 5 September 2026
+Revision: 7 September 2026
 
-Structural learner baseline: 7908156e0241a9df4293e56231660fb234ca44de
+Structural learner baseline: 0453052f83d9a02a126b37fd15900c092ce2ed0b
+
+First gate-acquisition baseline: 7908156e0241a9df4293e56231660fb234ca44de
 
 Earlier implementation baseline: 40a54f9b25fe7a8685e59f635d99f3fa3805a23d
 
@@ -14,7 +16,7 @@ Kavi investigates learning reusable operations as executable circuit structure. 
 
 A bounded structural learner is now implemented. It acquires a binary-addition transition from whole-operand examples using AND, XOR and NOT gates under a supplied streaming executor. Three declared seeds produced the same five-gate, 321-byte circuit. Each passed 127 independent four-bit pairs, all 65,536 pairs in an eight-bit audit, and 190 longer-input cases up to 1,024 bits, with zero audit regressions. The full run took 5.281 seconds on one CPU process. The audit includes selection examples; the reserved and longer-input banks are separate final tests.
 
-The result depends on engineered binary encoding, a repeated processing loop, one temporary state bit and a counterexample-guided search controller. It establishes operation acquisition within that hypothesis class. Learning control structure, general libraries, language interpretation, uncertainty handling and the update rule itself remain open. Earlier symbolic and 66,880-parameter recurrent experiments are retained as separate systems, with their original limitations and regressions. The mathematical basis connects adaptive graph rewriting, finite-state transducers, program synthesis and reusable abstractions.
+Two subsequent live trials acquired subtraction and small programs over earlier operations. A 113-byte acquired call arrangement enabled powers and factorials to pass all declared follow-up tests. A retained library combines 13 compatible acquired procedures in 2,238 bytes. The larger vocabulary also made one task time out. These results depend on supplied types, iteration semantics and search; general abstraction invention, shared repair, prose interpretation and advanced subject capability remain open. Earlier symbolic and 66,880-parameter recurrent experiments remain separate systems. The mathematical basis connects graph rewriting, finite-state transducers and typed program induction.
 
 ## 1 Research objective and design requirements
 
@@ -53,7 +55,7 @@ The structural circuit experiment is implemented and was run under its declared 
 
 ### 2.1 Repository structure
 
-The earlier baseline contains 52 package modules and 12,193 lines. Four structural-learning modules bring the current package inventory to 56 modules. The original 138 tests passed after relocation; all 153 tests passed after the circuit implementation using Python 3.13.5 and PyTorch 2.6.0. The finite structural trial used the standard library under Python 3.12.14. Unit tests establish specified software behavior. They do not establish language understanding, scientific competence or general intelligence.
+The earlier baseline contains 52 package modules and 12,193 lines. Four circuit-learning and six procedure-library modules bring the current inventory to 62. The original 138 tests passed after relocation, 153 passed after circuit implementation, and 169 passed after the procedure and scaling extensions under Python 3.13.5 with PyTorch 2.6.0. The first gate trial used Python 3.12.14; the library trials used Python 3.13.5 and the standard library. Unit tests establish specified software behavior, not language understanding or scientific competence.
 
 Three representations must remain distinct throughout development.
 
@@ -61,7 +63,7 @@ Three representations must remain distinct throughout development.
 | --- | --- | --- |
 | Symbolic pathway circuit | Prototype centers, support counts, arithmetic coefficients, typed route contracts and adapters | Implemented and tested on restricted tasks |
 | Recurrent text circuit | Byte embeddings, output projection, routing coefficients, phases and memory gates | Implemented; measured short-sequence learning |
-| Executable circuit and program graph | Gate operations and connections; broader control and reusable procedures | Gate-transition acquisition implemented; general program learning remains proposed |
+| Executable circuit and program graph | Gate operations, connections and small programs calling acquired procedures | Transition acquisition and bounded typed program learning implemented; broader control and abstraction invention remain proposed |
 
 The physics-native design is another proposed core, with continuous state and an energy function. It is not an explanation of what the current recurrent code secretly computes. Its equations need their own implementation and validation.
 
@@ -94,6 +96,16 @@ The new implementation has four modules: `circuit_core` for strict graph data an
 The current circuit is a two-state Mealy transducer. Two operand bits and one temporary state bit enter a learned combinational graph; one output bit and the next state leave it. The state starts at zero and the interpreter repeats the graph across input positions, followed by one zero-input frame. Gate selection and wiring are learned. Framing, the state register and the loop are supplied. The graph does not reshape itself during an individual query.
 
 Search enumerates Boolean expressions, compiles shared subexpressions and filters candidate transition pairs using counterexamples. A selected graph must satisfy the entire teaching and protection bank before being installed. A fixed node budget and ranking prefer small structure; no target-specific whole-input lookup is available to the graph. The external search uses truth masks for speed, while deployed inference executes gate nodes.
+
+### 2.6 Acquired procedure library
+
+Six modules extend the gate learner: `procedure_core`, `procedure_search`, `library_curriculum`, `library_runtime`, `library_cli` and `learning_window`. A strict library stores acquired gate circuits and program trees. Programs can read arguments, use zero or one, call earlier procedures, repeat a binary operation with a fixed step, or fold it over an integer range. The learner chooses names to call, argument arrangements and nesting. It does not discover the supplied instruction semantics.
+
+Values are natural numbers of at most 4,096 bits. Signatures accept one through three inputs, with explicit ordered-input contracts where required. Calls only target earlier definitions, preventing dependency cycles. Execution counts actual calls, gate work and iterations under finite fuel. Each query resets temporary circuit state. Teachers, source records and search caches are absent from deployed inference.
+
+Search enumerates expressions by instruction-tree size and uses recency as a declared prior over acquired calls. It retains one representative per output vector on the teaching bank. That observational pruning is heuristic, not a proved semantic rewrite or a complete search guarantee. A selected program is freshly executed against all teaching targets. Full library selection ends before final evaluation and its canonical artifact is sealed by hash.
+
+The teacher formalizes reviewed De Morgan passages as arithmetic exercises. Scaling, powers, triangular sums and sums of squares are separately authored composition probes. The learner does not interpret prose. Earlier definitions remain immutable during these trials; their retention is append-only preservation. Runtime details are in `docs/PROCEDURE_LIBRARY_RUNTIME.md`.
 
 ## 3 Current text model mathematics
 
@@ -246,6 +258,26 @@ Counterexample counts omit successful verification exposures and cannot be descr
 
 The final evaluator loaded the graph after a selection lock and never modified it. All eight local quantity-conservation identities passed a separate post-selection check. This supports the documented mathematical induction argument; the Python runtime itself has not been verified by a proof assistant. The trial demonstrates narrow procedure acquisition and structural repair under strong supplied assumptions, with no claim of superiority to a matched neural model.
 
+### 4.6 Procedure acquisition and scaling
+
+Two three-seed trials at revisions `a54d196` and `0453052` took 45.868 and 56.349 seconds on one CPU process. Each seed imported the earlier addition graph, learned subtraction from 48 examples, then acquired small programs. An independent audit checked all 723,668 final evaluation records across both trials, including base-only comparisons and failed cases. Peak worker memory was 48,963,584 and 50,249,728 bytes. Raw run files occupied about 20.1 and 20.7 MB at audit; those costs are separate from the compact model.
+
+Initial seeds 7 and 19 retained 11 procedures in 2,004 bytes; seed 31 retained 12 in 2,131 bytes. Subtraction acquired five gates and passed 88 withheld cases, all 32,896 ordered eight-bit pairs and 32 length-transfer cases per seed. Every declared test passed for addition, subtraction, double, sum3, triple, adjusted difference, square, triangular sum and sum of squares. Multiplication passed its small domains but only 12 of 24 larger-input probes because its repeated-addition program loops over its first operand. Factorial failed from 8! onward under the iteration limit. Power was absent in two seeds and failed its larger probes in the third.
+
+The follow-up inserted 24 large-quantity scaling examples under the unchanged search language and execution limits. Every seed acquired `scale(a, b) = multiply(b, a)` in nine candidates, adding 113 canonical bytes. New power and factorial programs called this acquired arrangement with a growing accumulator and a small count. All follow-up seeds passed 18 withheld, 117 audit and 16 transfer power cases; factorial passed 3 withheld, 11 audit and 4 transfer cases. The transfer ranges included 20 to the tenth power and 18 factorial. These are elementary calculations, not evidence of graduate reasoning.
+
+The larger vocabulary also made sum-of-squares search exceed ten seconds in every follow-up seed. The base-only condition acquired it after 2,337 candidates. All such failures remain in the result. The follow-up changed the curriculum after observing the first trial; its new seeds and larger probes do not make it a blind replication. Earlier domain audits remain regression diagnostics. The complete protocol, partitions, per-seed measurements and source fingerprints are recorded in `experiments/2026-09-05-procedure-library.md` and its JSON companion.
+
+### 4.7 Storage, reuse and retained procedures
+
+Tripling needed one candidate with access to acquired sum3 versus 145 using only acquired addition and subtraction. Squaring needed one versus 49. Other tasks became slower with the larger vocabulary. Both conditions use the same task examples and budgets within a trial, but their three-instruction hypothesis classes differ in expressive power. The result is selective reuse, not a general advantage over alternative learners.
+
+Later accepted follow-up programs added 109 to 171 bytes each. The 12-procedure shared library occupied 2,094 bytes versus 8,032 bytes for independently packaged dependency closures, a 73.9 percent reduction under that packaging control. The control is not an optimal compressed-code lower bound. Marginal storage did not decline monotonically or approach zero, and runtime cost could still grow rapidly.
+
+A supplied packaging step appended the previously acquired sum-of-squares procedure to the follow-up library after verifying exact equality of its add, multiply and square dependencies. The retained artifact has 13 procedures in 2,238 bytes. Every existing follow-up definition remains unchanged. Eleven recorded queries and a further 1,089-case sum-of-squares audit passed after combination. This is preservation of compatible acquired work, not another learning trial or learned consolidation.
+
+There were zero regressions across 4,506 protected case checks in the initial trial and 5,184 in the follow-up. Those totals count checks across stages, not unique inputs. Definitions were immutable; safe changes to shared dependencies remain untested. Original multiplication and its scaling wrapper still fail opposite halves of the large-operand-order probes, and the learner has no automatic dispatcher between them.
+
 ## 5 Closest mathematical relatives
 
 ### 5.1 Overall classification
@@ -254,7 +286,7 @@ The broader Kavi proposal is a dynamical system on computational graphs with fee
 
 The implemented instance is narrower: counterexample-guided synthesis of output and transition functions for a two-state Mealy transducer. Its learning controller and frame loop are engineered. This gives a concrete mathematical model for the first result without equating it to the whole adaptive architecture.
 
-Typed program induction and library learning remain relevant to future acquisition of larger reusable procedures. [DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) searches programs, develops abstractions and learns to guide subsequent search. That is a close relative of the library-learning component, rather than a complete description of the intended adaptive medium.
+The current procedure extension is bounded typed program induction over acquired finite-state transducers. [DreamCoder](https://people.csail.mit.edu/asolar/papers/EllisWNSMHCST21.pdf) is a close library-learning relative: it searches programs, develops abstractions and learns to guide subsequent search. Kavi currently uses a fixed enumerator and supplied task signatures. It does not implement DreamCoder's learned search system or automatic abstraction invention.
 
 ### 5.2 Structural compression
 
@@ -286,7 +318,7 @@ The physical proposal has a different nearest relative: [port-Hamiltonian system
 | --- | --- | --- |
 | Adaptive circuit objective | Feedback-dependent computational graph rewriting | Control and update-rule acquisition remain open |
 | Implemented circuit | Counterexample-guided synthesis of a two-state transducer | Frame loop, encoding and state capacity are supplied |
-| General learned procedures | Typed program induction and library learning | Cross-task library acquisition remains proposed |
+| Acquired procedures | Typed program induction and library learning | Bounded calls and supplied iteration are implemented; general abstraction invention remains proposed |
 | Structural consolidation | MDL and library learning modulo equations | Compression requires a defined encoding and valid identities |
 | Behavioral repair | Counterexample-guided synthesis and program repair | Repair changes meaning and needs fresh correctness evidence |
 | Equivalent-path optimization | Equality saturation | Optimizes represented alternatives, not all possible programs |
@@ -570,7 +602,7 @@ For program search, useful uncertainty signals include multiple consistent progr
 
 ## 11 Software architecture
 
-The current four-module structural learner implements a bounded instance of the following component contracts. Source-based teaching, general libraries, learned proposal policies and consolidation across tasks remain extension points.
+The gate learner and procedure extension implement bounded instances of the following contracts. A supplied teacher formalizes reviewed source material; the learner acquires circuits and small programs. General abstraction invention, learned proposal policies and consolidation across tasks remain extension points.
 
 ### 11.1 Component contracts
 
@@ -602,7 +634,7 @@ A learned text teacher is optional. Deterministic lesson generators with exact v
 
 ### 11.4 Module boundaries for implementation
 
-The implemented modules are `circuit_core`, `circuit_search`, `circuit_runtime` and `circuit_cli`. The root CLI dispatches `python -m kavi circuit` to this interface. General type systems, program libraries and richer control structures remain future modules; keep their grammar, search policy and evaluation generator independently replaceable.
+The gate modules are `circuit_core`, `circuit_search`, `circuit_runtime` and `circuit_cli`. The procedure extension adds `procedure_core`, `procedure_search`, `library_curriculum`, `library_runtime`, `library_cli` and `learning_window`. The root CLI dispatches `python -m kavi circuit` and `python -m kavi library` to their respective interfaces. Richer type systems and discovered control semantics remain future work. Keep grammar, search policy and evaluation generators independently replaceable.
 
 Avoid placing another large learner inside a CLI module. The existing `pathway_circuit` and `pathway_live` modules already concentrate substantial logic. New core behavior should expose small testable functions and explicit state transitions; command-line entry points should assemble configuration, invoke the core and present results.
 
@@ -713,7 +745,7 @@ The [Tiny Recursive Models study](https://arxiv.org/abs/2510.04871) supports inv
 
 The inspected device has an Intel Core i7-10870H with eight physical cores and sixteen logical processors, approximately 31.78 GiB of reported system memory, and a GeForce GTX 1650 Ti with approximately 4 GiB of graphics memory. The verified project interpreter is Python 3.13.5 with PyTorch 2.6.0+cu124. The current experiments use CPU execution; installed CUDA support does not mean a run used the GPU.
 
-All 153 automated tests passed after the structural learner was added. The new 15 tests cover acquisition, executor consistency, isolated model loading, invalid graphs, long carries, contradictory feedback, controls and budget termination. The finite structural run then completed separately under Python 3.12.14 using only the standard library. The historical 138-test relocation result remains part of the earlier evidence.
+All 169 automated tests passed after the procedure and scaling extensions. The suite covers circuit acquisition, executor consistency, isolated serialization, invalid graphs and libraries, nested iteration, partial resource accounting, large-quantity call-order acquisition, preserved definitions, source fingerprints and run controls. The first gate run used Python 3.12.14; both library runs used Python 3.13.5. The earlier 138- and 153-test results remain historical evidence.
 
 The repository now resides in `C:\Users\admin\Desktop\PI&E`. The move preserved 1,357 files and 228,925,215 bytes, with per-file SHA-256 verification. This total includes local run state and private material as well as source code. Private source and run folders remain excluded from public version control.
 
@@ -725,6 +757,7 @@ Run commands from the repository root with the intended Python environment. The 
 python -B -m unittest discover -s tests -q
 python -m kavi --help
 python -m kavi circuit --help
+python -m kavi library --help
 python -m kavi.pathway_cli --help
 python -m kavi.wave_cli --help
 ```
@@ -756,18 +789,18 @@ Use a small, versioned public result summary with enough detail to assess the cl
 | Milestone | Deliverable | Acceptance criterion | Planning allowance |
 | --- | --- | --- | --- |
 | M0 Structural baseline | Frozen circuit experiment, resource record and independent final banks | Recorded three-seed run, portable model and per-case evidence | Completed 5 September 2026 |
-| M1 Typed program core | Interpreter, grammar, bounded search and exact verifier | Acquire several small transformations from examples without supplied target paths | 2 to 4 weeks |
-| M2 Compositional transfer | Shared library and new task families | Lower adaptation cost than the same search without library learning | 3 to 6 weeks |
+| M1 Typed program core | Interpreter, grammar, bounded search and exact verifier | Acquire small arithmetic programs from examples without supplied target arrangements | Bounded arithmetic instance measured 5 September 2026 |
+| M2 Compositional transfer | Shared library and new task families | Lower adaptation cost under disclosed comparisons and preserved behavior | Selective arithmetic gains measured; broader test remains open |
 | M3 Continual repair | Local edits, retention contracts and failure handling | Correct new tasks with a measured improvement in retention-cost tradeoff | 3 to 6 weeks |
 | M4 Verified consolidation | Sound rewrites and explicit description-length accounting | Smaller complete artifact with preserved covered behavior | 2 to 4 weeks |
 | M5 Controlled language interface | Parser, ambiguity handling and source-linked lessons | New compositions and independently reviewed language tests | Several months |
 | M6 Broader research validation | External task suite and independently reproducible results | Advantage survives task, seed and budget controls | Depends on earlier evidence |
 
-The current gate experiment also establishes a bounded part of M1 and a finite-domain repair result relevant to M3. It does not complete their broader multi-operation and comparative objectives. Remaining time ranges are planning estimates for focused engineering by one experienced contributor, with overlap possible. They exclude time spent resolving failed research hypotheses and do not predict when a capability will appear.
+The gate experiment supplies a finite-domain shared repair result relevant to M3. The procedure trials add a bounded M1 implementation and mixed evidence for M2: useful reuse alongside search slowdowns and budget failures. Broader types, discovered abstractions and new algorithm families remain untested. Remaining time ranges are planning allowances, not predictions of when a capability will appear; they exclude failed research hypotheses.
 
 ### 15.2 Priority decisions
 
-Extend the implemented structural learner toward acquisition of control structure and multiple typed operations. Preserve the earlier symbolic and recurrent implementations as separate baselines. Allow backpropagation where it is useful; compare alternatives by cost and outcome. Separate repair from equivalent compression. Establish real execution costs before adding elaborate physical state.
+Extend the measured program learner toward efficient algorithms, better proposal ranking, richer types and controlled acquisition of branches. Preserve earlier implementations and original failed trials as comparison evidence. Separate changes to shared behavior from equivalent compression and append-only growth. Count any numerical proposal model if one is added. Establish execution and search costs before adding elaborate physical state.
 
 Do not expand the curriculum merely because a current gate is difficult. Diagnose whether the limitation is input representation, credit assignment, capacity, search, teaching examples or evaluation design. More source text does not resolve an unidentified architectural failure.
 
@@ -781,13 +814,13 @@ A negative result with a precise mechanism and controlled experiment is useful r
 
 ### 16.1 Present level
 
-Kavi now has a measured structural operation learner. It acquired a compact addition transition, transferred across the declared input lengths and repaired its shared computation without losing earlier correct answers in the exhaustive finite audit. The graph and experiment are reproducible and independent of teaching-record retrieval during inference.
+Kavi now has a measured structural operation learner and bounded procedure acquisition. A retained artifact combines 13 acquired operations in 2,238 bytes. It executes learned circuits and programs without retrieving teaching equations. A small acquired scaling arrangement enabled useful downstream power and factorial programs, while other search and execution failures remain documented.
 
-This is a narrow implemented instance of the intended architecture. The representation, state capacity, processing loop and learning controller are supplied. Acquiring those structures, sharing abstractions across distinct operations and learning language remain open. Earlier symbolic execution and limited internal text learning remain separate evidence.
+This is a narrow implemented instance of the intended architecture. Representation, state capacity, types, instruction semantics and the learning controller are supplied. Acquiring those semantics, inventing abstractions across substantially different tasks and interpreting language remain open. Earlier symbolic execution and limited text learning remain separate evidence. No university or master's-level subject competence has been established.
 
 ### 16.2 Next research milestone
 
-The next research milestone is a small learner that acquires several procedures from examples, reuses them to solve new compositions, and repairs later mistakes with less forgetting or lower total cost than clear baselines. This would extend the current addition result even if the supported domains remained lists, strings and arithmetic.
+The next research milestone is to improve algorithmic efficiency and abstraction selection while preserving a continuing library. Repeated addition is too expensive for multiplication of two large operands. Library growth can make naive enumeration slower. A useful extension must address these measured bottlenecks, then demonstrate transfer to new task families and safe changes to shared dependencies.
 
 The potential contribution lies in a specific combination: typed local repair, reusable structure, measured consolidation and explicit resource limits in one continuing learner. Those individual ideas have extensive prior art. Novelty would need to reside in a new mechanism, a formal result or a convincing empirical tradeoff, rather than in their names or combination alone.
 
@@ -802,6 +835,8 @@ Reaching that level requires robust parsing, explicit unsupported cases, predict
 Language, scientific reasoning and open-ended problem solving add ambiguity, world knowledge, long context, noisy supervision and difficult verification. Typed program structure may help organize acquired skills, but it does not supply those capabilities automatically. A hybrid with learned perception and language interpretation is plausible; its extra models and data must be counted.
 
 A laptop can support useful experiments and a narrow deployed learner. Current evidence does not justify forecasting frontier-level general intelligence, universal no-forgetting, unlimited memory or the solution of major open mathematical problems. No defensible numeric probability of those outcomes follows from the repository.
+
+An advanced mathematics and computer science target requires proofs, unfamiliar algorithmic problems, statistical reasoning, model selection and independent research work. Official graduate course descriptions in [advanced algorithms](https://ocw.mit.edu/courses/6-854j-advanced-algorithms-fall-2005/pages/syllabus/) and [machine learning](https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/pages/syllabus/) provide scope references. The project protocol in `docs/ADVANCED_CAPABILITY_PROTOCOL.md` separates teaching exposure, independent task families, exact checks and expert assessment. No automatic arithmetic score confers that capability label.
 
 ### 16.5 Conditions for success
 
@@ -832,7 +867,7 @@ Each exercise should produce a small executable result and a failure case. Readi
 
 ## Appendix A Implemented component inventory
 
-The current package contains 56 modules. The four additions implement the discrete structural learner; the remaining 52 describe the earlier systems.
+The current package contains 62 modules. Four implement the discrete gate learner, six implement procedure acquisition and its interface, and 52 describe the earlier systems.
 
 | Module | Responsibility |
 | --- | --- |
@@ -840,6 +875,12 @@ The current package contains 56 modules. The four additions implement the discre
 | `circuit_search.py` | Expression catalog, graph compilation and counterexample-guided search |
 | `circuit_runtime.py` | Teacher, run controls, protected behavior and independent evaluation |
 | `circuit_cli.py` | Live run, queries, inspection, watching and controls |
+| `procedure_core.py` | Strict library format, acquired calls, iteration, serialization and traces |
+| `procedure_search.py` | Bounded expression search, temporary caches and all candidate work |
+| `library_curriculum.py` | Source witnesses, formal lessons and final evaluation generators |
+| `library_runtime.py` | Acquisition, vocabulary comparisons, storage, controls and sealed results |
+| `library_cli.py` | Run, inspect, query, console, status and controls |
+| `learning_window.py` | Visible worker, actual transcript, pause/stop and saved queries |
 
 
 The following inventory covers all 52 Python modules under `kavi` at the inspected baseline. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
@@ -952,7 +993,7 @@ An execution trace is evidence of what ran. A natural-language explanation is an
 | --- | --- |
 | Internal text parameters change from teaching | Implemented and observed in recorded experiments |
 | Earlier text core has 66,880 base parameters | Derived from inspected shapes and checked model accounting |
-| Regression suite | 138 tests passed after relocation; 153 passed after structural implementation |
+| Regression suite | 138 after relocation; 153 after gate learning; 169 after procedure and scaling extensions |
 | Longer copying generalizes reliably | Not supported by the recorded five-symbol results |
 | Small repair connectors eliminate forgetting | Refuted by the recorded correct-to-wrong transitions |
 | All 196 selected guard answers can be retained | Observed for one selected consolidation fraction |
@@ -960,7 +1001,10 @@ An execution trace is evidence of what ran. A natural-language explanation is an
 | An extra forward jump improves final correctness | Not observed in the paired three-seed comparison |
 | Typed composition executes supplied contracts | Implemented and checked within a bounded curriculum |
 | Gate-level operation acquisition and repair | Implemented and measured under a supplied streaming executor |
-| General control-structure and program acquisition | Unimplemented |
+| Bounded program acquisition and acquired calls | Implemented and measured; supplied types and iteration semantics |
+| General control semantics and abstraction invention | Unimplemented |
+| Compact retained procedure library | 13 acquired procedures, 2,238 bytes; supplied combination after exact dependency checks |
+| Library growth always improves acquisition | Contradicted by measured search slowdowns and timeouts |
 | General library compression preserves learned knowledge | Proposed; requires specified semantics and experiments |
 | Physics-inspired dynamics outperform simpler models | Unmeasured |
 | Finite resources can hold arbitrary unlimited information | Incompatible with finite-state counting |
@@ -1008,8 +1052,10 @@ Sources were inspected on 5 September 2026. The scope column distinguishes full-
 
 ## Appendix E Repository evidence
 
-The earlier code analysis uses commit `40a54f9b25fe7a8685e59f635d99f3fa3805a23d`. The structural learner and its first trial use commit `7908156e0241a9df4293e56231660fb234ca44de`. The public record `experiments/2026-09-05-circuit-learning.md`, compact JSON report and saved gate graph identify the measured result. Source fingerprints and full per-case records remain with the local run. The principal numerical evidence comes from the public experiment records and their corresponding local JSON reports:
+The earlier code analysis uses commit `40a54f9b25fe7a8685e59f635d99f3fa3805a23d`. Gate acquisition uses `7908156e0241a9df4293e56231660fb234ca44de`; the library trials use `a54d196` and `0453052`. The public circuit and procedure-study records include compact JSON evidence and saved acquired models. Source fingerprints and full per-case records remain with the local runs. The evidence includes:
 
+- `experiments/2026-09-05-procedure-library.md`
+- `experiments/2026-09-05-circuit-learning.md`
 - `experiments/2026-09-04-teaching-and-pathways.md`
 - `experiments/2026-09-04-small-repair-connections.md`
 - `experiments/2026-09-04-verified-consolidation.md`
@@ -1018,4 +1064,4 @@ The earlier code analysis uses commit `40a54f9b25fe7a8685e59f635d99f3fa3805a23d`
 - `experiments/2026-09-04-language-first-repair.md`
 - `experiments/2026-09-04-contrast-teaching.md`
 
-Private source bodies, large earlier checkpoints and detailed run records remain local. The small learned circuit and compact structural results are included in the repository. The published measurements describe those recorded runs. No additional training outcome is implied by the mathematical analysis or development plan in this specification.
+Private source bodies, large earlier checkpoints and detailed run records remain local. Small learned circuits, procedure libraries and compact results are included in the repository. The 13-procedure retained artifact is a documented combination of previously acquired compatible procedures. Published measurements describe the recorded runs and separately labeled post-combination checks. The mathematical analysis and development plan do not add training evidence.

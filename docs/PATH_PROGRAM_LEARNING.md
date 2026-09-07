@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Status: counterexample-guided gate-circuit acquisition is implemented in the [discrete runtime](CIRCUIT_RUNTIME.md). The broader typed language and learned-library mechanisms described here remain proposed within the [adaptive dataflow design](ADAPTIVE_DATAFLOW_CIRCUIT.md).
+Status: gate-circuit acquisition and a bounded natural-number program language are implemented in the [discrete](CIRCUIT_RUNTIME.md) and [procedure](PROCEDURE_LIBRARY_RUNTIME.md) runtimes. The [measured study](../experiments/2026-09-05-procedure-library.md) records acquired calls, supplied iteration, useful reuse and search failures. Richer types, abstraction invention and the broader mechanisms below remain proposed within the [adaptive dataflow design](ADAPTIVE_DATAFLOW_CIRCUIT.md).
 
 The learned object is a typed executable program and a library of acquired subprocedures. A primitive defines its input types, result type, behavior, failure cases and execution cost. Candidate paths must type-check before execution.
 

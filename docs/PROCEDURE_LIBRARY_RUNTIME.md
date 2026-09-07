@@ -67,3 +67,9 @@ python -m kavi library control --run-dir runs/library-trial stop
 ```
 
 Each seed stores accepted stages, base-only libraries, search records, teaching banks, a selection lock, identity checks and final results. `events.jsonl`, `cases.jsonl`, `source-witness.json`, `environment.json`, `status.json` and `report.json` preserve the complete local evidence. A completed experiment can contain failed tasks; completion is not a mastery label.
+
+## Measured extension
+
+The [completed study](../experiments/2026-09-05-procedure-library.md) records the initial trial and a follow-up with `scaling_lesson` enabled. The latter inserts a large-quantity lesson before power and uses distinct, larger power and factorial transfer inputs. It keeps the language and execution limits fixed. The [scaling protocol](SCALING_LESSON_PROTOCOL.md) defines the changed data and interpretation.
+
+A retained 13-procedure artifact is published at `experiments/library-20260905-retained.json`. It combines compatible acquired procedures from the two trials after exact dependency checks; it is a supplied packaging result. Original per-seed libraries and failures remain preserved.

@@ -17,6 +17,10 @@ Every candidate must preserve the foundation bank and satisfy the repair bank. F
 
 The principal measurements are exact correctness, per-case gains and regressions, gate and frame evaluations, complete candidate simulation counts, verifier calls, encoded model bytes, search time, process memory and external evidence storage. A local eight-row identity check is evaluated only after selection; its induction argument depends on the documented executor. No broad retention or calibrated-confidence claim follows from the finite trial.
 
+## Procedure library protocol
+
+The newer [procedure-library protocol](PROCEDURE_LIBRARY_RUNTIME.md) seals each complete selected library before final evaluation, and reports task-level withheld, audit and transfer results. Its comparison with base-only addition/subtraction uses the same per-task examples and ceilings but a different bounded vocabulary. Retention is checked under immutable earlier definitions. The [scaling follow-up](SCALING_LESSON_PROTOCOL.md) was designed after observing the first trial; new seeds and larger probes do not make it a blind replication. The [advanced capability protocol](ADVANCED_CAPABILITY_PROTOCOL.md) sets separate requirements for subject-level assessment.
+
 ## Earlier arithmetic prototype partitions
 
 The earlier stage-0 arithmetic harness has three distinct partitions.

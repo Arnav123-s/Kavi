@@ -4,7 +4,7 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The package contains separate symbolic and recurrent experiments. A supplied operation contract, an acquired coefficient and a learned program are distinct forms of supervision.
 
-The following inventory covers 56 Python modules under `kavi`: the 52 earlier modules and four modules added for structural learning. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+The following inventory covers 62 Python modules under `kavi`: the 52 earlier modules, four modules for structural circuit learning and six for procedure acquisition and its live interface. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
 
 ### Current structural learner
 
@@ -16,6 +16,19 @@ The following inventory covers 56 Python modules under `kavi`: the 52 earlier mo
 | `circuit_cli.py` | Live runs, watching, inspection, direct queries and the interactive console |
 
 The runtime uses a supplied processing loop and one state register. Its learner acquires their transition circuit. [Implementation contract](CIRCUIT_RUNTIME.md).
+
+### Acquired procedure library
+
+| Module | Responsibility |
+| --- | --- |
+| `procedure_core.py` | Strict typed library schema, actual acquired calls, bounded iteration and serialization |
+| `procedure_search.py` | Bottom-up search, temporary candidate caching, budgets and measured work |
+| `library_curriculum.py` | Source fingerprints, formal exercises, task partitions and final probes |
+| `library_runtime.py` | Acquisition, comparisons, immutable earlier definitions and sealed evaluation |
+| `library_cli.py` | Run, inspect, query, status and controls |
+| `learning_window.py` | Visible start, real process transcript, pause/stop and saved-procedure queries |
+
+The learner chooses program arrangements in a supplied language. Two measured trials and a retained 13-procedure artifact are described in the [study](../experiments/2026-09-05-procedure-library.md). [Runtime contract](PROCEDURE_LIBRARY_RUNTIME.md).
 
 ### A.1 Initial pathway and explanation experiments
 

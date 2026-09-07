@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The implemented [structural learner](CIRCUIT_RUNTIME.md) is a counterexample-guided search over two-state transducers represented by Boolean circuits. Self-modifying graph systems remain relatives of the broader proposal; autonomous control-structure and library acquisition are not established by the first run.
+The implemented [structural learner](CIRCUIT_RUNTIME.md) searches two-state transducers represented by Boolean circuits. Its [procedure extension](PROCEDURE_LIBRARY_RUNTIME.md) performs bounded typed program induction over acquired operations. [Measured results](../experiments/2026-09-05-procedure-library.md) include useful call reuse and increasing search cost. Self-modifying graph systems remain relatives of the broader proposal; autonomous control semantics and general abstraction invention are not established by these trials.
 
 The intended adaptive circuit has close relatives in self-modifying computational graphs, structural learning and program induction. The current text implementation belongs to complex recurrent neural models. The [adaptive dataflow circuit note](ADAPTIVE_DATAFLOW_CIRCUIT.md) gives the revised architectural comparison and additional primary sources.
 

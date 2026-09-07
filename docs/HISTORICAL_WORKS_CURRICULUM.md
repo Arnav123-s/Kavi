@@ -4,11 +4,11 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Revision: 5 September 2026
 
-Status: curriculum and implementation plan. No historical-work training result is reported here. The measured structural result remains the [addition experiment](../experiments/2026-09-05-circuit-learning.md).
+Status: the first source-guided formal arithmetic extension is implemented and measured in the [procedure-library study](../experiments/2026-09-05-procedure-library.md). Logic, source interpretation and philosophical argument learning remain proposed.
 
 ## Present capability
 
-The structural learner accepts integer examples and searches for a Boolean transition circuit under a supplied bit-processing loop. It has no sentence parser, document comprehension model, general procedure library or representation of philosophical arguments. Its five-gate addition graph cannot acquire those capabilities by receiving more text through the existing interface.
+The structural learner accepts integer examples, acquires Boolean transition circuits under a supplied bit-processing loop, and searches a bounded procedure language that calls acquired operations. It has no sentence parser, document comprehension model or representation of philosophical arguments. Its arithmetic programs cannot acquire those capabilities by receiving more text through the existing interface.
 
 The earlier recurrent core accepts text, but it is a separate numerical model with documented limitations. Feeding books to that core would test a different implementation. Its results must not be attributed to the structural circuit.
 
@@ -41,9 +41,9 @@ The first is a feasible intermediate target. It does not establish the second. I
 
 ## First extension
 
-Extend the current runtime to retain several named operations, with explicit signatures and output contracts. Keep task selection supplied at first and record that assumption. Add acquisition of nonnegative subtraction from examples, then a bounded composition task that can reuse the learned addition and subtraction procedures. Do not install the target subtraction arrangement or target composition as a primitive and call it learned.
+The runtime now retains named operations with explicit signatures and output contracts. It acquires nonnegative subtraction and bounded compositions using the learned addition and subtraction procedures. Task selection remains supplied. The target subtraction graph and target programs are not installed as inference primitives. The [runtime contract](PROCEDURE_LIBRARY_RUNTIME.md) records the grammar, source scopes and exact boundaries.
 
-Measure the difference between acquiring each task independently and acquiring it with access to earlier learned procedures. Also compare against supplied procedures and a lookup control. Merely storing two separate graphs does not demonstrate useful transfer. A reuse claim requires executed calls to the acquired component and reduced learning cost or improved held-out behavior under matched budgets.
+The measured trials compare each task with a base-only addition/subtraction vocabulary. Reuse helps some tasks and makes others more expensive. Supplied-procedure, lookup and matched numerical controls remain additional comparisons. A reuse claim requires executed calls to the acquired component and reduced learning cost or improved behavior under disclosed budgets; storing separate graphs alone is insufficient.
 
 Logic follows when the interpreter supports Boolean values, finite sets and typed expressions. Since AND and NOT are already primitive gates, reproducing them is not a new discovery. The useful target is acquisition of larger relations or compositions from examples under a disclosed grammar. Control-flow discovery, arbitrary proof search and general language need additional experiments.
 
@@ -57,8 +57,8 @@ For philosophy, grade distinct obligations separately: what the author asserted;
 
 ## Visible trial procedure
 
-For an observed trial, establish a visible terminal before starting the teacher. Display the selected implementation, sources, configuration, initial model and finite budget. Let the operator start from that terminal once the view is ready. An open request or a running background process alone does not establish visibility.
+For an observed trial, establish a visible terminal or learning window before starting the teacher. Display the selected implementation, sources, configuration, initial model and finite budget. The operator can start from that view; an already authorized trial can use the explicit start-on-open option. An open request or a background process alone does not establish visibility.
 
 Show actual counterexamples, candidate changes, accepted repairs, retention checks and final results as they occur. Keep the transcript available after completion. A later playback must be labeled as a replay; delays in the display must not be counted as learning time. Leave a query interface available for inspecting the saved procedure.
 
-The next result should answer a precise question: does access to an acquired operation help Kavi learn another operation or composition while preserving the first? Broad historical reading becomes meaningful only as the architecture gains the ability to represent and test what those works teach.
+The first extension answers a narrow question: acquired operations can help later composition, while their vocabulary can also make search worse. The next stages need better algorithmic efficiency, abstraction selection and representation. Broad historical reading becomes meaningful as the architecture gains the ability to represent and test what those works teach. The [advanced capability protocol](ADVANCED_CAPABILITY_PROTOCOL.md) separates these requirements from a graduate capability claim.

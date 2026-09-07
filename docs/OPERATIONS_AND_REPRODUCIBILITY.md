@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Run commands from the repository root. The project declares Python 3.11 or later. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. The discrete circuit and symbolic modules use the standard library; the text model and its tests require PyTorch. The structural trial used Python 3.12.14, while the full 153-test regression suite used Python 3.13.5 with the listed PyTorch version.
+Run commands from the repository root. The project declares Python 3.11 or later. The verified environment is Python 3.13.5 with PyTorch 2.6.0+cu124. The discrete circuit, procedure library and symbolic modules use the standard library; the text model and its tests require PyTorch. The first circuit trial used Python 3.12.14. Both library trials and the complete 169-test regression suite used Python 3.13.5.
 
 ## Environment and inspection
 
@@ -26,7 +26,7 @@ python -m kavi.pathway_cli --help
 python -m kavi.wave_cli --help
 ```
 
-The source command reads admission metadata; it does not fetch books. Tests include small bounded learning checks. The original 138 tests passed after relocation; all 153 tests passed after the structural learner was added.
+The source command reads admission metadata; it does not fetch books. Tests include bounded learning checks. The suite grew from 138 tests after relocation to 153 after circuit acquisition and 169 after the procedure and scaling extensions; each corresponding run passed.
 
 ## Structural circuit learning
 
@@ -40,7 +40,19 @@ Use a new directory. The default automatic trial is limited to 180 seconds, thre
 
 The completed first run is `runs/circuit-20260905-01`. Its console can be opened with `python -m kavi circuit console --run-dir runs/circuit-20260905-01`. A portable five-gate model is published at `experiments/circuit-20260905-model.json`. Earlier accepted graphs and all final evidence remain in the original run directory. The prior recurrent curriculum was not restarted by this experiment.
 
-For a trial intended to be watched live, establish a visible terminal before the teacher starts, display the reviewed configuration and let the operator start from that terminal. A running process or queued request to open a terminal is not evidence that the live view is visible. Preserve the transcript after completion and label later playback as a replay. See the [historical works curriculum](HISTORICAL_WORKS_CURRICULUM.md) for the next source-guided teaching sequence.
+For a trial intended to be watched live, establish a visible terminal or learning window before the teacher starts and display the reviewed configuration. The operator can start from that view; an already authorized run can start through the explicit start-on-open option. A process or queued request alone does not prove visibility. Preserve the transcript and label later playback as a replay.
+
+## Procedure learning and retained queries
+
+```powershell
+python -B -m kavi.learning_window --config curriculum/library-scaling-run.json --run-dir runs/library-trial
+python -m kavi library inspect --library experiments/library-20260905-retained.json
+python -m kavi library ask --library experiments/library-20260905-retained.json factorial 18
+```
+
+The learning window requires Tk and retains its transcript after the worker exits. Start, pause, resume and stop operate on the configured run. Use a new directory; existing evidence is preserved. `--start` begins an already reviewed and authorized trial after the window opens. The full [procedure runtime reference](PROCEDURE_LIBRARY_RUNTIME.md) describes CLI equivalents and file controls.
+
+The two completed local trials are `runs/library-20260905-01` and `runs/library-20260905-02`. Their teaching workers exited after finite completion. Their windows remain useful for saved-procedure queries. The published retained artifact combines compatible acquired procedures under the explicit method in the [study](../experiments/2026-09-05-procedure-library.md); it is not a third learning trial.
 
 ## Text learning
 

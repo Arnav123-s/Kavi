@@ -1,0 +1,2037 @@
+{
+  "state": "completed",
+  "protocol": "docs/MECHANISM_AUDIT_PROTOCOL.md",
+  "python": "3.13.5",
+  "limits": {
+    "seconds": 300,
+    "worker_bytes": 536870912,
+    "prefix_states": 21000,
+    "merge_proposals_per_fit": 20000,
+    "repair_proposals_per_arm": 128
+  },
+  "dependencies": {
+    "base_library_bytes": 2272,
+    "base_library_digest": "a8279da0f32dba35ccfedfb82b7cd5289bf39f0eba5d958fcd85a426fb31c60d",
+    "old_controller_bytes": 195,
+    "foundation_controller_bytes": 105
+  },
+  "causal": {
+    "interventions": 224,
+    "behavior_changes": 224,
+    "state_pair_checks": 2358,
+    "first_three_witnesses": [
+      {
+        "state": 0,
+        "token": "?a",
+        "target": 1,
+        "equivalent": false,
+        "visited_pairs": 11,
+        "witness": [
+          "?a",
+          "a"
+        ],
+        "left": 1,
+        "right": 0,
+        "reason": "different outputs"
+      },
+      {
+        "state": 0,
+        "token": "?a",
+        "target": 2,
+        "equivalent": false,
+        "visited_pairs": 8,
+        "witness": [
+          "?a"
+        ],
+        "left": 0,
+        "right": 1,
+        "reason": "different outputs"
+      },
+      {
+        "state": 0,
+        "token": "?a",
+        "target": 3,
+        "equivalent": false,
+        "visited_pairs": 15,
+        "witness": [
+          "?a",
+          "?b"
+        ],
+        "left": 0,
+        "right": 1,
+        "reason": "different outputs"
+      }
+    ],
+    "renamings": [
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      },
+      {
+        "equivalent": true,
+        "visited_pairs": 8,
+        "witness": null
+      }
+    ],
+    "unreachable_state": {
+      "equivalent": true,
+      "visited_pairs": 8,
+      "witness": null
+    },
+    "commuting_states": {
+      "a,b": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "?a,?b": []
+    }
+  },
+  "alias": {
+    "teaching_cases": 19531,
+    "old_cases": 5461,
+    "trials": [
+      {
+        "seed": 7,
+        "learning": {
+          "prefix_states": 19531,
+          "proposed_merges": 137,
+          "accepted_merges": 33,
+          "rejected_merges": 104,
+          "closure_pairs": 19791,
+          "copied_transition_cells": 3347690,
+          "seed": 7,
+          "states": 8,
+          "transitions": 40,
+          "model_bytes": 216,
+          "seconds": 0.5404937000130303
+        },
+        "artifact": {
+          "file": "alias-7.json",
+          "bytes": 216,
+          "sha256": "6027dcb5177c5de505eb12e9c86b0530fabf55bd47a5dd95c8f0d066ff7d700b"
+        },
+        "final": {
+          "correct": 128,
+          "total": 128,
+          "token_steps": 4874
+        },
+        "old_retention": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "whole_task": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "shared_destinations": 8
+      },
+      {
+        "seed": 19,
+        "learning": {
+          "prefix_states": 19531,
+          "proposed_merges": 161,
+          "accepted_merges": 33,
+          "rejected_merges": 128,
+          "closure_pairs": 19823,
+          "copied_transition_cells": 3309725,
+          "seed": 19,
+          "states": 8,
+          "transitions": 40,
+          "model_bytes": 216,
+          "seconds": 0.5323989999887999
+        },
+        "artifact": {
+          "file": "alias-19.json",
+          "bytes": 216,
+          "sha256": "6027dcb5177c5de505eb12e9c86b0530fabf55bd47a5dd95c8f0d066ff7d700b"
+        },
+        "final": {
+          "correct": 128,
+          "total": 128,
+          "token_steps": 4874
+        },
+        "old_retention": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "whole_task": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "shared_destinations": 8
+      },
+      {
+        "seed": 43,
+        "learning": {
+          "prefix_states": 19531,
+          "proposed_merges": 163,
+          "accepted_merges": 33,
+          "rejected_merges": 130,
+          "closure_pairs": 19826,
+          "copied_transition_cells": 3086550,
+          "seed": 43,
+          "states": 8,
+          "transitions": 40,
+          "model_bytes": 216,
+          "seconds": 0.6088498000171967
+        },
+        "artifact": {
+          "file": "alias-43.json",
+          "bytes": 216,
+          "sha256": "6027dcb5177c5de505eb12e9c86b0530fabf55bd47a5dd95c8f0d066ff7d700b"
+        },
+        "final": {
+          "correct": 128,
+          "total": 128,
+          "token_steps": 4874
+        },
+        "old_retention": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "whole_task": {
+          "equivalent": true,
+          "visited_pairs": 8,
+          "witness": null
+        },
+        "shared_destinations": 8
+      }
+    ]
+  },
+  "bridge": {
+    "initial_fit": {
+      "candidate_executions": 6,
+      "controller_token_steps": 1,
+      "calls": 8,
+      "frames": 20,
+      "gates": 100,
+      "iterations": 4,
+      "connector_comparisons": 2,
+      "bit_tests": 4,
+      "shifts": 6
+    },
+    "initial_answers": [
+      {
+        "state": "ambiguous",
+        "alternatives": 2
+      },
+      {
+        "state": "ambiguous",
+        "alternatives": 2
+      }
+    ],
+    "corrected_fit": {
+      "candidate_executions": 10,
+      "controller_token_steps": 2,
+      "calls": 14,
+      "frames": 34,
+      "gates": 170,
+      "iterations": 8,
+      "connector_comparisons": 4,
+      "bit_tests": 8,
+      "shifts": 12
+    },
+    "artifact": {
+      "file": "arithmetic-bridge.json",
+      "bytes": 389,
+      "sha256": "2fb1db3f29a64584f63dcf3f74558c1b246bbbcd6a06bf282a0b885ff702e495"
+    },
+    "choices": [
+      [
+        0,
+        [
+          "add"
+        ]
+      ],
+      [
+        1,
+        [
+          "multiply"
+        ]
+      ]
+    ],
+    "final_correct": 128,
+    "final_total": 128,
+    "final_cost": {
+      "calls": 818,
+      "frames": 21685,
+      "gates": 108425,
+      "iterations": 1274,
+      "connector_comparisons": 69,
+      "bit_tests": 1274,
+      "shifts": 2479
+    },
+    "final_controller_steps": 5064,
+    "unknown_input": {
+      "state": "unresolved",
+      "alternatives": 0
+    }
+  },
+  "composition": {
+    "search": {
+      "candidates": 338,
+      "executions": 344,
+      "invalid_executions": 61,
+      "consistent_candidates": 2,
+      "calls": 858,
+      "frames": 2290,
+      "gates": 11450,
+      "iterations": 422,
+      "connector_comparisons": 217,
+      "bit_tests": 422,
+      "shifts": 637
+    },
+    "selected_graph": {
+      "nodes": [
+        [
+          "add",
+          0,
+          1
+        ],
+        [
+          "multiply",
+          2,
+          2
+        ]
+      ],
+      "output": 3
+    },
+    "promotion": {
+      "promotion_cases": 48,
+      "calls": 337,
+      "frames": 4415,
+      "gates": 22075,
+      "iterations": 494,
+      "connector_comparisons": 48,
+      "bit_tests": 494,
+      "shifts": 940
+    },
+    "artifact": {
+      "file": "composed-catalog.json",
+      "bytes": 195,
+      "sha256": "f427ec7291d8546fa54133685e3e598039b6bc82a82dece3507e5dcc16d6d485"
+    },
+    "final_correct": 128,
+    "final_total": 128,
+    "final_cost": {
+      "calls": 1603,
+      "frames": 44619,
+      "gates": 223095,
+      "iterations": 2604,
+      "connector_comparisons": 128,
+      "bit_tests": 2604,
+      "shifts": 5080
+    },
+    "old_checks": 104,
+    "old_correct": 104,
+    "retention_cost": {
+      "calls": 926,
+      "frames": 1826,
+      "gates": 9130,
+      "iterations": 504,
+      "connector_comparisons": 180,
+      "bit_tests": 330,
+      "shifts": 498
+    },
+    "input_overlap": {
+      "teaching_promotion": 0,
+      "teaching_final": 0,
+      "promotion_final": 0
+    }
+  },
+  "repair": {
+    "cases": [
+      {
+        "fault_state": 0,
+        "fault_token": "?b",
+        "seed": 7,
+        "arms": [
+          {
+            "arm": "uniform greedy",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 27,
+              "accepted": 17,
+              "accepted_worse": 0,
+              "score_calls": 102,
+              "token_steps": 111180,
+              "priority_steps": 27717,
+              "retention_audits": 129,
+              "retention_pairs": 550,
+              "history": [
+                {
+                  "proposal": 4,
+                  "errors": 28
+                },
+                {
+                  "proposal": 8,
+                  "errors": 27
+                },
+                {
+                  "proposal": 36,
+                  "errors": 25
+                },
+                {
+                  "proposal": 84,
+                  "errors": 24
+                },
+                {
+                  "proposal": 115,
+                  "errors": 20
+                }
+              ],
+              "initial_errors": 29,
+              "best_errors": 20,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-7-uniform-greedy.json",
+              "bytes": 195,
+              "sha256": "8193bf322eb4c3e2e18db819121ca347166fd28aa2a1998f2750eaf12b4f6243"
+            },
+            "final": {
+              "correct": 95,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "b",
+                  "?a",
+                  "?b"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 16,
+              "witness": [
+                "?b",
+                "a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "uniform heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 25,
+              "accepted": 69,
+              "accepted_worse": 15,
+              "score_calls": 104,
+              "token_steps": 113360,
+              "priority_steps": 47440,
+              "retention_audits": 129,
+              "retention_pairs": 554,
+              "history": [
+                {
+                  "proposal": 3,
+                  "errors": 28
+                }
+              ],
+              "initial_errors": 29,
+              "best_errors": 28,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-7-uniform-heated.json",
+              "bytes": 195,
+              "sha256": "0a754edcc2efb34cd367fbb5b7ccb0a379c5ebb82177a8ddbd82886e8253b1eb"
+            },
+            "final": {
+              "correct": 93,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "b",
+                  "?a",
+                  "?b"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 14,
+              "witness": [
+                "?b",
+                "a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority greedy",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 40,
+              "accepted": 2,
+              "accepted_worse": 0,
+              "score_calls": 89,
+              "token_steps": 97010,
+              "priority_steps": 20727,
+              "retention_audits": 129,
+              "retention_pairs": 565,
+              "history": [
+                {
+                  "proposal": 19,
+                  "errors": 27
+                },
+                {
+                  "proposal": 21,
+                  "errors": 7
+                }
+              ],
+              "initial_errors": 29,
+              "best_errors": 7,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-7-priority-greedy.json",
+              "bytes": 195,
+              "sha256": "d2fbe5cd93150b50e942e9e6d97edd9e473b620d7ee70b1f820d98a44a5d55c3"
+            },
+            "final": {
+              "correct": 98,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "b",
+                  "?a",
+                  "?b"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 12,
+              "witness": [
+                "?b",
+                "a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 41,
+              "accepted": 59,
+              "accepted_worse": 30,
+              "score_calls": 88,
+              "token_steps": 95920,
+              "priority_steps": 42057,
+              "retention_audits": 129,
+              "retention_pairs": 600,
+              "history": [],
+              "initial_errors": 29,
+              "best_errors": 29,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-7-priority-heated.json",
+              "bytes": 195,
+              "sha256": "c80c9755ff3806dd8620147571840a729223b0ded169db54157addfbcb3a3cee"
+            },
+            "final": {
+              "correct": 99,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "b",
+                  "?a",
+                  "?b"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 13,
+              "witness": [
+                "?b",
+                "a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "exhaustive one-edge",
+            "search": {
+              "proposals": 224,
+              "retention_rejections": 48,
+              "accepted": 0,
+              "accepted_worse": 0,
+              "score_calls": 177,
+              "token_steps": 192930,
+              "priority_steps": 52432,
+              "retention_audits": 225,
+              "retention_pairs": 966,
+              "history": [
+                {
+                  "proposal": 1,
+                  "errors": 23
+                },
+                {
+                  "proposal": 8,
+                  "errors": 3
+                },
+                {
+                  "proposal": 9,
+                  "errors": 0
+                }
+              ],
+              "initial_errors": 29,
+              "best_errors": 0,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-7-exhaustive.json",
+              "bytes": 195,
+              "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": true,
+              "visited_pairs": 8,
+              "witness": null
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          }
+        ]
+      },
+      {
+        "fault_state": 2,
+        "fault_token": "?b",
+        "seed": 19,
+        "arms": [
+          {
+            "arm": "uniform greedy",
+            "search": {
+              "proposals": 6,
+              "retention_rejections": 1,
+              "accepted": 1,
+              "accepted_worse": 0,
+              "score_calls": 6,
+              "token_steps": 6540,
+              "priority_steps": 1297,
+              "retention_audits": 7,
+              "retention_pairs": 30,
+              "history": [
+                {
+                  "proposal": 6,
+                  "errors": 0
+                }
+              ],
+              "initial_errors": 18,
+              "best_errors": 0,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-19-uniform-greedy.json",
+              "bytes": 195,
+              "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": true,
+              "visited_pairs": 8,
+              "witness": null
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "uniform heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 25,
+              "accepted": 54,
+              "accepted_worse": 25,
+              "score_calls": 104,
+              "token_steps": 113360,
+              "priority_steps": 46087,
+              "retention_audits": 129,
+              "retention_pairs": 555,
+              "history": [],
+              "initial_errors": 18,
+              "best_errors": 18,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-19-uniform-heated.json",
+              "bytes": 195,
+              "sha256": "ac5e0f1e008adb154cedbc320de10c361fcee1018e14d02dddd6e0ea57c67f9d"
+            },
+            "final": {
+              "correct": 100,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "b",
+                  "?a",
+                  "?a",
+                  "a",
+                  "?b",
+                  "a",
+                  "b",
+                  "a",
+                  "?a",
+                  "?b",
+                  "?a",
+                  "b",
+                  "a",
+                  "?b",
+                  "?a",
+                  "?b",
+                  "a",
+                  "?b"
+                ],
+                "observed": 0,
+                "expected": 1
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 9,
+              "witness": [
+                "a",
+                "?b"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority greedy",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 41,
+              "accepted": 3,
+              "accepted_worse": 0,
+              "score_calls": 88,
+              "token_steps": 95920,
+              "priority_steps": 14360,
+              "retention_audits": 129,
+              "retention_pairs": 571,
+              "history": [
+                {
+                  "proposal": 19,
+                  "errors": 14
+                },
+                {
+                  "proposal": 28,
+                  "errors": 3
+                }
+              ],
+              "initial_errors": 18,
+              "best_errors": 3,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-19-priority-greedy.json",
+              "bytes": 195,
+              "sha256": "b54a5918e611c089f0c13567d4bb1c06d32768d4f85fdead2f488ab0acf693f2"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 11,
+              "witness": [
+                "a",
+                "b",
+                "?b",
+                "?b",
+                "a"
+              ],
+              "left": 1,
+              "right": 0,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 33,
+              "accepted": 53,
+              "accepted_worse": 21,
+              "score_calls": 96,
+              "token_steps": 104640,
+              "priority_steps": 42518,
+              "retention_audits": 129,
+              "retention_pairs": 556,
+              "history": [],
+              "initial_errors": 18,
+              "best_errors": 18,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-19-priority-heated.json",
+              "bytes": 195,
+              "sha256": "ac5e0f1e008adb154cedbc320de10c361fcee1018e14d02dddd6e0ea57c67f9d"
+            },
+            "final": {
+              "correct": 100,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "b",
+                  "?a",
+                  "?a",
+                  "a",
+                  "?b",
+                  "a",
+                  "b",
+                  "a",
+                  "?a",
+                  "?b",
+                  "?a",
+                  "b",
+                  "a",
+                  "?b",
+                  "?a",
+                  "?b",
+                  "a",
+                  "?b"
+                ],
+                "observed": 0,
+                "expected": 1
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 9,
+              "witness": [
+                "a",
+                "?b"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "exhaustive one-edge",
+            "search": {
+              "proposals": 224,
+              "retention_rejections": 48,
+              "accepted": 0,
+              "accepted_worse": 0,
+              "score_calls": 177,
+              "token_steps": 192930,
+              "priority_steps": 43969,
+              "retention_audits": 225,
+              "retention_pairs": 966,
+              "history": [
+                {
+                  "proposal": 1,
+                  "errors": 14
+                },
+                {
+                  "proposal": 66,
+                  "errors": 12
+                },
+                {
+                  "proposal": 68,
+                  "errors": 0
+                }
+              ],
+              "initial_errors": 18,
+              "best_errors": 0,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-19-exhaustive.json",
+              "bytes": 195,
+              "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": true,
+              "visited_pairs": 8,
+              "witness": null
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          }
+        ]
+      },
+      {
+        "fault_state": 3,
+        "fault_token": "?a",
+        "seed": 43,
+        "arms": [
+          {
+            "arm": "uniform greedy",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 29,
+              "accepted": 1,
+              "accepted_worse": 0,
+              "score_calls": 100,
+              "token_steps": 109000,
+              "priority_steps": 21678,
+              "retention_audits": 129,
+              "retention_pairs": 556,
+              "history": [
+                {
+                  "proposal": 47,
+                  "errors": 10
+                }
+              ],
+              "initial_errors": 11,
+              "best_errors": 10,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-43-uniform-greedy.json",
+              "bytes": 195,
+              "sha256": "387430291dd33c86cbc4578309e66b455cda55864636f2a05e0474b46701f6c5"
+            },
+            "final": {
+              "correct": 122,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?a",
+                  "b",
+                  "?b",
+                  "a",
+                  "?a",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "a",
+                  "a",
+                  "?b",
+                  "a",
+                  "a",
+                  "?a",
+                  "?a"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 11,
+              "witness": [
+                "b",
+                "?a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "uniform heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 22,
+              "accepted": 79,
+              "accepted_worse": 29,
+              "score_calls": 107,
+              "token_steps": 116630,
+              "priority_steps": 52847,
+              "retention_audits": 129,
+              "retention_pairs": 500,
+              "history": [],
+              "initial_errors": 11,
+              "best_errors": 11,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-43-uniform-heated.json",
+              "bytes": 195,
+              "sha256": "5dcd889fb1e678baa555168acfc3bd17abe087c161ebbbc1e6a5ca56e1769911"
+            },
+            "final": {
+              "correct": 123,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?a",
+                  "b",
+                  "?b",
+                  "a",
+                  "?a",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "a",
+                  "a",
+                  "?b",
+                  "a",
+                  "a",
+                  "?a",
+                  "?a"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 9,
+              "witness": [
+                "b",
+                "?a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority greedy",
+            "search": {
+              "proposals": 40,
+              "retention_rejections": 12,
+              "accepted": 1,
+              "accepted_worse": 0,
+              "score_calls": 29,
+              "token_steps": 31610,
+              "priority_steps": 5698,
+              "retention_audits": 41,
+              "retention_pairs": 179,
+              "history": [
+                {
+                  "proposal": 40,
+                  "errors": 0
+                }
+              ],
+              "initial_errors": 11,
+              "best_errors": 0,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-43-priority-greedy.json",
+              "bytes": 195,
+              "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": true,
+              "visited_pairs": 8,
+              "witness": null
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "priority heated",
+            "search": {
+              "proposals": 128,
+              "retention_rejections": 34,
+              "accepted": 60,
+              "accepted_worse": 23,
+              "score_calls": 95,
+              "token_steps": 103550,
+              "priority_steps": 46995,
+              "retention_audits": 129,
+              "retention_pairs": 531,
+              "history": [],
+              "initial_errors": 11,
+              "best_errors": 11,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-43-priority-heated.json",
+              "bytes": 195,
+              "sha256": "5dcd889fb1e678baa555168acfc3bd17abe087c161ebbbc1e6a5ca56e1769911"
+            },
+            "final": {
+              "correct": 123,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": {
+                "tokens": [
+                  "a",
+                  "?b",
+                  "b",
+                  "?b",
+                  "?a",
+                  "b",
+                  "?b",
+                  "a",
+                  "?a",
+                  "?b",
+                  "?b",
+                  "b",
+                  "?a",
+                  "a",
+                  "a",
+                  "?b",
+                  "a",
+                  "a",
+                  "?a",
+                  "?a"
+                ],
+                "observed": 1,
+                "expected": 0
+              }
+            },
+            "whole_task": {
+              "equivalent": false,
+              "visited_pairs": 9,
+              "witness": [
+                "b",
+                "?a"
+              ],
+              "left": 0,
+              "right": 1,
+              "reason": "different outputs"
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          },
+          {
+            "arm": "exhaustive one-edge",
+            "search": {
+              "proposals": 224,
+              "retention_rejections": 48,
+              "accepted": 0,
+              "accepted_worse": 0,
+              "score_calls": 177,
+              "token_steps": 192930,
+              "priority_steps": 37059,
+              "retention_audits": 225,
+              "retention_pairs": 966,
+              "history": [
+                {
+                  "proposal": 1,
+                  "errors": 10
+                },
+                {
+                  "proposal": 88,
+                  "errors": 0
+                }
+              ],
+              "initial_errors": 11,
+              "best_errors": 0,
+              "best_model_bytes": 195
+            },
+            "artifact": {
+              "file": "repair-43-exhaustive.json",
+              "bytes": 195,
+              "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+            },
+            "final": {
+              "correct": 128,
+              "total": 128,
+              "token_steps": 5132,
+              "first_failure": null
+            },
+            "whole_task": {
+              "equivalent": true,
+              "visited_pairs": 8,
+              "witness": null
+            },
+            "old_retention": {
+              "equivalent": true,
+              "visited_pairs": 4,
+              "witness": null
+            }
+          }
+        ]
+      }
+    ],
+    "development_cases": 128
+  },
+  "boundaries": {
+    "certificate_rows": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    ],
+    "large_additions": [
+      {
+        "left_bits": 0,
+        "right_bits": 0,
+        "correct": true,
+        "output_bits": 0,
+        "frames": 2,
+        "gates": 10
+      },
+      {
+        "left_bits": 1,
+        "right_bits": 1,
+        "correct": true,
+        "output_bits": 2,
+        "frames": 2,
+        "gates": 10
+      },
+      {
+        "left_bits": 8,
+        "right_bits": 1,
+        "correct": true,
+        "output_bits": 9,
+        "frames": 9,
+        "gates": 45
+      },
+      {
+        "left_bits": 64,
+        "right_bits": 1,
+        "correct": true,
+        "output_bits": 65,
+        "frames": 65,
+        "gates": 325
+      },
+      {
+        "left_bits": 128,
+        "right_bits": 128,
+        "correct": true,
+        "output_bits": 129,
+        "frames": 129,
+        "gates": 645
+      },
+      {
+        "left_bits": 513,
+        "right_bits": 512,
+        "correct": true,
+        "output_bits": 513,
+        "frames": 514,
+        "gates": 2570
+      },
+      {
+        "left_bits": 1024,
+        "right_bits": 1,
+        "correct": true,
+        "output_bits": 1025,
+        "frames": 1025,
+        "gates": 5125
+      },
+      {
+        "left_bits": 2048,
+        "right_bits": 2048,
+        "correct": true,
+        "output_bits": 2049,
+        "frames": 2049,
+        "gates": 10245
+      },
+      {
+        "left_bits": 4096,
+        "right_bits": 4096,
+        "correct": true,
+        "output_bits": 4097,
+        "frames": 4097,
+        "gates": 20485
+      },
+      {
+        "left_bits": 4096,
+        "right_bits": 1,
+        "correct": true,
+        "output_bits": 4097,
+        "frames": 4097,
+        "gates": 20485
+      }
+    ],
+    "above_limit_input": "rejected",
+    "language_probes": [
+      {
+        "question": "what is 27 plus 38",
+        "expected": 65,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "add",
+            "inputs": [
+              27,
+              38
+            ]
+          },
+          "value": 65,
+          "calls": 1,
+          "iterations": 0,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                27,
+                38
+              ],
+              "output": 65,
+              "depth": 0
+            }
+          ],
+          "trace_events": 1,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "what is 13 times 17",
+        "expected": 221,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "multiply",
+            "inputs": [
+              13,
+              17
+            ]
+          },
+          "value": 221,
+          "calls": 4,
+          "iterations": 4,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                17
+              ],
+              "output": 17,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                17,
+                68
+              ],
+              "output": 85,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                85,
+                136
+              ],
+              "output": 221,
+              "depth": 3
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                13,
+                17
+              ],
+              "output": 221,
+              "depth": 0
+            }
+          ],
+          "trace_events": 4,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "cube of 7",
+        "expected": 343,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "cube",
+            "inputs": [
+              7
+            ]
+          },
+          "value": 343,
+          "calls": 10,
+          "iterations": 6,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                7
+              ],
+              "output": 7,
+              "depth": 8
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                7,
+                14
+              ],
+              "output": 21,
+              "depth": 8
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                21,
+                28
+              ],
+              "output": 49,
+              "depth": 8
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                7,
+                7
+              ],
+              "output": 49,
+              "depth": 5
+            },
+            {
+              "procedure": "square",
+              "inputs": [
+                7
+              ],
+              "output": 49,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                49
+              ],
+              "output": 49,
+              "depth": 5
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                49,
+                98
+              ],
+              "output": 147,
+              "depth": 5
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                147,
+                196
+              ],
+              "output": 343,
+              "depth": 5
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                7,
+                49
+              ],
+              "output": 343,
+              "depth": 2
+            },
+            {
+              "procedure": "cube",
+              "inputs": [
+                7
+              ],
+              "output": 343,
+              "depth": 0
+            }
+          ],
+          "trace_events": 10,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "twice kinetic energy for mass 7 and speed 11",
+        "expected": 847,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "scaled_square",
+            "inputs": [
+              7,
+              11
+            ]
+          },
+          "value": 847,
+          "calls": 10,
+          "iterations": 7,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                11
+              ],
+              "output": 11,
+              "depth": 8
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                11,
+                22
+              ],
+              "output": 33,
+              "depth": 8
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                33,
+                88
+              ],
+              "output": 121,
+              "depth": 8
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                11,
+                11
+              ],
+              "output": 121,
+              "depth": 5
+            },
+            {
+              "procedure": "square",
+              "inputs": [
+                11
+              ],
+              "output": 121,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                121
+              ],
+              "output": 121,
+              "depth": 5
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                121,
+                242
+              ],
+              "output": 363,
+              "depth": 5
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                363,
+                484
+              ],
+              "output": 847,
+              "depth": 5
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                7,
+                121
+              ],
+              "output": 847,
+              "depth": 2
+            },
+            {
+              "procedure": "scaled_square",
+              "inputs": [
+                7,
+                11
+              ],
+              "output": 847,
+              "depth": 0
+            }
+          ],
+          "trace_events": 10,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "position after speed 3 time 7 starting at 11",
+        "expected": 32,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "affine",
+            "inputs": [
+              3,
+              7,
+              11
+            ]
+          },
+          "value": 32,
+          "calls": 5,
+          "iterations": 2,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                7
+              ],
+              "output": 7,
+              "depth": 6
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                7,
+                14
+              ],
+              "output": 21,
+              "depth": 6
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                3,
+                7
+              ],
+              "output": 21,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                11,
+                21
+              ],
+              "output": 32,
+              "depth": 2
+            },
+            {
+              "procedure": "affine",
+              "inputs": [
+                3,
+                7,
+                11
+              ],
+              "output": 32,
+              "depth": 0
+            }
+          ],
+          "trace_events": 5,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "force for mass 7 and acceleration 9",
+        "expected": 63,
+        "response": {
+          "state": "interpreted",
+          "meaning": {
+            "kind": "calculation",
+            "label": "multiply",
+            "inputs": [
+              7,
+              9
+            ]
+          },
+          "value": 63,
+          "calls": 4,
+          "iterations": 3,
+          "trace": [
+            {
+              "procedure": "add",
+              "inputs": [
+                0,
+                9
+              ],
+              "output": 9,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                9,
+                18
+              ],
+              "output": 27,
+              "depth": 3
+            },
+            {
+              "procedure": "add",
+              "inputs": [
+                27,
+                36
+              ],
+              "output": 63,
+              "depth": 3
+            },
+            {
+              "procedure": "multiply",
+              "inputs": [
+                7,
+                9
+              ],
+              "output": 63,
+              "depth": 0
+            }
+          ],
+          "trace_events": 4,
+          "trace_truncated": false
+        }
+      },
+      {
+        "question": "Prove that there are infinitely many prime numbers",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      },
+      {
+        "question": "Derive the derivative of sine from first principles",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      },
+      {
+        "question": "Explain why orbital motion conserves angular momentum",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      },
+      {
+        "question": "Interpret the conflict between duty and love in Antigone",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      },
+      {
+        "question": "Compare Confucius and Aristotle on moral education",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      },
+      {
+        "question": "Write a new poem about rain and memory",
+        "response": {
+          "state": "unsupported",
+          "alternatives": 0
+        }
+      }
+    ]
+  },
+  "resources": {
+    "wall_seconds": 22.966652700008126,
+    "cpu_seconds": 3.265625,
+    "visual_pacing_seconds": 19.90661849992466,
+    "worker": {
+      "available_bytes": 20675649536,
+      "working_set_bytes": 37613568,
+      "peak_bytes": 40771584,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    },
+    "gui_memory": "separate process; not included in worker peak",
+    "gui_observation_after_completion": {
+      "working_set_bytes": 43114496,
+      "scope": "Single post-run observation of the separate visible process; not a simultaneous combined peak."
+    }
+  },
+  "author": "Arnav123-s",
+  "date": "2026-09-07",
+  "base_commit": "bbe47dca2e2c9fcb947a41c0457416f813fe682b",
+  "sampling_note": "Alias models share one 128-case final bank. Repair models share another. Repeated model-input evaluations are not distinct questions.",
+  "storage": {
+    "bytes": 2668554,
+    "files": 33,
+    "scope": "All completed run files except this storage census."
+  },
+  "implementation_hash_format": "UTF-8 source normalized to LF line endings",
+  "measured_implementation_sha256": {
+    "kavi/configuration_composition.py": "46c11ea9a6089f55e8525632c6b2f7e8911e968f2259e025c05cdcba39ab749a",
+    "kavi/configuration_repair.py": "9ab3813ec4f6541c18e0948ddc375622da72bc6ef0cf43d1e5a720ec29354b48",
+    "kavi/recurrent_configuration.py": "3899a1ae5e44d083273f3bc00a17895411082a32f0a953de4d08e31502802851",
+    "kavi/finite_state_audit.py": "8402cec1fe48b518f8024c3a58c2476b6e3d941d2a3fbfdcffa5ca88662a6255",
+    "kavi/procedure_core.py": "b62659f8b6a7f97f2111ea0a48d2a7592e7256accb52a7f945f4177c232856d2",
+    "scripts/run_mechanism_audit.py": "695e11d176cc74f65ad2a6ce80ca3a9e76ff4683e26a4d21cfe24e30c97aee86",
+    "scripts/recurrent_window.py": "bb9be6614bf2ca0eb3067b454a0b98647e8bdb8250163b13f2476bb4f200973f"
+  },
+  "public_artifacts": {
+    "mechanism-20260907-alias.json": {
+      "bytes": 216,
+      "sha256": "6027dcb5177c5de505eb12e9c86b0530fabf55bd47a5dd95c8f0d066ff7d700b"
+    },
+    "mechanism-20260907-bridge.json": {
+      "bytes": 389,
+      "sha256": "2fb1db3f29a64584f63dcf3f74558c1b246bbbcd6a06bf282a0b885ff702e495"
+    },
+    "mechanism-20260907-catalog.json": {
+      "bytes": 195,
+      "sha256": "f427ec7291d8546fa54133685e3e598039b6bc82a82dece3507e5dcc16d6d485"
+    },
+    "mechanism-20260907-inexact-repair.json": {
+      "bytes": 195,
+      "sha256": "b54a5918e611c089f0c13567d4bb1c06d32768d4f85fdead2f488ab0acf693f2"
+    },
+    "mechanism-20260907-exact-repair.json": {
+      "bytes": 195,
+      "sha256": "e30ab81b9ac4e50fd8dce597cb486ccc46f6e6aee034ae795052f2f0a1a7bcba"
+    }
+  }
+}

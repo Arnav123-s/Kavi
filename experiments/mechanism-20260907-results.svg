@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="890" viewBox="0 0 1240 890">
+<title>Configuration reuse and repair: measured results</title>
+<desc>A learned shared arithmetic graph, notation sharing, and exact repair results for five search methods.</desc>
+<rect width="1240" height="890" fill="#f3f6fa"/>
+<style>text{font-family:Arial,sans-serif;fill:#18334c}.small{font-size:17px}.body{font-size:21px}.head{font-size:25px;font-weight:bold}.node{fill:#e7eff8;stroke:#497095;stroke-width:2}</style>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#497095"/></marker></defs>
+<text x="40" y="48" font-size="32" font-weight="bold">Learning new configurations from old ones</text>
+<text x="40" y="82" class="body">Measured 7 September 2026 · Arnav123-s</text>
+<rect x="25" y="105" width="1190" height="310" rx="12" fill="white"/>
+<text x="48" y="145" class="head">A new computation learned from four examples</text>
+<text x="48" y="179" class="small">338 candidates · 2 consistent arrangements · one selected by the declared tie rule</text>
+<rect class="node" x="60" y="225" width="110" height="52" rx="10"/>
+<text x="115.0" y="258" text-anchor="middle" class="body">input x</text>
+<rect class="node" x="60" y="305" width="110" height="52" rx="10"/>
+<text x="115.0" y="338" text-anchor="middle" class="body">input y</text>
+<rect class="node" x="275" y="265" width="150" height="52" rx="10"/>
+<text x="350.0" y="298" text-anchor="middle" class="body">add</text>
+<rect class="node" x="600" y="265" width="175" height="52" rx="10"/>
+<text x="687.5" y="298" text-anchor="middle" class="body">multiply</text>
+<rect class="node" x="950" y="265" width="185" height="52" rx="10"/>
+<text x="1042.5" y="298" text-anchor="middle" class="body">output</text>
+<path d="M170,251 L275,280" fill="none" stroke="#497095" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M170,331 L275,302" fill="none" stroke="#497095" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M425,281 C500,228 538,228 600,280" fill="none" stroke="#497095" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M425,302 C500,351 538,351 600,302" fill="none" stroke="#497095" stroke-width="2.5" marker-end="url(#arrow)"/>
+<path d="M775,291 L950,291" fill="none" stroke="#497095" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="463" y="223" class="small">reuse the same sum</text>
+<text x="985" y="346" class="body">(x + y)²</text>
+<text x="48" y="389" class="body">48/48 promotion cases · 128/128 fresh inputs · 104/104 earlier-operation checks</text>
+<rect x="25" y="435" width="510" height="360" rx="12" fill="white"/>
+<text x="48" y="478" class="head">Shared notation and skills</text>
+<text x="48" y="522" class="body">a and α acquire identical destinations</text>
+<text x="48" y="558" class="body">at all 8 states, in all 3 trials.</text>
+<text x="48" y="608" class="body">Frozen notation graph: 216 bytes</text>
+<text x="48" y="644" class="body">Controller + arithmetic links: 389 bytes</text>
+<text x="48" y="680" class="body">New catalog entry: 195 bytes</text>
+<text x="48" y="728" class="small">Arithmetic dependency: another 2,272 bytes.</text>
+<text x="48" y="761" class="small">Runtime and learning storage are additional.</text>
+<rect x="555" y="435" width="660" height="360" rx="12" fill="white"/>
+<text x="580" y="478" class="head">Exact repairs across three fault cases</text>
+<text x="580" y="525" class="body">uniform greedy</text>
+<rect x="825" y="503" width="270" height="27" rx="4" fill="#edf1f6"/>
+<rect x="825" y="503" width="90" height="27" rx="4" fill="#287b63"/>
+<text x="1120" y="525" class="body">1/3</text>
+<text x="580" y="569" class="body">priority greedy</text>
+<rect x="825" y="547" width="270" height="27" rx="4" fill="#edf1f6"/>
+<rect x="825" y="547" width="90" height="27" rx="4" fill="#287b63"/>
+<text x="1120" y="569" class="body">1/3</text>
+<text x="580" y="613" class="body">uniform heated</text>
+<rect x="825" y="591" width="270" height="27" rx="4" fill="#edf1f6"/>
+<rect x="825" y="591" width="0" height="27" rx="4" fill="#287b63"/>
+<text x="1120" y="613" class="body">0/3</text>
+<text x="580" y="657" class="body">priority heated</text>
+<rect x="825" y="635" width="270" height="27" rx="4" fill="#edf1f6"/>
+<rect x="825" y="635" width="0" height="27" rx="4" fill="#287b63"/>
+<text x="1120" y="657" class="body">0/3</text>
+<text x="580" y="701" class="body">exhaustive one-edge</text>
+<rect x="825" y="679" width="270" height="27" rx="4" fill="#edf1f6"/>
+<rect x="825" y="679" width="270" height="27" rx="4" fill="#287b63"/>
+<text x="1120" y="701" class="body">3/3</text>
+<text x="580" y="764" class="small">Sample accuracy alone missed one incorrect repair.</text>
+<text x="40" y="839" class="small">Heuristic budget: 128 proposals per case. Exhaustive repair: 224. Earlier behavior retained by all arms.</text>
+<text x="40" y="869" class="small">Temperature did not improve exact repairs here. These are narrow computational tasks, not an intelligence test.</text>
+</svg>

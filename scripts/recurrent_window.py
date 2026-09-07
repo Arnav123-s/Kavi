@@ -9,7 +9,7 @@ import tkinter as tk
 from tkinter import ttk
 
 
-def show(folder, *, coverage_repair=False):
+def show(folder, *, coverage_repair=False, runner=None, heading=None, subtitle=None, intro=None, legend=None):
     folder = folder.resolve()
     root = tk.Tk()
     root.title('Kavi Live Learning | Connections, correction and retention')
@@ -17,12 +17,12 @@ def show(folder, *, coverage_repair=False):
     root.minsize(1000, 740)
     panel = ttk.Frame(root, padding=20)
     panel.pack(fill='both', expand=True)
-    ttk.Label(panel, text='Can the connections learn and change?',
+    ttk.Label(panel, text=heading or 'Can the connections learn and change?',
               font=('Segoe UI', 22, 'bold')).pack(anchor='w')
-    ttk.Label(panel, text='One correction • later evidence • earlier abilities retained',
+    ttk.Label(panel, text=subtitle or 'One correction • later evidence • earlier abilities retained',
               font=('Segoe UI', 12)).pack(anchor='w', pady=(5, 12))
     phase = tk.StringVar(value='Preparing — teaching starts in four seconds')
-    message = tk.StringVar(value='This experiment teaches a small stream rule. It tests a building block; it does not teach a complete language.')
+    message = tk.StringVar(value=intro or 'This experiment teaches a small stream rule. It tests a building block; it does not teach a complete language.')
     ttk.Label(panel, textvariable=phase, font=('Segoe UI', 14, 'bold')).pack(anchor='w')
     ttk.Label(panel, textvariable=message, wraplength=1100, font=('Segoe UI', 11)).pack(anchor='w', pady=10)
     middle = ttk.Frame(panel)
@@ -32,7 +32,7 @@ def show(folder, *, coverage_repair=False):
     side = ttk.Frame(middle, padding=(14, 0))
     side.pack(side='right', fill='both')
     ttk.Label(side, text='What the tokens mean in this task', font=('Segoe UI', 11, 'bold')).pack(anchor='w')
-    ttk.Label(side, text='a / b: an event in either stream\n?a / ?b: choose a stream\n0: an even count\n1: an odd count\n\nThe teacher supplies final answers.\nThe learner decides the state connections.\nState numbers have no supplied meaning.',
+    ttk.Label(side, text=legend or 'a / b: an event in either stream\n?a / ?b: choose a stream\n0: an even count\n1: an odd count\n\nThe teacher supplies final answers.\nThe learner decides the state connections.\nState numbers have no supplied meaning.',
               font=('Segoe UI', 11), justify='left').pack(anchor='w', pady=8)
     graph_size = tk.StringVar(value='No configuration learned yet')
     ttk.Label(side, textvariable=graph_size, font=('Segoe UI', 11, 'bold')).pack(anchor='w', pady=8)
@@ -78,8 +78,9 @@ def show(folder, *, coverage_repair=False):
     def start():
         nonlocal worker
         if not cancelled and not pending_pause and worker is None and not folder.exists():
+            command = runner or ['scripts.run_recurrent_configuration', 'repair-run' if coverage_repair else 'run']
             worker = subprocess.Popen([sys.executable, '-B', '-u', '-m',
-                'scripts.run_recurrent_configuration', 'repair-run' if coverage_repair else 'run', '--run-dir', str(folder)],
+                *command, '--run-dir', str(folder)],
                 cwd=Path(__file__).resolve().parents[1], stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
 

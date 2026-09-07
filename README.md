@@ -14,6 +14,16 @@ A first sentence-learning extension induces typed frames from annotated examples
 
 ## Run and inspect
 
+The latest [foundation teaching and repair study](experiments/2026-09-07-foundation-curriculum.md) adds a consolidated 22-procedure natural-number library, exact signed fractions and 24 public authored sentence frames. The [graduate capability program](docs/GRADUATE_CAPABILITY_PROGRAM.md) covers mathematics, physics and language; current results remain at the foundation stage.
+
+```powershell
+python -B -m kavi.curriculum_cli show
+python -B -m kavi.curriculum_cli ask "twice kinetic energy for mass 7 and speed 11"
+python -B -m kavi.curriculum_cli exact mean_pair -- -1/2 2/3
+```
+
+These queries return `847` and `1/12`. The public sentence artifact excludes source-derived lexical memory and definitions, which stay local. For visible teaching with Pause, Resume and Stop controls, follow the study's run instructions and use a fresh run directory.
+
 The structural learner uses the Python standard library. Query the latest compiled library without source files:
 
 ```powershell
@@ -52,6 +62,8 @@ The [runtime reference](docs/CIRCUIT_RUNTIME.md) documents pause, resume, stop, 
 
 ## Measured result
 
+The foundation study found and repaired search interference, missing signed/fractional execution, a sampling failure and a language-pattern regression. With supplied operation hints, both fixed and cumulative conditions acquired all eight numeric tasks under two seeds, passing 175/175 final cases and 254/254 earlier-skill checks per arm. Five rational procedures passed 108 final cases across an initial run and its repair. The hints and scalar semantics were supplied; these are not demonstrations of independent representation invention. The combined checkpoint passed 44 numeric, ten rational and 28 local language retention checks. Its [full record](experiments/2026-09-07-foundation-curriculum.md) preserves the preceding failures and distinguishes model storage from total resource costs.
+
 The 7 September connector and sentence trial completed in 2.653 seconds. All 16,431 multiplication cases passed; 47 swapped pairs had identical complete call traces, and 516 earlier successful cases had zero regressions. Multiplication now canonicalizes interchangeable inputs and uses binary scanning through the acquired addition gates. This is a supplied compiler optimization, not discovery of a new algorithm by the learner.
 
 The language model acquired 18 frames from 36 annotated sentences. It passed 12 new-argument calculations and seven clause-role checks in known constructions, recalled two taught definitions, and correctly reported the seven declared unsupported, ambiguous or invalid cases. The combined saved arithmetic and language artifacts occupy 29,082 bytes; the worker peaked at 26.36 MiB. Unfamiliar wording, philosophical explanation and creative writing remain unsupported. The [study](experiments/2026-09-07-connectors-language.md) records source scope, costs and all evidence boundaries.
@@ -84,7 +96,7 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 
 The repository also retains a symbolic pathway circuit with supplied operation contracts and a separate 66,880-parameter recurrent text model. Their measured language limitations and regressions remain documented. They are separate implementations; their capabilities are not part of the new circuit model.
 
-Python 3.11 or later is declared. The first circuit trial used Python 3.12.14; the library and sentence trials used Python 3.13.5. All 181 tests passed using Python 3.13.5 with the existing PyTorch installation; PyTorch is needed only for the optional earlier text core and its tests.
+Python 3.11 or later is declared. The first circuit trial used Python 3.12.14; the library and sentence trials used Python 3.13.5. All 189 tests passed using Python 3.13.5 with the existing PyTorch installation; PyTorch is needed only for the optional earlier text core and its tests.
 
 ```powershell
 python -B -m unittest discover -s tests -q

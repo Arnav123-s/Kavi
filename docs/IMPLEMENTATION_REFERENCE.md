@@ -4,7 +4,17 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The package contains separate symbolic and recurrent experiments. A supplied operation contract, an acquired coefficient and a learned program are distinct forms of supervision.
 
-The following inventory covers 65 Python modules under `kavi`: the 52 earlier modules, four modules for structural circuit learning, six for procedure acquisition and its live interface, and three for the connector and sentence extension. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+The following inventory covers the earlier symbolic and recurrent cores, structural circuit learning, procedure acquisition, connectors, sentence learning and the foundation extension. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
+
+### Foundation extension
+
+| Module | Responsibility |
+| --- | --- |
+| `foundation_curriculum.py` | Authored tasks, disjoint banks, fixed/cumulative comparisons and measured follow-ups |
+| `rational_paths.py` | Supplied exact sign/fraction representation over acquired integer dependencies; bounded learned call compositions |
+| `curriculum_cli.py` | Read-only queries of published consolidated checkpoints |
+
+The [foundation study](../experiments/2026-09-07-foundation-curriculum.md) documents the teaching windows and runner scripts. `procedure_search.py` now permits explicit call-only and operation-family restrictions while preserving defaults. `grounded_language.py` has an optional most-literal-token resolution policy, serialized as schema v2; its previous v1 behavior remains supported.
 
 ### Current structural learner
 

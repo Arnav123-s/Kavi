@@ -64,12 +64,21 @@ class ProgramSearch:
     notify: Callable[[str, dict], None] = lambda *_: None
     stats: ProgramStats = field(default_factory=ProgramStats)
     max_cache_entries: int = 100000
+    allowed_tags: tuple[str, ...] = ("call", "repeat", "range")
+    allowed_names: tuple[str, ...] | None = None
 
     def learn(self, arity: int, examples: Sequence[ProgramExample]) -> Expr:
         if not examples or not 1 <= arity <= 3 or not 1 <= self.max_nodes <= 4:
             raise ValueError("Invalid examples, arity or program search budget.")
         if min(self.max_candidates, self.max_candidate_cases, self.max_seconds) <= 0:
             raise ValueError("Program search budgets must be positive.")
+        if (not self.allowed_tags or len(set(self.allowed_tags)) != len(self.allowed_tags)
+                or not set(self.allowed_tags) <= {"call", "repeat", "range"}):
+            raise ValueError("Unknown or duplicate search instruction tags.")
+        if self.allowed_names is not None and (not self.allowed_names
+                or len(set(self.allowed_names)) != len(self.allowed_names)
+                or not set(self.allowed_names) <= set(self.library.procedures)):
+            raise ValueError("Search operation names must be distinct available procedures.")
         if any(len(example.inputs) != arity for example in examples):
             raise ValueError("Teaching example arity mismatch.")
         self.stats = ProgramStats()
@@ -108,10 +117,13 @@ class ProgramSearch:
                     return found
             # Recency is a declared prior favoring reuse of a recently acquired procedure.
             names = list(reversed(self.library.procedures))
-            operations = [("call", name, self.library.procedures[name].arity) for name in names]
+            if self.allowed_names is not None:
+                names = [name for name in names if name in self.allowed_names]
+            operations = ([("call", name, self.library.procedures[name].arity) for name in names]
+                          if "call" in self.allowed_tags else [])
             operations += [(tag, name, 3 if tag == "repeat" else 2)
                            for tag in ("repeat", "range") for name in names
-                           if self.library.procedures[name].arity == 2]
+                           if tag in self.allowed_tags and self.library.procedures[name].arity == 2]
             self.notify("program_search_started", {"available_procedures": names,
                                                      "max_nodes": self.max_nodes,
                                                      "teaching_cases": len(examples)})

@@ -28,12 +28,13 @@ def normalized(text):
 
 
 class LanguageModel:
-    def __init__(self):
+    def __init__(self, prefer_specific=False):
         self.rules = []
         self.lexicon = {}
         self.evidence = []
         self.definitions = {}
         self.training_stats = {"examples": 0, "alignments": 0}
+        self.prefer_specific = prefer_specific
 
     def teach(self, lessons, check=lambda: None, notify=lambda _: None):
         """Infer typed slot templates by alignment against supplied meanings."""
@@ -109,6 +110,7 @@ class LanguageModel:
         if len(words) > 96:
             return {"state": "unsupported", "reason": "Sentence exceeds 96 tokens."}
         meanings = {}
+        best_specificity = -1
         for rule in self.rules:
             check()
             states = [(0, {})]
@@ -133,6 +135,12 @@ class LanguageModel:
             for position, bound in states:
                 if position != len(words):
                     continue
+                specificity = sum(isinstance(item, str) for item in rule["pattern"]) if self.prefer_specific else 0
+                if specificity < best_specificity:
+                    continue
+                if specificity > best_specificity:
+                    meanings.clear()
+                    best_specificity = specificity
                 meaning = {"kind": rule["kind"], "label": rule["label"]}
                 if rule["kind"] == "calculation":
                     meaning["inputs"] = [bound[f"n{i}"] for i in range(len(bound))]
@@ -165,9 +173,11 @@ class LanguageModel:
         return {**parsed, "status": "sentence relation identified; truth and argument validity unassessed"}
 
     def encoded(self):
-        return (json.dumps({"schema": "kavi.grounded-language.v1", "rules": self.rules,
-                            "lexicon": self.lexicon, "evidence": self.evidence, "definitions": self.definitions},
-                           sort_keys=True, separators=(",", ":")) + "\n").encode()
+        value = {"schema": "kavi.grounded-language.v1", "rules": self.rules,
+                            "lexicon": self.lexicon, "evidence": self.evidence, "definitions": self.definitions}
+        if self.prefer_specific:
+            value.update(schema="kavi.grounded-language.v2", resolution="most_literal_tokens")
+        return (json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n").encode()
 
     @classmethod
     def load(cls, path):
@@ -175,7 +185,13 @@ class LanguageModel:
         if path.stat().st_size > 4_000_000:
             raise ValueError("Language model exceeds four MB.")
         value = json.loads(path.read_text(encoding="utf-8"))
-        if set(value) != {"schema", "rules", "lexicon", "evidence", "definitions"} or value["schema"] != "kavi.grounded-language.v1":
+        expected = {"schema", "rules", "lexicon", "evidence", "definitions"}
+        specific = value.get("schema") == "kavi.grounded-language.v2"
+        if specific:
+            expected.add("resolution")
+            if value.get("resolution") != "most_literal_tokens":
+                raise ValueError("Unknown sentence resolution policy.")
+        if set(value) != expected or value["schema"] not in {"kavi.grounded-language.v1", "kavi.grounded-language.v2"}:
             raise ValueError("Invalid language schema.")
         if not isinstance(value["rules"], list) or len(value["rules"]) > 256:
             raise ValueError("Invalid sentence rules.")
@@ -212,7 +228,7 @@ class LanguageModel:
                 for entry in entries
             ):
                 raise ValueError("Invalid lexical entry.")
-        result = cls()
+        result = cls(prefer_specific=specific)
         result.rules, result.lexicon, result.evidence = value["rules"], value["lexicon"], value["evidence"]
         result.definitions = value["definitions"]
         return result

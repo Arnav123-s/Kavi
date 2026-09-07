@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) translates this direction into three subject tracks. The [foundation teaching study](../experiments/2026-09-07-foundation-curriculum.md) records implemented search and representation repairs, fresh-input results and consolidation checks. Its teacher hints and exact scalar semantics are supplied mechanisms; learned internal semantics and learned learning policies remain research questions.
+
 ## Intended system
 
 Kavi's pathways are intended as a general representation of reusable computation. Chemistry, heat, energy, catalysts, physical systems and quantum descriptions are examples of possible structures, not a fixed inventory of mechanisms the system must imitate.

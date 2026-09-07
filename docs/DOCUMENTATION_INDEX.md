@@ -2,7 +2,7 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) records the baseline through the first two procedure trials. The subsequent [connector and sentence-learning study](../experiments/2026-09-07-connectors-language.md) records the latest implementation and measurements.
+The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) records the baseline through the first two procedure trials. Later records cover [connectors and sentence learning](../experiments/2026-09-07-connectors-language.md) and the latest [foundation teaching, gap repairs and consolidated checkpoint](../experiments/2026-09-07-foundation-curriculum.md).
 
 The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md), [discrete runtime](CIRCUIT_RUNTIME.md) and [procedure runtime](PROCEDURE_LIBRARY_RUNTIME.md) distinguish the broader design from its implemented instances. The specification and PDF include structural acquisition, bounded program learning, live interfaces, measured reuse and remaining failures. Detailed commands remain in the runtime references.
 
@@ -12,7 +12,7 @@ The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) records the broad
 
 | Document | Scope |
 | --- | --- |
-| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 65 package modules |
+| [Implementation reference](IMPLEMENTATION_REFERENCE.md) | Package modules and their responsibilities |
 | [Discrete circuit runtime](CIRCUIT_RUNTIME.md) | Learned gates, structural search, execution and live controls |
 | [Procedure library runtime](PROCEDURE_LIBRARY_RUNTIME.md) | Acquired calls, supplied iteration, bounded program search and live learning window |
 | [Recurrent model equations](WAVE_MODEL_MATH.md) | Forward computation, training and costs |
@@ -26,6 +26,8 @@ The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) records the broad
 | [Typed composition](TYPED_COMPOSITION_STAGE.md) | Supplied contracts and nested execution |
 
 ## Learning and curriculum
+
+The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) defines all three subject tracks, prerequisites and assessment boundaries. The [foundation study](../experiments/2026-09-07-foundation-curriculum.md) records completed teaching, failures, repairs, visible-run commands and checkpoint queries.
 
 | Document | Scope |
 | --- | --- |

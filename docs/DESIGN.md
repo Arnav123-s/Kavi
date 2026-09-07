@@ -8,6 +8,8 @@ Kavi's learned object is an executable operation represented by circuit structur
 
 ## Implemented components
 
+The [foundation extension](../experiments/2026-09-07-foundation-curriculum.md) adds exact rational execution over acquired integer dependencies, controlled search restrictions and a consolidated checkpoint. Fraction signs, normalization and division semantics are engineered; the learner acquires call compositions above them. The optional language v2 resolution policy prefers the most specific matching frame by literal-token count and preserves ties as ambiguity. Neither change implements autonomous semantic invention or the proposed physical dynamics.
+
 | Component | Implementation | Responsibility |
 | --- | --- | --- |
 | Gate graph and executor | `kavi/circuit_core.py` | Strict graph schema, bit operations, state transitions and actual traces |
@@ -22,6 +24,9 @@ Kavi's learned object is an executable operation represented by circuit structur
 | Checked product compiler | `kavi/procedure_optimizations.py` | Local addition certificate, canonical operand connector and binary-loop transformation |
 | Sentence-frame learner | `kavi/grounded_language.py` | Annotated span alignment, typed meanings, ambiguity and separate lexical memory |
 | Connector and language trial | `kavi/connector_language_cli.py` | Reviewed source packet, finite live run and sealed model evaluation |
+| Foundation curriculum | `kavi/foundation_curriculum.py` | Separate teaching/correction/final banks, explicit hints and retained-skill checks |
+| Exact scalar library | `kavi/rational_paths.py` | Bounded signed fractions, acquired integer dependencies and learned call compositions |
+| Consolidated inspection | `kavi/curriculum_cli.py` | Read-only public checkpoint queries |
 
 During learning, the teacher supplies whole-input examples. Search proposes a gate graph; the verifier executes it and supplies a counterexample when it fails. Only a graph passing the selection bank is installed. During inference, the input is encoded as two bit streams, the same acquired graph executes at each position, and the emitted bits form the result. Teaching records and search catalogs are outside that execution path.
 

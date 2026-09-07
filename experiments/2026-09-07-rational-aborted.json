@@ -1,0 +1,1 @@
+{"state":"aborted","reason":"Harness requested 24 unique unary final cases from only 12 possibilities before its first search; manually stopped after diagnosis. No learning result. Sampling loop replaced with bounded sample. Wall/control checks were unreachable in that loop; corrected before rerun."}

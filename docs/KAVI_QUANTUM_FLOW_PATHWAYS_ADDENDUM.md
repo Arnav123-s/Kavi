@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [structural sharing and quantum study](STRUCTURAL_SHARING_AND_QUANTUM_RESEARCH.md) develops these constraints in detail, compares DreamCoder and Babble, and specifies spectroscopy-inspired probes and conditional quantum backends. Its algebra checks are separate from learning experiments.
+
 The [implemented circuit](CIRCUIT_RUNTIME.md) is classical and uses no amplitude or quantum simulation. Multiple candidates are ordinary explicitly counted search alternatives. The complex-flow mechanisms below remain a separate proposal.
 
 Status: proposed classical numerical experiment.

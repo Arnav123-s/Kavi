@@ -1,0 +1,64 @@
+{
+  "kind": "classical_algebra_sanity_checks",
+  "quantum_hardware_used": false,
+  "learning_performed": false,
+  "check_groups": 9,
+  "checks": {
+    "interference": {
+      "p_zero": [
+        0.9999999999999996,
+        0.4999999999999999,
+        3.7493994566546427e-33
+      ],
+      "passed": true
+    },
+    "coherence_vs_mixture": {
+      "pure_p_zero": 0.9999999999999996,
+      "mixed_p_zero": 0.4999999999999999,
+      "passed": true
+    },
+    "four_candidate_grover": {
+      "marked_probability_before_diffusion": 0.25,
+      "after_diffusion": 1.0,
+      "passed": true
+    },
+    "directed_nonunitary": {
+      "output_norm_squared": 2.0,
+      "passed": true
+    },
+    "cayley_vs_euler": {
+      "steps": 100,
+      "dt": 0.1,
+      "cayley_norm_squared": 1.000000000000017,
+      "euler_norm_squared": 2.704813829421526,
+      "passed": true
+    },
+    "amplitude_damping": {
+      "diagonal": [
+        0.29999999999999993,
+        0.7000000000000001
+      ],
+      "passed": true
+    },
+    "finite_signature_collision": {
+      "shared_inputs": [
+        0,
+        1
+      ],
+      "counterexample": 2,
+      "passed": true
+    },
+    "sorting_orientation": {
+      "inputs": 64,
+      "sorted_only": 36,
+      "with_orientation": 64,
+      "passed": true
+    },
+    "bernoulli_shot_bound": {
+      "epsilon": 0.01,
+      "delta": 0.05,
+      "shots": 18445,
+      "passed": true
+    }
+  }
+}

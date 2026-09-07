@@ -65,6 +65,8 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 - [Architecture](docs/DESIGN.md)
 - [Engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md)
 - [Printable baseline specification](docs/Kavi_Engineering_and_Research.pdf)
+- [Structural sharing and quantum research](docs/STRUCTURAL_SHARING_AND_QUANTUM_RESEARCH.md): DreamCoder, Babble, XRF/LIBS, mathematical design and evaluation
+- [Printable structural sharing study](docs/Kavi_Structural_Sharing_and_Quantum_Research.pdf)
 - [Shared connectors and sentence learning](docs/CONNECTORS_AND_LANGUAGE_PROTOCOL.md)
 - [Adaptive circuit formulation](docs/ADAPTIVE_DATAFLOW_CIRCUIT.md)
 - [Discrete circuit runtime](docs/CIRCUIT_RUNTIME.md)

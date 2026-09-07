@@ -43,6 +43,7 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 | Document | Scope |
 | --- | --- |
+| [Structural sharing and quantum research](STRUCTURAL_SHARING_AND_QUANTUM_RESEARCH.md) | DreamCoder and Babble comparison, XRF/LIBS probing, quantum constraints, mathematics and a staged experimental design; [PDF edition](Kavi_Structural_Sharing_and_Quantum_Research.pdf) |
 | [Architecture](DESIGN.md) | Main design decisions |
 | [Adaptive dataflow circuit](ADAPTIVE_DATAFLOW_CIRCUIT.md) | Structural memory, temporary flow, feedback and graph rewriting |
 | [Learned configuration](CONFIGURATION_FIRST_MODEL.md) | Structure, storage and reuse |

@@ -1,0 +1,717 @@
+{
+  "schema": "kavi.connector-language-exercises.v1",
+  "author": "Arnav123-s",
+  "scope": "Authored annotations and evaluation cases; original source bodies remain in the local sealed packet.",
+  "teaching": [
+    {
+      "text": "multiply 2 by 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "multiply 5 by 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "what is 2 times 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "what is 5 times 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "what is the product of 2 and 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "what is the product of 5 and 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "multiply",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "add 2 to 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "add",
+        "inputs": [
+          7,
+          2
+        ]
+      }
+    },
+    {
+      "text": "add 5 to 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "add",
+        "inputs": [
+          9,
+          5
+        ]
+      }
+    },
+    {
+      "text": "what is 2 plus 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "add",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "what is 5 plus 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "add",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "subtract 2 from 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "subtract",
+        "inputs": [
+          7,
+          2
+        ]
+      }
+    },
+    {
+      "text": "subtract 5 from 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "subtract",
+        "inputs": [
+          9,
+          5
+        ]
+      }
+    },
+    {
+      "text": "what is 7 minus 2",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "subtract",
+        "inputs": [
+          7,
+          2
+        ]
+      }
+    },
+    {
+      "text": "what is 9 minus 5",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "subtract",
+        "inputs": [
+          9,
+          5
+        ]
+      }
+    },
+    {
+      "text": "raise 2 to the power 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "power",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "raise 5 to the power 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "power",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "what is the sum of squares of 2 and 7",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "sum_squares",
+        "inputs": [
+          2,
+          7
+        ]
+      }
+    },
+    {
+      "text": "what is the sum of squares of 5 and 9",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "sum_squares",
+        "inputs": [
+          5,
+          9
+        ]
+      }
+    },
+    {
+      "text": "what is the square of 3",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "square",
+        "inputs": [
+          3
+        ]
+      }
+    },
+    {
+      "text": "what is the square of 6",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "square",
+        "inputs": [
+          6
+        ]
+      }
+    },
+    {
+      "text": "what is the factorial of 3",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "factorial",
+        "inputs": [
+          3
+        ]
+      }
+    },
+    {
+      "text": "what is the factorial of 6",
+      "source": "authored:quantity-grounding",
+      "target": {
+        "kind": "calculation",
+        "label": "factorial",
+        "inputs": [
+          6
+        ]
+      }
+    },
+    {
+      "text": "the conclusion is tentative because the evidence is incomplete",
+      "source": "authored:sentence-roles",
+      "target": {
+        "kind": "relation",
+        "label": "support",
+        "slots": {
+          "claim": "the conclusion is tentative",
+          "reason": "the evidence is incomplete"
+        }
+      }
+    },
+    {
+      "text": "the drawing is uncertain because the witness disagrees",
+      "source": "authored:sentence-roles",
+      "target": {
+        "kind": "relation",
+        "label": "support",
+        "slots": {
+          "claim": "the drawing is uncertain",
+          "reason": "the witness disagrees"
+        }
+      }
+    },
+    {
+      "text": "if the premise holds then the conclusion follows",
+      "source": "authored:sentence-roles",
+      "target": {
+        "kind": "relation",
+        "label": "conditional",
+        "slots": {
+          "condition": "the premise holds",
+          "consequence": "the conclusion follows"
+        }
+      }
+    },
+    {
+      "text": "if the switch closes then the lamp lights",
+      "source": "authored:sentence-roles",
+      "target": {
+        "kind": "relation",
+        "label": "conditional",
+        "slots": {
+          "condition": "the switch closes",
+          "consequence": "the lamp lights"
+        }
+      }
+    },
+    {
+      "text": "Hume says that ideas are less lively perceptions",
+      "source": "authored:primary-source-paraphrases",
+      "target": {
+        "kind": "relation",
+        "label": "attribution",
+        "slots": {
+          "speaker": "Hume",
+          "claim": "ideas are less lively perceptions"
+        }
+      }
+    },
+    {
+      "text": "Kant says that knowledge begins with experience",
+      "source": "authored:primary-source-paraphrases",
+      "target": {
+        "kind": "relation",
+        "label": "attribution",
+        "slots": {
+          "speaker": "Kant",
+          "claim": "knowledge begins with experience"
+        }
+      }
+    },
+    {
+      "text": "Hume does not say that an idea is identical to a present sensation",
+      "source": "authored:primary-source-paraphrases",
+      "target": {
+        "kind": "relation",
+        "label": "denied_attribution",
+        "slots": {
+          "speaker": "Hume",
+          "claim": "an idea is identical to a present sensation"
+        }
+      }
+    },
+    {
+      "text": "Kant does not say that all knowledge arises entirely from experience",
+      "source": "authored:primary-source-paraphrases",
+      "target": {
+        "kind": "relation",
+        "label": "denied_attribution",
+        "slots": {
+          "speaker": "Kant",
+          "claim": "all knowledge arises entirely from experience"
+        }
+      }
+    },
+    {
+      "text": "the word impression means a more lively perception in Humes terminology",
+      "source": "hume-enquiry-original-e2",
+      "target": {
+        "kind": "relation",
+        "label": "definition",
+        "slots": {
+          "term": "impression",
+          "meaning": "a more lively perception in Humes terminology"
+        }
+      }
+    },
+    {
+      "text": "the word idea means a less lively perception in Humes terminology",
+      "source": "hume-enquiry-original-e2",
+      "target": {
+        "kind": "relation",
+        "label": "definition",
+        "slots": {
+          "term": "idea",
+          "meaning": "a less lively perception in Humes terminology"
+        }
+      }
+    },
+    {
+      "text": "what does idea mean",
+      "source": "authored:lexical-lookup",
+      "target": {
+        "kind": "lookup",
+        "label": "definition",
+        "slots": {
+          "term": "idea"
+        }
+      }
+    },
+    {
+      "text": "what does impression mean",
+      "source": "authored:lexical-lookup",
+      "target": {
+        "kind": "lookup",
+        "label": "definition",
+        "slots": {
+          "term": "impression"
+        }
+      }
+    },
+    {
+      "text": "the paper claims that shared procedures can express related tasks",
+      "source": "authored:research-reading-exercises",
+      "target": {
+        "kind": "relation",
+        "label": "reported_research_claim",
+        "slots": {
+          "claim": "shared procedures can express related tasks"
+        }
+      }
+    },
+    {
+      "text": "the paper claims that an acquired abstraction can guide later program search",
+      "source": "authored:research-reading-exercises",
+      "target": {
+        "kind": "relation",
+        "label": "reported_research_claim",
+        "slots": {
+          "claim": "an acquired abstraction can guide later program search"
+        }
+      }
+    }
+  ],
+  "evaluation": [
+    {
+      "text": "what is 1000000 times 3?",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 3000000
+      }
+    },
+    {
+      "text": "what is 3 times 1000000?",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 3000000
+      }
+    },
+    {
+      "text": "multiply 1000000 by 1000000",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 1000000000000
+      }
+    },
+    {
+      "text": "what is the product of 83 and 71",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 5893
+      }
+    },
+    {
+      "text": "what is 27 plus 18",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 45
+      }
+    },
+    {
+      "text": "add 29 to 13",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 42
+      }
+    },
+    {
+      "text": "subtract 3 from 1000000",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 999997
+      }
+    },
+    {
+      "text": "what is 1000000 minus 3",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 999997
+      }
+    },
+    {
+      "text": "raise 20 to the power 10",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 10240000000000
+      }
+    },
+    {
+      "text": "what is the factorial of 18",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 6402373705728000
+      }
+    },
+    {
+      "text": "what is the square of 71",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 5041
+      }
+    },
+    {
+      "text": "what is the sum of squares of 72 and 83",
+      "group": "unseen_arguments_known_frames",
+      "expected": {
+        "state": "interpreted",
+        "value": 12073
+      }
+    },
+    {
+      "text": "the lamp glows because current flows",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "support",
+          "slots": {
+            "claim": "the lamp glows",
+            "reason": "current flows"
+          }
+        }
+      }
+    },
+    {
+      "text": "current flows because the lamp glows",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "support",
+          "slots": {
+            "claim": "current flows",
+            "reason": "the lamp glows"
+          }
+        }
+      }
+    },
+    {
+      "text": "if the archive is incomplete then the attribution is uncertain",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "conditional",
+          "slots": {
+            "condition": "the archive is incomplete",
+            "consequence": "the attribution is uncertain"
+          }
+        }
+      }
+    },
+    {
+      "text": "Socrates says that persuasive speech may be false",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "attribution",
+          "slots": {
+            "speaker": "socrates",
+            "claim": "persuasive speech may be false"
+          }
+        }
+      }
+    },
+    {
+      "text": "Newton does not say that motion changes without a force",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "denied_attribution",
+          "slots": {
+            "speaker": "newton",
+            "claim": "motion changes without a force"
+          }
+        }
+      }
+    },
+    {
+      "text": "the word metaphor means an indirect comparison",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "definition",
+          "slots": {
+            "term": "metaphor",
+            "meaning": "an indirect comparison"
+          }
+        }
+      }
+    },
+    {
+      "text": "the paper claims that a larger vocabulary can slow search",
+      "group": "new_content_known_relation_frames",
+      "expected": {
+        "state": "interpreted",
+        "meaning": {
+          "kind": "relation",
+          "label": "reported_research_claim",
+          "slots": {
+            "claim": "a larger vocabulary can slow search"
+          }
+        }
+      }
+    },
+    {
+      "text": "what does idea mean?",
+      "group": "taught_lexical_recall",
+      "expected": {
+        "state": "interpreted",
+        "status": "source-linked lexical recall"
+      }
+    },
+    {
+      "text": "what does impression mean?",
+      "group": "taught_lexical_recall",
+      "expected": {
+        "state": "interpreted",
+        "status": "source-linked lexical recall"
+      }
+    },
+    {
+      "text": "work out three million times two",
+      "group": "unsupported_capability_probes",
+      "expected": {
+        "state": "unsupported"
+      }
+    },
+    {
+      "text": "explain the argument in the original Greek",
+      "group": "unsupported_capability_probes",
+      "expected": {
+        "state": "unsupported"
+      }
+    },
+    {
+      "text": "write an original philosophical dialogue",
+      "group": "unsupported_capability_probes",
+      "expected": {
+        "state": "unsupported"
+      }
+    },
+    {
+      "text": "compare Kant with Nyaya",
+      "group": "unsupported_capability_probes",
+      "expected": {
+        "state": "unsupported"
+      }
+    },
+    {
+      "text": "what does justice mean",
+      "group": "unsupported_capability_probes",
+      "expected": {
+        "state": "unsupported"
+      }
+    },
+    {
+      "text": "a because b because c",
+      "group": "ambiguity",
+      "expected": {
+        "state": "ambiguous"
+      }
+    },
+    {
+      "text": "subtract 1000000 from 3",
+      "group": "ordered_contract_failure",
+      "expected": {
+        "state": "execution_failed"
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "term": "impression",
+      "meaning": "A more lively perception, in Hume's terminology in Enquiry II.3.",
+      "source": "hume-enquiry-original-e2",
+      "kind": "authored paraphrase of a source-specific sense"
+    },
+    {
+      "term": "idea",
+      "meaning": "A less lively perception associated with reflecting on sensation or emotion, in Hume's terminology in Enquiry II.3.",
+      "source": "hume-enquiry-original-e2",
+      "kind": "authored paraphrase of a source-specific sense"
+    }
+  ],
+  "demonstrations": [
+    "what is 1000000 times 3?",
+    "what does idea mean?",
+    "the lamp glows because current flows"
+  ]
+}

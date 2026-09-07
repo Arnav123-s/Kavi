@@ -1,0 +1,9 @@
+{
+  "foundation": "experiments/library-20260905-retained.json",
+  "lessons": "private/sources/connector-language-packet.json",
+  "lesson_sha256": "4adf03552cbd5e8a0b26400afc2355ff9be148d1deebb1789e6ce3c1341d1051",
+  "seed": 83,
+  "max_seconds": 180,
+  "max_memory_mb": 256,
+  "max_disk_mb": 32
+}

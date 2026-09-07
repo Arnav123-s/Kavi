@@ -9,7 +9,7 @@ import sys
 
 from .circuit_cli import control
 from .library_runtime import LibraryRun, LibraryRunConfig
-from .procedure_core import ProcedureLibrary, describe
+from .procedure_core import Limits, ProcedureLibrary, describe
 from .terminal import configure_utf8_output
 
 
@@ -39,13 +39,14 @@ def show_event(event):
     sys.stdout.flush()
 
 
-def ask(path, name, args, trace=False):
+def ask(path, name, args, trace=False, trace_limit=128):
     library = ProcedureLibrary.load(path)
-    result = library.execute(name, tuple(args), trace=trace)
+    result = library.execute(name, tuple(args), trace=trace, limits=Limits(max_trace_entries=trace_limit))
     print(f"{name}{tuple(args)} = {result.value}")
     print(f"calls={result.calls}; frames={result.frames}; gate evaluations={result.gates}; iterations={result.iterations}")
     if trace:
         for row in result.trace: print(json.dumps(row))
+        print(f"trace records={len(result.trace)}/{result.trace_events}; truncated={result.trace_truncated}")
 
 
 def console(path):
@@ -84,6 +85,7 @@ def main(argv=None):
             p.add_argument("name")
             p.add_argument("inputs", type=int, nargs="+")
             p.add_argument("--trace", action="store_true")
+            p.add_argument("--trace-limit", type=int, default=128)
     status = sub.add_parser("status")
     status.add_argument("--run-dir", type=Path, required=True)
     ctrl = sub.add_parser("control")
@@ -95,7 +97,7 @@ def main(argv=None):
             report = LibraryRun(LibraryRunConfig.load(args.config), args.run_dir, show_event).run()
             if args.interactive and (args.run_dir / "library.json").exists(): console(args.run_dir / "library.json")
             return 0 if report["state"] == "completed" else 1
-        if args.command == "ask": ask(args.library, args.name, args.inputs, args.trace)
+        if args.command == "ask": ask(args.library, args.name, args.inputs, args.trace, args.trace_limit)
         elif args.command == "console": console(args.library)
         elif args.command == "inspect":
             library = ProcedureLibrary.load(args.library)

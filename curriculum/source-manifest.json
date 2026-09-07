@@ -12,8 +12,13 @@
       "license_url": "https://www.unicode.org/license.txt",
       "status": "approved",
       "review_note": "Original ASCII records, seven additional Latin forms, eight independent Devanagari vowels and eight Arabic base letters inspected with the exact private source fingerprint for owner-authorized writing foundations on 2026-09-04. Script records do not certify language understanding.",
-      "subjects": ["character identity", "case forms"],
-      "levels": ["foundation"]
+      "subjects": [
+        "character identity",
+        "case forms"
+      ],
+      "levels": [
+        "foundation"
+      ]
     },
     {
       "source_id": "baskervill-sewell-english-grammar",
@@ -26,8 +31,15 @@
       "license_url": "https://www.gutenberg.org/ebooks/14006",
       "status": "approved",
       "review_note": "Catalog identifies authors, original English, public domain USA. Reviewed signed 1896 preface and selected definitions in sections 2, 336 and 340; the teacher uses short selected packets, not the full high-school text as a beginner lesson. Full original book and digitization credits remain private. Historical definitions are not universal linguistic facts.",
-      "subjects": ["English grammar", "word classes", "sentence structure"],
-      "levels": ["selected-foundation-definitions", "introductory grammar"]
+      "subjects": [
+        "English grammar",
+        "word classes",
+        "sentence structure"
+      ],
+      "levels": [
+        "selected-foundation-definitions",
+        "introductory grammar"
+      ]
     },
     {
       "source_id": "demorgan-arithmetic-1858",
@@ -40,8 +52,15 @@
       "license_url": "https://www.gutenberg.org/ebooks/68662",
       "status": "approved",
       "review_note": "Owner authorized original-source continued teaching on 2026-09-04. Catalog identifies English, original 1858 publication, public domain USA. Exact private download and reviewed scope are fingerprinted in curriculum/arithmetic-original.json. No translation; raw book remains private. Historical claims are not automatically true.",
-      "subjects": ["arithmetic", "number words", "mathematical reading"],
-      "levels": ["foundation", "elementary arithmetic"]
+      "subjects": [
+        "arithmetic",
+        "number words",
+        "mathematical reading"
+      ],
+      "levels": [
+        "foundation",
+        "elementary arithmetic"
+      ]
     },
     {
       "source_id": "unicode-17-script-property",
@@ -54,8 +73,14 @@
       "license_url": "https://www.unicode.org/license.txt",
       "status": "approved",
       "review_note": "Owner requested original-source automatic corrective teaching on 2026-09-04. Reviewed original version header, script ranges, and Unicode License V3. Teacher-only local reference, SHA-256 9f5e50d3abaee7d6ce09480f325c706f485ae3240912527e651954d2d6b035bf. Source and license remain under ignored private/sources; the learner does not consult the reference during inference.",
-      "subjects": ["character identity", "script property"],
-      "levels": ["foundation", "corrective-teaching"]
+      "subjects": [
+        "character identity",
+        "script property"
+      ],
+      "levels": [
+        "foundation",
+        "corrective-teaching"
+      ]
     },
     {
       "source_id": "nasa-ntrs-19830024400",
@@ -128,6 +153,120 @@
       "levels": [
         "advanced"
       ]
+    },
+    {
+      "source_id": "hume-enquiry-original-e2",
+      "title": "An Enquiry concerning Human Understanding, section II",
+      "creator": "David Hume",
+      "original_url": "https://davidhume.org/texts/e/2",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://davidhume.org/texts/e/2",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. Hume Texts Online; eighteenth-century original English text; E 2.3. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
+    },
+    {
+      "source_id": "kant-original-aa3-27",
+      "title": "Kritik der reinen Vernunft, AA III 27",
+      "creator": "Immanuel Kant",
+      "original_url": "https://www.korpora.org/kant/aa03/027.html",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://www.korpora.org/kant/aa03/027.html",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. Akademie edition electronic transcription, second-edition introduction; lines 14–21. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
+    },
+    {
+      "source_id": "plato-apology-original-17a",
+      "title": "Apology, 17a",
+      "creator": "Plato",
+      "original_url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0059/tlg002/tlg0059.tlg002.perseus-grc2.xml",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0059/tlg002/tlg0059.tlg002.perseus-grc2.xml",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. John Burnet, Platonis Opera I, Clarendon Press 1905; Perseus transcription; first paragraph opening. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
+    },
+    {
+      "source_id": "newton-original-leges-1713",
+      "title": "Principia, Axiomata Sive Leges Motus, 1713",
+      "creator": "Isaac Newton",
+      "original_url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00081",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00081",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. 1713 edition; Newton Project normalized transcription; Laws I–III statements only. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
+    },
+    {
+      "source_id": "vivekananda-raja-yoga-original-intro",
+      "title": "Raja-Yoga, Introductory",
+      "creator": "Swami Vivekananda",
+      "original_url": "https://www.ramakrishnavivekananda.info/vivekananda/volume_1/raja-yoga/introductory.htm",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://www.ramakrishnavivekananda.info/vivekananda/volume_1/raja-yoga/introductory.htm",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. Complete Works, volume 1, Raja-Yoga, chapter I, opening paragraph; digital transcription supported by Advaita Ashrama and catalogued by the University of Pennsylvania. Page does not specify its print impression. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
+    },
+    {
+      "source_id": "analects-original-stanford-a",
+      "title": "Analects, opening passage (1.1)",
+      "creator": "Confucius and early followers (received collection)",
+      "original_url": "https://chinesetexts.stanford.edu/2-lun-yu-%E8%AB%96%E8%AA%9E-the-analects/",
+      "license_class": "public-domain-us",
+      "source_type": "original-authored-work",
+      "license_url": "https://chinesetexts.stanford.edu/2-lun-yu-%E8%AB%96%E8%AA%9E-the-analects/",
+      "status": "approved",
+      "review_note": "Reviewed 7 September 2026. Stanford Chinese Philosophical Texts, lesson 2, extract A, lines 1–3. Identified teaching transcription of the received text; no claim of a critical edition. Only the ancient Chinese passage is used, excluding modern glosses and translations. Only the specified original public-domain passage is admitted for local lexical exposure. Modern editorial matter is excluded. Line wrapping is normalized; no translation is substituted. This is a digital textual witness, not an autograph manuscript.",
+      "subjects": [
+        "language",
+        "source attribution"
+      ],
+      "levels": [
+        "lexical exposure"
+      ],
+      "educational_purpose": "Count and link lexical units in a bounded original-language excerpt; separately assess annotated sentence frames without claiming passage understanding."
     }
   ]
 }

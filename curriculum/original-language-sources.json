@@ -1,0 +1,102 @@
+{
+  "revision": "2026-09-07",
+  "selection": "No Gutenberg sources in this packet.",
+  "admitted": [
+    {
+      "source_id": "hume-enquiry-original-e2",
+      "title": "An Enquiry concerning Human Understanding, section II",
+      "creator": "David Hume",
+      "original_url": "https://davidhume.org/texts/e/2",
+      "language": "English",
+      "edition": "Hume Texts Online; eighteenth-century original English text; E 2.3",
+      "region": "Scotland",
+      "period": "eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "55ca0157d7369b3886cec04abf6a022517f66dc59c9ffde4d6c67114e9c748f0"
+    },
+    {
+      "source_id": "kant-original-aa3-27",
+      "title": "Kritik der reinen Vernunft, AA III 27",
+      "creator": "Immanuel Kant",
+      "original_url": "https://www.korpora.org/kant/aa03/027.html",
+      "language": "German",
+      "edition": "Akademie edition electronic transcription, second-edition introduction; lines 14–21",
+      "region": "Prussia",
+      "period": "eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "3c039817216bede74d2063529b77ec9e7892d5ebf71696fb9e908453b0851f05"
+    },
+    {
+      "source_id": "plato-apology-original-17a",
+      "title": "Apology, 17a",
+      "creator": "Plato",
+      "original_url": "https://raw.githubusercontent.com/PerseusDL/canonical-greekLit/master/data/tlg0059/tlg002/tlg0059.tlg002.perseus-grc2.xml",
+      "language": "Ancient Greek",
+      "edition": "John Burnet, Platonis Opera I, Clarendon Press 1905; Perseus transcription; first paragraph opening",
+      "region": "Ancient Greece",
+      "period": "classical antiquity",
+      "license_class": "public-domain-us",
+      "extract_sha256": "ad5f556327ad53d3153f24240beb36d7a35c26b8741b03d53be65ece49b47b88"
+    },
+    {
+      "source_id": "newton-original-leges-1713",
+      "title": "Principia, Axiomata Sive Leges Motus, 1713",
+      "creator": "Isaac Newton",
+      "original_url": "https://www.newtonproject.ox.ac.uk/view/texts/normalized/NATP00081",
+      "language": "Latin",
+      "edition": "1713 edition; Newton Project normalized transcription; Laws I–III statements only",
+      "region": "England",
+      "period": "early eighteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "0d640077220a9831d483ade34909111150c33225a23ac36a78fbfcd5de284da1"
+    },
+    {
+      "source_id": "vivekananda-raja-yoga-original-intro",
+      "title": "Raja-Yoga, Introductory",
+      "creator": "Swami Vivekananda",
+      "original_url": "https://www.ramakrishnavivekananda.info/vivekananda/volume_1/raja-yoga/introductory.htm",
+      "language": "English",
+      "edition": "Complete Works, volume 1, Raja-Yoga, chapter I, opening paragraph; digital transcription supported by Advaita Ashrama and catalogued by the University of Pennsylvania. Page does not specify its print impression.",
+      "region": "India",
+      "period": "late nineteenth century",
+      "license_class": "public-domain-us",
+      "extract_sha256": "12ec423279ede68f772682f9ec7a6a206c324211c4b1ac98b1eeabdebb7fe7eb"
+    },
+    {
+      "source_id": "analects-original-stanford-a",
+      "title": "Analects, opening passage (1.1)",
+      "creator": "Confucius and early followers (received collection)",
+      "original_url": "https://chinesetexts.stanford.edu/2-lun-yu-%E8%AB%96%E8%AA%9E-the-analects/",
+      "language": "Classical Chinese",
+      "edition": "Stanford Chinese Philosophical Texts, lesson 2, extract A, lines 1–3. Identified teaching transcription of the received text; no claim of a critical edition. Only the ancient Chinese passage is used, excluding modern glosses and translations.",
+      "region": "Ancient China",
+      "period": "classical antiquity",
+      "license_class": "public-domain-us",
+      "extract_sha256": "736eb2796a2a4f92d108313a35161c25184414afaf7a059bfdd32bfbaa928aab"
+    }
+  ],
+  "pending": [
+    {
+      "title": "Gautama: Nyayasutra",
+      "language": "Sanskrit (Roman transliteration)",
+      "url": "https://gretil.sub.uni-goettingen.de/gretil/corpustei/transformations/html/sa_gautama-nyAyasUtra.htm",
+      "reason": "GRETIL identifies this witness as not proof-read and CC BY-NC-SA 4.0. Identify and verify a suitable base edition before inclusion; no passage ingested."
+    },
+    {
+      "title": "Analects, Xue Er",
+      "language": "Classical Chinese",
+      "url": "https://ctext.org/analects/xue-er/ens",
+      "reason": "This archive's direct page returned 403; its copy was not ingested. A separately identified Stanford teaching transcription supplies the admitted opening passage."
+    },
+    {
+      "title": "DreamCoder",
+      "url": "https://arxiv.org/abs/2006.08381",
+      "reason": "Research method reviewed. This packet has separately authored research-reading exercises, not article-text ingestion."
+    },
+    {
+      "title": "Merriam-Webster: hypothesis",
+      "url": "https://www.merriam-webster.com/dictionary/hypothesis",
+      "reason": "Publisher entry reviewed as a reference; no dictionary page ingested. The first retained definitions come from Hume's own terminology."
+    }
+  ]
+}

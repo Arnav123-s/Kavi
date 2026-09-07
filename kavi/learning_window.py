@@ -15,9 +15,10 @@ from tkinter import ttk
 
 class LearningWindow:
     def __init__(self, root: tk.Tk, run_dir: Path, config: Path,
-                 preparation: Path, ready_file: Path):
+                 preparation: Path, ready_file: Path, runner="kavi.library_cli"):
         self.root, self.run_dir, self.config = root, run_dir.resolve(), config.resolve()
         self.preparation, self.ready_file = preparation, ready_file
+        self.runner = runner
         self.process = None
         self.messages = queue.Queue()
         self.last_preparation = None
@@ -66,6 +67,14 @@ class LearningWindow:
         self.operands.pack(side="left", padx=(0, 8))
         ttk.Button(query, text="Execute and trace", command=self.ask).pack(side="left")
         self.operands.bind("<Return>", lambda _: self.ask())
+        if runner == "kavi.connector_language_cli":
+            sentence = ttk.Frame(root, padding=(16, 0, 16, 10))
+            sentence.pack(fill="x")
+            ttk.Label(sentence, text="Ask in learned wording:").pack(side="left", padx=(0, 8))
+            self.sentence = ttk.Entry(sentence, width=76)
+            self.sentence.insert(0, "what is 1000000 times 3?")
+            self.sentence.pack(side="left", padx=(0, 8))
+            ttk.Button(sentence, text="Interpret and execute", command=self.ask_sentence).pack(side="left")
         ttk.Label(root, text="Closing this window requests a stop. Completed evidence remains on disk.",
                   padding=(16, 0, 16, 12)).pack(anchor="w")
         root.protocol("WM_DELETE_WINDOW", self.close)
@@ -88,7 +97,7 @@ class LearningWindow:
         if self.run_dir.exists():
             self.append("Cannot start: choose a new run directory. Existing evidence is preserved.\n")
             return
-        command = [sys.executable, "-B", "-u", "-m", "kavi.library_cli", "run",
+        command = [sys.executable, "-B", "-u", "-m", self.runner, "run",
                    "--config", str(self.config), "--run-dir", str(self.run_dir)]
         try:
             self.process = subprocess.Popen(command, cwd=Path(__file__).resolve().parents[1],
@@ -128,8 +137,19 @@ class LearningWindow:
                         f"  calls={result.calls}; frames={result.frames}; gate evaluations={result.gates}\n")
             for row in result.trace:
                 self.append("  " + json.dumps(row, ensure_ascii=False) + "\n")
+            self.append(f"Trace: {len(result.trace)}/{result.trace_events}; truncated={result.trace_truncated}\n")
         except (OSError, ValueError, RuntimeError, ImportError) as error:
             self.append(f"Query unavailable: {error}\n")
+
+    def ask_sentence(self):
+        try:
+            from .grounded_language import LanguageModel
+            from .procedure_core import ProcedureLibrary
+            result = LanguageModel.load(self.run_dir / "language.json").answer(
+                self.sentence.get(), ProcedureLibrary.load(self.run_dir / "library.json"))
+            self.append("\n" + json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+        except (OSError, ValueError) as error:
+            self.append(f"Sentence query unavailable: {error}\n")
 
     def poll(self):
         for _ in range(500):
@@ -180,9 +200,10 @@ def main():
     parser.add_argument("--preparation", type=Path)
     parser.add_argument("--ready-file", type=Path)
     parser.add_argument("--start", action="store_true", help="Start the configured trial once the window opens.")
+    parser.add_argument("--runner", choices=("kavi.library_cli", "kavi.connector_language_cli"), default="kavi.library_cli")
     args = parser.parse_args()
     root = tk.Tk()
-    window = LearningWindow(root, args.run_dir, args.config, args.preparation, args.ready_file)
+    window = LearningWindow(root, args.run_dir, args.config, args.preparation, args.ready_file, args.runner)
     if args.start:
         root.after(1000, window.start)
     root.mainloop()

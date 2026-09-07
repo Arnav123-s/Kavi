@@ -37,6 +37,7 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 | [Historical works curriculum](HISTORICAL_WORKS_CURRICULUM.md) | Source-guided operation learning, argument analysis and visible trial procedure |
 | [Scaling lesson](SCALING_LESSON_PROTOCOL.md) | Execution cost, acquired call order and downstream transfer |
 | [Advanced capability protocol](ADVANCED_CAPABILITY_PROTOCOL.md) | Engineering prerequisites, subject assessment and the storage hypothesis |
+| [Connectors and sentence learning](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) | Shared operand binding, checked binary compilation, explicit trace limits and an original-source language trial |
 
 ## Research design
 

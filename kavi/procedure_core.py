@@ -50,6 +50,7 @@ class Procedure:
     contract: str
     circuit: Circuit | None = None
     body: Expr | None = None
+    connector: str = "ordered"
 
     def to_dict(self) -> dict:
         value = {"name": self.name, "arity": self.arity, "contract": self.contract}
@@ -57,6 +58,8 @@ class Procedure:
             value.update(kind="circuit", circuit=self.circuit.to_dict())
         else:
             value.update(kind="program", body=self.body)
+        if self.connector != "ordered":
+            value["connector"] = self.connector
         return value
 
 
@@ -68,6 +71,11 @@ class Execution:
     gates: int = 0
     iterations: int = 0
     trace: list[dict] = field(default_factory=list)
+    trace_events: int = 0
+    trace_truncated: bool = False
+    connector_comparisons: int = 0
+    bit_tests: int = 0
+    shifts: int = 0
 
 
 @dataclass(frozen=True)
@@ -76,6 +84,7 @@ class Limits:
     max_gates: int = 1_000_000
     max_iterations: int = 4096
     max_depth: int = 64
+    max_trace_entries: int = 128
 
 
 class ExecutionLimit(ValueError):
@@ -98,12 +107,12 @@ class ProcedureLibrary:
             if len(expr) != 2 or type(expr[1]) is not int or expr[1] not in (0, 1):
                 raise ValueError("Only the declared constants zero and one are available.")
         else:
-            if expr[0] not in {"call", "repeat", "range"} or not isinstance(expr[1], str):
+            if expr[0] not in {"call", "repeat", "range", "binary_fold"} or not isinstance(expr[1], str):
                 raise ValueError("Unsupported instruction.")
             callee = self.procedures.get(expr[1])
             if callee is None:
                 raise ValueError("Callees must be earlier, acquired procedures; cycles are forbidden.")
-            count = callee.arity if expr[0] == "call" else (3 if expr[0] == "repeat" else 2)
+            count = callee.arity if expr[0] == "call" else (2 if expr[0] == "range" else 3)
             if len(expr) != count + 2 or (expr[0] != "call" and callee.arity != 2):
                 raise ValueError("Call or iteration arity mismatch.")
             for child in expr[2:]:
@@ -121,6 +130,10 @@ class ProcedureLibrary:
             raise ValueError("An ordered-pair contract requires two inputs.")
         if procedure.contract == "ordered_prefix" and procedure.arity < 2:
             raise ValueError("An ordered prefix requires at least two inputs.")
+        if procedure.connector not in {"ordered", "unordered_pair"}:
+            raise ValueError("Unknown connector.")
+        if procedure.connector == "unordered_pair" and (procedure.arity != 2 or procedure.contract != "naturals"):
+            raise ValueError("An unordered connector requires two natural-number inputs.")
         if (procedure.circuit is None) == (procedure.body is None):
             raise ValueError("A procedure must contain exactly one circuit or program.")
         if procedure.circuit is not None and procedure.arity != 2:
@@ -138,6 +151,8 @@ class ProcedureLibrary:
 
     def execute(self, name: str, args: tuple[int, ...], *, trace=False,
                 limits=Limits(), check: Callable[[], None] = lambda: None) -> Execution:
+        if type(limits.max_trace_entries) is not int or not 0 <= limits.max_trace_entries <= 100000:
+            raise ValueError("Trace capacity must be between zero and 100000 entries.")
         result = Execution()
         try:
             result.value = self._call(name, tuple(args), result, limits, trace, check, 0)
@@ -148,6 +163,8 @@ class ProcedureLibrary:
 
     def execute_expr(self, expr: Expr, args: tuple[int, ...], *, trace=False,
                      limits=Limits(), check: Callable[[], None] = lambda: None) -> Execution:
+        if type(limits.max_trace_entries) is not int or not 0 <= limits.max_trace_entries <= 100000:
+            raise ValueError("Trace capacity must be between zero and 100000 entries.")
         self._validate_expr(expr, len(args))
         for value in args:
             self._natural(value)
@@ -181,6 +198,9 @@ class ProcedureLibrary:
             raise ValueError("Unknown procedure or argument count mismatch.")
         for value in args:
             self._natural(value)
+        if procedure.connector == "unordered_pair":
+            result.connector_comparisons += 1
+            args = (args[1], args[0]) if args[0] > args[1] else args
         if procedure.contract in {"ordered_pair", "ordered_prefix"} and args[0] < args[1]:
             raise ValueError("This procedure requires its first operand to be at least its second.")
         result.calls += 1
@@ -196,8 +216,12 @@ class ProcedureLibrary:
         else:
             value = self._eval(procedure.body, args, result, limits, trace, check, depth + 1)
         self._natural(value)
-        if trace and len(result.trace) < 128:
-            result.trace.append({"procedure": name, "inputs": args, "output": value, "depth": depth})
+        if trace:
+            result.trace_events += 1
+            if len(result.trace) < limits.max_trace_entries:
+                result.trace.append({"procedure": name, "inputs": args, "output": value, "depth": depth})
+            else:
+                result.trace_truncated = True
         return value
 
     def _eval(self, expr, args, result, limits, trace, check, depth):
@@ -214,6 +238,25 @@ class ProcedureLibrary:
     def _apply(self, tag, name, values, result, limits, trace, check, depth):
         if tag == "call":
             return self._call(name, values, result, limits, trace, check, depth)
+        if tag == "binary_fold":
+            if len(values) != 3 or name not in self.procedures or self.procedures[name].arity != 2:
+                raise ValueError("Binary fold requires a binary procedure and three values.")
+            count, state, step = values
+            while count:
+                check()
+                if result.iterations >= limits.max_iterations:
+                    raise ExecutionLimit("Binary iteration budget exhausted.")
+                result.iterations += 1
+                result.bit_tests += 1
+                if count & 1:
+                    state = self._call(name, (state, step), result, limits, trace, check, depth + 1)
+                count >>= 1
+                result.shifts += 1
+                if count:
+                    step <<= 1
+                    result.shifts += 1
+                    self._natural(step)
+            return state
         if tag not in {"repeat", "range"} or len(values) != (3 if tag == "repeat" else 2):
             raise ValueError("Invalid iteration instruction.")
         if name not in self.procedures or self.procedures[name].arity != 2:
@@ -230,7 +273,14 @@ class ProcedureLibrary:
         return state
 
     def to_dict(self):
-        return {"schema": SCHEMA, "procedures": [value.to_dict() for value in self.procedures.values()]}
+        extended = any(p.connector != "ordered" or (p.body is not None and self._has_binary(p.body))
+                       for p in self.procedures.values())
+        return {"schema": "kavi.procedure-library.v2" if extended else SCHEMA,
+                "procedures": [value.to_dict() for value in self.procedures.values()]}
+
+    @staticmethod
+    def _has_binary(expr):
+        return expr[0] == "binary_fold" or any(ProcedureLibrary._has_binary(x) for x in expr[2:] if isinstance(x, tuple))
 
     def encoded(self) -> bytes:
         return (json.dumps(self.to_dict(), sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
@@ -242,7 +292,7 @@ class ProcedureLibrary:
     @classmethod
     def from_dict(cls, value):
         if (not isinstance(value, dict) or set(value) != {"schema", "procedures"}
-                or value["schema"] != SCHEMA or not isinstance(value["procedures"], list)
+                or value["schema"] not in {SCHEMA, "kavi.procedure-library.v2"} or not isinstance(value["procedures"], list)
                 or len(value["procedures"]) > 32):
             raise ValueError("Invalid library schema.")
         library = cls()
@@ -253,11 +303,17 @@ class ProcedureLibrary:
             if kind not in {"circuit", "program"}:
                 raise ValueError("Invalid procedure kind.")
             body_key = "circuit" if kind == "circuit" else "body"
-            if set(entry) != {"name", "arity", "contract", "kind", body_key}:
+            fields = {"name", "arity", "contract", "kind", body_key}
+            if "connector" in entry and value["schema"] == "kavi.procedure-library.v2":
+                fields.add("connector")
+            if set(entry) != fields:
                 raise ValueError("Unsupported procedure fields.")
             library.add(Procedure(entry["name"], entry["arity"], entry["contract"],
                                   Circuit.from_dict(entry["circuit"]) if kind == "circuit" else None,
-                                  expression(entry["body"]) if kind == "program" else None))
+                                  expression(entry["body"]) if kind == "program" else None,
+                                  entry.get("connector", "ordered")))
+            if value["schema"] == SCHEMA and library.to_dict()["schema"] != SCHEMA:
+                raise ValueError("Extended instructions require schema version two.")
         return library
 
     @classmethod

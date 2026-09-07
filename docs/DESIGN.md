@@ -8,6 +8,8 @@ Kavi's learned object is an executable operation represented by circuit structur
 
 ## Implemented components
 
+The [input-driven extension](INPUT_DRIVEN_PATHWAYS.md) adds two isolated mechanisms: a learned discrete component selector for program acquisition, and an incremental shared graph compiled from acquired sentence frames. The latter resolves complete constructions as tokens arrive and can execute the resulting arithmetic interpretation. It has no physics-unit checker or general semantic activation dynamics. The earlier context-indexed route-memory prototype is retained for inspection and tests; its curriculum was not run after the design was clarified.
+
 The [foundation extension](../experiments/2026-09-07-foundation-curriculum.md) adds exact rational execution over acquired integer dependencies, controlled search restrictions and a consolidated checkpoint. Fraction signs, normalization and division semantics are engineered; the learner acquires call compositions above them. The optional language v2 resolution policy prefers the most specific matching frame by literal-token count and preserves ties as ambiguity. Neither change implements autonomous semantic invention or the proposed physical dynamics.
 
 | Component | Implementation | Responsibility |

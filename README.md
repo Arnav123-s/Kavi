@@ -14,6 +14,15 @@ A first sentence-learning extension induces typed frames from annotated examples
 
 ## Run and inspect
 
+The latest [input-driven pathway study](experiments/2026-09-07-incremental-paths.md) follows tokens through shared learned sentence states without an external subject label. It also tests a missing-symbol correction that preserves other uses of `a`. Inspect the published small grammar with:
+
+```powershell
+python -B -m kavi.incremental_cli "α equals 12 plus 13" --trace
+python -B -m kavi.incremental_cli "a multiplies 17 by 19"
+```
+
+The [design note](docs/INPUT_DRIVEN_PATHWAYS.md) distinguishes this implemented grammar from the proposed physical and semantic constraints. A separate [learned-routing comparison](experiments/2026-09-07-experience-routing.md) tests using previous programs to guide later acquisition.
+
 The latest [foundation teaching and repair study](experiments/2026-09-07-foundation-curriculum.md) adds a consolidated 22-procedure natural-number library, exact signed fractions and 24 public authored sentence frames. The [graduate capability program](docs/GRADUATE_CAPABILITY_PROGRAM.md) covers mathematics, physics and language; current results remain at the foundation stage.
 
 ```powershell
@@ -96,7 +105,7 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 
 The repository also retains a symbolic pathway circuit with supplied operation contracts and a separate 66,880-parameter recurrent text model. Their measured language limitations and regressions remain documented. They are separate implementations; their capabilities are not part of the new circuit model.
 
-Python 3.11 or later is declared. The first circuit trial used Python 3.12.14; the library and sentence trials used Python 3.13.5. All 189 tests passed using Python 3.13.5 with the existing PyTorch installation; PyTorch is needed only for the optional earlier text core and its tests.
+Python 3.11 or later is declared. The first circuit trial used Python 3.12.14; the library and sentence trials used Python 3.13.5. The test command below checks all current experiments; PyTorch is needed only for the optional earlier text core and its tests. Test counts for measured revisions appear in their experiment records.
 
 ```powershell
 python -B -m unittest discover -s tests -q

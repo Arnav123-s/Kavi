@@ -8,6 +8,8 @@ The following inventory covers the earlier symbolic and recurrent cores, structu
 
 ### Foundation extension
 
+The later [input-driven extension](INPUT_DRIVEN_PATHWAYS.md) adds `experience_router.py` (discrete routing-tree induction), `incremental_paths.py` (shared sentence-state execution) and `incremental_cli.py` (direct graph interpretation and arithmetic). `route_memory.py` is an isolated route-first alternative, covered by unit tests but not adopted or curriculum-tested. Related finite runners live under `scripts`; the [routing record](../experiments/2026-09-07-experience-routing.md) and [incremental record](../experiments/2026-09-07-incremental-paths.md) distinguish executed trials from this deferred alternative.
+
 | Module | Responsibility |
 | --- | --- |
 | `foundation_curriculum.py` | Authored tasks, disjoint banks, fixed/cumulative comparisons and measured follow-ups |

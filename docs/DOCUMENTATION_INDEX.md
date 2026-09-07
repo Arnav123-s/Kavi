@@ -8,6 +8,8 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 ## Implementation and operation
 
+The [input-driven pathway design](INPUT_DRIVEN_PATHWAYS.md) consolidates the owner's shared activation, incremental interpretation and structural correction requirements. Evidence is split between [learned search routing](../experiments/2026-09-07-experience-routing.md) and [incremental meaning and symbol correction](../experiments/2026-09-07-incremental-paths.md).
+
 The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) records the broader research intent, including learned internal roles. The [configuration reuse and correction experiments](../experiments/2026-09-07-pathway-growth.md) test two narrow parts of that direction with the existing learner.
 
 | Document | Scope |

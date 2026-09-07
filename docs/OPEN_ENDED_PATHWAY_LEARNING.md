@@ -6,6 +6,8 @@ The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) translates thi
 
 ## Intended system
 
+The [input-driven refinement](INPUT_DRIVEN_PATHWAYS.md) specifies how incoming information should activate shared configurations and resolve earlier ambiguity without a supplied subject label. The corresponding bounded sentence experiment and missing-symbol correction are measured; general semantic and physical constraint propagation remain proposals.
+
 Kavi's pathways are intended as a general representation of reusable computation. Chemistry, heat, energy, catalysts, physical systems and quantum descriptions are examples of possible structures, not a fixed inventory of mechanisms the system must imitate.
 
 The motivating analogy is a miniature universe: an initially limited internal system acquires representations of additional relationships and processes, then uses them as components in further configurations. It need not contain those representations at initialization. Teaching should progressively expand what it can construct, interpret and revise. This is a computational analogy; the system is not claimed to simulate every physical process or inherit a physical system's computational resources.

@@ -19,6 +19,8 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Input-driven shared paths and structural symbol correction](2026-09-07-incremental-paths.md)
+- [Learned component routing and a repaired search-budget allocation](2026-09-07-experience-routing.md)
 - [Foundation curriculum, signed fractions and verified gap repairs](2026-09-07-foundation-curriculum.md)
 - [Bounded acquisition and reuse of configurations](2026-09-07-pathway-growth.md)
 - [Addition certificate and software-example audit](2026-09-07-addition-certificate-audit.json), with [theorem and scope](../docs/ADDITION_CORRECTNESS.md); read-only checks, no training or speed benchmark

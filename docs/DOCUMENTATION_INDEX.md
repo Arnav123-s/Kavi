@@ -59,6 +59,7 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 | [Research program](UNIFIED_RESEARCH_BLUEPRINT.md) | Order of experiments |
 | [Project overview](KAVI_CHILD_FRIENDLY_PLAN.md) | Short introduction |
 | [Primary research](RESEARCH.md) | Mathematical relatives and inspected sources |
+| [Model families and size](MODEL_FAMILIES_AND_SIZE_COMPARISON.md) | Statistical, neural and program-learning relatives; storage accounting, numerical comparisons and fair baselines |
 
 ## Evidence and repository standards
 

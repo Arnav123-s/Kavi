@@ -157,7 +157,7 @@ python -m kavi.pathway_cli watch --run-dir runs\YOUR-RUN --channel pathways --te
 ```
 
 Pause, resume, and stop operate on the selected run only. The teacher runs as
-an ordinary local process without the assistant or an external model. This
+an ordinary local process with no external model dependency. This
 command creates no scheduled background service and does not change device
 power or temperature limits. All computation is currently serial CPU work.
 The displayed groups of up to four paths are trace groupings, not a measured

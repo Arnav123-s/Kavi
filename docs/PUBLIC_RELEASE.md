@@ -10,8 +10,8 @@ the project’s reviewed design, source code, tests, compact experiment records,
 and reference links. It does not reconstruct private conversations, prior local
 activity, or materials that were never intentionally included in the project.
 
-The repository’s commit identity is limited to the project author’s GitHub
-no-reply address. It contains no co-author trailers or tool attribution.
+Commits use the project author's GitHub no-reply address. Cited research
+retains its original authorship.
 
 ## What must never be committed
 
@@ -31,10 +31,9 @@ extract fingerprints only. It does not republish source bodies. See
 ## Naming and technical wording
 
 The repository, Python package, command-line program, and design documents use
-the name Kavi. Public materials should not use previous project names or
-unnecessary vendor, assistant, or automation branding. Generic technical terms
-remain where they are needed to state the design and source-use constraints
-truthfully.
+the name Kavi. Documentation describes the implemented system, its measured
+results and its limitations. Technical terms and source attribution remain
+where they are needed to state the design accurately.
 
 ## Release verification
 
@@ -62,10 +61,6 @@ a review of every staged item.
 4. Verify the public tree, documentation links, author attribution, and test
    instructions from the remote repository.
 5. Do not publish a release tag until the author selects a software license.
-
-No local policy can erase independent hosting, network, or account audit
-records. The goal here is an accurate, clean project history and a deliberate
-public source tree.
 
 ## After publication
 

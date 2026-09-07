@@ -8,7 +8,7 @@ The structural learner acquires addition and subtraction transitions from exampl
 
 The acquired 321-byte addition graph satisfies all eight local full-adder identities. Together with the specified bit-stream executor, this gives a [correctness theorem for every finite width](docs/ADDITION_CORRECTNESS.md); the implementation currently accepts inputs up to 4,096 bits. The theorem is separate from the learning claim, which includes a 129-case selection bank.
 
-The current [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Heat, cooling, catalysts and a computational element table are proposed internal rules. They are not implemented or measured capabilities.
+The [expanding pathway system](docs/OPEN_ENDED_PATHWAY_LEARNING.md) treats chemistry and physics as examples of structures that might be learned, rather than a fixed component inventory. The [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Heat, cooling and catalysts remain proposals. The [configuration-reuse experiment](experiments/2026-09-07-pathway-growth.md) tests a narrower capability using the existing arithmetic learner.
 
 A first sentence-learning extension induces typed frames from annotated examples and routes recognized calculations to those procedures. It also retains source-linked lexical memory from six short original-language passages. General prose comprehension and autonomous invention of control semantics remain research goals. See the [connector and language results](experiments/2026-09-07-connectors-language.md).
 

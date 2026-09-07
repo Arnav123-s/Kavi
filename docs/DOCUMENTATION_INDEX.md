@@ -8,6 +8,8 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 ## Implementation and operation
 
+The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) records the broader research intent, including learned internal roles. The [configuration reuse and correction experiments](../experiments/2026-09-07-pathway-growth.md) test two narrow parts of that direction with the existing learner.
+
 | Document | Scope |
 | --- | --- |
 | [Implementation reference](IMPLEMENTATION_REFERENCE.md) | All 65 package modules |

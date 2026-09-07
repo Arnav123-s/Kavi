@@ -1,0 +1,8 @@
+{
+  "source": "experiments/library-20260907-compiled.json",
+  "teaching_inputs": [0, 1, 2, 3, 4, 5],
+  "test_inputs": [6, 7, 8, 9, 10, 11, 12, 17, 23],
+  "protocol": "Three arms: fixed multiply closure, unrelated double lesson, cumulative square/fourth/eighth lessons. Supplied call/repeat/range grammar. No primitive discovery or source rewriting. Final tests run after all learning.",
+  "budget": "Per search: 2 nodes, 3000 candidates, 40000 candidate cases, 5 seconds, 8000 cache entries. Total: 120 seconds including pauses; 512 MiB sampled process working set. Single worker.",
+  "acceptance": "Training-consistent candidates retained provisionally in isolated arm. Report every held-out failure and retest addition/multiplication. No promotion into the main library."
+}

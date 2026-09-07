@@ -1,0 +1,1 @@
+{"scope":"Post-run diagnosis only; original 32-iteration evaluation remains 8/9. Not a new held-out success or changed acceptance criterion.","input":23,"expected":78310985281,"value":78310985281,"correct":true,"iterations":34,"gates":1260,"calls":21,"max_iterations":64}

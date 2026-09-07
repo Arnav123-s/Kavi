@@ -6,6 +6,10 @@ Kavi learns reusable computations as circuit structure. Gates and connections de
 
 The structural learner acquires addition and subtraction transitions from examples using AND, XOR and NOT gates, then learns programs that call acquired operations. The original retained library contains 13 procedures in 2,238 bytes; a checked multiplication optimization produces a 2,272-byte library with the same 13 entries. Its arithmetic model contains no teaching equations or learned numerical edge weights. Encoding, state registers, iteration semantics, types and the search controller are supplied.
 
+The acquired 321-byte addition graph satisfies all eight local full-adder identities. Together with the specified bit-stream executor, this gives a [correctness theorem for every finite width](docs/ADDITION_CORRECTNESS.md); the implementation currently accepts inputs up to 4,096 bits. The theorem is separate from the learning claim, which includes a 129-case selection bank.
+
+The current [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Heat, cooling, catalysts and a computational element table are proposed internal rules. They are not implemented or measured capabilities.
+
 A first sentence-learning extension induces typed frames from annotated examples and routes recognized calculations to those procedures. It also retains source-linked lexical memory from six short original-language passages. General prose comprehension and autonomous invention of control semantics remain research goals. See the [connector and language results](experiments/2026-09-07-connectors-language.md).
 
 ## Run and inspect
@@ -62,6 +66,8 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 
 ## Documentation
 
+- [Certified arithmetic and software efficiency](docs/CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md): review audit, software algorithms, physical pathways and deferred recommendations
+- [Printable certificate and software study](docs/Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf)
 - [Architecture](docs/DESIGN.md)
 - [Engineering and research specification](docs/KAVI_ENGINEERING_SPECIFICATION.md)
 - [Printable baseline specification](docs/Kavi_Engineering_and_Research.pdf)

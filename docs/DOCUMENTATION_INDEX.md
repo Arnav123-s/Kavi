@@ -43,6 +43,9 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 | Document | Scope |
 | --- | --- |
+| [Certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) | External-claim audit, explicit addition theorem, software methods, six diagrams and deferred recommendations; [PDF edition](Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf) |
+| [Addition correctness](ADDITION_CORRECTNESS.md) | Eight-row local certificate, width-independent induction, executor assumptions and data-exposure limits |
+| [Physical pathway mechanisms](PHYSICAL_PATHWAY_RESEARCH.md) | Typed reaction networks, heat/cooling, catalysts and separate engineered/learned mechanism tracks; proposed only |
 | [Structural sharing and quantum research](STRUCTURAL_SHARING_AND_QUANTUM_RESEARCH.md) | DreamCoder and Babble comparison, XRF/LIBS probing, quantum constraints, mathematics and a staged experimental design; [PDF edition](Kavi_Structural_Sharing_and_Quantum_Research.pdf) |
 | [Architecture](DESIGN.md) | Main design decisions |
 | [Adaptive dataflow circuit](ADAPTIVE_DATAFLOW_CIRCUIT.md) | Structural memory, temporary flow, feedback and graph rewriting |

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470"><title>From a local identity to exact addition</title><desc>Technical diagram by Arnav123-s for Kavi.</desc><style>text{font-family:Arial,sans-serif;fill:#172a38} .title{font-size:25px;font-weight:bold}.label{font-size:20px;font-weight:bold}.small{font-size:17px}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#4a687d"/></marker></defs><rect width="1000" height="100%" fill="white"/>
+<text x="30" y="40" class="title">From a local identity to exact addition</text>
+<rect x="30" y="80" width="275" height="110" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="110" class="label">Inputs and old carry</text>
+<text x="45" y="138" class="small">a, b, c are bits</text>
+<text x="45" y="162" class="small">carry starts at zero</text>
+<rect x="360" y="80" width="275" height="110" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="375" y="110" class="label">Acquired transition</text>
+<text x="375" y="138" class="small">five Boolean gates</text>
+<text x="375" y="162" class="small">emit e; next carry t</text>
+<rect x="690" y="80" width="280" height="110" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="705" y="110" class="label">One frame result</text>
+<text x="705" y="138" class="small">e + 2t = a + b + c</text>
+<text x="705" y="162" class="small">verified on all eight rows</text>
+<path d="M305,135 L355,135" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M635,135 L685,135" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="30" y="270" width="275" height="115" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="300" class="label">Streaming contract</text>
+<text x="45" y="328" class="small">LSB first; synchronous state</text>
+<text x="45" y="352" class="small">one final zero-input frame</text>
+<rect x="360" y="270" width="275" height="115" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="375" y="300" class="label">Induction</text>
+<text x="375" y="328" class="small">prefix + pending carry</text>
+<text x="375" y="352" class="small">equals both input prefixes</text>
+<rect x="690" y="270" width="280" height="115" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="705" y="300" class="label">Scope of the result</text>
+<text x="705" y="328" class="small">every finite width in model</text>
+<text x="705" y="352" class="small">runtime input limit: 4,096 bits</text>
+<path d="M305,327 L355,327" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M635,327 L685,327" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M830,190 L830,255" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<text x="30" y="435" class="small">The theorem depends on the executor contract. Tests still check implementation and integration.</text>
+</svg>

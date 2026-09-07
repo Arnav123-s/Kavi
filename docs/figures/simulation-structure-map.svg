@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="550" viewBox="0 0 1000 550"><title>Choose a representation by structure, not qubit count</title><desc>Technical diagram by Arnav123-s for Kavi.</desc><style>text{font-family:Arial,sans-serif;fill:#172a38} .title{font-size:25px;font-weight:bold}.label{font-size:20px;font-weight:bold}.small{font-size:17px}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#4a687d"/></marker></defs><rect width="1000" height="100%" fill="white"/>
+<text x="30" y="40" class="title">Choose a representation by structure, not qubit count</text>
+<rect x="30" y="85" width="450" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="115" class="label">Stabilizer tableau</text>
+<text x="45" y="143" class="small">Clifford family; exact symbols</text>
+<text x="45" y="167" class="small">O(n squared) bits</text>
+<rect x="520" y="85" width="450" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="535" y="115" class="label">Matrix-product state</text>
+<text x="535" y="143" class="small">small Schmidt ranks</text>
+<text x="535" y="167" class="small">O(n chi squared) numbers</text>
+<rect x="30" y="245" width="450" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="275" class="label">Decision diagram / cuts</text>
+<text x="45" y="303" class="small">repeated substructure or few cuts</text>
+<text x="45" y="327" class="small">can still require exponential work</text>
+<rect x="520" y="245" width="450" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="535" y="275" class="label">General tensor / dense</text>
+<text x="535" y="303" class="small">contraction width or full state</text>
+<text x="535" y="327" class="small">output and workspace matter</text>
+<rect x="30" y="425" width="940" height="90" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="455" class="label">Common verification boundary</text>
+<text x="45" y="483" class="small">Same input access, required output and accuracy; charge setup and all intermediate storage.</text>
+<text x="30" y="400" class="small">These families overlap. A compact representation on one workload can fail on another.</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470"><title>Software gains come from changing the work</title><desc>Technical diagram by Arnav123-s for Kavi.</desc><style>text{font-family:Arial,sans-serif;fill:#172a38} .title{font-size:25px;font-weight:bold}.label{font-size:20px;font-weight:bold}.small{font-size:17px}</style><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#4a687d"/></marker></defs><rect width="1000" height="100%" fill="white"/>
+<text x="30" y="40" class="title">Software gains come from changing the work</text>
+<rect x="30" y="90" width="280" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="120" class="label">Representation</text>
+<text x="45" y="148" class="small">store structure instead of</text>
+<text x="45" y="172" class="small">a full table of outcomes</text>
+<rect x="360" y="90" width="280" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="375" y="120" class="label">Execution</text>
+<text x="375" y="148" class="small">batch independent work;</text>
+<text x="375" y="172" class="small">reuse data in fast memory</text>
+<rect x="690" y="90" width="280" height="125" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="705" y="120" class="label">Output contract</text>
+<text x="705" y="148" class="small">one sample, selected values,</text>
+<text x="705" y="172" class="small">or the entire result?</text>
+<path d="M310,150 L350,150" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<path d="M640,150 L680,150" stroke="#4a687d" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="30" y="275" width="450" height="105" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="45" y="305" class="label">Exact route</text>
+<text x="45" y="333" class="small">preserve the mathematical operation</text>
+<text x="45" y="357" class="small">check numerical and observable semantics</text>
+<rect x="520" y="275" width="450" height="105" rx="9" fill="#edf3f7" stroke="#8ca5b5"/>
+<text x="535" y="305" class="label">Approximate route</text>
+<text x="535" y="333" class="small">declare error and failure probability</text>
+<text x="535" y="357" class="small">track truncation, sampling and calibration</text>
+<text x="30" y="432" class="small">Count preparation + computation + memory traffic + verification + output. No universal speedup follows.</text>
+</svg>

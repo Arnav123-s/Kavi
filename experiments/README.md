@@ -19,6 +19,7 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Addition certificate and software-example audit](2026-09-07-addition-certificate-audit.json), with [theorem and scope](../docs/ADDITION_CORRECTNESS.md); read-only checks, no training or speed benchmark
 - [Shared multiplication and sentence learning from original sources](2026-09-07-connectors-language.md)
 - [Procedure acquisition, reuse and execution cost](2026-09-05-procedure-library.md)
 - [Structural acquisition and repair of addition](2026-09-05-circuit-learning.md)

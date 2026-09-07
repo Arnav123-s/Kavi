@@ -40,6 +40,7 @@ downloads/
 *.pdf
 !docs/Kavi_Engineering_and_Research.pdf
 !docs/Kavi_Structural_Sharing_and_Quantum_Research.pdf
+!docs/Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf
 *.epub
 
 # Generated files and environments

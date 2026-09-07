@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [addition theorem](ADDITION_CORRECTNESS.md) states the current circuit's certificate and executor assumptions. The [physical-pathway research](PHYSICAL_PATHWAY_RESEARCH.md) describes two proposed tracks: engineer mechanisms and measure them, or teach a bounded learner to select, compose and improve mechanisms. These proposals do not change the implemented architecture below.
+
 Kavi's learned object is an executable operation represented by circuit structure. The current implementation acquires a Boolean transition graph from examples and repairs its shared behavior through counterexamples. Signals and a one-bit working state are temporary. The accepted graph persists.
 
 ## Implemented components

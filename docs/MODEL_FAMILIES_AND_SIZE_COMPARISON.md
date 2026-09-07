@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The subsequent [certificate and software study](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) adds AbstractBeam, qualifies the addition generalization claim and explains why compact structured simulation is workload-dependent. It introduces no new comparative speed or intelligence result.
+
 Revision: 7 September 2026
 
 This comparison covers the principal model families and the closest structural-learning relatives. It is a taxonomy and storage analysis, not an exhaustive inventory of every published architecture or a new benchmark. Sources are original papers, author publications and official implementation documentation. Named model releases are reference points, not a ranking of the latest systems.

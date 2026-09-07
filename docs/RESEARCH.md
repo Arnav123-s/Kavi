@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [certificate and software study](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) adds AbstractBeam and Minton's utility problem, audits the addition claim, and examines stabilizer/tensor simulation, dequantization, memory-aware computation and reaction-network dynamics. Its [physical-pathway proposal](PHYSICAL_PATHWAY_RESEARCH.md) separates engineered mechanisms from learned update procedures. External-review recommendations are recorded but deferred.
+
 The implemented [structural learner](CIRCUIT_RUNTIME.md) searches two-state transducers represented by Boolean circuits. Its [procedure extension](PROCEDURE_LIBRARY_RUNTIME.md) performs bounded typed program induction over acquired operations. [Measured results](../experiments/2026-09-05-procedure-library.md) include useful call reuse and increasing search cost. Self-modifying graph systems remain relatives of the broader proposal; autonomous control semantics and general abstraction invention are not established by these trials.
 
 The intended adaptive circuit has close relatives in self-modifying computational graphs, structural learning and program induction. The current text implementation belongs to complex recurrent neural models. The [adaptive dataflow circuit note](ADAPTIVE_DATAFLOW_CIRCUIT.md) gives the revised architectural comparison and additional primary sources.

@@ -1,0 +1,95 @@
+{
+  "kind": "read_only_certificate_and_software_examples",
+  "source_revision": "288e9ec",
+  "training_performed": false,
+  "search_recommendations_adopted": false,
+  "quantum_hardware_used": false,
+  "model_sha256": "73f10ae9b5bd8fd01fc66fad37dbd1f9b661ef8d56dfc46857b56fbb21740b17",
+  "canonical_model_bytes": 321,
+  "runtime_input_bit_limit": 4096,
+  "local_certificate": {
+    "model_sha256": "73f10ae9b5bd8fd01fc66fad37dbd1f9b661ef8d56dfc46857b56fbb21740b17",
+    "identity": "emit + 2*next_state = left + right + state",
+    "checked_rows": 8,
+    "valid_rows": 8,
+    "rows": [
+      {
+        "left": 0,
+        "right": 0,
+        "state": 0,
+        "emit": 0,
+        "next_state": 0,
+        "holds": true
+      },
+      {
+        "left": 0,
+        "right": 0,
+        "state": 1,
+        "emit": 1,
+        "next_state": 0,
+        "holds": true
+      },
+      {
+        "left": 0,
+        "right": 1,
+        "state": 0,
+        "emit": 1,
+        "next_state": 0,
+        "holds": true
+      },
+      {
+        "left": 0,
+        "right": 1,
+        "state": 1,
+        "emit": 0,
+        "next_state": 1,
+        "holds": true
+      },
+      {
+        "left": 1,
+        "right": 0,
+        "state": 0,
+        "emit": 1,
+        "next_state": 0,
+        "holds": true
+      },
+      {
+        "left": 1,
+        "right": 0,
+        "state": 1,
+        "emit": 0,
+        "next_state": 1,
+        "holds": true
+      },
+      {
+        "left": 1,
+        "right": 1,
+        "state": 0,
+        "emit": 0,
+        "next_state": 1,
+        "holds": true
+      },
+      {
+        "left": 1,
+        "right": 1,
+        "state": 1,
+        "emit": 1,
+        "next_state": 1,
+        "holds": true
+      }
+    ],
+    "scope": "exhaustive local identity; global argument assumes the documented executor",
+    "used_for_selection": false
+  },
+  "compiler_certificate_agrees": true,
+  "packed_eight_rows_agree": true,
+  "boundary_input_passed": true,
+  "over_limit_input_rejected": true,
+  "swapped_outputs_negative_control_valid_rows": 2,
+  "online_softmax_mean": {
+    "reference": 5.847830519435271,
+    "observed": 5.847830519435271,
+    "absolute_error": 0.0
+  },
+  "scope": "Finite checks support the documented proof assumptions; no proof-assistant verification or speed benchmark."
+}

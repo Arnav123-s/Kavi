@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+Subsequent research: [certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) supplies the explicit addition proof and corrected external claims. [Physical pathway mechanisms](PHYSICAL_PATHWAY_RESEARCH.md) records the engineered and learned mechanism tracks as proposals. The baseline chapters and their earlier PDF retain their original implementation scope.
+
 Revision: 7 September 2026
 
 Structural learner baseline: 0453052f83d9a02a126b37fd15900c092ce2ed0b

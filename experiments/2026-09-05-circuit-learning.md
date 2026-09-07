@@ -64,6 +64,8 @@ The complete run took 5.281 seconds wall time and 5.219 seconds process CPU time
 
 ## Local correctness check
 
+The later [explicit theorem](../docs/ADDITION_CORRECTNESS.md) expands the induction argument below. The [read-only certificate audit](2026-09-07-addition-certificate-audit.json) checks the same published graph and runtime boundary without retraining. It does not alter this experiment's original exposure or evaluation counts.
+
 After model selection, an independent check tested all eight local input/state combinations against `emit + 2*next_state = left + right + state`. All eight held for every selected graph. Together with zero initial state, one final zero-input frame and the documented executor semantics, this identity supports an induction argument for addition over longer bit strings. The runtime accepts inputs up to 4,096 bits; the declared three-seed transfer trial reached 1,024 bits.
 
 This is an exhaustive check of a local invariant with a mathematical argument for composition. It is not a proof-assistant verification of the Python implementation. The check did not participate in selection. Unit tests separately exercise serialization, isolated inference, long carries, invalid graphs, contradictory teaching signals, pause/stop controls and budget exhaustion. All 153 repository tests passed before this run.

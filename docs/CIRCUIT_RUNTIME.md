@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [addition correctness argument](ADDITION_CORRECTNESS.md) gives the full induction from the existing eight-row local check. It distinguishes arbitrary finite widths in the mathematical model from the runtime's 4,096-bit input limit. Empirical integration and regression checks remain necessary.
+
 Status: implemented. The experiment learns the operations and connections of a small streaming circuit from examples and corrections. The executor, search algorithm, gate vocabulary, input representation and curriculum are supplied. Learning those components themselves remains a later research problem.
 
 ## Architecture

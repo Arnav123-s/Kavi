@@ -67,7 +67,9 @@ Search receives these examples and the acquired arithmetic library. It does not 
 
 There were 344 attempted graph/example executions, including 61 invalid executions, and two consistent graphs. The two survivors differ by swapping the arguments of their addition node. The declared canonical tie rule selected:
 
-$$v_2=\operatorname{add}(x,y),\qquad v_3=\operatorname{multiply}(v_2,v_2),\qquad y_{\rm out}=v_3.$$
+$$v_2=f_+(x,y),\qquad v_3=f_{\times}(v_2,v_2),\qquad z=v_3.$$
+
+Here $f_+$ and $f_{\times}$ are the acquired addition and multiplication procedures.
 
 The sum is computed once and reused. This is a graph with a shared intermediate, not two separately executed copies of the addition. Conditional on the arithmetic dependencies and their limits, inspection identifies the relation as $(x+y)^2$. That expression is an evaluator description of the acquired graph, not a formula supplied to the learner.
 
@@ -96,7 +98,7 @@ Three copies of the eight-state graph receive distinct selector-edge faults. Sea
 
 The score is the fraction of incorrect development examples. Heated search uses a finite geometric cooling schedule. Error-path priority increases proposal weight for edges traversed by failing examples. Because that proposal is asymmetric, acceptance includes the reverse/forward proposal ratio:
 
-$$A(K,K')=\min\left(1,\exp\frac{E(K)-E(K')}{T}\;\frac{q(K\mid K')}{q(K'\mid K)}\right).$$
+$$A(K,K')=\min\left(1,\exp\left[\frac{E(K)-E(K')}{T}\right]\frac{q(K\mid K')}{q(K'\mid K)}\right).$$
 
 This is classical structural search inspired by [simulated annealing](https://hedibert.org/wp-content/uploads/2013/12/1983KirkpatrickGelattVecchi.pdf). No actual thermal, chemical or quantum process is simulated. The algorithm, priority rule and cooling schedule are supplied. The experiment makes no asymptotic convergence claim.
 

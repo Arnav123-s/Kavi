@@ -47,6 +47,8 @@ The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) defines all th
 
 ## Research design
 
+The [geometry and neural-activation study](NEURAL_GEOMETRY_AND_ACTIVATION.md) reviews the owner's brain-configuration analogy, the relevant equations, biological evidence and the boundary between that evidence and Kavi's implemented capabilities.
+
 | Document | Scope |
 | --- | --- |
 | [Certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) | External-claim audit, explicit addition theorem, software methods, six diagrams and deferred recommendations; [PDF edition](Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf) |

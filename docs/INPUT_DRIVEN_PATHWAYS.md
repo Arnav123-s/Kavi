@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 ## Intended architecture
 
+The [geometry and neural-activation note](NEURAL_GEOMETRY_AND_ACTIVATION.md) extends “configuration” to functional geometry, local excitability, timing and temporary activity. The owner's brain analogy concerns the organized dynamics of the system, not merely surface folds. Geometry can constrain a discrete graph's execution; the relevant biological literature does not establish a complete learning algorithm for Kavi.
+
 The intended configuration is **recurrent and learned**, not restricted to the acyclic sentence compiler in the current prototype. Later information may activate a backward connection, revisit an earlier binding and redirect subsequent flow. The owner does not prescribe an `a -> alpha` repair path: Kavi is meant to acquire whatever admissible arrangement produces the required behavior and transfers. The following implemented grammar is a limited prerequisite experiment, not a claim that this architectural objective is complete.
 
 Input enters a shared configuration. Later input constrains how earlier input participates in that configuration. The system should not require a separate subject label before deciding whether a token is mathematical, grammatical or a notation choice. A character such as `a` may initially participate in several possible interpretations. An equation, phrase, unit or explicit definition can subsequently connect it to an appropriate role.

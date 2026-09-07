@@ -4,7 +4,7 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The implemented [gate-circuit learner](CIRCUIT_RUNTIME.md) uses an engineered search rule and state register. Its results do not test biological learning mechanisms; those comparisons remain hypotheses requiring separate experiments.
 
-Kavi does not require a biological neuron model. Its intended executable representation is closer to typed program learning. Biological mechanisms can motivate experiments, but their computational role must be specified independently.
+Kavi's current executable core uses typed program learning. The broader intended representation includes learned recurrent configuration and potentially functional geometry. The [neural geometry and activation study](NEURAL_GEOMETRY_AND_ACTIVATION.md) connects cortical folding, signal propagation, dendritic processing and timing-dependent plasticity to that intent. It does not require a literal biological neuron simulation; the computational role of each adopted mechanism must be specified independently.
 
 Candidate roles include recurrent persistence, competing activation, local learning signals, importance-dependent change and structural reuse. Each should be compared with a simple numerical or programmatic implementation of the same function.
 

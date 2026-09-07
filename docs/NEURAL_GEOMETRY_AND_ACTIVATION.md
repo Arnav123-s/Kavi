@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Research note, 7 September 2026. This clarifies the intended architecture; no biological simulation, new learning rule or training run is introduced.
 
+The subsequent [neural pathway study](NEURAL_PATHWAY_LEARNING.md) examines feedback, mastery, development and behavior across activity patterns. The [animal-learning study](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) extends the design to learning procedures and whole-configuration transformations that retain earlier valid capabilities. Biological growth and pruning are explanatory references, not mandatory digital mechanisms.
+
 ## What configuration includes
 
 The owner's comparison concerns the arrangement of a working nervous system: connections, geometry, local response properties, current activation and changes caused by experience. Its computational analogue is an adaptive recurrent system whose structure and local dynamics determine how incoming information propagates. Discrete graph structure and geometry can coexist; neither description should restrict the design to a forward sentence recognizer.

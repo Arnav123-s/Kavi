@@ -140,3 +140,26 @@ See [runtime](CIRCUIT_RUNTIME.md) and [evidence](../experiments/2026-09-05-circu
 - Keep source bodies, lexical artifacts and full logs local. Publish authored exercises, source metadata and compact measurements.
 
 See the [protocol](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) and [completed trial](../experiments/2026-09-07-connectors-language.md).
+
+## 2026-09-07: activity configurations and retained capability
+
+- Study behavior through interacting, recurrent activity patterns and persistent organization. A component may participate in several computations without a fixed human concept label.
+- Represent learning as a transformation of the current configuration using new evidence. The transformation may replace part or all of the graph; earlier valid abilities may survive in a different representation.
+- Allow size to increase or decrease within resource limits. Biological pruning, neuron death and separate emotional modules are not required mechanisms.
+- Distinguish temporary adaptation, learned task structure and improvement of the learning procedure. Research on animal teaching and meta-learning motivates tests; it supplies no unmeasured Kavi capability.
+- Protect established valid behavior while allowing corrections to replace wrong answers. Record the difference between finite retention tests and a proof covering a declared domain.
+- Keep the first recurrent-learning experiment bounded and observable before testing broader configuration replacement or learned update procedures.
+- Preserve previous measurements and deferred implementation recommendations. These studies introduce no curriculum run or model change.
+
+See [neural pathways](NEURAL_PATHWAY_LEARNING.md) and [animal learning and configuration change](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md).
+
+## 2026-09-07: learned recurrence and a successor retaining old behavior
+
+- Implement a separate finite-state learner from labeled sequences. Let compatible history folding determine recurrent connections; supply the learning rule and executor explicitly.
+- Preserve valid old behavior through observations generated from the old graph, followed by an independent product-state audit after freezing. Retention applies to behavior, not node identity.
+- Record the first course's failure: full development accuracy did not generalize, and a single correction left an important continuation unresolved.
+- Repair teaching coverage while keeping the learner unchanged. The follow-up acquired an eight-state, 195-byte graph under all three seeds, passing fresh longer streams and both exact audits.
+- Keep the first course, its failing model and the display-encoding launch failure. Count external evidence, proposal work and process resources as well as the small inference artifact.
+- Keep this stream learner separate from the arithmetic and sentence systems until compositional integration is tested. Learned update procedures and the broader physical mechanisms remain proposals.
+
+See [protocol](RECURRENT_CONFIGURATION_PROTOCOL.md) and [measured results](../experiments/2026-09-07-recurrent-configuration.md).

@@ -6,6 +6,8 @@ The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) translates thi
 
 ## Intended system
 
+The [neural pathway](NEURAL_PATHWAY_LEARNING.md) and [animal-learning](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) studies make configuration replacement explicit. A successor is derived from existing structure and new evidence. Earlier capabilities may remain in a reorganized representation; the old graph need not survive as a separate internal copy. Replacements can affect part or all of the graph and can increase or reduce size. Preservation must be established by the relevant contracts and tests. A learned update procedure is an additional target, not an implemented capability.
+
 The [input-driven refinement](INPUT_DRIVEN_PATHWAYS.md) specifies how incoming information should activate shared configurations and resolve earlier ambiguity without a supplied subject label. The corresponding bounded sentence experiment and missing-symbol correction are measured; general semantic and physical constraint propagation remain proposals.
 
 Kavi's pathways are intended as a general representation of reusable computation. Chemistry, heat, energy, catalysts, physical systems and quantum descriptions are examples of possible structures, not a fixed inventory of mechanisms the system must imitate.

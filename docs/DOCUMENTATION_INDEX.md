@@ -8,6 +8,8 @@ The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.
 
 ## Implementation and operation
 
+The latest [recurrent-configuration experiment](../experiments/2026-09-07-recurrent-configuration.md) reports learned cycles, a failed teaching course, systematic coverage repair and an eight-state successor with exact preservation of its earlier task. It includes [measurements](../experiments/2026-09-07-recurrent-configuration.json), [a diagram and transition table](../experiments/recurrent-20260907-results.svg), a saved model and live reproduction commands. The [protocol](RECURRENT_CONFIGURATION_PROTOCOL.md) records both courses and their separate final banks.
+
 The [input-driven pathway design](INPUT_DRIVEN_PATHWAYS.md) consolidates the owner's shared activation, incremental interpretation and structural correction requirements. Evidence is split between [learned search routing](../experiments/2026-09-07-experience-routing.md) and [incremental meaning and symbol correction](../experiments/2026-09-07-incremental-paths.md).
 
 The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) records the broader research intent, including learned internal roles. The [configuration reuse and correction experiments](../experiments/2026-09-07-pathway-growth.md) test two narrow parts of that direction with the existing learner.
@@ -47,10 +49,14 @@ The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) defines all th
 
 ## Research design
 
+The [neural pathway study](NEURAL_PATHWAY_LEARNING.md) connects firing patterns, feedback, mastery and structural change to a recurrent design. The [animal-learning and configuration-change study](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) covers teaching, relational transfer, learning to learn, and replacements that retain earlier valid behavior in a different representation. Their scope notes distinguish the subsequent finite-state result from the broader proposed mechanisms.
+
 The [geometry and neural-activation study](NEURAL_GEOMETRY_AND_ACTIVATION.md) reviews the owner's brain-configuration analogy, the relevant equations, biological evidence and the boundary between that evidence and Kavi's implemented capabilities.
 
 | Document | Scope |
 | --- | --- |
+| [Neural pathways and learning](NEURAL_PATHWAY_LEARNING.md) | Population dynamics, correctness feedback, mastery, development, embodied control, formal model and recurrent-learning experiment |
+| [Animal learning and configuration change](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) | Animal teaching and transfer, meta-learning, whole-configuration replacement, retained behavior and mathematical relatives |
 | [Certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) | External-claim audit, explicit addition theorem, software methods, six diagrams and deferred recommendations; [PDF edition](Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf) |
 | [Addition correctness](ADDITION_CORRECTNESS.md) | Eight-row local certificate, width-independent induction, executor assumptions and data-exposure limits |
 | [Physical pathway mechanisms](PHYSICAL_PATHWAY_RESEARCH.md) | Typed reaction networks, heat/cooling, catalysts and separate engineered/learned mechanism tracks; proposed only |

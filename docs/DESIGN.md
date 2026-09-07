@@ -8,12 +8,18 @@ Kavi's learned object is an executable operation represented by circuit structur
 
 ## Implemented components
 
+The [recurrent-configuration study](../experiments/2026-09-07-recurrent-configuration.md) adds a finite-state learner alongside the existing cores. It acquires cycles by folding labeled input histories, then constructs one successor from old behavior and new evidence. A separate evaluator checks complete finite-state equivalence. The measured eight-state model handles late selectors and retains the old task; it is not yet connected to the arithmetic or sentence systems.
+
 The [input-driven extension](INPUT_DRIVEN_PATHWAYS.md) adds two isolated mechanisms: a learned discrete component selector for program acquisition, and an incremental shared graph compiled from acquired sentence frames. The latter resolves complete constructions as tokens arrive and can execute the resulting arithmetic interpretation. It has no physics-unit checker or general semantic activation dynamics. The earlier context-indexed route-memory prototype is retained for inspection and tests; its curriculum was not run after the design was clarified.
 
 The [foundation extension](../experiments/2026-09-07-foundation-curriculum.md) adds exact rational execution over acquired integer dependencies, controlled search restrictions and a consolidated checkpoint. Fraction signs, normalization and division semantics are engineered; the learner acquires call compositions above them. The optional language v2 resolution policy prefers the most specific matching frame by literal-token count and preserves ties as ambiguity. Neither change implements autonomous semantic invention or the proposed physical dynamics.
 
 | Component | Implementation | Responsibility |
 | --- | --- | --- |
+| Recurrent configuration learner | `kavi/recurrent_configuration.py` | Labeled-sequence evidence, compatible state folding, learned transitions and frozen inference |
+| Finite-state auditor | `kavi/finite_state_audit.py` | Reachable state-pair comparison, completeness obligations and shortest distinguishing inputs |
+| Recurrent teaching and display | `scripts/run_recurrent_configuration.py`, `scripts/recurrent_window.py` | Separate teaching/development/final banks, old-behavior obligations, controls and readable live graphs |
+| Saved recurrent queries | `kavi/recurrent_cli.py` | Execute an exported configuration without teaching data |
 | Gate graph and executor | `kavi/circuit_core.py` | Strict graph schema, bit operations, state transitions and actual traces |
 | Structural learner | `kavi/circuit_search.py` | Function catalog, candidate graphs, sharing, ranking and counterexample filtering |
 | Teacher and final evaluator | `kavi/circuit_runtime.py` | Separate data partitions, protected behavior, sealed final tests and local invariant checks |

@@ -1,7 +1,7 @@
 [project]
 name = "kavi"
 version = "0.1.0"
-description = "A bounded experimental path-centric adaptive circuit model."
+description = "An experimental learner of reusable, adaptive computational configurations."
 requires-python = ">=3.11"
 authors = [{ name = "Arnav123-s" }]
 

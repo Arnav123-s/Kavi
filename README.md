@@ -2,7 +2,9 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Kavi learns reusable computations as circuit structure. Gates and connections determine the operation; temporary signals disappear after execution. A wrong answer supplies evidence that the current procedure needs repair. The objective is to improve that shared computation while preserving earlier correct behavior.
+Kavi studies learning through reusable computational configurations. Its experimental cores acquire gates, programs and recurrent connections from examples. Inputs drive temporary activity through the retained structure; feedback changes the configuration. The objective is to acquire new abilities while carrying earlier valid behavior into the revised structure.
+
+The latest [recurrent-configuration experiment](experiments/2026-09-07-recurrent-configuration.md) learns connections from labeled token streams and replaces an earlier two-state graph with an eight-state successor. After a failed course and a coverage repair, all three seeds passed 256 fresh longer streams and exact checks of the new task and earlier behavior. The 195-byte saved graph excludes the runtime and learning workspace. This is a finite stream task; it does not establish broad language or graduate subject competence.
 
 The structural learner acquires addition and subtraction transitions from examples using AND, XOR and NOT gates, then learns programs that call acquired operations. The original retained library contains 13 procedures in 2,238 bytes; a checked multiplication optimization produces a 2,272-byte library with the same 13 entries. Its arithmetic model contains no teaching equations or learned numerical edge weights. Encoding, state registers, iteration semantics, types and the search controller are supplied.
 
@@ -10,9 +12,19 @@ The acquired 321-byte addition graph satisfies all eight local full-adder identi
 
 The [expanding pathway system](docs/OPEN_ENDED_PATHWAY_LEARNING.md) treats chemistry and physics as examples of structures that might be learned, rather than a fixed component inventory. The [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Heat, cooling and catalysts remain proposals. The [configuration-reuse experiment](experiments/2026-09-07-pathway-growth.md) tests a narrower capability using the existing arithmetic learner.
 
+The [neural pathway study](docs/NEURAL_PATHWAY_LEARNING.md) examines population activity, correction, mastery and behavior. The [animal-learning study](docs/ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) develops the design requirement: transform part or all of the configuration while retaining earlier valid abilities, then test whether the learning procedure itself can improve. Learned update procedures and the broader biological mechanisms remain research proposals.
+
 A first sentence-learning extension induces typed frames from annotated examples and routes recognized calculations to those procedures. It also retains source-linked lexical memory from six short original-language passages. General prose comprehension and autonomous invention of control semantics remain research goals. See the [connector and language results](experiments/2026-09-07-connectors-language.md).
 
 ## Run and inspect
+
+Query the new recurrent graph without its teaching data:
+
+```powershell
+python -B -m kavi.recurrent_cli a b "?b" b "?a" --trace
+```
+
+The final answer is `1`. The [experiment report](experiments/2026-09-07-recurrent-configuration.md) explains the tokens, shows the learned connections and gives visible teaching commands with Pause and Stop controls.
 
 The latest [input-driven pathway study](experiments/2026-09-07-incremental-paths.md) follows tokens through shared learned sentence states without an external subject label. It also tests a missing-symbol correction that preserves other uses of `a`. Inspect the published small grammar with:
 
@@ -70,6 +82,8 @@ python -m kavi circuit ask --model experiments/circuit-20260905-model.json 255 1
 The [runtime reference](docs/CIRCUIT_RUNTIME.md) documents pause, resume, stop, file formats and the complete interface.
 
 ## Measured result
+
+The recurrent study first exposed a coverage failure: development accuracy reached 256/256, but fresh longer-stream accuracy was only 125, 114 and 115 out of 256 across the three seeds. More systematic teaching produced an eight-state, 32-transition graph in every seed, passing all fresh cases and the exact finite-state audit. The earlier task was preserved for every finite stream over its original alphabet. The [report and diagrams](experiments/2026-09-07-recurrent-configuration.md) include both courses, the single-correction failure and the complete storage and work accounting.
 
 The foundation study found and repaired search interference, missing signed/fractional execution, a sampling failure and a language-pattern regression. With supplied operation hints, both fixed and cumulative conditions acquired all eight numeric tasks under two seeds, passing 175/175 final cases and 254/254 earlier-skill checks per arm. Five rational procedures passed 108 final cases across an initial run and its repair. The hints and scalar semantics were supplied; these are not demonstrations of independent representation invention. The combined checkpoint passed 44 numeric, ten rational and 28 local language retention checks. Its [full record](experiments/2026-09-07-foundation-curriculum.md) preserves the preceding failures and distinguishes model storage from total resource costs.
 

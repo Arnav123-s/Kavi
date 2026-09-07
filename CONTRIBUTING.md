@@ -15,10 +15,10 @@ Use original papers and source records for research. Retain third-party attribut
 - Verify semantic rewrites under explicit assumptions; distinguish them from behavior-changing repairs.
 - Use finite experiment budgets and preserve pause and stop controls.
 
-Real curriculum runs, restarts, background persistence and hardware-policy changes require a reviewed run configuration and explicit project authorization. Autonomous source-code modification remains outside the current scope.
+Curriculum runs use a reviewed, documented configuration approved by the project owner. Restarts, background services and changes to hardware limits also need that approval. Learning changes the model's configuration; Kavi does not rewrite its own source code.
 
 ## Version control
 
-Use small, reviewable commits and explicitly stage intended files. Inspect the diff and staged names before committing. Use the repository-local Arnav123-s identity. Preserve published history and obtain release authorization before pushing changes.
+Describe the problem, the change and the evidence in each contribution. Keep commits focused, review their contents and preserve published history. Publication requires the project owner's approval.
 
-Run checks appropriate to the change. Documentation revisions need link, mathematical, metadata and formatting checks; executable changes need the relevant implementation regressions.
+Include reproduction steps for experiments and regression checks for executable changes. Check equations, references, metadata and diagrams when revising documentation.

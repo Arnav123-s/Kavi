@@ -2,7 +2,7 @@
 
 Author: Arnav123-s
 
-Subsequent research: [certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) supplies the explicit addition proof and corrected external claims. [Physical pathway mechanisms](PHYSICAL_PATHWAY_RESEARCH.md) records the engineered and learned mechanism tracks as proposals. The baseline chapters and their earlier PDF retain their original implementation scope.
+Subsequent research: [certified arithmetic and software efficiency](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) supplies the explicit addition proof and corrected external claims. [Physical pathway mechanisms](PHYSICAL_PATHWAY_RESEARCH.md) records the engineered and learned mechanism tracks, with a subsequent limited search comparison. The latest [configuration audit](../experiments/2026-09-07-mechanism-audit.md) measures learned notation, an arithmetic bridge, supervised graph composition and structural repair. The [project assessment](PROJECT_ASSESSMENT.md) consolidates current capabilities. The baseline chapters and their earlier PDF retain their original implementation scope.
 
 Revision: 7 September 2026
 

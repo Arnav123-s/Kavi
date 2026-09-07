@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+Subsequent evidence: the [configuration audit](../experiments/2026-09-07-mechanism-audit.md) learns a shared intermediate from examples and tests supervised catalog admission and classical heated repair. It does not implement the quantum mechanisms or Babble's abstraction machinery discussed below. The [current assessment](PROJECT_ASSESSMENT.md) distinguishes the research relatives from measured capabilities.
+
 Revision: 7 September 2026
 
 Structural learner baseline: 2ac3b5e; connector and sentence trial, 7 September 2026

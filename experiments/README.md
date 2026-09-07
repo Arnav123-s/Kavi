@@ -19,6 +19,7 @@ Publish compact, non-sensitive results, not raw private inputs, credentials, cop
 
 Current records:
 
+- [Configuration reuse, supervised composition and structural repair](2026-09-07-mechanism-audit.md)
 - [Learned recurrence, correction and configuration replacement](2026-09-07-recurrent-configuration.md)
 - [Input-driven shared paths and structural symbol correction](2026-09-07-incremental-paths.md)
 - [Learned component routing and a repaired search-budget allocation](2026-09-07-experience-routing.md)

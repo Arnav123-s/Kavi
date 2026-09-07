@@ -2,13 +2,15 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-The [addition theorem](ADDITION_CORRECTNESS.md) states the current circuit's certificate and executor assumptions. The [physical-pathway research](PHYSICAL_PATHWAY_RESEARCH.md) describes two proposed tracks: engineer mechanisms and measure them, or teach a bounded learner to select, compose and improve mechanisms. These proposals do not change the implemented architecture below.
+The [addition theorem](ADDITION_CORRECTNESS.md) states the current circuit's certificate and executor assumptions. The [physical-pathway research](PHYSICAL_PATHWAY_RESEARCH.md) describes two tracks: engineer mechanisms and measure them, or teach a bounded learner to select, compose and improve mechanisms. The [latest audit](../experiments/2026-09-07-mechanism-audit.md) implements limited composition and classical repair comparisons; broader physical dynamics remain proposals. The [project assessment](PROJECT_ASSESSMENT.md) summarizes the evidence.
 
 Kavi's learned object is an executable operation represented by circuit structure. The current implementation acquires a Boolean transition graph from examples and repairs its shared behavior through counterexamples. Signals and a one-bit working state are temporary. The accepted graph persists.
 
 ## Implemented components
 
-The [recurrent-configuration study](../experiments/2026-09-07-recurrent-configuration.md) adds a finite-state learner alongside the existing cores. It acquires cycles by folding labeled input histories, then constructs one successor from old behavior and new evidence. A separate evaluator checks complete finite-state equivalence. The measured eight-state model handles late selectors and retains the old task; it is not yet connected to the arithmetic or sentence systems.
+The [recurrent-configuration study](../experiments/2026-09-07-recurrent-configuration.md) adds a finite-state learner alongside the existing cores. It acquires cycles by folding labeled input histories, then constructs one successor from old behavior and new evidence. A separate evaluator checks complete finite-state equivalence. The latest extension teaches another notation without an alias map and learns connections from controller outputs to acquired arithmetic through numerical feedback. The sentence system remains a separate interface.
+
+The composition extension searches small acyclic graphs over acquired procedures. A node can reuse a previous intermediate; each node executes once. A candidate that passes separate promotion examples can enter a new immutable catalog with an exact dependency digest. This is supervised library growth. It does not replace the entire library or learn the update algorithm. A separate repair search changes finite-state transitions under exact earlier-task constraints, comparing greedy, heated and error-path-priority proposals.
 
 The [input-driven extension](INPUT_DRIVEN_PATHWAYS.md) adds two isolated mechanisms: a learned discrete component selector for program acquisition, and an incremental shared graph compiled from acquired sentence frames. The latter resolves complete constructions as tokens arrive and can execute the resulting arithmetic interpretation. It has no physics-unit checker or general semantic activation dynamics. The earlier context-indexed route-memory prototype is retained for inspection and tests; its curriculum was not run after the design was clarified.
 
@@ -16,6 +18,10 @@ The [foundation extension](../experiments/2026-09-07-foundation-curriculum.md) a
 
 | Component | Implementation | Responsibility |
 | --- | --- | --- |
+| Configuration composition and bridge | `kavi/configuration_composition.py` | Candidate graphs, shared intermediates, feedback-selected arithmetic and supervised catalog admission |
+| Structural repair comparison | `kavi/configuration_repair.py` | Finite edge proposals, old-task preservation, error scoring, asymmetric temperature acceptance and work counts |
+| Mechanism audit | `scripts/run_mechanism_audit.py` | Reviewed live stages, independent promotion/final data, causal controls and capability probes |
+| Composed-model queries | `kavi/configuration_cli.py` | Read-only execution of the published bridge and catalog |
 | Recurrent configuration learner | `kavi/recurrent_configuration.py` | Labeled-sequence evidence, compatible state folding, learned transitions and frozen inference |
 | Finite-state auditor | `kavi/finite_state_audit.py` | Reachable state-pair comparison, completeness obligations and shortest distinguishing inputs |
 | Recurrent teaching and display | `scripts/run_recurrent_configuration.py`, `scripts/recurrent_window.py` | Separate teaching/development/final banks, old-behavior obligations, controls and readable live graphs |

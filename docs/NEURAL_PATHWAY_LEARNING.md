@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Research and architecture study, 7 September 2026. This document develops a computational interpretation of neural pathways, feedback, mastery and structural change. The subsequent [finite recurrent experiment](../experiments/2026-09-07-recurrent-configuration.md) tests acquired cycles and retained behavior; no biological simulation is reported.
 
+The later [mechanism audit](../experiments/2026-09-07-mechanism-audit.md) adds causal connection interventions, learned notation sharing, an arithmetic bridge and supervised composition. Its thermal search comparison is a computational proxy, not a neural or physiological simulation.
+
 ## The object to learn
 
 Kavi's proposed learning target is the organization that makes useful activity unfold: which components interact, when they interact, what information they combine, and how an outcome changes later interactions. A component can participate in several computations. Its role need not correspond to one word or a permanent human label.

@@ -4,19 +4,31 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Kavi studies learning through reusable computational configurations. Its experimental cores acquire gates, programs and recurrent connections from examples. Inputs drive temporary activity through the retained structure; feedback changes the configuration. The objective is to acquire new abilities while carrying earlier valid behavior into the revised structure.
 
-The latest [recurrent-configuration experiment](experiments/2026-09-07-recurrent-configuration.md) learns connections from labeled token streams and replaces an earlier two-state graph with an eight-state successor. After a failed course and a coverage repair, all three seeds passed 256 fresh longer streams and exact checks of the new task and earlier behavior. The 195-byte saved graph excludes the runtime and learning workspace. This is a finite stream task; it does not establish broad language or graduate subject competence.
+The latest [configuration reuse and repair experiment](experiments/2026-09-07-mechanism-audit.md) learns shared notation, connects the recurrent core to acquired arithmetic through numerical feedback, and constructs a new graph from existing operations. The new computation reuses one intermediate and passes 128 fresh inputs with 104 earlier-operation checks preserved. Temperature did not improve exact repair in the tested conditions. The [project assessment](docs/PROJECT_ASSESSMENT.md) explains the strongest results, the addition theorem, current capabilities and the remaining gap to graduate-level work.
+
+The earlier [recurrent-configuration experiment](experiments/2026-09-07-recurrent-configuration.md) learns connections from labeled token streams and replaces an earlier two-state graph with an eight-state successor. After a failed course and a coverage repair, all three seeds passed 256 fresh longer streams and exact checks of the new task and earlier behavior. The 195-byte saved graph excludes the runtime and learning workspace. This is a finite stream task; it does not establish broad language or graduate subject competence.
 
 The structural learner acquires addition and subtraction transitions from examples using AND, XOR and NOT gates, then learns programs that call acquired operations. The original retained library contains 13 procedures in 2,238 bytes; a checked multiplication optimization produces a 2,272-byte library with the same 13 entries. Its arithmetic model contains no teaching equations or learned numerical edge weights. Encoding, state registers, iteration semantics, types and the search controller are supplied.
 
 The acquired 321-byte addition graph satisfies all eight local full-adder identities. Together with the specified bit-stream executor, this gives a [correctness theorem for every finite width](docs/ADDITION_CORRECTNESS.md); the implementation currently accepts inputs up to 4,096 bits. The theorem is separate from the learning claim, which includes a 129-case selection bank.
 
-The [expanding pathway system](docs/OPEN_ENDED_PATHWAY_LEARNING.md) treats chemistry and physics as examples of structures that might be learned, rather than a fixed component inventory. The [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Heat, cooling and catalysts remain proposals. The [configuration-reuse experiment](experiments/2026-09-07-pathway-growth.md) tests a narrower capability using the existing arithmetic learner.
+The [expanding pathway system](docs/OPEN_ENDED_PATHWAY_LEARNING.md) treats chemistry and physics as examples of structures that might be learned, rather than a fixed component inventory. The [physical-pathway research](docs/PHYSICAL_PATHWAY_RESEARCH.md) distinguishes mechanisms we engineer from mechanisms the model learns to select, compose or improve. Temperature and error-path priority now have a small measured search comparison; physical reaction systems and learned update rules remain proposals. The [earlier configuration-reuse experiment](experiments/2026-09-07-pathway-growth.md) measures acquired components helping later arithmetic learning.
 
 The [neural pathway study](docs/NEURAL_PATHWAY_LEARNING.md) examines population activity, correction, mastery and behavior. The [animal-learning study](docs/ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) develops the design requirement: transform part or all of the configuration while retaining earlier valid abilities, then test whether the learning procedure itself can improve. Learned update procedures and the broader biological mechanisms remain research proposals.
 
 A first sentence-learning extension induces typed frames from annotated examples and routes recognized calculations to those procedures. It also retains source-linked lexical memory from six short original-language passages. General prose comprehension and autonomous invention of control semantics remain research goals. See the [connector and language results](experiments/2026-09-07-connectors-language.md).
 
 ## Run and inspect
+
+Query the newly acquired computation and the learned arithmetic connections:
+
+```powershell
+python -B -m kavi.configuration_cli graph relation_01 17 19
+python -B -m kavi.configuration_cli bridge 17 19 a
+python -B -m kavi.configuration_cli bridge 17 19 a a
+```
+
+These return `1296`, `323` and `36`. The first graph computes `(17 + 19)²`, reusing the sum. The next two use token-driven connections to select multiplication or addition. The [report](experiments/2026-09-07-mechanism-audit.md) includes the supervised admission process and visible reproduction commands.
 
 Query the new recurrent graph without its teaching data:
 
@@ -83,6 +95,10 @@ The [runtime reference](docs/CIRCUIT_RUNTIME.md) documents pause, resume, stop, 
 
 ## Measured result
 
+The latest audit completed in 22.967 seconds, including 19.907 seconds of display pacing. Three trials learned an eight-state, 216-byte notation graph with identical `a` and `α` destinations, passing 128 fresh streams each and exact old/new task checks. Numerical feedback connected that controller to arithmetic, and a separate 338-candidate search acquired a two-call computation from four examples. The controller, bridge, new catalog and shared arithmetic dependency occupy 2,856 bytes; worker peak memory was 38.883 MiB. All 217 implementation regressions passed before the run.
+
+Heated repair found no exact solution in the three cases. Each greedy method solved one; complete one-edge search solved all three with a larger 224-proposal budget. One sampled-perfect repair still failed exact comparison. Six supported sentence calculations worked; six broad reasoning and writing requests remained unsupported. The [full audit](experiments/2026-09-07-mechanism-audit.md) reports costs and unsuccessful searches alongside the improvements.
+
 The recurrent study first exposed a coverage failure: development accuracy reached 256/256, but fresh longer-stream accuracy was only 125, 114 and 115 out of 256 across the three seeds. More systematic teaching produced an eight-state, 32-transition graph in every seed, passing all fresh cases and the exact finite-state audit. The earlier task was preserved for every finite stream over its original alphabet. The [report and diagrams](experiments/2026-09-07-recurrent-configuration.md) include both courses, the single-correction failure and the complete storage and work accounting.
 
 The foundation study found and repaired search interference, missing signed/fractional execution, a sampling failure and a language-pattern regression. With supplied operation hints, both fixed and cumulative conditions acquired all eight numeric tasks under two seeds, passing 175/175 final cases and 254/254 earlier-skill checks per arm. Five rational procedures passed 108 final cases across an initial run and its repair. The hints and scalar semantics were supplied; these are not demonstrations of independent representation invention. The combined checkpoint passed 44 numeric, ten rational and 28 local language retention checks. Its [full record](experiments/2026-09-07-foundation-curriculum.md) preserves the preceding failures and distinguishes model storage from total resource costs.
@@ -101,6 +117,8 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 
 ## Documentation
 
+- [Project assessment](docs/PROJECT_ASSESSMENT.md): plain-language explanation, theorem, capabilities, research relatives and remaining work
+- [Configuration reuse and repair](experiments/2026-09-07-mechanism-audit.md): latest measurements and diagrams
 - [Certified arithmetic and software efficiency](docs/CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md): review audit, software algorithms, physical pathways and deferred recommendations
 - [Printable certificate and software study](docs/Kavi_Certified_Arithmetic_and_Software_Efficiency.pdf)
 - [Architecture](docs/DESIGN.md)

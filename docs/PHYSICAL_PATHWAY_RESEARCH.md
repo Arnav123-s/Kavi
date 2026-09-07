@@ -2,11 +2,13 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-7 September 2026. Research proposal; not implemented. Extracted from the [certificate and software study](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md). Earlier external-review recommendations remain deferred.
+7 September 2026. Research proposal with a subsequent limited [temperature and repair experiment](../experiments/2026-09-07-mechanism-audit.md). Extracted from the [certificate and software study](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md). Earlier external-review recommendations remain deferred.
 
 The [expanding pathway system](OPEN_ENDED_PATHWAY_LEARNING.md) clarifies the broader intent: the mechanisms below are examples, not an exhaustive inventory. The system should progressively acquire representations and use them to construct further configurations. The first [bounded reuse experiment](../experiments/2026-09-07-pathway-growth.md) tests a narrow part of this direction.
 
 The proposed goal is to make the program's internal dynamics more expressive and useful for learning. It is not to make the laptop equal a quantum computer or supercomputer in raw hardware capacity. Heat, cooling, catalysis and a periodic-table-like organization can have precise software meanings. Their value depends on the rules chosen and their measured effect on acquisition, transfer and retention.
+
+These mechanisms are proposed as tools for constructing and refining configurations. Better resulting configurations may make the overall learner more capable. The latest audit tests this chain using classical heated search and error-path proposal priority. Neither heated condition repaired any of the three cases exactly; each greedy condition repaired one, and complete one-edge search repaired all three with a larger budget. This is evidence about those settings, not a simulation of chemistry or a general rejection of physical inspiration. The reaction systems and learned mechanism-update procedures below remain unimplemented.
 
 The closest mathematical relatives are typed reaction networks, multiset rewriting, stochastic search and energy-based dynamics. These are different models with different guarantees. Combining their vocabulary is not yet a combined algorithm.
 

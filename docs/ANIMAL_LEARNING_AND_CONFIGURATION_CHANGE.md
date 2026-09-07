@@ -4,6 +4,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 Research and design study, 7 September 2026. This extends the [neural pathway study](NEURAL_PATHWAY_LEARNING.md) to animal learning, teaching, learning to learn, and replacement of a configuration while retaining valid abilities. The mechanisms below are proposals unless an existing experiment is explicitly linked.
 
+The subsequent [configuration audit](../experiments/2026-09-07-mechanism-audit.md) measures feedback-selected connections and supervised construction of a new computation from old ones. Learning to redesign the updater remains untested; the [project assessment](PROJECT_ASSESSMENT.md) separates those claims.
+
 ## The design requirement
 
 Kavi should acquire a new configuration from its existing configuration and evidence about what its behavior accomplishes. Earlier knowledge may survive as reorganized structure. The successor can be larger, smaller or the same size. Pruning, neuron death and separate emotional modules are not required stages.

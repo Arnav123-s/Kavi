@@ -6,6 +6,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 The project objective covers three tracks: applied mathematics and scientific computing; physics and mathematical modelling; and language, literature and philosophy. Kavi has not demonstrated master's-level competence in any of them. The current evidence concerns narrow executable arithmetic and annotated sentence patterns. Completing a curriculum, reading a text, adding a component, or obtaining a compact model is not a qualification result.
 
+The later [configuration audit](../experiments/2026-09-07-mechanism-audit.md) adds learned notation, numerical skill connections and a supervised composed graph. It also directly probes six broad reasoning and writing requests; all remain unsupported. The [project assessment](PROJECT_ASSESSMENT.md) explains why the successful formal tasks do not yet meet these subject targets.
+
 Graduate study requires more than isolated numerical answers. Cambridge's [Part III mathematics program](https://www.maths.cam.ac.uk/postgrad/part-iii/node/53) uses written examinations and an essay. MIT's [graduate Quantum Theory II syllabus](https://ocw.mit.edu/courses/8-322-quantum-theory-ii-spring-2003/pages/syllabus/) provides a physics scope reference. Cambridge's [MPhil in English Studies](https://www.english.cam.ac.uk/admissions/graduate/mphil.html) includes specialist study and an individual dissertation. These sources guide the kinds of competence to assess; they do not endorse Kavi, define an automatic model score, or constitute teaching already performed.
 
 ## Development sequence

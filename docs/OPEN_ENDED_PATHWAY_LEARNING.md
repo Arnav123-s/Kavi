@@ -20,6 +20,8 @@ The representation may eventually include operations, relations, constraints, tr
 
 ## What the next experiment can establish
 
+The subsequent [configuration composition audit](../experiments/2026-09-07-mechanism-audit.md) now tests a small version of the proposed construction cycle: use acquired procedures to propose a graph for an unfamiliar numerical relation, check examples, admit it under separate promotion evidence and freeze it for final testing. It acquires a shared intermediate and preserves earlier catalog entries. The representation, evaluator and search policy are supplied. This extends the earlier reuse experiment described below.
+
 The [bounded configuration-reuse experiment](../experiments/2026-09-07-pathway-growth.md) tests a small necessary capability: does a learned computation help acquire a later computation under the same per-task search limits? It uses the existing procedure learner and arithmetic executor. It does not add chemistry laws, learn new execution primitives, infer meaning from literature, or learn the search algorithm itself.
 
 Three questions remain separate:

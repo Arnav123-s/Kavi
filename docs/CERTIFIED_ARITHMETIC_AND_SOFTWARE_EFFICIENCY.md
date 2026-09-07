@@ -2,6 +2,8 @@
 
 Author: Arnav123-s
 
+Subsequent experiment: the [configuration reuse and repair audit](../experiments/2026-09-07-mechanism-audit.md) rechecks the addition certificate and measures shared notation, supervised composition and a limited temperature/priority search comparison. The [current assessment](PROJECT_ASSESSMENT.md) consolidates capabilities. This study and its dated PDF retain their original research scope; deferred review recommendations remain deferred.
+
 Revision: 7 September 2026
 
 Structural learner baseline: 288e9ec; unchanged learner and search mechanisms

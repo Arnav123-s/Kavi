@@ -6,6 +6,20 @@ The package contains separate symbolic and recurrent experiments. A supplied ope
 
 The following inventory covers the earlier symbolic and recurrent cores, structural circuit learning, procedure acquisition, connectors, sentence learning and the foundation extension. Earlier cores are retained as separate experiments; they should not be added together as though they constituted one trained model.
 
+### Recurrent composition and repair extension
+
+The [mechanism audit](../experiments/2026-09-07-mechanism-audit.md) connects the acquired recurrent controller to arithmetic and tests supervised admission of new call graphs. The [architecture](DESIGN.md) gives the full current component inventory.
+
+| Module | Responsibility |
+| --- | --- |
+| `recurrent_configuration.py` | Finite-state induction, serialization and token-driven execution |
+| `finite_state_audit.py` | Exact reachable-pair comparisons with distinguishing inputs |
+| `configuration_composition.py` | Shared acyclic graphs, numerical bridge feedback and immutable catalog admission |
+| `configuration_repair.py` | Bounded edge search with exact retention and optional temperature/priority proposals |
+| `configuration_cli.py` | Queries against the published bridge and catalog |
+
+The visible audit runs through `scripts.run_mechanism_audit`. It keeps learning, promotion and final evaluation separate. Its search procedures and evaluator are supplied; the retained connections and selected computations are model data.
+
 ### Foundation extension
 
 The later [input-driven extension](INPUT_DRIVEN_PATHWAYS.md) adds `experience_router.py` (discrete routing-tree induction), `incremental_paths.py` (shared sentence-state execution) and `incremental_cli.py` (direct graph interpretation and arithmetic). `route_memory.py` is an isolated route-first alternative, covered by unit tests but not adopted or curriculum-tested. Related finite runners live under `scripts`; the [routing record](../experiments/2026-09-07-experience-routing.md) and [incremental record](../experiments/2026-09-07-incremental-paths.md) distinguish executed trials from this deferred alternative.

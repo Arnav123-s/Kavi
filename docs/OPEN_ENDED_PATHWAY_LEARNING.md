@@ -40,4 +40,6 @@ The current arithmetic experiments use supplied operation names, input types, ex
 
 ## Relation to the earlier study
 
+The [equations-as-components note](EQUATIONS_AS_PATHWAY_COMPONENTS.md) extends the same intent to mathematical models, including quantum state evolution. Their use would require appropriate representations and domain assumptions; none is implemented by the arithmetic experiments.
+
 The [physical-pathway proposal](PHYSICAL_PATHWAY_RESEARCH.md) supplies examples within this broader direction. The [certificate and software study](CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md) records the preceding research and its limits. Their chemistry-specific mechanisms are optional experimental candidates, not the definition of Kavi.

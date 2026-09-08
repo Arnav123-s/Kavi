@@ -10,6 +10,8 @@ PCL studies whether supervised reconstruction of interacting recurrent circuits 
 
 The intended outcome is a conversational learner whose acquired configuration forms an internal executable world: learned relationships, distinctions and transformation rules through which new input produces answers. This world is the retained organization of learning, not a visual display added to a separate answer system. Visual reasoning and image generation are optional extensions. The current implementation is a small discrete phase-circuit substrate and structural learning procedure. It has not acquired this internal world, general English, psychology, emotions or research-level science. The previous source-based psychology experiment used a different event-graph learner and failed its generalization tests; it is not evidence that PCL understands psychology.
 
+The first [source-based PCL classification course](../experiments/2026-09-08-pcl-classification.md) is now complete. Learned phase-region readouts score 20, 20 and 24 of 30 held-out Iris specimens across three fixed seeds and retain all 90 teaching outcomes. Successful region models use no couplings; the strongest selects petal inputs and ignores sepal inputs. This is narrow rule classification, not the internal-world target.
+
 “Phase” names a component's position in a finite cycle. “Circuit” names the executable relationships between components. “Learner” names supervised selection of those relationships. PCL is a working engineering name, not a claim of a new mathematical class or a literal quantum brain. Earlier Kavi implementations remain comparison systems.
 
 ## Design contract
@@ -56,7 +58,7 @@ $$q_i^{k+1}=\left(q_i^k+\sum_{(j,a,i,d)\in C}\mathbf{1}[q_j^k=a]d\right)\bmod m_
 
 All increments are applied simultaneously. Reordering the coupling list therefore leaves a tick unchanged. A fixed number of ticks follows each event. There is no assumption that the circuit reaches a physical equilibrium. Zero net increment holds a phase; later input can change it. The current implementation has no autonomous motion between input events.
 
-The output map assigns integer ports to selected joint phases. An unassigned phase is unresolved. Output ports are not natural-language answers. Readout happens only on explicit input completion. An unrecognized event marks the invocation failed; it cannot be skipped to recover an earlier answer.
+The original output map assigns integer ports to selected joint phases. The subsequent [phase-region extension](PCL_PHASE_REGIONS.md) also permits learned interval conjunctions over phase coordinates. Unmatched or contradictory readouts are unresolved. Output ports are not natural-language answers. Readout happens only on explicit input completion. An unrecognized event marks the invocation failed; it cannot be skipped to recover an earlier answer.
 
 The runtime retains the latest joint phases and status flags, plus the configuration and work counter. It does not retain the input trajectory. For fixed moduli, the phase state requires at least enough bits to distinguish its reachable states, at most the naive representation of sum_i ceil(log2(m_i)) phase bits, excluding object overhead. The runtime's Python objects and counters occupy additional storage.
 
@@ -73,6 +75,7 @@ This is a finite transition system with a factorized state representation. Its j
 | [selection.py](../kavi/phase/selection.py) | Correction scoring and explicit earlier-behavior obligations | Finite-bank retention only |
 | [layers.py](../kavi/phase/layers.py) | Stable template, full candidate assembly, inheritance and transactional generation replacement | Main reconstruction path; template and proposal procedure remain supplied |
 | [evaluation.py](../kavi/phase/evaluation.py) | Frozen evaluation with wrong/unresolved counts and configuration fingerprints | Caller must keep the bank separate from teaching and selection |
+| [regions.py](../kavi/phase/regions.py) | Acquired phase interval bounds and finite label-consistent covering | Optional supplied readout grammar; unknown overlaps remain unresolved |
 | [phase tests](../tests/test_phase_configuration.py) and [learning tests](../tests/test_phase_learning.py) | Executable regression checks | Small authored test fixtures are not curriculum data |
 
 The package uses the existing interruptible work counter. Configuration objects are immutable, and a failed update leaves the caller's old model available. Separate invocations do not share phase activity. JSON round trips preserve the validated circuit. The package does not launch background training or change its own source code.
@@ -163,7 +166,7 @@ The installed limits are experimental controls, not a claim that useful learning
 
 ## Reproduce the implementation checks
 
-Validation on 8 September 2026: all 290 repository tests passed, including 14 PCL tests and four earlier-circuit transfer tests. This count is a software regression result, not a count of learned abilities. Existing published artifact and implementation fingerprint checks also passed. No source-based PCL curriculum was run.
+Initial validation on 8 September 2026: all 290 repository tests passed, including 14 PCL tests and four earlier-circuit transfer tests. The subsequent phase-region extension brings the count to 294 passing tests and has a completed source-based classification course linked above. Test counts are software regression results, not counts of learned abilities. Existing published artifact and implementation fingerprint checks also passed.
 
 ```powershell
 python -B -m unittest tests.test_phase_configuration tests.test_phase_learning tests.test_phase_layers

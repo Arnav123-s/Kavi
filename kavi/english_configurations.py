@@ -201,9 +201,9 @@ class Candidate:
     score: float
 
 
-def compose(inp,router,work,*,beam=6):
+def compose(inp,router,work,*,beam=6,max_quantities=5):
     n=len(inp.numbers)
-    if not 2<=n<=5:raise ValueError('English reasoning currently supports two to five explicit quantities')
+    if not 2<=n<=max_quantities:raise ValueError('Input exceeds this search configuration')
     evidence={};active=[]
     for i,j in itertools.combinations(range(n),2):
         preferences,trace=router.activate(features(inp,i,j),work)

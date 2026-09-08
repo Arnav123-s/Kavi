@@ -201,12 +201,12 @@ class Candidate:
     score: float
 
 
-def compose(inp,router,work,*,beam=6,max_quantities=5):
+def compose(inp,router,work,*,beam=6,max_quantities=5,feature_reader=None):
     n=len(inp.numbers)
     if not 2<=n<=max_quantities:raise ValueError('Input exceeds this search configuration')
     evidence={};active=[]
     for i,j in itertools.combinations(range(n),2):
-        preferences,trace=router.activate(features(inp,i,j),work)
+        preferences,trace=router.activate((feature_reader or features)(inp,i,j),work)
         evidence[i,j]=preferences
         active.append({'quantities':[i,j],'connections':trace,'operation_preference':preferences})
     memo={1<<i:[Candidate(i,inp.numbers[i],0.)] for i in range(n)}

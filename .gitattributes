@@ -1,6 +1,6 @@
 * text=auto
 *.md text eol=lf
-/experiments/library-*.json text eol=lf
+/experiments/*.json text eol=lf
 *.pdf binary
 .gitignore text eol=lf
 .gitattributes text eol=lf

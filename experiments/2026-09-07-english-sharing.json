@@ -1,0 +1,33 @@
+{
+  "author": "Arnav123-s",
+  "date": "2026-09-07",
+  "state": "completed",
+  "new_training": false,
+  "method": "Identical ordered substructures only",
+  "original_sha256": "754f45e15b0be03626f5c044398c51beee75403ca6aa991803a4afdb66d52978",
+  "original_bytes": 149917,
+  "same_format_unshared_bytes": 196360,
+  "shared_bytes": 109826,
+  "shared_sha256": "edc06bbb81611ed74d9de9c8dc952113ae416d1f253dab587feb61695d10ab2a",
+  "predicate_nodes_before": 2207,
+  "predicate_nodes_after": 1411,
+  "program_nodes_before": 4498,
+  "program_nodes_after": 975,
+  "program_roots": 588,
+  "all_predicates_and_programs_preserved": true,
+  "work": {
+    "sharing_node_visits": 13410,
+    "shared_substructures": 4319,
+    "verified_predicate_nodes": 2207,
+    "verified_programs": 588
+  },
+  "wall_seconds": 0.032380999997258186,
+  "cpu_seconds": 0.03125,
+  "peak_memory_bytes": null,
+  "memory_note": "Peak process memory was not measured for this short transformation.",
+  "source_hashes": {
+    "kavi/shared_english_configurations.py": "17e2bfba12d2f51346a522395f5d421a4dca2ab3a2fe70fc4e01cf60cdd10591",
+    "scripts/check_shared_english.py": "7e67527f719522e9e793fef1b27d4b70086e1fa80b6d28c8a79cda94d93c0a89"
+  },
+  "claim": "Exact representational preservation under the unchanged interpreter; no new semantic accuracy result."
+}

@@ -1,0 +1,2449 @@
+{
+  "author": "Arnav123-s",
+  "scope": "Completed event-graph psychology comparison; not PCL training",
+  "completed": {
+    "author": "Arnav123-s",
+    "state": "completed",
+    "protocol": "docs/PSYCHOLOGY_TRANSFER_PROTOCOL.md",
+    "python": "3.13.5",
+    "limits": {
+      "seconds": 300,
+      "worker_bytes": 536870912
+    },
+    "source_hashes": {
+      "docs/PSYCHOLOGY_TRANSFER_PROTOCOL.md": "517705bcd6c9af094546866fee9e3292dd7e7068f58d5d9e9aa77f996c477a8c",
+      "kavi/event_learning.py": "97753a6a455147bda5f8499ca0b4120ef3ef72f8afa0e9366fbf41813b341f2d",
+      "kavi/event_transfer.py": "339d87db1933f76842999176de47cb0d94156334ae94035feb3d1e3bdfe51e56",
+      "kavi/text_choice_events.py": "593d9fab2bb469f9f9882f33d988962309405ca7d7d27601002517b1d0615553",
+      "kavi/adaptive_events.py": "2f4c61218c918a5979b64691b05152af20ea8c0c95719610e5ea899dca164c1d",
+      "scripts/run_psychology_transfer.py": "909ff5e6df3af2e13dba7d508275a460fbfedb3635bcf1a9ed13e916010d971b",
+      "scripts/acquire_psychology_sources.py": "00497b377777af15277335050bbe09706df829fd924efde721984436c923fc73",
+      "scripts/extract_psychology_exams.py": "85b6b9748b5df09acc892f503c56ca1b2695422a995651bf65e1bd0379b05d3c"
+    },
+    "source_manifest": {
+      "author": "Arnav123-s",
+      "acquired_utc": "2026-09-08T04:50:49.694874+00:00",
+      "openstax_revision": "de7e40c91813dabdc2875df9d0709fc4f46080bb",
+      "sources": [
+        {
+          "file": "collection.xml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/collections/psychology-2e.collection.xml",
+          "bytes": 7007,
+          "sha256": "7bd3ca661f711dc1d06c7e2215b432227b747113aec1d5d0d42dc6f78c094b59"
+        },
+        {
+          "file": "openstax-license.txt",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/LICENSE",
+          "bytes": 21442,
+          "sha256": "ab1a44bbba58252630134574d7b2534813339240eb645825ffcc2487dbe8114a"
+        },
+        {
+          "file": "mit-course.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+          "bytes": 137178,
+          "sha256": "dd7daf205cc1844361ff2bb4881fab677f87cf721252fe427bbb442193f6e19a"
+        },
+        {
+          "file": "mit-terms.html",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "bytes": 27702,
+          "sha256": "8b54314bea5c779236d461eaf3bb7eee17697f71ff658cf8cf14e83fd322d113"
+        },
+        {
+          "file": "m82166.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82166/index.cnxml",
+          "bytes": 15547,
+          "sha256": "ad4e33b8b4aa5b62426ed551a96ba7355a060a0f1cf2eac5ae0002751fc66944"
+        },
+        {
+          "file": "m82167.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82167/index.cnxml",
+          "bytes": 30487,
+          "sha256": "783c3f5135a95fe7603507fe83d85191ddeb7a4f1171071810e332236043bdb0"
+        },
+        {
+          "file": "m82168.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82168/index.cnxml",
+          "bytes": 40754,
+          "sha256": "cac205a799e245fd608398472aa07314949a5c5ce2168c036ad246ca26db5b0b"
+        },
+        {
+          "file": "m82169.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82169/index.cnxml",
+          "bytes": 61572,
+          "sha256": "1a2611111997026ad20c578b5116b073cc534a2edcb518a440b133afa5280799"
+        },
+        {
+          "file": "m82170.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82170/index.cnxml",
+          "bytes": 15766,
+          "sha256": "6a64cdb315c498268b1a423e183fcb3684b4ea03a8b6dc5c09145d7d00f1aaea"
+        },
+        {
+          "file": "m82198.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82198/index.cnxml",
+          "bytes": 15068,
+          "sha256": "51c1c7dfdf147441dd3e67940fb77278964aa3cc0e7ed9e7fcb262825c6e0eee"
+        },
+        {
+          "file": "m82199.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82199/index.cnxml",
+          "bytes": 14033,
+          "sha256": "309482c0a61ad8f09b049a772664435f9ebff2f35b25798cfdcb082c169e8782"
+        },
+        {
+          "file": "m82200.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82200/index.cnxml",
+          "bytes": 42806,
+          "sha256": "c71672e84b71f7477fd95a98ef56a8b168866583fecfcfb9b683a71fadc10ba2"
+        },
+        {
+          "file": "m82201.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82201/index.cnxml",
+          "bytes": 59873,
+          "sha256": "d287eaeeb2cfcc27e4bf96e414dad3b658303b0b764f45c48ff80a4bacc3c467"
+        },
+        {
+          "file": "m82202.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82202/index.cnxml",
+          "bytes": 21839,
+          "sha256": "d7eb642aafcff72222e5f331bd417ef598ccea134b09740e5f85eea2bd47e574"
+        },
+        {
+          "file": "m82203.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82203/index.cnxml",
+          "bytes": 23331,
+          "sha256": "0d9621d3292ddcfd649a8cda6c5df78bf18cdd76ee6849f92646f09052c9e3f6"
+        },
+        {
+          "file": "m82205.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82205/index.cnxml",
+          "bytes": 22176,
+          "sha256": "cdee34cb65444269f26f10da9db32217c9275f48daa097b7191d4a267b70f4fd"
+        },
+        {
+          "file": "m82206.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82206/index.cnxml",
+          "bytes": 23823,
+          "sha256": "62e3e90f54ac547b5f87c9b2c45fb58b2f80f1fdd3f8c99a8b0491cca22a278d"
+        },
+        {
+          "file": "m82207.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82207/index.cnxml",
+          "bytes": 28628,
+          "sha256": "14eb0df0180bff4c95625629e500d9a1e03639c1e554bd57289d951fbdb9750a"
+        },
+        {
+          "file": "m82208.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82208/index.cnxml",
+          "bytes": 21475,
+          "sha256": "bb5feaa125ca07f7608c0c834f8ab5b059db25e56d42ccaae9fbaea97b0854ea"
+        },
+        {
+          "file": "m82209.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82209/index.cnxml",
+          "bytes": 30467,
+          "sha256": "718ea3b7b217d0a81c95b02abab23ba3bab6a8909adac157310e8fd81c6d63a1"
+        },
+        {
+          "file": "m82211.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82211/index.cnxml",
+          "bytes": 21045,
+          "sha256": "39b6ea1889f9d6f9da1241d2e58f50157ff1b72611cb0ae99e514fe347c6b7dc"
+        },
+        {
+          "file": "m82212.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82212/index.cnxml",
+          "bytes": 25467,
+          "sha256": "2f0171060ed680568612872f2d1fd06bacee65a69e4b6a6addf2498dbcba8a51"
+        },
+        {
+          "file": "m82213.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82213/index.cnxml",
+          "bytes": 46383,
+          "sha256": "8157d1e91c466f003f86ef3b83274aaceb14ee6ceb2df49d8e092455c6b6a349"
+        },
+        {
+          "file": "m82214.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82214/index.cnxml",
+          "bytes": 18694,
+          "sha256": "90e393939826110e6588bf0e9c74ce6e9f2238403b06df726386a3f6476016ca"
+        },
+        {
+          "file": "m82215.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82215/index.cnxml",
+          "bytes": 50242,
+          "sha256": "e147f2d16ce2fd55d7906514b6b1c4e6159971a19faa9f841ee299f0405d01a6"
+        },
+        {
+          "file": "m82216.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82216/index.cnxml",
+          "bytes": 19721,
+          "sha256": "6339272199f4f47830130456aad74e732c33ea76d2e134d9f99f3f7c0459616a"
+        },
+        {
+          "file": "m82232.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82232/index.cnxml",
+          "bytes": 28268,
+          "sha256": "4d5b4dcf99ffebeee284e8707bf76560a74e740abb90ed9bebfbfe16b9905a0c"
+        },
+        {
+          "file": "m82233.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82233/index.cnxml",
+          "bytes": 13784,
+          "sha256": "fbeb9b79fe8cefd580fb46442621ac87726651f77803880f24a3f3448bd6546f"
+        },
+        {
+          "file": "m82234.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82234/index.cnxml",
+          "bytes": 32441,
+          "sha256": "57b8f680507835844de9e790f4f3d40aaeef5254322d008fc467676ee6e08d0b"
+        },
+        {
+          "file": "m82235.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82235/index.cnxml",
+          "bytes": 26827,
+          "sha256": "3ee4c0bccfef68dfe8173690ab6bd4a9d5ea3a87fd976bcd9f974d75f5b80470"
+        },
+        {
+          "file": "m82236.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82236/index.cnxml",
+          "bytes": 22617,
+          "sha256": "b1c95a2769d497e7a2a9ae34d998787e267ed73eeb0d36d25f62b6ba9501896e"
+        },
+        {
+          "file": "m82237.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82237/index.cnxml",
+          "bytes": 7004,
+          "sha256": "7304c4a2a341a63781ccdabd22ddeca1b7ee30feb8132d271d93a49bc2241780"
+        },
+        {
+          "file": "m82238.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82238/index.cnxml",
+          "bytes": 9178,
+          "sha256": "5602c78bedefa25a344b820980de64e8b5af0a7d95c7f2ef2e17e1033ce5b276"
+        },
+        {
+          "file": "m82239.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82239/index.cnxml",
+          "bytes": 22201,
+          "sha256": "39b630c34625514df81d226200f21a26479c2f6d31b05fcacaeb15428305486f"
+        },
+        {
+          "file": "m82240.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82240/index.cnxml",
+          "bytes": 12718,
+          "sha256": "f1acd429ab4c0298e5be9d0e5327655fc4b334de4fa45d7964daa7324c26e52a"
+        },
+        {
+          "file": "m82241.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82241/index.cnxml",
+          "bytes": 20068,
+          "sha256": "da797f9bf6186b8f85fd5979ae1127228c0353891a2e12370fc81d328b325dbb"
+        },
+        {
+          "file": "m82264.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82264/index.cnxml",
+          "bytes": 84437,
+          "sha256": "61a48de57beb16549befabbb2aeb0de68dfac9e18be46a7b021b759ea1f4d0b2"
+        },
+        {
+          "file": "m82265.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82265/index.cnxml",
+          "bytes": 24359,
+          "sha256": "4d5d7e8c5e5f04860bf64f36ca4068d3c2aef761028744af6efe8ee076eba412"
+        },
+        {
+          "file": "m82266.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82266/index.cnxml",
+          "bytes": 19661,
+          "sha256": "737ace847edb72f012144849ed656d391010fc61667be657170390bd8736be16"
+        },
+        {
+          "file": "m82267.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82267/index.cnxml",
+          "bytes": 14241,
+          "sha256": "968c98bfdeb49c158eaa1d24daf02981d8fb3f26b815d099e45fb7a426ea81e0"
+        },
+        {
+          "file": "m82268.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82268/index.cnxml",
+          "bytes": 34252,
+          "sha256": "ab3bf4e1cfd9e7ea5e0361cf89af8bf05b23b2b7859722db6e4d09ba659d3cbf"
+        },
+        {
+          "file": "m82271.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82271/index.cnxml",
+          "bytes": 18537,
+          "sha256": "81c145ffb76c32dd6fb8d4deae169ba746b3a24c610dcffcbd12e0c956585bf3"
+        },
+        {
+          "file": "m82274.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82274/index.cnxml",
+          "bytes": 18402,
+          "sha256": "c239ebba76cb568d652f22f580ecfdf2768b893e5609152a81f035cc250685b6"
+        },
+        {
+          "file": "m82275.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82275/index.cnxml",
+          "bytes": 55256,
+          "sha256": "0700805766191efecd86899df363b3d52c4c99e61196a6f8488a93b88f553d3e"
+        },
+        {
+          "file": "m82276.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82276/index.cnxml",
+          "bytes": 28044,
+          "sha256": "bfa4398f438281717faa4c090ca6a14e015b22579c89d919f72dea4ead71a73b"
+        },
+        {
+          "file": "m82277.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82277/index.cnxml",
+          "bytes": 14577,
+          "sha256": "a863dc59b24f9a4389a37fb5b5a066cb6e656c99aa9219f398ce5cd41793e613"
+        },
+        {
+          "file": "m82278.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82278/index.cnxml",
+          "bytes": 33717,
+          "sha256": "5a2511829df3c9bb9f2218852b9294a421f0c1f747ea6c0d565bfab1231f1093"
+        },
+        {
+          "file": "m82279.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82279/index.cnxml",
+          "bytes": 33430,
+          "sha256": "13fa2d8bea0eb329943a5e515be1d1a1ac05ce70c07b13caca5d36e4d69f62c1"
+        },
+        {
+          "file": "mit-adult-development.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/adult-development/",
+          "bytes": 143057,
+          "sha256": "8dd5b8aaf907c19a8b4013c3255aa10118393202231448e27b72020aa029eed0"
+        },
+        {
+          "file": "mit-child-development.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/child-development/",
+          "bytes": 144823,
+          "sha256": "d5d12f9c00e1e9b57e4b6ead69ea581c0ce6f73f8b6506a2afa15d32c5be2e5e"
+        },
+        {
+          "file": "mit-emotion-motivation.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/emotion-motivation/",
+          "bytes": 144732,
+          "sha256": "b456fafc0d564836fa79aec0fda00f717d70e429dcea104daf6cc65340bb0e27"
+        },
+        {
+          "file": "mit-intelligence.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/intelligence/",
+          "bytes": 145993,
+          "sha256": "132835d75073a9cbec0ae6de9d7ff9b44a29019547b0f17f4b4a9d4120a21c29"
+        },
+        {
+          "file": "mit-introduction.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/introduction/",
+          "bytes": 142986,
+          "sha256": "124a585dc2fe4b447d0bfb16e9b6bd634ce38ac2de368cf8d9cc19d892f4301e"
+        },
+        {
+          "file": "mit-learning.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/learning/",
+          "bytes": 144708,
+          "sha256": "0c767b92addd088afa6afd333d6cf170192812aee1fbed54000f717ad1536130"
+        },
+        {
+          "file": "mit-memory-i.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/memory-i/",
+          "bytes": 142125,
+          "sha256": "f5e137aaf03fef244d5b7d86cc2823ce5d71483e631291345944048f7ebc7245"
+        },
+        {
+          "file": "mit-memory-ii.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/memory-ii/",
+          "bytes": 144045,
+          "sha256": "e84fa0ae139753ea6eb1b62d023e4861ba07222803c499a9ed5c7716293f790e"
+        },
+        {
+          "file": "mit-personality.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/personality/",
+          "bytes": 144673,
+          "sha256": "450faa35b224bb4da50af67288ecb52a914fd253521bb09486318c4cc8ff4a5d"
+        },
+        {
+          "file": "mit-science-research.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/science-research/",
+          "bytes": 149708,
+          "sha256": "6fba33b16373269466c5bb14ac647ae0aeb5e3bc52d3cf8fb83da646324dc351"
+        },
+        {
+          "file": "mit-social-psychology-i.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/social-psychology-i/",
+          "bytes": 143808,
+          "sha256": "460492cd34918560c85e8853eb2984c681b9a863959a2f6869a25c4a80127135"
+        },
+        {
+          "file": "mit-social-psychology-ii.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/social-psychology-ii/",
+          "bytes": 142329,
+          "sha256": "234ce0aca30ded2ee96d8d177733d88bcd07d0a10061ee4c4a594c2e4f0b84e5"
+        },
+        {
+          "file": "mit-thinking.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/thinking/",
+          "bytes": 149068,
+          "sha256": "f9cfdc3440ab54d812c29de41de0e4e0f2fad15b772adfa544ec8fb346cfe271"
+        },
+        {
+          "file": "noba-psychopathy.html",
+          "url": "https://nobaproject.com/modules/psychopathy",
+          "bytes": 80224,
+          "sha256": "20ca2e159f33d2d9dd3031d07c9c94d1835087fae0123639c52e810a015ad379"
+        },
+        {
+          "file": "noba-intelligence.html",
+          "url": "https://nobaproject.com/modules/intelligence",
+          "bytes": 59364,
+          "sha256": "df8dd3f3c968b747f5d51c4a712a5c8b0fe8e914c9e8e35a887b63f203836d39"
+        }
+      ],
+      "openstax_authors": [
+        "Rose M. Spielman",
+        "William J. Jenkins",
+        "Marilyn D. Lovett"
+      ],
+      "openstax_publisher": "OpenStax, Rice University",
+      "openstax_edition": "Psychology 2e, 2020",
+      "mit_author": "John D. E. Gabrieli and MIT OpenCourseWare course contributors",
+      "mit_edition": "9.00SC Introduction to Psychology, Fall 2011",
+      "noba_authors": {
+        "psychopathy": "Christopher J. Patrick",
+        "intelligence": "Robert Biswas-Diener"
+      },
+      "license": "CC BY-NC-SA 4.0; retain separately marked third-party exclusions",
+      "language": "English",
+      "gutenberg_used": false,
+      "fabricated_questions": 0,
+      "questions_sha256": "8818e9ac0ef4056f9fb791e93694d2ea87a08db4bb330d03d0ee69b3e7c9f340",
+      "openstax_questions": 121,
+      "openstax_chapters": {
+        "2": 24,
+        "6": 16,
+        "7": 24,
+        "8": 12,
+        "11": 23,
+        "15": 22
+      },
+      "mit_questions": 3,
+      "excluded": [],
+      "noba_training_status": "Research source only; no keyed exercises admitted",
+      "source_bytes": 3438188
+    },
+    "data_hashes": {
+      "questions.json": "8818e9ac0ef4056f9fb791e93694d2ea87a08db4bb330d03d0ee69b3e7c9f340",
+      "exams.json": "ab39f82b426326ffa0a666d4de8586bf93049ffb49648816e8125e3898d76e47",
+      "manifest.json": "f1e21d3dee78f994e9f68d4ad5167f5c4e75db9932508eb2cddcce07e6248209"
+    },
+    "base": {
+      "file": "experiments/english-20260907-adaptive-model.json",
+      "bytes": 10590,
+      "sha256": "2e78a46d70ce9beb82bae8de92b71eb4cced7cea3763c619f8a3250ef8461427"
+    },
+    "partitions": {
+      "training": [
+        "openstax:m82167:fs-idp7218128",
+        "openstax:m82167:fs-idp5620448",
+        "openstax:m82168:fs-idm34278992",
+        "openstax:m82168:fs-idm58645520",
+        "openstax:m82168:fs-idm124782544",
+        "openstax:m82168:fs-idm30197456",
+        "openstax:m82168:fs-idp899008",
+        "openstax:m82168:fs-idm4568128",
+        "openstax:m82169:fs-idm38758640",
+        "openstax:m82169:fs-idp2894320",
+        "openstax:m82169:fs-idm38751904",
+        "openstax:m82169:fs-idm28997136",
+        "openstax:m82169:fs-idm46864688",
+        "openstax:m82169:fs-idm44434400",
+        "openstax:m82170:fs-idm4993776",
+        "openstax:m82170:fs-idm60364544",
+        "openstax:m82199:fs-idm9560544",
+        "openstax:m82199:fs-idp80862112",
+        "openstax:m82200:fs-idm27236064",
+        "openstax:m82200:fs-idm99663600",
+        "openstax:m82201:fs-idm72936720",
+        "openstax:m82201:fs-idm71327520",
+        "openstax:m82202:fs-idm117080128",
+        "openstax:m82202:fs-idm38860288",
+        "openstax:m82205:fs-idm113398576",
+        "openstax:m82205:fs-idm128913904",
+        "openstax:m82206:fs-idm143260304",
+        "openstax:m82206:fs-idm58124784",
+        "openstax:m82207:fs-idm104965904",
+        "openstax:m82207:fs-idm83509360",
+        "openstax:m82208:fs-idm142080448",
+        "openstax:m82208:fs-idp4884704",
+        "openstax:m82209:fs-idm24295856",
+        "openstax:m82209:fs-idm133815024",
+        "openstax:m82211:fs-idm93642160",
+        "openstax:m82211:fs-idm8980800",
+        "openstax:m82213:fs-idm87630592",
+        "openstax:m82213:fs-idm127896928",
+        "openstax:m82214:fs-idp52737968",
+        "openstax:m82215:fs-idm45358064",
+        "openstax:m82215:fs-idm52141824",
+        "openstax:m82216:fs-idm32403888",
+        "openstax:m82216:fs-idp2921264",
+        "openstax:m82233:fs-idp47985824",
+        "openstax:m82233:fs-idm147588048",
+        "openstax:m82234:fs-idm43251568",
+        "openstax:m82234:fs-idm2953264",
+        "openstax:m82235:fs-idm4144288",
+        "openstax:m82236:fs-idp109083568",
+        "openstax:m82236:fs-idp171884848",
+        "openstax:m82237:fs-idm199631728",
+        "openstax:m82238:fs-idp99300112",
+        "openstax:m82238:fs-idm11446400",
+        "openstax:m82239:fs-idp99350112",
+        "openstax:m82240:fs-idm898704",
+        "openstax:m82241:fs-idm1236192",
+        "openstax:m82241:fs-idm398688",
+        "openstax:m82265:fs-idm30650016",
+        "openstax:m82266:fs-idp96795840",
+        "openstax:m82267:fs-idm19981600",
+        "openstax:m82268:fs-idm76487856",
+        "openstax:m82271:fs-idm139657840",
+        "openstax:m82274:fs-idp78100160",
+        "openstax:m82275:fs-idm127496192",
+        "openstax:m82276:fs-idp14872640",
+        "openstax:m82277:fs-idm54290272",
+        "openstax:m82278:fs-idp93539616",
+        "openstax:m82279:fs-idm149440768"
+      ],
+      "development": [
+        "openstax:m82167:fs-idp4710624",
+        "openstax:m82168:fs-idm28267056",
+        "openstax:m82169:fs-idm46475056",
+        "openstax:m82170:fs-idm49222928",
+        "openstax:m82199:fs-idp103566368",
+        "openstax:m82200:fs-idm16955552",
+        "openstax:m82201:fs-idm43885376",
+        "openstax:m82202:fs-idm109101680",
+        "openstax:m82205:fs-idm69533312",
+        "openstax:m82206:fs-idm92509680",
+        "openstax:m82207:fs-idm172007920",
+        "openstax:m82208:fs-idm81834432",
+        "openstax:m82209:fs-idm150976976",
+        "openstax:m82211:fs-idm97863040",
+        "openstax:m82216:fs-idp38792848",
+        "openstax:m82233:fs-idm96722816",
+        "openstax:m82238:fs-idm30533600"
+      ],
+      "final_openstax": [
+        "openstax:m82167:fs-idp12843936",
+        "openstax:m82168:fs-idm15501216",
+        "openstax:m82169:fs-idm32547936",
+        "openstax:m82170:fs-idm232832",
+        "openstax:m82199:fs-idp17687200",
+        "openstax:m82200:fs-idp89969056",
+        "openstax:m82201:fs-idp79982784",
+        "openstax:m82202:fs-idm74922384",
+        "openstax:m82205:fs-idm89324336",
+        "openstax:m82206:fs-idm175029136",
+        "openstax:m82207:fs-idm138779696",
+        "openstax:m82208:fs-idm141968384",
+        "openstax:m82209:fs-idm89308304",
+        "openstax:m82211:fs-idm2307504",
+        "openstax:m82213:fs-idm127493296",
+        "openstax:m82214:fs-idp103162160",
+        "openstax:m82215:fs-idm161208496",
+        "openstax:m82216:fs-idp2973584",
+        "openstax:m82233:fs-idm142790960",
+        "openstax:m82234:fs-idm135064480",
+        "openstax:m82236:fs-idp99048256",
+        "openstax:m82237:fs-idm88196816",
+        "openstax:m82238:fs-idp143462352",
+        "openstax:m82240:fs-idp5072432",
+        "openstax:m82241:fs-idm436576",
+        "openstax:m82265:fs-idm86813760",
+        "openstax:m82266:fs-idp87413216",
+        "openstax:m82267:fs-idp130712464",
+        "openstax:m82268:fs-idm124218256",
+        "openstax:m82271:fs-idm49703456",
+        "openstax:m82274:fs-idp64237440",
+        "openstax:m82275:fs-idm231323552",
+        "openstax:m82276:fs-idm38213936",
+        "openstax:m82277:fs-idp36529360",
+        "openstax:m82278:fs-idp35048288",
+        "openstax:m82279:fs-idm133474576"
+      ],
+      "final_mit": [
+        "mit:exam2-2009:1",
+        "mit:exam2-2009:2",
+        "mit:exam2-2009:3",
+        "mit:exam2-2009:5",
+        "mit:exam2-2009:6",
+        "mit:exam2-2009:7",
+        "mit:exam2-2009:8",
+        "mit:exam2-2009:9",
+        "mit:exam2-2009:10",
+        "mit:exam2-2009:11",
+        "mit:exam2-2009:12",
+        "mit:exam2-2009:13",
+        "mit:exam2-2009:14",
+        "mit:exam2-2009:15",
+        "mit:exam2-2009:16",
+        "mit:exam2-2009:17",
+        "mit:exam2-2009:18",
+        "mit:exam2-2009:19",
+        "mit:exam2-2009:20",
+        "mit:exam2-2009:21",
+        "mit:exam2-2009:22",
+        "mit:exam2-2009:23",
+        "mit:exam2-2009:24",
+        "mit:exam2-2009:25",
+        "mit:exam2-2009:26",
+        "mit:exam2-2009:27",
+        "mit:exam2-2009:28",
+        "mit:exam2-2009:29",
+        "mit:exam2-2009:30",
+        "mit:exam2-2009:31",
+        "mit:exam2-2009:32",
+        "mit:exam2-2009:33",
+        "mit:exam2-2009:34",
+        "mit:exam2-2009:35",
+        "mit:exam2-2009:36",
+        "mit:exam2-2009:37",
+        "mit:exam2-2009:38",
+        "mit:exam2-2009:39",
+        "mit:exam2-2009:40",
+        "mit:exam2-2009:41",
+        "mit:exam2-2009:43",
+        "mit:exam2-2009:44",
+        "mit:exam2-2009:45",
+        "mit:exam2-2009:46",
+        "mit:exam2-2009:47",
+        "mit:exam2-2009:48",
+        "mit:exam2-2009:49",
+        "mit:exam2-2009:50",
+        "mit:exam3-2011:4",
+        "mit:exam3-2011:5",
+        "mit:exam3-2011:6",
+        "mit:exam3-2011:7",
+        "mit:exam3-2011:8",
+        "mit:exam3-2011:9",
+        "mit:exam3-2011:10",
+        "mit:exam3-2011:11",
+        "mit:exam3-2011:12",
+        "mit:exam3-2011:13",
+        "mit:exam3-2011:14",
+        "mit:exam3-2011:15",
+        "mit:exam3-2011:16",
+        "mit:exam3-2011:17",
+        "mit:exam3-2011:18",
+        "mit:exam3-2011:19",
+        "mit:exam3-2011:20",
+        "mit:exam3-2011:21",
+        "mit:exam3-2011:22",
+        "mit:exam3-2011:23",
+        "mit:exam3-2011:24",
+        "mit:exam3-2011:25",
+        "mit:exam3-2011:26",
+        "mit:exam3-2011:27",
+        "mit:exam3-2011:28",
+        "mit:exam3-2011:29",
+        "mit:exam3-2011:30",
+        "mit:exam3-2011:31",
+        "mit:exam3-2011:32",
+        "mit:exam3-2011:33",
+        "mit:exam3-2011:34",
+        "mit:exam3-2011:35",
+        "mit:exam3-2011:36",
+        "mit:exam3-2011:37",
+        "mit:exam3-2011:38",
+        "mit:exam3-2011:39",
+        "mit:exam3-2011:40",
+        "mit:exam3-2011:41",
+        "mit:exam3-2011:42",
+        "mit:exam3-2011:43",
+        "mit:exam3-2011:44",
+        "mit:exam3-2011:45"
+      ]
+    },
+    "vocabulary": 782,
+    "arms": {
+      "reuse": {
+        "stages": [
+          {
+            "title": "Learning and research",
+            "new_questions": 31,
+            "total_teaching": 31,
+            "before": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 1107,
+              "old_states": 20,
+              "proposals": 1201,
+              "accepted": 720,
+              "rejected": 481,
+              "old_state_merges": 702,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 1695,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 31,
+              "total": 31,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 2933
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 280
+            },
+            "regressions": [],
+            "bytes": 25648,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 2933,
+              "transfer_frontier_steps": 723,
+              "event_copied_states": 766209,
+              "event_copied_edges": 2319349,
+              "event_merge_closure": 1673,
+              "event_merge_edge_checks": 1212,
+              "event_canonical_edges": 1656110,
+              "transfer_preservation_states": 16060,
+              "transfer_preservation_edges": 791153,
+              "event_transition_reads": 3057,
+              "transfer_reachability_states": 22
+            }
+          },
+          {
+            "title": "Thinking and intelligence",
+            "new_questions": 12,
+            "total_teaching": 43,
+            "before": {
+              "correct": 0,
+              "total": 12,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 896
+              },
+              "old_state_visits": 124
+            },
+            "earlier_evaluation": {
+              "correct": 31,
+              "total": 43,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 3057
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 280
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 1440,
+              "old_states": 20,
+              "proposals": 1400,
+              "accepted": 874,
+              "rejected": 526,
+              "old_state_merges": 856,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 1849,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 43,
+              "total": 43,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 3781
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "regressions": [],
+            "bytes": 27520,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 3781,
+              "transfer_frontier_steps": 877,
+              "event_copied_states": 1193682,
+              "event_copied_edges": 3080899,
+              "event_merge_closure": 2108,
+              "event_merge_edge_checks": 1607,
+              "event_canonical_edges": 2219523,
+              "transfer_preservation_states": 19140,
+              "transfer_preservation_edges": 940995,
+              "event_transition_reads": 3953,
+              "transfer_reachability_states": 22
+            }
+          },
+          {
+            "title": "Personality and psychological disorders",
+            "new_questions": 25,
+            "total_teaching": 68,
+            "before": {
+              "correct": 0,
+              "total": 25,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 2255
+              },
+              "old_state_visits": 212
+            },
+            "earlier_evaluation": {
+              "correct": 43,
+              "total": 68,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 3993
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 2274,
+              "old_states": 20,
+              "proposals": 1978,
+              "accepted": 1365,
+              "rejected": 613,
+              "old_state_merges": 1347,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 2340,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 68,
+              "total": 68,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 5936
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "regressions": [],
+            "bytes": 33400,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 5936,
+              "transfer_frontier_steps": 1368,
+              "event_copied_states": 2510723,
+              "event_copied_edges": 5679411,
+              "event_merge_closure": 3121,
+              "event_merge_edge_checks": 2529,
+              "event_canonical_edges": 4312485,
+              "transfer_preservation_states": 28960,
+              "transfer_preservation_edges": 1418738,
+              "event_transition_reads": 6208,
+              "transfer_reachability_states": 22
+            }
+          }
+        ],
+        "artifact": {
+          "file": "reuse-model.json",
+          "bytes": 33400,
+          "sha256": "2812c42c530d0ff2d74134a855f2b042e6c976746ecadd82cb0f2a905ddcbcd6",
+          "states": 22,
+          "edges": 2340,
+          "license": "CC BY-NC-SA 4.0"
+        },
+        "final_training": {
+          "correct": 68,
+          "total": 68,
+          "unresolved": 0,
+          "work": {
+            "choice_event_steps": 6208
+          },
+          "old_state_visits": 5936
+        },
+        "old_defined_execution_preserved": true,
+        "preservation_work": {
+          "transfer_preservation_states": 20,
+          "transfer_preservation_edges": 973
+        },
+        "openstax": {
+          "correct": 0,
+          "total": 36,
+          "unresolved": 36,
+          "work": {
+            "choice_event_steps": 2694
+          },
+          "old_state_visits": 601
+        },
+        "openstax_adaptive": {
+          "correct": 1,
+          "total": 36,
+          "unresolved": 25,
+          "work": {
+            "choice_event_steps": 2694,
+            "adaptive_blueprint_steps": 30341,
+            "adaptive_link_proposals": 160204
+          },
+          "old_state_visits": 601
+        },
+        "mit": {
+          "correct": 0,
+          "total": 90,
+          "unresolved": 90,
+          "work": {
+            "choice_event_steps": 12784
+          },
+          "old_state_visits": 1645
+        },
+        "mit_adaptive": {
+          "correct": 0,
+          "total": 90,
+          "unresolved": 79,
+          "work": {
+            "choice_event_steps": 12784,
+            "adaptive_blueprint_steps": 112799,
+            "adaptive_link_proposals": 548768
+          },
+          "old_state_visits": 1645
+        },
+        "frozen_unchanged": true
+      },
+      "separate": {
+        "stages": [
+          {
+            "title": "Learning and research",
+            "new_questions": 31,
+            "total_teaching": 31,
+            "before": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 1107,
+              "old_states": 20,
+              "proposals": 707,
+              "accepted": 597,
+              "rejected": 110,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 25,
+              "edges": 1575,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 31,
+              "total": 31,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 23846,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 2933,
+              "transfer_frontier_steps": 603,
+              "event_copied_states": 417457,
+              "event_copied_edges": 1310057,
+              "event_merge_closure": 1374,
+              "event_merge_edge_checks": 1306,
+              "event_canonical_edges": 1111963,
+              "transfer_preservation_states": 11960,
+              "transfer_preservation_edges": 581854,
+              "event_transition_reads": 3057,
+              "transfer_reachability_states": 5
+            }
+          },
+          {
+            "title": "Thinking and intelligence",
+            "new_questions": 12,
+            "total_teaching": 43,
+            "before": {
+              "correct": 0,
+              "total": 12,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 896
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 31,
+              "total": 43,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 1440,
+              "old_states": 20,
+              "proposals": 862,
+              "accepted": 733,
+              "rejected": 129,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 24,
+              "edges": 1710,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 43,
+              "total": 43,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 25398,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 3781,
+              "transfer_frontier_steps": 738,
+              "event_copied_states": 638561,
+              "event_copied_edges": 1788788,
+              "event_merge_closure": 1887,
+              "event_merge_edge_checks": 1881,
+              "event_canonical_edges": 1531123,
+              "transfer_preservation_states": 14680,
+              "transfer_preservation_edges": 714182,
+              "event_transition_reads": 3953,
+              "transfer_reachability_states": 4
+            }
+          },
+          {
+            "title": "Personality and psychological disorders",
+            "new_questions": 25,
+            "total_teaching": 68,
+            "before": {
+              "correct": 0,
+              "total": 25,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 2255
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 43,
+              "total": 68,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 2274,
+              "old_states": 20,
+              "proposals": 1295,
+              "accepted": 1119,
+              "rejected": 176,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 25,
+              "edges": 2097,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 68,
+              "total": 68,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 29934,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 5936,
+              "transfer_frontier_steps": 1125,
+              "event_copied_states": 1510786,
+              "event_copied_edges": 3499916,
+              "event_merge_closure": 2796,
+              "event_merge_edge_checks": 2805,
+              "event_canonical_edges": 3051187,
+              "transfer_preservation_states": 22400,
+              "transfer_preservation_edges": 1089760,
+              "event_transition_reads": 6208,
+              "transfer_reachability_states": 5
+            }
+          }
+        ],
+        "artifact": {
+          "file": "separate-model.json",
+          "bytes": 29934,
+          "sha256": "889741330790a5b1b2689c79bfcd9e18dbdef9ac0d53b81b8cc219b3bf2513d1",
+          "states": 25,
+          "edges": 2097,
+          "license": "CC BY-NC-SA 4.0"
+        },
+        "final_training": {
+          "correct": 68,
+          "total": 68,
+          "unresolved": 0,
+          "work": {
+            "choice_event_steps": 6208
+          },
+          "old_state_visits": 0
+        },
+        "old_defined_execution_preserved": true,
+        "preservation_work": {
+          "transfer_preservation_states": 20,
+          "transfer_preservation_edges": 973
+        },
+        "openstax": {
+          "correct": 0,
+          "total": 36,
+          "unresolved": 36,
+          "work": {
+            "choice_event_steps": 2694
+          },
+          "old_state_visits": 0
+        },
+        "openstax_adaptive": {
+          "correct": 0,
+          "total": 36,
+          "unresolved": 29,
+          "work": {
+            "choice_event_steps": 2694,
+            "adaptive_blueprint_steps": 29828,
+            "adaptive_link_proposals": 241250
+          },
+          "old_state_visits": 0
+        },
+        "mit": {
+          "correct": 0,
+          "total": 90,
+          "unresolved": 90,
+          "work": {
+            "choice_event_steps": 12784
+          },
+          "old_state_visits": 0
+        },
+        "mit_adaptive": {
+          "correct": 3,
+          "total": 90,
+          "unresolved": 83,
+          "work": {
+            "choice_event_steps": 12784,
+            "adaptive_blueprint_steps": 95216,
+            "adaptive_link_proposals": 651725
+          },
+          "old_state_visits": 0
+        },
+        "frozen_unchanged": true
+      }
+    },
+    "teaching_pairs_presented": 1136,
+    "independent_duplicate_exclusions": [
+      "mit:exam2-2009:42"
+    ],
+    "independent_sources": {
+      "excluded": [
+        {
+          "id": "mit:exam2-2009:4",
+          "reason": "Original option labels are missing, duplicated or unordered"
+        },
+        {
+          "id": "mit:exam3-2011:1",
+          "reason": "Displayed during initial source discovery; reserved out of the final bank"
+        },
+        {
+          "id": "mit:exam3-2011:2",
+          "reason": "Displayed during initial source discovery; reserved out of the final bank"
+        },
+        {
+          "id": "mit:exam3-2011:3",
+          "reason": "Displayed during initial source discovery; reserved out of the final bank"
+        }
+      ],
+      "not_admitted": [
+        {
+          "file": "mit-exam2-sol.pdf",
+          "reason": "Embedded glyph layout damages extracted words; no corrected text invented"
+        }
+      ],
+      "sources": [
+        {
+          "bytes": 203905,
+          "file": "mit-exam2-2009-sol.pdf",
+          "sha256": "155c393fb64bac4bbe670d7120c3347b87b36ccd1c6d1d5b99d024166a6ae593",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/fa63e525f4e385855930031652f20dde_MIT9_00SCF11_exam2_2009sol.pdf"
+        },
+        {
+          "bytes": 186367,
+          "file": "mit-exam3-sol.pdf",
+          "sha256": "57178eccf4725b1b818a8d335408c9c1bb8fbe7edca9c3f6ec8591b3ad6f3c62",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/4782483bc4ca2c61e20678af9036e5a1_MIT9_00SCF11_exam3_sol.pdf"
+        }
+      ]
+    },
+    "controls": {
+      "openstax": {
+        "total": 36,
+        "fixed_first_correct": 16,
+        "most_common_training_position": 1,
+        "most_common_training_position_correct": 9
+      },
+      "mit": {
+        "total": 90,
+        "fixed_first_correct": 18,
+        "most_common_training_position": 1,
+        "most_common_training_position_correct": 20
+      }
+    },
+    "wall_seconds": 34.8504610999953,
+    "cpu_seconds": 20.046875,
+    "display_pacing_seconds": 15.056624999968335,
+    "worker_memory": {
+      "available_bytes": 18463301632,
+      "working_set_bytes": 31453184,
+      "peak_bytes": 34619392,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    }
+  },
+  "earlier_failed_run": {
+    "author": "Arnav123-s",
+    "state": "failed",
+    "protocol": "docs/PSYCHOLOGY_TRANSFER_PROTOCOL.md",
+    "python": "3.13.5",
+    "limits": {
+      "seconds": 300,
+      "worker_bytes": 536870912
+    },
+    "source_hashes": {
+      "docs/PSYCHOLOGY_TRANSFER_PROTOCOL.md": "496e21ebe705c4ec35b67fa5b4f6afc24ae02975c566cd239e3b79b98556072a",
+      "kavi/event_learning.py": "97753a6a455147bda5f8499ca0b4120ef3ef72f8afa0e9366fbf41813b341f2d",
+      "kavi/event_transfer.py": "339d87db1933f76842999176de47cb0d94156334ae94035feb3d1e3bdfe51e56",
+      "kavi/text_choice_events.py": "593d9fab2bb469f9f9882f33d988962309405ca7d7d27601002517b1d0615553",
+      "kavi/adaptive_events.py": "2f4c61218c918a5979b64691b05152af20ea8c0c95719610e5ea899dca164c1d",
+      "scripts/run_psychology_transfer.py": "119413f84e937ec9584d95b9c4fa78b642d6ebf218e7065a222107a53b88b4b3",
+      "scripts/acquire_psychology_sources.py": "00497b377777af15277335050bbe09706df829fd924efde721984436c923fc73",
+      "scripts/extract_psychology_exams.py": "85b6b9748b5df09acc892f503c56ca1b2695422a995651bf65e1bd0379b05d3c"
+    },
+    "source_manifest": {
+      "author": "Arnav123-s",
+      "acquired_utc": "2026-09-08T04:50:49.694874+00:00",
+      "openstax_revision": "de7e40c91813dabdc2875df9d0709fc4f46080bb",
+      "sources": [
+        {
+          "file": "collection.xml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/collections/psychology-2e.collection.xml",
+          "bytes": 7007,
+          "sha256": "7bd3ca661f711dc1d06c7e2215b432227b747113aec1d5d0d42dc6f78c094b59"
+        },
+        {
+          "file": "openstax-license.txt",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/LICENSE",
+          "bytes": 21442,
+          "sha256": "ab1a44bbba58252630134574d7b2534813339240eb645825ffcc2487dbe8114a"
+        },
+        {
+          "file": "mit-course.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/",
+          "bytes": 137178,
+          "sha256": "dd7daf205cc1844361ff2bb4881fab677f87cf721252fe427bbb442193f6e19a"
+        },
+        {
+          "file": "mit-terms.html",
+          "url": "https://ocw.mit.edu/pages/privacy-and-terms-of-use/",
+          "bytes": 27702,
+          "sha256": "8b54314bea5c779236d461eaf3bb7eee17697f71ff658cf8cf14e83fd322d113"
+        },
+        {
+          "file": "m82166.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82166/index.cnxml",
+          "bytes": 15547,
+          "sha256": "ad4e33b8b4aa5b62426ed551a96ba7355a060a0f1cf2eac5ae0002751fc66944"
+        },
+        {
+          "file": "m82167.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82167/index.cnxml",
+          "bytes": 30487,
+          "sha256": "783c3f5135a95fe7603507fe83d85191ddeb7a4f1171071810e332236043bdb0"
+        },
+        {
+          "file": "m82168.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82168/index.cnxml",
+          "bytes": 40754,
+          "sha256": "cac205a799e245fd608398472aa07314949a5c5ce2168c036ad246ca26db5b0b"
+        },
+        {
+          "file": "m82169.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82169/index.cnxml",
+          "bytes": 61572,
+          "sha256": "1a2611111997026ad20c578b5116b073cc534a2edcb518a440b133afa5280799"
+        },
+        {
+          "file": "m82170.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82170/index.cnxml",
+          "bytes": 15766,
+          "sha256": "6a64cdb315c498268b1a423e183fcb3684b4ea03a8b6dc5c09145d7d00f1aaea"
+        },
+        {
+          "file": "m82198.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82198/index.cnxml",
+          "bytes": 15068,
+          "sha256": "51c1c7dfdf147441dd3e67940fb77278964aa3cc0e7ed9e7fcb262825c6e0eee"
+        },
+        {
+          "file": "m82199.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82199/index.cnxml",
+          "bytes": 14033,
+          "sha256": "309482c0a61ad8f09b049a772664435f9ebff2f35b25798cfdcb082c169e8782"
+        },
+        {
+          "file": "m82200.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82200/index.cnxml",
+          "bytes": 42806,
+          "sha256": "c71672e84b71f7477fd95a98ef56a8b168866583fecfcfb9b683a71fadc10ba2"
+        },
+        {
+          "file": "m82201.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82201/index.cnxml",
+          "bytes": 59873,
+          "sha256": "d287eaeeb2cfcc27e4bf96e414dad3b658303b0b764f45c48ff80a4bacc3c467"
+        },
+        {
+          "file": "m82202.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82202/index.cnxml",
+          "bytes": 21839,
+          "sha256": "d7eb642aafcff72222e5f331bd417ef598ccea134b09740e5f85eea2bd47e574"
+        },
+        {
+          "file": "m82203.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82203/index.cnxml",
+          "bytes": 23331,
+          "sha256": "0d9621d3292ddcfd649a8cda6c5df78bf18cdd76ee6849f92646f09052c9e3f6"
+        },
+        {
+          "file": "m82205.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82205/index.cnxml",
+          "bytes": 22176,
+          "sha256": "cdee34cb65444269f26f10da9db32217c9275f48daa097b7191d4a267b70f4fd"
+        },
+        {
+          "file": "m82206.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82206/index.cnxml",
+          "bytes": 23823,
+          "sha256": "62e3e90f54ac547b5f87c9b2c45fb58b2f80f1fdd3f8c99a8b0491cca22a278d"
+        },
+        {
+          "file": "m82207.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82207/index.cnxml",
+          "bytes": 28628,
+          "sha256": "14eb0df0180bff4c95625629e500d9a1e03639c1e554bd57289d951fbdb9750a"
+        },
+        {
+          "file": "m82208.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82208/index.cnxml",
+          "bytes": 21475,
+          "sha256": "bb5feaa125ca07f7608c0c834f8ab5b059db25e56d42ccaae9fbaea97b0854ea"
+        },
+        {
+          "file": "m82209.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82209/index.cnxml",
+          "bytes": 30467,
+          "sha256": "718ea3b7b217d0a81c95b02abab23ba3bab6a8909adac157310e8fd81c6d63a1"
+        },
+        {
+          "file": "m82211.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82211/index.cnxml",
+          "bytes": 21045,
+          "sha256": "39b6ea1889f9d6f9da1241d2e58f50157ff1b72611cb0ae99e514fe347c6b7dc"
+        },
+        {
+          "file": "m82212.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82212/index.cnxml",
+          "bytes": 25467,
+          "sha256": "2f0171060ed680568612872f2d1fd06bacee65a69e4b6a6addf2498dbcba8a51"
+        },
+        {
+          "file": "m82213.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82213/index.cnxml",
+          "bytes": 46383,
+          "sha256": "8157d1e91c466f003f86ef3b83274aaceb14ee6ceb2df49d8e092455c6b6a349"
+        },
+        {
+          "file": "m82214.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82214/index.cnxml",
+          "bytes": 18694,
+          "sha256": "90e393939826110e6588bf0e9c74ce6e9f2238403b06df726386a3f6476016ca"
+        },
+        {
+          "file": "m82215.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82215/index.cnxml",
+          "bytes": 50242,
+          "sha256": "e147f2d16ce2fd55d7906514b6b1c4e6159971a19faa9f841ee299f0405d01a6"
+        },
+        {
+          "file": "m82216.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82216/index.cnxml",
+          "bytes": 19721,
+          "sha256": "6339272199f4f47830130456aad74e732c33ea76d2e134d9f99f3f7c0459616a"
+        },
+        {
+          "file": "m82232.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82232/index.cnxml",
+          "bytes": 28268,
+          "sha256": "4d5b4dcf99ffebeee284e8707bf76560a74e740abb90ed9bebfbfe16b9905a0c"
+        },
+        {
+          "file": "m82233.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82233/index.cnxml",
+          "bytes": 13784,
+          "sha256": "fbeb9b79fe8cefd580fb46442621ac87726651f77803880f24a3f3448bd6546f"
+        },
+        {
+          "file": "m82234.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82234/index.cnxml",
+          "bytes": 32441,
+          "sha256": "57b8f680507835844de9e790f4f3d40aaeef5254322d008fc467676ee6e08d0b"
+        },
+        {
+          "file": "m82235.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82235/index.cnxml",
+          "bytes": 26827,
+          "sha256": "3ee4c0bccfef68dfe8173690ab6bd4a9d5ea3a87fd976bcd9f974d75f5b80470"
+        },
+        {
+          "file": "m82236.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82236/index.cnxml",
+          "bytes": 22617,
+          "sha256": "b1c95a2769d497e7a2a9ae34d998787e267ed73eeb0d36d25f62b6ba9501896e"
+        },
+        {
+          "file": "m82237.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82237/index.cnxml",
+          "bytes": 7004,
+          "sha256": "7304c4a2a341a63781ccdabd22ddeca1b7ee30feb8132d271d93a49bc2241780"
+        },
+        {
+          "file": "m82238.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82238/index.cnxml",
+          "bytes": 9178,
+          "sha256": "5602c78bedefa25a344b820980de64e8b5af0a7d95c7f2ef2e17e1033ce5b276"
+        },
+        {
+          "file": "m82239.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82239/index.cnxml",
+          "bytes": 22201,
+          "sha256": "39b630c34625514df81d226200f21a26479c2f6d31b05fcacaeb15428305486f"
+        },
+        {
+          "file": "m82240.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82240/index.cnxml",
+          "bytes": 12718,
+          "sha256": "f1acd429ab4c0298e5be9d0e5327655fc4b334de4fa45d7964daa7324c26e52a"
+        },
+        {
+          "file": "m82241.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82241/index.cnxml",
+          "bytes": 20068,
+          "sha256": "da797f9bf6186b8f85fd5979ae1127228c0353891a2e12370fc81d328b325dbb"
+        },
+        {
+          "file": "m82264.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82264/index.cnxml",
+          "bytes": 84437,
+          "sha256": "61a48de57beb16549befabbb2aeb0de68dfac9e18be46a7b021b759ea1f4d0b2"
+        },
+        {
+          "file": "m82265.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82265/index.cnxml",
+          "bytes": 24359,
+          "sha256": "4d5d7e8c5e5f04860bf64f36ca4068d3c2aef761028744af6efe8ee076eba412"
+        },
+        {
+          "file": "m82266.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82266/index.cnxml",
+          "bytes": 19661,
+          "sha256": "737ace847edb72f012144849ed656d391010fc61667be657170390bd8736be16"
+        },
+        {
+          "file": "m82267.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82267/index.cnxml",
+          "bytes": 14241,
+          "sha256": "968c98bfdeb49c158eaa1d24daf02981d8fb3f26b815d099e45fb7a426ea81e0"
+        },
+        {
+          "file": "m82268.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82268/index.cnxml",
+          "bytes": 34252,
+          "sha256": "ab3bf4e1cfd9e7ea5e0361cf89af8bf05b23b2b7859722db6e4d09ba659d3cbf"
+        },
+        {
+          "file": "m82271.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82271/index.cnxml",
+          "bytes": 18537,
+          "sha256": "81c145ffb76c32dd6fb8d4deae169ba746b3a24c610dcffcbd12e0c956585bf3"
+        },
+        {
+          "file": "m82274.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82274/index.cnxml",
+          "bytes": 18402,
+          "sha256": "c239ebba76cb568d652f22f580ecfdf2768b893e5609152a81f035cc250685b6"
+        },
+        {
+          "file": "m82275.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82275/index.cnxml",
+          "bytes": 55256,
+          "sha256": "0700805766191efecd86899df363b3d52c4c99e61196a6f8488a93b88f553d3e"
+        },
+        {
+          "file": "m82276.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82276/index.cnxml",
+          "bytes": 28044,
+          "sha256": "bfa4398f438281717faa4c090ca6a14e015b22579c89d919f72dea4ead71a73b"
+        },
+        {
+          "file": "m82277.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82277/index.cnxml",
+          "bytes": 14577,
+          "sha256": "a863dc59b24f9a4389a37fb5b5a066cb6e656c99aa9219f398ce5cd41793e613"
+        },
+        {
+          "file": "m82278.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82278/index.cnxml",
+          "bytes": 33717,
+          "sha256": "5a2511829df3c9bb9f2218852b9294a421f0c1f747ea6c0d565bfab1231f1093"
+        },
+        {
+          "file": "m82279.cnxml",
+          "url": "https://raw.githubusercontent.com/openstax/osbooks-psychology/de7e40c91813dabdc2875df9d0709fc4f46080bb/modules/m82279/index.cnxml",
+          "bytes": 33430,
+          "sha256": "13fa2d8bea0eb329943a5e515be1d1a1ac05ce70c07b13caca5d36e4d69f62c1"
+        },
+        {
+          "file": "mit-adult-development.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/adult-development/",
+          "bytes": 143057,
+          "sha256": "8dd5b8aaf907c19a8b4013c3255aa10118393202231448e27b72020aa029eed0"
+        },
+        {
+          "file": "mit-child-development.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/child-development/",
+          "bytes": 144823,
+          "sha256": "d5d12f9c00e1e9b57e4b6ead69ea581c0ce6f73f8b6506a2afa15d32c5be2e5e"
+        },
+        {
+          "file": "mit-emotion-motivation.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/emotion-motivation/",
+          "bytes": 144732,
+          "sha256": "b456fafc0d564836fa79aec0fda00f717d70e429dcea104daf6cc65340bb0e27"
+        },
+        {
+          "file": "mit-intelligence.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/intelligence/",
+          "bytes": 145993,
+          "sha256": "132835d75073a9cbec0ae6de9d7ff9b44a29019547b0f17f4b4a9d4120a21c29"
+        },
+        {
+          "file": "mit-introduction.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/introduction/",
+          "bytes": 142986,
+          "sha256": "124a585dc2fe4b447d0bfb16e9b6bd634ce38ac2de368cf8d9cc19d892f4301e"
+        },
+        {
+          "file": "mit-learning.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/learning/",
+          "bytes": 144708,
+          "sha256": "0c767b92addd088afa6afd333d6cf170192812aee1fbed54000f717ad1536130"
+        },
+        {
+          "file": "mit-memory-i.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/memory-i/",
+          "bytes": 142125,
+          "sha256": "f5e137aaf03fef244d5b7d86cc2823ce5d71483e631291345944048f7ebc7245"
+        },
+        {
+          "file": "mit-memory-ii.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/memory-ii/",
+          "bytes": 144045,
+          "sha256": "e84fa0ae139753ea6eb1b62d023e4861ba07222803c499a9ed5c7716293f790e"
+        },
+        {
+          "file": "mit-personality.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/personality/",
+          "bytes": 144673,
+          "sha256": "450faa35b224bb4da50af67288ecb52a914fd253521bb09486318c4cc8ff4a5d"
+        },
+        {
+          "file": "mit-science-research.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/science-research/",
+          "bytes": 149708,
+          "sha256": "6fba33b16373269466c5bb14ac647ae0aeb5e3bc52d3cf8fb83da646324dc351"
+        },
+        {
+          "file": "mit-social-psychology-i.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/social-psychology-i/",
+          "bytes": 143808,
+          "sha256": "460492cd34918560c85e8853eb2984c681b9a863959a2f6869a25c4a80127135"
+        },
+        {
+          "file": "mit-social-psychology-ii.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/social-psychology-ii/",
+          "bytes": 142329,
+          "sha256": "234ce0aca30ded2ee96d8d177733d88bcd07d0a10061ee4c4a594c2e4f0b84e5"
+        },
+        {
+          "file": "mit-thinking.html",
+          "url": "https://ocw.mit.edu/courses/9-00sc-introduction-to-psychology-fall-2011/pages/thinking/",
+          "bytes": 149068,
+          "sha256": "f9cfdc3440ab54d812c29de41de0e4e0f2fad15b772adfa544ec8fb346cfe271"
+        },
+        {
+          "file": "noba-psychopathy.html",
+          "url": "https://nobaproject.com/modules/psychopathy",
+          "bytes": 80224,
+          "sha256": "20ca2e159f33d2d9dd3031d07c9c94d1835087fae0123639c52e810a015ad379"
+        },
+        {
+          "file": "noba-intelligence.html",
+          "url": "https://nobaproject.com/modules/intelligence",
+          "bytes": 59364,
+          "sha256": "df8dd3f3c968b747f5d51c4a712a5c8b0fe8e914c9e8e35a887b63f203836d39"
+        }
+      ],
+      "openstax_authors": [
+        "Rose M. Spielman",
+        "William J. Jenkins",
+        "Marilyn D. Lovett"
+      ],
+      "openstax_publisher": "OpenStax, Rice University",
+      "openstax_edition": "Psychology 2e, 2020",
+      "mit_author": "John D. E. Gabrieli and MIT OpenCourseWare course contributors",
+      "mit_edition": "9.00SC Introduction to Psychology, Fall 2011",
+      "noba_authors": {
+        "psychopathy": "Christopher J. Patrick",
+        "intelligence": "Robert Biswas-Diener"
+      },
+      "license": "CC BY-NC-SA 4.0; retain separately marked third-party exclusions",
+      "language": "English",
+      "gutenberg_used": false,
+      "fabricated_questions": 0,
+      "questions_sha256": "8818e9ac0ef4056f9fb791e93694d2ea87a08db4bb330d03d0ee69b3e7c9f340",
+      "openstax_questions": 121,
+      "openstax_chapters": {
+        "2": 24,
+        "6": 16,
+        "7": 24,
+        "8": 12,
+        "11": 23,
+        "15": 22
+      },
+      "mit_questions": 3,
+      "excluded": [],
+      "noba_training_status": "Research source only; no keyed exercises admitted",
+      "source_bytes": 3438188
+    },
+    "data_hashes": {
+      "questions.json": "8818e9ac0ef4056f9fb791e93694d2ea87a08db4bb330d03d0ee69b3e7c9f340",
+      "exams.json": "ab39f82b426326ffa0a666d4de8586bf93049ffb49648816e8125e3898d76e47",
+      "manifest.json": "f1e21d3dee78f994e9f68d4ad5167f5c4e75db9932508eb2cddcce07e6248209"
+    },
+    "base": {
+      "file": "experiments/english-20260907-adaptive-model.json",
+      "bytes": 10590,
+      "sha256": "2e78a46d70ce9beb82bae8de92b71eb4cced7cea3763c619f8a3250ef8461427"
+    },
+    "partitions": {
+      "training": [
+        "openstax:m82167:fs-idp7218128",
+        "openstax:m82167:fs-idp5620448",
+        "openstax:m82168:fs-idm34278992",
+        "openstax:m82168:fs-idm58645520",
+        "openstax:m82168:fs-idm124782544",
+        "openstax:m82168:fs-idm30197456",
+        "openstax:m82168:fs-idp899008",
+        "openstax:m82168:fs-idm4568128",
+        "openstax:m82169:fs-idm38758640",
+        "openstax:m82169:fs-idp2894320",
+        "openstax:m82169:fs-idm38751904",
+        "openstax:m82169:fs-idm28997136",
+        "openstax:m82169:fs-idm46864688",
+        "openstax:m82169:fs-idm44434400",
+        "openstax:m82170:fs-idm4993776",
+        "openstax:m82170:fs-idm60364544",
+        "openstax:m82199:fs-idm9560544",
+        "openstax:m82199:fs-idp80862112",
+        "openstax:m82200:fs-idm27236064",
+        "openstax:m82200:fs-idm99663600",
+        "openstax:m82201:fs-idm72936720",
+        "openstax:m82201:fs-idm71327520",
+        "openstax:m82202:fs-idm117080128",
+        "openstax:m82202:fs-idm38860288",
+        "openstax:m82205:fs-idm113398576",
+        "openstax:m82205:fs-idm128913904",
+        "openstax:m82206:fs-idm143260304",
+        "openstax:m82206:fs-idm58124784",
+        "openstax:m82207:fs-idm104965904",
+        "openstax:m82207:fs-idm83509360",
+        "openstax:m82208:fs-idm142080448",
+        "openstax:m82208:fs-idp4884704",
+        "openstax:m82209:fs-idm24295856",
+        "openstax:m82209:fs-idm133815024",
+        "openstax:m82211:fs-idm93642160",
+        "openstax:m82211:fs-idm8980800",
+        "openstax:m82213:fs-idm87630592",
+        "openstax:m82213:fs-idm127896928",
+        "openstax:m82214:fs-idp52737968",
+        "openstax:m82215:fs-idm45358064",
+        "openstax:m82215:fs-idm52141824",
+        "openstax:m82216:fs-idm32403888",
+        "openstax:m82216:fs-idp2921264",
+        "openstax:m82233:fs-idp47985824",
+        "openstax:m82233:fs-idm147588048",
+        "openstax:m82234:fs-idm43251568",
+        "openstax:m82234:fs-idm2953264",
+        "openstax:m82235:fs-idm4144288",
+        "openstax:m82236:fs-idp109083568",
+        "openstax:m82236:fs-idp171884848",
+        "openstax:m82237:fs-idm199631728",
+        "openstax:m82238:fs-idp99300112",
+        "openstax:m82238:fs-idm11446400",
+        "openstax:m82239:fs-idp99350112",
+        "openstax:m82240:fs-idm898704",
+        "openstax:m82241:fs-idm1236192",
+        "openstax:m82241:fs-idm398688",
+        "openstax:m82265:fs-idm30650016",
+        "openstax:m82266:fs-idp96795840",
+        "openstax:m82267:fs-idm19981600",
+        "openstax:m82268:fs-idm76487856",
+        "openstax:m82271:fs-idm139657840",
+        "openstax:m82274:fs-idp78100160",
+        "openstax:m82275:fs-idm127496192",
+        "openstax:m82276:fs-idp14872640",
+        "openstax:m82277:fs-idm54290272",
+        "openstax:m82278:fs-idp93539616",
+        "openstax:m82279:fs-idm149440768"
+      ],
+      "development": [
+        "openstax:m82167:fs-idp4710624",
+        "openstax:m82168:fs-idm28267056",
+        "openstax:m82169:fs-idm46475056",
+        "openstax:m82170:fs-idm49222928",
+        "openstax:m82199:fs-idp103566368",
+        "openstax:m82200:fs-idm16955552",
+        "openstax:m82201:fs-idm43885376",
+        "openstax:m82202:fs-idm109101680",
+        "openstax:m82205:fs-idm69533312",
+        "openstax:m82206:fs-idm92509680",
+        "openstax:m82207:fs-idm172007920",
+        "openstax:m82208:fs-idm81834432",
+        "openstax:m82209:fs-idm150976976",
+        "openstax:m82211:fs-idm97863040",
+        "openstax:m82216:fs-idp38792848",
+        "openstax:m82233:fs-idm96722816",
+        "openstax:m82238:fs-idm30533600"
+      ],
+      "final_openstax": [
+        "openstax:m82167:fs-idp12843936",
+        "openstax:m82168:fs-idm15501216",
+        "openstax:m82169:fs-idm32547936",
+        "openstax:m82170:fs-idm232832",
+        "openstax:m82199:fs-idp17687200",
+        "openstax:m82200:fs-idp89969056",
+        "openstax:m82201:fs-idp79982784",
+        "openstax:m82202:fs-idm74922384",
+        "openstax:m82205:fs-idm89324336",
+        "openstax:m82206:fs-idm175029136",
+        "openstax:m82207:fs-idm138779696",
+        "openstax:m82208:fs-idm141968384",
+        "openstax:m82209:fs-idm89308304",
+        "openstax:m82211:fs-idm2307504",
+        "openstax:m82213:fs-idm127493296",
+        "openstax:m82214:fs-idp103162160",
+        "openstax:m82215:fs-idm161208496",
+        "openstax:m82216:fs-idp2973584",
+        "openstax:m82233:fs-idm142790960",
+        "openstax:m82234:fs-idm135064480",
+        "openstax:m82236:fs-idp99048256",
+        "openstax:m82237:fs-idm88196816",
+        "openstax:m82238:fs-idp143462352",
+        "openstax:m82240:fs-idp5072432",
+        "openstax:m82241:fs-idm436576",
+        "openstax:m82265:fs-idm86813760",
+        "openstax:m82266:fs-idp87413216",
+        "openstax:m82267:fs-idp130712464",
+        "openstax:m82268:fs-idm124218256",
+        "openstax:m82271:fs-idm49703456",
+        "openstax:m82274:fs-idp64237440",
+        "openstax:m82275:fs-idm231323552",
+        "openstax:m82276:fs-idm38213936",
+        "openstax:m82277:fs-idp36529360",
+        "openstax:m82278:fs-idp35048288",
+        "openstax:m82279:fs-idm133474576"
+      ]
+    },
+    "vocabulary": 782,
+    "arms": {
+      "reuse": {
+        "stages": [
+          {
+            "title": "Learning and research",
+            "new_questions": 31,
+            "total_teaching": 31,
+            "before": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 1107,
+              "old_states": 20,
+              "proposals": 1201,
+              "accepted": 720,
+              "rejected": 481,
+              "old_state_merges": 702,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 1695,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 31,
+              "total": 31,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 2933
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 280
+            },
+            "regressions": [],
+            "bytes": 25648,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 2933,
+              "transfer_frontier_steps": 723,
+              "event_copied_states": 766209,
+              "event_copied_edges": 2319349,
+              "event_merge_closure": 1673,
+              "event_merge_edge_checks": 1212,
+              "event_canonical_edges": 1656110,
+              "transfer_preservation_states": 16060,
+              "transfer_preservation_edges": 791153,
+              "event_transition_reads": 3057,
+              "transfer_reachability_states": 22
+            }
+          },
+          {
+            "title": "Thinking and intelligence",
+            "new_questions": 12,
+            "total_teaching": 43,
+            "before": {
+              "correct": 0,
+              "total": 12,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 896
+              },
+              "old_state_visits": 124
+            },
+            "earlier_evaluation": {
+              "correct": 31,
+              "total": 43,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 3057
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 280
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 1440,
+              "old_states": 20,
+              "proposals": 1400,
+              "accepted": 874,
+              "rejected": 526,
+              "old_state_merges": 856,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 1849,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 43,
+              "total": 43,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 3781
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "regressions": [],
+            "bytes": 27520,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 3781,
+              "transfer_frontier_steps": 877,
+              "event_copied_states": 1193682,
+              "event_copied_edges": 3080899,
+              "event_merge_closure": 2108,
+              "event_merge_edge_checks": 1607,
+              "event_canonical_edges": 2219523,
+              "transfer_preservation_states": 19140,
+              "transfer_preservation_edges": 940995,
+              "event_transition_reads": 3953,
+              "transfer_reachability_states": 22
+            }
+          },
+          {
+            "title": "Personality and psychological disorders",
+            "new_questions": 25,
+            "total_teaching": 68,
+            "before": {
+              "correct": 0,
+              "total": 25,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 2255
+              },
+              "old_state_visits": 212
+            },
+            "earlier_evaluation": {
+              "correct": 43,
+              "total": 68,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 3993
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": true,
+              "prefix_states": 2274,
+              "old_states": 20,
+              "proposals": 1978,
+              "accepted": 1365,
+              "rejected": 613,
+              "old_state_merges": 1347,
+              "preservation_rejections": 140,
+              "states": 22,
+              "edges": 2340,
+              "shared_reachable_states": 20,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 68,
+              "total": 68,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 5936
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 264
+            },
+            "regressions": [],
+            "bytes": 33400,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 5936,
+              "transfer_frontier_steps": 1368,
+              "event_copied_states": 2510723,
+              "event_copied_edges": 5679411,
+              "event_merge_closure": 3121,
+              "event_merge_edge_checks": 2529,
+              "event_canonical_edges": 4312485,
+              "transfer_preservation_states": 28960,
+              "transfer_preservation_edges": 1418738,
+              "event_transition_reads": 6208,
+              "transfer_reachability_states": 22
+            }
+          }
+        ]
+      },
+      "separate": {
+        "stages": [
+          {
+            "title": "Learning and research",
+            "new_questions": 31,
+            "total_teaching": 31,
+            "before": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 0,
+              "total": 31,
+              "unresolved": 31,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 1107,
+              "old_states": 20,
+              "proposals": 707,
+              "accepted": 597,
+              "rejected": 110,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 25,
+              "edges": 1575,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 31,
+              "total": 31,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3057
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 23846,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 2933,
+              "transfer_frontier_steps": 603,
+              "event_copied_states": 417457,
+              "event_copied_edges": 1310057,
+              "event_merge_closure": 1374,
+              "event_merge_edge_checks": 1306,
+              "event_canonical_edges": 1111963,
+              "transfer_preservation_states": 11960,
+              "transfer_preservation_edges": 581854,
+              "event_transition_reads": 3057,
+              "transfer_reachability_states": 5
+            }
+          },
+          {
+            "title": "Thinking and intelligence",
+            "new_questions": 12,
+            "total_teaching": 43,
+            "before": {
+              "correct": 0,
+              "total": 12,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 896
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 31,
+              "total": 43,
+              "unresolved": 12,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 1440,
+              "old_states": 20,
+              "proposals": 862,
+              "accepted": 733,
+              "rejected": 129,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 24,
+              "edges": 1710,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 43,
+              "total": 43,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 3953
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 25398,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 3781,
+              "transfer_frontier_steps": 738,
+              "event_copied_states": 638561,
+              "event_copied_edges": 1788788,
+              "event_merge_closure": 1887,
+              "event_merge_edge_checks": 1881,
+              "event_canonical_edges": 1531123,
+              "transfer_preservation_states": 14680,
+              "transfer_preservation_edges": 714182,
+              "event_transition_reads": 3953,
+              "transfer_reachability_states": 4
+            }
+          },
+          {
+            "title": "Personality and psychological disorders",
+            "new_questions": 25,
+            "total_teaching": 68,
+            "before": {
+              "correct": 0,
+              "total": 25,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 2255
+              },
+              "old_state_visits": 0
+            },
+            "earlier_evaluation": {
+              "correct": 43,
+              "total": 68,
+              "unresolved": 25,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 0
+            },
+            "earlier_development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "fitting": {
+              "seed": 7,
+              "reuse_enabled": false,
+              "prefix_states": 2274,
+              "old_states": 20,
+              "proposals": 1295,
+              "accepted": 1119,
+              "rejected": 176,
+              "old_state_merges": 0,
+              "preservation_rejections": 0,
+              "states": 25,
+              "edges": 2097,
+              "shared_reachable_states": 0,
+              "exact_old_simulation": true
+            },
+            "training": {
+              "correct": 68,
+              "total": 68,
+              "unresolved": 0,
+              "work": {
+                "choice_event_steps": 6208
+              },
+              "old_state_visits": 0
+            },
+            "development": {
+              "correct": 0,
+              "total": 17,
+              "unresolved": 17,
+              "work": {
+                "choice_event_steps": 1292
+              },
+              "old_state_visits": 0
+            },
+            "regressions": [],
+            "bytes": 29934,
+            "selected": "candidate",
+            "learning_work": {
+              "event_prefix_steps": 5936,
+              "transfer_frontier_steps": 1125,
+              "event_copied_states": 1510786,
+              "event_copied_edges": 3499916,
+              "event_merge_closure": 2796,
+              "event_merge_edge_checks": 2805,
+              "event_canonical_edges": 3051187,
+              "transfer_preservation_states": 22400,
+              "transfer_preservation_edges": 1089760,
+              "event_transition_reads": 6208,
+              "transfer_reachability_states": 5
+            }
+          }
+        ]
+      }
+    },
+    "teaching_pairs_presented": 1136,
+    "error": "Independent examination duplicates a teaching or development question",
+    "wall_seconds": 28.847646900016116,
+    "cpu_seconds": 17.953125,
+    "display_pacing_seconds": 11.013324100000318,
+    "worker_memory": {
+      "available_bytes": 18043654144,
+      "working_set_bytes": 30818304,
+      "peak_bytes": 32763904,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    }
+  },
+  "privacy": "Per-question outputs, source bodies, answer keys and derived checkpoints remain local."
+}

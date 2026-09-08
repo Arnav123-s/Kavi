@@ -1,0 +1,696 @@
+{
+  "author": "Arnav123-s",
+  "state": "completed",
+  "protocol": "docs/PCL_LEARNED_HABITAT_PROTOCOL.md",
+  "python": "3.13.5",
+  "limits": {
+    "seconds": 300,
+    "worker_bytes": 536870912
+  },
+  "source_hashes": {
+    "docs/PCL_LEARNED_HABITAT_PROTOCOL.md": "54da7fb95ddbe3e9573be7d5fdb8ba30226a4a4dd3d849803c70c2ca666eb990",
+    "scripts/run_pcl_habitat.py": "bbd9d778aa15fbe275b14a29bec9c680b5922897f21c3c6caec98db267083bb5",
+    "kavi/phase/habitat.py": "93867dcd478f949ea1b6e9c116373f5b795c77935a5f98e03f8f260b11041c1e",
+    "kavi/phase/model.py": "4662e5529730bc690aa5368715e59d05293cac9724d8befe97912cc07d618827",
+    "kavi/phase/layers.py": "7ef57720a2121fc0b94b6395c7dbb658e1c32af550008861947422389390f818",
+    "kavi/phase/runtime.py": "e2ea44b35952af872ec6e637451d9095f5a208a087d4f43570f2180fb5294002",
+    "kavi/phase/learning.py": "8c94b359e4ab4d4682a9ad0cc082e67c5588ab2364ef79bf7cb2f4f1e6a77f22",
+    "kavi/phase/selection.py": "8a41129e677f194f1082283ec77508730c0fa4af4641cf2f4072408278ce0eb1",
+    "kavi/phase/logic.py": "393bfcca3f9e3db360106c11c0f67d727f0188eab98245f8c3fb9b81e231b35a",
+    "scripts/pcl_discrete_source.py": "9565905e6c86d8b3b4e8e19ba4a681dcac33234bfe893af30ae64fb0bc4772fc",
+    "scripts/run_pcl_discrete.py": "e53994335e6fe3c239dda7030793275cadbae0f317ee69ddea37036a75eab628",
+    "scripts/configuration_run_support.py": "df2e6281dd853361faffc57f763468983002da582f66d40c96fe22f0ddd1452c"
+  },
+  "source_sha256": "d45179154bbce0faea7f15e2cf56f33cc2b6b8307ad53faa3cb52ea43c3f106d",
+  "source_bytes": 276967,
+  "arms": {
+    "7": {
+      "stages": [
+        {
+          "name": "initial",
+          "new_source_cases": 8,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 185,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 185,
+              "seed": 7,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "5d9820de50e9a683bc60af8887dff0424fed120a6f82cc9fcd5a0ebef107aa7c",
+              "successor_sha256": "9d39190e62471f1a777fdb6bc60ba8ee5c558bc037e0003854f65ef4cc04eb9e"
+            },
+            "old_boundary_cases": 0,
+            "protected_cases": 0,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 2,
+            "patterns": 1
+          },
+          "learning_work": {
+            "habitat_observed_events": 24,
+            "habitat_context_coordinates": 48,
+            "habitat_context_signatures": 24,
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 39564,
+            "phase_ticks": 9891,
+            "phase_updates": 39564,
+            "phase_serialized_bytes": 44993,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1781,
+            "phase_candidates": 185,
+            "phase_readout_checks": 9568,
+            "phase_readout_coordinates": 38272,
+            "phase_inheritance_choices": 1020,
+            "phase_new_coupling_proposals": 768,
+            "phase_coupling_checks": 28830,
+            "habitat_role_symbols": 32,
+            "habitat_input_events": 24,
+            "habitat_pattern_checks": 8,
+            "habitat_candidate_bytes": 382
+          },
+          "new_correct": 8,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 8,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 64,
+            "habitat_input_events": 48,
+            "habitat_pattern_checks": 16,
+            "phase_impulse_checks": 192,
+            "phase_ticks": 48,
+            "phase_updates": 192,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "habitat_expanded_events": 24
+          },
+          "habitat_bytes": 62,
+          "inner_bytes": 299,
+          "world_bytes": 382
+        },
+        {
+          "name": "additional",
+          "new_source_cases": 10,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 9,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 9,
+              "seed": 7,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "9d39190e62471f1a777fdb6bc60ba8ee5c558bc037e0003854f65ef4cc04eb9e",
+              "successor_sha256": "5f60004102d7fc01fb577bfd4c0f5f229f0f20a1652a591f027dc7c061ec5fd3"
+            },
+            "old_boundary_cases": 8,
+            "protected_cases": 8,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 3,
+            "patterns": 2
+          },
+          "learning_work": {
+            "habitat_expanded_events": 24,
+            "phase_impulse_checks": 57236,
+            "phase_ticks": 8205,
+            "phase_updates": 32820,
+            "phase_readout_checks": 2908,
+            "phase_readout_coordinates": 11632,
+            "habitat_observed_events": 52,
+            "habitat_context_coordinates": 100,
+            "habitat_context_signatures": 52,
+            "phase_evidence_events": 52,
+            "phase_serialized_bytes": 3969,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2532,
+            "phase_inheritance_choices": 1785,
+            "phase_new_coupling_proposals": 751,
+            "phase_coupling_checks": 23372,
+            "phase_candidates": 9,
+            "habitat_role_symbols": 182,
+            "habitat_input_events": 76,
+            "habitat_pattern_checks": 28,
+            "habitat_candidate_bytes": 619
+          },
+          "new_correct": 10,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "iff",
+                "implies",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ],
+              [
+                "not"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 18,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 126,
+            "habitat_input_events": 52,
+            "habitat_pattern_checks": 20,
+            "phase_impulse_checks": 364,
+            "phase_ticks": 52,
+            "phase_coupling_checks": 52,
+            "phase_updates": 208,
+            "phase_readout_checks": 270,
+            "phase_readout_coordinates": 1080,
+            "habitat_expanded_events": 52
+          },
+          "habitat_bytes": 92,
+          "inner_bytes": 506,
+          "world_bytes": 619
+        }
+      ],
+      "source_correct": 18,
+      "source_total": 18,
+      "compound_regression": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "habitat_role_symbols": 714,
+        "habitat_input_events": 292,
+        "habitat_pattern_checks": 116,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 292,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1530,
+        "phase_readout_coordinates": 6120,
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84
+      },
+      "artifact": {
+        "file": "world-7.json",
+        "bytes": 619,
+        "sha256": "6ef895a017183a32e586d93354489cd193ae7bbd034bba033763e0fc957c355e"
+      }
+    },
+    "19": {
+      "stages": [
+        {
+          "name": "initial",
+          "new_source_cases": 8,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 196,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 196,
+              "seed": 19,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "5d9820de50e9a683bc60af8887dff0424fed120a6f82cc9fcd5a0ebef107aa7c",
+              "successor_sha256": "ee023c0ca1eb432dc39367b2e0ea0f09457422aadbf0b5428ec18bd08aee4958"
+            },
+            "old_boundary_cases": 0,
+            "protected_cases": 0,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 2,
+            "patterns": 1
+          },
+          "learning_work": {
+            "habitat_observed_events": 24,
+            "habitat_context_coordinates": 48,
+            "habitat_context_signatures": 24,
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 40980,
+            "phase_ticks": 10245,
+            "phase_updates": 40980,
+            "phase_serialized_bytes": 48399,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1834,
+            "phase_candidates": 196,
+            "phase_readout_checks": 10344,
+            "phase_readout_coordinates": 41376,
+            "phase_inheritance_choices": 1020,
+            "phase_new_coupling_proposals": 822,
+            "phase_coupling_checks": 32046,
+            "habitat_role_symbols": 32,
+            "habitat_input_events": 24,
+            "habitat_pattern_checks": 8,
+            "habitat_candidate_bytes": 399
+          },
+          "new_correct": 8,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 8,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 64,
+            "habitat_input_events": 48,
+            "habitat_pattern_checks": 16,
+            "phase_impulse_checks": 192,
+            "phase_ticks": 48,
+            "phase_coupling_checks": 96,
+            "phase_updates": 192,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "habitat_expanded_events": 24
+          },
+          "habitat_bytes": 62,
+          "inner_bytes": 316,
+          "world_bytes": 399
+        },
+        {
+          "name": "additional",
+          "new_source_cases": 10,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 3,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 3,
+              "seed": 19,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "ee023c0ca1eb432dc39367b2e0ea0f09457422aadbf0b5428ec18bd08aee4958",
+              "successor_sha256": "315fb74d6414adabacfd0ffb4d37de899b89db7014502880f440e943a72bb0d3"
+            },
+            "old_boundary_cases": 8,
+            "protected_cases": 8,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 3,
+            "patterns": 2
+          },
+          "learning_work": {
+            "habitat_expanded_events": 24,
+            "phase_impulse_checks": 46176,
+            "phase_ticks": 6625,
+            "phase_coupling_checks": 22729,
+            "phase_updates": 26500,
+            "phase_readout_checks": 1108,
+            "phase_readout_coordinates": 4432,
+            "habitat_observed_events": 52,
+            "habitat_context_coordinates": 100,
+            "habitat_context_signatures": 52,
+            "phase_evidence_events": 52,
+            "phase_serialized_bytes": 1438,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2689,
+            "phase_inheritance_choices": 2295,
+            "phase_new_coupling_proposals": 651,
+            "phase_candidates": 3,
+            "habitat_role_symbols": 182,
+            "habitat_input_events": 76,
+            "habitat_pattern_checks": 28,
+            "habitat_candidate_bytes": 588
+          },
+          "new_correct": 10,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "iff",
+                "implies",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ],
+              [
+                "not"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 18,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 126,
+            "habitat_input_events": 52,
+            "habitat_pattern_checks": 20,
+            "phase_impulse_checks": 364,
+            "phase_ticks": 52,
+            "phase_coupling_checks": 104,
+            "phase_updates": 208,
+            "phase_readout_checks": 216,
+            "phase_readout_coordinates": 864,
+            "habitat_expanded_events": 52
+          },
+          "habitat_bytes": 92,
+          "inner_bytes": 475,
+          "world_bytes": 588
+        }
+      ],
+      "source_correct": 18,
+      "source_total": 18,
+      "compound_regression": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "habitat_role_symbols": 714,
+        "habitat_input_events": 292,
+        "habitat_pattern_checks": 116,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 584,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1224,
+        "phase_readout_coordinates": 4896,
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84
+      },
+      "artifact": {
+        "file": "world-19.json",
+        "bytes": 588,
+        "sha256": "103133bc101d886b006e7c56399f465db3c9d5cec8c5141940bc36e7b8965845"
+      }
+    },
+    "41": {
+      "stages": [
+        {
+          "name": "initial",
+          "new_source_cases": 8,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 215,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 215,
+              "seed": 41,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "5d9820de50e9a683bc60af8887dff0424fed120a6f82cc9fcd5a0ebef107aa7c",
+              "successor_sha256": "e9219fea23a0ebf18a7954b18a9cc201a0b67b1b519fbe031f05133a495f991e"
+            },
+            "old_boundary_cases": 0,
+            "protected_cases": 0,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 2,
+            "patterns": 1
+          },
+          "learning_work": {
+            "habitat_observed_events": 24,
+            "habitat_context_coordinates": 48,
+            "habitat_context_signatures": 24,
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 43716,
+            "phase_ticks": 10929,
+            "phase_updates": 43716,
+            "phase_serialized_bytes": 52494,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1756,
+            "phase_candidates": 215,
+            "phase_readout_checks": 11320,
+            "phase_readout_coordinates": 45280,
+            "phase_inheritance_choices": 1020,
+            "phase_new_coupling_proposals": 737,
+            "phase_coupling_checks": 31221,
+            "habitat_role_symbols": 32,
+            "habitat_input_events": 24,
+            "habitat_pattern_checks": 8,
+            "habitat_candidate_bytes": 380
+          },
+          "new_correct": 8,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 8,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 64,
+            "habitat_input_events": 48,
+            "habitat_pattern_checks": 16,
+            "phase_impulse_checks": 192,
+            "phase_ticks": 48,
+            "phase_updates": 192,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "habitat_expanded_events": 24
+          },
+          "habitat_bytes": 62,
+          "inner_bytes": 297,
+          "world_bytes": 380
+        },
+        {
+          "name": "additional",
+          "new_source_cases": 10,
+          "selection": {
+            "accepted": true,
+            "inner_selection": {
+              "candidates": 4,
+              "accepted": true,
+              "errors": 0,
+              "finite_retention_passed": true,
+              "whole_candidates": 256,
+              "compatible_candidates": 4,
+              "seed": 41,
+              "readout": "exact",
+              "template_unchanged": true,
+              "previous_sha256": "e9219fea23a0ebf18a7954b18a9cc201a0b67b1b519fbe031f05133a495f991e",
+              "successor_sha256": "760ac771152bc45a615c2d8600c3eaba27d19ced7dd42cae36520c277f7c11d4"
+            },
+            "old_boundary_cases": 8,
+            "protected_cases": 8,
+            "explicit_corrections": 0,
+            "boundary_preserved": true,
+            "habitat_changed": true,
+            "roles": 3,
+            "patterns": 2
+          },
+          "learning_work": {
+            "habitat_expanded_events": 24,
+            "phase_impulse_checks": 48031,
+            "phase_ticks": 6890,
+            "phase_updates": 27560,
+            "phase_readout_checks": 1468,
+            "phase_readout_coordinates": 5872,
+            "habitat_observed_events": 52,
+            "habitat_context_coordinates": 100,
+            "habitat_context_signatures": 52,
+            "phase_evidence_events": 52,
+            "phase_serialized_bytes": 1908,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2564,
+            "phase_inheritance_choices": 1785,
+            "phase_new_coupling_proposals": 777,
+            "phase_coupling_checks": 21106,
+            "phase_candidates": 4,
+            "habitat_role_symbols": 182,
+            "habitat_input_events": 76,
+            "habitat_pattern_checks": 28,
+            "habitat_candidate_bytes": 639
+          },
+          "new_correct": 10,
+          "old_source_correct": 8,
+          "habitat": {
+            "roles": [
+              [
+                "and",
+                "iff",
+                "implies",
+                "or"
+              ],
+              [
+                "false",
+                "true"
+              ],
+              [
+                "not"
+              ]
+            ],
+            "patterns": [
+              [
+                1,
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ]
+          },
+          "boundary_size": 18,
+          "source_boundary_equal": true,
+          "check_work": {
+            "habitat_role_symbols": 126,
+            "habitat_input_events": 52,
+            "habitat_pattern_checks": 20,
+            "phase_impulse_checks": 364,
+            "phase_ticks": 52,
+            "phase_coupling_checks": 208,
+            "phase_updates": 208,
+            "phase_readout_checks": 252,
+            "phase_readout_coordinates": 1008,
+            "habitat_expanded_events": 52
+          },
+          "habitat_bytes": 92,
+          "inner_bytes": 526,
+          "world_bytes": 639
+        }
+      ],
+      "source_correct": 18,
+      "source_total": 18,
+      "compound_regression": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "habitat_role_symbols": 714,
+        "habitat_input_events": 292,
+        "habitat_pattern_checks": 116,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 1168,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1428,
+        "phase_readout_coordinates": 5712,
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84
+      },
+      "artifact": {
+        "file": "world-41.json",
+        "bytes": 639,
+        "sha256": "ad6c29bd4d77ddfed406caef22ed1b3b2be2824bb898e5a3c0f6ead53e2e52f0"
+      }
+    }
+  },
+  "wall_seconds": 9.965521000034641,
+  "cpu_seconds": 0.859375,
+  "display_pacing_seconds": 9.22346619993914,
+  "worker_memory": {
+    "available_bytes": 18816917504,
+    "working_set_bytes": 26451968,
+    "peak_bytes": 26533888,
+    "logical_cpus": 16,
+    "cpu_temperature": null,
+    "temperature_note": "No reliable CPU-temperature telemetry is available here."
+  },
+  "storage": {
+    "files": {
+      "results.json": 23169,
+      "status.json": 2168,
+      "transcript.txt": 2626,
+      "world-19.json": 588,
+      "world-41.json": 639,
+      "world-7.json": 619
+    },
+    "bytes_excluding_this_census": 29809
+  }
+}

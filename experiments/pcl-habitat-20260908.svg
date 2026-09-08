@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="504pt" viewBox="0 0 792 504" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Arnav123-s</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 504
+L 792 504
+L 792 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 50.0544 392.72688
+L 741.9456 392.72688
+Q 751.06944 392.72688 751.06944 387.072
+L 751.06944 94.9032
+Q 751.06944 89.24832 741.9456 89.24832
+L 50.0544 89.24832
+Q 40.93056 89.24832 40.93056 94.9032
+L 40.93056 387.072
+Q 40.93056 392.72688 50.0544 392.72688
+z
+" clip-path="url(#pfaa498e8af)" style="fill: #eff7f5; stroke: #506f89; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 80.4672 246.64248
+L 338.976 246.64248
+Q 348.09984 246.64248 348.09984 240.9876
+L 348.09984 156.1644
+Q 348.09984 150.50952 338.976 150.50952
+L 80.4672 150.50952
+Q 71.34336 150.50952 71.34336 156.1644
+L 71.34336 240.9876
+Q 71.34336 246.64248 80.4672 246.64248
+z
+" clip-path="url(#pfaa498e8af)" style="fill: #edf4fa; stroke: #506f89; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 453.024 246.64248
+L 711.5328 246.64248
+Q 720.65664 246.64248 720.65664 240.9876
+L 720.65664 156.1644
+Q 720.65664 150.50952 711.5328 150.50952
+L 453.024 150.50952
+Q 443.90016 150.50952 443.90016 156.1644
+L 443.90016 240.9876
+Q 443.90016 246.64248 453.024 246.64248
+z
+" clip-path="url(#pfaa498e8af)" style="fill: #edf4fa; stroke: #506f89; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 152.6976 350.31528
+L 639.3024 350.31528
+Q 648.42624 350.31528 648.42624 344.6604
+L 648.42624 283.3992
+Q 648.42624 277.74432 639.3024 277.74432
+L 152.6976 277.74432
+Q 143.57376 277.74432 143.57376 283.3992
+L 143.57376 344.6604
+Q 143.57376 350.31528 152.6976 350.31528
+z
+" clip-path="url(#pfaa498e8af)" style="fill: #ffffff; stroke: #506f89; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 50.0544 456.34428
+L 741.9456 456.34428
+Q 751.06944 456.34428 751.06944 450.6894
+L 751.06944 410.634
+Q 751.06944 404.97912 741.9456 404.97912
+L 50.0544 404.97912
+Q 40.93056 404.97912 40.93056 410.634
+L 40.93056 450.6894
+Q 40.93056 456.34428 50.0544 456.34428
+z
+" clip-path="url(#pfaa498e8af)" style="fill: #f0f0f0; stroke: #506f89; stroke-width: 1.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: middle" x="396" y="28.9296" transform="rotate(-0 396 28.9296)">Kavi: a learned template around a learned circuit</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="396" y="57.204" transform="rotate(-0 396 57.204)">First implementation: structural input roles, not a complete semantic world</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle" x="396" y="116.109" transform="rotate(-0 396 116.109)">LEARNED HABITAT / TEMPLATE</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(170.794491 188.230844)">First 8 lessons</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(121.526522 201.433852)">2 inferred roles · 1 arrangement</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(112.449803 214.636859)">value — binary connective — value</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(524.109884 188.230844)">10 additional lessons</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(491.218166 201.433852)">3 inferred roles · 2 arrangements</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(495.297619 214.636859)">Adds unary connective — value</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 352.382766 198.576
+Q 396.000177 198.576 437.381521 198.576
+" style="fill: none; stroke: #267c72; stroke-width: 2; stroke-linecap: round"/>
+    <path d="M 432.981521 196.376
+L 437.381521 198.576
+L 432.981521 200.776
+" style="fill: none; stroke: #267c72; stroke-width: 2; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="396" y="170.3016" transform="rotate(-0 396 170.3016)">Rebuild</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(327.548203 303.684214)">LEARNED INNER CIRCUIT</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(289.168516 316.887222)">Impulses + interactions + output rules</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(253.024922 330.09023)">Successor must preserve earlier supported answers</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 396 242.98945
+Q 396 259.838059 396 275.009617
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 398.2 270.609617
+L 396 275.009617
+L 393.8 270.609617
+" style="fill: none; stroke: #000000; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="396" y="370.5786" transform="rotate(-0 396 370.5786)">Admit template and circuit together; keep the old world on rejection</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(308.190625 427.257989)">FIXED DEVICE / SEARCH ENVELOPE</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(238.489062 439.260723)">Component bounds, execution budget and pause/stop controls</text>
+   </g>
+  </g>
+  <g id="text_10">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="31.68" y="491.4" transform="rotate(-0 31.68 491.4)">Arnav123-s | 3 runs: 8/8 old answers retained, 18/18 source cases, 32/32 compatibility regression.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfaa498e8af">
+   <rect x="15.84" y="10.08" width="760.32" height="471.24"/>
+  </clipPath>
+ </defs>
+</svg>

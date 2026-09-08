@@ -73,6 +73,11 @@ $$K_{new}=T(K_{old},E),$$
 
 where the supplied transformation uses observations generated from the old configuration and new labeled evidence. The experiment does not learn $T$ itself, copy the old graph's hidden organization directly or establish arbitrary-program equivalence. Older arithmetic and sentence artifacts were not rewritten by this separate stream-learning experiment.
 
+![Configuration diagram 1](../docs/figures/2026-09-07-recurrent-configuration-1.svg)
+
+<details>
+<summary>Diagram source</summary>
+
 ```mermaid
 flowchart LR
     Old[Old learned graph: 2 states] --> O[127 old-domain observations]
@@ -85,7 +90,14 @@ flowchart LR
     Freeze --> Exact[Full-task audit: equivalent]
 ```
 
+</details>
+
 The two-state foundation actually contains a cycle:
+
+![Configuration diagram 2](../docs/figures/2026-09-07-recurrent-configuration-2.svg)
+
+<details>
+<summary>Diagram source</summary>
 
 ```mermaid
 stateDiagram-v2
@@ -98,7 +110,14 @@ stateDiagram-v2
     Odd: output 1
 ```
 
+</details>
+
 The names Even and Odd explain the acquired behavior after inspection; the saved graph uses numeric identifiers. In the successor, late selectors connect corresponding states as follows. Event-driven transitions are in the complete table in the figure.
+
+![Configuration diagram 3](../docs/figures/2026-09-07-recurrent-configuration-3.svg)
+
+<details>
+<summary>Diagram source</summary>
 
 ```mermaid
 flowchart LR
@@ -111,6 +130,8 @@ flowchart LR
     S6[State 6] -->|?b| S7[State 7]
     S7 -->|?a| S6
 ```
+
+</details>
 
 Repeatedly selecting the current stream leaves that state unchanged. Those self-loops are omitted from this selector-only diagram and included in the transition table.
 

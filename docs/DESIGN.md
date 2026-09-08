@@ -52,6 +52,11 @@ The [foundation extension](../experiments/2026-09-07-foundation-curriculum.md) a
 
 During learning, the teacher supplies whole-input examples. Search proposes a gate graph; the verifier executes it and supplies a counterexample when it fails. Only a graph passing the selection bank is installed. During inference, the input is encoded as two bit streams, the same acquired graph executes at each position, and the emitted bits form the result. Teaching records and search catalogs are outside that execution path.
 
+![Configuration diagram 1](figures/design-1.svg)
+
+<details>
+<summary>Diagram source</summary>
+
 ```mermaid
 flowchart LR
     T[Teaching and protected cases] --> V[Execute and verify candidate]
@@ -65,6 +70,8 @@ flowchart LR
     B --> X
     X --> O[Decode emitted result]
 ```
+
+</details>
 
 The executor reuses the graph at each bit position, carrying one temporary state bit between frames. Each new query starts with zero state. The final evaluator reads the sealed graph and never feeds its cases back to search.
 

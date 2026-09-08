@@ -52,7 +52,7 @@ class CircuitGeneration:
                 'generation': self.generation}
 
 
-def reconstruct(current, lessons, protected, work, *, candidates=64, seed=7):
+def reconstruct(current, lessons, protected, work, *, candidates=64, seed=7, readout='exact'):
     """Build complete successors, combining inheritance with new relationships.
 
     The first candidate reuses all dynamics while relearning the readout. Later
@@ -62,6 +62,10 @@ def reconstruct(current, lessons, protected, work, *, candidates=64, seed=7):
     """
     if type(candidates) is not int or not 1 <= candidates <= 4096:
         raise ValueError('Invalid whole-circuit search budget')
+    if readout not in ('exact', 'regions'):
+        raise ValueError('Unknown readout grammar')
+    from .regions import bind_regions
+    binder = bind_readouts if readout == 'exact' else bind_regions
     lessons = tuple((tuple(events), port) for events, port in lessons)
     protected = tuple((tuple(events), port) for events, port in protected)
     if not lessons:
@@ -108,7 +112,7 @@ def reconstruct(current, lessons, protected, work, *, candidates=64, seed=7):
             work.add('phase_assembled_rules', len(impulses)+len(couplings))
             # Reconstruct output organization from declared evidence. No old
             # readout silently overrides a new correction at a changed state.
-            bound = bind_readouts(proposal, evidence, work)
+            bound = binder(proposal, evidence, work)
             if bound is not None:
                 compatible += 1
                 yield bound
@@ -117,7 +121,7 @@ def reconstruct(current, lessons, protected, work, *, candidates=64, seed=7):
     improved = selection['accepted']
     successor = CircuitGeneration(template, model, current.generation+1) if improved else current
     selection.update(whole_candidates=examined, compatible_candidates=compatible,
-                     seed=seed, template_unchanged=True,
+                     seed=seed, readout=readout, template_unchanged=True,
                      previous_sha256=hashlib.sha256(encoded(current.record())).hexdigest(),
                      successor_sha256=hashlib.sha256(encoded(successor.record())).hexdigest())
     return successor, selection

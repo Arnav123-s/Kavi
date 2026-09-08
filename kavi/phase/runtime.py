@@ -1,5 +1,7 @@
 """Current-state execution of finite phase circuits."""
 
+from .model import contains
+
 class PhaseActivity:
     """One finite-state invocation. Unknown input prevents a stale answer."""
 
@@ -45,8 +47,11 @@ class PhaseActivity:
         self.closed = True
         if self.failed:
             return None
+        ports = set()
         for state, port in self.configuration.outputs:
             self.work.add('phase_readout_checks')
-            if state == self.phases:
-                return port
-        return None
+            self.work.add('phase_readout_coordinates', len(state))
+            if contains(state, self.phases):
+                ports.add(port)
+        # Conflicting general rules are unresolved, never resolved by list order.
+        return next(iter(ports)) if len(ports) == 1 else None

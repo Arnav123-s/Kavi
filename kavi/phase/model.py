@@ -8,7 +8,10 @@ input alphabet are supplied; selecting a candidate is not semantic discovery.
 from dataclasses import dataclass, asdict
 
 
-
+def contains(pattern, phases):
+    """A readout conjunction uses exact phases or inclusive phase intervals."""
+    return all((p == value if type(p) is int else p[0] <= value <= p[1])
+               for p, value in zip(pattern, phases))
 
 @dataclass(frozen=True)
 class PhaseConfiguration:
@@ -17,7 +20,7 @@ class PhaseConfiguration:
     impulses: tuple = ()
     # (source, triggering phase, target, increment); all read the same snapshot.
     couplings: tuple = ()
-    # (joint phase, output port); no default guess for an unlabelled phase.
+    # (phase pattern, output port); each coordinate is exact or an interval.
     outputs: tuple = ()
     ticks: int = 1
 
@@ -41,7 +44,12 @@ class PhaseConfiguration:
                 raise ValueError('Invalid phase coupling')
         seen = set()
         for state, port in self.outputs:
-            if type(state) is not tuple or len(state) != n or any(type(p) is not int or not 0 <= p < m for p, m in zip(state, self.moduli)) or type(port) is not int:
+            def valid(p, m):
+                if type(p) is int:
+                    return 0 <= p < m
+                return (type(p) is tuple and len(p) == 2 and all(type(v) is int for v in p)
+                        and 0 <= p[0] <= p[1] < m)
+            if type(state) is not tuple or len(state) != n or any(not valid(p, m) for p, m in zip(state, self.moduli)) or type(port) is not int:
                 raise ValueError('Invalid phase readout')
             if state in seen:
                 raise ValueError('Duplicate phase readout')
@@ -56,7 +64,8 @@ class PhaseConfiguration:
             raise ValueError('Invalid phase schema')
         return cls(tuple(record['moduli']), tuple(map(tuple, record['impulses'])),
                    tuple(map(tuple, record['couplings'])),
-                   tuple((tuple(state), port) for state, port in record['outputs']), record['ticks'])
+                   tuple((tuple(tuple(p) if isinstance(p, list) else p for p in state), port)
+                         for state, port in record['outputs']), record['ticks'])
 
     def predict(self, events, work):
         from .runtime import PhaseActivity

@@ -14,6 +14,8 @@ The first [source-based PCL classification course](../experiments/2026-09-08-pcl
 
 The subsequent [situation-continuation extension](../experiments/2026-09-08-pcl-situations.md) allows independent continuations from a shared current state without replaying its input. Every branch shares one execution budget. The saved classification circuits are provably insensitive to event order; useful ordered relationships must still be acquired and measured. Branching supplies execution support, not learned world semantics.
 
+The first [ordered-relation course](../experiments/2026-09-08-pcl-relations.md) now demonstrates a narrow learned order-dependent distinction from supplied grammatical positions: one coupled circuit fits 48/48 teaching targets and retains the initial 24, but scores only 25/48 on unfamiliar patterns. A supplied position rule scores 46/48. General language and the internal-world target remain unmet.
+
 “Phase” names a component's position in a finite cycle. “Circuit” names the executable relationships between components. “Learner” names supervised selection of those relationships. PCL is a working engineering name, not a claim of a new mathematical class or a literal quantum brain. Earlier Kavi implementations remain comparison systems.
 
 ## Design contract

@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [PCL ordered-relation course](../experiments/2026-09-08-pcl-relations.md) records original annotated English teaching, whole-circuit replacement, finite retention and weak unseen-pattern performance. See its [fixed protocol](PCL_RELATION_PROTOCOL.md) and [aggregate evidence](../experiments/2026-09-08-pcl-relations.json).
+
 The [PCL situation-continuation report](../experiments/2026-09-08-pcl-situations.md) documents independent questions from one current state, shared execution limits, and the demonstrated order-insensitivity of the earlier successful classification circuits. This is an execution extension and structural diagnostic, not another teaching course.
 
 The first [PCL classification report](../experiments/2026-09-08-pcl-classification.md) records original-data teaching, phase-region rules, exact-state controls, a conventional classifier, earlier-answer retention and costs. See its [protocol](PCL_CLASSIFICATION_PROTOCOL.md), [readout design](PCL_PHASE_REGIONS.md) and [aggregate evidence](../experiments/2026-09-08-pcl-classification.json).

@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [PCL discrete-logic course](../experiments/2026-09-08-pcl-discrete.md) records learning five Boolean connectives from original textbook tables and reusing them on untrained compound structures. Its [protocol](PCL_DISCRETE_PROTOCOL.md) distinguishes acquired truth functions from supplied composition; [measurements](../experiments/2026-09-08-pcl-discrete.json) include failed controls, retention and costs.
+
 The [PCL ordered-relation course](../experiments/2026-09-08-pcl-relations.md) records original annotated English teaching, whole-circuit replacement, finite retention and weak unseen-pattern performance. See its [fixed protocol](PCL_RELATION_PROTOCOL.md) and [aggregate evidence](../experiments/2026-09-08-pcl-relations.json).
 
 The [PCL situation-continuation report](../experiments/2026-09-08-pcl-situations.md) documents independent questions from one current state, shared execution limits, and the demonstrated order-insensitivity of the earlier successful classification circuits. This is an execution extension and structural diagnostic, not another teaching course.

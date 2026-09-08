@@ -1,0 +1,1075 @@
+{
+  "author": "Arnav123-s",
+  "state": "completed",
+  "protocol": "docs/PCL_DISCRETE_PROTOCOL.md",
+  "python": "3.13.5",
+  "limits": {
+    "seconds": 300,
+    "worker_bytes": 536870912
+  },
+  "source_hashes": {
+    "docs/PCL_DISCRETE_PROTOCOL.md": "6faf1f3e42d0b1a950cfeea198b779237ac295c124955ec1c0e854048fbffed4",
+    "scripts/run_pcl_discrete.py": "e53994335e6fe3c239dda7030793275cadbae0f317ee69ddea37036a75eab628",
+    "scripts/pcl_discrete_source.py": "9565905e6c86d8b3b4e8e19ba4a681dcac33234bfe893af30ae64fb0bc4772fc",
+    "scripts/configuration_run_support.py": "df2e6281dd853361faffc57f763468983002da582f66d40c96fe22f0ddd1452c",
+    "kavi/phase/model.py": "4662e5529730bc690aa5368715e59d05293cac9724d8befe97912cc07d618827",
+    "kavi/phase/runtime.py": "e2ea44b35952af872ec6e637451d9095f5a208a087d4f43570f2180fb5294002",
+    "kavi/phase/layers.py": "7ef57720a2121fc0b94b6395c7dbb658e1c32af550008861947422389390f818",
+    "kavi/phase/learning.py": "8c94b359e4ab4d4682a9ad0cc082e67c5588ab2364ef79bf7cb2f4f1e6a77f22",
+    "kavi/phase/selection.py": "8a41129e677f194f1082283ec77508730c0fa4af4641cf2f4072408278ce0eb1",
+    "kavi/phase/logic.py": "393bfcca3f9e3db360106c11c0f67d727f0188eab98245f8c3fb9b81e231b35a",
+    "kavi/phase/evaluation.py": "865076a99f9390e8578115391b5d7ce94c4aac71d0a4c051583a910ea27e41e6"
+  },
+  "source": {
+    "author": "Oscar Levin",
+    "url": "https://discrete.openmathbooks.org/dmoi3/sec_propositional.html",
+    "sha256": "d45179154bbce0faea7f15e2cf56f33cc2b6b8307ad53faa3cb52ea43c3f106d",
+    "bytes": 276967,
+    "license": "CC BY-SA 4.0"
+  },
+  "packet_sha256": "5eab59b4dfae74fbd05acf450e8e210e988b532da1fed8a258bbe903ed75ef30",
+  "counts": {
+    "first": 8,
+    "training": 18,
+    "development": 4,
+    "final": 32
+  },
+  "arms": {
+    "couplings-0-seed-7": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 201,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 201,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "4fbfbbcb59abb157168187f73806dae5f409e211d161953232fe91e817831220",
+            "successor_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 72639,
+            "phase_ticks": 10377,
+            "phase_updates": 41508,
+            "phase_serialized_bytes": 49682,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_candidates": 201,
+            "phase_readout_checks": 9616,
+            "phase_readout_coordinates": 38464,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 0,
+            "unresolved": 4,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 224,
+            "phase_ticks": 32,
+            "phase_updates": 128,
+            "phase_readout_checks": 48,
+            "phase_readout_coordinates": 192,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 8,
+            "logic_gate_calls": 4
+          },
+          "bytes": 340,
+          "couplings": 0
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 0,
+            "accepted": false,
+            "errors": 10,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 0,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+            "successor_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 84889,
+            "phase_ticks": 12127,
+            "phase_updates": 48508,
+            "phase_readout_checks": 104,
+            "phase_readout_coordinates": 416,
+            "phase_serialized_bytes": 220,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 8,
+            "unresolved": 10,
+            "wrong": 0,
+            "model_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 0,
+            "unresolved": 4,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 588,
+            "phase_ticks": 84,
+            "phase_updates": 336,
+            "phase_readout_checks": 120,
+            "phase_readout_coordinates": 480,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 8,
+            "logic_gate_calls": 4
+          },
+          "bytes": 340,
+          "couplings": 0
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 0,
+        "unresolved": 32,
+        "wrong": 0
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 8,
+        "unresolved": 10,
+        "wrong": 0,
+        "model_sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 112,
+        "logic_gate_calls": 44,
+        "phase_impulse_checks": 1232,
+        "phase_ticks": 176,
+        "phase_updates": 704,
+        "phase_readout_checks": 248,
+        "phase_readout_coordinates": 992,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-0-seed-7.json",
+        "bytes": 340,
+        "sha256": "0adb8e90f87236e7e62d44b9b0a0c782a925f0d9b95440bac00a3d3b16db5a40"
+      }
+    },
+    "couplings-0-seed-19": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 216,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 216,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "4fbfbbcb59abb157168187f73806dae5f409e211d161953232fe91e817831220",
+            "successor_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 76062,
+            "phase_ticks": 10866,
+            "phase_updates": 43464,
+            "phase_serialized_bytes": 53402,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_candidates": 216,
+            "phase_readout_checks": 10352,
+            "phase_readout_coordinates": 41408,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 0,
+            "unresolved": 4,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 224,
+            "phase_ticks": 32,
+            "phase_updates": 128,
+            "phase_readout_checks": 48,
+            "phase_readout_coordinates": 192,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 8,
+            "logic_gate_calls": 4
+          },
+          "bytes": 339,
+          "couplings": 0
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 0,
+            "accepted": false,
+            "errors": 10,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 0,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+            "successor_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 74662,
+            "phase_ticks": 10666,
+            "phase_updates": 42664,
+            "phase_readout_checks": 104,
+            "phase_readout_coordinates": 416,
+            "phase_serialized_bytes": 219,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 8,
+            "unresolved": 10,
+            "wrong": 0,
+            "model_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 0,
+            "unresolved": 4,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 588,
+            "phase_ticks": 84,
+            "phase_updates": 336,
+            "phase_readout_checks": 120,
+            "phase_readout_coordinates": 480,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 8,
+            "logic_gate_calls": 4
+          },
+          "bytes": 339,
+          "couplings": 0
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 0,
+        "unresolved": 32,
+        "wrong": 0
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 8,
+        "unresolved": 10,
+        "wrong": 0,
+        "model_sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 112,
+        "logic_gate_calls": 44,
+        "phase_impulse_checks": 1232,
+        "phase_ticks": 176,
+        "phase_updates": 704,
+        "phase_readout_checks": 248,
+        "phase_readout_coordinates": 992,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-0-seed-19.json",
+        "bytes": 339,
+        "sha256": "7c99f962565f7a19d37532911f7880a486d4176a4ec3d521f35f3e1d4ca75974"
+      }
+    },
+    "couplings-0-seed-41": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 217,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 217,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "4fbfbbcb59abb157168187f73806dae5f409e211d161953232fe91e817831220",
+            "successor_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 76188,
+            "phase_ticks": 10884,
+            "phase_updates": 43536,
+            "phase_serialized_bytes": 53635,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_candidates": 217,
+            "phase_readout_checks": 10400,
+            "phase_readout_coordinates": 41600,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 3,
+            "unresolved": 0,
+            "wrong": 1
+          },
+          "check_work": {
+            "phase_impulse_checks": 308,
+            "phase_ticks": 44,
+            "phase_updates": 176,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 338,
+          "couplings": 0
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 0,
+            "accepted": false,
+            "errors": 7,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 0,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+            "successor_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 76006,
+            "phase_ticks": 10858,
+            "phase_updates": 43432,
+            "phase_readout_checks": 104,
+            "phase_readout_coordinates": 416,
+            "phase_serialized_bytes": 218,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 1792,
+            "phase_inheritance_choices": 1785
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 11,
+            "unresolved": 5,
+            "wrong": 2,
+            "model_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 3,
+            "unresolved": 0,
+            "wrong": 1
+          },
+          "check_work": {
+            "phase_impulse_checks": 672,
+            "phase_ticks": 96,
+            "phase_updates": 384,
+            "phase_readout_checks": 136,
+            "phase_readout_coordinates": 544,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 338,
+          "couplings": 0
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 6,
+        "unresolved": 24,
+        "wrong": 2
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 11,
+        "unresolved": 5,
+        "wrong": 2,
+        "model_sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 124,
+        "logic_gate_calls": 52,
+        "phase_impulse_checks": 1372,
+        "phase_ticks": 196,
+        "phase_updates": 784,
+        "phase_readout_checks": 280,
+        "phase_readout_coordinates": 1120,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-0-seed-41.json",
+        "bytes": 338,
+        "sha256": "677e0e294f61e4ce94e628fb5d2c866e25c4e8412d8d58770f7cda7399ffd0cf"
+      }
+    },
+    "couplings-6-seed-7": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 194,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 194,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "25b79cbc69af68837037ea8d3af1432bf58a03188885248b297b0722da324af4",
+            "successor_sha256": "8e2a7ee9337a385f617b1ce9dbde4f035f8171126762df793b4849f1f688991f"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 71589,
+            "phase_ticks": 10227,
+            "phase_updates": 40908,
+            "phase_serialized_bytes": 55079,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2526,
+            "phase_candidates": 194,
+            "phase_readout_checks": 10328,
+            "phase_readout_coordinates": 41312,
+            "phase_inheritance_choices": 1785,
+            "phase_new_coupling_proposals": 744,
+            "phase_coupling_checks": 27810
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "8e2a7ee9337a385f617b1ce9dbde4f035f8171126762df793b4849f1f688991f",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "8e2a7ee9337a385f617b1ce9dbde4f035f8171126762df793b4849f1f688991f",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 2,
+            "unresolved": 0,
+            "wrong": 2
+          },
+          "check_work": {
+            "phase_impulse_checks": 308,
+            "phase_ticks": 44,
+            "phase_coupling_checks": 88,
+            "phase_updates": 176,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 357,
+          "couplings": 2
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 3,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 3,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "8e2a7ee9337a385f617b1ce9dbde4f035f8171126762df793b4849f1f688991f",
+            "successor_sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 82908,
+            "phase_ticks": 11844,
+            "phase_coupling_checks": 40086,
+            "phase_updates": 47376,
+            "phase_readout_checks": 1274,
+            "phase_readout_coordinates": 5096,
+            "phase_serialized_bytes": 1517,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2661,
+            "phase_inheritance_choices": 2295,
+            "phase_new_coupling_proposals": 622,
+            "phase_candidates": 3
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 18,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 672,
+            "phase_ticks": 96,
+            "phase_coupling_checks": 384,
+            "phase_updates": 384,
+            "phase_readout_checks": 510,
+            "phase_readout_coordinates": 2040,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 532,
+          "couplings": 4
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 18,
+        "unresolved": 0,
+        "wrong": 0,
+        "model_sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 1168,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1530,
+        "phase_readout_coordinates": 6120,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-6-seed-7.json",
+        "bytes": 532,
+        "sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140"
+      }
+    },
+    "couplings-6-seed-19": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 189,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 189,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "25b79cbc69af68837037ea8d3af1432bf58a03188885248b297b0722da324af4",
+            "successor_sha256": "3d801c56658130f886a83d0a2eab6638bb729fa70133dc48ac2d244bb32a0dd9"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 69867,
+            "phase_ticks": 9981,
+            "phase_updates": 39924,
+            "phase_serialized_bytes": 53866,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2542,
+            "phase_candidates": 189,
+            "phase_readout_checks": 10024,
+            "phase_readout_coordinates": 40096,
+            "phase_inheritance_choices": 1785,
+            "phase_new_coupling_proposals": 767,
+            "phase_coupling_checks": 28245
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "3d801c56658130f886a83d0a2eab6638bb729fa70133dc48ac2d244bb32a0dd9",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "3d801c56658130f886a83d0a2eab6638bb729fa70133dc48ac2d244bb32a0dd9",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 0,
+            "unresolved": 4,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 224,
+            "phase_ticks": 32,
+            "phase_coupling_checks": 64,
+            "phase_updates": 128,
+            "phase_readout_checks": 48,
+            "phase_readout_coordinates": 192,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 8,
+            "logic_gate_calls": 4
+          },
+          "bytes": 357,
+          "couplings": 2
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 16,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 16,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "3d801c56658130f886a83d0a2eab6638bb729fa70133dc48ac2d244bb32a0dd9",
+            "successor_sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 98777,
+            "phase_ticks": 14111,
+            "phase_coupling_checks": 52908,
+            "phase_updates": 56444,
+            "phase_readout_checks": 7020,
+            "phase_readout_coordinates": 28080,
+            "phase_serialized_bytes": 7351,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2731,
+            "phase_inheritance_choices": 2295,
+            "phase_new_coupling_proposals": 679,
+            "phase_candidates": 16
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 18,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 672,
+            "phase_ticks": 96,
+            "phase_coupling_checks": 288,
+            "phase_updates": 384,
+            "phase_readout_checks": 510,
+            "phase_readout_coordinates": 2040,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 530,
+          "couplings": 3
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 18,
+        "unresolved": 0,
+        "wrong": 0,
+        "model_sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 876,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1530,
+        "phase_readout_coordinates": 6120,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-6-seed-19.json",
+        "bytes": 530,
+        "sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b"
+      }
+    },
+    "couplings-6-seed-41": {
+      "stages": [
+        {
+          "bank": "first",
+          "selection": {
+            "candidates": 197,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 197,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "25b79cbc69af68837037ea8d3af1432bf58a03188885248b297b0722da324af4",
+            "successor_sha256": "4dc94c81d42be7308a9fbcdd2c2ba9231909dd89621986ae22d150f7e42d54a1"
+          },
+          "learning_work": {
+            "phase_evidence_events": 24,
+            "phase_impulse_checks": 70896,
+            "phase_ticks": 10128,
+            "phase_updates": 40512,
+            "phase_serialized_bytes": 56091,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2549,
+            "phase_candidates": 197,
+            "phase_readout_checks": 10408,
+            "phase_readout_coordinates": 41632,
+            "phase_inheritance_choices": 1785,
+            "phase_new_coupling_proposals": 761,
+            "phase_coupling_checks": 28752
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4dc94c81d42be7308a9fbcdd2c2ba9231909dd89621986ae22d150f7e42d54a1",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4dc94c81d42be7308a9fbcdd2c2ba9231909dd89621986ae22d150f7e42d54a1",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 3,
+            "unresolved": 0,
+            "wrong": 1
+          },
+          "check_work": {
+            "phase_impulse_checks": 308,
+            "phase_ticks": 44,
+            "phase_coupling_checks": 44,
+            "phase_updates": 176,
+            "phase_readout_checks": 64,
+            "phase_readout_coordinates": 256,
+            "phase_evaluation_cases": 8,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 349,
+          "couplings": 1
+        },
+        {
+          "bank": "training",
+          "selection": {
+            "candidates": 5,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 5,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "4dc94c81d42be7308a9fbcdd2c2ba9231909dd89621986ae22d150f7e42d54a1",
+            "successor_sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c"
+          },
+          "learning_work": {
+            "phase_evidence_events": 76,
+            "phase_impulse_checks": 80367,
+            "phase_ticks": 11481,
+            "phase_coupling_checks": 37316,
+            "phase_updates": 45924,
+            "phase_readout_checks": 2340,
+            "phase_readout_coordinates": 9360,
+            "phase_serialized_bytes": 2509,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 2614,
+            "phase_inheritance_choices": 2040,
+            "phase_new_coupling_proposals": 690,
+            "phase_candidates": 5
+          },
+          "teaching": {
+            "total": 18,
+            "correct": 18,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c",
+            "frozen_unchanged": true
+          },
+          "development": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0
+          },
+          "check_work": {
+            "phase_impulse_checks": 672,
+            "phase_ticks": 96,
+            "phase_coupling_checks": 288,
+            "phase_updates": 384,
+            "phase_readout_checks": 510,
+            "phase_readout_coordinates": 2040,
+            "phase_evaluation_cases": 26,
+            "logic_syntax_visits": 24,
+            "logic_execution_steps": 16,
+            "logic_gate_calls": 8
+          },
+          "bytes": 529,
+          "couplings": 3
+        }
+      ],
+      "final": {
+        "total": 32,
+        "correct": 32,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "primitive_complete_domain": {
+        "total": 18,
+        "correct": 18,
+        "unresolved": 0,
+        "wrong": 0,
+        "model_sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c",
+        "frozen_unchanged": true
+      },
+      "frozen_unchanged": true,
+      "final_work": {
+        "logic_syntax_visits": 272,
+        "logic_execution_steps": 188,
+        "logic_gate_calls": 84,
+        "phase_impulse_checks": 2044,
+        "phase_ticks": 292,
+        "phase_coupling_checks": 876,
+        "phase_updates": 1168,
+        "phase_readout_checks": 1530,
+        "phase_readout_coordinates": 6120,
+        "phase_evaluation_cases": 18
+      },
+      "artifact": {
+        "file": "couplings-6-seed-41.json",
+        "bytes": 529,
+        "sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c"
+      }
+    }
+  },
+  "controls": {
+    "constant_true_correct": 22,
+    "total": 32,
+    "untrained": {
+      "total": 32,
+      "correct": 0,
+      "unresolved": 32,
+      "wrong": 0
+    },
+    "work": {
+      "logic_syntax_visits": 272,
+      "logic_execution_steps": 92,
+      "logic_gate_calls": 32
+    }
+  },
+  "wall_seconds": 17.658124700014014,
+  "cpu_seconds": 1.8125,
+  "display_pacing_seconds": 16.01856460009003,
+  "worker_memory": {
+    "available_bytes": 18918764544,
+    "working_set_bytes": 26710016,
+    "peak_bytes": 26710016,
+    "logical_cpus": 16,
+    "cpu_temperature": null,
+    "temperature_note": "No reliable CPU-temperature telemetry is available here."
+  },
+  "storage": {
+    "files": {
+      "couplings-0-seed-19.json": 339,
+      "couplings-0-seed-41.json": 338,
+      "couplings-0-seed-7.json": 340,
+      "couplings-6-seed-19.json": 530,
+      "couplings-6-seed-41.json": 529,
+      "couplings-6-seed-7.json": 532,
+      "results.json": 36947,
+      "status.json": 4643,
+      "transcript.txt": 5874
+    },
+    "bytes_excluding_this_census": 50072
+  }
+}

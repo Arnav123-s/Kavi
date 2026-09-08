@@ -1,5 +1,7 @@
 # Experiment records
 
+Author: [Arnav123-s](https://github.com/Arnav123-s)
+
 The repository contains records of bounded structural learning and earlier
 pathway prototypes. They verify code behavior under their exact
 configuration; they are not evidence of general learning or broad capability.
@@ -18,6 +20,10 @@ When an experiment is explicitly authorized, create a reviewed text record conta
 Publish compact, non-sensitive results, not raw private inputs, credentials, copyrighted source texts, or large binary artifacts. Report hypothetical examples as hypothetical; do not invent successful measurements.
 
 Current records:
+
+- [Incremental correction, learned questions, inherited paths and direct word-state learning](2026-09-07-incremental-inquiry-transfer.md)
+- [Published English questions, reuse, regressions and exact structural sharing](2026-09-07-published-english.md)
+- [Hierarchical composition, published science lessons and the separate source interface](2026-09-07-composable-science-and-conversation.md)
 
 - [Configuration reuse, supervised composition and structural repair](2026-09-07-mechanism-audit.md)
 - [Learned recurrence, correction and configuration replacement](2026-09-07-recurrent-configuration.md)

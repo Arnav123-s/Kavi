@@ -2,6 +2,14 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+Start with the [configuration-learning report](../experiments/2026-09-07-incremental-inquiry-transfer.md). It includes five completed courses, learned clarification decisions, direct recurrent English, provisional executable connections, the grouping error, self-assessment failures, diagrams and [measurements](../experiments/2026-09-07-incremental-inquiry-transfer.json). The protocols are [incremental teaching](INCREMENTAL_ENGLISH_PROTOCOL.md), [learned inquiry](LEARNED_INQUIRY_PROTOCOL.md), [older-path transfer](PATHWAY_TRANSFER_PROTOCOL.md), [direct event learning](DIRECT_EVENT_LEARNING_PROTOCOL.md) and [provisional adaptation](ADAPTIVE_EVENT_PROTOCOL.md).
+
+The [original-notebook curriculum](PRIMARY_NOTEBOOK_CURRICULUM.md) and [source catalogue](../curriculum/primary-notebooks-20260907.json) record ten scientific, philosophical and first-person sources, including edition and diagnostic-provenance distinctions. This is source research; the catalogue has not been used for teaching.
+
+The latest [English teaching and sharing report](../experiments/2026-09-07-published-english.md) records two source-based courses, independent-source results, earlier-answer regressions and exact structural consolidation. The [interacting-configuration design](INTERACTING_CONFIGURATIONS.md) specifies order-dependent activity, input completion, learned grouping and the implemented runtime checks.
+
+Start with the [design alignment and configuration-replacement audit](DESIGN_ALIGNMENT_AUDIT.md). It maps the intended learner to the code, identifies where interpretation is supplied, and defines what must be measured before claiming an integrated conversational learner. The [completed extension report](../experiments/2026-09-07-composable-science-and-conversation.md) covers hierarchical composition, published science questions and the separate retrieval interface.
+
 The [engineering and research specification](KAVI_ENGINEERING_SPECIFICATION.md) is the main reference. It contains the implementation analysis, formal design, mathematical corrections, evidence, study sequence and milestones. The [PDF edition](Kavi_Engineering_and_Research.pdf) records the baseline through the first two procedure trials. Later records cover [connectors and sentence learning](../experiments/2026-09-07-connectors-language.md) and the latest [foundation teaching, gap repairs and consolidated checkpoint](../experiments/2026-09-07-foundation-curriculum.md).
 
 The [architecture](DESIGN.md), [adaptive formulation](ADAPTIVE_DATAFLOW_CIRCUIT.md), [discrete runtime](CIRCUIT_RUNTIME.md) and [procedure runtime](PROCEDURE_LIBRARY_RUNTIME.md) distinguish the broader design from its implemented instances. The specification and PDF include structural acquisition, bounded program learning, live interfaces, measured reuse and remaining failures. Detailed commands remain in the runtime references.
@@ -52,6 +60,8 @@ The [graduate capability program](GRADUATE_CAPABILITY_PROGRAM.md) defines all th
 | [Connectors and sentence learning](CONNECTORS_AND_LANGUAGE_PROTOCOL.md) | Shared operand binding, checked binary compilation, explicit trace limits and an original-source language trial |
 
 ## Research design
+
+The [reusable relational configuration design](REUSABLE_RELATIONAL_CONFIGURATIONS.md) develops components and pathways as the same executable object at different scales. It specifies direct execution, local investigation of unresolved dependencies, interacting group constraints, guarded shortcut learning and correction. Its closest research connections include open graphs, factor graphs and Soar's chunking; the integrated design is not yet measured.
 
 The [neural pathway study](NEURAL_PATHWAY_LEARNING.md) connects firing patterns, feedback, mastery and structural change to a recurrent design. The [animal-learning and configuration-change study](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) covers teaching, relational transfer, learning to learn, and replacements that retain earlier valid behavior in a different representation. Their scope notes distinguish the subsequent finite-state result from the broader proposed mechanisms.
 

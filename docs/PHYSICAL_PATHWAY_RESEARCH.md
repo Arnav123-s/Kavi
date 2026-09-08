@@ -12,6 +12,8 @@ These mechanisms are proposed as tools for constructing and refining configurati
 
 The closest mathematical relatives are typed reaction networks, multiset rewriting, stochastic search and energy-based dynamics. These are different models with different guarantees. Combining their vocabulary is not yet a combined algorithm.
 
+The [relational configuration refinement](REUSABLE_RELATIONAL_CONFIGURATIONS.md) specifies the intended role of richer dynamics: enable, inhibit and combine computations through relationships among several components, and help resolve only the unknown parts of a problem. Components and pathways are the same kind of executable object at different scales. Random edge perturbation with temperature was not an implementation of this full mechanism.
+
 ![Typed pathways with thermal exploration and catalytic context](figures/physical-pathway-model.svg)
 
 ### 10.1 A table of computational elements

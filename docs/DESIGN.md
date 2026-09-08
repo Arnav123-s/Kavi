@@ -2,9 +2,17 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [configuration-learning experiments](../experiments/2026-09-07-incremental-inquiry-transfer.md) distinguish reconstruction of static predicate routes, inherited-route refinement, direct learning of recurrent word transitions, and provisional executable connection changes during input. The latter two learn recurrent interpretation structure. Coupling schedules and candidate construction remain supplied. The adaptive course corrected 24 additional lessons but did not improve its matched follow-up score; its learned self-assessment also failed to transfer reliably. The [adaptive-event protocol](ADAPTIVE_EVENT_PROTOCOL.md) defines that course.
+
+The [interacting-configuration contract](INTERACTING_CONFIGURATIONS.md) adds current activity, ordered triggers, held values and input completion to the shared component interface. Meaning can depend on activation order and joint state. Learning should form, split, combine or replace useful groups; sharing a definition must preserve distinct live states when the uses differ. The [English experiments](../experiments/2026-09-07-published-english.md) measure a limited learned route into arithmetic and preserve its failures and regressions.
+
+Read the [design alignment audit](DESIGN_ALIGNMENT_AUDIT.md) for the distinction between this target and the current application. The intended persistent object can be replaced in its entirety after correction while retaining earlier valid behavior in a new arrangement. The current cores demonstrate parts of that process; the conversation interface does not implement the integrated learning loop.
+
 The [addition theorem](ADDITION_CORRECTNESS.md) states the current circuit's certificate and executor assumptions. The [physical-pathway research](PHYSICAL_PATHWAY_RESEARCH.md) describes two tracks: engineer mechanisms and measure them, or teach a bounded learner to select, compose and improve mechanisms. The [latest audit](../experiments/2026-09-07-mechanism-audit.md) implements limited composition and classical repair comparisons; broader physical dynamics remain proposals. The [project assessment](PROJECT_ASSESSMENT.md) summarizes the evidence.
 
 Kavi's learned object is an executable operation represented by circuit structure. The current implementation acquires a Boolean transition graph from examples and repairs its shared behavior through counterexamples. Signals and a one-bit working state are temporary. The accepted graph persists.
+
+The [reusable relational configuration design](REUSABLE_RELATIONAL_CONFIGURATIONS.md) refines the target beyond these implemented cores. A component and a pathway are two views of one executable configuration. Applicable structure runs directly; unresolved dependencies trigger local investigation; successful reasoning can become a guarded configuration for later use. Group interactions and structured correction are part of this target. The previous temperature experiment did not implement that full cycle.
 
 ## Implemented components
 

@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The later [local-reasoning and reusable-configuration design](REUSABLE_RELATIONAL_CONFIGURATIONS.md) separates direct acquired execution from investigation of unresolved dependencies. It adds group interactions, guarded shortcuts and structured correction as implementation targets. The existing stream and sentence experiments are narrower instances, not measurements of that complete cycle.
+
 ## Intended architecture
 
 The [neural pathway study](NEURAL_PATHWAY_LEARNING.md) connects this design to population activity, feedback and mastery. The [animal-learning study](ANIMAL_LEARNING_AND_CONFIGURATION_CHANGE.md) specifies configuration change as `K_next = T(K_current, evidence)`: earlier valid abilities may survive through transformed structure, even when the entire graph is replaced. Growth or shrinkage is allowed within resource limits; pruning and imitation of emotions are not required. Learning that transformation procedure is a separate experimental target.

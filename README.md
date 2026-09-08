@@ -2,7 +2,19 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The latest [configuration-learning report](experiments/2026-09-07-incremental-inquiry-transfer.md) records five completed English courses, including learned recurrent word transitions and provisional executable connections during input. The latest model retains 168/168 teaching answers but answers only 29/102 follow-up questions with adaptation; the same adaptive constructor scored 31/102 before the extra teaching. The results do not establish broad understanding, reliable self-assessment or learned algebra.
+
+The [original-notebook curriculum](docs/PRIMARY_NOTEBOOK_CURRICULUM.md) catalogues scientific and philosophical notebooks and published first-person accounts. It records edition, language and provenance. These sources have not been taught to the new configuration models.
+
 Kavi studies learning through reusable computational configurations. Its experimental cores acquire gates, programs and recurrent connections from examples. Inputs drive temporary activity through the retained structure; feedback changes the configuration. The objective is to acquire new abilities while carrying earlier valid behavior into the revised structure.
+
+The latest [published English experiments](experiments/2026-09-07-published-english.md) learn routes from authentic word problems into arithmetic configurations. The first model scores 100/150 supported ASDiv questions; the expanded model scores 30/303 admitted GSM8K questions and 30/1,319 with unsupported types included. The larger model loses 32 earlier correct answers while gaining 19. Sharing identical structures reduces its artifact from 149,917 to 109,826 bytes while preserving its decisions, including its mistakes.
+
+The [interacting-configuration design](docs/INTERACTING_CONFIGURATIONS.md) treats meaning as a pattern of current states, connections and activation order. Its execution substrate supports held values, feedback and ordered token events, and releases an answer only after input completion and settled activity. A check using the acquired recurrent graph preserves different outputs for different orders of the same tokens. Learning those interactions from general language remains a separate target.
+
+The [design alignment audit](docs/DESIGN_ALIGNMENT_AUDIT.md) identifies the current gap: the separate cores demonstrate narrow learning, but the assembled application does not yet implement the intended self-configuring conversational learner. Scientific interpretation and much of the language interface are supplied. Source and dictionary lookup do not close that gap. Whole-configuration replacement is a central design requirement and has a measured finite-state example; general semantic replacement remains unimplemented.
+
+The [current design refinement](docs/REUSABLE_RELATIONAL_CONFIGURATIONS.md) treats a component and a pathway as the same executable object at different scales. Known structure runs directly; unresolved parts trigger local reasoning; successful reasoning and correction should produce reusable guarded configurations. Richer relational and physical dynamics are proposed ways to support that process. The integrated mechanism remains an implementation target.
 
 The latest [configuration reuse and repair experiment](experiments/2026-09-07-mechanism-audit.md) learns shared notation, connects the recurrent core to acquired arithmetic through numerical feedback, and constructs a new graph from existing operations. The new computation reuses one intermediate and passes 128 fresh inputs with 104 earlier-operation checks preserved. Temperature did not improve exact repair in the tested conditions. The [project assessment](docs/PROJECT_ASSESSMENT.md) explains the strongest results, the addition theorem, current capabilities and the remaining gap to graduate-level work.
 
@@ -117,6 +129,8 @@ The eight-bit audit includes selection examples; the separate 127-case and lengt
 
 ## Documentation
 
+- [Design alignment and configuration replacement](docs/DESIGN_ALIGNMENT_AUDIT.md): intended behavior, learned and supplied mechanisms, architectural gaps and acceptance criteria
+- [Composition, science and conversation results](experiments/2026-09-07-composable-science-and-conversation.md): completed extensions, textbook failures and corrections, costs and retrieval limitations
 - [Project assessment](docs/PROJECT_ASSESSMENT.md): plain-language explanation, theorem, capabilities, research relatives and remaining work
 - [Configuration reuse and repair](experiments/2026-09-07-mechanism-audit.md): latest measurements and diagrams
 - [Certified arithmetic and software efficiency](docs/CERTIFIED_ARITHMETIC_AND_SOFTWARE_EFFICIENCY.md): review audit, software algorithms, physical pathways and deferred recommendations

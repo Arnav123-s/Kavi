@@ -6,6 +6,8 @@ Author: [Arnav123-s](https://github.com/Arnav123-s)
 
 ## Scope
 
+The [reusable configuration design](REUSABLE_RELATIONAL_CONFIGURATIONS.md) unifies components and pathways: an executable graph can be viewed as one component at its boundary or expanded into its internal subconfigurations. Equation solvers, arithmetic operations, relations and configuration transformations can use that same compositional interface, with their distinct inputs and validity conditions. This is a design requirement; the existing numeric cores do not yet provide the whole interface.
+
 An acquired component could represent an equation, a solver, a relationship between quantities, a probability distribution, or a procedure for proposing other configurations. Chemistry and physics are examples within this broader inventory. Ideas from otherwise unrelated subjects are candidates when they have useful computational structure; their origin alone does not determine their value.
 
 The intended sequence is to learn a representation, establish how it behaves, learn when it applies, and reuse it within further computations. Supplying an entire physics solver and learning to call it would demonstrate selection or composition. Inferring its equations or constructing the solver from lower-level components would be stronger, separate achievements.

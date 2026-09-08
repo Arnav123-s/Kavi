@@ -2,7 +2,15 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
-Assessment through 7 September 2026. The latest [experiment report](../experiments/2026-09-07-mechanism-audit.md) contains the methods, measured costs, failures and diagrams. Earlier experiment records remain authoritative for their own configurations.
+The newest [configuration-learning study](../experiments/2026-09-07-incremental-inquiry-transfer.md) tests incremental correction, inherited paths, learned questions, direct recurrent English and changing executable connections during input. Inherited paths score 98/150 against 94/150 after reconstruction; the original model scored 100/150. Learned asking improves a selected GSM8K bank from 20/106 to 25/106 with 26 teacher replies. The adaptive course retains 168/168 teaching answers but scores 29/102 on follow-up, against 31/102 with the same constructor before additional teaching. Its self-assessment does not reliably identify correct answers. These are separate configurations; none establishes broad language, learned algebra or research-level competence.
+
+The [notebook and first-person source study](PRIMARY_NOTEBOOK_CURRICULUM.md) identifies original scientific and philosophical material and distinguishes diaries from memoirs. No new teaching from that catalogue has occurred.
+
+The latest [English experiments](../experiments/2026-09-07-published-english.md) add limited learned interpretation: 100/150 supported elementary questions in the first course and 30/303 admitted independent-source questions after expansion. The expanded model loses 32 earlier correct answers and gains 19. Exact sharing saves 26.7% of that artifact's bytes while retaining the same behavior. The [interacting runtime](INTERACTING_CONFIGURATIONS.md) adds held values, event order and answer release after input completion; general learned semantics and research-level competence remain unestablished.
+
+Assessment through 7 September 2026. The [design alignment audit](DESIGN_ALIGNMENT_AUDIT.md) compares the assembled application with the intended learner. It finds genuine narrow learning alongside substantial supplied interpretation and retrieval. The [subsequent extension report](../experiments/2026-09-07-composable-science-and-conversation.md) records the latest composition and scientific calculations. The [earlier mechanism audit](../experiments/2026-09-07-mechanism-audit.md) remains authoritative for its own configurations.
+
+Subsequent design clarification: [reusable relational configurations](REUSABLE_RELATIONAL_CONFIGURATIONS.md) records selective reasoning at unresolved dependencies, components and pathways as one compositional object, and learning guarded shortcuts from successful reasoning and correction. The measured temperature comparison did not test that integrated architecture; it remains to be implemented and evaluated.
 
 ## The project in plain language
 
@@ -10,7 +18,7 @@ Kavi is an experimental system that learns small executable arrangements. Think 
 
 There are several experimental cores, not yet one general-purpose brain. One learns logic gates for arithmetic. Another combines acquired procedures. Another learns recurrent connections from streams of symbols. Recent work connects the recurrent core to arithmetic and adds a supervised route for admitting newly composed computations.
 
-The distinction from ordinary numerical weight training is the object being learned: discrete connections, gates and executable programs. That still requires persistent information. Connections, operation choices and retained parameters are the model's knowledge. Temporary signal state disappears between queries; the learned configuration persists.
+In the structural cores, learning changes discrete connections, gates and executable programs. The earlier pathway fabric and recurrent byte model also learn numerical parameters; the repository as a whole is not weight-free. Every approach requires persistent information. Connections, operation choices and retained parameters are the model's knowledge. Temporary signal state disappears between independent queries; the learned configuration persists.
 
 ## The biggest achievement
 
@@ -52,13 +60,17 @@ The addition theorem is established mathematics. The project-specific achievemen
 
 An arithmetic result such as $20^{10}$ does not mean the system understands advanced mathematics. A sentence about kinetic energy can call a quantity computation without explaining mechanics, checking arbitrary physical units or deriving the formula. Identifying the parts of a claim does not establish whether the claim is true.
 
+The older numerical core is a reusable calculator. Equation isolation in the surrounding annotation code was supplied. The expanded English trial scored 0/5 on its admitted algebra questions, and the direct event course does not attempt algebra. These mechanisms must not be described as learned algebraic understanding.
+
 ## How smart is it?
 
 There is no defensible IQ, age or degree-level score for the current system. It is precise on a small collection of formal tasks with strong supplied structure. It is still limited when the representation, wording, specification or required reasoning is unfamiliar.
 
+The later conversation application adds acquired calculations, source excerpts and dictionary senses. It does not learn from conversational corrections or independently acquire the supplied scientific interpretation. Its 4/5 fresh textbook result used annotated quantities, not raw English comprehension. Rebuilding a whole configuration without backpropagation is possible and already measured on the separate recurrent task; applying that mechanism to an integrated semantic learner remains open.
+
 The latest six broad requests—an unfamiliar proof, a calculus derivation, a physical explanation, literary interpretation, a comparison of philosophers and creative writing—were unsupported. That result does not measure everything the architecture could eventually learn. It does establish that the present interface and acquired models do not meet the three master’s-level targets.
 
-The compact arithmetic/controller/catalog bundle occupies 2,856 bytes, excluding runtime, learning and other checkpoints. The latest worker peaked at about 38.9 MiB, with a separate visible process and about 2.67 MB of local run evidence. Comparing the model bytes alone with a large language model's parameters would confuse a few specialized skills with a broad capability set. See the [model-family and size study](MODEL_FAMILIES_AND_SIZE_COMPARISON.md) for the accounting framework.
+The earlier arithmetic/controller/catalog bundle occupies 2,856 bytes, excluding runtime, learning and other checkpoints. That mechanism-audit worker peaked at about 38.9 MiB, with a separate visible process and about 2.67 MB of local run evidence. Later English and event-learning resources are reported separately in their dated records. Comparing model bytes alone with a large language model's parameters would confuse a few specialized skills with a broad capability set. See the [model-family and size study](MODEL_FAMILIES_AND_SIZE_COMPARISON.md) for the accounting framework.
 
 ## The closest mathematical and research relatives
 

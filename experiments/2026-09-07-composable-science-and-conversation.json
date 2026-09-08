@@ -1,0 +1,1246 @@
+{
+  "author": "Arnav123-s",
+  "date": "2026-09-07",
+  "format": "kavi-composition-science-audit-1",
+  "scope": "Existing completed runs; no new teaching during the design alignment audit.",
+  "composition": {
+    "author": "Arnav123-s",
+    "state": "completed",
+    "protocol": "docs/CONFIGURATION_LAB_PROTOCOL.md",
+    "python": "3.13.5",
+    "limits": {"seconds": 300, "worker_bytes": 536870912},
+    "source_hashes": {
+      "docs/CONFIGURATION_LAB_PROTOCOL.md": "2dfca4f096d423268e7c510b86781836a007d90bee384bb74495991f18e533c8",
+      "kavi/composable_configurations.py": "6ff795e8a0bd6bc9ac02ac1346bfca4872de90f24ae6d08167c8722eb8d38bbb",
+      "kavi/equation_kernels.py": "dfc0d5b69ccf2aed0f976cd87af7d8690bc37d2d4bd3e3fd00e98367798cb79c",
+      "scripts/run_configuration_lab.py": "9bc35ee17481cd5f30609a3603e971f33ac25b1af0bee28ee47e53c46f4e83c5",
+      "scripts/configuration_run_support.py": "df2e6281dd853361faffc57f763468983002da582f66d40c96fe22f0ddd1452c",
+      "scripts/configuration_lab_window.py": "1af1087de149b9c56df880a24bebca9f196b7abeb12e8c8bcf121288a4633a55"
+    },
+    "wall_seconds": 20.09313269998529,
+    "cpu_seconds": 0.328125,
+    "display_pacing_seconds": 19.797512299992377,
+    "worker_memory": {
+      "available_bytes": 20420153344,
+      "working_set_bytes": 27250688,
+      "peak_bytes": 27250688,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    },
+    "base_library_bytes": 2272,
+    "local_completion": {
+      "arms": [
+        {
+          "method": "whole",
+          "work": {
+            "candidate_proposals": 338,
+            "candidate_examples": 344,
+            "configuration_entries": 1960,
+            "kernel_calls": 1272,
+            "kernel_work_units": 1272,
+            "kernel_add": 844,
+            "arithmetic_calls": 1487,
+            "arithmetic_frames": 4150,
+            "arithmetic_gates": 20750,
+            "arithmetic_iterations": 422,
+            "arithmetic_connector_comparisons": 217,
+            "arithmetic_bit_tests": 422,
+            "arithmetic_shifts": 637,
+            "kernel_subtract": 211,
+            "invalid_candidates": 61,
+            "kernel_multiply": 217,
+            "consistent_candidates": 2
+          },
+          "cpu_seconds": 0.03125,
+          "graph": {"arity": 2, "calls": [["add", [0, 1]], ["multiply", [2, 2]]], "output": 3, "kernel": null}
+        },
+        {
+          "method": "local",
+          "work": {
+            "configuration_entries": 1276,
+            "kernel_calls": 932,
+            "kernel_work_units": 932,
+            "kernel_add": 504,
+            "arithmetic_calls": 1147,
+            "arithmetic_frames": 3467,
+            "arithmetic_gates": 17335,
+            "arithmetic_iterations": 422,
+            "arithmetic_connector_comparisons": 217,
+            "arithmetic_bit_tests": 422,
+            "arithmetic_shifts": 637,
+            "prepared_prefixes": 4,
+            "candidate_proposals": 338,
+            "candidate_examples": 344,
+            "kernel_subtract": 211,
+            "invalid_candidates": 61,
+            "kernel_multiply": 217,
+            "consistent_candidates": 2
+          },
+          "cpu_seconds": 0.015625,
+          "graph": {"arity": 2, "calls": [["add", [0, 1]], ["multiply", [2, 2]]], "output": 3, "kernel": null}
+        }
+      ],
+      "banks": {
+        "promotion": {
+          "correct": 48,
+          "total": 48,
+          "work": {
+            "configuration_entries": 288,
+            "kernel_calls": 192,
+            "kernel_work_units": 192,
+            "kernel_add": 144,
+            "arithmetic_calls": 358,
+            "arithmetic_frames": 3088,
+            "arithmetic_gates": 15440,
+            "arithmetic_iterations": 321,
+            "arithmetic_connector_comparisons": 48,
+            "arithmetic_bit_tests": 321,
+            "arithmetic_shifts": 594,
+            "kernel_multiply": 48
+          }
+        },
+        "final": {
+          "correct": 128,
+          "total": 128,
+          "work": {
+            "configuration_entries": 768,
+            "kernel_calls": 512,
+            "kernel_work_units": 512,
+            "kernel_add": 384,
+            "arithmetic_calls": 1169,
+            "arithmetic_frames": 14696,
+            "arithmetic_gates": 73480,
+            "arithmetic_iterations": 1207,
+            "arithmetic_connector_comparisons": 128,
+            "arithmetic_bit_tests": 1207,
+            "arithmetic_shifts": 2286,
+            "kernel_multiply": 128
+          }
+        }
+      },
+      "expansion_work": {"expansion_visits": 6, "expansion_hash_bytes": 367},
+      "expanded_query_work": {
+        "guard_dependencies": 4,
+        "guard_bytes": 271,
+        "kernel_calls": 4,
+        "kernel_work_units": 4,
+        "kernel_add": 3,
+        "arithmetic_calls": 9,
+        "arithmetic_frames": 74,
+        "arithmetic_gates": 370,
+        "arithmetic_iterations": 6,
+        "arithmetic_connector_comparisons": 1,
+        "arithmetic_bit_tests": 6,
+        "arithmetic_shifts": 11,
+        "kernel_multiply": 1
+      }
+    },
+    "correction": {
+      "initial_consistent_candidates": 104,
+      "initial_graph": {"arity": 2, "calls": [["add", [0, 0]]], "output": 2, "kernel": null},
+      "before_correction_at_2_3": 4,
+      "initial_work": {
+        "candidate_proposals": 338,
+        "candidate_examples": 338,
+        "configuration_entries": 998,
+        "kernel_calls": 660,
+        "kernel_work_units": 660,
+        "kernel_add": 220,
+        "arithmetic_calls": 836,
+        "arithmetic_frames": 2152,
+        "arithmetic_gates": 10760,
+        "arithmetic_iterations": 408,
+        "arithmetic_connector_comparisons": 220,
+        "arithmetic_bit_tests": 408,
+        "arithmetic_shifts": 616,
+        "kernel_subtract": 220,
+        "kernel_multiply": 220,
+        "invalid_candidates": 24,
+        "consistent_candidates": 104
+      },
+      "old_expansion_work": {
+        "expansion_visits": 3,
+        "expansion_hash_bytes": 169,
+        "configuration_entries": 2,
+        "kernel_calls": 1,
+        "kernel_work_units": 1,
+        "kernel_add": 1,
+        "arithmetic_calls": 1,
+        "arithmetic_frames": 3,
+        "arithmetic_gates": 15,
+        "arithmetic_iterations": 0,
+        "arithmetic_connector_comparisons": 0,
+        "arithmetic_bit_tests": 0,
+        "arithmetic_shifts": 0
+      },
+      "repair_work": {
+        "candidate_proposals": 338,
+        "candidate_examples": 502,
+        "configuration_entries": 1469,
+        "kernel_calls": 967,
+        "kernel_work_units": 967,
+        "kernel_add": 332,
+        "arithmetic_calls": 1338,
+        "arithmetic_frames": 3463,
+        "arithmetic_gates": 17315,
+        "arithmetic_iterations": 679,
+        "arithmetic_connector_comparisons": 368,
+        "arithmetic_bit_tests": 679,
+        "arithmetic_shifts": 1010,
+        "kernel_subtract": 267,
+        "kernel_multiply": 368,
+        "invalid_candidates": 32,
+        "consistent_candidates": 24
+      },
+      "repaired_graph": {"arity": 2, "calls": [["multiply", [0, 1]]], "output": 2, "kernel": null},
+      "stale_rejected": true,
+      "guard_work": {"guard_dependencies": 3, "guard_bytes": 113},
+      "rebuild_work": {"expansion_visits": 3, "expansion_hash_bytes": 179},
+      "corrected": 128,
+      "unsafe": 0,
+      "total": 128,
+      "corrected_work": {
+        "guard_dependencies": 384,
+        "guard_bytes": 22912,
+        "kernel_calls": 128,
+        "kernel_work_units": 128,
+        "kernel_multiply": 128,
+        "arithmetic_calls": 597,
+        "arithmetic_frames": 5807,
+        "arithmetic_gates": 29035,
+        "arithmetic_iterations": 865,
+        "arithmetic_connector_comparisons": 128,
+        "arithmetic_bit_tests": 865,
+        "arithmetic_shifts": 1602
+      },
+      "unsafe_work": {
+        "kernel_calls": 128,
+        "kernel_work_units": 128,
+        "kernel_add": 128,
+        "arithmetic_calls": 128,
+        "arithmetic_frames": 1063,
+        "arithmetic_gates": 5315,
+        "arithmetic_iterations": 0,
+        "arithmetic_connector_comparisons": 0,
+        "arithmetic_bit_tests": 0,
+        "arithmetic_shifts": 0
+      }
+    },
+    "calculus": {
+      "correct": 128,
+      "total": 128,
+      "transformation_work": {"expansion_visits": 3, "expansion_hash_bytes": 180, "differentiation_steps": 2},
+      "evaluation_work": {
+        "configuration_entries": 1152,
+        "kernel_calls": 1024,
+        "kernel_work_units": 1024,
+        "kernel_zero": 128,
+        "kernel_one": 128,
+        "kernel_add": 384,
+        "arithmetic_calls": 1606,
+        "arithmetic_frames": 13368,
+        "arithmetic_gates": 66840,
+        "arithmetic_iterations": 1380,
+        "arithmetic_connector_comparisons": 384,
+        "arithmetic_bit_tests": 1380,
+        "arithmetic_shifts": 2376,
+        "kernel_multiply": 384
+      },
+      "graph": {
+        "arity": 2,
+        "calls": [
+          ["zero", []],
+          ["one", []],
+          ["add", [0, 1]],
+          ["add", [3, 2]],
+          ["multiply", [4, 4]],
+          ["multiply", [5, 4]],
+          ["multiply", [4, 5]],
+          ["add", [7, 8]]
+        ],
+        "output": 9,
+        "kernel": null
+      },
+      "transformer": "supplied"
+    },
+    "physics": {
+      "heat": {
+        "graph": {"arity": 2, "calls": [["real_add", [1, 1]], ["heat", [0, 2]]], "output": 3, "kernel": null},
+        "teacher_work": {"configuration_entries": 12, "kernel_calls": 8, "kernel_work_units": 96, "kernel_heat": 8},
+        "learning_work": {
+          "candidate_proposals": 154,
+          "candidate_examples": 160,
+          "configuration_entries": 360,
+          "kernel_calls": 200,
+          "kernel_work_units": 1333,
+          "kernel_heat": 103,
+          "invalid_candidates": 141,
+          "kernel_real_add": 97,
+          "consistent_candidates": 2
+        },
+        "banks": {
+          "promotion": {
+            "correct": 48,
+            "total": 48,
+            "max_difference": 5.684341886080802e-14,
+            "invariant_error": 1.1368683772161603e-13,
+            "range_violations": 0,
+            "baseline_work": {"configuration_entries": 144, "kernel_calls": 96, "kernel_work_units": 1152, "kernel_heat": 96},
+            "selected_work": {"configuration_entries": 144, "kernel_calls": 96, "kernel_work_units": 624, "kernel_real_add": 48, "kernel_heat": 48},
+            "baseline_seconds": 0.0006126000080257654,
+            "selected_seconds": 0.0006793999928049743
+          },
+          "final": {
+            "correct": 128,
+            "total": 128,
+            "max_difference": 5.684341886080802e-14,
+            "invariant_error": 1.1368683772161603e-13,
+            "range_violations": 0,
+            "baseline_work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 3072, "kernel_heat": 256},
+            "selected_work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 1664, "kernel_real_add": 128, "kernel_heat": 128},
+            "baseline_seconds": 0.0016339000139851123,
+            "selected_seconds": 0.0014136999961920083
+          }
+        }
+      },
+      "schrodinger": {
+        "graph": {"arity": 2, "calls": [["real_add", [1, 1]], ["schrodinger", [0, 2]]], "output": 3, "kernel": null},
+        "teacher_work": {"configuration_entries": 12, "kernel_calls": 8, "kernel_work_units": 96, "kernel_schrodinger": 8},
+        "learning_work": {
+          "candidate_proposals": 154,
+          "candidate_examples": 160,
+          "configuration_entries": 360,
+          "kernel_calls": 200,
+          "kernel_work_units": 1333,
+          "kernel_schrodinger": 103,
+          "invalid_candidates": 141,
+          "kernel_real_add": 97,
+          "consistent_candidates": 2
+        },
+        "banks": {
+          "promotion": {
+            "correct": 48,
+            "total": 48,
+            "max_difference": 2.482534153247273e-16,
+            "invariant_error": 4.440892098500626e-16,
+            "range_violations": null,
+            "baseline_work": {"configuration_entries": 144, "kernel_calls": 96, "kernel_work_units": 1152, "kernel_schrodinger": 96},
+            "selected_work": {"configuration_entries": 144, "kernel_calls": 96, "kernel_work_units": 624, "kernel_real_add": 48, "kernel_schrodinger": 48},
+            "baseline_seconds": 0.0006194000015966594,
+            "selected_seconds": 0.0005326999817043543
+          },
+          "final": {
+            "correct": 128,
+            "total": 128,
+            "max_difference": 2.482534153247273e-16,
+            "invariant_error": 4.440892098500626e-16,
+            "range_violations": null,
+            "baseline_work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 3072, "kernel_schrodinger": 256},
+            "selected_work": {
+              "configuration_entries": 384,
+              "kernel_calls": 256,
+              "kernel_work_units": 1664,
+              "kernel_real_add": 128,
+              "kernel_schrodinger": 128
+            },
+            "baseline_seconds": 0.0015925000188872218,
+            "selected_seconds": 0.0014191999798640609
+          }
+        }
+      }
+    },
+    "interference": {
+      "observed_populations": [0.0, 1.0000000000000004],
+      "phase_discarded_prediction": [0.5, 0.5],
+      "work": {"configuration_entries": 2, "kernel_calls": 2, "kernel_work_units": 24, "kernel_schrodinger": 2}
+    },
+    "retention": {
+      "correct": 512,
+      "total": 512,
+      "work": {
+        "configuration_entries": 512,
+        "kernel_calls": 512,
+        "kernel_work_units": 512,
+        "kernel_add": 256,
+        "arithmetic_calls": 904,
+        "arithmetic_frames": 3573,
+        "arithmetic_gates": 17865,
+        "arithmetic_iterations": 629,
+        "arithmetic_connector_comparisons": 256,
+        "arithmetic_bit_tests": 629,
+        "arithmetic_shifts": 1033,
+        "kernel_multiply": 256
+      }
+    },
+    "artifact": {"file": "composable-20260907-model.json", "bytes": 1894, "sha256": "50f09daaf1fc6f2e5f28e81944ae937f0016e8d8d41803b3e7e13842551857d6"},
+    "local_storage_record": {
+      "files": {"configurations.json": 1894, "evidence.json": 84259, "results.json": 16142, "status.json": 1424, "transcript.txt": 2337},
+      "bytes_excluding_this_census": 106056
+    }
+  },
+  "science": {
+    "author": "Arnav123-s",
+    "state": "completed",
+    "protocol": "docs/SCIENTIFIC_CURRICULUM_PROTOCOL.md",
+    "python": "3.13.5",
+    "limits": {"seconds": 300, "worker_bytes": 536870912},
+    "source_hashes": {
+      "docs/SCIENTIFIC_CURRICULUM_PROTOCOL.md": "3efdf7aaf2be4e261393d6f95773b92d4a316accbdd2df92098fe1cf6118d3f9",
+      "kavi/science_course.py": "5f4bb83b13c48a7c398f802193c90aeb7c0c66f3989d30a3258c98e2cedc6bbe",
+      "kavi/composable_configurations.py": "6ff795e8a0bd6bc9ac02ac1346bfca4872de90f24ae6d08167c8722eb8d38bbb",
+      "kavi/equation_kernels.py": "dfc0d5b69ccf2aed0f976cd87af7d8690bc37d2d4bd3e3fd00e98367798cb79c",
+      "scripts/run_scientific_curriculum.py": "9f1b7add5e072f4b91e7ed2fb683e7086c01e08f9d27772299b0b76cd0638805",
+      "scripts/configuration_run_support.py": "df2e6281dd853361faffc57f763468983002da582f66d40c96fe22f0ddd1452c"
+    },
+    "wall_seconds": 19.90429619999486,
+    "cpu_seconds": 0.546875,
+    "display_pacing_seconds": 19.489675899996655,
+    "worker_memory": {
+      "available_bytes": 20190711808,
+      "working_set_bytes": 26472448,
+      "peak_bytes": 26939392,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    },
+    "teaching_provenance": "Generated numerical examples, before the source-only instruction; source-derived annotations.",
+    "sources": [
+      {"author": "Fourier", "year": 1822, "language": "French", "role": "heat capacity and conduction"},
+      {"author": "Joule", "year": 1850, "language": "English", "role": "work converted to heat"},
+      {"author": "Einstein", "year": 1905, "language": "German", "role": "mass-energy relation"},
+      {"author": "Schrödinger", "year": 1926, "language": "German", "role": "interpretation of retained evolution kernel"}
+    ],
+    "learning": [
+      {
+        "round": 0,
+        "name": "sum",
+        "source": "arithmetic",
+        "lesson_count": 4,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 696,
+          "configuration_entries": 2062,
+          "kernel_calls": 1366,
+          "kernel_work_units": 1366,
+          "kernel_real_add": 418,
+          "kernel_real_subtract": 316,
+          "kernel_real_multiply": 316,
+          "kernel_real_divide": 316,
+          "invalid_candidates": 6,
+          "consistent_candidates": 34
+        },
+        "graph": {"arity": 2, "calls": [["real_add", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "difference",
+        "source": "arithmetic",
+        "lesson_count": 4,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 650,
+          "configuration_entries": 1927,
+          "kernel_calls": 1277,
+          "kernel_work_units": 1277,
+          "kernel_real_add": 305,
+          "kernel_real_subtract": 361,
+          "kernel_real_multiply": 305,
+          "kernel_real_divide": 306,
+          "invalid_candidates": 6,
+          "consistent_candidates": 17
+        },
+        "graph": {"arity": 2, "calls": [["real_subtract", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "work",
+        "source": "joule-1850",
+        "lesson_count": 4,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 718,
+          "configuration_entries": 2127,
+          "kernel_calls": 1409,
+          "kernel_work_units": 1409,
+          "kernel_real_add": 343,
+          "kernel_real_subtract": 321,
+          "kernel_real_multiply": 425,
+          "kernel_real_divide": 320,
+          "invalid_candidates": 6,
+          "consistent_candidates": 34
+        },
+        "graph": {"arity": 2, "calls": [["real_multiply", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "ratio",
+        "source": "arithmetic",
+        "lesson_count": 4,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 645,
+          "configuration_entries": 1912,
+          "kernel_calls": 1267,
+          "kernel_work_units": 1267,
+          "kernel_real_add": 304,
+          "kernel_real_subtract": 304,
+          "kernel_real_multiply": 304,
+          "kernel_real_divide": 355,
+          "invalid_candidates": 6,
+          "consistent_candidates": 17
+        },
+        "graph": {"arity": 2, "calls": [["real_divide", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "heat",
+        "source": "fourier-1822",
+        "lesson_count": 1,
+        "work": {
+          "candidate_proposals": 2343,
+          "candidate_examples": 2343,
+          "configuration_entries": 6987,
+          "kernel_calls": 4644,
+          "kernel_work_units": 4644,
+          "kernel_real_add": 1161,
+          "kernel_real_subtract": 1161,
+          "kernel_real_multiply": 1161,
+          "kernel_real_divide": 1161,
+          "invalid_candidates": 36,
+          "consistent_candidates": 126
+        },
+        "graph": {"arity": 3, "calls": [["real_add", [0, 0]], ["real_add", [3, 3]]], "output": 4, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "thermal_inverse",
+        "source": "fourier-1822",
+        "lesson_count": 1,
+        "work": {
+          "candidate_proposals": 2343,
+          "candidate_examples": 2343,
+          "configuration_entries": 6987,
+          "kernel_calls": 4644,
+          "kernel_work_units": 4644,
+          "kernel_real_add": 1161,
+          "kernel_real_subtract": 1161,
+          "kernel_real_multiply": 1161,
+          "kernel_real_divide": 1161,
+          "invalid_candidates": 36,
+          "consistent_candidates": 81
+        },
+        "graph": {"arity": 3, "calls": [["real_add", [0, 0]], ["real_divide", [0, 3]]], "output": 4, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "rest_energy",
+        "source": "einstein-1905",
+        "lesson_count": 1,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 594,
+          "configuration_entries": 1762,
+          "kernel_calls": 1168,
+          "kernel_work_units": 1168,
+          "kernel_real_add": 292,
+          "kernel_real_subtract": 292,
+          "kernel_real_multiply": 292,
+          "kernel_real_divide": 292,
+          "invalid_candidates": 12,
+          "consistent_candidates": 40
+        },
+        "graph": {"arity": 2, "calls": [["real_add", [0, 0]], ["real_add", [2, 2]]], "output": 3, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "mass_equivalent",
+        "source": "einstein-1905",
+        "lesson_count": 1,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 594,
+          "configuration_entries": 1762,
+          "kernel_calls": 1168,
+          "kernel_work_units": 1168,
+          "kernel_real_add": 292,
+          "kernel_real_subtract": 292,
+          "kernel_real_multiply": 292,
+          "kernel_real_divide": 292,
+          "invalid_candidates": 12,
+          "consistent_candidates": 24
+        },
+        "graph": {"arity": 2, "calls": [["real_add", [0, 0]], ["real_divide", [0, 2]]], "output": 3, "kernel": null}
+      },
+      {
+        "round": 0,
+        "name": "identity",
+        "source": "joule-1850",
+        "lesson_count": 4,
+        "work": {
+          "candidate_proposals": 69,
+          "candidate_examples": 99,
+          "configuration_entries": 285,
+          "kernel_calls": 186,
+          "kernel_work_units": 186,
+          "kernel_real_add": 44,
+          "kernel_real_subtract": 49,
+          "kernel_real_multiply": 43,
+          "kernel_real_divide": 50,
+          "invalid_candidates": 2,
+          "consistent_candidates": 9
+        },
+        "graph": {"arity": 1, "calls": [], "output": 0, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "sum",
+        "source": "arithmetic",
+        "lesson_count": 20,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 1240,
+          "configuration_entries": 3662,
+          "kernel_calls": 2422,
+          "kernel_work_units": 2422,
+          "kernel_real_add": 1090,
+          "kernel_real_subtract": 444,
+          "kernel_real_multiply": 444,
+          "kernel_real_divide": 444,
+          "invalid_candidates": 6,
+          "consistent_candidates": 34
+        },
+        "graph": {"arity": 2, "calls": [["real_add", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "difference",
+        "source": "arithmetic",
+        "lesson_count": 20,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 922,
+          "configuration_entries": 2727,
+          "kernel_calls": 1805,
+          "kernel_work_units": 1805,
+          "kernel_real_add": 369,
+          "kernel_real_subtract": 697,
+          "kernel_real_multiply": 369,
+          "kernel_real_divide": 370,
+          "invalid_candidates": 6,
+          "consistent_candidates": 17
+        },
+        "graph": {"arity": 2, "calls": [["real_subtract", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "work",
+        "source": "joule-1850",
+        "lesson_count": 20,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 1262,
+          "configuration_entries": 3727,
+          "kernel_calls": 2465,
+          "kernel_work_units": 2465,
+          "kernel_real_add": 471,
+          "kernel_real_subtract": 449,
+          "kernel_real_multiply": 1097,
+          "kernel_real_divide": 448,
+          "invalid_candidates": 6,
+          "consistent_candidates": 34
+        },
+        "graph": {"arity": 2, "calls": [["real_multiply", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "ratio",
+        "source": "arithmetic",
+        "lesson_count": 20,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 917,
+          "configuration_entries": 2712,
+          "kernel_calls": 1795,
+          "kernel_work_units": 1795,
+          "kernel_real_add": 368,
+          "kernel_real_subtract": 368,
+          "kernel_real_multiply": 368,
+          "kernel_real_divide": 691,
+          "invalid_candidates": 6,
+          "consistent_candidates": 17
+        },
+        "graph": {"arity": 2, "calls": [["real_divide", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "heat",
+        "source": "fourier-1822",
+        "lesson_count": 17,
+        "work": {
+          "candidate_proposals": 2343,
+          "candidate_examples": 2649,
+          "configuration_entries": 7905,
+          "kernel_calls": 5256,
+          "kernel_work_units": 5256,
+          "kernel_real_add": 1242,
+          "kernel_real_subtract": 1161,
+          "kernel_real_multiply": 1692,
+          "kernel_real_divide": 1161,
+          "invalid_candidates": 36,
+          "consistent_candidates": 12
+        },
+        "graph": {"arity": 3, "calls": [["real_multiply", [0, 1]], ["real_multiply", [2, 3]]], "output": 4, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "thermal_inverse",
+        "source": "fourier-1822",
+        "lesson_count": 17,
+        "work": {
+          "candidate_proposals": 2343,
+          "candidate_examples": 2484,
+          "configuration_entries": 7410,
+          "kernel_calls": 4926,
+          "kernel_work_units": 4926,
+          "kernel_real_add": 1188,
+          "kernel_real_subtract": 1161,
+          "kernel_real_multiply": 1218,
+          "kernel_real_divide": 1359,
+          "invalid_candidates": 36,
+          "consistent_candidates": 4
+        },
+        "graph": {"arity": 3, "calls": [["real_divide", [0, 1]], ["real_divide", [3, 2]]], "output": 4, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "rest_energy",
+        "source": "einstein-1905",
+        "lesson_count": 17,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 724,
+          "configuration_entries": 2152,
+          "kernel_calls": 1428,
+          "kernel_work_units": 1428,
+          "kernel_real_add": 320,
+          "kernel_real_subtract": 292,
+          "kernel_real_multiply": 524,
+          "kernel_real_divide": 292,
+          "invalid_candidates": 12,
+          "consistent_candidates": 6
+        },
+        "graph": {"arity": 2, "calls": [["real_multiply", [0, 1]], ["real_multiply", [1, 2]]], "output": 3, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "mass_equivalent",
+        "source": "einstein-1905",
+        "lesson_count": 17,
+        "work": {
+          "candidate_proposals": 594,
+          "candidate_examples": 648,
+          "configuration_entries": 1924,
+          "kernel_calls": 1276,
+          "kernel_work_units": 1276,
+          "kernel_real_add": 300,
+          "kernel_real_subtract": 292,
+          "kernel_real_multiply": 315,
+          "kernel_real_divide": 369,
+          "invalid_candidates": 12,
+          "consistent_candidates": 2
+        },
+        "graph": {"arity": 2, "calls": [["real_divide", [0, 1]], ["real_divide", [2, 1]]], "output": 3, "kernel": null}
+      },
+      {
+        "round": 1,
+        "name": "identity",
+        "source": "joule-1850",
+        "lesson_count": 20,
+        "work": {
+          "candidate_proposals": 69,
+          "candidate_examples": 243,
+          "configuration_entries": 685,
+          "kernel_calls": 442,
+          "kernel_work_units": 442,
+          "kernel_real_add": 92,
+          "kernel_real_subtract": 129,
+          "kernel_real_multiply": 91,
+          "kernel_real_divide": 130,
+          "invalid_candidates": 2,
+          "consistent_candidates": 9
+        },
+        "graph": {"arity": 1, "calls": [], "output": 0, "kernel": null}
+      }
+    ],
+    "lesson_presentations": 192,
+    "practice_before": {
+      "correct": 0,
+      "total": 13,
+      "work": {
+        "binding_visits": 75,
+        "relation_matches": 175,
+        "configuration_entries": 58,
+        "kernel_calls": 35,
+        "kernel_work_units": 35,
+        "kernel_real_add": 23,
+        "kernel_real_subtract": 2,
+        "kernel_real_divide": 9,
+        "kernel_real_multiply": 1
+      }
+    },
+    "practice_after": {
+      "correct": 13,
+      "total": 13,
+      "work": {
+        "binding_visits": 75,
+        "relation_matches": 175,
+        "configuration_entries": 58,
+        "kernel_calls": 35,
+        "kernel_work_units": 35,
+        "kernel_real_multiply": 13,
+        "kernel_real_subtract": 2,
+        "kernel_real_divide": 16,
+        "kernel_real_add": 4
+      }
+    },
+    "transfer": {
+      "sum": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 256, "kernel_calls": 128, "kernel_work_units": 128, "kernel_real_add": 128}
+      },
+      "difference": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 256, "kernel_calls": 128, "kernel_work_units": 128, "kernel_real_subtract": 128}
+      },
+      "work": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 256, "kernel_calls": 128, "kernel_work_units": 128, "kernel_real_multiply": 128}
+      },
+      "ratio": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 256, "kernel_calls": 128, "kernel_work_units": 128, "kernel_real_divide": 128}
+      },
+      "heat": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 256, "kernel_real_multiply": 256}
+      },
+      "thermal_inverse": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 256, "kernel_real_divide": 256}
+      },
+      "rest_energy": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 256, "kernel_real_multiply": 256}
+      },
+      "mass_equivalent": {
+        "correct": 128,
+        "total": 128,
+        "work": {"configuration_entries": 384, "kernel_calls": 256, "kernel_work_units": 256, "kernel_real_divide": 256}
+      },
+      "identity": {"correct": 128, "total": 128, "work": {"configuration_entries": 128}}
+    },
+    "structural_sharing": [],
+    "after_sharing": {
+      "correct": 1152,
+      "total": 1152,
+      "work": {
+        "configuration_entries": 2688,
+        "kernel_calls": 1536,
+        "kernel_work_units": 1536,
+        "kernel_real_add": 128,
+        "kernel_real_subtract": 128,
+        "kernel_real_multiply": 640,
+        "kernel_real_divide": 640
+      },
+      "bytes_before": 4205,
+      "bytes_after": 4205
+    },
+    "practice_after_sharing": {
+      "correct": 13,
+      "total": 13,
+      "work": {
+        "binding_visits": 75,
+        "relation_matches": 175,
+        "configuration_entries": 58,
+        "kernel_calls": 35,
+        "kernel_work_units": 35,
+        "kernel_real_multiply": 13,
+        "kernel_real_subtract": 2,
+        "kernel_real_divide": 16,
+        "kernel_real_add": 4
+      }
+    },
+    "old_composition_retention": {
+      "correct": 256,
+      "total": 256,
+      "work": {
+        "configuration_entries": 768,
+        "kernel_calls": 512,
+        "kernel_work_units": 512,
+        "kernel_add": 256,
+        "arithmetic_calls": 1144,
+        "arithmetic_frames": 5821,
+        "arithmetic_gates": 29105,
+        "arithmetic_iterations": 1094,
+        "arithmetic_connector_comparisons": 256,
+        "arithmetic_bit_tests": 1094,
+        "arithmetic_shifts": 1933,
+        "kernel_multiply": 256
+      }
+    },
+    "textbook_exam_opened": false,
+    "artifact": {
+      "file": "science-20260907-initial-model.json",
+      "bytes": 4205,
+      "sha256": "c65368f1eef2b6d32ede1edbeef71addd7229e302597fa0a1b5247e154bf2f17"
+    },
+    "local_storage_record": {
+      "files": {
+        "lessons.json": 19003,
+        "results.json": 56196,
+        "science-model.json": 4205,
+        "status.json": 1652,
+        "synthetic-examination.json": 136804,
+        "transcript.txt": 2459
+      },
+      "bytes_excluding_this_census": 220319
+    }
+  },
+  "published_lessons": {
+    "author": "Arnav123-s",
+    "state": "completed",
+    "protocol": "docs/PUBLISHED_LESSONS_PROTOCOL.md",
+    "python": "3.13.5",
+    "limits": {"seconds": 300, "worker_bytes": 536870912},
+    "source_hashes": {
+      "docs/PUBLISHED_LESSONS_PROTOCOL.md": "ba627db23a65f2861a3dd613cc351cc44bebe4a56f6dc4151f2bdc63f8c62dd9",
+      "kavi/published_learning.py": "062e0d3774734381848bcd5732397118cdc894d344223a8bef12c4e49ade1ea8",
+      "kavi/science_course.py": "5f4bb83b13c48a7c398f802193c90aeb7c0c66f3989d30a3258c98e2cedc6bbe",
+      "kavi/composable_configurations.py": "6ff795e8a0bd6bc9ac02ac1346bfca4872de90f24ae6d08167c8722eb8d38bbb",
+      "kavi/equation_kernels.py": "dfc0d5b69ccf2aed0f976cd87af7d8690bc37d2d4bd3e3fd00e98367798cb79c",
+      "scripts/run_published_lessons.py": "477e83cf7dfef5d891bcca6ede18e594cfc59c62f42e4ed5ce47434e0dddbc19"
+    },
+    "wall_seconds": 21.774690499994904,
+    "cpu_seconds": 0.453125,
+    "display_pacing_seconds": 21.32291440005065,
+    "worker_memory": {
+      "available_bytes": 20227522560,
+      "working_set_bytes": 26415104,
+      "peak_bytes": 26415104,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    },
+    "teaching_provenance": "Annotated worked quantities from identified published questions; not raw-text interpretation.",
+    "first_exam": {"correct": 0, "total": 8, "work": {"binding_visits": 8, "relation_matches": 96}},
+    "first_exam_complete": {"correct": 0, "total": 5, "unsupported": "Qualitative subparts and new quantitative relations"},
+    "teaching": [
+      {
+        "skill": "kinetic",
+        "source_problems": ["7-d6", "7-d8"],
+        "operations": ["science_rest_energy", "half", "science_work", "science_ratio"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 436,
+          "candidate_examples": 442,
+          "configuration_entries": 2320,
+          "kernel_calls": 1122,
+          "kernel_work_units": 1122,
+          "kernel_real_multiply": 762,
+          "kernel_half": 110,
+          "kernel_real_divide": 250,
+          "consistent_candidates": 2
+        },
+        "configuration": {"arity": 2, "calls": [["half", [0]], ["science_rest_energy", [2, 1]]], "output": 3, "kernel": null}
+      },
+      {
+        "skill": "relative",
+        "source_problems": ["7-d7"],
+        "operations": ["science_work", "science_mass_equivalent"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 597,
+          "candidate_examples": 597,
+          "configuration_entries": 3522,
+          "kernel_calls": 1755,
+          "kernel_work_units": 1755,
+          "kernel_real_multiply": 585,
+          "kernel_real_divide": 1170,
+          "consistent_candidates": 6
+        },
+        "configuration": {"arity": 3, "calls": [["science_mass_equivalent", [0, 2]], ["science_work", [1, 3]]], "output": 4, "kernel": null}
+      },
+      {
+        "skill": "ratio",
+        "source_problems": ["7-d9", "7-d8b"],
+        "operations": ["science_ratio", "science_work", "science_sum"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 338,
+          "candidate_examples": 364,
+          "configuration_entries": 1784,
+          "kernel_calls": 710,
+          "kernel_work_units": 710,
+          "kernel_real_divide": 254,
+          "kernel_real_multiply": 228,
+          "kernel_real_add": 228,
+          "consistent_candidates": 13
+        },
+        "configuration": {"arity": 2, "calls": [["science_ratio", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "skill": "boat",
+        "source_problems": ["7-d10b"],
+        "operations": ["cube_root", "square_root", "half", "double"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 37,
+          "candidate_examples": 37,
+          "configuration_entries": 105,
+          "kernel_calls": 68,
+          "kernel_work_units": 68,
+          "kernel_cube_root": 17,
+          "kernel_square_root": 17,
+          "kernel_half": 17,
+          "kernel_double": 17,
+          "consistent_candidates": 5
+        },
+        "configuration": {"arity": 1, "calls": [["cube_root", [0]]], "output": 1, "kernel": null}
+      },
+      {
+        "skill": "lift",
+        "source_problems": ["7-a1", "7-m6"],
+        "operations": ["science_heat", "science_thermal_inverse"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 6969,
+          "candidate_examples": 7629,
+          "configuration_entries": 53187,
+          "kernel_calls": 30372,
+          "kernel_work_units": 30372,
+          "kernel_real_multiply": 15846,
+          "kernel_real_divide": 14526,
+          "consistent_candidates": 330
+        },
+        "configuration": {"arity": 3, "calls": [["science_heat", [0, 1, 2]]], "output": 3, "kernel": null}
+      },
+      {
+        "skill": "remaining",
+        "source_problems": ["7-m6a"],
+        "operations": ["science_difference", "science_sum", "science_ratio"],
+        "depth": 2,
+        "work": {
+          "candidate_proposals": 338,
+          "candidate_examples": 338,
+          "configuration_entries": 1658,
+          "kernel_calls": 660,
+          "kernel_work_units": 660,
+          "kernel_real_subtract": 220,
+          "kernel_real_add": 220,
+          "kernel_real_divide": 220,
+          "invalid_candidates": 6,
+          "consistent_candidates": 13
+        },
+        "configuration": {"arity": 2, "calls": [["science_difference", [0, 1]]], "output": 2, "kernel": null}
+      },
+      {
+        "skill": "speed",
+        "source_problems": ["7-m6b", "7-d8"],
+        "operations": ["science_ratio", "double", "square_root"],
+        "depth": 3,
+        "work": {
+          "candidate_proposals": 3010,
+          "candidate_examples": 3014,
+          "configuration_entries": 17142,
+          "kernel_calls": 8900,
+          "kernel_work_units": 8900,
+          "kernel_real_divide": 5228,
+          "kernel_double": 1836,
+          "kernel_square_root": 1836,
+          "consistent_candidates": 2
+        },
+        "configuration": {"arity": 2, "calls": [["double", [0]], ["science_ratio", [2, 1]], ["square_root", [3]]], "output": 4, "kernel": null}
+      }
+    ],
+    "lesson_presentations": 16,
+    "corrected_practice": {
+      "correct": 8,
+      "total": 8,
+      "work": {
+        "binding_visits": 33,
+        "relation_matches": 175,
+        "configuration_entries": 50,
+        "kernel_calls": 27,
+        "kernel_work_units": 27,
+        "kernel_half": 6,
+        "kernel_real_multiply": 15,
+        "kernel_real_divide": 5,
+        "kernel_cube_root": 1
+      }
+    },
+    "old_practice_retention": {
+      "correct": 13,
+      "total": 13,
+      "work": {
+        "binding_visits": 75,
+        "relation_matches": 209,
+        "configuration_entries": 58,
+        "kernel_calls": 35,
+        "kernel_work_units": 35,
+        "kernel_real_multiply": 13,
+        "kernel_real_subtract": 2,
+        "kernel_real_divide": 16,
+        "kernel_real_add": 4
+      }
+    },
+    "old_definition_retention": {"unchanged": 31, "total": 31},
+    "final_exam": {
+      "correct": 4,
+      "total": 5,
+      "work": {
+        "binding_visits": 38,
+        "relation_matches": 435,
+        "configuration_entries": 35,
+        "kernel_calls": 15,
+        "kernel_work_units": 15,
+        "kernel_real_multiply": 8,
+        "kernel_real_subtract": 1,
+        "kernel_double": 1,
+        "kernel_real_divide": 4,
+        "kernel_square_root": 1
+      }
+    },
+    "final_problem_outcomes": [
+      {"id": "7-m1", "correct": true},
+      {"id": "7-m2", "correct": true},
+      {"id": "7-m3", "correct": true},
+      {"id": "7-m4", "correct": true},
+      {"id": "7-m5-bound-only", "correct": false}
+    ],
+    "final_exam_scope": "Five fresh annotated numerical targets; same independent textbook as the correction course.",
+    "artifact": {
+      "file": "science-20260907-published-model.json",
+      "bytes": 7025,
+      "sha256": "c8a80b1788c34edfd8169e68dd28308c080226735e111ff6c2f210615746e0cd"
+    },
+    "local_storage_record": {
+      "files": {"model.json": 7025, "results.json": 38133, "status.json": 1269, "transcript.txt": 1956},
+      "bytes_excluding_this_census": 48383
+    }
+  },
+  "bound_correction": {
+    "author": "Arnav123-s",
+    "state": "completed",
+    "protocol": "docs/PUBLISHED_BOUND_CORRECTION.md",
+    "python": "3.13.5",
+    "limits": {"seconds": 300, "worker_bytes": 536870912},
+    "source_hashes": {
+      "docs/PUBLISHED_BOUND_CORRECTION.md": "64ad02ba97e891047ecb93efc47a2a445a6bf3d76898c15d3368b30c414ff810",
+      "kavi/inequality_pathway.py": "b20985bb5482f6a7c4b9caa5dc62e760718a810787c09c9f5e9915a831feb746",
+      "scripts/correct_published_bound.py": "643fa56ecefce7b24a36da6148db894bcaa8afc9e527821069b57ba6f947d256"
+    },
+    "wall_seconds": 6.088208400004078,
+    "cpu_seconds": 0.109375,
+    "display_pacing_seconds": 6.0502085000043735,
+    "worker_memory": {
+      "available_bytes": 20182523904,
+      "working_set_bytes": 26611712,
+      "peak_bytes": 26611712,
+      "logical_cpus": 16,
+      "cpu_temperature": null,
+      "temperature_note": "No reliable CPU-temperature telemetry is available here."
+    },
+    "corrected_problem": {
+      "relation": "<",
+      "quantity": "radius",
+      "upper": 72.0,
+      "unit": "m",
+      "explanation": "Positive frictional loss gives v² < 2g(descent − rise). At the crest, N=fmg and mg−N=mv²/r give v²=(1−f)gr. Since g>0 and 1−f>0, dividing preserves the inequality: r < 2(descent−rise)/(1−f).",
+      "status": "learned numerical configuration with supplied physical interpretation and proof rule",
+      "correct": true
+    },
+    "retention": {
+      "correct": 17,
+      "total": 17,
+      "work": {
+        "binding_visits": 112,
+        "relation_matches": 615,
+        "configuration_entries": 93,
+        "kernel_calls": 50,
+        "kernel_work_units": 50,
+        "kernel_real_multiply": 21,
+        "kernel_real_subtract": 3,
+        "kernel_double": 1,
+        "kernel_real_divide": 20,
+        "kernel_square_root": 1,
+        "kernel_real_add": 4
+      }
+    },
+    "new_unseen_inequality_questions": 0,
+    "learning_work": {
+      "candidate_proposals": 601,
+      "candidate_examples": 601,
+      "configuration_entries": 2809,
+      "kernel_calls": 1166,
+      "kernel_work_units": 1166,
+      "kernel_real_subtract": 246,
+      "kernel_real_add": 220,
+      "kernel_real_divide": 398,
+      "invalid_candidates": 6,
+      "consistent_candidates": 22,
+      "kernel_one": 14,
+      "kernel_half": 18,
+      "kernel_double": 92,
+      "kernel_real_multiply": 178
+    },
+    "artifact": {
+      "file": "science-20260907-radius-bound.json",
+      "bytes": 3980,
+      "sha256": "08d503a7c38baa044f5f512d78d93c5da8961fe13d86baa4f69cf70fddc105f7"
+    },
+    "local_storage_record": {"files": {"model.json": 3980, "results.json": 20830, "status.json": 282, "transcript.txt": 359}, "bytes_excluding_this_census": 25451}
+  },
+  "retrieval": {
+    "kind": "Source and dictionary lookup, not learned semantic competence.",
+    "source_documents": 24,
+    "passages": 700,
+    "index_bytes": 120708,
+    "index_sha256": "46631a15b9faa11de84dad60899bf934673cf3674b413dde7ead9e6fe8e8b652",
+    "dictionary": {
+      "url": "https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/packages/corpora/wordnet.zip",
+      "sha256": "cbda5ea6eef7f36a97a43d4a75f85e07fccbb4f23657d27b4ccbc93e2646ab59",
+      "compressed_bytes": 10775600,
+      "expanded_bytes": 36353991,
+      "lexical_entries": 147306,
+      "sense_count": 117659,
+      "license_sha256": "7731175a77952e259390b496fab905e57118b8d19ad3a8383c67eee724ff443f",
+      "wall_seconds": 5.985816500004148,
+      "cpu_seconds": 1.109375,
+      "worker_memory": {
+        "available_bytes": 20068372480,
+        "working_set_bytes": 132399104,
+        "peak_bytes": 143147008,
+        "logical_cpus": 16,
+        "cpu_temperature": null,
+        "temperature_note": "No reliable CPU-temperature telemetry is available here."
+      }
+    },
+    "broad_language_evaluation": null,
+    "conversational_configuration_updates": false
+  },
+  "english_prototype": {
+    "status": "Historical pause before the subsequent English courses",
+    "scope": "Status at the original alignment audit; not the current learning status.",
+    "subsequent_results": ["2026-09-07-published-english.json", "2026-09-07-incremental-inquiry-transfer.json"],
+    "model": null,
+    "test_result": null
+  }
+}

@@ -18,6 +18,8 @@ The first [ordered-relation course](../experiments/2026-09-08-pcl-relations.md) 
 
 The first [discrete-logic course](../experiments/2026-09-08-pcl-discrete.md) teaches all 18 primitive truth cases from original textbook tables. Three coupled runs retain the first eight cases and score 32/32 on compound cases using supplied syntax traversal and learned truth functions. This is compositional reuse under an installed execution grammar, not acquired natural-language decomposition or general discrete-mathematics mastery.
 
+The [harder logic and English bridge](../experiments/2026-09-08-pcl-english-logic.md) retains those frozen circuits: all three pass 36 additional table cases and two small source puzzles using supplied formalization and assignment search. A separate phrase circuit learns eight annotated English examples, handles five familiar masked patterns and fails all three new formulations. Its dynamics remain uncoupled; this is not a learned general English parser or a unified internal world.
+
 “Phase” names a component's position in a finite cycle. “Circuit” names the executable relationships between components. “Learner” names supervised selection of those relationships. PCL is a working engineering name, not a claim of a new mathematical class or a literal quantum brain. Earlier Kavi implementations remain comparison systems.
 
 ## Design contract

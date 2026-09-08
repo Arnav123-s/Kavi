@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="360pt" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Arnav123-s</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360
+L 720 360
+L 720 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 230.4 270
+L 684 270
+L 684 72
+L 230.4 72
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 230.4 81
+L 624.834783 81
+L 624.834783 118.894737
+L 230.4 118.894737
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #d9dee7"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 230.4 81
+L 624.834783 81
+L 624.834783 118.894737
+L 230.4 118.894737
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #267c72"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 230.4 128.368421
+L 624.834783 128.368421
+L 624.834783 166.263158
+L 230.4 166.263158
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #d9dee7"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 230.4 128.368421
+L 624.834783 128.368421
+L 624.834783 166.263158
+L 230.4 166.263158
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #267c72"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 230.4 175.736842
+L 624.834783 175.736842
+L 624.834783 213.631579
+L 230.4 213.631579
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #d9dee7"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 230.4 175.736842
+L 624.834783 175.736842
+L 624.834783 213.631579
+L 230.4 213.631579
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #267c72"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 230.4 223.105263
+L 624.834783 223.105263
+L 624.834783 261
+L 230.4 261
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #d9dee7"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 230.4 223.105263
+L 230.4 223.105263
+L 230.4 261
+L 230.4 261
+z
+" clip-path="url(#pa2e95a80ba)" style="fill: #267c72"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mb2241fe32f" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb2241fe32f" x="230.4" y="270" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="230.4" y="285.357422" transform="rotate(-0 230.4 285.357422)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#mb2241fe32f" x="329.008696" y="270" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="329.008696" y="285.357422" transform="rotate(-0 329.008696 285.357422)">25</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#mb2241fe32f" x="427.617391" y="270" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="427.617391" y="285.357422" transform="rotate(-0 427.617391 285.357422)">50</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mb2241fe32f" x="526.226087" y="270" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="526.226087" y="285.357422" transform="rotate(-0 526.226087 285.357422)">75</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#mb2241fe32f" x="624.834783" y="270" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="624.834783" y="285.357422" transform="rotate(-0 624.834783 285.357422)">100</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="457.2" y="300.358281" transform="rotate(-0 457.2 300.358281)">Correct (%) — different denominators shown at right</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6">
+      <defs>
+       <path id="m6be2f9a6a8" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m6be2f9a6a8" x="230.4" y="99.947368" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end" x="223.4" y="104.126509" transform="rotate(-0 223.4 104.126509)">Additional logic cases</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m6be2f9a6a8" x="230.4" y="147.315789" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end" x="223.4" y="151.49493" transform="rotate(-0 223.4 151.49493)">Multi-premise puzzles</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m6be2f9a6a8" x="230.4" y="194.684211" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end" x="223.4" y="198.863351" transform="rotate(-0 223.4 198.863351)">English: familiar pattern</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m6be2f9a6a8" x="230.4" y="242.052632" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end" x="223.4" y="246.231772" transform="rotate(-0 223.4 246.231772)">English: new wording</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_11">
+    <path d="M 230.4 270
+L 230.4 72
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 230.4 270
+L 684 270
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start" x="632.723478" y="102.80479" transform="rotate(-0 632.723478 102.80479)">36/36</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start" x="632.723478" y="150.173211" transform="rotate(-0 632.723478 150.173211)">2/2</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start" x="632.723478" y="197.541632" transform="rotate(-0 632.723478 197.541632)">5/5</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start" x="632.723478" y="244.910053" transform="rotate(-0 632.723478 244.910053)">0/3</text>
+   </g>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: middle" x="360" y="22.9575" transform="rotate(-0 360 22.9575)">Stronger formal tests; English transfer remains narrow</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start" x="230.4" y="50.4" transform="rotate(-0 230.4 50.4)">All three seeds have these scores. Gray marks unsolved cases.</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="25.2" y="345.6" transform="rotate(-0 25.2 345.6)">Arnav123-s | Logic uses supplied formalization/search. English uses supplied atomic clause spans.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pa2e95a80ba">
+   <rect x="230.4" y="72" width="453.6" height="198"/>
+  </clipPath>
+ </defs>
+</svg>

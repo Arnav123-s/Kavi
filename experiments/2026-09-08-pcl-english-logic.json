@@ -1,0 +1,687 @@
+{
+  "author": "Arnav123-s",
+  "state": "completed",
+  "protocol": "docs/PCL_ENGLISH_LOGIC_PROTOCOL.md",
+  "python": "3.13.5",
+  "limits": {
+    "seconds": 300,
+    "worker_bytes": 536870912
+  },
+  "source_hashes": {
+    "docs/PCL_ENGLISH_LOGIC_PROTOCOL.md": "620dca22d74b922f0d6c18374f5cca27a8305715b4e5bcdb7e9548e7c8936e2f",
+    "scripts/run_pcl_english_logic.py": "78068167423d240a1b124ae7ab2d3d7d8074fb7a16bbb6bc7dacc4c1267d9ab5",
+    "scripts/pcl_english_logic_source.py": "55dd15907726b305b9b0771f4861eff534939c40ef64cfa69678baa2d4aa6677",
+    "curriculum/pcl-english-logic-annotations.json": "9fa902be3a9afea7c123181a8e9d1ff33eec2c583ba59633b58b0b530a108482",
+    "kavi/phase/english_logic.py": "8f7ccf926c0a9254d5e6a4fdb61f3d427b289638e28fbd2a5a489e3f81323d0a",
+    "kavi/phase/reasoning.py": "816afb5502b1a637cae76833c8fd3c932c6155e1e5c92551d19c30f93d1bc472",
+    "kavi/phase/logic.py": "393bfcca3f9e3db360106c11c0f67d727f0188eab98245f8c3fb9b81e231b35a",
+    "kavi/phase/runtime.py": "e2ea44b35952af872ec6e637451d9095f5a208a087d4f43570f2180fb5294002",
+    "kavi/phase/model.py": "4662e5529730bc690aa5368715e59d05293cac9724d8befe97912cc07d618827",
+    "kavi/phase/layers.py": "7ef57720a2121fc0b94b6395c7dbb658e1c32af550008861947422389390f818",
+    "kavi/phase/learning.py": "8c94b359e4ab4d4682a9ad0cc082e67c5588ab2364ef79bf7cb2f4f1e6a77f22",
+    "kavi/phase/selection.py": "8a41129e677f194f1082283ec77508730c0fa4af4641cf2f4072408278ce0eb1",
+    "kavi/phase/evaluation.py": "865076a99f9390e8578115391b5d7ce94c4aac71d0a4c051583a910ea27e41e6",
+    "scripts/pcl_discrete_source.py": "9565905e6c86d8b3b4e8e19ba4a681dcac33234bfe893af30ae64fb0bc4772fc",
+    "scripts/run_pcl_discrete.py": "e53994335e6fe3c239dda7030793275cadbae0f317ee69ddea37036a75eab628",
+    "scripts/configuration_run_support.py": "df2e6281dd853361faffc57f763468983002da582f66d40c96fe22f0ddd1452c"
+  },
+  "english_source_sha256": "953b886b8b046b569e183f8304ea9ee7ebe899b0c5de8a48f8a7bec6ce6bfe25",
+  "hard_cases": 36,
+  "hard": {
+    "7": {
+      "tables": {
+        "total": 36,
+        "correct": 36,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "puzzles": {
+        "holmes": {
+          "correct": true,
+          "solutions": [
+            {
+              "T": 0,
+              "S": 1,
+              "P": 1,
+              "N": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        },
+        "trolls": {
+          "correct": true,
+          "solutions": [
+            {
+              "A": 1,
+              "B": 0,
+              "C": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        }
+      },
+      "work": {
+        "logic_syntax_visits": 1268,
+        "logic_execution_steps": 860,
+        "logic_gate_calls": 408,
+        "phase_impulse_checks": 7896,
+        "phase_ticks": 1128,
+        "phase_coupling_checks": 4512,
+        "phase_updates": 4512,
+        "phase_readout_checks": 6120,
+        "phase_readout_coordinates": 24480,
+        "logic_assignments": 24
+      },
+      "input_sha256": "a9b154e505eebfa419193012823a124ed42b92c7c6b3fed614ab3d3c8e3e0140"
+    },
+    "19": {
+      "tables": {
+        "total": 36,
+        "correct": 36,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "puzzles": {
+        "holmes": {
+          "correct": true,
+          "solutions": [
+            {
+              "T": 0,
+              "S": 1,
+              "P": 1,
+              "N": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        },
+        "trolls": {
+          "correct": true,
+          "solutions": [
+            {
+              "A": 1,
+              "B": 0,
+              "C": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        }
+      },
+      "work": {
+        "logic_syntax_visits": 1268,
+        "logic_execution_steps": 860,
+        "logic_gate_calls": 408,
+        "phase_impulse_checks": 7896,
+        "phase_ticks": 1128,
+        "phase_coupling_checks": 3384,
+        "phase_updates": 4512,
+        "phase_readout_checks": 6120,
+        "phase_readout_coordinates": 24480,
+        "logic_assignments": 24
+      },
+      "input_sha256": "47f83eebdd95f02d903190369483c67aec883adbf2b3056920f875b9ba690c0b"
+    },
+    "41": {
+      "tables": {
+        "total": 36,
+        "correct": 36,
+        "unresolved": 0,
+        "wrong": 0
+      },
+      "puzzles": {
+        "holmes": {
+          "correct": true,
+          "solutions": [
+            {
+              "T": 0,
+              "S": 1,
+              "P": 1,
+              "N": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        },
+        "trolls": {
+          "correct": true,
+          "solutions": [
+            {
+              "A": 1,
+              "B": 0,
+              "C": 1
+            }
+          ],
+          "unresolved_assignments": 0,
+          "complete": true
+        }
+      },
+      "work": {
+        "logic_syntax_visits": 1268,
+        "logic_execution_steps": 860,
+        "logic_gate_calls": 408,
+        "phase_impulse_checks": 7896,
+        "phase_ticks": 1128,
+        "phase_coupling_checks": 3384,
+        "phase_updates": 4512,
+        "phase_readout_checks": 6120,
+        "phase_readout_coordinates": 24480,
+        "logic_assignments": 24
+      },
+      "input_sha256": "27c94aa4cc2fc9264b5c8a797d54daf5178c5eb4363f5becd3dc35a8365ebb0c"
+    }
+  },
+  "arms": {
+    "7": {
+      "stages": [
+        {
+          "count": 4,
+          "selection": {
+            "candidates": 195,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 195,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "614746a33d5ccbffe742ef0045a5e7a04d7ca9641db370bc984137aa702dabed",
+            "successor_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056"
+          },
+          "teaching": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 16,
+            "phase_impulse_checks": 82008,
+            "phase_ticks": 6834,
+            "phase_updates": 27336,
+            "phase_serialized_bytes": 62516,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3835,
+            "phase_candidates": 195,
+            "phase_readout_checks": 3120,
+            "phase_readout_coordinates": 12480,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 772,
+            "phase_coupling_checks": 20392
+          },
+          "check_work": {
+            "phase_impulse_checks": 192,
+            "phase_ticks": 16,
+            "phase_updates": 64,
+            "phase_readout_checks": 16,
+            "phase_readout_coordinates": 64,
+            "phase_evaluation_cases": 4
+          }
+        },
+        {
+          "count": 8,
+          "selection": {
+            "candidates": 120,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 120,
+            "seed": 7,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "successor_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 53,
+            "phase_impulse_checks": 193584,
+            "phase_ticks": 16132,
+            "phase_updates": 64528,
+            "phase_readout_checks": 11112,
+            "phase_readout_coordinates": 44448,
+            "phase_serialized_bytes": 44884,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3835,
+            "phase_candidates": 120,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 772,
+            "phase_coupling_checks": 48590
+          },
+          "check_work": {
+            "phase_impulse_checks": 636,
+            "phase_ticks": 53,
+            "phase_updates": 212,
+            "phase_readout_checks": 84,
+            "phase_readout_coordinates": 336,
+            "phase_evaluation_cases": 12
+          }
+        }
+      ],
+      "final": {
+        "same_pattern": {
+          "total": 5,
+          "correct": 5,
+          "unresolved": 0
+        },
+        "new_pattern": {
+          "total": 3,
+          "correct": 0,
+          "unresolved": 3
+        }
+      },
+      "valuation_checks": {
+        "total": 32,
+        "correct": 20,
+        "unresolved": 12,
+        "wrong": 0
+      },
+      "work": {
+        "english_input_characters": 317,
+        "phase_impulse_checks": 828,
+        "phase_ticks": 91,
+        "phase_updates": 364,
+        "phase_readout_checks": 335,
+        "phase_readout_coordinates": 1340,
+        "logic_syntax_visits": 80,
+        "logic_execution_steps": 60,
+        "logic_gate_calls": 20,
+        "phase_coupling_checks": 240
+      },
+      "artifact": {
+        "bytes": 448,
+        "sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+      }
+    },
+    "19": {
+      "stages": [
+        {
+          "count": 4,
+          "selection": {
+            "candidates": 192,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 192,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "614746a33d5ccbffe742ef0045a5e7a04d7ca9641db370bc984137aa702dabed",
+            "successor_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056"
+          },
+          "teaching": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 16,
+            "phase_impulse_checks": 81624,
+            "phase_ticks": 6802,
+            "phase_updates": 27208,
+            "phase_serialized_bytes": 61148,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3810,
+            "phase_candidates": 192,
+            "phase_readout_checks": 3072,
+            "phase_readout_coordinates": 12288,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 749,
+            "phase_coupling_checks": 19260
+          },
+          "check_work": {
+            "phase_impulse_checks": 192,
+            "phase_ticks": 16,
+            "phase_updates": 64,
+            "phase_readout_checks": 16,
+            "phase_readout_coordinates": 64,
+            "phase_evaluation_cases": 4
+          }
+        },
+        {
+          "count": 8,
+          "selection": {
+            "candidates": 96,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 96,
+            "seed": 19,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "successor_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 53,
+            "phase_impulse_checks": 173616,
+            "phase_ticks": 14468,
+            "phase_updates": 57872,
+            "phase_readout_checks": 8916,
+            "phase_readout_coordinates": 35664,
+            "phase_serialized_bytes": 35682,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3810,
+            "phase_candidates": 96,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 749,
+            "phase_coupling_checks": 40473
+          },
+          "check_work": {
+            "phase_impulse_checks": 636,
+            "phase_ticks": 53,
+            "phase_updates": 212,
+            "phase_readout_checks": 84,
+            "phase_readout_coordinates": 336,
+            "phase_evaluation_cases": 12
+          }
+        }
+      ],
+      "final": {
+        "same_pattern": {
+          "total": 5,
+          "correct": 5,
+          "unresolved": 0
+        },
+        "new_pattern": {
+          "total": 3,
+          "correct": 0,
+          "unresolved": 3
+        }
+      },
+      "valuation_checks": {
+        "total": 32,
+        "correct": 20,
+        "unresolved": 12,
+        "wrong": 0
+      },
+      "work": {
+        "english_input_characters": 317,
+        "phase_impulse_checks": 828,
+        "phase_ticks": 91,
+        "phase_updates": 364,
+        "phase_readout_checks": 335,
+        "phase_readout_coordinates": 1340,
+        "logic_syntax_visits": 80,
+        "logic_execution_steps": 60,
+        "logic_gate_calls": 20,
+        "phase_coupling_checks": 240
+      },
+      "artifact": {
+        "bytes": 448,
+        "sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+      }
+    },
+    "41": {
+      "stages": [
+        {
+          "count": 4,
+          "selection": {
+            "candidates": 195,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 195,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "614746a33d5ccbffe742ef0045a5e7a04d7ca9641db370bc984137aa702dabed",
+            "successor_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056"
+          },
+          "teaching": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 0,
+            "correct": 0,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 16,
+            "phase_impulse_checks": 82512,
+            "phase_ticks": 6876,
+            "phase_updates": 27504,
+            "phase_serialized_bytes": 62460,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3857,
+            "phase_candidates": 195,
+            "phase_readout_checks": 3120,
+            "phase_readout_coordinates": 12480,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 791,
+            "phase_coupling_checks": 20644
+          },
+          "check_work": {
+            "phase_impulse_checks": 192,
+            "phase_ticks": 16,
+            "phase_updates": 64,
+            "phase_readout_checks": 16,
+            "phase_readout_coordinates": 64,
+            "phase_evaluation_cases": 4
+          }
+        },
+        {
+          "count": 8,
+          "selection": {
+            "candidates": 110,
+            "accepted": true,
+            "errors": 0,
+            "finite_retention_passed": true,
+            "whole_candidates": 256,
+            "compatible_candidates": 110,
+            "seed": 41,
+            "readout": "exact",
+            "template_unchanged": true,
+            "previous_sha256": "e6a72c2ddc92fc9dbd45874b09f2b7d0e2d824ba2a3b097c69af99c84a75d056",
+            "successor_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+          },
+          "teaching": {
+            "total": 8,
+            "correct": 8,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "protected": {
+            "total": 4,
+            "correct": 4,
+            "unresolved": 0,
+            "wrong": 0,
+            "model_sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384",
+            "frozen_unchanged": true
+          },
+          "learning_work": {
+            "phase_evidence_events": 53,
+            "phase_impulse_checks": 187092,
+            "phase_ticks": 15591,
+            "phase_updates": 62364,
+            "phase_readout_checks": 10188,
+            "phase_readout_coordinates": 40752,
+            "phase_serialized_bytes": 40891,
+            "phase_whole_circuit_proposals": 256,
+            "phase_assembled_rules": 3857,
+            "phase_candidates": 110,
+            "phase_inheritance_choices": 3060,
+            "phase_new_coupling_proposals": 791,
+            "phase_coupling_checks": 45405
+          },
+          "check_work": {
+            "phase_impulse_checks": 636,
+            "phase_ticks": 53,
+            "phase_updates": 212,
+            "phase_readout_checks": 84,
+            "phase_readout_coordinates": 336,
+            "phase_evaluation_cases": 12
+          }
+        }
+      ],
+      "final": {
+        "same_pattern": {
+          "total": 5,
+          "correct": 5,
+          "unresolved": 0
+        },
+        "new_pattern": {
+          "total": 3,
+          "correct": 0,
+          "unresolved": 3
+        }
+      },
+      "valuation_checks": {
+        "total": 32,
+        "correct": 20,
+        "unresolved": 12,
+        "wrong": 0
+      },
+      "work": {
+        "english_input_characters": 317,
+        "phase_impulse_checks": 828,
+        "phase_ticks": 91,
+        "phase_updates": 364,
+        "phase_readout_checks": 335,
+        "phase_readout_coordinates": 1340,
+        "logic_syntax_visits": 80,
+        "logic_execution_steps": 60,
+        "logic_gate_calls": 20,
+        "phase_coupling_checks": 240
+      },
+      "artifact": {
+        "bytes": 448,
+        "sha256": "4c66f97b5f3435a4672c7d567e872b1ed810ad9e474bebebe04ac22bee4b6384"
+      }
+    }
+  },
+  "controls": {
+    "constant_forward_correct": 5,
+    "total": 8,
+    "untrained_correct": 0
+  },
+  "logic_retention": {
+    "7": {
+      "correct": 18,
+      "total": 18,
+      "work": {
+        "phase_impulse_checks": 364,
+        "phase_ticks": 52,
+        "phase_coupling_checks": 208,
+        "phase_updates": 208,
+        "phase_readout_checks": 270,
+        "phase_readout_coordinates": 1080
+      }
+    },
+    "19": {
+      "correct": 18,
+      "total": 18,
+      "work": {
+        "phase_impulse_checks": 364,
+        "phase_ticks": 52,
+        "phase_coupling_checks": 156,
+        "phase_updates": 208,
+        "phase_readout_checks": 270,
+        "phase_readout_coordinates": 1080
+      }
+    },
+    "41": {
+      "correct": 18,
+      "total": 18,
+      "work": {
+        "phase_impulse_checks": 364,
+        "phase_ticks": 52,
+        "phase_coupling_checks": 156,
+        "phase_updates": 208,
+        "phase_readout_checks": 270,
+        "phase_readout_coordinates": 1080
+      }
+    }
+  },
+  "wall_seconds": 10.454229000024498,
+  "cpu_seconds": 1.28125,
+  "display_pacing_seconds": 9.255212499992922,
+  "worker_memory": {
+    "available_bytes": 18849120256,
+    "working_set_bytes": 26447872,
+    "peak_bytes": 26767360,
+    "logical_cpus": 16,
+    "cpu_temperature": null,
+    "temperature_note": "No reliable CPU-temperature telemetry is available here."
+  },
+  "storage": {
+    "files": {
+      "english-19.json": 448,
+      "english-41.json": 448,
+      "english-7.json": 448,
+      "results.json": 22365,
+      "status.json": 2073,
+      "transcript.txt": 2369
+    },
+    "bytes_excluding_this_census": 28151
+  }
+}

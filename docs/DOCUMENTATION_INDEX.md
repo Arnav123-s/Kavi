@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The new [PCL architecture and development plan](PCL_DESIGN.md) defines a stable template and complete learned circuit generations, with coupled phase activity and supervised reconstruction. The implementation has mechanism regression checks; general language, learned visual world models and psychology understanding remain development targets. The [completed psychology comparison](../experiments/2026-09-08-psychology-transfer.md) records the earlier event learner's failed generalization test.
+
 Start with the [configuration-learning report](../experiments/2026-09-07-incremental-inquiry-transfer.md). It includes five completed courses, learned clarification decisions, direct recurrent English, provisional executable connections, the grouping error, self-assessment failures, diagrams and [measurements](../experiments/2026-09-07-incremental-inquiry-transfer.json). The protocols are [incremental teaching](INCREMENTAL_ENGLISH_PROTOCOL.md), [learned inquiry](LEARNED_INQUIRY_PROTOCOL.md), [older-path transfer](PATHWAY_TRANSFER_PROTOCOL.md), [direct event learning](DIRECT_EVENT_LEARNING_PROTOCOL.md) and [provisional adaptation](ADAPTIVE_EVENT_PROTOCOL.md).
 
 The [original-notebook curriculum](PRIMARY_NOTEBOOK_CURRICULUM.md) and [source catalogue](../curriculum/primary-notebooks-20260907.json) record ten scientific, philosophical and first-person sources, including edition and diagnostic-provenance distinctions. This is source research; the catalogue has not been used for teaching.

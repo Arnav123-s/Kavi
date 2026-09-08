@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The new [PCL architecture and development plan](docs/PCL_DESIGN.md) defines a stable template and complete learned circuit generations, with coupled phase activity and supervised reconstruction. The implementation has mechanism regression checks; general language, learned visual world models and psychology understanding remain development targets. The [completed psychology comparison](experiments/2026-09-08-psychology-transfer.md) records the earlier event learner's failed generalization test.
+
 The latest [configuration-learning report](experiments/2026-09-07-incremental-inquiry-transfer.md) records five completed English courses, including learned recurrent word transitions and provisional executable connections during input. The latest model retains 168/168 teaching answers but answers only 29/102 follow-up questions with adaptation; the same adaptive constructor scored 31/102 before the extra teaching. The results do not establish broad understanding, reliable self-assessment or learned algebra.
 
 The [original-notebook curriculum](docs/PRIMARY_NOTEBOOK_CURRICULUM.md) catalogues scientific and philosophical notebooks and published first-person accounts. It records edition, language and provenance. These sources have not been taught to the new configuration models.

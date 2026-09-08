@@ -2,6 +2,8 @@
 
 Author: [Arnav123-s](https://github.com/Arnav123-s)
 
+The [PCL situation-continuation report](../experiments/2026-09-08-pcl-situations.md) documents independent questions from one current state, shared execution limits, and the demonstrated order-insensitivity of the earlier successful classification circuits. This is an execution extension and structural diagnostic, not another teaching course.
+
 The first [PCL classification report](../experiments/2026-09-08-pcl-classification.md) records original-data teaching, phase-region rules, exact-state controls, a conventional classifier, earlier-answer retention and costs. See its [protocol](PCL_CLASSIFICATION_PROTOCOL.md), [readout design](PCL_PHASE_REGIONS.md) and [aggregate evidence](../experiments/2026-09-08-pcl-classification.json).
 
 The new [PCL architecture and development plan](PCL_DESIGN.md) defines a stable template and complete learned circuit generations, with coupled phase activity and supervised reconstruction. Its central target is an internal executable world whose learned relationships and rules form the retained configuration; visualization is optional. The implementation has mechanism regression checks; this learned world, general language and psychology understanding remain development targets. The [completed psychology comparison](../experiments/2026-09-08-psychology-transfer.md) records the earlier event learner's failed generalization test.

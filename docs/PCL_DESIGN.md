@@ -12,6 +12,8 @@ The intended outcome is a conversational learner whose acquired configuration fo
 
 The first [source-based PCL classification course](../experiments/2026-09-08-pcl-classification.md) is now complete. Learned phase-region readouts score 20, 20 and 24 of 30 held-out Iris specimens across three fixed seeds and retain all 90 teaching outcomes. Successful region models use no couplings; the strongest selects petal inputs and ignores sepal inputs. This is narrow rule classification, not the internal-world target.
 
+The subsequent [situation-continuation extension](../experiments/2026-09-08-pcl-situations.md) allows independent continuations from a shared current state without replaying its input. Every branch shares one execution budget. The saved classification circuits are provably insensitive to event order; useful ordered relationships must still be acquired and measured. Branching supplies execution support, not learned world semantics.
+
 “Phase” names a component's position in a finite cycle. “Circuit” names the executable relationships between components. “Learner” names supervised selection of those relationships. PCL is a working engineering name, not a claim of a new mathematical class or a literal quantum brain. Earlier Kavi implementations remain comparison systems.
 
 ## Design contract

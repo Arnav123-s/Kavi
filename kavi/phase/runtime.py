@@ -10,6 +10,20 @@ class PhaseActivity:
         self.phases = (0,) * len(configuration.moduli)
         self.closed = self.failed = False
 
+    def fork(self):
+        """Continue a live situation independently, sharing its work ceiling.
+
+        Only current phases are carried forward. The immutable circuit and phase
+        tuple may be shared; later input replaces the child's tuple. No parent,
+        event history, or answer is stored. Completion remains explicit per branch.
+        """
+        if self.closed or self.failed:
+            raise ValueError('Cannot branch a closed or failed invocation')
+        self.work.add('phase_branch_coordinates', len(self.phases))
+        child = PhaseActivity(self.configuration, self.work)
+        child.phases = self.phases
+        return child
+
     def accept(self, event):
         if self.closed or self.failed:
             raise ValueError('Invocation is closed or failed')
